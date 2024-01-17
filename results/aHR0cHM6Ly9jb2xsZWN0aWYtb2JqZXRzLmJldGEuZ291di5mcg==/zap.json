@@ -1,0 +1,1769 @@
+{
+	"@programName": "ZAP",
+	"@version": "2.14.0",
+	"@generated": "Wed, 17 Jan 2024 09:56:36",
+	"site":[ 
+		{
+			"@name": "https://collectif-objets.beta.gouv.fr",
+			"@host": "collectif-objets.beta.gouv.fr",
+			"@port": "443",
+			"@ssl": "true",
+			"alerts": [ 
+				{
+					"pluginid": "10202",
+					"alertRef": "10202",
+					"alert": "Absence of Anti-CSRF Tokens",
+					"name": "Absence of Anti-CSRF Tokens",
+					"riskcode": "2",
+					"confidence": "1",
+					"riskdesc": "Medium (Low)",
+					"desc": "<p>No Anti-CSRF tokens were found in a HTML submission form.</p><p>A cross-site request forgery is an attack that involves forcing a victim to send an HTTP request to a target destination without their knowledge or intent in order to perform an action as the victim. The underlying cause is application functionality using predictable URL/form actions in a repeatable way. The nature of the attack is that CSRF exploits the trust that a web site has for a user. By contrast, cross-site scripting (XSS) exploits the trust that a user has for a web site. Like XSS, CSRF attacks are not necessarily cross-site, but they can be. Cross-site request forgery is also known as CSRF, XSRF, one-click attack, session riding, confused deputy, and sea surf.</p><p></p><p>CSRF attacks are effective in a number of situations, including:</p><p>    * The victim has an active session on the target site.</p><p>    * The victim is authenticated via HTTP auth on the target site.</p><p>    * The victim is on the same local network as the target site.</p><p></p><p>CSRF has primarily been used to perform an action against a target site using the victim's privileges, but recent techniques have been discovered to disclose information by gaining access to the response. The risk of information disclosure is dramatically increased when the target site is vulnerable to XSS, because XSS can be used as a platform for CSRF, allowing the attack to operate within the bounds of the same-origin policy.</p>",
+					"instances":[ 
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/demos/communes/recensement_step3",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form class=\"button_to\" method=\"get\" action=\"/communes/-1/objets/-1/recensements/-1/edit\">",
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 3: \"step\" ]."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/demos/communes/recensement_step6",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form class=\"co-display--inline co-edit-button\" method=\"get\" action=\"/communes/-1/objets/-1/recensements/-1/edit\">",
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"step\" ]."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/demos/communes/recensement_step6",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form class=\"co-display--inline co-edit-button\" method=\"get\" action=\"/communes/-1/objets/-1/recensements/-1/edit\">",
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 2: \"step\" ]."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/demos/communes/recensement_step6",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form class=\"co-display--inline co-edit-button\" method=\"get\" action=\"/communes/-1/objets/-1/recensements/-1/edit\">",
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 3: \"step\" ]."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/demos/communes/recensement_step6",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form class=\"co-display--inline co-edit-button\" method=\"get\" action=\"/communes/-1/objets/-1/recensements/-1/edit\">",
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 4: \"step\" ]."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/demos/communes/recensement_step6",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form class=\"co-display--inline co-edit-button\" method=\"get\" action=\"/communes/-1/objets/-1/recensements/-1/edit\">",
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 5: \"step\" ]."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/demos/communes/recensement_step6",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form class=\"co-display--inline co-edit-button\" method=\"get\" action=\"/communes/-1/objets/-1/recensements/-1/edit\">",
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 6: \"step\" ]."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/demos/communes/recensement_step6",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form class=\"co-display--inline co-edit-button\" method=\"get\" action=\"/communes/-1/objets/-1/recensements/-1/edit\">",
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 7: \"step\" ]."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/objets/8?galerie_objet_8_photo_id=0",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form class=\"button_to\" method=\"get\" action=\"/objets/8\">",
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"\" ]."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/objets/8?galerie_objet_8_photo_id=0",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form class=\"button_to\" method=\"get\" action=\"/objets/8\">",
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 2: \"\" ]."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/objets/8?galerie_objet_8_photo_id=0",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form class=\"button_to\" method=\"get\" action=\"/objets/8\">",
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 3: \"galerie_objet_8_photo_id\" ]."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/objets/8?galerie_objet_8_photo_id=1",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form class=\"button_to\" method=\"get\" action=\"/objets/8\">",
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"\" ]."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/objets/8?galerie_objet_8_photo_id=1",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form class=\"button_to\" method=\"get\" action=\"/objets/8\">",
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 2: \"galerie_objet_8_photo_id\" ]."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/objets/8?galerie_objet_8_photo_id=1",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form class=\"button_to\" method=\"get\" action=\"/objets/8\">",
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 3: \"\" ]."
+						}
+					],
+					"count": "14",
+					"solution": "<p>Phase: Architecture and Design</p><p>Use a vetted library or framework that does not allow this weakness to occur or provides constructs that make this weakness easier to avoid.</p><p>For example, use anti-CSRF packages such as the OWASP CSRFGuard.</p><p></p><p>Phase: Implementation</p><p>Ensure that your application is free of cross-site scripting issues, because most CSRF defenses can be bypassed using attacker-controlled script.</p><p></p><p>Phase: Architecture and Design</p><p>Generate a unique nonce for each form, place the nonce into the form, and verify the nonce upon receipt of the form. Be sure that the nonce is not predictable (CWE-330).</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Identify especially dangerous operations. When the user performs a dangerous operation, send a separate confirmation request to ensure that the user intended to perform that operation.</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Use the ESAPI Session Management control.</p><p>This control includes a component for CSRF.</p><p></p><p>Do not use the GET method for any request that triggers a state change.</p><p></p><p>Phase: Implementation</p><p>Check the HTTP Referer header to see if the request originated from an expected page. This could break legitimate functionality, because users or proxies may have disabled sending the Referer for privacy reasons.</p>",
+					"otherinfo": "<p>No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 3: \"step\" ].</p>",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
+					"cweid": "352",
+					"wascid": "9",
+					"sourceid": "1008"
+				},
+				{
+					"pluginid": "10038",
+					"alertRef": "10038-1",
+					"alert": "Content Security Policy (CSP) Header Not Set",
+					"name": "Content Security Policy (CSP) Header Not Set",
+					"riskcode": "2",
+					"confidence": "3",
+					"riskdesc": "Medium (High)",
+					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
+					"instances":[ 
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/accueil_conservateurs",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/conservateurs/sign_in",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/users/sign_in",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						}
+					],
+					"count": "5",
+					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>https://www.w3.org/TR/CSP/</p><p>https://w3c.github.io/webappsec-csp/</p><p>https://web.dev/articles/csp</p><p>https://caniuse.com/#feat=contentsecuritypolicy</p><p>https://content-security-policy.com/</p>",
+					"cweid": "693",
+					"wascid": "15",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "10110",
+					"alertRef": "10110",
+					"alert": "Dangerous JS Functions",
+					"name": "Dangerous JS Functions",
+					"riskcode": "1",
+					"confidence": "1",
+					"riskdesc": "Low (Low)",
+					"desc": "<p>A dangerous JS function seems to be in use that would leave the site vulnerable.</p>",
+					"instances":[ 
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/application-0fbda6b9.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "eval",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/lightbox_component_controller-7a572fbe.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "eval",
+							"otherinfo": ""
+						}
+					],
+					"count": "2",
+					"solution": "<p>See the references for security advice on the use of these functions.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://angular.io/guide/security</p>",
+					"cweid": "749",
+					"wascid": "-1",
+					"sourceid": "71"
+				},
+				{
+					"pluginid": "10063",
+					"alertRef": "10063-1",
+					"alert": "Permissions Policy Header Not Set",
+					"name": "Permissions Policy Header Not Set",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Low (Medium)",
+					"desc": "<p>Permissions Policy Header is an added layer of security that helps to restrict from unauthorized access or usage of browser/client features by web resources. This policy ensures the user privacy by limiting or specifying the features of the browsers can be used by the web resources. Permissions Policy provides a set of standard HTTP headers that allow website owners to limit which features of browsers can be used by the page such as camera, microphone, location, full screen etc.</p>",
+					"instances":[ 
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/accueil_conservateurs",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/comment-ca-marche",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/conservateurs/sign_in",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/fiches",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/guide-de-recensement",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/presse",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/stats",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/users/sign_in",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/matomo_tracking-bab56819.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						}
+					],
+					"count": "11",
+					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Permissions-Policy header.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy</p><p>https://developer.chrome.com/blog/feature-policy/</p><p>https://scotthelme.co.uk/a-new-security-header-feature-policy/</p><p>https://w3c.github.io/webappsec-feature-policy/</p><p>https://www.smashingmagazine.com/2018/12/feature-policy/</p>",
+					"cweid": "693",
+					"wascid": "15",
+					"sourceid": "6"
+				},
+				{
+					"pluginid": "10035",
+					"alertRef": "10035-3",
+					"alert": "Strict-Transport-Security Multiple Header Entries (Non-compliant with Spec)",
+					"name": "Strict-Transport-Security Multiple Header Entries (Non-compliant with Spec)",
+					"riskcode": "1",
+					"confidence": "3",
+					"riskdesc": "Low (High)",
+					"desc": "<p>HTTP Strict Transport Security (HSTS) headers were found, a response with multiple HSTS header entries is not compliant with the specification (RFC 6797) and only the first HSTS header will be processed others will be ignored by user agents or the HSTS policy may be incorrectly applied.</p><p>HTTP Strict Transport Security (HSTS) is a web security policy mechanism whereby a web server declares that complying user agents (such as a web browser) are to interact with it using only secure HTTPS connections (i.e. HTTP layered over TLS/SSL).</p>",
+					"instances":[ 
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/accueil_conservateurs",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/robots.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/sitemap.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/users/sign_in",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/all-abc4f512.css",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/lightbox_component_controller-fd1f7fd7.css",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/matomo_tracking-bab56819.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/miniatures_component_controller-2b5a3d7b.css",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/photo_upload_component_controller-2f4d8fd8.css",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						}
+					],
+					"count": "11",
+					"solution": "<p>Ensure that only one component in your stack: code, web server, application server, load balancer, etc. is configured to set or add a HTTP Strict-Transport-Security (HSTS) header.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc6797#section-8.1</p>",
+					"cweid": "319",
+					"wascid": "15",
+					"sourceid": "6"
+				},
+				{
+					"pluginid": "10096",
+					"alertRef": "10096",
+					"alert": "Timestamp Disclosure - Unix",
+					"name": "Timestamp Disclosure - Unix",
+					"riskcode": "1",
+					"confidence": "1",
+					"riskdesc": "Low (Low)",
+					"desc": "<p>A timestamp was disclosed by the application/web server - Unix</p>",
+					"instances":[ 
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/photo_upload_component_controller-5d22e63e.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1416354905",
+							"otherinfo": "1416354905, which evaluates to: 2014-11-18 23:55:05"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/photo_upload_component_controller-5d22e63e.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1444681467",
+							"otherinfo": "1444681467, which evaluates to: 2015-10-12 20:24:27"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/photo_upload_component_controller-5d22e63e.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1473231341",
+							"otherinfo": "1473231341, which evaluates to: 2016-09-07 06:55:41"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/photo_upload_component_controller-5d22e63e.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1502002290",
+							"otherinfo": "1502002290, which evaluates to: 2017-08-06 06:51:30"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/photo_upload_component_controller-5d22e63e.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1530992060",
+							"otherinfo": "1530992060, which evaluates to: 2018-07-07 19:34:20"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/photo_upload_component_controller-5d22e63e.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1560198380",
+							"otherinfo": "1560198380, which evaluates to: 2019-06-10 20:26:20"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/photo_upload_component_controller-5d22e63e.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1700485571",
+							"otherinfo": "1700485571, which evaluates to: 2023-11-20 13:06:11"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/photo_upload_component_controller-5d22e63e.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1732584193",
+							"otherinfo": "1732584193, which evaluates to: 2024-11-26 01:23:13"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/photo_upload_component_controller-5d22e63e.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1732584194",
+							"otherinfo": "1732584194, which evaluates to: 2024-11-26 01:23:14"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/photo_upload_component_controller-5d22e63e.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1735328473",
+							"otherinfo": "1735328473, which evaluates to: 2024-12-27 19:41:13"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/photo_upload_component_controller-5d22e63e.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1770035416",
+							"otherinfo": "1770035416, which evaluates to: 2026-02-02 12:30:16"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/photo_upload_component_controller-5d22e63e.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1804603682",
+							"otherinfo": "1804603682, which evaluates to: 2027-03-09 14:48:02"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/photo_upload_component_controller-5d22e63e.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1839030562",
+							"otherinfo": "1839030562, which evaluates to: 2028-04-11 01:49:22"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/photo_upload_component_controller-5d22e63e.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1873313359",
+							"otherinfo": "1873313359, which evaluates to: 2029-05-12 20:49:19"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/photo_upload_component_controller-5d22e63e.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1894986606",
+							"otherinfo": "1894986606, which evaluates to: 2030-01-18 17:10:06"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/photo_upload_component_controller-5d22e63e.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1926607734",
+							"otherinfo": "1926607734, which evaluates to: 2031-01-19 16:48:54"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/photo_upload_component_controller-5d22e63e.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1958414417",
+							"otherinfo": "1958414417, which evaluates to: 2032-01-22 20:00:17"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/photo_upload_component_controller-5d22e63e.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1990404162",
+							"otherinfo": "1990404162, which evaluates to: 2033-01-27 02:02:42"
+						}
+					],
+					"count": "18",
+					"solution": "<p>Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.</p>",
+					"otherinfo": "<p>1416354905, which evaluates to: 2014-11-18 23:55:05</p>",
+					"reference": "<p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
+					"cweid": "200",
+					"wascid": "13",
+					"sourceid": "164"
+				},
+				{
+					"pluginid": "10021",
+					"alertRef": "10021",
+					"alert": "X-Content-Type-Options Header Missing",
+					"name": "X-Content-Type-Options Header Missing",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Low (Medium)",
+					"desc": "<p>The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</p>",
+					"instances":[ 
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/dsfr/favicon/apple-touch-icon.png",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/dsfr/favicon/favicon.ico",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/dsfr/favicon/favicon.svg",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/dsfr/favicon/manifest.webmanifest",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/robots.txt",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/all-abc4f512.css",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/application-0fbda6b9.js",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/lightbox_component_controller-fd1f7fd7.css",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/matomo_tracking-bab56819.js",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/miniatures_component_controller-2b5a3d7b.css",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/miniatures_component_controller-f9e3f473.js",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/photo_upload_component_controller-2f4d8fd8.css",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						}
+					],
+					"count": "12",
+					"solution": "<p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p>",
+					"otherinfo": "<p>This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.</p><p>At \"High\" threshold this scan rule will not alert on client or server error responses.</p>",
+					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
+					"cweid": "693",
+					"wascid": "15",
+					"sourceid": "134"
+				},
+				{
+					"pluginid": "10111",
+					"alertRef": "10111",
+					"alert": "Authentication Request Identified",
+					"name": "Authentication Request Identified",
+					"riskcode": "0",
+					"confidence": "1",
+					"riskdesc": "Informational (Low)",
+					"desc": "<p>The given request has been identified as an authentication request. The 'Other Info' field contains a set of key=value lines which identify any relevant fields. If the request is in a context which has an Authentication Method set to \"Auto-Detect\" then this rule will change the authentication to match the request identified.</p>",
+					"instances":[ 
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/admin_users/sign_in",
+							"method": "POST",
+							"param": "admin_user[email]",
+							"attack": "",
+							"evidence": "admin_user[password]",
+							"otherinfo": "userParam=admin_user[email]\nuserValue=foo-bar@example.com\npasswordParam=admin_user[password]\nreferer=https://collectif-objets.beta.gouv.fr/admin_users/sign_in\ncsrfToken=authenticity_token"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/conservateurs/sign_in",
+							"method": "POST",
+							"param": "conservateur[email]",
+							"attack": "",
+							"evidence": "conservateur[password]",
+							"otherinfo": "userParam=conservateur[email]\nuserValue=foo-bar@example.com\npasswordParam=conservateur[password]\nreferer=https://collectif-objets.beta.gouv.fr/conservateurs/sign_in\ncsrfToken=authenticity_token"
+						}
+					],
+					"count": "2",
+					"solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
+					"otherinfo": "<p>userParam=admin_user[email]</p><p>userValue=foo-bar@example.com</p><p>passwordParam=admin_user[password]</p><p>referer=https://collectif-objets.beta.gouv.fr/admin_users/sign_in</p><p>csrfToken=authenticity_token</p>",
+					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/auth-req-id/</p>",
+					"cweid": "-1",
+					"wascid": "-1",
+					"sourceid": "1099"
+				},
+				{
+					"pluginid": "10094",
+					"alertRef": "10094-3",
+					"alert": "Base64 Disclosure",
+					"name": "Base64 Disclosure",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
+					"desc": "<p>Base64 encoded data was disclosed by the application/web server. Note: in the interests of performance not all base64 strings in the response were analyzed individually, the entire response should be looked at by the analyst/security team/developer(s).</p>",
+					"instances":[ 
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "NptdLZ7Lx6M5ZZi3OHwE2jYjl10PzGcOyjRAey6Uuy1wnUXbEz0tvdINVWbgsheYQGnRbt",
+							"otherinfo": "6\uFFFD]-\uFFFD\uFFFD\u01E39e\uFFFD\uFFFD8|\\x0004\uFFFD6#\uFFFD]\\x000f\uFFFDg\\x000e\uFFFD4@{.\uFFFD\uFFFD-p\uFFFDE\uFFFD\\x0013=-\uFFFD\uFFFD\rUf\uFFFD\\x0017\uFFFD@i\uFFFDn"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "2FT22P8b43P2FXQEiu6fcFMt8YaR9RBNdaJ",
+							"otherinfo": "\uFFFDT\uFFFD\uFFFD\uFFFD\\x001b\uFFFDs\uFFFD\\x0015t\\x0004\uFFFD\uFFFDpS-\uFFFD\uFFFD\\x0010Mu\uFFFD"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "l5KzS1S0YzmxLlhaHo8VDf1N4U6VzDXBzpGDeBnAjQZm79hGJ7U0ZLQxPEFrRf5ubE0XmvkbjVu9VB8EFVRygQ",
+							"otherinfo": "\uFFFD\uFFFD\uFFFDKT\uFFFDc9\uFFFD.XZ\\x001e\uFFFD\\x0015\r\uFFFDM\uFFFDN\uFFFD\uFFFD5\uFFFD\u0391\uFFFDx\\x0019\uFFFD\uFFFD\\x0006f\uFFFD\uFFFDF'\uFFFD4d\uFFFD1<AkE\uFFFDnlM\\x0017\uFFFD\uFFFD\\x001b\uFFFD[\uFFFDT\\x001f\\x0004\\x0015Tr\uFFFD"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/accueil_conservateurs",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "2FVBVL4bSwXq2HuHxGs635iTqOqoEw6AaXGwpFTvrmTWkr",
+							"otherinfo": "\uFFFDUAT\uFFFD\\x001bK\\x0005\uFFFD\uFFFD{\uFFFD\uFFFDk:\u07D8\uFFFD\uFFFD\uFFFD\\x0013\\x000e\uFFFDiq\uFFFD\uFFFDT\uFFFDd\u0592"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/admin",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "2FTkwanaALogNRPhXKFc1NicDvBNPT83i5WiAA75Q9sZYQlgSL1kGUEm8G",
+							"otherinfo": "\uFFFDT\uFFFD\uFFFD\uFFFD\uFFFD\\x0000\uFFFD 5\\x0013\uFFFD\\\uFFFD\\\uFFFD\u061C\\x000e\uFFFDM=?7\uFFFD\uFFFD\uFFFD\\x0000\\x000e\uFFFDC\uFFFD\\x0019a\t`H\uFFFDd\\x0019A&\uFFFD"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/comment-ca-marche",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "8NrA1UUZuu9NQ99YiWUwP5D7RJcNGuoSfv4z87svJeAOziRbplfFhEc1zm94tycaIPMgIHTbggGue4Qcn2",
+							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFDE\\x0019\uFFFD\uFFFDMC\uFFFDX\uFFFDe0?\uFFFD\uFFFDD\uFFFD\r\\x001a\uFFFD\\x0012~\uFFFD3\uFFFD/%\uFFFD\\x000e\uFFFD$[\uFFFDW\u0144G5\uFFFDox\uFFFD'\\x001a \uFFFD  t\u06C2\\x0001\uFFFD{\uFFFD\\x001c\uFFFD"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/conservateurs/sign_in",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "txAmpPb7uHPtE9o4EuTo3D0JJnipDMDUCHhxuJ",
+							"otherinfo": "\uFFFD\\x0010&\uFFFD\uFFFD\uFFFD\uFFFDs\uFFFD\\x0013\uFFFD8\\x0012\uFFFD\uFFFD\uFFFD=\t&x\uFFFD\\x000c\uFFFD\uFFFD\\x0008xq\uFFFD"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/fiches",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "2FnsJI8zOHM5IZWARShCYeqMorNuxicDM4OVKD",
+							"otherinfo": "\uFFFDY\uFFFD$\uFFFD38s9!\uFFFD\uFFFDE(Ba\uA322\uFFFDn\uFFFD'\\x00033\uFFFD\uFFFD("
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/guide-de-recensement",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "2FMEtBdaxp0h5BjMshFbVUmK32RWrSxSVOdEc3cfOClQaq4wFriYGc7xL5Vz5lrxjRlKkQNCJTn5H5LfwrCnu1W17R3v8MR",
+							"otherinfo": "\uFFFDS\\x0004\uFFFD\\x0017Z\u019D!\uFFFD\\x0018\u0332\\x0011[UI\uFFFD\uFFFDdV\uFFFD,RT\uFFFDDsw\\x001f8)Pj\uFFFD0\\x0016\uFFFD\uFFFD\\x0019\uFFFD\uFFFD/\uFFFDs\uFFFDZ\uFFFD\\x0019J\uFFFD\\x0003B%9\uFFFD\\x001f\uFFFD\uFFFD\u00B0\uFFFD\uFFFDU\uFFFD\uFFFD\\x001d\uFFFD\uFFFD\uFFFD"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/presse",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "2FuSlsp0FABKsXtmOYmELeeF4Mrnfw",
+							"otherinfo": "\uFFFD[\uFFFD\uFFFD\uFFFDt\\x0014\\x0000J\uFFFD{f9\uFFFD\uFFFD-\uFFFD\uFFFD\uFFFD\uFFFD"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/stats",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "2BLAOkgfBptIUF6dSuQceVRA7YnHK6di",
+							"otherinfo": "\uFFFD\\x0012\uFFFD:H\\x001f\\x0006\uFFFDHP^\uFFFDJ\uFFFD\\x001cyT@\uFFFD\uFFFD+\uFFFDb"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/users/sign_in",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "2BBZP4QTmb51AwV4gZhOFkrgBEwQo7ISu0kxNJgLFjmq1L5SNmkypK",
+							"otherinfo": "\uFFFD\\x0010Y?\uFFFD\\x0013\uFFFD\uFFFDu\\x0003\\x0005x\uFFFD\uFFFDN\\x0016J\uFFFD\\x0004L\\x0010\uFFFD\uFFFD\\x0012\uFFFDI14\uFFFD\\x000b\\x00169\uFFFD\u053ER6i2\uFFFD"
+						}
+					],
+					"count": "12",
+					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
+					"otherinfo": "<p>6\uFFFD]-\uFFFD\uFFFD\u01E39e\uFFFD\uFFFD8|\\x0004\uFFFD6#\uFFFD]\\x000f\uFFFDg\\x000e\uFFFD4@{.\uFFFD\uFFFD-p\uFFFDE\uFFFD\\x0013=-\uFFFD\uFFFD\rUf\uFFFD\\x0017\uFFFD@i\uFFFDn</p>",
+					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
+					"cweid": "200",
+					"wascid": "13",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "10038",
+					"alertRef": "10038-3",
+					"alert": "Content Security Policy (CSP) Report-Only Header Found",
+					"name": "Content Security Policy (CSP) Report-Only Header Found",
+					"riskcode": "0",
+					"confidence": "3",
+					"riskdesc": "Informational (High)",
+					"desc": "<p>The response contained a Content-Security-Policy-Report-Only header, this may indicate a work-in-progress implementation, or an oversight in promoting pre-Prod to Prod, etc.</p><p></p><p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
+					"instances":[ 
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/accueil_conservateurs",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/conservateurs/sign_in",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/users/sign_in",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						}
+					],
+					"count": "5",
+					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://www.w3.org/TR/CSP2/</p><p>https://w3c.github.io/webappsec-csp/</p><p>https://caniuse.com/#feat=contentsecuritypolicy</p><p>https://content-security-policy.com/</p>",
+					"cweid": "693",
+					"wascid": "15",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "10024",
+					"alertRef": "10024",
+					"alert": "Information Disclosure - Sensitive Information in URL",
+					"name": "Information Disclosure - Sensitive Information in URL",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
+					"desc": "<p>The request appeared to contain sensitive information leaked in the URL. This can violate PCI and most organizational compliance policies. You can configure the list of strings for this check to add or remove values specific to your environment.</p>",
+					"instances":[ 
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/users/sign_in?error=no_user_found&success=false&user%5Bemail%5D=foo-bar%40example.com",
+							"method": "GET",
+							"param": "user[email]",
+							"attack": "",
+							"evidence": "foo-bar@example.com",
+							"otherinfo": "The URL contains email address(es)."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/users/sign_in?error=no_user_found&success=false&user%5Bemail%5D=foo-bar%40example.com",
+							"method": "GET",
+							"param": "user[email]",
+							"attack": "",
+							"evidence": "user[email]",
+							"otherinfo": "The URL contains potentially sensitive information. The following string was found via the pattern: user\nuser[email]"
+						}
+					],
+					"count": "2",
+					"solution": "<p>Do not pass sensitive information in URIs.</p>",
+					"otherinfo": "<p>The URL contains email address(es).</p>",
+					"reference": "",
+					"cweid": "200",
+					"wascid": "13",
+					"sourceid": "1063"
+				},
+				{
+					"pluginid": "10027",
+					"alertRef": "10027",
+					"alert": "Information Disclosure - Suspicious Comments",
+					"name": "Information Disclosure - Suspicious Comments",
+					"riskcode": "0",
+					"confidence": "1",
+					"riskdesc": "Informational (Low)",
+					"desc": "<p>The response appears to contain suspicious comments which may help an attacker. Note: Matches made within script blocks or files are against the entire content not only comments.</p>",
+					"instances":[ 
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/application-0fbda6b9.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "db",
+							"otherinfo": "The following pattern was used: \\bDB\\b and was detected 3 times, the first in the element starting with: \"`):s}function fm(s,t){const{element:e,datasetIndex:i,index:n}=t,r=s.getDatasetMeta(i).controller,{label:o,value:a}=r.getLabelAnd\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/application-0fbda6b9.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "debug",
+							"otherinfo": "The following pattern was used: \\bDEBUG\\b and was detected in the element starting with: \"Reason: ${d}`))})}_process(t){this._numProcessing++,t.then(e=>(this._numProcessing--,e),e=>(this._numProcessing--,e))}_sendEnvel\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/application-0fbda6b9.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "from",
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected 3 times, the first in the element starting with: \" */function Yt(){}const lf=(()=>{let s=0;return()=>s++})();function F(s){return s===null||typeof s>\"u\"}function V(s){if(Array.is\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/application-0fbda6b9.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "query",
+							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"`);for(const r of t.children)n+=this._branch(r,e+1,i)}}const Y=new lx,Ld=s=>{document.readyState!==\"loading\"?window.requestAnima\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/application-0fbda6b9.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "SELECT",
+							"otherinfo": "The following pattern was used: \\bSELECT\\b and was detected in the element starting with: \"Unable to get HTTP header: \"content-length\"`),this.gather()})}mutate(t){t.indexOf(\"href\")!==-1&&(this.href=this.getAttribute(\"hr\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/application-0fbda6b9.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "todo",
+							"otherinfo": "The following pattern was used: \\bTODO\\b and was detected in the element starting with: \"var iu=Object.defineProperty;var nu=(s,t,e)=>t in s?iu(s,t,{enumerable:!0,configurable:!0,writable:!0,value:e}):s[t]=e;var ru=(s\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/application-0fbda6b9.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "user",
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected 2 times, the first in the element starting with: \"`),typeof c==\"string\"||c instanceof Uint8Array)r(c);else{let l;try{l=JSON.stringify(c)}catch{l=JSON.stringify(ge(c))}r(l)}}retur\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/confirmation_component_controller-ea325ea6.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "from",
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"var a=Object.defineProperty;var u=(e,t,l)=>t in e?a(e,t,{enumerable:!0,configurable:!0,writable:!0,value:l}):e[t]=l;var o=(e,t,l\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/lightbox_component_controller-7a572fbe.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "from",
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected 3 times, the first in the element starting with: \"import{C as Te}from\"./stimulus-6543b027.js\";(function(){if(window.Reflect===void 0||window.customElements===void 0||window.custo\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/lightbox_component_controller-7a572fbe.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "select",
+							"otherinfo": "The following pattern was used: \\bSELECT\\b and was detected in the element starting with: \"    `}constructor(){this.hiding=!1,this.value=0,this.visible=!1,this.trickle=()=>{this.setValue(this.value+Math.random()/100)},t\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/photo_upload_component_controller-5d22e63e.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "from",
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"var W=Object.defineProperty;var $=(h,s,o)=>s in h?W(h,s,{enumerable:!0,configurable:!0,writable:!0,value:o}):h[s]=o;var R=(h,s,o\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/stimulus-6543b027.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "select",
+							"otherinfo": "The following pattern was used: \\bSELECT\\b and was detected in the element starting with: \"class R{constructor(e,t,s){this.eventTarget=e,this.eventName=t,this.eventOptions=s,this.unorderedBindings=new Set}connect(){this\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/unfold_component_controller-4a583214.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "from",
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"var r=Object.defineProperty;var i=(e,t,s)=>t in e?r(e,t,{enumerable:!0,configurable:!0,writable:!0,value:s}):e[t]=s;var o=(e,t,s\", see evidence field for the suspicious comment/snippet."
+						}
+					],
+					"count": "13",
+					"solution": "<p>Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</p>",
+					"otherinfo": "<p>The following pattern was used: \\bDB\\b and was detected 3 times, the first in the element starting with: \"`):s}function fm(s,t){const{element:e,datasetIndex:i,index:n}=t,r=s.getDatasetMeta(i).controller,{label:o,value:a}=r.getLabelAnd\", see evidence field for the suspicious comment/snippet.</p>",
+					"reference": "",
+					"cweid": "200",
+					"wascid": "13",
+					"sourceid": "71"
+				},
+				{
+					"pluginid": "10109",
+					"alertRef": "10109",
+					"alert": "Modern Web Application",
+					"name": "Modern Web Application",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
+					"desc": "<p>The application appears to be a modern web application. If you need to explore it automatically then the Ajax Spider may well be more effective than the standard one.</p>",
+					"instances":[ 
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a href=\"/comment-ca-marche\" class=\"fr-nav__link\" target=\"_self\">Comment \u00E7a marche ?</a>",
+							"otherinfo": "Links have been found with a target of '_self' - this is often used by modern frameworks to force a full page reload."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a href=\"/comment-ca-marche\" class=\"fr-nav__link\" target=\"_self\">Comment \u00E7a marche ?</a>",
+							"otherinfo": "Links have been found with a target of '_self' - this is often used by modern frameworks to force a full page reload."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/accueil_conservateurs",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a href=\"/comment-ca-marche\" class=\"fr-nav__link\" target=\"_self\">Comment \u00E7a marche ?</a>",
+							"otherinfo": "Links have been found with a target of '_self' - this is often used by modern frameworks to force a full page reload."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/comment-ca-marche",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a href=\"/comment-ca-marche\" class=\"fr-nav__link\" target=\"_self\" aria-current=\"page\">Comment \u00E7a marche ?</a>",
+							"otherinfo": "Links have been found with a target of '_self' - this is often used by modern frameworks to force a full page reload."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/conservateurs/sign_in",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a href=\"/comment-ca-marche\" class=\"fr-nav__link\" target=\"_self\">Comment \u00E7a marche ?</a>",
+							"otherinfo": "Links have been found with a target of '_self' - this is often used by modern frameworks to force a full page reload."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/fiches",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a href=\"/comment-ca-marche\" class=\"fr-nav__link\" target=\"_self\">Comment \u00E7a marche ?</a>",
+							"otherinfo": "Links have been found with a target of '_self' - this is often used by modern frameworks to force a full page reload."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/guide-de-recensement",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a href=\"/comment-ca-marche\" class=\"fr-nav__link\" target=\"_self\">Comment \u00E7a marche ?</a>",
+							"otherinfo": "Links have been found with a target of '_self' - this is often used by modern frameworks to force a full page reload."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/mentions_legales",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a href=\"/comment-ca-marche\" class=\"fr-nav__link\" target=\"_self\">Comment \u00E7a marche ?</a>",
+							"otherinfo": "Links have been found with a target of '_self' - this is often used by modern frameworks to force a full page reload."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/presse",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a href=\"/comment-ca-marche\" class=\"fr-nav__link\" target=\"_self\">Comment \u00E7a marche ?</a>",
+							"otherinfo": "Links have been found with a target of '_self' - this is often used by modern frameworks to force a full page reload."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/stats",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a href=\"/comment-ca-marche\" class=\"fr-nav__link\" target=\"_self\">Comment \u00E7a marche ?</a>",
+							"otherinfo": "Links have been found with a target of '_self' - this is often used by modern frameworks to force a full page reload."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/users/sign_in",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a href=\"/comment-ca-marche\" class=\"fr-nav__link\" target=\"_self\">Comment \u00E7a marche ?</a>",
+							"otherinfo": "Links have been found with a target of '_self' - this is often used by modern frameworks to force a full page reload."
+						}
+					],
+					"count": "11",
+					"solution": "<p>This is an informational alert and so no changes are required.</p>",
+					"otherinfo": "<p>Links have been found with a target of '_self' - this is often used by modern frameworks to force a full page reload.</p>",
+					"reference": "",
+					"cweid": "-1",
+					"wascid": "-1",
+					"sourceid": "6"
+				},
+				{
+					"pluginid": "10049",
+					"alertRef": "10049",
+					"alert": "Non-Storable Content",
+					"name": "Non-Storable Content",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
+					"desc": "<p>The response contents are not storable by caching components such as proxy servers. If the response does not contain sensitive, personal or user-specific information, it may benefit from being stored and cached, to improve performance.</p>",
+					"instances":[ 
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "private",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "private",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/accueil_conservateurs",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "private",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/users/sign_in",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "private",
+							"otherinfo": ""
+						}
+					],
+					"count": "4",
+					"solution": "<p>The content may be marked as storable by ensuring that the following conditions are satisfied:</p><p>The request method must be understood by the cache and defined as being cacheable (\"GET\", \"HEAD\", and \"POST\" are currently defined as cacheable)</p><p>The response status code must be understood by the cache (one of the 1XX, 2XX, 3XX, 4XX, or 5XX response classes are generally understood)</p><p>The \"no-store\" cache directive must not appear in the request or response header fields</p><p>For caching by \"shared\" caches such as \"proxy\" caches, the \"private\" response directive must not appear in the response</p><p>For caching by \"shared\" caches such as \"proxy\" caches, the \"Authorization\" header field must not appear in the request, unless the response explicitly allows it (using one of the \"must-revalidate\", \"public\", or \"s-maxage\" Cache-Control response directives)</p><p>In addition to the conditions above, at least one of the following conditions must also be satisfied by the response:</p><p>It must contain an \"Expires\" header field</p><p>It must contain a \"max-age\" response directive</p><p>For \"shared\" caches such as \"proxy\" caches, it must contain a \"s-maxage\" response directive</p><p>It must contain a \"Cache Control Extension\" that allows it to be cached</p><p>It must have a status code that is defined as cacheable by default (200, 203, 204, 206, 300, 301, 404, 405, 410, 414, 501).   </p>",
+					"otherinfo": "",
+					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
+					"cweid": "524",
+					"wascid": "13",
+					"sourceid": "6"
+				},
+				{
+					"pluginid": "10015",
+					"alertRef": "10015",
+					"alert": "Re-examine Cache-control Directives",
+					"name": "Re-examine Cache-control Directives",
+					"riskcode": "0",
+					"confidence": "1",
+					"riskdesc": "Informational (Low)",
+					"desc": "<p>The cache-control header has not been set properly or is missing, allowing the browser and proxies to cache content. For static assets like css, js, or image files this might be intended, however, the resources should be reviewed to ensure that no sensitive content will be cached.</p>",
+					"instances":[ 
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "max-age=0, private, must-revalidate",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "max-age=0, private, must-revalidate",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/accueil_conservateurs",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "max-age=0, private, must-revalidate",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/comment-ca-marche",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "max-age=0, private, must-revalidate",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/conservateurs/sign_in",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "max-age=0, private, must-revalidate",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/fiches",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "max-age=0, private, must-revalidate",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/guide-de-recensement",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "max-age=0, private, must-revalidate",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/presse",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "max-age=0, private, must-revalidate",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/robots.txt",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/stats",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "max-age=0, private, must-revalidate",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/users/sign_in",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "max-age=0, private, must-revalidate",
+							"otherinfo": ""
+						}
+					],
+					"count": "11",
+					"solution": "<p>For secure content, ensure the cache-control HTTP header is set with \"no-cache, no-store, must-revalidate\". If an asset should be cached consider setting the directives \"public, max-age, immutable\".</p>",
+					"otherinfo": "",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control</p><p>https://grayduck.mn/2021/09/13/cache-control-recommendations/</p>",
+					"cweid": "525",
+					"wascid": "13",
+					"sourceid": "6"
+				},
+				{
+					"pluginid": "90005",
+					"alertRef": "90005-3",
+					"alert": "Sec-Fetch-Dest Header is Missing",
+					"name": "Sec-Fetch-Dest Header is Missing",
+					"riskcode": "0",
+					"confidence": "3",
+					"riskdesc": "Informational (High)",
+					"desc": "<p>Specifies how and where the data would be used. For instance, if the value is audio, then the requested resource must be audio data and not any other type of resource.</p>",
+					"instances":[ 
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr",
+							"method": "GET",
+							"param": "Sec-Fetch-Dest",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/robots.txt",
+							"method": "GET",
+							"param": "Sec-Fetch-Dest",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/sitemap.xml",
+							"method": "GET",
+							"param": "Sec-Fetch-Dest",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						}
+					],
+					"count": "3",
+					"solution": "<p>Ensure that Sec-Fetch-Dest header is included in request headers.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
+					"cweid": "352",
+					"wascid": "9",
+					"sourceid": "6"
+				},
+				{
+					"pluginid": "90005",
+					"alertRef": "90005-2",
+					"alert": "Sec-Fetch-Mode Header is Missing",
+					"name": "Sec-Fetch-Mode Header is Missing",
+					"riskcode": "0",
+					"confidence": "3",
+					"riskdesc": "Informational (High)",
+					"desc": "<p>Allows to differentiate between requests for navigating between HTML pages and requests for loading resources like images, audio etc.</p>",
+					"instances":[ 
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr",
+							"method": "GET",
+							"param": "Sec-Fetch-Mode",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/robots.txt",
+							"method": "GET",
+							"param": "Sec-Fetch-Mode",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/sitemap.xml",
+							"method": "GET",
+							"param": "Sec-Fetch-Mode",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						}
+					],
+					"count": "3",
+					"solution": "<p>Ensure that Sec-Fetch-Mode header is included in request headers.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
+					"cweid": "352",
+					"wascid": "9",
+					"sourceid": "6"
+				},
+				{
+					"pluginid": "90005",
+					"alertRef": "90005-1",
+					"alert": "Sec-Fetch-Site Header is Missing",
+					"name": "Sec-Fetch-Site Header is Missing",
+					"riskcode": "0",
+					"confidence": "3",
+					"riskdesc": "Informational (High)",
+					"desc": "<p>Specifies the relationship between request initiator's origin and target's origin.</p>",
+					"instances":[ 
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr",
+							"method": "GET",
+							"param": "Sec-Fetch-Site",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/robots.txt",
+							"method": "GET",
+							"param": "Sec-Fetch-Site",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/sitemap.xml",
+							"method": "GET",
+							"param": "Sec-Fetch-Site",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						}
+					],
+					"count": "3",
+					"solution": "<p>Ensure that Sec-Fetch-Site header is included in request headers.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
+					"cweid": "352",
+					"wascid": "9",
+					"sourceid": "6"
+				},
+				{
+					"pluginid": "90005",
+					"alertRef": "90005-4",
+					"alert": "Sec-Fetch-User Header is Missing",
+					"name": "Sec-Fetch-User Header is Missing",
+					"riskcode": "0",
+					"confidence": "3",
+					"riskdesc": "Informational (High)",
+					"desc": "<p>Specifies if a navigation request was initiated by a user.</p>",
+					"instances":[ 
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr",
+							"method": "GET",
+							"param": "Sec-Fetch-User",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/robots.txt",
+							"method": "GET",
+							"param": "Sec-Fetch-User",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/sitemap.xml",
+							"method": "GET",
+							"param": "Sec-Fetch-User",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						}
+					],
+					"count": "3",
+					"solution": "<p>Ensure that Sec-Fetch-User header is included in user initiated requests.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
+					"cweid": "352",
+					"wascid": "9",
+					"sourceid": "6"
+				},
+				{
+					"pluginid": "10112",
+					"alertRef": "10112",
+					"alert": "Session Management Response Identified",
+					"name": "Session Management Response Identified",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
+					"desc": "<p>The given response has been identified as containing a session management token. The 'Other Info' field contains a set of header tokens that can be used in the Header Based Session Management Method. If the request is in a context which has a Session Management Method set to \"Auto-Detect\" then this rule will change the session management to use the tokens identified.</p>",
+					"instances":[ 
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr",
+							"method": "GET",
+							"param": "_collectif_objets_session",
+							"attack": "",
+							"evidence": "NptdLZ7Lx6M5ZZi3OHwE2jYjl10PzGcOyjRAey6Uuy1wnUXbEz0tvdINVWbgsheYQGnRbt%2BCy484lrn3EJD71ThyZd6s1qyX3%2FFOW2itRwymGsjbWSgSrKyfDlOEHiOZKYwMxSIU4Dv7huUhA1BD2q9HcaojSKLQqY6v58ia2xba8%2Fkb8PEloKcECLSaIJKm38IwtElLzQNRLMfA%2BAulifJYhuYFib2f3KrXF%2Fzg%2BqJBYzH7VXAC%2FQKzEgpBovzfc6IxRloE9WOEOwCXz8YMrB0311GkxFMLDlIqrt91xQKY--5wcbKCQPOjmXfOpm--QiWsp2dIR0gx8A2aGNPELA%3D%3D",
+							"otherinfo": "\ncookie:_collectif_objets_session"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr",
+							"method": "GET",
+							"param": "_collectif_objets_session",
+							"attack": "",
+							"evidence": "cltioK9%2FT22P8b43P2FXQEiu6fcFMt8YaR9RBNdaJ%2BeNREu8D98xyd4idob%2B5coyu7UQSqzRrhJy8N8Snc8rq3qHIZvtbpz%2Bu%2Fm7dwa3zgMufd9t5dhUrWwhv%2BSw3w%2FAy%2FcLLUSno3bajHCYFIWr0X61IYTioYIAyWjHo%2BkLpu0n2QQzZu01pAfiMCahG1QVR2WaXmIqlqWXgdvhyVzSEKU%2BW2AL2UtKKXzITnwmfrJ%2Fpc7I9FCYvj0VJkHjSFJkQNmZFwTbOgAt8ZW2WzRh1Qktea5hVbSuUhkrRUTFqbXR--nuMpnWNEgSrz4G%2Bs--TFG3ArOhRRU84a00URavGg%3D%3D",
+							"otherinfo": "\ncookie:_collectif_objets_session"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/",
+							"method": "GET",
+							"param": "_collectif_objets_session",
+							"attack": "",
+							"evidence": "l5KzS1S0YzmxLlhaHo8VDf1N4U6VzDXBzpGDeBnAjQZm79hGJ7U0ZLQxPEFrRf5ubE0XmvkbjVu9VB8EFVRygQ%2B%2BmjD3DlaUz%2Bg1Ba15m%2BneitBdRPU5QqZi4B5ziEX5Ok%2FslETZj%2BvlVSkI98dk3W%2BKM%2F0Q2HwhQaL0dfTqAAkAjursm8q1eWzm8kTdzHgHUPeYFMiUzwwangc6DdfLWw8K4WklW3JM1QcuU6Sxv%2BVayb2G6uaxElL%2Bhf7dGszY%2BOhf%2BRWiCssTeKIUp%2Bsa8r%2BqWMopnpNh23uRFmTjYkVl--ecpJKIrRoCFLbgcR--j2GOqyFp6q08KujBR2VvXw%3D%3D",
+							"otherinfo": "\ncookie:_collectif_objets_session"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/accueil_conservateurs",
+							"method": "GET",
+							"param": "_collectif_objets_session",
+							"attack": "",
+							"evidence": "9iZlvB7t%2FcwbJGn3gNKN%2FN2av9XHUeS05T%2F80Y7on0FgniIMp%2FVBVL4bSwXq2HuHxGs635iTqOqoEw6AaXGwpFTvrmTWkr%2F%2Bn1VNR3ciiAGFRs5S3e%2F5A0GgD5tOmSHU%2FVk1tzp%2F3mL3NAdN2Y%2BkI3vT3svVCImScVdCT1vRmTt0K4rTetTfX%2BzRWyy6dMNFBkwXyfn%2BRGNIJqYFtpINlAwXxarlxk6YEMJN%2FZqt2EOWB40SQFvX2NNcemnyhbtMjBsdLs1QQGDQy3iCWaE4p8Qj9M3LyKUQHvwrhqBDLuIu--CWGQAabmuYRO6RzI--d8vPV8OghxipAaO7ViO%2FVA%3D%3D",
+							"otherinfo": "\ncookie:_collectif_objets_session"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/users/sign_in",
+							"method": "GET",
+							"param": "_collectif_objets_session",
+							"attack": "",
+							"evidence": "Ah3iYiKH6ln%2BBZP4QTmb51AwV4gZhOFkrgBEwQo7ISu0kxNJgLFjmq1L5SNmkypK%2FOrHqC3KTT%2FG7dLk1bl4fLkcCRUfc6%2FuwoXH5NPtvJkUxo2hHgzlU1%2B3ZovSS4XqLB3J360NNyY5el2B0xBqUJ9ug8um3Xk4v%2FI5orWX49VA%2BdxnsnqXKAwNk%2BeMibec0bUkgqvI8xHZXDeoXw2RdrnyQuJkNVJD%2FuMq0XLXjB8rKidxDPDxgJrdx%2FI3mGNx8EYwFJ3DzzFPAEcNCG9qTpgD8KdZhMsAdVyI%2BCDGsrPZ--cDsacesId6JEEdxj--HIIhtFaVCau4vhxwz%2BK8VA%3D%3D",
+							"otherinfo": "\ncookie:_collectif_objets_session"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr",
+							"method": "GET",
+							"param": "_collectif_objets_session",
+							"attack": "",
+							"evidence": "cltioK9%2FT22P8b43P2FXQEiu6fcFMt8YaR9RBNdaJ%2BeNREu8D98xyd4idob%2B5coyu7UQSqzRrhJy8N8Snc8rq3qHIZvtbpz%2Bu%2Fm7dwa3zgMufd9t5dhUrWwhv%2BSw3w%2FAy%2FcLLUSno3bajHCYFIWr0X61IYTioYIAyWjHo%2BkLpu0n2QQzZu01pAfiMCahG1QVR2WaXmIqlqWXgdvhyVzSEKU%2BW2AL2UtKKXzITnwmfrJ%2Fpc7I9FCYvj0VJkHjSFJkQNmZFwTbOgAt8ZW2WzRh1Qktea5hVbSuUhkrRUTFqbXR--nuMpnWNEgSrz4G%2Bs--TFG3ArOhRRU84a00URavGg%3D%3D",
+							"otherinfo": "\ncookie:_collectif_objets_session"
+						}
+					],
+					"count": "6",
+					"solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
+					"otherinfo": "<p></p><p>cookie:_collectif_objets_session</p>",
+					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id</p>",
+					"cweid": "-1",
+					"wascid": "-1",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "10049",
+					"alertRef": "10049",
+					"alert": "Storable and Cacheable Content",
+					"name": "Storable and Cacheable Content",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
+					"desc": "<p>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users.  If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
+					"instances":[ 
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/robots.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/sitemap.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/all-abc4f512.css",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/lightbox_component_controller-fd1f7fd7.css",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/matomo_tracking-bab56819.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/miniatures_component_controller-2b5a3d7b.css",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/photo_upload_component_controller-2f4d8fd8.css",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						}
+					],
+					"count": "7",
+					"solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information.  If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request. </p>",
+					"otherinfo": "<p>In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.</p>",
+					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
+					"cweid": "524",
+					"wascid": "13",
+					"sourceid": "59"
+				},
+				{
+					"pluginid": "10031",
+					"alertRef": "10031",
+					"alert": "User Controllable HTML Element Attribute (Potential XSS)",
+					"name": "User Controllable HTML Element Attribute (Potential XSS)",
+					"riskcode": "0",
+					"confidence": "1",
+					"riskdesc": "Informational (Low)",
+					"desc": "<p>This check looks at user-supplied input in query string parameters and POST data to identify where certain HTML attribute values might be controlled. This provides hot-spot detection for XSS (cross-site scripting) that will require further review by a security analyst to determine exploitability.</p>",
+					"instances":[ 
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/users/sign_in?error=no_user_found&success=false&user%5Bemail%5D=foo-bar%40example.com",
+							"method": "GET",
+							"param": "success",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\r\n\r\nhttps://collectif-objets.beta.gouv.fr/users/sign_in?error=no_user_found&success=false&user%5Bemail%5D=foo-bar%40example.com\r\n\r\nappears to include user input in: \r\n\r\na(n) [button] tag [aria-expanded] attribute \r\n\r\nThe user input found was:\r\nsuccess=false\r\n\r\nThe user-controlled value was:\r\nfalse"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/users/sign_in?error=no_user_found&success=false&user%5Bemail%5D=foo-bar%40example.com",
+							"method": "GET",
+							"param": "success",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\r\n\r\nhttps://collectif-objets.beta.gouv.fr/users/sign_in?error=no_user_found&success=false&user%5Bemail%5D=foo-bar%40example.com\r\n\r\nappears to include user input in: \r\n\r\na(n) [button] tag [data-fr-opened] attribute \r\n\r\nThe user input found was:\r\nsuccess=false\r\n\r\nThe user-controlled value was:\r\nfalse"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/users/sign_in?error=no_user_found&success=false&user%5Bemail%5D=foo-bar%40example.com",
+							"method": "GET",
+							"param": "user[email]",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\r\n\r\nhttps://collectif-objets.beta.gouv.fr/users/sign_in?error=no_user_found&success=false&user%5Bemail%5D=foo-bar%40example.com\r\n\r\nappears to include user input in: \r\n\r\na(n) [input] tag [value] attribute \r\n\r\nThe user input found was:\r\nuser[email]=foo-bar@example.com\r\n\r\nThe user-controlled value was:\r\nfoo-bar@example.com"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/conservateurs/password",
+							"method": "POST",
+							"param": "commit",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\r\n\r\nhttps://collectif-objets.beta.gouv.fr/conservateurs/password\r\n\r\nappears to include user input in: \r\n\r\na(n) [input] tag [data-disable-with] attribute \r\n\r\nThe user input found was:\r\ncommit=Recevoir un lien de r\u00E9initialisation du mot de passe\r\n\r\nThe user-controlled value was:\r\nrecevoir un lien de r\u00E9initialisation du mot de passe"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/conservateurs/password",
+							"method": "POST",
+							"param": "commit",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\r\n\r\nhttps://collectif-objets.beta.gouv.fr/conservateurs/password\r\n\r\nappears to include user input in: \r\n\r\na(n) [input] tag [value] attribute \r\n\r\nThe user input found was:\r\ncommit=Recevoir un lien de r\u00E9initialisation du mot de passe\r\n\r\nThe user-controlled value was:\r\nrecevoir un lien de r\u00E9initialisation du mot de passe"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/conservateurs/password",
+							"method": "POST",
+							"param": "conservateur[email]",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\r\n\r\nhttps://collectif-objets.beta.gouv.fr/conservateurs/password\r\n\r\nappears to include user input in: \r\n\r\na(n) [input] tag [value] attribute \r\n\r\nThe user input found was:\r\nconservateur[email]=foo-bar@example.com\r\n\r\nThe user-controlled value was:\r\nfoo-bar@example.com"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/conservateurs/sign_in",
+							"method": "POST",
+							"param": "commit",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\r\n\r\nhttps://collectif-objets.beta.gouv.fr/conservateurs/sign_in\r\n\r\nappears to include user input in: \r\n\r\na(n) [input] tag [data-disable-with] attribute \r\n\r\nThe user input found was:\r\ncommit=Se connecter\r\n\r\nThe user-controlled value was:\r\nse connecter"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/conservateurs/sign_in",
+							"method": "POST",
+							"param": "commit",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\r\n\r\nhttps://collectif-objets.beta.gouv.fr/conservateurs/sign_in\r\n\r\nappears to include user input in: \r\n\r\na(n) [input] tag [value] attribute \r\n\r\nThe user input found was:\r\ncommit=Se connecter\r\n\r\nThe user-controlled value was:\r\nse connecter"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/conservateurs/sign_in",
+							"method": "POST",
+							"param": "conservateur[email]",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\r\n\r\nhttps://collectif-objets.beta.gouv.fr/conservateurs/sign_in\r\n\r\nappears to include user input in: \r\n\r\na(n) [input] tag [value] attribute \r\n\r\nThe user input found was:\r\nconservateur[email]=foo-bar@example.com\r\n\r\nThe user-controlled value was:\r\nfoo-bar@example.com"
+						}
+					],
+					"count": "9",
+					"solution": "<p>Validate all input and sanitize output it before writing to any HTML attributes.</p>",
+					"otherinfo": "<p>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:</p><p></p><p>https://collectif-objets.beta.gouv.fr/users/sign_in?error=no_user_found&success=false&user%5Bemail%5D=foo-bar%40example.com</p><p></p><p>appears to include user input in: </p><p></p><p>a(n) [button] tag [aria-expanded] attribute </p><p></p><p>The user input found was:</p><p>success=false</p><p></p><p>The user-controlled value was:</p><p>false</p>",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html</p>",
+					"cweid": "20",
+					"wascid": "20",
+					"sourceid": "1063"
+				}
+			]
+		}
+	]
+}

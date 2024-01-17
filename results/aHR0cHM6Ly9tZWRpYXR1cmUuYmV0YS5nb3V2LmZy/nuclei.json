@@ -1,0 +1,365 @@
+[
+  [
+    {
+      "template": "dns/mx-fingerprint.yaml",
+      "template-url": "https://templates.nuclei.sh/public/mx-fingerprint",
+      "template-id": "mx-fingerprint",
+      "template-path": "/home/runner/nuclei-templates/dns/mx-fingerprint.yaml",
+      "info": {
+        "name": "MX Record Detection",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "dns",
+          "mx"
+        ],
+        "description": "An MX record was detected. MX records direct emails to a mail exchange server.",
+        "reference": [
+          "https://www.cloudflare.com/learning/dns/dns-records/dns-mx-record/",
+          "https://mxtoolbox.com/"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ]
+        }
+      },
+      "type": "dns",
+      "host": "mediature.beta.gouv.fr.",
+      "matched-at": "mediature.beta.gouv.fr",
+      "extracted-results": [
+        "0 parse.mailjet.com."
+      ],
+      "request": ";; opcode: QUERY, status: NOERROR, id: 11567\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;mediature.beta.gouv.fr.\tIN\t MX\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 11567\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;mediature.beta.gouv.fr.\tIN\t MX\n\n;; ANSWER SECTION:\nmediature.beta.gouv.fr.\t300\tIN\tMX\t0 parse.mailjet.com.\n",
+      "timestamp": "2024-01-14T06:38:07.183134585Z",
+      "matcher-status": true
+    },
+    {
+      "template": "dns/dmarc-detect.yaml",
+      "template-url": "https://templates.nuclei.sh/public/dmarc-detect",
+      "template-id": "dmarc-detect",
+      "template-path": "/home/runner/nuclei-templates/dns/dmarc-detect.yaml",
+      "info": {
+        "name": "DNS DMARC - Detect",
+        "author": [
+          "juliosmelo"
+        ],
+        "tags": [
+          "dns",
+          "dmarc"
+        ],
+        "description": "DNS DMARC information was detected.\n",
+        "reference": [
+          "https://dmarc.org/",
+          "https://dmarc.org/wiki/faq#why_is_dmarc_important.3f"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ],
+          "cvss-metrics": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N"
+        }
+      },
+      "type": "dns",
+      "host": "mediature.beta.gouv.fr.",
+      "matched-at": "_dmarc.mediature.beta.gouv.fr",
+      "extracted-results": [
+        "\"v=DMARC1;p=none;\""
+      ],
+      "request": ";; opcode: QUERY, status: NOERROR, id: 61584\n;; flags: rd ad; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;_dmarc.mediature.beta.gouv.fr.\tIN\t TXT\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 61584\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;_dmarc.mediature.beta.gouv.fr.\tIN\t TXT\n\n;; ANSWER SECTION:\n_dmarc.mediature.beta.gouv.fr.\t300\tIN\tTXT\t\"v=DMARC1;p=none;\"\n",
+      "timestamp": "2024-01-14T06:38:07.280254913Z",
+      "matcher-status": true
+    },
+    {
+      "template": "dns/nameserver-fingerprint.yaml",
+      "template-url": "https://templates.nuclei.sh/public/nameserver-fingerprint",
+      "template-id": "nameserver-fingerprint",
+      "template-path": "/home/runner/nuclei-templates/dns/nameserver-fingerprint.yaml",
+      "info": {
+        "name": "NS Record Detection",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "dns",
+          "ns"
+        ],
+        "description": "An NS record was detected. An NS record delegates a subdomain to a set of name servers.",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ]
+        }
+      },
+      "type": "dns",
+      "host": "mediature.beta.gouv.fr.",
+      "matched-at": "mediature.beta.gouv.fr",
+      "extracted-results": [
+        "dns1.alwaysdata.com.",
+        "dns2.alwaysdata.com."
+      ],
+      "request": ";; opcode: QUERY, status: NOERROR, id: 29224\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;mediature.beta.gouv.fr.\tIN\t NS\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 29224\n;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;mediature.beta.gouv.fr.\tIN\t NS\n\n;; ANSWER SECTION:\nmediature.beta.gouv.fr.\t300\tIN\tNS\tdns1.alwaysdata.com.\nmediature.beta.gouv.fr.\t300\tIN\tNS\tdns2.alwaysdata.com.\n",
+      "timestamp": "2024-01-14T06:38:07.498133702Z",
+      "matcher-status": true
+    },
+    {
+      "template": "dns/txt-fingerprint.yaml",
+      "template-url": "https://templates.nuclei.sh/public/txt-fingerprint",
+      "template-id": "txt-fingerprint",
+      "template-path": "/home/runner/nuclei-templates/dns/txt-fingerprint.yaml",
+      "info": {
+        "name": "DNS TXT Record Detected",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "dns",
+          "txt"
+        ],
+        "description": "A DNS TXT record was detected. The TXT record lets a domain admin leave notes on a DNS server.",
+        "reference": [
+          "https://www.netspi.com/blog/technical/network-penetration-testing/analyzing-dns-txt-records-to-fingerprint-service-providers/"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ]
+        }
+      },
+      "type": "dns",
+      "host": "mediature.beta.gouv.fr.",
+      "matched-at": "mediature.beta.gouv.fr",
+      "extracted-results": [
+        "\"sendinblue-code:15754e1df38b862433eadf5bfaf41a3e\"",
+        "\"v=spf1 include:spf.mailjet.com include:spf.sendinblue.com mx ~all\""
+      ],
+      "request": ";; opcode: QUERY, status: NOERROR, id: 20718\n;; flags: rd ad; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;mediature.beta.gouv.fr.\tIN\t TXT\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 20718\n;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;mediature.beta.gouv.fr.\tIN\t TXT\n\n;; ANSWER SECTION:\nmediature.beta.gouv.fr.\t300\tIN\tTXT\t\"sendinblue-code:15754e1df38b862433eadf5bfaf41a3e\"\nmediature.beta.gouv.fr.\t300\tIN\tTXT\t\"v=spf1 include:spf.mailjet.com include:spf.sendinblue.com mx ~all\"\n",
+      "timestamp": "2024-01-14T06:38:08.189939133Z",
+      "matcher-status": true
+    },
+    {
+      "template": "dns/caa-fingerprint.yaml",
+      "template-url": "https://templates.nuclei.sh/public/caa-fingerprint",
+      "template-id": "caa-fingerprint",
+      "template-path": "/home/runner/nuclei-templates/dns/caa-fingerprint.yaml",
+      "info": {
+        "name": "CAA Record",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "dns",
+          "caa"
+        ],
+        "description": "A CAA record was discovered. A CAA record is used to specify which certificate authorities (CAs) are allowed to issue certificates for a domain.",
+        "reference": [
+          "https://support.dnsimple.com/articles/caa-record/#whats-a-caa-record"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ]
+        }
+      },
+      "type": "dns",
+      "host": "mediature.beta.gouv.fr.",
+      "matched-at": "mediature.beta.gouv.fr",
+      "request": ";; opcode: QUERY, status: NOERROR, id: 46355\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;mediature.beta.gouv.fr.\tIN\t CAA\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 46355\n;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;mediature.beta.gouv.fr.\tIN\t CAA\n\n;; AUTHORITY SECTION:\nmediature.beta.gouv.fr.\t300\tIN\tSOA\tdns1.alwaysdata.com. hostmaster.alwaysdata.com. 1681823281 3600 900 1209600 300\n",
+      "timestamp": "2024-01-14T06:38:08.323582207Z",
+      "matcher-status": true
+    },
+    {
+      "template": "http/miscellaneous/security-txt.yaml",
+      "template-url": "https://templates.nuclei.sh/public/security-txt",
+      "template-id": "security-txt",
+      "template-path": "/home/runner/nuclei-templates/http/miscellaneous/security-txt.yaml",
+      "info": {
+        "name": "security.txt File",
+        "author": [
+          "bad5ect0r",
+          "noraj"
+        ],
+        "tags": [
+          "misc",
+          "generic"
+        ],
+        "description": "File similar to robots.txt but intended to be read by humans wishing to contact a website’s owner about security issues. Often defines a security policy and contact details.\n",
+        "reference": [
+          "https://securitytxt.org/",
+          "https://community.turgensec.com/security-txt-progress-in-ethical-security-research/"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 2,
+          "shodan-query": "http.securitytxt:contact http.status:200",
+          "verified": true
+        }
+      },
+      "type": "http",
+      "host": "https://mediature.beta.gouv.fr",
+      "matched-at": "https://www.mediateur-public.fr/.well-known/security.txt",
+      "extracted-results": [
+        " https://github.com/inclusion-numerique/mediature/issues"
+      ],
+      "request": "GET /.well-known/security.txt HTTP/1.1\r\nHost: mediature.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 126\r\nContent-Security-Policy: default-src 'self';base-uri 'self';font-src 'self' https: data: https://client.crisp.chat/static/;form-action 'self';frame-ancestors 'self';img-src 'self' data: https://*.crisp.chat/;object-src 'none';script-src 'self' 'unsafe-inline' https://client.crisp.chat/;script-src-attr 'none';connect-src 'self' https://api-adresse.data.gouv.fr/ wss://client.relay.crisp.chat/ https://client.crisp.chat/static/ https://storage.crisp.chat/users/upload/ https://sentry.incubateur.net/;style-src 'self' https: 'unsafe-inline' https://client.crisp.chat/;upgrade-insecure-requests\r\nCross-Origin-Embedder-Policy: require-corp\r\nCross-Origin-Opener-Policy: same-origin\r\nCross-Origin-Resource-Policy: same-origin\r\nDate: Sun, 14 Jan 2024 06:39:08 GMT\r\nEtag: \"t6whg33fdl3i\"\r\nOrigin-Agent-Cluster: ?1\r\nReferrer-Policy: no-referrer\r\nStrict-Transport-Security: max-age=31536000\r\nStrict-Transport-Security: max-age=15552000; includeSubDomains\r\nX-Content-Type-Options: nosniff\r\nX-Dns-Prefetch-Control: off\r\nX-Download-Options: noopen\r\nX-Frame-Options: SAMEORIGIN\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Request-Id: 93ca6188-b175-489d-96eb-16e740197c23\r\nX-Xss-Protection: 0\r\n\r\nContact: https://github.com/inclusion-numerique/mediature/issues\nExpires: 2024-01-21T06:39:08.894Z\nPreferred-Languages: fr, en",
+      "ip": "148.253.96.193",
+      "timestamp": "2024-01-14T06:39:08.94526243Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mediature.beta.gouv.fr/.well-known/security.txt'",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/detect-ssl-issuer.yaml",
+      "template-url": "https://templates.nuclei.sh/public/ssl-issuer",
+      "template-id": "ssl-issuer",
+      "template-path": "/home/runner/nuclei-templates/ssl/detect-ssl-issuer.yaml",
+      "info": {
+        "name": "Detect SSL Certificate Issuer",
+        "author": [
+          "lingtren"
+        ],
+        "tags": [
+          "ssl",
+          "tls"
+        ],
+        "description": "Extract the issuer's organization from the target's certificate. Issuers are entities which sign and distribute certificates.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "ssl",
+      "host": "mediature.beta.gouv.fr",
+      "matched-at": "mediature.beta.gouv.fr:443",
+      "extracted-results": [
+        "Let's Encrypt"
+      ],
+      "ip": "148.253.96.193",
+      "timestamp": "2024-01-14T06:42:26.411665676Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/ssl-dns-names.yaml",
+      "template-url": "https://templates.nuclei.sh/public/ssl-dns-names",
+      "template-id": "ssl-dns-names",
+      "template-path": "/home/runner/nuclei-templates/ssl/ssl-dns-names.yaml",
+      "info": {
+        "name": "SSL DNS Names",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "ssl",
+          "tls"
+        ],
+        "description": "Extract the Subject Alternative Name (SAN) from the target's certificate. SAN facilitates the usage of additional hostnames with the same certificate.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "ssl",
+      "host": "mediature.beta.gouv.fr",
+      "matched-at": "mediature.beta.gouv.fr:443",
+      "extracted-results": [
+        "mediature.beta.gouv.fr"
+      ],
+      "ip": "148.253.96.193",
+      "timestamp": "2024-01-14T06:42:26.411777535Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/tls-version.yaml",
+      "template-url": "https://templates.nuclei.sh/public/tls-version",
+      "template-id": "tls-version",
+      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
+      "info": {
+        "name": "TLS Version - Detect",
+        "author": [
+          "pdteam",
+          "pussycat0x"
+        ],
+        "tags": [
+          "ssl",
+          "tls"
+        ],
+        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 4
+        }
+      },
+      "type": "ssl",
+      "host": "mediature.beta.gouv.fr",
+      "matched-at": "mediature.beta.gouv.fr:443",
+      "extracted-results": [
+        "tls12"
+      ],
+      "ip": "148.253.96.193",
+      "timestamp": "2024-01-14T06:42:27.999397098Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/tls-version.yaml",
+      "template-url": "https://templates.nuclei.sh/public/tls-version",
+      "template-id": "tls-version",
+      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
+      "info": {
+        "name": "TLS Version - Detect",
+        "author": [
+          "pdteam",
+          "pussycat0x"
+        ],
+        "tags": [
+          "ssl",
+          "tls"
+        ],
+        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 4
+        }
+      },
+      "type": "ssl",
+      "host": "mediature.beta.gouv.fr",
+      "matched-at": "mediature.beta.gouv.fr:443",
+      "extracted-results": [
+        "tls13"
+      ],
+      "ip": "148.253.96.193",
+      "timestamp": "2024-01-14T06:42:28.212695919Z",
+      "matcher-status": true
+    }
+  ]
+]

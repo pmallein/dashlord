@@ -1,0 +1,684 @@
+[
+  [
+    {
+      "template": "dns/caa-fingerprint.yaml",
+      "template-url": "https://templates.nuclei.sh/public/caa-fingerprint",
+      "template-id": "caa-fingerprint",
+      "template-path": "/home/runner/nuclei-templates/dns/caa-fingerprint.yaml",
+      "info": {
+        "name": "CAA Record",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "dns",
+          "caa"
+        ],
+        "description": "A CAA record was discovered. A CAA record is used to specify which certificate authorities (CAs) are allowed to issue certificates for a domain.",
+        "reference": [
+          "https://support.dnsimple.com/articles/caa-record/#whats-a-caa-record"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ]
+        }
+      },
+      "type": "dns",
+      "host": "mesevenementsemploi.pole-emploi.fr.",
+      "matched-at": "mesevenementsemploi.pole-emploi.fr",
+      "request": ";; opcode: QUERY, status: NOERROR, id: 6958\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;mesevenementsemploi.pole-emploi.fr.\tIN\t CAA\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 6958\n;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;mesevenementsemploi.pole-emploi.fr.\tIN\t CAA\n\n;; AUTHORITY SECTION:\npole-emploi.fr.\t1800\tIN\tSOA\tdns1.pole-emploi.fr. postmaster.pole-emploi.fr. 2014103094 21600 3600 3600000 86400\n",
+      "timestamp": "2024-01-14T07:13:41.077886384Z",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "cross-origin-embedder-policy",
+      "type": "http",
+      "host": "https://mesevenementsemploi.pole-emploi.fr",
+      "matched-at": "https://mesevenementsemploi.pole-emploi.fr/error/409.html",
+      "request": "GET / HTTP/1.1\r\nHost: mesevenementsemploi.pole-emploi.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 404 Not Found\r\nConnection: close\r\nContent-Length: 19\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 14 Jan 2024 07:14:32 GMT\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\n\r\n404 page not found\n",
+      "ip": "185.215.64.42",
+      "timestamp": "2024-01-14T07:14:32.902945659Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mesevenementsemploi.pole-emploi.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "cross-origin-opener-policy",
+      "type": "http",
+      "host": "https://mesevenementsemploi.pole-emploi.fr",
+      "matched-at": "https://mesevenementsemploi.pole-emploi.fr/error/409.html",
+      "request": "GET / HTTP/1.1\r\nHost: mesevenementsemploi.pole-emploi.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 404 Not Found\r\nConnection: close\r\nContent-Length: 19\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 14 Jan 2024 07:14:32 GMT\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\n\r\n404 page not found\n",
+      "ip": "185.215.64.42",
+      "timestamp": "2024-01-14T07:14:32.902984512Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mesevenementsemploi.pole-emploi.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "x-permitted-cross-domain-policies",
+      "type": "http",
+      "host": "https://mesevenementsemploi.pole-emploi.fr",
+      "matched-at": "https://mesevenementsemploi.pole-emploi.fr/error/409.html",
+      "request": "GET / HTTP/1.1\r\nHost: mesevenementsemploi.pole-emploi.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 404 Not Found\r\nConnection: close\r\nContent-Length: 19\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 14 Jan 2024 07:14:32 GMT\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\n\r\n404 page not found\n",
+      "ip": "185.215.64.42",
+      "timestamp": "2024-01-14T07:14:32.902996484Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mesevenementsemploi.pole-emploi.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "referrer-policy",
+      "type": "http",
+      "host": "https://mesevenementsemploi.pole-emploi.fr",
+      "matched-at": "https://mesevenementsemploi.pole-emploi.fr/error/409.html",
+      "request": "GET / HTTP/1.1\r\nHost: mesevenementsemploi.pole-emploi.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 404 Not Found\r\nConnection: close\r\nContent-Length: 19\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 14 Jan 2024 07:14:32 GMT\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\n\r\n404 page not found\n",
+      "ip": "185.215.64.42",
+      "timestamp": "2024-01-14T07:14:32.903005601Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mesevenementsemploi.pole-emploi.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "clear-site-data",
+      "type": "http",
+      "host": "https://mesevenementsemploi.pole-emploi.fr",
+      "matched-at": "https://mesevenementsemploi.pole-emploi.fr/error/409.html",
+      "request": "GET / HTTP/1.1\r\nHost: mesevenementsemploi.pole-emploi.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 404 Not Found\r\nConnection: close\r\nContent-Length: 19\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 14 Jan 2024 07:14:32 GMT\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\n\r\n404 page not found\n",
+      "ip": "185.215.64.42",
+      "timestamp": "2024-01-14T07:14:32.903020289Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mesevenementsemploi.pole-emploi.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "x-frame-options",
+      "type": "http",
+      "host": "https://mesevenementsemploi.pole-emploi.fr",
+      "matched-at": "https://mesevenementsemploi.pole-emploi.fr/error/409.html",
+      "request": "GET / HTTP/1.1\r\nHost: mesevenementsemploi.pole-emploi.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 404 Not Found\r\nConnection: close\r\nContent-Length: 19\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 14 Jan 2024 07:14:32 GMT\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\n\r\n404 page not found\n",
+      "ip": "185.215.64.42",
+      "timestamp": "2024-01-14T07:14:32.903035868Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mesevenementsemploi.pole-emploi.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "cross-origin-resource-policy",
+      "type": "http",
+      "host": "https://mesevenementsemploi.pole-emploi.fr",
+      "matched-at": "https://mesevenementsemploi.pole-emploi.fr/error/409.html",
+      "request": "GET / HTTP/1.1\r\nHost: mesevenementsemploi.pole-emploi.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 404 Not Found\r\nConnection: close\r\nContent-Length: 19\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 14 Jan 2024 07:14:32 GMT\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\n\r\n404 page not found\n",
+      "ip": "185.215.64.42",
+      "timestamp": "2024-01-14T07:14:32.90317069Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mesevenementsemploi.pole-emploi.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "strict-transport-security",
+      "type": "http",
+      "host": "https://mesevenementsemploi.pole-emploi.fr",
+      "matched-at": "https://mesevenementsemploi.pole-emploi.fr/error/409.html",
+      "request": "GET / HTTP/1.1\r\nHost: mesevenementsemploi.pole-emploi.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 404 Not Found\r\nConnection: close\r\nContent-Length: 19\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 14 Jan 2024 07:14:32 GMT\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\n\r\n404 page not found\n",
+      "ip": "185.215.64.42",
+      "timestamp": "2024-01-14T07:14:32.903186139Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mesevenementsemploi.pole-emploi.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "content-security-policy",
+      "type": "http",
+      "host": "https://mesevenementsemploi.pole-emploi.fr",
+      "matched-at": "https://mesevenementsemploi.pole-emploi.fr/error/409.html",
+      "request": "GET / HTTP/1.1\r\nHost: mesevenementsemploi.pole-emploi.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 404 Not Found\r\nConnection: close\r\nContent-Length: 19\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 14 Jan 2024 07:14:32 GMT\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\n\r\n404 page not found\n",
+      "ip": "185.215.64.42",
+      "timestamp": "2024-01-14T07:14:32.903205846Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mesevenementsemploi.pole-emploi.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "permissions-policy",
+      "type": "http",
+      "host": "https://mesevenementsemploi.pole-emploi.fr",
+      "matched-at": "https://mesevenementsemploi.pole-emploi.fr/error/409.html",
+      "request": "GET / HTTP/1.1\r\nHost: mesevenementsemploi.pole-emploi.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 404 Not Found\r\nConnection: close\r\nContent-Length: 19\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 14 Jan 2024 07:14:32 GMT\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\n\r\n404 page not found\n",
+      "ip": "185.215.64.42",
+      "timestamp": "2024-01-14T07:14:32.903222557Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mesevenementsemploi.pole-emploi.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/miscellaneous/external-service-interaction.yaml",
+      "template-url": "https://templates.nuclei.sh/public/external-service-interaction",
+      "template-id": "external-service-interaction",
+      "template-path": "/home/runner/nuclei-templates/http/miscellaneous/external-service-interaction.yaml",
+      "info": {
+        "name": "External Service Interaction",
+        "author": [
+          "andreluna"
+        ],
+        "tags": [
+          "http",
+          "misc",
+          "oast"
+        ],
+        "description": "External Service interaction via Host Header Injection.",
+        "reference": [
+          "https://portswigger.net/kb/issues/00300210_external-service-interaction-http",
+          "https://success.qualys.com/support/s/article/000006843",
+          "https://owasp.org/www-project-web-security-testing-guide/latest/4-web_application_security_testing/07-input_validation_testing/17-testing_for_host_header_injection"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-918",
+            "cwe-406"
+          ]
+        }
+      },
+      "type": "http",
+      "host": "https://mesevenementsemploi.pole-emploi.fr",
+      "matched-at": "https://mesevenementsemploi.pole-emploi.fr",
+      "request": "GET / HTTP/1.1\r\nHost: cmhoj9mm7tivat5p0uj0bopk97djezur1.oast.me\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.0 301 Moved Permanently\r\nConnection: close\r\nLocation: https://cmhoj9mm7tivat5p0uj0bopk97djezur1.oast.me/mes-evenements-emploi/\r\nServer: BigIP\r\nContent-Length: 0\r\n\r\n",
+      "ip": "185.215.64.42",
+      "timestamp": "2024-01-14T07:14:48.27950285Z",
+      "interaction": {
+        "protocol": "dns",
+        "unique-id": "cmhoj9mm7tivat5p0uj0bopk97djezur1",
+        "full-id": "cmhoj9mm7tivat5p0uj0bopk97djezur1",
+        "q-type": "A",
+        "raw-request": ";; opcode: QUERY, status: NOERROR, id: 46522\n;; flags:; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags: do; udp: 1452\n\n;; QUESTION SECTION:\n;cmhoj9mm7tivat5p0uj0bopk97djezur1.oast.me.\tIN\t A\n",
+        "raw-response": ";; opcode: QUERY, status: NOERROR, id: 46522\n;; flags: qr aa; QUERY: 1, ANSWER: 1, AUTHORITY: 2, ADDITIONAL: 2\n\n;; QUESTION SECTION:\n;cmhoj9mm7tivat5p0uj0bopk97djezur1.oast.me.\tIN\t A\n\n;; ANSWER SECTION:\ncmhoj9mm7tivat5p0uj0bopk97djezur1.oast.me.\t3600\tIN\tA\t178.128.209.14\n\n;; AUTHORITY SECTION:\ncmhoj9mm7tivat5p0uj0bopk97djezur1.oast.me.\t3600\tIN\tNS\tns1.oast.me.\ncmhoj9mm7tivat5p0uj0bopk97djezur1.oast.me.\t3600\tIN\tNS\tns2.oast.me.\n\n;; ADDITIONAL SECTION:\nns1.oast.me.\t3600\tIN\tA\t178.128.209.14\nns2.oast.me.\t3600\tIN\tA\t178.128.209.14\n",
+        "remote-address": "172.70.33.166",
+        "timestamp": "2024-01-14T07:14:43.551047619Z"
+      },
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Host: cmhoj9mm7tivat5p0uj0bopk97djezur1.oast.me' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mesevenementsemploi.pole-emploi.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/technologies/bigip-detect.yaml",
+      "template-url": "https://templates.nuclei.sh/public/bigip-detect",
+      "template-id": "bigip-detect",
+      "template-path": "/home/runner/nuclei-templates/http/technologies/bigip-detect.yaml",
+      "info": {
+        "name": "BIGIP - Detection",
+        "author": [
+          "pr3r00t",
+          "0x240x23elu"
+        ],
+        "tags": [
+          "bigip",
+          "tech",
+          "f5"
+        ],
+        "reference": [
+          "https://www.intelisecure.com/how-to-decode-big-ip-f5-persistence-cookie-values",
+          "https://support.f5.com/csp/article/k23254150"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 2
+        }
+      },
+      "type": "http",
+      "host": "https://mesevenementsemploi.pole-emploi.fr",
+      "matched-at": "https://mesevenementsemploi.pole-emploi.fr",
+      "request": "GET / HTTP/1.1\r\nHost: mesevenementsemploi.pole-emploi.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.0 301 Moved Permanently\r\nConnection: close\r\nLocation: https://mesevenementsemploi.pole-emploi.fr/mes-evenements-emploi/\r\nServer: BigIP\r\nContent-Length: 0\r\n\r\n",
+      "ip": "185.215.64.42",
+      "timestamp": "2024-01-14T07:14:55.275235452Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mesevenementsemploi.pole-emploi.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/technologies/waf-detect.yaml",
+      "template-url": "https://templates.nuclei.sh/public/waf-detect",
+      "template-id": "waf-detect",
+      "template-path": "/home/runner/nuclei-templates/http/technologies/waf-detect.yaml",
+      "info": {
+        "name": "WAF Detection",
+        "author": [
+          "dwisiswant0",
+          "lu4nx"
+        ],
+        "tags": [
+          "waf",
+          "tech",
+          "misc"
+        ],
+        "description": "A web application firewall was detected.",
+        "reference": [
+          "https://github.com/ekultek/whatwaf"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ]
+        }
+      },
+      "matcher-name": "bigip",
+      "type": "http",
+      "host": "https://mesevenementsemploi.pole-emploi.fr",
+      "matched-at": "https://mesevenementsemploi.pole-emploi.fr/",
+      "request": "POST / HTTP/1.1\r\nHost: mesevenementsemploi.pole-emploi.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nContent-Length: 27\r\nContent-Type: application/x-www-form-urlencoded\r\nAccept-Encoding: gzip\r\n\r\n_=<script>alert(1)</script>",
+      "response": "HTTP/1.0 301 Moved Permanently\r\nContent-Length: 0\r\nConnection: close\r\nLocation: https://mesevenementsemploi.pole-emploi.fr/mes-evenements-emploi/\r\nServer: BigIP\r\n\r\n",
+      "ip": "185.215.64.42",
+      "timestamp": "2024-01-14T07:14:59.095442089Z",
+      "curl-command": "curl -X 'POST' -d '_=<script>alert(1)</script>' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Host: mesevenementsemploi.pole-emploi.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mesevenementsemploi.pole-emploi.fr/'",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/detect-ssl-issuer.yaml",
+      "template-url": "https://templates.nuclei.sh/public/ssl-issuer",
+      "template-id": "ssl-issuer",
+      "template-path": "/home/runner/nuclei-templates/ssl/detect-ssl-issuer.yaml",
+      "info": {
+        "name": "Detect SSL Certificate Issuer",
+        "author": [
+          "lingtren"
+        ],
+        "tags": [
+          "ssl",
+          "tls"
+        ],
+        "description": "Extract the issuer's organization from the target's certificate. Issuers are entities which sign and distribute certificates.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "ssl",
+      "host": "mesevenementsemploi.pole-emploi.fr",
+      "matched-at": "mesevenementsemploi.pole-emploi.fr:443",
+      "extracted-results": [
+        "Entrust, Inc."
+      ],
+      "ip": "185.215.64.42",
+      "timestamp": "2024-01-14T07:19:40.226995995Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/ssl-dns-names.yaml",
+      "template-url": "https://templates.nuclei.sh/public/ssl-dns-names",
+      "template-id": "ssl-dns-names",
+      "template-path": "/home/runner/nuclei-templates/ssl/ssl-dns-names.yaml",
+      "info": {
+        "name": "SSL DNS Names",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "ssl",
+          "tls"
+        ],
+        "description": "Extract the Subject Alternative Name (SAN) from the target's certificate. SAN facilitates the usage of additional hostnames with the same certificate.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "ssl",
+      "host": "mesevenementsemploi.pole-emploi.fr",
+      "matched-at": "mesevenementsemploi.pole-emploi.fr:443",
+      "extracted-results": [
+        "mesevenementsemploi.pole-emploi.fr",
+        "www.mesevenementsemploi.pole-emploi.fr"
+      ],
+      "ip": "185.215.64.42",
+      "timestamp": "2024-01-14T07:19:40.227138491Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/tls-version.yaml",
+      "template-url": "https://templates.nuclei.sh/public/tls-version",
+      "template-id": "tls-version",
+      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
+      "info": {
+        "name": "TLS Version - Detect",
+        "author": [
+          "pdteam",
+          "pussycat0x"
+        ],
+        "tags": [
+          "ssl",
+          "tls"
+        ],
+        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 4
+        }
+      },
+      "type": "ssl",
+      "host": "mesevenementsemploi.pole-emploi.fr",
+      "matched-at": "mesevenementsemploi.pole-emploi.fr:443",
+      "extracted-results": [
+        "tls12"
+      ],
+      "ip": "185.215.64.42",
+      "timestamp": "2024-01-14T07:19:43.30568723Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/tls-version.yaml",
+      "template-url": "https://templates.nuclei.sh/public/tls-version",
+      "template-id": "tls-version",
+      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
+      "info": {
+        "name": "TLS Version - Detect",
+        "author": [
+          "pdteam",
+          "pussycat0x"
+        ],
+        "tags": [
+          "ssl",
+          "tls"
+        ],
+        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 4
+        }
+      },
+      "type": "ssl",
+      "host": "mesevenementsemploi.pole-emploi.fr",
+      "matched-at": "mesevenementsemploi.pole-emploi.fr:443",
+      "extracted-results": [
+        "tls13"
+      ],
+      "ip": "185.215.64.42",
+      "timestamp": "2024-01-14T07:19:43.517679031Z",
+      "matcher-status": true
+    }
+  ]
+]

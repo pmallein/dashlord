@@ -1,0 +1,531 @@
+{
+	"@programName": "ZAP",
+	"@version": "2.14.0",
+	"@generated": "Sun, 14 Jan 2024 07:23:20",
+	"site":[ 
+		{
+			"@name": "https://mobilic.beta.gouv.fr",
+			"@host": "mobilic.beta.gouv.fr",
+			"@port": "443",
+			"@ssl": "true",
+			"alerts": [ 
+				{
+					"pluginid": "10038",
+					"alertRef": "10038-1",
+					"alert": "Content Security Policy (CSP) Header Not Set",
+					"name": "Content Security Policy (CSP) Header Not Set",
+					"riskcode": "2",
+					"confidence": "3",
+					"riskdesc": "Medium (High)",
+					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
+					"instances":[ 
+						{
+							"uri": "https://mobilic.beta.gouv.fr",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://mobilic.beta.gouv.fr/robots.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://mobilic.beta.gouv.fr/sitemap.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						}
+					],
+					"count": "3",
+					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>http://www.w3.org/TR/CSP/</p><p>http://w3c.github.io/webappsec/specs/content-security-policy/csp-specification.dev.html</p><p>http://www.html5rocks.com/en/tutorials/security/content-security-policy/</p><p>http://caniuse.com/#feat=contentsecuritypolicy</p><p>http://content-security-policy.com/</p>",
+					"cweid": "693",
+					"wascid": "15",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "90003",
+					"alertRef": "90003",
+					"alert": "Sub Resource Integrity Attribute Missing",
+					"name": "Sub Resource Integrity Attribute Missing",
+					"riskcode": "2",
+					"confidence": "3",
+					"riskdesc": "Medium (High)",
+					"desc": "<p>The integrity attribute is missing on a script or link tag served by an external server. The integrity tag prevents an attacker who have gained access to this server from injecting a malicious content. </p>",
+					"instances":[ 
+						{
+							"uri": "https://mobilic.beta.gouv.fr",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<link href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap\"rel=\"stylesheet\">",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://mobilic.beta.gouv.fr/robots.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<link href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap\"rel=\"stylesheet\">",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://mobilic.beta.gouv.fr/sitemap.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<link href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap\"rel=\"stylesheet\">",
+							"otherinfo": ""
+						}
+					],
+					"count": "3",
+					"solution": "<p>Provide a valid integrity attribute to the tag.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity</p>",
+					"cweid": "345",
+					"wascid": "15",
+					"sourceid": "6"
+				},
+				{
+					"pluginid": "10063",
+					"alertRef": "10063-1",
+					"alert": "Permissions Policy Header Not Set",
+					"name": "Permissions Policy Header Not Set",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Low (Medium)",
+					"desc": "<p>Permissions Policy Header is an added layer of security that helps to restrict from unauthorized access or usage of browser/client features by web resources. This policy ensures the user privacy by limiting or specifying the features of the browsers can be used by the web resources. Permissions Policy provides a set of standard HTTP headers that allow website owners to limit which features of browsers can be used by the page such as camera, microphone, location, full screen etc.</p>",
+					"instances":[ 
+						{
+							"uri": "https://mobilic.beta.gouv.fr",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://mobilic.beta.gouv.fr/robots.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://mobilic.beta.gouv.fr/sitemap.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						}
+					],
+					"count": "3",
+					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Permissions-Policy header.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy</p><p>https://developer.chrome.com/blog/feature-policy/</p><p>https://scotthelme.co.uk/a-new-security-header-feature-policy/</p><p>https://w3c.github.io/webappsec-feature-policy/</p><p>https://www.smashingmagazine.com/2018/12/feature-policy/</p>",
+					"cweid": "693",
+					"wascid": "15",
+					"sourceid": "6"
+				},
+				{
+					"pluginid": "10094",
+					"alertRef": "10094-3",
+					"alert": "Base64 Disclosure",
+					"name": "Base64 Disclosure",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
+					"desc": "<p>Base64 encoded data was disclosed by the application/web server. Note: in the interests of performance not all base64 strings in the response were analyzed individually, the entire response should be looked at by the analyst/security team/developer(s).</p>",
+					"instances":[ 
+						{
+							"uri": "https://mobilic.beta.gouv.fr",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "hMt7m9SkFxX9AnOBdx_jAVh5t3LdGmKKJ1C24rVYv_FWujitObAfxQ7FbePqpWjAI5mseshoY0N6zZw0yai2CpB2-EHvhJ3Nq031RNRfd_HHMM_QxBZbiU56xyrbYISD1_jT2Soe3NzQ91jSNYdyHFQImYLYh8ZWcMSOxQ2gZnzXmqMRKSMo5xY9kh7gvO07i71niDk0kXx5Z5kHZN7EsaaZ1x4jyGCIksEdexLRw3NlrRaGSuoOSBiY6_RseF81",
+							"otherinfo": "\uFFFD\uFFFD{\uFFFD\u0524\\x0017\\x0015\uFFFD\\x0002s\uFFFDw\\x001f\uFFFD\\x0001Xy\uFFFDr\uFFFD\\x001ab\uFFFD'P\uFFFD\uFFFDX\uFFFD\uFFFDV\uFFFD8\uFFFD9\uFFFD\\x001f\uFFFD\\x000e\uFFFDm\uFFFD\uFFFDh\uFFFD#\uFFFD\uFFFDz\uFFFDhcCz\u035C4\u0268\uFFFD\n\uFFFDv\uFFFDA\uF11D\u036BM\uFFFDD\uFFFD_w\uFFFD\uFFFD0\uFFFD\uFFFD\uFFFD\\x0016[\uFFFDNz\uFFFD*\uFFFD`\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD*\\x001e\uFFFD\uFFFD\uFFFD\uFFFDX\uFFFD5\uFFFDr\\x001cT\\x0008\uFFFD\uFFFD\u0607\uFFFDVp\u010E\uFFFD\r\uFFFDf|\u05DA\uFFFD\\x0011)#(\uFFFD\\x0016=\uFFFD\\x001e\uFFFD\uFFFD;\uFFFD\uFFFDg\uFFFD94\uFFFD|yg\uFFFD\\x0007d\uFFFD\u0131\uFFFD\uFFFD\uFFFD\\x001e#\uFFFD`\uFFFD\uFFFD\uFFFD\\x001d{\\x0012\uFFFD\uFFFDse\uFFFD\\x0016\uFFFDJ\uFFFD\\x000eH\\x0018\uFFFD\uFFFD\uFFFDlx_5"
+						},
+						{
+							"uri": "https://mobilic.beta.gouv.fr",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "nfX0idsJ2QFMv05P4s4qZcipJ1kkbTDMil1pw7-pl2G33gcO-23idt5dH1PZzPgUMc_SljpA0O0Lkdz41dYjVjcO1bREz21fAv0jdCzXuKY8dBkyqEuUq7UXmEnMAgccamQWE0802gSYpg4uViHaV8ANShtculnwehLPMYWpmH_aVh6dVt7TOnT9hvNi6Fyw4ctIRW2MwxEiHGwkP8jugE9-W5uyTjLdo2iHcETRzrtzt3xR7AwxcH_RK5W-9mIB",
+							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\t\uFFFD\\x0001L\uFFFDNO\uFFFD\uFFFD*e\u0229'Y$m0\u030A]i\u00FF\uFFFD\uFFFDa\uFFFD\uFFFD\\x0007\\x000e\uFFFDm\uFFFDv\uFFFD]\\x001fS\uFFFD\uFFFD\uFFFD\\x00141\uFFFD\u0496:@\uFFFD\uFFFD\\x000b\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD#V7\\x000e\u0574D\uFFFDm_\\x0002\uFFFD#t,\u05F8\uFFFD<t\\x00192\uFFFDK\uFFFD\uFFFD\uFFFD\\x0017\uFFFDI\uFFFD\\x0002\\x0007\\x001cjd\\x0016\\x0013O4\uFFFD\\x0004\uFFFD\uFFFD\\x000e.V!\uFFFDW\uFFFD\rJ\\x001b\\\uFFFDY\uFFFDz\\x0012\uFFFD1\uFFFD\uFFFD\uFFFD\uFFFDV\\x001e\uFFFDV\uFFFD\uFFFD:t\uFFFD\uFFFD\uFFFDb\uFFFD\\\uFFFD\uFFFD\uFFFDHEm\uFFFD\uFFFD\\x0011\"\\x001cl$?\uFFFD\uFFFDO~[\uFFFD\uFFFDN2\u0763h\uFFFDpD\uFFFD\u03BBs\uFFFD|Q\uFFFD\\x000c1p\uFFFD+\uFFFD\uFFFD\uFFFDb\\x0001"
+						},
+						{
+							"uri": "https://mobilic.beta.gouv.fr/robots.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "8X-ZEyC27UxRwgek1s-dx2WDY2-XtRf3TPe6nQBoj0m_-aLNp3VhvjnI2LeXFHTDzjeFSdrqd_jMFSr4mePK4c07TD1wHopU23-arR9CQUdYteoPRRUNXxC17tUJawmzVx0Bz7hvYgs30Nx4sNHXpD8UymfPT5qUWfw08tl0smpD_JGAeE1azgsgjoN3I69Xsk5tlw1HrDc8k2QkV7I3xKapPzZrp5zw81C9t88IW3VrrTWX7fK-ep_RKH_MTM2C",
+							"otherinfo": "\uFFFD\uFFFD\\x0013 \uFFFD\uFFFDLQ\uFFFD\\x0007\uFFFD\uFFFD\u03DD\uFFFDe\uFFFDco\uFFFD\uFFFD\\x0017\uFFFDL\uFFFD\uFFFD\uFFFD\\x0000h\uFFFDI\uFFFD\uFFFD\uFFFD\u0367ua\uFFFD9\uFFFD\u0637\uFFFD\\x0014t\uFFFD\uFFFD7\uFFFDI\uFFFD\uFFFDw\uFFFD\uFFFD\\x0015*\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD;L=p\\x001e\uFFFDT\uFFFD\uFFFD\uFFFD\\x001fBAGX\uFFFD\uFFFD\\x000fE\\x0015\r_\\x0010\uFFFD\uFFFD\uFFFD\tk\t\uFFFDW\\x001d\\x0001\u03F8ob\\x000b7\uFFFD\uFFFDx\uFFFD\uFFFD\u05E4?\\x0014\uFFFDg\uFFFDO\uFFFD\uFFFDY\uFFFD4\uFFFD\uFFFDt\uFFFDjC\uFFFD\uFFFD\uFFFDxMZ\uFFFD\\x000b \uFFFD\uFFFDw#\uFFFDW\uFFFDNm\uFFFD\rG\uFFFD7<\uFFFDd$W\uFFFD7\u0126\uFFFD?6k\uFFFD\uFFFD\uFFFD\uFFFDP\uFFFD\uFFFD\uFFFD\\x0008[uk\uFFFD5\uFFFD\uFFFD\uFFFDz\uFFFD\uFFFD(\uFFFDL\u0342"
+						},
+						{
+							"uri": "https://mobilic.beta.gouv.fr/sitemap.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "8X-ZEyC27UxRwgek1s-dx2WDY2-XtRf3TPe6nQBoj0m_-aLNp3VhvjnI2LeXFHTDzjeFSdrqd_jMFSr4mePK4c07TD1wHopU23-arR9CQUdYteoPRRUNXxC17tUJawmzVx0Bz7hvYgs30Nx4sNHXpD8UymfPT5qUWfw08tl0smpD_JGAeE1azgsgjoN3I69Xsk5tlw1HrDc8k2QkV7I3xKapPzZrp5zw81C9t88IW3VrrTWX7fK-ep_RKH_MTM2C",
+							"otherinfo": "\uFFFD\uFFFD\\x0013 \uFFFD\uFFFDLQ\uFFFD\\x0007\uFFFD\uFFFD\u03DD\uFFFDe\uFFFDco\uFFFD\uFFFD\\x0017\uFFFDL\uFFFD\uFFFD\uFFFD\\x0000h\uFFFDI\uFFFD\uFFFD\uFFFD\u0367ua\uFFFD9\uFFFD\u0637\uFFFD\\x0014t\uFFFD\uFFFD7\uFFFDI\uFFFD\uFFFDw\uFFFD\uFFFD\\x0015*\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD;L=p\\x001e\uFFFDT\uFFFD\uFFFD\uFFFD\\x001fBAGX\uFFFD\uFFFD\\x000fE\\x0015\r_\\x0010\uFFFD\uFFFD\uFFFD\tk\t\uFFFDW\\x001d\\x0001\u03F8ob\\x000b7\uFFFD\uFFFDx\uFFFD\uFFFD\u05E4?\\x0014\uFFFDg\uFFFDO\uFFFD\uFFFDY\uFFFD4\uFFFD\uFFFDt\uFFFDjC\uFFFD\uFFFD\uFFFDxMZ\uFFFD\\x000b \uFFFD\uFFFDw#\uFFFDW\uFFFDNm\uFFFD\rG\uFFFD7<\uFFFDd$W\uFFFD7\u0126\uFFFD?6k\uFFFD\uFFFD\uFFFD\uFFFDP\uFFFD\uFFFD\uFFFD\\x0008[uk\uFFFD5\uFFFD\uFFFD\uFFFDz\uFFFD\uFFFD(\uFFFDL\u0342"
+						}
+					],
+					"count": "4",
+					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
+					"otherinfo": "<p>\uFFFD\uFFFD{\uFFFD\u0524\\x0017\\x0015\uFFFD\\x0002s\uFFFDw\\x001f\uFFFD\\x0001Xy\uFFFDr\uFFFD\\x001ab\uFFFD'P\uFFFD\uFFFDX\uFFFD\uFFFDV\uFFFD8\uFFFD9\uFFFD\\x001f\uFFFD\\x000e\uFFFDm\uFFFD\uFFFDh\uFFFD#\uFFFD\uFFFDz\uFFFDhcCz\u035C4\u0268\uFFFD</p><p>\uFFFDv\uFFFDA\uF11D\u036BM\uFFFDD\uFFFD_w\uFFFD\uFFFD0\uFFFD\uFFFD\uFFFD\\x0016[\uFFFDNz\uFFFD*\uFFFD`\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD*\\x001e\uFFFD\uFFFD\uFFFD\uFFFDX\uFFFD5\uFFFDr\\x001cT\\x0008\uFFFD\uFFFD\u0607\uFFFDVp\u010E\uFFFD\r\uFFFDf|\u05DA\uFFFD\\x0011)#(\uFFFD\\x0016=\uFFFD\\x001e\uFFFD\uFFFD;\uFFFD\uFFFDg\uFFFD94\uFFFD|yg\uFFFD\\x0007d\uFFFD\u0131\uFFFD\uFFFD\uFFFD\\x001e#\uFFFD`\uFFFD\uFFFD\uFFFD\\x001d{\\x0012\uFFFD\uFFFDse\uFFFD\\x0016\uFFFDJ\uFFFD\\x000eH\\x0018\uFFFD\uFFFD\uFFFDlx_5</p>",
+					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
+					"cweid": "200",
+					"wascid": "13",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "10109",
+					"alertRef": "10109",
+					"alert": "Modern Web Application",
+					"name": "Modern Web Application",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
+					"desc": "<p>The application appears to be a modern web application. If you need to explore it automatically then the Ajax Spider may well be more effective than the standard one.</p>",
+					"instances":[ 
+						{
+							"uri": "https://mobilic.beta.gouv.fr",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<noscript><div class=\"challengejs-container\"><div class=\"container\"><div class=\"challengejs-body\"><div class=\"challengejs-card\"><img src=\"/.well-known/baleen/challengejs/assets/logo.svg\"><div class=\"challengejs-message-1\">Le JavaScript n'est pas activ\u00E9 sur votre navigateur.</div><div class=\"separator\"></div><div class=\"challengejs-message-2\">Le JavaScript n'est pas activ\u00E9 sur votre navigateur. Pour vous permettre de naviguer correctement sur notre site, il est n\u00E9cessaire qu'il soit activ\u00E9.</div><div class=\"challengejs-message-3\"><div class=\"how\"><span>Comment activer le JavaScript ?</span></div><div class=\"drop\"><div class=\"how-to chrome\"><div>Chrome</div><a href=\"https://support.google.com/chrome\">https://support.google.com/chrome</a></div><div class=\"how-to firefox\"><div>Mozilla Firefox</div><a href=\"https://support.mozilla.org/fr/home\">https://support.mozilla.org/fr/home</a></div><div class=\"how-to safari\"><div>Safari</div><a href=\"https://www.apple.com/support/safari/\">https://www.apple.com/support/safari/</a></div><div class=\"how-to opera\"><div>Opera</div><a href=\"https://support.google.com/adsense/answer/12654?hl=fr\">https://support.google.com/adsense/answer/12654?hl=fr</a></div><div class=\"how-to explorer\"><div>Internet Explorer</div><a href=\"https://support.microsoft.com/product/internet-explorer\">https://support.microsoft.com/product/internet-explorer</a></div></div></div></div></div></div></div></noscript>",
+							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
+						},
+						{
+							"uri": "https://mobilic.beta.gouv.fr/robots.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<noscript><div class=\"challengejs-container\"><div class=\"container\"><div class=\"challengejs-body\"><div class=\"challengejs-card\"><img src=\"/.well-known/baleen/challengejs/assets/logo.svg\"><div class=\"challengejs-message-1\">Le JavaScript n'est pas activ\u00E9 sur votre navigateur.</div><div class=\"separator\"></div><div class=\"challengejs-message-2\">Le JavaScript n'est pas activ\u00E9 sur votre navigateur. Pour vous permettre de naviguer correctement sur notre site, il est n\u00E9cessaire qu'il soit activ\u00E9.</div><div class=\"challengejs-message-3\"><div class=\"how\"><span>Comment activer le JavaScript ?</span></div><div class=\"drop\"><div class=\"how-to chrome\"><div>Chrome</div><a href=\"https://support.google.com/chrome\">https://support.google.com/chrome</a></div><div class=\"how-to firefox\"><div>Mozilla Firefox</div><a href=\"https://support.mozilla.org/fr/home\">https://support.mozilla.org/fr/home</a></div><div class=\"how-to safari\"><div>Safari</div><a href=\"https://www.apple.com/support/safari/\">https://www.apple.com/support/safari/</a></div><div class=\"how-to opera\"><div>Opera</div><a href=\"https://support.google.com/adsense/answer/12654?hl=fr\">https://support.google.com/adsense/answer/12654?hl=fr</a></div><div class=\"how-to explorer\"><div>Internet Explorer</div><a href=\"https://support.microsoft.com/product/internet-explorer\">https://support.microsoft.com/product/internet-explorer</a></div></div></div></div></div></div></div></noscript>",
+							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
+						},
+						{
+							"uri": "https://mobilic.beta.gouv.fr/sitemap.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<noscript><div class=\"challengejs-container\"><div class=\"container\"><div class=\"challengejs-body\"><div class=\"challengejs-card\"><img src=\"/.well-known/baleen/challengejs/assets/logo.svg\"><div class=\"challengejs-message-1\">Le JavaScript n'est pas activ\u00E9 sur votre navigateur.</div><div class=\"separator\"></div><div class=\"challengejs-message-2\">Le JavaScript n'est pas activ\u00E9 sur votre navigateur. Pour vous permettre de naviguer correctement sur notre site, il est n\u00E9cessaire qu'il soit activ\u00E9.</div><div class=\"challengejs-message-3\"><div class=\"how\"><span>Comment activer le JavaScript ?</span></div><div class=\"drop\"><div class=\"how-to chrome\"><div>Chrome</div><a href=\"https://support.google.com/chrome\">https://support.google.com/chrome</a></div><div class=\"how-to firefox\"><div>Mozilla Firefox</div><a href=\"https://support.mozilla.org/fr/home\">https://support.mozilla.org/fr/home</a></div><div class=\"how-to safari\"><div>Safari</div><a href=\"https://www.apple.com/support/safari/\">https://www.apple.com/support/safari/</a></div><div class=\"how-to opera\"><div>Opera</div><a href=\"https://support.google.com/adsense/answer/12654?hl=fr\">https://support.google.com/adsense/answer/12654?hl=fr</a></div><div class=\"how-to explorer\"><div>Internet Explorer</div><a href=\"https://support.microsoft.com/product/internet-explorer\">https://support.microsoft.com/product/internet-explorer</a></div></div></div></div></div></div></div></noscript>",
+							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
+						}
+					],
+					"count": "3",
+					"solution": "<p>This is an informational alert and so no changes are required.</p>",
+					"otherinfo": "<p>A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not.</p>",
+					"reference": "",
+					"cweid": "-1",
+					"wascid": "-1",
+					"sourceid": "6"
+				},
+				{
+					"pluginid": "10015",
+					"alertRef": "10015",
+					"alert": "Re-examine Cache-control Directives",
+					"name": "Re-examine Cache-control Directives",
+					"riskcode": "0",
+					"confidence": "1",
+					"riskdesc": "Informational (Low)",
+					"desc": "<p>The cache-control header has not been set properly or is missing, allowing the browser and proxies to cache content. For static assets like css, js, or image files this might be intended, however, the resources should be reviewed to ensure that no sensitive content will be cached.</p>",
+					"instances":[ 
+						{
+							"uri": "https://mobilic.beta.gouv.fr",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "no-cache",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://mobilic.beta.gouv.fr/robots.txt",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "no-cache",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://mobilic.beta.gouv.fr/sitemap.xml",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "no-cache",
+							"otherinfo": ""
+						}
+					],
+					"count": "3",
+					"solution": "<p>For secure content, ensure the cache-control HTTP header is set with \"no-cache, no-store, must-revalidate\". If an asset should be cached consider setting the directives \"public, max-age, immutable\".</p>",
+					"otherinfo": "",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control</p><p>https://grayduck.mn/2021/09/13/cache-control-recommendations/</p>",
+					"cweid": "525",
+					"wascid": "13",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "90005",
+					"alertRef": "90005-3",
+					"alert": "Sec-Fetch-Dest Header is Missing",
+					"name": "Sec-Fetch-Dest Header is Missing",
+					"riskcode": "0",
+					"confidence": "3",
+					"riskdesc": "Informational (High)",
+					"desc": "<p>Specifies how and where the data would be used. For instance, if the value is audio, then the requested resource must be audio data and not any other type of resource.</p>",
+					"instances":[ 
+						{
+							"uri": "https://mobilic.beta.gouv.fr",
+							"method": "GET",
+							"param": "Sec-Fetch-Dest",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://mobilic.beta.gouv.fr/robots.txt",
+							"method": "GET",
+							"param": "Sec-Fetch-Dest",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://mobilic.beta.gouv.fr/sitemap.xml",
+							"method": "GET",
+							"param": "Sec-Fetch-Dest",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						}
+					],
+					"count": "3",
+					"solution": "<p>Ensure that Sec-Fetch-Dest header is included in request headers.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
+					"cweid": "352",
+					"wascid": "9",
+					"sourceid": "6"
+				},
+				{
+					"pluginid": "90005",
+					"alertRef": "90005-2",
+					"alert": "Sec-Fetch-Mode Header is Missing",
+					"name": "Sec-Fetch-Mode Header is Missing",
+					"riskcode": "0",
+					"confidence": "3",
+					"riskdesc": "Informational (High)",
+					"desc": "<p>Allows to differentiate between requests for navigating between HTML pages and requests for loading resources like images, audio etc.</p>",
+					"instances":[ 
+						{
+							"uri": "https://mobilic.beta.gouv.fr",
+							"method": "GET",
+							"param": "Sec-Fetch-Mode",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://mobilic.beta.gouv.fr/robots.txt",
+							"method": "GET",
+							"param": "Sec-Fetch-Mode",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://mobilic.beta.gouv.fr/sitemap.xml",
+							"method": "GET",
+							"param": "Sec-Fetch-Mode",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						}
+					],
+					"count": "3",
+					"solution": "<p>Ensure that Sec-Fetch-Mode header is included in request headers.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
+					"cweid": "352",
+					"wascid": "9",
+					"sourceid": "6"
+				},
+				{
+					"pluginid": "90005",
+					"alertRef": "90005-1",
+					"alert": "Sec-Fetch-Site Header is Missing",
+					"name": "Sec-Fetch-Site Header is Missing",
+					"riskcode": "0",
+					"confidence": "3",
+					"riskdesc": "Informational (High)",
+					"desc": "<p>Specifies the relationship between request initiator's origin and target's origin.</p>",
+					"instances":[ 
+						{
+							"uri": "https://mobilic.beta.gouv.fr",
+							"method": "GET",
+							"param": "Sec-Fetch-Site",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://mobilic.beta.gouv.fr/robots.txt",
+							"method": "GET",
+							"param": "Sec-Fetch-Site",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://mobilic.beta.gouv.fr/sitemap.xml",
+							"method": "GET",
+							"param": "Sec-Fetch-Site",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						}
+					],
+					"count": "3",
+					"solution": "<p>Ensure that Sec-Fetch-Site header is included in request headers.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
+					"cweid": "352",
+					"wascid": "9",
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "90005",
+					"alertRef": "90005-4",
+					"alert": "Sec-Fetch-User Header is Missing",
+					"name": "Sec-Fetch-User Header is Missing",
+					"riskcode": "0",
+					"confidence": "3",
+					"riskdesc": "Informational (High)",
+					"desc": "<p>Specifies if a navigation request was initiated by a user.</p>",
+					"instances":[ 
+						{
+							"uri": "https://mobilic.beta.gouv.fr",
+							"method": "GET",
+							"param": "Sec-Fetch-User",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://mobilic.beta.gouv.fr/robots.txt",
+							"method": "GET",
+							"param": "Sec-Fetch-User",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://mobilic.beta.gouv.fr/sitemap.xml",
+							"method": "GET",
+							"param": "Sec-Fetch-User",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						}
+					],
+					"count": "3",
+					"solution": "<p>Ensure that Sec-Fetch-User header is included in user initiated requests.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
+					"cweid": "352",
+					"wascid": "9",
+					"sourceid": "6"
+				},
+				{
+					"pluginid": "10049",
+					"alertRef": "10049",
+					"alert": "Storable and Cacheable Content",
+					"name": "Storable and Cacheable Content",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
+					"desc": "<p>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users.  If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
+					"instances":[ 
+						{
+							"uri": "https://mobilic.beta.gouv.fr/.well-known/baleen/challengejs/assets/logo.svg",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
+							"uri": "https://mobilic.beta.gouv.fr/.well-known/baleen/challengejs/assets/style.css",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						}
+					],
+					"count": "2",
+					"solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information.  If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request. </p>",
+					"otherinfo": "<p>In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.</p>",
+					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
+					"cweid": "524",
+					"wascid": "13",
+					"sourceid": "16"
+				},
+				{
+					"pluginid": "10049",
+					"alertRef": "10049",
+					"alert": "Storable but Non-Cacheable Content",
+					"name": "Storable but Non-Cacheable Content",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
+					"desc": "<p>The response contents are storable by caching components such as proxy servers, but will not be retrieved directly from the cache, without validating the request upstream, in response to similar requests from other users. </p>",
+					"instances":[ 
+						{
+							"uri": "https://mobilic.beta.gouv.fr",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "no-cache",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://mobilic.beta.gouv.fr/robots.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "no-cache",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://mobilic.beta.gouv.fr/sitemap.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "no-cache",
+							"otherinfo": ""
+						}
+					],
+					"count": "3",
+					"solution": "",
+					"otherinfo": "",
+					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
+					"cweid": "524",
+					"wascid": "13",
+					"sourceid": "6"
+				}
+			]
+		}
+	]
+}

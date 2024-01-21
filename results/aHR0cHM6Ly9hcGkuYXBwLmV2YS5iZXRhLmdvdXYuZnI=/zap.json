@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 14 Jan 2024 16:03:44",
+	"@generated": "Sun, 21 Jan 2024 15:55:25",
 	"site":[ 
 		{
 			"@name": "https://api.app.eva.beta.gouv.fr",
@@ -31,7 +31,7 @@
 					"count": "1",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "",
-					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>http://www.w3.org/TR/CSP/</p><p>http://w3c.github.io/webappsec/specs/content-security-policy/csp-specification.dev.html</p><p>http://www.html5rocks.com/en/tutorials/security/content-security-policy/</p><p>http://caniuse.com/#feat=contentsecuritypolicy</p><p>http://content-security-policy.com/</p>",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>https://www.w3.org/TR/CSP/</p><p>https://w3c.github.io/webappsec-csp/</p><p>https://web.dev/articles/csp</p><p>https://caniuse.com/#feat=contentsecuritypolicy</p><p>https://content-security-policy.com/</p>",
 					"cweid": "693",
 					"wascid": "15",
 					"sourceid": "1"
@@ -215,7 +215,7 @@
 				},
 				{
 					"pluginid": "10035",
-					"alertRef": "10035",
+					"alertRef": "10035-1",
 					"alert": "Strict-Transport-Security Header Not Set",
 					"name": "Strict-Transport-Security Header Not Set",
 					"riskcode": "1",
@@ -251,7 +251,7 @@
 					"count": "3",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to enforce Strict-Transport-Security.</p>",
 					"otherinfo": "",
-					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>http://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>http://caniuse.com/stricttransportsecurity</p><p>http://tools.ietf.org/html/rfc6797</p>",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>https://caniuse.com/stricttransportsecurity</p><p>https://datatracker.ietf.org/doc/html/rfc6797</p>",
 					"cweid": "319",
 					"wascid": "15",
 					"sourceid": "6"
@@ -271,13 +271,13 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2BAsepAZmqgArCdrtruTHXfpdQMZJMBBHGE8T2rhnmgsRhibGRuRxxBJPWqj5oUDtGSHOyvOvzf8ahMWREWy",
-							"otherinfo": "\uFFFD\\x0010,z\uFFFD\\x0019\uFFFD\uFFFD\\x0000\uFFFD'k\uFFFD\uFFFD\uFFFD\\x001dw\uFFFDu\\x0003\\x0019$\uFFFDA\\x001ca<Oj\uFFFDh,F\\x0018\uFFFD\\x0019\\x001b\uFFFD\uFFFD\\x0010I=j\uFFFD\uFFFD\\x0003\uFFFDd\uFFFD;+\u03BF7\uFFFDj\\x0013\\x0016DE\uFFFD"
+							"evidence": "2FA6ldqHIYHN5uw0d6K132kQH35U17o",
+							"otherinfo": "\uFFFDP:\uFFFD\u0687!\uFFFD\uFFFD\uFFFD\uFFFD4w\uFFFD\uFFFD\uFFFDi\\x0010\\x001f~T\u05FA"
 						}
 					],
 					"count": "1",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>\uFFFD\\x0010,z\uFFFD\\x0019\uFFFD\uFFFD\\x0000\uFFFD'k\uFFFD\uFFFD\uFFFD\\x001dw\uFFFDu\\x0003\\x0019$\uFFFDA\\x001ca<Oj\uFFFDh,F\\x0018\uFFFD\\x0019\\x001b\uFFFD\uFFFD\\x0010I=j\uFFFD\uFFFD\\x0003\uFFFDd\uFFFD;+\u03BF7\uFFFDj\\x0013\\x0016DE\uFFFD</p>",
+					"otherinfo": "<p>\uFFFDP:\uFFFD\u0687!\uFFFD\uFFFD\uFFFD\uFFFD4w\uFFFD\uFFFD\uFFFDi\\x0010\\x001f~T\u05FA</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
@@ -578,7 +578,7 @@
 							"method": "GET",
 							"param": "_session_id",
 							"attack": "",
-							"evidence": "RjSwTUo2GQd0CRsJ06lNqSa6IWGN36soFzAd7%2F6rb2H7zQisqgfodrPG%2FQxgWAwIU0xnbLzhlHRxnnIBD5leFYfQq7rI6zrFd9uqRMQ3%2BrJdKcCGCPLYbGzJH0P%2BAsepAZmqgArCdrtruTHXfpdQMZJMBBHGE8T2rhnmgsRhibGRuRxxBJPWqj5oUDtGSHOyvOvzf8ahMWREWy%2F2OWMxjMVKzJX70OSdXkfoEOZsEJC%2BK3gXeyH%2B13%2BAIUyMLlm6U0KDklrbGB6LSotm9RjwDl63sA%3D%3D--qLLFuRHQd%2BDQw7BQ--t6V6gHcye7sWBmxhBr2DNg%3D%3D",
+							"evidence": "COebZA8QLcpl%2B6irdNdH6rE6r6w%2B5okrgf%2B1eEBwk833Gq%2FA6ldqHIYHN5uw0d6K132kQH35U17o%2BR508rZ9wnbkJNbe8%2BVQsxnOtLaPTjoplIZ0R%2BO4kIMzejzVZJUHaCs4kJseuA3f3a2Mb7Ks8MJbUaNl%2F1wiYMcfZsbDGrWHERTH2%2FECKXW7uqx77pmvUFVt2NsnxLFwlBjAb%2FGhwAO9HMSlPCjmPXGTvaKzbjY7Rl6ljmwCwJauKHGG4%2B06EH74tT2J45xUgnvPzZc9RmovXQ%3D%3D--mYLGFz2zeKP2ftkM--bDMwSm1VyI57J7rQ8gfZ4w%3D%3D",
 							"otherinfo": "\ncookie:_session_id"
 						}
 					],

@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 14 Jan 2024 16:39:31",
+	"@generated": "Sun, 21 Jan 2024 16:37:09",
 	"site":[ 
 		{
 			"@name": "https://ellesfontlaculture.beta.gouv.fr",
@@ -31,7 +31,7 @@
 					"count": "1",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "",
-					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>http://www.w3.org/TR/CSP/</p><p>http://w3c.github.io/webappsec/specs/content-security-policy/csp-specification.dev.html</p><p>http://www.html5rocks.com/en/tutorials/security/content-security-policy/</p><p>http://caniuse.com/#feat=contentsecuritypolicy</p><p>http://content-security-policy.com/</p>",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>https://www.w3.org/TR/CSP/</p><p>https://w3c.github.io/webappsec-csp/</p><p>https://web.dev/articles/csp</p><p>https://caniuse.com/#feat=contentsecuritypolicy</p><p>https://content-security-policy.com/</p>",
 					"cweid": "693",
 					"wascid": "15",
 					"sourceid": "1"
@@ -65,7 +65,7 @@
 				},
 				{
 					"pluginid": "10035",
-					"alertRef": "10035",
+					"alertRef": "10035-1",
 					"alert": "Strict-Transport-Security Header Not Set",
 					"name": "Strict-Transport-Security Header Not Set",
 					"riskcode": "1",
@@ -101,10 +101,10 @@
 					"count": "3",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to enforce Strict-Transport-Security.</p>",
 					"otherinfo": "",
-					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>http://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>http://caniuse.com/stricttransportsecurity</p><p>http://tools.ietf.org/html/rfc6797</p>",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>https://caniuse.com/stricttransportsecurity</p><p>https://datatracker.ietf.org/doc/html/rfc6797</p>",
 					"cweid": "319",
 					"wascid": "15",
-					"sourceid": "6"
+					"sourceid": "7"
 				},
 				{
 					"pluginid": "10094",
@@ -121,13 +121,13 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "P2USexKzP19ptV6rm3TxYDAiGwWWh2IsY0fJnZwnIN4nZ2Mc44",
-							"otherinfo": "?e\\x0012{\\x0012\uFFFD?_i\uFFFD^\uFFFD\uFFFDt\uFFFD`0\"\\x001b\\x0005\uFFFD\uFFFDb,cG\u025D\uFFFD' \uFFFD'gc\\x001c\uFFFD"
+							"evidence": "xdl5jqSAyMBqly7zoJDQ0XnaLe90VNJKpXUCZ24YJa442tf19riBgHJTRJeBbOE26MIomMckXUb",
+							"otherinfo": "\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDj\uFFFD.\uFFFD\uFFFD\uFFFDy\uFFFD-\uFFFDtT\uFFFDJ\uFFFDu\\x0002gn\\x0018%\uFFFD8\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDrSD\uFFFD\uFFFDl\uFFFD6\uFFFD\uFFFD(\uFFFD\uFFFD$]F"
 						}
 					],
 					"count": "1",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>?e\\x0012{\\x0012\uFFFD?_i\uFFFD^\uFFFD\uFFFDt\uFFFD`0\"\\x001b\\x0005\uFFFD\uFFFDb,cG\u025D\uFFFD' \uFFFD'gc\\x001c\uFFFD</p>",
+					"otherinfo": "<p>\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDj\uFFFD.\uFFFD\uFFFD\uFFFDy\uFFFD-\uFFFDtT\uFFFDJ\uFFFDu\\x0002gn\\x0018%\uFFFD8\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDrSD\uFFFD\uFFFDl\uFFFD6\uFFFD\uFFFD(\uFFFD\uFFFD$]F</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
@@ -255,7 +255,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "7"
 				},
 				{
 					"pluginid": "90005",
@@ -298,7 +298,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "7"
 				},
 				{
 					"pluginid": "90005",
@@ -341,7 +341,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "7"
 				},
 				{
 					"pluginid": "90005",
@@ -384,7 +384,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "7"
 				},
 				{
 					"pluginid": "10112",
@@ -401,7 +401,7 @@
 							"method": "GET",
 							"param": "_ellesfontlaphoto_session",
 							"attack": "",
-							"evidence": "P2USexKzP19ptV6rm3TxYDAiGwWWh2IsY0fJnZwnIN4nZ2Mc44%2B0GfUEU62kRZDoCEQJwQn%2BUfFpfH6l%2FyugBc8B%2F9Xo08vOdP3mj4ULI0ItyVKPl%2BPWb3OlE1PZlXYl2UMGGftw%2FXiX1ah8%2BEuzO1YbyRnBI3Jqvs7Yh4jD0UoyxryXCUEqEr9HMrBkGWIXxspV99ReTB5hgDksPiJt38Gs8FruKWoIrh5gXghu6vfBZr2LzApgEKPNSBxrJb0VE0P9Asw8pH8YJCO%2Fp2rDECRnMBqfa5GxmdwLUmTkvuo%2BMqBanPT%2BuymSALfZjyEQZvsrGrQ7nusEw9tBV539FXGnGYdh7DXDfBdD59RfRL%2FJ7O21OFJpBqM2O8ZlyNfKzgLDxWyQ8OdedOn0In7HiLesaW9rgmN%2B4rQ4tjIPwxgVmUM%2FZaltmYkxMxBJMeROU4Zh24P380Dwpbwt9HT5kWK8nvL8Um9WIaOvDWy1xPGTE%2FakrdKpQS3zo2hg--obE01WVLzrHD%2FVnh--gvAXi%2FEQIkDBcu46A4%2BRbg%3D%3D",
+							"evidence": "xdl5jqSAyMBqly7zoJDQ0XnaLe90VNJKpXUCZ24YJa442tf19riBgHJTRJeBbOE26MIomMckXUb%2BxorjIwtOofs3rrO1qSJxyJE86cWaYyf5LOAsupr%2Ffq76Vg7Z41hAfdPSU12C6X4KrZ%2FMdtaageauy8nuwQVLyNzFLgVrNQHU1y6Sq0BKQqJuBrpyFG8ipynXYt3P02T9IcvGRXxzchwgbNdncR77NAR7TUbbSZjBf7KymEuDHnGHTEo4yt02B%2BZMeZsi7N9fziLzY3yQ%2FLIHUhrWEVu6SzG5fv27tCC7EehyeEo%2BxM%2BX83zJNJIzkj0WbluhhiZ6bqf3wTbucYr9MEyq%2FJ%2BN8DvlcCRj5dHI6C0ItjvSI7txDWNFWse%2BVRYNy5ZFTYtrVfdBP%2Bn8XvTVJTu%2B7wX0S7bGnwm%2F7Q0XQAx%2B9YWewmqIHrgV8spk8GsHnoXw7vIrt%2BWStHpfY747xTkUx8%2B0iPO2S9V1RYq%2FeK%2FXITPXHuNj0SOa--8biLpeOAydXPrjeo--uc%2F4LvFhMLd3%2Bm%2BO5CeuNQ%3D%3D",
 							"otherinfo": "\ncookie:_ellesfontlaphoto_session"
 						}
 					],
@@ -454,7 +454,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "6"
+					"sourceid": "7"
 				}
 			]
 		}

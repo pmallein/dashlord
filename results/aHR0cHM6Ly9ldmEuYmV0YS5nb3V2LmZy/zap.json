@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 14 Jan 2024 05:13:33",
+	"@generated": "Sun, 21 Jan 2024 04:47:41",
 	"site":[ 
 		{
 			"@name": "https://eva.beta.gouv.fr",
@@ -9,73 +9,6 @@
 			"@port": "443",
 			"@ssl": "true",
 			"alerts": [ 
-				{
-					"pluginid": "10062",
-					"alertRef": "10062",
-					"alert": "PII Disclosure",
-					"name": "PII Disclosure",
-					"riskcode": "3",
-					"confidence": "2",
-					"riskdesc": "High (Medium)",
-					"desc": "<p>The response contains Personally Identifiable Information, such as CC number, SSN and similar sensitive data.</p>",
-					"instances":[ 
-						{
-							"uri": "https://eva.beta.gouv.fr/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js?ver=3.18.1",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "500 408 258 167",
-							"otherinfo": "Credit Card Type detected: Maestro"
-						},
-						{
-							"uri": "https://eva.beta.gouv.fr/pro/assets/font-awesome/fa-brands-400-5656d596bc597165a42182f67b2b9f17d2ae47a9e3ef1b042b9a729739730705.ttf",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "676767676767",
-							"otherinfo": "Credit Card Type detected: Maestro\nBank Identification Number: 676767\nBrand: SOLO\nCategory: \nIssuer: "
-						},
-						{
-							"uri": "https://eva.beta.gouv.fr/pro/assets/font-awesome/fa-brands-400-5656d596bc597165a42182f67b2b9f17d2ae47a9e3ef1b042b9a729739730705.ttf",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "6767676767674",
-							"otherinfo": "Credit Card Type detected: Maestro\nBank Identification Number: 676767\nBrand: SOLO\nCategory: \nIssuer: "
-						},
-						{
-							"uri": "https://eva.beta.gouv.fr/pro/assets/font-awesome/fa-brands-400-5656d596bc597165a42182f67b2b9f17d2ae47a9e3ef1b042b9a729739730705.ttf",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "676767676767632",
-							"otherinfo": "Credit Card Type detected: Maestro\nBank Identification Number: 676767\nBrand: SOLO\nCategory: \nIssuer: "
-						},
-						{
-							"uri": "https://eva.beta.gouv.fr/pro/assets/font-awesome/fa-brands-400-5656d596bc597165a42182f67b2b9f17d2ae47a9e3ef1b042b9a729739730705.ttf",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "67676767676767",
-							"otherinfo": "Credit Card Type detected: Maestro\nBank Identification Number: 676767\nBrand: SOLO\nCategory: \nIssuer: "
-						},
-						{
-							"uri": "https://eva.beta.gouv.fr/pro/assets/font-awesome/fa-solid-900-fbbf06d7437aa30f3cd44c968380193545a8fc3eadfb7ad897bbb101eefec5a2.ttf",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "5515151514763315",
-							"otherinfo": "Credit Card Type detected: Mastercard\nBank Identification Number: 551515\nBrand: MASTERCARD\nCategory: \nIssuer: ZIP NETWORK"
-						}
-					],
-					"count": "6",
-					"solution": "<p>Check the response for the potential presence of personally identifiable information (PII), ensure nothing sensitive is leaked by the application.</p>",
-					"otherinfo": "<p>Credit Card Type detected: Maestro</p>",
-					"reference": "",
-					"cweid": "359",
-					"wascid": "13",
-					"sourceid": "529"
-				},
 				{
 					"pluginid": "10202",
 					"alertRef": "10202",
@@ -186,10 +119,10 @@
 					"count": "12",
 					"solution": "<p>Phase: Architecture and Design</p><p>Use a vetted library or framework that does not allow this weakness to occur or provides constructs that make this weakness easier to avoid.</p><p>For example, use anti-CSRF packages such as the OWASP CSRFGuard.</p><p></p><p>Phase: Implementation</p><p>Ensure that your application is free of cross-site scripting issues, because most CSRF defenses can be bypassed using attacker-controlled script.</p><p></p><p>Phase: Architecture and Design</p><p>Generate a unique nonce for each form, place the nonce into the form, and verify the nonce upon receipt of the form. Be sure that the nonce is not predictable (CWE-330).</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Identify especially dangerous operations. When the user performs a dangerous operation, send a separate confirmation request to ensure that the user intended to perform that operation.</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Use the ESAPI Session Management control.</p><p>This control includes a component for CSRF.</p><p></p><p>Do not use the GET method for any request that triggers a state change.</p><p></p><p>Phase: Implementation</p><p>Check the HTTP Referer header to see if the request originated from an expected page. This could break legitimate functionality, because users or proxies may have disabled sending the Referer for privacy reasons.</p>",
 					"otherinfo": "<p>No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"s\" ].</p>",
-					"reference": "<p>http://projects.webappsec.org/Cross-Site-Request-Forgery</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1055"
+					"sourceid": "615"
 				},
 				{
 					"pluginid": "10055",
@@ -213,10 +146,10 @@
 					"count": "1",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is properly configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "<p>The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: </p><p>frame-ancestors, form-action</p><p></p><p>The directive(s): frame-ancestors, form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything.</p>",
-					"reference": "<p>http://www.w3.org/TR/CSP2/</p><p>http://www.w3.org/TR/CSP/</p><p>http://caniuse.com/#search=content+security+policy</p><p>http://content-security-policy.com/</p><p>https://github.com/shapesecurity/salvation</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
+					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/shapesecurity/salvation</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1328"
+					"sourceid": "1380"
 				},
 				{
 					"pluginid": "10038",
@@ -238,6 +171,14 @@
 						},
 						{
 							"uri": "https://eva.beta.gouv.fr/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://eva.beta.gouv.fr/articles/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -301,14 +242,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://eva.beta.gouv.fr/statistiques/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://eva.beta.gouv.fr/temoignages/",
 							"method": "GET",
 							"param": "",
@@ -320,7 +253,7 @@
 					"count": "11",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "",
-					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>http://www.w3.org/TR/CSP/</p><p>http://w3c.github.io/webappsec/specs/content-security-policy/csp-specification.dev.html</p><p>http://www.html5rocks.com/en/tutorials/security/content-security-policy/</p><p>http://caniuse.com/#feat=contentsecuritypolicy</p><p>http://content-security-policy.com/</p>",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>https://www.w3.org/TR/CSP/</p><p>https://w3c.github.io/webappsec-csp/</p><p>https://web.dev/articles/csp</p><p>https://caniuse.com/#feat=contentsecuritypolicy</p><p>https://content-security-policy.com/</p>",
 					"cweid": "693",
 					"wascid": "15",
 					"sourceid": "1"
@@ -433,33 +366,6 @@
 					"sourceid": "1"
 				},
 				{
-					"pluginid": "10099",
-					"alertRef": "10099",
-					"alert": "Source Code Disclosure - Perl",
-					"name": "Source Code Disclosure - Perl",
-					"riskcode": "2",
-					"confidence": "2",
-					"riskdesc": "Medium (Medium)",
-					"desc": "<p>Application Source Code was disclosed by the web server - Perl</p>",
-					"instances":[ 
-						{
-							"uri": "https://eva.beta.gouv.fr/wp-content/uploads/2023/11/PlaquetteEvaVF05-04-23_web.pdf",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "$#qH8r",
-							"otherinfo": ""
-						}
-					],
-					"count": "1",
-					"solution": "<p>Ensure that application Source Code is not available with alternative extensions, and ensure that source code is not present within other files or data deployed to the web server, or served by the web server. </p>",
-					"otherinfo": "",
-					"reference": "<p>https://www.wsj.com/articles/BL-CIOB-2999</p>",
-					"cweid": "540",
-					"wascid": "13",
-					"sourceid": "330"
-				},
-				{
 					"pluginid": "90003",
 					"alertRef": "90003",
 					"alert": "Sub Resource Integrity Attribute Missing",
@@ -510,7 +416,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://eva.beta.gouv.fr/temoignages/",
+							"uri": "https://eva.beta.gouv.fr/qui-sommes-nous/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -518,7 +424,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://eva.beta.gouv.fr/temoignages/",
+							"uri": "https://eva.beta.gouv.fr/qui-sommes-nous/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -526,7 +432,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://eva.beta.gouv.fr/temoignages/",
+							"uri": "https://eva.beta.gouv.fr/qui-sommes-nous/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -534,7 +440,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://eva.beta.gouv.fr/temoignages/",
+							"uri": "https://eva.beta.gouv.fr/qui-sommes-nous/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -542,7 +448,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://eva.beta.gouv.fr/temoignages/",
+							"uri": "https://eva.beta.gouv.fr/qui-sommes-nous/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -565,92 +471,6 @@
 					"cweid": "345",
 					"wascid": "15",
 					"sourceid": "1"
-				},
-				{
-					"pluginid": "10010",
-					"alertRef": "10010",
-					"alert": "Cookie No HttpOnly Flag",
-					"name": "Cookie No HttpOnly Flag",
-					"riskcode": "1",
-					"confidence": "2",
-					"riskdesc": "Low (Medium)",
-					"desc": "<p>A cookie has been set without the HttpOnly flag, which means that the cookie can be accessed by JavaScript. If a malicious script can be run on this page then the cookie will be accessible and can be transmitted to another site. If this is a session cookie then session hijacking may be possible.</p>",
-					"instances":[ 
-						{
-							"uri": "https://eva.beta.gouv.fr/wp-comments-post.php",
-							"method": "POST",
-							"param": "comment_author_d35de6973eab64864ee13fb596a0d75d",
-							"attack": "",
-							"evidence": "set-cookie: comment_author_d35de6973eab64864ee13fb596a0d75d",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://eva.beta.gouv.fr/wp-comments-post.php",
-							"method": "POST",
-							"param": "comment_author_email_d35de6973eab64864ee13fb596a0d75d",
-							"attack": "",
-							"evidence": "set-cookie: comment_author_email_d35de6973eab64864ee13fb596a0d75d",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://eva.beta.gouv.fr/wp-comments-post.php",
-							"method": "POST",
-							"param": "comment_author_url_d35de6973eab64864ee13fb596a0d75d",
-							"attack": "",
-							"evidence": "set-cookie: comment_author_url_d35de6973eab64864ee13fb596a0d75d",
-							"otherinfo": ""
-						}
-					],
-					"count": "3",
-					"solution": "<p>Ensure that the HttpOnly flag is set for all cookies.</p>",
-					"otherinfo": "",
-					"reference": "<p>https://owasp.org/www-community/HttpOnly</p>",
-					"cweid": "1004",
-					"wascid": "13",
-					"sourceid": "1435"
-				},
-				{
-					"pluginid": "10054",
-					"alertRef": "10054",
-					"alert": "Cookie without SameSite Attribute",
-					"name": "Cookie without SameSite Attribute",
-					"riskcode": "1",
-					"confidence": "2",
-					"riskdesc": "Low (Medium)",
-					"desc": "<p>A cookie has been set without the SameSite attribute, which means that the cookie can be sent as a result of a 'cross-site' request. The SameSite attribute is an effective counter measure to cross-site request forgery, cross-site script inclusion, and timing attacks.</p>",
-					"instances":[ 
-						{
-							"uri": "https://eva.beta.gouv.fr/wp-comments-post.php",
-							"method": "POST",
-							"param": "comment_author_d35de6973eab64864ee13fb596a0d75d",
-							"attack": "",
-							"evidence": "set-cookie: comment_author_d35de6973eab64864ee13fb596a0d75d",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://eva.beta.gouv.fr/wp-comments-post.php",
-							"method": "POST",
-							"param": "comment_author_email_d35de6973eab64864ee13fb596a0d75d",
-							"attack": "",
-							"evidence": "set-cookie: comment_author_email_d35de6973eab64864ee13fb596a0d75d",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://eva.beta.gouv.fr/wp-comments-post.php",
-							"method": "POST",
-							"param": "comment_author_url_d35de6973eab64864ee13fb596a0d75d",
-							"attack": "",
-							"evidence": "set-cookie: comment_author_url_d35de6973eab64864ee13fb596a0d75d",
-							"otherinfo": ""
-						}
-					],
-					"count": "3",
-					"solution": "<p>Ensure that the SameSite attribute is set to either 'lax' or ideally 'strict' for all cookies.</p>",
-					"otherinfo": "",
-					"reference": "<p>https://tools.ietf.org/html/draft-ietf-httpbis-cookie-same-site</p>",
-					"cweid": "1275",
-					"wascid": "13",
-					"sourceid": "1435"
 				},
 				{
 					"pluginid": "10017",
@@ -679,7 +499,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://eva.beta.gouv.fr/accessibilite/",
+							"uri": "https://eva.beta.gouv.fr/articles/",
 							"method": "GET",
 							"param": "https://app.mailjet.com/pas-nc-embedded-v1.js",
 							"attack": "",
@@ -687,7 +507,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://eva.beta.gouv.fr/articles/",
+							"uri": "https://eva.beta.gouv.fr/cgu/",
 							"method": "GET",
 							"param": "https://app.mailjet.com/pas-nc-embedded-v1.js",
 							"attack": "",
@@ -808,7 +628,7 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "1103"
+					"sourceid": "968"
 				},
 				{
 					"pluginid": "10063",
@@ -838,6 +658,14 @@
 						},
 						{
 							"uri": "https://eva.beta.gouv.fr/articles/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://eva.beta.gouv.fr/eva-et-clea-un-tandem-gagnant-pour-levolution-professionnelle/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -893,14 +721,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://eva.beta.gouv.fr/statistiques/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://eva.beta.gouv.fr/temoignages/",
 							"method": "GET",
 							"param": "",
@@ -936,15 +756,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://eva.beta.gouv.fr/jeu/assets/apple-touch-icon-120x120.png",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "x-powered-by: Express",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://eva.beta.gouv.fr/jeu/assets/apple-touch-icon-144x144.png",
+							"uri": "https://eva.beta.gouv.fr/jeu/assets/apple-touch-icon-114x114.png",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -960,7 +772,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://eva.beta.gouv.fr/jeu/assets/apple-touch-icon-167x167.png",
+							"uri": "https://eva.beta.gouv.fr/jeu/assets/apple-touch-icon-180x180.png",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -977,6 +789,14 @@
 						},
 						{
 							"uri": "https://eva.beta.gouv.fr/jeu/assets/apple-touch-icon-60x60.png",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "x-powered-by: Express",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://eva.beta.gouv.fr/jeu/assets/apple-touch-icon-76x76.png",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1027,14 +847,14 @@
 					"count": "12",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress \"X-Powered-By\" headers.</p>",
 					"otherinfo": "",
-					"reference": "<p>http://blogs.msdn.com/b/varunm/archive/2013/04/23/remove-unwanted-http-response-headers.aspx</p><p>http://www.troyhunt.com/2012/02/shhh-dont-let-your-response-headers.html</p>",
+					"reference": "<p>https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/01-Information_Gathering/08-Fingerprint_Web_Application_Framework</p><p>https://www.troyhunt.com/2012/02/shhh-dont-let-your-response-headers.html</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "252"
+					"sourceid": "207"
 				},
 				{
 					"pluginid": "10035",
-					"alertRef": "10035",
+					"alertRef": "10035-1",
 					"alert": "Strict-Transport-Security Header Not Set",
 					"name": "Strict-Transport-Security Header Not Set",
 					"riskcode": "1",
@@ -1091,6 +911,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://eva.beta.gouv.fr/qui-sommes-nous/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://eva.beta.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "",
@@ -1100,14 +928,6 @@
 						},
 						{
 							"uri": "https://eva.beta.gouv.fr/sitemap_index.xml",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://eva.beta.gouv.fr/temoignages/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1134,7 +954,7 @@
 					"count": "11",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to enforce Strict-Transport-Security.</p>",
 					"otherinfo": "",
-					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>http://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>http://caniuse.com/stricttransportsecurity</p><p>http://tools.ietf.org/html/rfc6797</p>",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>https://caniuse.com/stricttransportsecurity</p><p>https://datatracker.ietf.org/doc/html/rfc6797</p>",
 					"cweid": "319",
 					"wascid": "15",
 					"sourceid": "1"
@@ -1198,7 +1018,7 @@
 							"otherinfo": "1702905358, which evaluates to: 2023-12-18 13:15:58"
 						},
 						{
-							"uri": "https://eva.beta.gouv.fr/temoignages/",
+							"uri": "https://eva.beta.gouv.fr/qui-sommes-nous/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1206,7 +1026,7 @@
 							"otherinfo": "1702905297, which evaluates to: 2023-12-18 13:14:57"
 						},
 						{
-							"uri": "https://eva.beta.gouv.fr/temoignages/",
+							"uri": "https://eva.beta.gouv.fr/qui-sommes-nous/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1214,12 +1034,12 @@
 							"otherinfo": "1702905298, which evaluates to: 2023-12-18 13:14:58"
 						},
 						{
-							"uri": "https://eva.beta.gouv.fr/temoignages/",
+							"uri": "https://eva.beta.gouv.fr/qui-sommes-nous/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "1702914380",
-							"otherinfo": "1702914380, which evaluates to: 2023-12-18 15:46:20"
+							"evidence": "1702909426",
+							"otherinfo": "1702909426, which evaluates to: 2023-12-18 14:23:46"
 						}
 					],
 					"count": "9",
@@ -1273,14 +1093,6 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://eva.beta.gouv.fr/faq/",
-							"method": "GET",
-							"param": "x-content-type-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
-						},
-						{
 							"uri": "https://eva.beta.gouv.fr/jeu/",
 							"method": "GET",
 							"param": "x-content-type-options",
@@ -1298,6 +1110,14 @@
 						},
 						{
 							"uri": "https://eva.beta.gouv.fr/post-sitemap.xml",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://eva.beta.gouv.fr/qui-sommes-nous/",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -1332,7 +1152,7 @@
 					"count": "11",
 					"solution": "<p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p>",
 					"otherinfo": "<p>This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.</p><p>At \"High\" threshold this scan rule will not alert on client or server error responses.</p>",
-					"reference": "<p>http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx</p><p>https://owasp.org/www-community/Security_Headers</p>",
+					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
 					"cweid": "693",
 					"wascid": "15",
 					"sourceid": "1"
@@ -1370,7 +1190,7 @@
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/auth-req-id/</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "1638"
+					"sourceid": "1593"
 				},
 				{
 					"pluginid": "10094",
@@ -1399,12 +1219,12 @@
 							"otherinfo": "~\uFFFD\uFFFD\uFFFD(\uFFFD\u05E7\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD_\uFFFD\uFFFD\uFFFDv\uFFFDJq\uFFFD\\x0017\uFFFD\uFFFD\uFFFDb\uFFFD\uFFFD~\uFFFD\uFFFDq\uFFFD\uFFFD{\uFFFDh\uFFFD"
 						},
 						{
-							"uri": "https://eva.beta.gouv.fr/articles/",
+							"uri": "https://eva.beta.gouv.fr/eva-et-clea-un-tandem-gagnant-pour-levolution-professionnelle/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "fr/wp-content/uploads/2021/05/1200px-Republique-francaise-logo",
-							"otherinfo": "~\uFFFD\uFFFD\uFFFD(\uFFFD\u05E7\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD_\uFFFD\uFFFD\uFFFDv\uFFFDJq\uFFFD\\x0017\uFFFD\uFFFD\uFFFDb\uFFFD\uFFFD~\uFFFD\uFFFDq\uFFFD\uFFFD{\uFFFDh\uFFFD"
+							"evidence": "2Feva-et-clea-un-tandem-gagnant-pour-levolution-professionnelle",
+							"otherinfo": "\uFFFDW\uFFFDk\uFFFD\uFFFD\uFFFD^k\uFFFD\uFFFD\u05A7u\u9F81\uFFFD'j{~\uFFFD\uFFFD\uFFFD\uFFFDW\uFFFD\uFFFD[\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001fz\uFFFD\"\uFFFDy\u0796W"
 						},
 						{
 							"uri": "https://eva.beta.gouv.fr/faq/",
@@ -1435,8 +1255,8 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2FUpSugk9FUbHW6gBKQo1Z5ZB4GtPaw6ddahfe7",
-							"otherinfo": "\uFFFDU)J\uFFFD$\uFFFDU\\x001b\\x001dn\uFFFD\\x0004\uFFFD(\u055EY\\x0007\uFFFD\uFFFD=\uFFFD:u\u05A1}\uFFFD"
+							"evidence": "wvlNTK0PISneObSc3E4qPyDB5vUko8JBP3NO869",
+							"otherinfo": "\uFFFD\uFFFDML\uFFFD\\x000f!)\uFFFD9\uFFFD\uFFFD\uFFFDN*? \uFFFD\uFFFD\uFFFD$\uFFFD\uFFFDA?sN\uFFFD"
 						},
 						{
 							"uri": "https://eva.beta.gouv.fr/qui-sommes-nous/",
@@ -1477,7 +1297,7 @@
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "90011",
@@ -1522,7 +1342,7 @@
 							"otherinfo": "There was a charset mismatch between the HTTP Header and the XML encoding declaration: [UTF-8] and [null] do not match."
 						},
 						{
-							"uri": "https://eva.beta.gouv.fr/wp-json/oembed/1.0/embed?format=xml&url=https%3A%2F%2Feva.beta.gouv.fr%2Fcomparaison_tri1%2F",
+							"uri": "https://eva.beta.gouv.fr/wp-json/oembed/1.0/embed?format=xml&url=https%3A%2F%2Feva.beta.gouv.fr%2Felementor-page-datterrissage-395%2F",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1589,14 +1409,14 @@
 					"count": "12",
 					"solution": "<p>Force UTF-8 for all text content in both the HTTP header and meta tags in HTML or encoding declarations in XML.</p>",
 					"otherinfo": "<p>There was a charset mismatch between the HTTP Header and the XML encoding declaration: [UTF-8] and [null] do not match.</p>",
-					"reference": "<p>http://code.google.com/p/browsersec/wiki/Part2#Character_set_handling_and_detection</p>",
+					"reference": "<p>https://code.google.com/p/browsersec/wiki/Part2#Character_set_handling_and_detection</p>",
 					"cweid": "436",
 					"wascid": "15",
-					"sourceid": "490"
+					"sourceid": "487"
 				},
 				{
 					"pluginid": "10019",
-					"alertRef": "10019",
+					"alertRef": "10019-1",
 					"alert": "Content-Type Header Missing",
 					"name": "Content-Type Header Missing",
 					"riskcode": "0",
@@ -1607,7 +1427,7 @@
 						{
 							"uri": "https://eva.beta.gouv.fr/wp-content/uploads/fbrfg/site.webmanifest",
 							"method": "GET",
-							"param": "",
+							"param": "content-type",
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
@@ -1616,53 +1436,10 @@
 					"count": "1",
 					"solution": "<p>Ensure each page is setting the specific and appropriate content-type value for the content being delivered.</p>",
 					"otherinfo": "",
-					"reference": "<p>http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx</p>",
+					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p>",
 					"cweid": "345",
 					"wascid": "12",
-					"sourceid": "480"
-				},
-				{
-					"pluginid": "10029",
-					"alertRef": "10029",
-					"alert": "Cookie Poisoning",
-					"name": "Cookie Poisoning",
-					"riskcode": "0",
-					"confidence": "1",
-					"riskdesc": "Informational (Low)",
-					"desc": "<p>This check looks at user-supplied input in query string parameters and POST data to identify where cookie parameters might be controlled. This is called a cookie poisoning attack, and becomes exploitable when an attacker can manipulate the cookie in various ways. In some cases this will not be exploitable, however, allowing URL parameters to set cookie values is generally considered a bug.</p>",
-					"instances":[ 
-						{
-							"uri": "https://eva.beta.gouv.fr/wp-comments-post.php",
-							"method": "POST",
-							"param": "author",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "An attacker may be able to poison cookie values through POST parameters. To test if this is a more serious issue, you should try resending that request as a GET, with the POST parameter included as a query string parameter. For example:  http://nottrusted.com/page?value=maliciousInput.\r\n\r\nThis was identified at:\r\n\r\nhttps://eva.beta.gouv.fr/wp-comments-post.php\r\n\r\nUser-input was found in the following cookie:\r\ncomment_author_d35de6973eab64864ee13fb596a0d75d=ZAP; expires=Thu, 26-Dec-2024 10:32:34 GMT; Max-Age=30000000; path=/; secure\r\n\r\nThe user input was:\r\nauthor=ZAP"
-						},
-						{
-							"uri": "https://eva.beta.gouv.fr/wp-comments-post.php",
-							"method": "POST",
-							"param": "email",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "An attacker may be able to poison cookie values through POST parameters. To test if this is a more serious issue, you should try resending that request as a GET, with the POST parameter included as a query string parameter. For example:  http://nottrusted.com/page?value=maliciousInput.\r\n\r\nThis was identified at:\r\n\r\nhttps://eva.beta.gouv.fr/wp-comments-post.php\r\n\r\nUser-input was found in the following cookie:\r\ncomment_author_email_d35de6973eab64864ee13fb596a0d75d=zaproxy@example.com; expires=Thu, 26-Dec-2024 10:32:34 GMT; Max-Age=30000000; path=/; secure\r\n\r\nThe user input was:\r\nemail=zaproxy@example.com"
-						},
-						{
-							"uri": "https://eva.beta.gouv.fr/wp-comments-post.php",
-							"method": "POST",
-							"param": "url",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "An attacker may be able to poison cookie values through POST parameters. To test if this is a more serious issue, you should try resending that request as a GET, with the POST parameter included as a query string parameter. For example:  http://nottrusted.com/page?value=maliciousInput.\r\n\r\nThis was identified at:\r\n\r\nhttps://eva.beta.gouv.fr/wp-comments-post.php\r\n\r\nUser-input was found in the following cookie:\r\ncomment_author_url_d35de6973eab64864ee13fb596a0d75d=https://zap.example.com; expires=Thu, 26-Dec-2024 10:32:34 GMT; Max-Age=30000000; path=/; secure\r\n\r\nThe user input was:\r\nurl=https://zap.example.com"
-						}
-					],
-					"count": "3",
-					"solution": "<p>Do not allow user input to control cookie names and values. If some query string parameters must be set in cookie values, be sure to filter out semicolon's that can serve as name/value pair delimiters.</p>",
-					"otherinfo": "<p>An attacker may be able to poison cookie values through POST parameters. To test if this is a more serious issue, you should try resending that request as a GET, with the POST parameter included as a query string parameter. For example:  http://nottrusted.com/page?value=maliciousInput.</p><p></p><p>This was identified at:</p><p></p><p>https://eva.beta.gouv.fr/wp-comments-post.php</p><p></p><p>User-input was found in the following cookie:</p><p>comment_author_d35de6973eab64864ee13fb596a0d75d=ZAP; expires=Thu, 26-Dec-2024 10:32:34 GMT; Max-Age=30000000; path=/; secure</p><p></p><p>The user input was:</p><p>author=ZAP</p>",
-					"reference": "<p>http://websecuritytool.codeplex.com/wikipage?title=Checks#user-controlled-cookie</p>",
-					"cweid": "20",
-					"wascid": "20",
-					"sourceid": "1435"
+					"sourceid": "470"
 				},
 				{
 					"pluginid": "10027",
@@ -1723,7 +1500,7 @@
 							"otherinfo": "The following pattern was used: \\bSELECT\\b and was detected in the element starting with: \"<script>\r\n\t\t\t/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListe\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://eva.beta.gouv.fr/temoignages/",
+							"uri": "https://eva.beta.gouv.fr/qui-sommes-nous/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1731,7 +1508,7 @@
 							"otherinfo": "The following pattern was used: \\bADMIN\\b and was detected 2 times, the first in the element starting with: \"<script id=\"wp_mailjet_form_builder_widget-front-script-js-extra\">\nvar mjWidget = {\"ajax_url\":\"https:\\/\\/eva.beta.gouv.fr\\/wp-ad\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://eva.beta.gouv.fr/temoignages/",
+							"uri": "https://eva.beta.gouv.fr/qui-sommes-nous/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1739,7 +1516,7 @@
 							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://eva.beta.gouv.fr/temoignages/",
+							"uri": "https://eva.beta.gouv.fr/qui-sommes-nous/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1782,7 +1559,7 @@
 							"otherinfo": "Links have been found with a target of '_self' - this is often used by modern frameworks to force a full page reload."
 						},
 						{
-							"uri": "https://eva.beta.gouv.fr/accessibilite/",
+							"uri": "https://eva.beta.gouv.fr/articles/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1790,7 +1567,7 @@
 							"otherinfo": "Links have been found with a target of '_self' - this is often used by modern frameworks to force a full page reload."
 						},
 						{
-							"uri": "https://eva.beta.gouv.fr/articles/",
+							"uri": "https://eva.beta.gouv.fr/cgu/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1913,7 +1690,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://eva.beta.gouv.fr/post-sitemap.xml",
+							"uri": "https://eva.beta.gouv.fr/qui-sommes-nous/",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -1980,15 +1757,7 @@
 					"desc": "<p>Specifies how and where the data would be used. For instance, if the value is audio, then the requested resource must be audio data and not any other type of resource.</p>",
 					"instances":[ 
 						{
-							"uri": "https://eva.beta.gouv.fr",
-							"method": "GET",
-							"param": "Sec-Fetch-Dest",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://eva.beta.gouv.fr/robots.txt",
+							"uri": "https://eva.beta.gouv.fr/category-sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -1997,6 +1766,14 @@
 						},
 						{
 							"uri": "https://eva.beta.gouv.fr/sitemap.xml",
+							"method": "GET",
+							"param": "Sec-Fetch-Dest",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://eva.beta.gouv.fr/sitemap_index.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -2010,7 +1787,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "94"
 				},
 				{
 					"pluginid": "90005",
@@ -2023,15 +1800,7 @@
 					"desc": "<p>Allows to differentiate between requests for navigating between HTML pages and requests for loading resources like images, audio etc.</p>",
 					"instances":[ 
 						{
-							"uri": "https://eva.beta.gouv.fr",
-							"method": "GET",
-							"param": "Sec-Fetch-Mode",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://eva.beta.gouv.fr/robots.txt",
+							"uri": "https://eva.beta.gouv.fr/category-sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -2040,6 +1809,14 @@
 						},
 						{
 							"uri": "https://eva.beta.gouv.fr/sitemap.xml",
+							"method": "GET",
+							"param": "Sec-Fetch-Mode",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://eva.beta.gouv.fr/sitemap_index.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -2053,7 +1830,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "94"
 				},
 				{
 					"pluginid": "90005",
@@ -2066,15 +1843,7 @@
 					"desc": "<p>Specifies the relationship between request initiator's origin and target's origin.</p>",
 					"instances":[ 
 						{
-							"uri": "https://eva.beta.gouv.fr",
-							"method": "GET",
-							"param": "Sec-Fetch-Site",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://eva.beta.gouv.fr/robots.txt",
+							"uri": "https://eva.beta.gouv.fr/category-sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -2083,6 +1852,14 @@
 						},
 						{
 							"uri": "https://eva.beta.gouv.fr/sitemap.xml",
+							"method": "GET",
+							"param": "Sec-Fetch-Site",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://eva.beta.gouv.fr/sitemap_index.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -2096,7 +1873,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "94"
 				},
 				{
 					"pluginid": "90005",
@@ -2109,15 +1886,7 @@
 					"desc": "<p>Specifies if a navigation request was initiated by a user.</p>",
 					"instances":[ 
 						{
-							"uri": "https://eva.beta.gouv.fr",
-							"method": "GET",
-							"param": "Sec-Fetch-User",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://eva.beta.gouv.fr/robots.txt",
+							"uri": "https://eva.beta.gouv.fr/category-sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -2131,6 +1900,14 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
+						},
+						{
+							"uri": "https://eva.beta.gouv.fr/sitemap_index.xml",
+							"method": "GET",
+							"param": "Sec-Fetch-User",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
 						}
 					],
 					"count": "3",
@@ -2139,7 +1916,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "94"
 				},
 				{
 					"pluginid": "10112",
@@ -2156,7 +1933,7 @@
 							"method": "GET",
 							"param": "_session_id",
 							"attack": "",
-							"evidence": "mvKmddM1sZz%2FIDBnI8rwVuou4NuFTTOI2geENK4YdcwTjEVEU7JDNcXzpOneCcmuxmeD7Nnn94QYFwsKVOZPBSLDtHQQ2FTLZYtrfmxa%2FRpFg%2BZxTB1GZ%2FhcsdoNA%2FX2z%2BKlJ%2BXpALiSlYgQjpbHtMSQt4JwXqTAgxrGZgRUeIfW%2BtwIzL8btbQCSI5BaiZ49sI%2F7L2Y3atHmctkt4v8Wb%2FHcifw6448ahrBgVBH1Fntc%2B4eHih8USSfla4nWp9IvXzfoi6ZOd%2FLXqo34PlKiekzCA%3D%3D--fcNUx7GoJ7MWerJN--5MLGrX3vc9QmyvGqP8DRIw%3D%3D",
+							"evidence": "6IrRIfTr3NAbBypPiCH5rkQTKnwWhCZ9IRkfmwW0x7eDgvG%2BCpxIxWtykwuy9KVl5AjBjKbYfA3X0%2BEsSqYS3%2FjFy8WBU5fLc%2F972So2IN6NQhv4xMGpsFAd8Rl%2B7N0mVGB7Rmz2tk3KoFsgF9WPdBEScxFhVJlitHiV2dZxtvAyuTrCCK5%2FiCgSziCywx8MFc9n7T%2B1d%2BUUVciwg%2FRoyqgZ1zfqHs8iu%2FrdxegCaTcXN4WltaC9bf7WepT%2B2hw7u%2F0Ne5i6xK%2BdHYxqcT8OCqZQNA%3D%3D--yd%2FZ%2Bydjrsf5u4b%2F--2Uk0nEFLPNDf%2FuNGPRDiZQ%3D%3D",
 							"otherinfo": "\ncookie:_session_id"
 						},
 						{
@@ -2164,7 +1941,7 @@
 							"method": "GET",
 							"param": "_session_id",
 							"attack": "",
-							"evidence": "%2BsckY2vReJU5lYKeQj5tsqxAwUUA0GvaQp4PHpUNOEaz2hHHv4iDivUpttJXb1G00GPRSnUn1asjiuTWlLED82zti7wLrIyJdEEtVxOY4LW9z0uzWRvvqmZPt2r2qzSDa%2BaoI5GahWz58Daat8SWnKrAR1F9Eymm93sPWVZ5sDjlTUMhWz3Ue7Z5JTmE4241ut%2FVo0qaBM1YrI%2FLHMmoR9qu%2FkjLwcQsq5lM%2Bwg2xRLuYJLUVSvFCE1%2B2j5CFaZY%2Be0EdyyfNKx8Fzjfh1fCv4Y6%2FA%3D%3D--vqAZ8IQxIdOzz6%2BN--jbKPzmXtRrGAEVc97I84AQ%3D%3D",
+							"evidence": "Zq%2BHwtwwFeso5Tw9iHzZ4IoiTI0M77z9kKVOYDwnjHw8cl71bxbT4PIsTGWvqfAti%2FnuYTN3r6A%2F1JRvIgmEJNaxZC526ReGYF2%2BgKUaKf1%2BYiYZgLsnKutOL225FBoKcFkFK6257vkbqz3dz0Va5oLmEdTL5fEIyoztu4xNs4CNhcGUjZnW5OHZt%2B5JWd0GoW2GPySZEzt6qnDhcWZkuAAF%2BUB%2FLks8B%2BDNI64BPv66w6Ivdw0nJSmvVys7bDTXXRh%2FDyfRL9thG1KxdB29kz2aMw%3D%3D--XRKKwd7p4QMajJgZ--qC1M%2FKflVoyP0v%2FVSojZww%3D%3D",
 							"otherinfo": "\ncookie:_session_id"
 						},
 						{
@@ -2172,7 +1949,7 @@
 							"method": "GET",
 							"param": "_session_id",
 							"attack": "",
-							"evidence": "S7vVfxTMn5RRtvKlRlaa%2F1W4fmMUPk%2BgqwJLvCtxqyYmiMbwUcSKGHjfN1mQ2xh2xKZhDemrwVq2FesbAB7EasRwf4Ps925X7IMpcl6wv%2FyekyzN0CdoCP4RXB4dY9mokAY0Iwf7A3MqpUbtUbabzKx3jxkiq1dIn9aSjt4GKKx1oEl%2FiSKesRmnQoN9dbh%2BqdTTlEa9wTrVxPjkF2zjLGzlHT1hoDtZ4TINaQFFxgcbUCxGHyRWEWt3jxFOIRoa23tWzfESfpWPE5Pvrt2s28QMD7JHT0HjwicsNH%2F81wWpfJkQI2FTj2NOfKDZbuzYSLqx6%2Bx7W75Hrp7q4t2uwUm9ANImXvGFN8tFhoVKTCh63m1g52aqVP76Nw%3D%3D--U0Paz28tO%2F41TzMu--XYifaGPUXttzqtBXu7qISw%3D%3D",
+							"evidence": "4Z1nAc1T3%2FHIPJid1FfXFGpmykuPnhupGpUhXaFYTIn3B3UBENaYV6d8GYgMhiWz%2BjZuh7A%2BCRFeQOf1E7YbPJCpR3%2Fl7ljyUlenyleOcbbE%2FV4%2FEBwjJJO6GpKDS%2BTZebI7YHxSX5o0xHpAq4QiU51Wl81C9DNtQ2POoslb4AZgISHTEq%2FChMWCxZiX4xkHRPSLMJ9UA1r1hL%2FASVZ5ZpM8fO%2BxXUn3iragx4bSTGhqn4p2DK9wIzBhRJ6qf6pyvQSwrU%2BH%2FwHCt8Ec%2FGfie5sghe3bGfyBMB9KvtHnbq94yoPt4r3yFFZT%2FGarW2VDN03If7tXCCuIpJJCEDcXfeV4%2BwtcIaqYD7Y6d3bAwzDGPmzSoLw7l5DI6g%3D%3D--RlBMNkQFXjrp%2F6HV--%2FUj1bt6cadlZ220D2Or3tw%3D%3D",
 							"otherinfo": "\ncookie:_session_id"
 						},
 						{
@@ -2180,7 +1957,7 @@
 							"method": "GET",
 							"param": "_session_id",
 							"attack": "",
-							"evidence": "ei7LRxjZ4uGw4LLzA8lGR7iANFkwdCKrfJsZJDvdT%2FUpSugk9FUbHW6gBKQo1Z5ZB4GtPaw6ddahfe7%2FX7rKJosPzbBiKgxmbRMWpPvQp%2FEFntpIpqdP9gDtrqf0BrvaYuCOTV7OtQQlqAyE%2Ffs9x2zGQp1PDLWyvAWPikNyWRK38JBwQ8SdPGTc5qqG45Xh3U%2BytVQEnLx5UnkfiYiZ3XSpFEwDgV92ugfCpcT%2FfShoboTmLUQ0%2BihAla%2FfTCs0Xd4iaUJvds4DXuL2QX9fdJqjkg%3D%3D--cdU7A%2Fe41bjjxQb%2B--zG5tMOkwI4ZnTkbwnagoug%3D%3D",
+							"evidence": "wvlNTK0PISneObSc3E4qPyDB5vUko8JBP3NO869%2FcIhsp3qq6L32BotKxDo41Gj4RV9dQkUqFUF1KJOQXf78AnSWuWQRdh8sgZt5XuH8Rq9ojYiBVw8gqnTUyK3vzWsgTqIo7H%2Fukyl4O4GHDVJqqlHEU6kWM%2B5vizd%2FNe1OHy2gsB7GM17slQOgfQ6nHKY4aIDE9d%2BTpDGE%2BrQEhNU7KAwO9SYYPELAnEBtzPhGcIOdlKqPvMGE20zwIdL%2BhnE%2FmsnX2jOzlAjeMOuobtz6es27Dw%3D%3D--jHzLvdDyJbhIFjgs--WfvNa075uTVYPwmHpieTTg%3D%3D",
 							"otherinfo": "\ncookie:_session_id"
 						},
 						{
@@ -2188,23 +1965,23 @@
 							"method": "GET",
 							"param": "_session_id",
 							"attack": "",
-							"evidence": "7Aj92ssLGbYko1f7Te8LilLW68RKgdwkjKi7axrWgQXf1CwPtKRScIL3GNtPcTFJtjg00Yl61O6N1GNBW2qpcES%2Bew1a214OEyP120OrdJa5MSGKZ9qDfnFSc0nMk7Bg38hzbuO8h9ZNabzL3wYRQqfoIC1PblrwH%2BbaE9HA%2BNUJQuH%2FREsMc3wVDDqBXduwA31m%2BcDUdMaZy%2Bk%2FNYkAzGYugjQesJmpFIcTVKf24dQZ9cSSARMNW4xMngIog13JqSvktJS%2BsmDu1HIue5CMxOwoOQ%3D%3D--etU1lgCKJyj7vOyY--ijkoF7HCn%2F%2FfIcmNB0Yt0A%3D%3D",
+							"evidence": "p2AYEP6Tktq5Vx5aCnXv0ffanmd3ITo7PPJs%2BFSae%2BgvkFamDzC3MI5cUfYwG3FsliiZpaLzncrVFMrKtwa5EDl9xHzYekR0Vjy%2BCScjxvF6xFp2ehda0gr6KFQmAl3R0IAldyLWFxbv51FWiMmLL03OAFFDSwd2b1vyoHAYQ9CPyMhnK0Ltx2x%2FsWcDmRQHD%2F74ZdGvOgVJBdHvQG2jXxeYPdWbhGUXz7zylu0XjJJdztzAOmVjXGNzOFHfxzNIwO59OzXQpQt5shOFWZvk1iLjLw%3D%3D--fMy1UtcMf4UuYyF3--WIzr8hR2SNV%2Bj6wuYlkcwQ%3D%3D",
 							"otherinfo": "\ncookie:_session_id"
-						},
-						{
-							"uri": "https://eva.beta.gouv.fr/wp-comments-post.php",
-							"method": "POST",
-							"param": "comment_author_url_d35de6973eab64864ee13fb596a0d75d",
-							"attack": "",
-							"evidence": "https%3A%2F%2Fzap.example.com",
-							"otherinfo": "\ncookie:comment_author_url_d35de6973eab64864ee13fb596a0d75d\ncookie:comment_author_email_d35de6973eab64864ee13fb596a0d75d"
 						},
 						{
 							"uri": "https://eva.beta.gouv.fr/pro/admin/password/new",
 							"method": "GET",
 							"param": "_session_id",
 							"attack": "",
-							"evidence": "%2BsckY2vReJU5lYKeQj5tsqxAwUUA0GvaQp4PHpUNOEaz2hHHv4iDivUpttJXb1G00GPRSnUn1asjiuTWlLED82zti7wLrIyJdEEtVxOY4LW9z0uzWRvvqmZPt2r2qzSDa%2BaoI5GahWz58Daat8SWnKrAR1F9Eymm93sPWVZ5sDjlTUMhWz3Ue7Z5JTmE4241ut%2FVo0qaBM1YrI%2FLHMmoR9qu%2FkjLwcQsq5lM%2Bwg2xRLuYJLUVSvFCE1%2B2j5CFaZY%2Be0EdyyfNKx8Fzjfh1fCv4Y6%2FA%3D%3D--vqAZ8IQxIdOzz6%2BN--jbKPzmXtRrGAEVc97I84AQ%3D%3D",
+							"evidence": "Zq%2BHwtwwFeso5Tw9iHzZ4IoiTI0M77z9kKVOYDwnjHw8cl71bxbT4PIsTGWvqfAti%2FnuYTN3r6A%2F1JRvIgmEJNaxZC526ReGYF2%2BgKUaKf1%2BYiYZgLsnKutOL225FBoKcFkFK6257vkbqz3dz0Va5oLmEdTL5fEIyoztu4xNs4CNhcGUjZnW5OHZt%2B5JWd0GoW2GPySZEzt6qnDhcWZkuAAF%2BUB%2FLks8B%2BDNI64BPv66w6Ivdw0nJSmvVys7bDTXXRh%2FDyfRL9thG1KxdB29kz2aMw%3D%3D--XRKKwd7p4QMajJgZ--qC1M%2FKflVoyP0v%2FVSojZww%3D%3D",
+							"otherinfo": "\ncookie:_session_id"
+						},
+						{
+							"uri": "https://eva.beta.gouv.fr/pro/inclusion_connect/auth",
+							"method": "GET",
+							"param": "_session_id",
+							"attack": "",
+							"evidence": "4Z1nAc1T3%2FHIPJid1FfXFGpmykuPnhupGpUhXaFYTIn3B3UBENaYV6d8GYgMhiWz%2BjZuh7A%2BCRFeQOf1E7YbPJCpR3%2Fl7ljyUlenyleOcbbE%2FV4%2FEBwjJJO6GpKDS%2BTZebI7YHxSX5o0xHpAq4QiU51Wl81C9DNtQ2POoslb4AZgISHTEq%2FChMWCxZiX4xkHRPSLMJ9UA1r1hL%2FASVZ5ZpM8fO%2BxXUn3iragx4bSTGhqn4p2DK9wIzBhRJ6qf6pyvQSwrU%2BH%2FwHCt8Ec%2FGfie5sghe3bGfyBMB9KvtHnbq94yoPt4r3yFFZT%2FGarW2VDN03If7tXCCuIpJJCEDcXfeV4%2BwtcIaqYD7Y6d3bAwzDGPmzSoLw7l5DI6g%3D%3D--RlBMNkQFXjrp%2F6HV--%2FUj1bt6cadlZ220D2Or3tw%3D%3D",
 							"otherinfo": "\ncookie:_session_id"
 						}
 					],
@@ -2214,7 +1991,7 @@
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "1039"
+					"sourceid": "1014"
 				},
 				{
 					"pluginid": "10049",
@@ -2228,14 +2005,6 @@
 					"instances":[ 
 						{
 							"uri": "https://eva.beta.gouv.fr",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
-						},
-						{
-							"uri": "https://eva.beta.gouv.fr/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2267,6 +2036,14 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
+							"uri": "https://eva.beta.gouv.fr/qui-sommes-nous/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
 							"uri": "https://eva.beta.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "",
@@ -2283,7 +2060,7 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"uri": "https://eva.beta.gouv.fr/temoignages/",
+							"uri": "https://eva.beta.gouv.fr/wp-json/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2340,7 +2117,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "199"
+					"sourceid": "177"
 				},
 				{
 					"pluginid": "10031",
@@ -2452,10 +2229,10 @@
 					"count": "12",
 					"solution": "<p>Validate all input and sanitize output it before writing to any HTML attributes.</p>",
 					"otherinfo": "<p>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:</p><p></p><p>https://eva.beta.gouv.fr/?p=2968</p><p></p><p>appears to include user input in: </p><p></p><p>a(n) [div] tag [data-elementor-id] attribute </p><p></p><p>The user input found was:</p><p>p=2968</p><p></p><p>The user-controlled value was:</p><p>2968</p>",
-					"reference": "<p>http://websecuritytool.codeplex.com/wikipage?title=Checks#user-controlled-html-attribute</p>",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html</p>",
 					"cweid": "20",
 					"wascid": "20",
-					"sourceid": "1209"
+					"sourceid": "1183"
 				}
 			]
 		}

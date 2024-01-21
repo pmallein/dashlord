@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 14 Jan 2024 21:22:14",
+	"@generated": "Sun, 21 Jan 2024 21:13:35",
 	"site":[ 
 		{
 			"@name": "https://datasubvention.beta.gouv.fr",
@@ -9,33 +9,6 @@
 			"@port": "443",
 			"@ssl": "true",
 			"alerts": [ 
-				{
-					"pluginid": "10062",
-					"alertRef": "10062",
-					"alert": "PII Disclosure",
-					"name": "PII Disclosure",
-					"riskcode": "3",
-					"confidence": "2",
-					"riskdesc": "High (Medium)",
-					"desc": "<p>The response contains Personally Identifiable Information, such as CC number, SSN and similar sensitive data.</p>",
-					"instances":[ 
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js?ver=3.19.0-cloud5",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "500 408 258 167",
-							"otherinfo": "Credit Card Type detected: Maestro"
-						}
-					],
-					"count": "1",
-					"solution": "<p>Check the response for the potential presence of personally identifiable information (PII), ensure nothing sensitive is leaked by the application.</p>",
-					"otherinfo": "<p>Credit Card Type detected: Maestro</p>",
-					"reference": "",
-					"cweid": "359",
-					"wascid": "13",
-					"sourceid": "290"
-				},
 				{
 					"pluginid": "10202",
 					"alertRef": "10202",
@@ -63,7 +36,7 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"email\" \"NAME\" \"PRENOM\" \"Service\" \"sib_form_action\" \"sib_form_alert_notice\" \"sib_form_id\" \"sib_security\" ]."
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/actualites/",
+							"uri": "https://datasubvention.beta.gouv.fr/author/alexandra/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -71,15 +44,7 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"email\" \"NAME\" \"PRENOM\" \"Service\" \"sib_form_action\" \"sib_form_alert_notice\" \"sib_form_id\" \"sib_security\" ]."
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/aller-plus-loin/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<form id=\"sib_signup_form_2\" method=\"post\" class=\"sib_signup_form\">",
-							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"email\" \"NAME\" \"PRENOM\" \"Service\" \"sib_form_action\" \"sib_form_alert_notice\" \"sib_form_id\" \"sib_security\" ]."
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/budgets/",
+							"uri": "https://datasubvention.beta.gouv.fr/author/marion/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -103,7 +68,31 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 2: \"email\" \"NAME\" \"PRENOM\" \"Service\" \"sib_form_action\" \"sib_form_alert_notice\" \"sib_form_id\" \"sib_security\" ]."
 						},
 						{
+							"uri": "https://datasubvention.beta.gouv.fr/data-subvention-se-deploie/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form id=\"sib_signup_form_2\" method=\"post\" class=\"sib_signup_form\">",
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"email\" \"NAME\" \"PRENOM\" \"Service\" \"sib_form_action\" \"sib_form_alert_notice\" \"sib_form_id\" \"sib_security\" ]."
+						},
+						{
 							"uri": "https://datasubvention.beta.gouv.fr/documentation/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form id=\"sib_signup_form_2\" method=\"post\" class=\"sib_signup_form\">",
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"email\" \"NAME\" \"PRENOM\" \"Service\" \"sib_form_action\" \"sib_form_alert_notice\" \"sib_form_id\" \"sib_security\" ]."
+						},
+						{
+							"uri": "https://datasubvention.beta.gouv.fr/infolettre-data-subvention-fait-sa-rentree/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form id=\"sib_signup_form_2\" method=\"post\" class=\"sib_signup_form\">",
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"email\" \"NAME\" \"PRENOM\" \"Service\" \"sib_form_action\" \"sib_form_alert_notice\" \"sib_form_id\" \"sib_security\" ]."
+						},
+						{
+							"uri": "https://datasubvention.beta.gouv.fr/les-bonnes-pratiques-pour-vous-aider-dans-linstruction-de-demandes-de-subventions/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -117,31 +106,15 @@
 							"attack": "",
 							"evidence": "<form id=\"sib_signup_form_2\" method=\"post\" class=\"sib_signup_form\">",
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"email\" \"NAME\" \"PRENOM\" \"Service\" \"sib_form_action\" \"sib_form_alert_notice\" \"sib_form_id\" \"sib_security\" ]."
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/politique-de-confidentialite/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<form id=\"sib_signup_form_2\" method=\"post\" class=\"sib_signup_form\">",
-							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"email\" \"NAME\" \"PRENOM\" \"Service\" \"sib_form_action\" \"sib_form_alert_notice\" \"sib_form_id\" \"sib_security\" ]."
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/statistiques/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<form id=\"sib_signup_form_2\" method=\"post\" class=\"sib_signup_form\">",
-							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"email\" \"NAME\" \"PRENOM\" \"Service\" \"sib_form_action\" \"sib_form_alert_notice\" \"sib_form_id\" \"sib_security\" ]."
 						}
 					],
 					"count": "11",
 					"solution": "<p>Phase: Architecture and Design</p><p>Use a vetted library or framework that does not allow this weakness to occur or provides constructs that make this weakness easier to avoid.</p><p>For example, use anti-CSRF packages such as the OWASP CSRFGuard.</p><p></p><p>Phase: Implementation</p><p>Ensure that your application is free of cross-site scripting issues, because most CSRF defenses can be bypassed using attacker-controlled script.</p><p></p><p>Phase: Architecture and Design</p><p>Generate a unique nonce for each form, place the nonce into the form, and verify the nonce upon receipt of the form. Be sure that the nonce is not predictable (CWE-330).</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Identify especially dangerous operations. When the user performs a dangerous operation, send a separate confirmation request to ensure that the user intended to perform that operation.</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Use the ESAPI Session Management control.</p><p>This control includes a component for CSRF.</p><p></p><p>Do not use the GET method for any request that triggers a state change.</p><p></p><p>Phase: Implementation</p><p>Check the HTTP Referer header to see if the request originated from an expected page. This could break legitimate functionality, because users or proxies may have disabled sending the Referer for privacy reasons.</p>",
 					"otherinfo": "<p>No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"email\" \"NAME\" \"PRENOM\" \"Service\" \"sib_form_action\" \"sib_form_alert_notice\" \"sib_form_id\" \"sib_security\" ].</p>",
-					"reference": "<p>http://projects.webappsec.org/Cross-Site-Request-Forgery</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10038",
@@ -170,7 +143,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/actualites/",
+							"uri": "https://datasubvention.beta.gouv.fr/author/alexandra/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -178,15 +151,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/aller-plus-loin/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/cdn-cgi/l/email-protection",
+							"uri": "https://datasubvention.beta.gouv.fr/author/marion/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -202,7 +167,31 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://datasubvention.beta.gouv.fr/data-subvention-se-deploie/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://datasubvention.beta.gouv.fr/documentation/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://datasubvention.beta.gouv.fr/infolettre-data-subvention-fait-sa-rentree/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://datasubvention.beta.gouv.fr/les-bonnes-pratiques-pour-vous-aider-dans-linstruction-de-demandes-de-subventions/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -218,23 +207,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/politique-de-confidentialite/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://datasubvention.beta.gouv.fr/robots.txt",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/statistiques/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -245,7 +218,7 @@
 					"count": "11",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "",
-					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>http://www.w3.org/TR/CSP/</p><p>http://w3c.github.io/webappsec/specs/content-security-policy/csp-specification.dev.html</p><p>http://www.html5rocks.com/en/tutorials/security/content-security-policy/</p><p>http://caniuse.com/#feat=contentsecuritypolicy</p><p>http://content-security-policy.com/</p>",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>https://www.w3.org/TR/CSP/</p><p>https://w3c.github.io/webappsec-csp/</p><p>https://web.dev/articles/csp</p><p>https://caniuse.com/#feat=contentsecuritypolicy</p><p>https://content-security-policy.com/</p>",
 					"cweid": "693",
 					"wascid": "15",
 					"sourceid": "1"
@@ -277,22 +250,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/accessibilite/",
-							"method": "GET",
-							"param": "x-frame-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/actualites/",
-							"method": "GET",
-							"param": "x-frame-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://datasubvention.beta.gouv.fr/aller-plus-loin/",
 							"method": "GET",
 							"param": "x-frame-options",
@@ -301,7 +258,15 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/budgets/",
+							"uri": "https://datasubvention.beta.gouv.fr/author/alexandra/",
+							"method": "GET",
+							"param": "x-frame-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://datasubvention.beta.gouv.fr/author/marion/",
 							"method": "GET",
 							"param": "x-frame-options",
 							"attack": "",
@@ -317,7 +282,31 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://datasubvention.beta.gouv.fr/data-subvention-se-deploie/",
+							"method": "GET",
+							"param": "x-frame-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://datasubvention.beta.gouv.fr/documentation/",
+							"method": "GET",
+							"param": "x-frame-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://datasubvention.beta.gouv.fr/infolettre-data-subvention-fait-sa-rentree/",
+							"method": "GET",
+							"param": "x-frame-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://datasubvention.beta.gouv.fr/les-bonnes-pratiques-pour-vous-aider-dans-linstruction-de-demandes-de-subventions/",
 							"method": "GET",
 							"param": "x-frame-options",
 							"attack": "",
@@ -331,22 +320,6 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/politique-de-confidentialite/",
-							"method": "GET",
-							"param": "x-frame-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/statistiques/",
-							"method": "GET",
-							"param": "x-frame-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
 						}
 					],
 					"count": "11",
@@ -355,7 +328,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options</p>",
 					"cweid": "1021",
 					"wascid": "15",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90003",
@@ -422,71 +395,42 @@
 							"attack": "",
 							"evidence": "<link rel='stylesheet' id='google-fonts-1-css' href='https://fonts.googleapis.com/css?family=Poppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=auto&#038;ver=6.4.2' media='all' />",
 							"otherinfo": ""
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/contact/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<link rel=\"apple-touch-icon\" href=\"https://ml4m9p8dxdpd.i.optimole.com/w:auto/h:auto/q:mauto/f:avif/https://datasubvention.beta.gouv.fr/wp-content/uploads/2022/06/Republique-francaise.jpeg\" />",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/contact/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<link rel=\"icon\" href=\"https://ml4m9p8dxdpd.i.optimole.com/w:150/h:150/q:mauto/rt:fill/g:ce/f:avif/https://datasubvention.beta.gouv.fr/wp-content/uploads/2022/06/Republique-francaise.jpeg\" sizes=\"32x32\" />",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/contact/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<link rel=\"icon\" href=\"https://ml4m9p8dxdpd.i.optimole.com/w:auto/h:auto/q:mauto/f:avif/https://datasubvention.beta.gouv.fr/wp-content/uploads/2022/06/Republique-francaise.jpeg\" sizes=\"192x192\" />",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/contact/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<link rel=\"preconnect\" href=\"https://fonts.gstatic.com/\" crossorigin>",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/contact/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<link rel=\"profile\" href=\"https://gmpg.org/xfn/11\">",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/contact/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<link rel='preconnect' href='https://ml4m9p8dxdpd.i.optimole.com' />",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/contact/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<link rel='stylesheet' id='google-fonts-1-css' href='https://fonts.googleapis.com/css?family=Poppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=auto&#038;ver=6.4.2' media='all' />",
-							"otherinfo": ""
 						}
 					],
-					"count": "14",
+					"count": "7",
 					"solution": "<p>Provide a valid integrity attribute to the tag.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity</p>",
 					"cweid": "345",
 					"wascid": "15",
 					"sourceid": "1"
+				},
+				{
+					"pluginid": "10003",
+					"alertRef": "10003",
+					"alert": "Vulnerable JS Library",
+					"name": "Vulnerable JS Library",
+					"riskcode": "2",
+					"confidence": "2",
+					"riskdesc": "Medium (Medium)",
+					"desc": "<p>The identified library handlebars, version 1.2.3 is vulnerable.</p>",
+					"instances":[ 
+						{
+							"uri": "https://datasubvention.beta.gouv.fr/wp-content/plugins/sheetdb/assets/js/sheetdb-handlebars-1.2.3.js?ver=6.4.2",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "handlebars-1.2.3.js",
+							"otherinfo": "CVE-2021-23369\nCVE-2019-20920\nCVE-2019-19919\nCVE-2021-23383\nCVE-2015-8861\n"
+						}
+					],
+					"count": "1",
+					"solution": "<p>Please upgrade to the latest version of handlebars.</p>",
+					"otherinfo": "<p>CVE-2021-23369</p><p>CVE-2019-20920</p><p>CVE-2019-19919</p><p>CVE-2021-23383</p><p>CVE-2015-8861</p><p></p>",
+					"reference": "<p>https://github.com/wycats/handlebars.js/commit/cd38583216dce3252831916323202749431c773e</p><p>https://github.com/wycats/handlebars.js/blob/master/release-notes.md#v453---november-18th-2019</p><p>https://github.com/advisories/GHSA-3cqr-58rm-57f8</p><p>https://github.com/advisories/GHSA-q42p-pg8m-cqh6</p><p>https://github.com/wycats/handlebars.js/issues/1495</p><p>https://github.com/handlebars-lang/handlebars.js/pull/1633</p><p>https://nvd.nist.gov/vuln/detail/CVE-2021-23369</p><p>https://github.com/wycats/handlebars.js/blob/master/release-notes.md#v430---september-24th-2019</p><p>https://github.com/wycats/handlebars.js/pull/1083</p><p>https://github.com/advisories/GHSA-g9r4-xpmj-mj65</p><p>https://nvd.nist.gov/vuln/detail/CVE-2021-23383</p><p>https://snyk.io/vuln/SNYK-JS-HANDLEBARS-174183</p><p>https://nvd.nist.gov/vuln/detail/CVE-2019-20920</p><p>https://github.com/advisories/GHSA-2cf5-4w76-r9qv</p><p>https://www.npmjs.com/advisories/1316</p><p>https://github.com/advisories/GHSA-q2c6-c6pm-g3gh</p><p></p>",
+					"cweid": "829",
+					"wascid": "-1",
+					"sourceid": "406"
 				},
 				{
 					"pluginid": "10054",
@@ -580,7 +524,42 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "228"
+					"sourceid": "388"
+				},
+				{
+					"pluginid": "110009",
+					"alertRef": "110009",
+					"alert": "Full Path Disclosure",
+					"name": "Full Path Disclosure",
+					"riskcode": "1",
+					"confidence": "1",
+					"riskdesc": "Low (Low)",
+					"desc": "<p>The full path of files which might be sensitive has been exposed to the client.</p>",
+					"instances":[ 
+						{
+							"uri": "https://datasubvention.beta.gouv.fr/?page_id=1332",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "/lib/",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://datasubvention.beta.gouv.fr/contact/https:/datasubvention.beta.gouv.fr/contact/https:/datasubvention.beta.gouv.fr/contact/https:/datasubvention.beta.gouv.fr/contact/https:/datasubvention.beta.gouv.fr/contact/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "/lib/",
+							"otherinfo": ""
+						}
+					],
+					"count": "2",
+					"solution": "<p>Disable directory browsing in your web server. Refer to the web server documentation.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://owasp.org/www-community/attacks/Full_Path_Disclosure</p>",
+					"cweid": "209",
+					"wascid": "13",
+					"sourceid": "582"
 				},
 				{
 					"pluginid": "10063",
@@ -609,7 +588,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/actualites/",
+							"uri": "https://datasubvention.beta.gouv.fr/author/alexandra/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -617,15 +596,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/aller-plus-loin/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/cdn-cgi/l/email-protection",
+							"uri": "https://datasubvention.beta.gouv.fr/author/marion/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -641,7 +612,31 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://datasubvention.beta.gouv.fr/data-subvention-se-deploie/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://datasubvention.beta.gouv.fr/documentation/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://datasubvention.beta.gouv.fr/infolettre-data-subvention-fait-sa-rentree/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://datasubvention.beta.gouv.fr/les-bonnes-pratiques-pour-vous-aider-dans-linstruction-de-demandes-de-subventions/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -657,23 +652,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/politique-de-confidentialite/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://datasubvention.beta.gouv.fr/robots.txt",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/statistiques/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -708,7 +687,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/",
+							"uri": "https://datasubvention.beta.gouv.fr/author-sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -716,7 +695,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/actualites/",
+							"uri": "https://datasubvention.beta.gouv.fr/e-landing-page-sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -724,7 +703,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/aller-plus-loin/",
+							"uri": "https://datasubvention.beta.gouv.fr/page-sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -732,23 +711,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/auth/signup?mtm_campaign=siteweb&mtm_source=sinscrire",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "x-powered-by: Elementor Cloud",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/contact/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "x-powered-by: Elementor Cloud",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/documentation/",
+							"uri": "https://datasubvention.beta.gouv.fr/post-sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -772,7 +735,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/wp-json/",
+							"uri": "https://datasubvention.beta.gouv.fr/sitemap_index.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -780,7 +743,23 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/wp-json/wp/v2/pages/496",
+							"uri": "https://datasubvention.beta.gouv.fr/wp-content/uploads/2022/06/Ajouter_des_lignes_dans_le_corps_du_texte_800_800_px_.png",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "x-powered-by: Elementor Cloud",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://datasubvention.beta.gouv.fr/wp-content/uploads/2022/06/Page-demande-de-subvention.gif",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "x-powered-by: Elementor Cloud",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://datasubvention.beta.gouv.fr/wp-content/uploads/2023/10/Capture-decran-2023-10-24-a-14.41.46.png",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -791,14 +770,14 @@
 					"count": "11",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress \"X-Powered-By\" headers.</p>",
 					"otherinfo": "",
-					"reference": "<p>http://blogs.msdn.com/b/varunm/archive/2013/04/23/remove-unwanted-http-response-headers.aspx</p><p>http://www.troyhunt.com/2012/02/shhh-dont-let-your-response-headers.html</p>",
+					"reference": "<p>https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/01-Information_Gathering/08-Fingerprint_Web_Application_Framework</p><p>https://www.troyhunt.com/2012/02/shhh-dont-let-your-response-headers.html</p>",
 					"cweid": "200",
 					"wascid": "13",
 					"sourceid": "1"
 				},
 				{
 					"pluginid": "10035",
-					"alertRef": "10035",
+					"alertRef": "10035-1",
 					"alert": "Strict-Transport-Security Header Not Set",
 					"name": "Strict-Transport-Security Header Not Set",
 					"riskcode": "1",
@@ -815,7 +794,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/",
+							"uri": "https://datasubvention.beta.gouv.fr/author-sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -823,7 +802,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/actualites/",
+							"uri": "https://datasubvention.beta.gouv.fr/e-landing-page-sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -831,7 +810,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/aller-plus-loin/",
+							"uri": "https://datasubvention.beta.gouv.fr/page-sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -839,23 +818,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/auth/signup?mtm_campaign=siteweb&mtm_source=sinscrire",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/contact/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/documentation/",
+							"uri": "https://datasubvention.beta.gouv.fr/post-sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -871,7 +834,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/wp-content/uploads/2023/02/Referentiel-de-donnees-Data.Subvention.pdf",
+							"uri": "https://datasubvention.beta.gouv.fr/sitemap_index.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -879,7 +842,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/wp-json/",
+							"uri": "https://datasubvention.beta.gouv.fr/wp-content/uploads/2022/06/Ajouter_des_lignes_dans_le_corps_du_texte_800_800_px_.png",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -887,7 +850,23 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/wp-json/wp/v2/pages/496",
+							"uri": "https://datasubvention.beta.gouv.fr/wp-content/uploads/2022/06/GIF-Presentation-du-site-wordpress-2.gif",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://datasubvention.beta.gouv.fr/wp-content/uploads/2022/06/Page-demande-de-subvention.gif",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://datasubvention.beta.gouv.fr/wp-content/uploads/2023/10/Capture-decran-2023-10-24-a-14.41.46.png",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -898,7 +877,7 @@
 					"count": "11",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to enforce Strict-Transport-Security.</p>",
 					"otherinfo": "",
-					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>http://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>http://caniuse.com/stricttransportsecurity</p><p>http://tools.ietf.org/html/rfc6797</p>",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>https://caniuse.com/stricttransportsecurity</p><p>https://datatracker.ietf.org/doc/html/rfc6797</p>",
 					"cweid": "319",
 					"wascid": "15",
 					"sourceid": "1"
@@ -926,91 +905,43 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "1704335376",
-							"otherinfo": "1704335376, which evaluates to: 2024-01-04 02:29:36"
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "1704335377",
-							"otherinfo": "1704335377, which evaluates to: 2024-01-04 02:29:37"
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "1704793450",
-							"otherinfo": "1704793450, which evaluates to: 2024-01-09 09:44:10"
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "1704797051",
-							"otherinfo": "1704797051, which evaluates to: 2024-01-09 10:44:11"
+							"evidence": "1705497648",
+							"otherinfo": "1705497648, which evaluates to: 2024-01-17 13:20:48"
 						},
 						{
 							"uri": "https://datasubvention.beta.gouv.fr",
 							"method": "GET",
 							"param": "Set-Cookie",
 							"attack": "",
-							"evidence": "1705267225",
-							"otherinfo": "1705267225, which evaluates to: 2024-01-14 21:20:25"
+							"evidence": "1705871593",
+							"otherinfo": "1705871593, which evaluates to: 2024-01-21 21:13:13"
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/contact/",
+							"uri": "https://datasubvention.beta.gouv.fr",
 							"method": "GET",
-							"param": "",
+							"param": "Set-Cookie",
 							"attack": "",
-							"evidence": "1673362310",
-							"otherinfo": "1673362310, which evaluates to: 2023-01-10 14:51:50"
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/contact/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "1704335376",
-							"otherinfo": "1704335376, which evaluates to: 2024-01-04 02:29:36"
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/contact/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "1704335377",
-							"otherinfo": "1704335377, which evaluates to: 2024-01-04 02:29:37"
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/contact/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "1704404584",
-							"otherinfo": "1704404584, which evaluates to: 2024-01-04 21:43:04"
+							"evidence": "1705871594",
+							"otherinfo": "1705871594, which evaluates to: 2024-01-21 21:13:14"
 						},
 						{
 							"uri": "https://datasubvention.beta.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "Set-Cookie",
 							"attack": "",
-							"evidence": "1705267225",
-							"otherinfo": "1705267225, which evaluates to: 2024-01-14 21:20:25"
+							"evidence": "1705871593",
+							"otherinfo": "1705871593, which evaluates to: 2024-01-21 21:13:13"
 						},
 						{
 							"uri": "https://datasubvention.beta.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Set-Cookie",
 							"attack": "",
-							"evidence": "1705267226",
-							"otherinfo": "1705267226, which evaluates to: 2024-01-14 21:20:26"
+							"evidence": "1705871593",
+							"otherinfo": "1705871593, which evaluates to: 2024-01-21 21:13:13"
 						}
 					],
-					"count": "12",
+					"count": "6",
 					"solution": "<p>Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.</p>",
 					"otherinfo": "<p>1673362310, which evaluates to: 2023-01-10 14:51:50</p>",
 					"reference": "<p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
@@ -1037,7 +968,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/",
+							"uri": "https://datasubvention.beta.gouv.fr/author-sitemap.xml",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -1045,7 +976,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/actualites/",
+							"uri": "https://datasubvention.beta.gouv.fr/e-landing-page-sitemap.xml",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -1053,7 +984,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/aller-plus-loin/",
+							"uri": "https://datasubvention.beta.gouv.fr/page-sitemap.xml",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -1061,7 +992,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/contact/",
+							"uri": "https://datasubvention.beta.gouv.fr/post-sitemap.xml",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -1069,7 +1000,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/documentation/",
+							"uri": "https://datasubvention.beta.gouv.fr/sitemap_index.xml",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -1077,7 +1008,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/statistiques/",
+							"uri": "https://datasubvention.beta.gouv.fr/wp-content/uploads/2022/06/Ajouter_des_lignes_dans_le_corps_du_texte_800_800_px_.png",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -1085,7 +1016,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/wp-content/plugins/wp-data-access/assets/css/wpda_public.css?ver=5.2.11",
+							"uri": "https://datasubvention.beta.gouv.fr/wp-content/uploads/2022/06/GIF-Presentation-du-site-wordpress-2.gif",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -1093,7 +1024,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/wp-content/themes/hello-elementor/style.min.css?ver=2.6.1",
+							"uri": "https://datasubvention.beta.gouv.fr/wp-content/uploads/2022/06/Page-demande-de-subvention.gif",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -1101,7 +1032,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/wp-content/uploads/2023/02/Nos-fournisseurs-de-donnees-Data.Subvention.pdf",
+							"uri": "https://datasubvention.beta.gouv.fr/wp-content/uploads/2023/10/Capture-decran-2023-10-24-a-14.41.46.png",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -1109,7 +1040,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/wp-content/uploads/2023/02/Referentiel-de-donnees-Data.Subvention.pdf",
+							"uri": "https://datasubvention.beta.gouv.fr/wp-content/uploads/2023/10/equipe-fast-300x225.jpeg",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -1120,7 +1051,7 @@
 					"count": "11",
 					"solution": "<p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p>",
 					"otherinfo": "<p>This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.</p><p>At \"High\" threshold this scan rule will not alert on client or server error responses.</p>",
-					"reference": "<p>http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx</p><p>https://owasp.org/www-community/Security_Headers</p>",
+					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
 					"cweid": "693",
 					"wascid": "15",
 					"sourceid": "1"
@@ -1140,16 +1071,16 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "HR6Wzy0btFp4iU-1705267225-1-AdruWifopeIFcTtJ/0dTW1QR7VkYQ2fsdgZfY+zlJeUh0Lbvsp1w0mQ6E2dwL4XRMY6zcyYLV/7qMDWVh/3Sz5Y=",
-							"otherinfo": "\\x001d\\x001e\uFFFD\uFFFD-\\x001b\uFFFDZx\uFFFDO\uFFFD\uFFFDNv\uBF76\uFFFD\uFFFD~\\x0001\uFFFD\uFFFDZ'\uFFFD\uFFFD\\x0005q;I\uFFFDGS[T\\x0011\uFFFDY\\x0018Cg\uFFFDv\\x0006_c\uFFFD\uFFFD%\uFFFD!\u0436\uFC9Dp\uFFFDd:\\x0013gp/\uFFFD\uFFFD1\uFFFD\uFFFDs&\\x000bW\uFFFD\uFFFD05\uFFFD\uFFFD\uFFFD\uFFFD\u03D6"
+							"evidence": "fr/wp-content/uploads/2022/12/Background-1",
+							"otherinfo": "~\uFFFD\uFFFD\uFFFD(\uFFFD\u05E7\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDo\uFFFD\uFFFD\uFFFDZrH+\uFFFD\uFFFD\uFFFD\uFFFD"
 						},
 						{
 							"uri": "https://datasubvention.beta.gouv.fr",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "fr/wp-content/uploads/2022/12/Background-1",
-							"otherinfo": "~\uFFFD\uFFFD\uFFFD(\uFFFD\u05E7\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDo\uFFFD\uFFFD\uFFFDZrH+\uFFFD\uFFFD\uFFFD\uFFFD"
+							"evidence": "59Rhhl1KCVttrNgvm4pu_ijE-1705871594277-0-604800000",
+							"otherinfo": "\uFFFD\uFFFDa\uFFFD]J\t[m\uFFFD\uFFFD/\uFFFD\uFFFDn\uFFFD(\uFFFD\uFFFD^\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD6\uFFF4\uFFFD\uFFFD8\uFFFDM4\uFFFD"
 						},
 						{
 							"uri": "https://datasubvention.beta.gouv.fr/",
@@ -1160,7 +1091,7 @@
 							"otherinfo": "~\uFFFD\uFFFD\uFFFD(\uFFFD\u05E7\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDo\uFFFD\uFFFD\uFFFDZrH+\uFFFD\uFFFD\uFFFD\uFFFD"
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/actualites/",
+							"uri": "https://datasubvention.beta.gouv.fr/author/alexandra/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1168,23 +1099,7 @@
 							"otherinfo": "~\uFFFD\uFFFD\uFFFD(\uFFFD\u05E7\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDo\uFFFD\uFFFD\uFFFD\uB897\uFFFD\uFFFD/\uFFFD\\x0005\uFFFD\\x001e\uFFFD)\uFFFD"
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/aller-plus-loin/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "fr/wp-content/uploads/2023/11/Charte-graphique-1",
-							"otherinfo": "~\uFFFD\uFFFD\uFFFD(\uFFFD\u05E7\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDj\uFFFD^\uFFFD\n\u06A6\\x0018\uFFFD\uFFFD\uFFFD"
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/cdn-cgi/l/email-protection",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "com/hc/en-us/articles/200170016-What-is-Email-Address-Obfuscation-",
-							"otherinfo": "r\uFFFD\uFFFD\uFFFD\uFFFD\u079F\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD^\uFFFD\uFFFD\uFFFD\uFFFD^\uFFFD\uFFFD^\uFFFDZ\\x0016\uFFFD\uFFFD+>\\x0012f\uFFFD\uFFFD\uFFFD\\x001dv\uFFFD\uFFFD\uFFFD\uFFFD~\uFFFD\\x001cj\u0628\uFFFD"
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/contact/",
+							"uri": "https://datasubvention.beta.gouv.fr/author/marion/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1192,49 +1107,65 @@
 							"otherinfo": "~\uFFFD\uFFFD\uFFFD(\uFFFD\u05E7\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDo\uFFFD\uFFFD\uFFFD\uB897\uFFFD\uFFFD/\uFFFD\\x0005\uFFFD\\x001e\uFFFD)\uFFFD"
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/documentation/",
+							"uri": "https://datasubvention.beta.gouv.fr/data-subvention-se-deploie/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "fr/wp-content/uploads/2023/06/Group-83-1",
-							"otherinfo": "~\uFFFD\uFFFD\uFFFD(\uFFFD\u05E7\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD~\uFFFD\uFFFD"
+							"evidence": "fr/wp-content/uploads/2022/06/Property-1Baseline",
+							"otherinfo": "~\uFFFD\uFFFD\uFFFD(\uFFFD\u05E7\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDo\uFFFD\uFFFD\uFFFD\uB897\uFFFD\uFFFD/\uFFFD\\x0005\uFFFD\\x001e\uFFFD)\uFFFD"
+						},
+						{
+							"uri": "https://datasubvention.beta.gouv.fr/infolettre-data-subvention-fait-sa-rentree/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "fr/wp-content/uploads/2022/06/stem-list-EVgsAbL51Rk-unsplash-scaled",
+							"otherinfo": "~\uFFFD\uFFFD\uFFFD(\uFFFD\u05E7\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDo\uFFFD\uFFFD\uFFFD-zo\uFFFD\uFFFD\uFFFD~\\x0011X,\\x0001\uFFFD\uFFFD\uFFFD\\x0019>\uFFFD{)\uFFFD\uFFFD!\uFFFD\uFFFD\\x001a\uFFFD\uFFFD"
+						},
+						{
+							"uri": "https://datasubvention.beta.gouv.fr/les-bonnes-pratiques-pour-vous-aider-dans-linstruction-de-demandes-de-subventions/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "fr/wp-content/uploads/2023/10/Portfolio2",
+							"otherinfo": "~\uFFFD\uFFFD\uFFFD(\uFFFD\u05E7\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD*6"
+						},
+						{
+							"uri": "https://datasubvention.beta.gouv.fr/page-sitemap.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "fr/wp-content/uploads/2022/06/Homepage-400_380",
+							"otherinfo": "~\uFFFD\uFFFD\uFFFD(\uFFFD\u05E7\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDo\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDZ\uFFFD\uFFFD\uFFFDO\uFFFD\uFFFD"
+						},
+						{
+							"uri": "https://datasubvention.beta.gouv.fr/post-sitemap.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "fr/wp-content/uploads/2022/06/stem-list-EVgsAbL51Rk-unsplash-scaled",
+							"otherinfo": "~\uFFFD\uFFFD\uFFFD(\uFFFD\u05E7\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDo\uFFFD\uFFFD\uFFFD-zo\uFFFD\uFFFD\uFFFD~\\x0011X,\\x0001\uFFFD\uFFFD\uFFFD\\x0019>\uFFFD{)\uFFFD\uFFFD!\uFFFD\uFFFD\\x001a\uFFFD\uFFFD"
 						},
 						{
 							"uri": "https://datasubvention.beta.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "pAyKzTYoTQAQAKh0oHIzYK59UE-1705267225802-0-604800000",
-							"otherinfo": "\uFFFD\\x000c\uFFFD\uFFFD6(M\\x0000\\x0010\\x0000\uFFFDt\uFFFDr3`\uFFFD}PO\uFFFD\uFFFDNv\uBF76\uFFFD\uFFFD6\uFFFDO\uFFFD\u04CF4\uFFFDM4"
+							"evidence": "ISfVOWZJuZxKx1zGmOT4_PmmEpljI_XPlW",
+							"otherinfo": "!'\uFFFD9fI\uFFFD\uFFFDJ\uFFFD\\\u0198\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x0012\uFFFDc#\uFFFD\u03D5"
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/statistiques/",
+							"uri": "https://datasubvention.beta.gouv.fr/wp-content/uploads/2023/10/test.jpeg",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "fr/wp-content/uploads/2022/06/Property-1Baseline",
-							"otherinfo": "~\uFFFD\uFFFD\uFFFD(\uFFFD\u05E7\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDo\uFFFD\uFFFD\uFFFD\uB897\uFFFD\uFFFD/\uFFFD\\x0005\uFFFD\\x001e\uFFFD)\uFFFD"
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/wp-content/uploads/2023/02/Nos-fournisseurs-de-donnees-Data.Subvention.pdf",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "1080/ColorSpace/DeviceRGB/BitsPerComponent",
-							"otherinfo": "\uFFFDO4\uFFFD*%\uFFFD\uFFFD\uFFFDi\u01FF\r\uFFFD\uFFFDq\uFFFDF\\x0007\uFFFDb\uFFFD\uFFFD\u07AC*&\uFFFD\uFFFD\u079E"
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/wp-content/uploads/elementor/css/post-6.css?ver=1704335376",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "fr/wp-content/uploads/2022/12/Marianne-Regular",
-							"otherinfo": "~\uFFFD\uFFFD\uFFFD(\uFFFD\u05E7\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDo\uFFFD\uFFFD\uFFFD\\x001a\uFFFD&\uFFFD\uFFFD\uFFFDz\\x000b\uFFFDj"
+							"evidence": "org/std/Iptc4xmpExt/2008-02-29/",
+							"otherinfo": "\uFFFD\uFFFD?\uFFFD\uFFFD\"\uFFFD\\\uFFFD\\x0019\uFFFD\\x0013\\x001b\uFFFDM<\uFFFDM\uFFFD\uFFFD\uFFFD"
 						}
 					],
 					"count": "12",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>\\x001d\\x001e\uFFFD\uFFFD-\\x001b\uFFFDZx\uFFFDO\uFFFD\uFFFDNv\uBF76\uFFFD\uFFFD~\\x0001\uFFFD\uFFFDZ'\uFFFD\uFFFD\\x0005q;I\uFFFDGS[T\\x0011\uFFFDY\\x0018Cg\uFFFDv\\x0006_c\uFFFD\uFFFD%\uFFFD!\u0436\uFC9Dp\uFFFDd:\\x0013gp/\uFFFD\uFFFD1\uFFFD\uFFFDs&\\x000bW\uFFFD\uFFFD05\uFFFD\uFFFD\uFFFD\uFFFD\u03D6</p>",
+					"otherinfo": "<p>~\uFFFD\uFFFD\uFFFD(\uFFFD\u05E7\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDo\uFFFD\uFFFD\uFFFDZrH+\uFFFD\uFFFD\uFFFD\uFFFD</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
@@ -1267,23 +1198,7 @@
 							"otherinfo": "There was a charset mismatch between the HTTP Header and the XML encoding declaration: [UTF-8] and [null] do not match."
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/wp-json/oembed/1.0/embed?format=xml&url=https%3A%2F%2Fdatasubvention.beta.gouv.fr%2Factualites%2F",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "There was a charset mismatch between the HTTP Header and the XML encoding declaration: [UTF-8] and [null] do not match."
-						},
-						{
 							"uri": "https://datasubvention.beta.gouv.fr/wp-json/oembed/1.0/embed?format=xml&url=https%3A%2F%2Fdatasubvention.beta.gouv.fr%2Faller-plus-loin%2F",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "There was a charset mismatch between the HTTP Header and the XML encoding declaration: [UTF-8] and [null] do not match."
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/wp-json/oembed/1.0/embed?format=xml&url=https%3A%2F%2Fdatasubvention.beta.gouv.fr%2Fbudgets%2F",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1308,6 +1223,14 @@
 						},
 						{
 							"uri": "https://datasubvention.beta.gouv.fr/wp-json/oembed/1.0/embed?format=xml&url=https%3A%2F%2Fdatasubvention.beta.gouv.fr%2Fdocumentation%2F",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "There was a charset mismatch between the HTTP Header and the XML encoding declaration: [UTF-8] and [null] do not match."
+						},
+						{
+							"uri": "https://datasubvention.beta.gouv.fr/wp-json/oembed/1.0/embed?format=xml&url=https%3A%2F%2Fdatasubvention.beta.gouv.fr%2Finfolettre-data-subvention-fait-sa-rentree%2F",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1345,15 +1268,23 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": "There was a charset mismatch between the HTTP Header and the XML encoding declaration: [UTF-8] and [null] do not match."
+						},
+						{
+							"uri": "https://datasubvention.beta.gouv.fr/wp-json/oembed/1.0/embed?format=xml&url=https%3A%2F%2Fdatasubvention.beta.gouv.fr%2Fwebinaire%2F",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "There was a charset mismatch between the HTTP Header and the XML encoding declaration: [UTF-8] and [null] do not match."
 						}
 					],
 					"count": "12",
 					"solution": "<p>Force UTF-8 for all text content in both the HTTP header and meta tags in HTML or encoding declarations in XML.</p>",
 					"otherinfo": "<p>There was a charset mismatch between the HTTP Header and the XML encoding declaration: [UTF-8] and [null] do not match.</p>",
-					"reference": "<p>http://code.google.com/p/browsersec/wiki/Part2#Character_set_handling_and_detection</p>",
+					"reference": "<p>https://code.google.com/p/browsersec/wiki/Part2#Character_set_handling_and_detection</p>",
 					"cweid": "436",
 					"wascid": "15",
-					"sourceid": "285"
+					"sourceid": "413"
 				},
 				{
 					"pluginid": "10027",
@@ -1382,7 +1313,7 @@
 							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\"\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/actualites/",
+							"uri": "https://datasubvention.beta.gouv.fr/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1390,7 +1321,7 @@
 							"otherinfo": "The following pattern was used: \\bADMIN\\b and was detected 2 times, the first in the element starting with: \"<script id=\"sib-front-js-js-extra\">\nvar sibErrMsg = {\"invalidMail\":\"Veuillez entrer une adresse e-mail valide.\",\"requiredField\":\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/actualites/",
+							"uri": "https://datasubvention.beta.gouv.fr/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1398,7 +1329,7 @@
 							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\"\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/aller-plus-loin/",
+							"uri": "https://datasubvention.beta.gouv.fr/data-subvention-se-deploie/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1406,7 +1337,7 @@
 							"otherinfo": "The following pattern was used: \\bADMIN\\b and was detected 2 times, the first in the element starting with: \"<script id=\"sib-front-js-js-extra\">\nvar sibErrMsg = {\"invalidMail\":\"Veuillez entrer une adresse e-mail valide.\",\"requiredField\":\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/aller-plus-loin/",
+							"uri": "https://datasubvention.beta.gouv.fr/data-subvention-se-deploie/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1414,7 +1345,7 @@
 							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\"\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/contact/",
+							"uri": "https://datasubvention.beta.gouv.fr/infolettre-data-subvention-fait-sa-rentree/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1422,7 +1353,7 @@
 							"otherinfo": "The following pattern was used: \\bADMIN\\b and was detected 2 times, the first in the element starting with: \"<script id=\"sib-front-js-js-extra\">\nvar sibErrMsg = {\"invalidMail\":\"Veuillez entrer une adresse e-mail valide.\",\"requiredField\":\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/contact/",
+							"uri": "https://datasubvention.beta.gouv.fr/infolettre-data-subvention-fait-sa-rentree/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1430,7 +1361,7 @@
 							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\"\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/documentation/",
+							"uri": "https://datasubvention.beta.gouv.fr/les-bonnes-pratiques-pour-vous-aider-dans-linstruction-de-demandes-de-subventions/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1438,7 +1369,7 @@
 							"otherinfo": "The following pattern was used: \\bADMIN\\b and was detected 2 times, the first in the element starting with: \"<script id=\"sib-front-js-js-extra\">\nvar sibErrMsg = {\"invalidMail\":\"Veuillez entrer une adresse e-mail valide.\",\"requiredField\":\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/documentation/",
+							"uri": "https://datasubvention.beta.gouv.fr/les-bonnes-pratiques-pour-vous-aider-dans-linstruction-de-demandes-de-subventions/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1481,27 +1412,19 @@
 							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/actualites/",
+							"uri": "https://datasubvention.beta.gouv.fr/author/alexandra/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<a class=\"elementor-button elementor-button-link elementor-size-sm\" href=\"#\">\n\t\t\t\t\t\t<span class=\"elementor-button-content-wrapper\">\n\t\t\t\t\t\t<span class=\"elementor-button-text\">Click here</span>\n\t\t</span>\n\t\t\t\t\t</a>",
-							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/aller-plus-loin/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<noscript><img loading=\"lazy\" decoding=\"async\" width=\"348\" height=\"600\" src=\"https://ml4m9p8dxdpd.i.optimole.com/w:348/h:600/q:mauto/https://datasubvention.beta.gouv.fr/wp-content/uploads/2023/06/Group-83-1.svg\" class=\"optimole-lazy-only attachment-large size-large wp-image-1542\" alt=\"\" /></noscript>",
+							"evidence": "<noscript><img decoding=async  fetchpriority=\"high\" fetchpriority=\"high\" width=\"400\" height=\"339\" src=\"https://ml4m9p8dxdpd.i.optimole.com/w:400/h:339/q:mauto/f:avif/https://datasubvention.beta.gouv.fr/wp-content/uploads/2022/06/Republique-francaise.jpeg\" class=\"attachment-large size-large wp-image-148\" alt=\"\" /></noscript>",
 							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/budgets/",
+							"uri": "https://datasubvention.beta.gouv.fr/author/marion/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<noscript><img decoding=async \n\t\t\t\t\t\t\tsrc=\"https://ml4m9p8dxdpd.i.optimole.com/w:auto/h:auto/q:mauto/f:avif/https://datasubvention.beta.gouv.fr/wp-includes/images/spinner.gif\" alt=\"loader\"></noscript>",
+							"evidence": "<noscript><img loading=\"lazy\" width=\"2480\" height=\"960\" src=\"https://ml4m9p8dxdpd.i.optimole.com/w:2000/h:774/q:mauto/f:avif/https://datasubvention.beta.gouv.fr/wp-content/uploads/2023/10/Portfolio2.png\" class=\"attachment-full size-full wp-image-2140\" alt=\"\" decoding=\"async\" /></noscript>",
 							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
 						},
 						{
@@ -1513,11 +1436,35 @@
 							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
 						},
 						{
+							"uri": "https://datasubvention.beta.gouv.fr/data-subvention-se-deploie/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<noscript><img decoding=\"async\" width=\"300\" height=\"225\" src=\"https://ml4m9p8dxdpd.i.optimole.com/w:300/h:225/q:mauto/f:avif/https://datasubvention.beta.gouv.fr/wp-content/uploads/2023/10/equipe-fast.jpeg\" class=\"attachment-medium size-medium wp-image-2189\" alt=\"\" /></noscript>",
+							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
+						},
+						{
 							"uri": "https://datasubvention.beta.gouv.fr/documentation/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "<noscript><img loading=\"lazy\" decoding=\"async\" width=\"493\" height=\"600\" src=\"https://ml4m9p8dxdpd.i.optimole.com/w:493/h:600/q:mauto/https://datasubvention.beta.gouv.fr/wp-content/uploads/2023/06/Calque_1-1.svg\" class=\"optimole-lazy-only attachment-large size-large wp-image-1541\" alt=\"\" /></noscript>",
+							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
+						},
+						{
+							"uri": "https://datasubvention.beta.gouv.fr/infolettre-data-subvention-fait-sa-rentree/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<noscript><img decoding=\"async\" width=\"1920\" height=\"900\" src=\"https://ml4m9p8dxdpd.i.optimole.com/w:1920/h:900/q:mauto/f:avif/https://datasubvention.beta.gouv.fr/wp-content/uploads/2022/06/GIF-Presentation-du-site-wordpress-2.gif\" class=\"optimole-lazy-only attachment-full size-full wp-image-1831\" alt=\"\" /></noscript>",
+							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
+						},
+						{
+							"uri": "https://datasubvention.beta.gouv.fr/les-bonnes-pratiques-pour-vous-aider-dans-linstruction-de-demandes-de-subventions/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<noscript><img decoding=\"async\" width=\"606\" height=\"438\" src=\"https://ml4m9p8dxdpd.i.optimole.com/w:606/h:438/q:mauto/f:avif/https://datasubvention.beta.gouv.fr/wp-content/uploads/2023/10/Capture-decran-2023-10-24-a-14.41.46.png\" class=\"attachment-large size-large wp-image-2063\" alt=\"\" /></noscript>",
 							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
 						},
 						{
@@ -1529,28 +1476,12 @@
 							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/politique-de-confidentialite/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<noscript><img decoding=async \n\t\t\t\t\t\t\tsrc=\"https://ml4m9p8dxdpd.i.optimole.com/w:auto/h:auto/q:mauto/f:avif/https://datasubvention.beta.gouv.fr/wp-includes/images/spinner.gif\" alt=\"loader\"></noscript>",
-							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
-						},
-						{
 							"uri": "https://datasubvention.beta.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script defer src=\"https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317\" integrity=\"sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA==\" data-cf-beacon='{\"rayId\":\"8458ec408d100809\",\"b\":1,\"version\":\"2023.10.0\",\"token\":\"df67842450844fa185a3a8a88950c8ba\"}' crossorigin=\"anonymous\"></script>",
+							"evidence": "<script defer src=\"https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317\" integrity=\"sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA==\" data-cf-beacon='{\"rayId\":\"84928f52283c826e\",\"b\":1,\"version\":\"2024.1.0\",\"token\":\"df67842450844fa185a3a8a88950c8ba\"}' crossorigin=\"anonymous\"></script>",
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/statistiques/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<noscript><img decoding=async \n\t\t\t\t\t\t\tsrc=\"https://ml4m9p8dxdpd.i.optimole.com/w:auto/h:auto/q:mauto/f:avif/https://datasubvention.beta.gouv.fr/wp-includes/images/spinner.gif\" alt=\"loader\"></noscript>",
-							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
 						}
 					],
 					"count": "11",
@@ -1588,23 +1519,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/actualites/",
-							"method": "GET",
-							"param": "cache-control",
-							"attack": "",
-							"evidence": "public, max-age=604800",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/aller-plus-loin/",
-							"method": "GET",
-							"param": "cache-control",
-							"attack": "",
-							"evidence": "public, max-age=604800",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/cdn-cgi/l/email-protection",
+							"uri": "https://datasubvention.beta.gouv.fr/author-sitemap.xml",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -1612,7 +1527,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/contact/",
+							"uri": "https://datasubvention.beta.gouv.fr/author/alexandra/",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -1620,7 +1535,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/documentation/",
+							"uri": "https://datasubvention.beta.gouv.fr/data-subvention-se-deploie/",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -1628,23 +1543,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/nos-jeux-de-donnees/",
-							"method": "GET",
-							"param": "cache-control",
-							"attack": "",
-							"evidence": "public, max-age=604800",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/statistiques/",
-							"method": "GET",
-							"param": "cache-control",
-							"attack": "",
-							"evidence": "public, max-age=604800",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/wp-json/",
+							"uri": "https://datasubvention.beta.gouv.fr/e-landing-page-sitemap.xml",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -1652,7 +1551,39 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/wp-json/wp/v2/pages/496",
+							"uri": "https://datasubvention.beta.gouv.fr/infolettre-data-subvention-fait-sa-rentree/",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "public, max-age=604800",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://datasubvention.beta.gouv.fr/les-bonnes-pratiques-pour-vous-aider-dans-linstruction-de-demandes-de-subventions/",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "public, max-age=604800",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://datasubvention.beta.gouv.fr/page-sitemap.xml",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://datasubvention.beta.gouv.fr/post-sitemap.xml",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://datasubvention.beta.gouv.fr/sitemap_index.xml",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -1679,23 +1610,15 @@
 					"desc": "<p>The content was retrieved from a shared cache. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance. </p>",
 					"instances":[ 
 						{
-							"uri": "https://datasubvention.beta.gouv.fr",
+							"uri": "https://datasubvention.beta.gouv.fr/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "Age: 83",
+							"evidence": "Age: 2",
 							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.25.0",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "Age: 84",
-							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.min.css?ver=5.15.3",
+							"uri": "https://datasubvention.beta.gouv.fr/wp-content/plugins/elementor-pro/assets/css/widget-carousel.min.css",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1703,7 +1626,7 @@
 							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/wp-content/plugins/elementor/assets/lib/swiper/css/swiper.min.css?ver=5.3.6",
+							"uri": "https://datasubvention.beta.gouv.fr/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.20.0-cloud1",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1711,7 +1634,7 @@
 							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/wp-content/plugins/wp-data-access/assets/css/wpda_public.css?ver=5.2.11",
+							"uri": "https://datasubvention.beta.gouv.fr/wp-content/plugins/elementor-pro/assets/lib/smartmenus/jquery.smartmenus.min.js?ver=1.2.1",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1719,39 +1642,31 @@
 							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/wp-content/themes/hello-elementor/style.min.css?ver=2.6.1",
+							"uri": "https://datasubvention.beta.gouv.fr/wp-content/plugins/elementor/assets/lib/animations/animations.min.css?ver=3.20.0-cloud1",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "Age: 84",
+							"evidence": "Age: 100",
 							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/wp-content/themes/hello-elementor/theme.min.css?ver=2.6.1",
+							"uri": "https://datasubvention.beta.gouv.fr/wp-content/plugins/elementor/assets/lib/jquery-numerator/jquery-numerator.min.js?ver=0.2.1",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "Age: 84",
+							"evidence": "Age: 100",
 							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/wp-content/uploads/elementor/css/global.css?ver=1704335376",
+							"uri": "https://datasubvention.beta.gouv.fr/wp-content/plugins/mailin/css/mailin-front.css?ver=6.4.2",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "Age: 85",
+							"evidence": "Age: 127",
 							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/wp-content/uploads/elementor/css/post-1072.css?ver=1704335377",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "Age: 85",
-							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/wp-content/uploads/elementor/css/post-12.css?ver=1704797051",
+							"uri": "https://datasubvention.beta.gouv.fr/wp-content/plugins/mailin/js/mailin-front.js?ver=1673362310",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1759,15 +1674,31 @@
 							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/wp-content/uploads/elementor/css/post-496.css?ver=1704793450",
+							"uri": "https://datasubvention.beta.gouv.fr/wp-content/plugins/sheetdb/assets/js/sheetdb-handlebars-1.2.3.js?ver=6.4.2",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "Age: 85",
+							"evidence": "Age: 100",
 							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/wp-content/uploads/elementor/css/post-6.css?ver=1704335376",
+							"uri": "https://datasubvention.beta.gouv.fr/wp-includes/js/api-request.min.js?ver=6.4.2",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Age: 100",
+							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
+						},
+						{
+							"uri": "https://datasubvention.beta.gouv.fr/wp-includes/js/backbone.min.js?ver=1.5.0",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Age: 100",
+							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
+						},
+						{
+							"uri": "https://datasubvention.beta.gouv.fr/wp-includes/js/imagesloaded.min.js?ver=5.0.0",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1778,10 +1709,10 @@
 					"count": "12",
 					"solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information.  If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request.</p>",
 					"otherinfo": "<p>The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use.</p>",
-					"reference": "<p>https://tools.ietf.org/html/rfc7234</p><p>https://tools.ietf.org/html/rfc7231</p><p>http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html (obsoleted by rfc7234)</p>",
+					"reference": "<p>https://tools.ietf.org/html/rfc7234</p><p>https://tools.ietf.org/html/rfc7231</p><p>https://www.rfc-editor.org/rfc/rfc9110.html (obsoleted by rfc7234)</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "6"
+					"sourceid": "165"
 				},
 				{
 					"pluginid": "90005",
@@ -1794,14 +1725,6 @@
 					"desc": "<p>Specifies how and where the data would be used. For instance, if the value is audio, then the requested resource must be audio data and not any other type of resource.</p>",
 					"instances":[ 
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/auth/signup?mtm_campaign=siteweb&mtm_source=sinscrire",
-							"method": "GET",
-							"param": "Sec-Fetch-Dest",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://datasubvention.beta.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
@@ -1811,6 +1734,14 @@
 						},
 						{
 							"uri": "https://datasubvention.beta.gouv.fr/sitemap.xml",
+							"method": "GET",
+							"param": "Sec-Fetch-Dest",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://datasubvention.beta.gouv.fr/sitemap_index.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -1824,7 +1755,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "79"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -1837,14 +1768,6 @@
 					"desc": "<p>Allows to differentiate between requests for navigating between HTML pages and requests for loading resources like images, audio etc.</p>",
 					"instances":[ 
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/auth/signup?mtm_campaign=siteweb&mtm_source=sinscrire",
-							"method": "GET",
-							"param": "Sec-Fetch-Mode",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://datasubvention.beta.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
@@ -1854,6 +1777,14 @@
 						},
 						{
 							"uri": "https://datasubvention.beta.gouv.fr/sitemap.xml",
+							"method": "GET",
+							"param": "Sec-Fetch-Mode",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://datasubvention.beta.gouv.fr/sitemap_index.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -1867,7 +1798,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "79"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -1880,14 +1811,6 @@
 					"desc": "<p>Specifies the relationship between request initiator's origin and target's origin.</p>",
 					"instances":[ 
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/auth/signup?mtm_campaign=siteweb&mtm_source=sinscrire",
-							"method": "GET",
-							"param": "Sec-Fetch-Site",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://datasubvention.beta.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
@@ -1897,6 +1820,14 @@
 						},
 						{
 							"uri": "https://datasubvention.beta.gouv.fr/sitemap.xml",
+							"method": "GET",
+							"param": "Sec-Fetch-Site",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://datasubvention.beta.gouv.fr/sitemap_index.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -1910,7 +1841,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "79"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -1922,14 +1853,6 @@
 					"riskdesc": "Informational (High)",
 					"desc": "<p>Specifies if a navigation request was initiated by a user.</p>",
 					"instances":[ 
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/auth/signup?mtm_campaign=siteweb&mtm_source=sinscrire",
-							"method": "GET",
-							"param": "Sec-Fetch-User",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
 						{
 							"uri": "https://datasubvention.beta.gouv.fr/robots.txt",
 							"method": "GET",
@@ -1945,6 +1868,14 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
+						},
+						{
+							"uri": "https://datasubvention.beta.gouv.fr/sitemap_index.xml",
+							"method": "GET",
+							"param": "Sec-Fetch-User",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
 						}
 					],
 					"count": "3",
@@ -1953,7 +1884,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "79"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10112",
@@ -1970,7 +1901,7 @@
 							"method": "GET",
 							"param": "_cfuvid",
 							"attack": "",
-							"evidence": "7PkMdQ4v2GxcXQe_sHRppXiVOtoCoTveU_8iKgI00jA-1705267225720-0-604800000",
+							"evidence": "PLzkqVV.r30OWwxGGM.59Rhhl1KCVttrNgvm4pu_ijE-1705871594277-0-604800000",
 							"otherinfo": "\ncookie:_cfuvid\ncookie:__cf_bm"
 						},
 						{
@@ -1978,7 +1909,7 @@
 							"method": "GET",
 							"param": "_cfuvid",
 							"attack": "",
-							"evidence": "xFFU3zOXR8D8ukUPHg4vSIjJuOnmLYw17y.SteQLIeE-1705267225595-0-604800000",
+							"evidence": "l3hDz8lt2PIaMOifdqe4UtqhLZTg1fAdkrARZgBVVg8-1705871593211-0-604800000",
 							"otherinfo": "\ncookie:_cfuvid\ncookie:__cf_bm"
 						},
 						{
@@ -1986,7 +1917,7 @@
 							"method": "GET",
 							"param": "_cfuvid",
 							"attack": "",
-							"evidence": "UkXiu0V5rH7ZG7Qr.pAyKzTYoTQAQAKh0oHIzYK59UE-1705267225802-0-604800000",
+							"evidence": "ISfVOWZJuZxKx1zGmOT4_PmmEpljI_XPlW.AviHKIPo-1705871593497-0-604800000",
 							"otherinfo": "\ncookie:_cfuvid\ncookie:__cf_bm"
 						},
 						{
@@ -1994,25 +1925,33 @@
 							"method": "GET",
 							"param": "_cfuvid",
 							"attack": "",
-							"evidence": "gnpsF2VCU2FKGBsu806o6GEYAxeldJEEnpyT9FSnmDI-1705267226239-0-604800000",
+							"evidence": "Tc7Mls.6u5H9AF_L8u_HGdYJGN.hmwOuptgmPs.EM0Q-1705871593554-0-604800000",
 							"otherinfo": "\ncookie:_cfuvid\ncookie:__cf_bm"
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/robots.txt",
+							"uri": "https://datasubvention.beta.gouv.fr/sitemap.xml",
+							"method": "GET",
+							"param": "__cf_bm",
+							"attack": "",
+							"evidence": "E6TivfMYPnIn2_ghf2g7peL_ez.dm1v7ngj427IEwKU-1705871593-1-AWV1ZiTVJKnSYVvdbmFjQkCS2B4/PHBVK+OcF3WO43ackUXf9N7Qz/FyDiaHlkzqHZcBbs3G3fZIVE7iHpMmu5I=",
+							"otherinfo": "\ncookie:__cf_bm"
+						},
+						{
+							"uri": "https://datasubvention.beta.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "_cfuvid",
 							"attack": "",
-							"evidence": "UkXiu0V5rH7ZG7Qr.pAyKzTYoTQAQAKh0oHIzYK59UE-1705267225802-0-604800000",
+							"evidence": "Tc7Mls.6u5H9AF_L8u_HGdYJGN.hmwOuptgmPs.EM0Q-1705871593554-0-604800000",
 							"otherinfo": "\ncookie:_cfuvid"
 						}
 					],
-					"count": "5",
+					"count": "6",
 					"solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
 					"otherinfo": "<p></p><p>cookie:_cfuvid</p><p>cookie:__cf_bm</p>",
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "6"
+					"sourceid": "57"
 				},
 				{
 					"pluginid": "10049",
@@ -2033,52 +1972,36 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/",
+							"uri": "https://datasubvention.beta.gouv.fr/author-sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "max-age=604800",
-							"otherinfo": ""
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/actualites/",
+							"uri": "https://datasubvention.beta.gouv.fr/e-landing-page-sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "max-age=604800",
-							"otherinfo": ""
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/aller-plus-loin/",
+							"uri": "https://datasubvention.beta.gouv.fr/page-sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "max-age=604800",
-							"otherinfo": ""
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/auth/signup?mtm_campaign=siteweb&mtm_source=sinscrire",
+							"uri": "https://datasubvention.beta.gouv.fr/post-sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "max-age=3600",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/contact/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "max-age=604800",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://datasubvention.beta.gouv.fr/documentation/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "max-age=604800",
-							"otherinfo": ""
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
 							"uri": "https://datasubvention.beta.gouv.fr/robots.txt",
@@ -2097,7 +2020,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/wp-json/",
+							"uri": "https://datasubvention.beta.gouv.fr/sitemap_index.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2105,12 +2028,28 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"uri": "https://datasubvention.beta.gouv.fr/wp-json/wp/v2/pages/496",
+							"uri": "https://datasubvention.beta.gouv.fr/wp-content/uploads/2022/06/Ajouter_des_lignes_dans_le_corps_du_texte_800_800_px_.png",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "",
-							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+							"evidence": "max-age=315360000",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://datasubvention.beta.gouv.fr/wp-content/uploads/2022/06/stem-list-EVgsAbL51Rk-unsplash-scaled.jpg",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=315360000",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://datasubvention.beta.gouv.fr/wp-content/uploads/elementor/thumbs/stem-list-EVgsAbL51Rk-unsplash-scaled-q081r1gu0i1h5mtqts9ppuogbuaeeng09uld665hgg.jpg",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=315360000",
+							"otherinfo": ""
 						}
 					],
 					"count": "11",
@@ -2199,10 +2138,10 @@
 					"count": "8",
 					"solution": "<p>Validate all input and sanitize output it before writing to any HTML attributes.</p>",
 					"otherinfo": "<p>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:</p><p></p><p>https://datasubvention.beta.gouv.fr/contact/</p><p></p><p>appears to include user input in: </p><p></p><p>a(n) [div] tag [data-id] attribute </p><p></p><p>The user input found was:</p><p>form_id=0fee1f1</p><p></p><p>The user-controlled value was:</p><p>0fee1f1</p>",
-					"reference": "<p>http://websecuritytool.codeplex.com/wikipage?title=Checks#user-controlled-html-attribute</p>",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html</p>",
 					"cweid": "20",
 					"wascid": "20",
-					"sourceid": "319"
+					"sourceid": "496"
 				}
 			]
 		}

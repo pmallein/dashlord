@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 14 Jan 2024 14:04:34",
+	"@generated": "Sun, 21 Jan 2024 13:55:06",
 	"site":[ 
 		{
 			"@name": "https://mes-adresses.data.gouv.fr",
@@ -47,7 +47,7 @@
 					"count": "3",
 					"solution": "<p>Phase: Architecture and Design</p><p>Use a vetted library or framework that does not allow this weakness to occur or provides constructs that make this weakness easier to avoid.</p><p>For example, use anti-CSRF packages such as the OWASP CSRFGuard.</p><p></p><p>Phase: Implementation</p><p>Ensure that your application is free of cross-site scripting issues, because most CSRF defenses can be bypassed using attacker-controlled script.</p><p></p><p>Phase: Architecture and Design</p><p>Generate a unique nonce for each form, place the nonce into the form, and verify the nonce upon receipt of the form. Be sure that the nonce is not predictable (CWE-330).</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Identify especially dangerous operations. When the user performs a dangerous operation, send a separate confirmation request to ensure that the user intended to perform that operation.</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Use the ESAPI Session Management control.</p><p>This control includes a component for CSRF.</p><p></p><p>Do not use the GET method for any request that triggers a state change.</p><p></p><p>Phase: Implementation</p><p>Check the HTTP Referer header to see if the request originated from an expected page. This could break legitimate functionality, because users or proxies may have disabled sending the Referer for privacy reasons.</p>",
 					"otherinfo": "<p>No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"CommuneSearchField-commune\" \"email\" \"nom\" ].</p>",
-					"reference": "<p>http://projects.webappsec.org/Cross-Site-Request-Forgery</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
 					"sourceid": "20"
@@ -122,7 +122,7 @@
 					"count": "7",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "",
-					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>http://www.w3.org/TR/CSP/</p><p>http://w3c.github.io/webappsec/specs/content-security-policy/csp-specification.dev.html</p><p>http://www.html5rocks.com/en/tutorials/security/content-security-policy/</p><p>http://caniuse.com/#feat=contentsecuritypolicy</p><p>http://content-security-policy.com/</p>",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>https://www.w3.org/TR/CSP/</p><p>https://w3c.github.io/webappsec-csp/</p><p>https://web.dev/articles/csp</p><p>https://caniuse.com/#feat=contentsecuritypolicy</p><p>https://content-security-policy.com/</p>",
 					"cweid": "693",
 					"wascid": "15",
 					"sourceid": "6"
@@ -240,6 +240,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://mes-adresses.data.gouv.fr/_next/static/chunks/main-e1cf90d6f6e3e058.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://mes-adresses.data.gouv.fr/_next/static/chunks/pages/index-f6a92bf2507ee9a9.js",
 							"method": "GET",
 							"param": "",
@@ -248,7 +256,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://mes-adresses.data.gouv.fr/_next/static/chunks/webpack-7ef3173c89e58c06.js",
+							"uri": "https://mes-adresses.data.gouv.fr/_next/static/chunks/webpack-f1afbd2b332a713c.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -256,15 +264,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://mes-adresses.data.gouv.fr/_next/static/Ty3t5pTw1PQmXtMZgjtwX/_buildManifest.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://mes-adresses.data.gouv.fr/_next/static/Ty3t5pTw1PQmXtMZgjtwX/_ssgManifest.js",
+							"uri": "https://mes-adresses.data.gouv.fr/_next/static/K5V31Nzpcf2q0xrGPoISO/_buildManifest.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -318,7 +318,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy</p><p>https://developer.chrome.com/blog/feature-policy/</p><p>https://scotthelme.co.uk/a-new-security-header-feature-policy/</p><p>https://w3c.github.io/webappsec-feature-policy/</p><p>https://www.smashingmagazine.com/2018/12/feature-policy/</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10037",
@@ -390,7 +390,7 @@
 					"count": "7",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress \"X-Powered-By\" headers.</p>",
 					"otherinfo": "",
-					"reference": "<p>http://blogs.msdn.com/b/varunm/archive/2013/04/23/remove-unwanted-http-response-headers.aspx</p><p>http://www.troyhunt.com/2012/02/shhh-dont-let-your-response-headers.html</p>",
+					"reference": "<p>https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/01-Information_Gathering/08-Fingerprint_Web_Application_Framework</p><p>https://www.troyhunt.com/2012/02/shhh-dont-let-your-response-headers.html</p>",
 					"cweid": "200",
 					"wascid": "13",
 					"sourceid": "6"
@@ -438,7 +438,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://mes-adresses.data.gouv.fr/_next/static/chunks/webpack-7ef3173c89e58c06.js",
+							"uri": "https://mes-adresses.data.gouv.fr/_next/static/chunks/webpack-f1afbd2b332a713c.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -497,7 +497,7 @@
 					"count": "11",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress the \"Server\" header or provide generic details.</p>",
 					"otherinfo": "",
-					"reference": "<p>http://httpd.apache.org/docs/current/mod/core.html#servertokens</p><p>http://msdn.microsoft.com/en-us/library/ff648552.aspx#ht_urlscan_007</p><p>http://blogs.msdn.com/b/varunm/archive/2013/04/23/remove-unwanted-http-response-headers.aspx</p><p>http://www.troyhunt.com/2012/02/shhh-dont-let-your-response-headers.html</p>",
+					"reference": "<p>https://httpd.apache.org/docs/current/mod/core.html#servertokens</p><p>https://learn.microsoft.com/en-us/previous-versions/msp-n-p/ff648552(v=pandp.10)</p><p>https://www.troyhunt.com/shhh-dont-let-your-response-headers/</p>",
 					"cweid": "200",
 					"wascid": "13",
 					"sourceid": "6"
@@ -521,7 +521,7 @@
 							"otherinfo": "1540483477, which evaluates to: 2018-10-25 16:04:37"
 						},
 						{
-							"uri": "https://mes-adresses.data.gouv.fr/_next/static/chunks/pages/_app-10ad2d1e124ac63c.js",
+							"uri": "https://mes-adresses.data.gouv.fr/_next/static/chunks/pages/_app-6416fff806aab889.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -535,7 +535,7 @@
 					"reference": "<p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "38"
+					"sourceid": "37"
 				},
 				{
 					"pluginid": "10021",
@@ -580,7 +580,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://mes-adresses.data.gouv.fr/_next/static/chunks/webpack-7ef3173c89e58c06.js",
+							"uri": "https://mes-adresses.data.gouv.fr/_next/static/chunks/webpack-f1afbd2b332a713c.js",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -596,7 +596,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://mes-adresses.data.gouv.fr/_next/static/Ty3t5pTw1PQmXtMZgjtwX/_buildManifest.js",
+							"uri": "https://mes-adresses.data.gouv.fr/_next/static/K5V31Nzpcf2q0xrGPoISO/_buildManifest.js",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -604,7 +604,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://mes-adresses.data.gouv.fr/_next/static/Ty3t5pTw1PQmXtMZgjtwX/_ssgManifest.js",
+							"uri": "https://mes-adresses.data.gouv.fr/_next/static/K5V31Nzpcf2q0xrGPoISO/_ssgManifest.js",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -639,7 +639,7 @@
 					"count": "11",
 					"solution": "<p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p>",
 					"otherinfo": "<p>This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.</p><p>At \"High\" threshold this scan rule will not alert on client or server error responses.</p>",
-					"reference": "<p>http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx</p><p>https://owasp.org/www-community/Security_Headers</p>",
+					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
 					"cweid": "693",
 					"wascid": "15",
 					"sourceid": "6"
@@ -671,7 +671,7 @@
 							"otherinfo": "\\x001a\uFFFD\uFFFD\uFFFD\uFFFD\u05ED\uFFFD\uFFFD\uFFFDy\uFFFD\uFFFDzw\\x001e\uFFFD,\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD;"
 						},
 						{
-							"uri": "https://mes-adresses.data.gouv.fr/_next/static/chunks/pages/_app-10ad2d1e124ac63c.js",
+							"uri": "https://mes-adresses.data.gouv.fr/_next/static/chunks/pages/_app-6416fff806aab889.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -691,24 +691,24 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "/_next/static/Ty3t5pTw1PQmXtMZgjtwX/_buildManifest",
-							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uCD6Bbs\uFFFD\uFFFD\uFFFD\uFFFDiO\rOBe\uFFFD1\uFFFD#\uFFFD\\x0005\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD'\u07B2"
+							"evidence": "/_next/static/K5V31Nzpcf2q0xrGPoISO/_buildManifest",
+							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uCD6Bbs\uFFFDW}M\u0397\\x001f\u06AD1\uFFFDc\uFFFD!#\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD'\u07B2"
 						},
 						{
 							"uri": "https://mes-adresses.data.gouv.fr/new?demo=1",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "/_next/static/Ty3t5pTw1PQmXtMZgjtwX/_buildManifest",
-							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uCD6Bbs\uFFFD\uFFFD\uFFFD\uFFFDiO\rOBe\uFFFD1\uFFFD#\uFFFD\\x0005\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD'\u07B2"
+							"evidence": "/_next/static/K5V31Nzpcf2q0xrGPoISO/_buildManifest",
+							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uCD6Bbs\uFFFDW}M\u0397\\x001f\u06AD1\uFFFDc\uFFFD!#\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD'\u07B2"
 						},
 						{
 							"uri": "https://mes-adresses.data.gouv.fr/new?email=zaproxy%40example.com&nom=ZAP",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "/_next/static/Ty3t5pTw1PQmXtMZgjtwX/_buildManifest",
-							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uCD6Bbs\uFFFD\uFFFD\uFFFD\uFFFDiO\rOBe\uFFFD1\uFFFD#\uFFFD\\x0005\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD'\u07B2"
+							"evidence": "/_next/static/K5V31Nzpcf2q0xrGPoISO/_buildManifest",
+							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uCD6Bbs\uFFFDW}M\u0397\\x001f\u06AD1\uFFFDc\uFFFD!#\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD'\u07B2"
 						},
 						{
 							"uri": "https://mes-adresses.data.gouv.fr/robots.txt",
@@ -794,15 +794,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "query",
-							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{}},\"page\":\"/\",\"query\":{},\"buildId\":\"Ty3t5pTw1PQmXtMZgj\", see evidence field for the suspicious comment/snippet."
-						},
-						{
-							"uri": "https://mes-adresses.data.gouv.fr/_next/static/chunks/framework-5866cead997b9ace.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "select",
-							"otherinfo": "The following pattern was used: \\bSELECT\\b and was detected in the element starting with: \" */var r,l,a,u,o,i,s=t(67294),c=t(63840);function f(e){for(var n=\"https://reactjs.org/docs/error-decoder.html?invariant=\"+e,t=1;\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{}},\"page\":\"/\",\"query\":{},\"buildId\":\"K5V31Nzpcf2q0xrGPo\", see evidence field for the suspicious comment/snippet."
 						},
 						{
 							"uri": "https://mes-adresses.data.gouv.fr/_next/static/chunks/main-e1cf90d6f6e3e058.js",
@@ -826,7 +818,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "query",
-							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{}},\"page\":\"/accessibilite\",\"query\":{},\"buildId\":\"Ty3t5\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{}},\"page\":\"/accessibilite\",\"query\":{},\"buildId\":\"K5V31\", see evidence field for the suspicious comment/snippet."
 						},
 						{
 							"uri": "https://mes-adresses.data.gouv.fr/new",
@@ -837,14 +829,6 @@
 							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{\"defaultCommune\":null,\"isDemo\":false},\"__N_SSP\":true},\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://mes-adresses.data.gouv.fr/new?demo=1",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "query",
-							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{\"defaultCommune\":null,\"isDemo\":true},\"__N_SSP\":true},\"\", see evidence field for the suspicious comment/snippet."
-						},
-						{
 							"uri": "https://mes-adresses.data.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "",
@@ -858,7 +842,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "query",
-							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{}},\"page\":\"/404\",\"query\":{},\"buildId\":\"Ty3t5pTw1PQmXtM\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{}},\"page\":\"/404\",\"query\":{},\"buildId\":\"K5V31Nzpcf2q0xr\", see evidence field for the suspicious comment/snippet."
 						},
 						{
 							"uri": "https://mes-adresses.data.gouv.fr/sitemap.xml",
@@ -874,10 +858,10 @@
 							"param": "",
 							"attack": "",
 							"evidence": "query",
-							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{}},\"page\":\"/404\",\"query\":{},\"buildId\":\"Ty3t5pTw1PQmXtM\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{}},\"page\":\"/404\",\"query\":{},\"buildId\":\"K5V31Nzpcf2q0xr\", see evidence field for the suspicious comment/snippet."
 						}
 					],
-					"count": "12",
+					"count": "10",
 					"solution": "<p>Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</p>",
 					"otherinfo": "<p>The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"<script type=\"application/json\" id=\"evergreen-hydrate\">{\"uiBoxCache\":[[\"keyframeloadingeqdsen\",\"@keyframes loading_eqdsen {0% {t\", see evidence field for the suspicious comment/snippet.</p>",
 					"reference": "",
@@ -1087,7 +1071,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -1130,7 +1114,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -1173,7 +1157,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -1216,7 +1200,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10049",
@@ -1237,6 +1221,22 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
+							"uri": "https://mes-adresses.data.gouv.fr/_next/static/chunks/framework-5866cead997b9ace.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=31536000",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://mes-adresses.data.gouv.fr/_next/static/chunks/main-e1cf90d6f6e3e058.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=31536000",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://mes-adresses.data.gouv.fr/_next/static/chunks/pages/index-f6a92bf2507ee9a9.js",
 							"method": "GET",
 							"param": "",
@@ -1245,7 +1245,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://mes-adresses.data.gouv.fr/_next/static/chunks/webpack-7ef3173c89e58c06.js",
+							"uri": "https://mes-adresses.data.gouv.fr/_next/static/chunks/webpack-f1afbd2b332a713c.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1254,22 +1254,6 @@
 						},
 						{
 							"uri": "https://mes-adresses.data.gouv.fr/_next/static/css/212ba31df1f483a0.css",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "max-age=31536000",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://mes-adresses.data.gouv.fr/_next/static/Ty3t5pTw1PQmXtMZgjtwX/_buildManifest.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "max-age=31536000",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://mes-adresses.data.gouv.fr/_next/static/Ty3t5pTw1PQmXtMZgjtwX/_ssgManifest.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1291,7 +1275,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "6"
+					"sourceid": "1"
 				}
 			]
 		}

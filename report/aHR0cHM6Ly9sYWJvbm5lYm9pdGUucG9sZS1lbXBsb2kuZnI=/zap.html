@@ -127,7 +127,7 @@ td {
 	</h2>
 
 	<h3>
-		Generated on Sun, 14 Jan 2024 19:15:57
+		Generated on Sun, 21 Jan 2024 19:07:14
 	</h3>
 
 	<h3>
@@ -172,7 +172,7 @@ td {
 					<div>Informational</div>
 				</td>
 				<td align="center">
-					<div>13</div>
+					<div>14</div>
 				</td>
 			</tr>
 			<tr>
@@ -205,27 +205,27 @@ td {
 			<tr>
 				<td><a href="#10055">CSP: Wildcard Directive</a></td>
 				<td align="center" class="risk-2">Medium</td>
-				<td align="center">2</td>
+				<td align="center">3</td>
 			</tr>
 			<tr>
 				<td><a href="#10055">CSP: script-src unsafe-eval</a></td>
 				<td align="center" class="risk-2">Medium</td>
-				<td align="center">2</td>
+				<td align="center">3</td>
 			</tr>
 			<tr>
 				<td><a href="#10055">CSP: script-src unsafe-inline</a></td>
 				<td align="center" class="risk-2">Medium</td>
-				<td align="center">2</td>
+				<td align="center">3</td>
 			</tr>
 			<tr>
 				<td><a href="#10055">CSP: style-src unsafe-inline</a></td>
 				<td align="center" class="risk-2">Medium</td>
-				<td align="center">2</td>
+				<td align="center">3</td>
 			</tr>
 			<tr>
 				<td><a href="#10038">Content Security Policy (CSP) Header Not Set</a></td>
 				<td align="center" class="risk-2">Medium</td>
-				<td align="center">11</td>
+				<td align="center">12</td>
 			</tr>
 			<tr>
 				<td><a href="#90003">Sub Resource Integrity Attribute Missing</a></td>
@@ -265,7 +265,7 @@ td {
 			<tr>
 				<td><a href="#10035">Strict-Transport-Security Header Not Set</a></td>
 				<td align="center" class="risk-1">Low</td>
-				<td align="center">11</td>
+				<td align="center">12</td>
 			</tr>
 			<tr>
 				<td><a href="#10096">Timestamp Disclosure - Unix</a></td>
@@ -275,7 +275,12 @@ td {
 			<tr>
 				<td><a href="#10094">Base64 Disclosure</a></td>
 				<td align="center" class="risk-0">Informational</td>
-				<td align="center">12</td>
+				<td align="center">10</td>
+			</tr>
+			<tr>
+				<td><a href="#10024">Information Disclosure - Sensitive Information in URL</a></td>
+				<td align="center" class="risk-0">Informational</td>
+				<td align="center">1</td>
 			</tr>
 			<tr>
 				<td><a href="#10027">Information Disclosure - Suspicious Comments</a></td>
@@ -320,7 +325,7 @@ td {
 			<tr>
 				<td><a href="#10112">Session Management Response Identified</a></td>
 				<td align="center" class="risk-0">Informational</td>
-				<td align="center">12</td>
+				<td align="center">13</td>
 			</tr>
 			<tr>
 				<td><a href="#10049">Storable and Cacheable Content</a></td>
@@ -781,7 +786,7 @@ td {
 				<tr>
 					<td width="20%">Reference</td>
 					<td width="80%">
-							<a href="http://projects.webappsec.org/Cross-Site-Request-Forgery">http://projects.webappsec.org/Cross-Site-Request-Forgery</a>
+							<a href="https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html">https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</a>
 							<br />
 						
 							<a href="https://cwe.mitre.org/data/definitions/352.html">https://cwe.mitre.org/data/definitions/352.html</a>
@@ -891,9 +896,43 @@ style-src, img-src, connect-src, frame-src, frame-ancestors, font-src, media-src
 The directive(s): frame-ancestors, form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything.</td>
 					</tr>
 				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/informations-entreprise/action">https://labonneboite.pole-emploi.fr/informations-entreprise/action</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">Content-Security-Policy</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">script-src &#39;self&#39; &#39;unsafe-inline&#39; &#39;unsafe-eval&#39; blob: maps.labonneboite.pole-emploi.fr embed.doorbell.io labonnealternance.pole-emploi.fr memo.pole-emploi.fr www.google-analytics.com static.hotjar.com script.hotjar.com optimize.google.com www.googletagmanager.com cdn.trustcommander.net cdn.tagcommander.com tag.aticdn.net guidances-applicatives.pole-emploi.fr</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: 
+style-src, img-src, connect-src, frame-src, frame-ancestors, font-src, media-src, object-src, manifest-src, form-action
+
+The directive(s): frame-ancestors, form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything.</td>
+					</tr>
+				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">2</td>
+					<td width="80%">3</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -905,16 +944,13 @@ The directive(s): frame-ancestors, form-action are among the directives that do 
 				<tr>
 					<td width="20%">Reference</td>
 					<td width="80%">
-							<a href="http://www.w3.org/TR/CSP2/">http://www.w3.org/TR/CSP2/</a>
+							<a href="https://www.w3.org/TR/CSP/">https://www.w3.org/TR/CSP/</a>
 							<br />
 						
-							<a href="http://www.w3.org/TR/CSP/">http://www.w3.org/TR/CSP/</a>
+							<a href="https://caniuse.com/#search=content+security+policy">https://caniuse.com/#search=content+security+policy</a>
 							<br />
 						
-							<a href="http://caniuse.com/#search=content+security+policy">http://caniuse.com/#search=content+security+policy</a>
-							<br />
-						
-							<a href="http://content-security-policy.com/">http://content-security-policy.com/</a>
+							<a href="https://content-security-policy.com/">https://content-security-policy.com/</a>
 							<br />
 						
 							<a href="https://github.com/shapesecurity/salvation">https://github.com/shapesecurity/salvation</a>
@@ -1021,9 +1057,40 @@ The directive(s): frame-ancestors, form-action are among the directives that do 
 						<td width="80%">script-src includes unsafe-eval.</td>
 					</tr>
 				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/informations-entreprise/action">https://labonneboite.pole-emploi.fr/informations-entreprise/action</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">Content-Security-Policy</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">script-src &#39;self&#39; &#39;unsafe-inline&#39; &#39;unsafe-eval&#39; blob: maps.labonneboite.pole-emploi.fr embed.doorbell.io labonnealternance.pole-emploi.fr memo.pole-emploi.fr www.google-analytics.com static.hotjar.com script.hotjar.com optimize.google.com www.googletagmanager.com cdn.trustcommander.net cdn.tagcommander.com tag.aticdn.net guidances-applicatives.pole-emploi.fr</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">script-src includes unsafe-eval.</td>
+					</tr>
+				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">2</td>
+					<td width="80%">3</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -1035,16 +1102,13 @@ The directive(s): frame-ancestors, form-action are among the directives that do 
 				<tr>
 					<td width="20%">Reference</td>
 					<td width="80%">
-							<a href="http://www.w3.org/TR/CSP2/">http://www.w3.org/TR/CSP2/</a>
+							<a href="https://www.w3.org/TR/CSP/">https://www.w3.org/TR/CSP/</a>
 							<br />
 						
-							<a href="http://www.w3.org/TR/CSP/">http://www.w3.org/TR/CSP/</a>
+							<a href="https://caniuse.com/#search=content+security+policy">https://caniuse.com/#search=content+security+policy</a>
 							<br />
 						
-							<a href="http://caniuse.com/#search=content+security+policy">http://caniuse.com/#search=content+security+policy</a>
-							<br />
-						
-							<a href="http://content-security-policy.com/">http://content-security-policy.com/</a>
+							<a href="https://content-security-policy.com/">https://content-security-policy.com/</a>
 							<br />
 						
 							<a href="https://github.com/shapesecurity/salvation">https://github.com/shapesecurity/salvation</a>
@@ -1151,9 +1215,40 @@ The directive(s): frame-ancestors, form-action are among the directives that do 
 						<td width="80%">script-src includes unsafe-inline.</td>
 					</tr>
 				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/informations-entreprise/action">https://labonneboite.pole-emploi.fr/informations-entreprise/action</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">Content-Security-Policy</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">script-src &#39;self&#39; &#39;unsafe-inline&#39; &#39;unsafe-eval&#39; blob: maps.labonneboite.pole-emploi.fr embed.doorbell.io labonnealternance.pole-emploi.fr memo.pole-emploi.fr www.google-analytics.com static.hotjar.com script.hotjar.com optimize.google.com www.googletagmanager.com cdn.trustcommander.net cdn.tagcommander.com tag.aticdn.net guidances-applicatives.pole-emploi.fr</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">script-src includes unsafe-inline.</td>
+					</tr>
+				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">2</td>
+					<td width="80%">3</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -1165,16 +1260,13 @@ The directive(s): frame-ancestors, form-action are among the directives that do 
 				<tr>
 					<td width="20%">Reference</td>
 					<td width="80%">
-							<a href="http://www.w3.org/TR/CSP2/">http://www.w3.org/TR/CSP2/</a>
+							<a href="https://www.w3.org/TR/CSP/">https://www.w3.org/TR/CSP/</a>
 							<br />
 						
-							<a href="http://www.w3.org/TR/CSP/">http://www.w3.org/TR/CSP/</a>
+							<a href="https://caniuse.com/#search=content+security+policy">https://caniuse.com/#search=content+security+policy</a>
 							<br />
 						
-							<a href="http://caniuse.com/#search=content+security+policy">http://caniuse.com/#search=content+security+policy</a>
-							<br />
-						
-							<a href="http://content-security-policy.com/">http://content-security-policy.com/</a>
+							<a href="https://content-security-policy.com/">https://content-security-policy.com/</a>
 							<br />
 						
 							<a href="https://github.com/shapesecurity/salvation">https://github.com/shapesecurity/salvation</a>
@@ -1281,9 +1373,40 @@ The directive(s): frame-ancestors, form-action are among the directives that do 
 						<td width="80%">style-src includes unsafe-inline.</td>
 					</tr>
 				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/informations-entreprise/action">https://labonneboite.pole-emploi.fr/informations-entreprise/action</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">Content-Security-Policy</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">script-src &#39;self&#39; &#39;unsafe-inline&#39; &#39;unsafe-eval&#39; blob: maps.labonneboite.pole-emploi.fr embed.doorbell.io labonnealternance.pole-emploi.fr memo.pole-emploi.fr www.google-analytics.com static.hotjar.com script.hotjar.com optimize.google.com www.googletagmanager.com cdn.trustcommander.net cdn.tagcommander.com tag.aticdn.net guidances-applicatives.pole-emploi.fr</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">style-src includes unsafe-inline.</td>
+					</tr>
+				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">2</td>
+					<td width="80%">3</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -1295,16 +1418,13 @@ The directive(s): frame-ancestors, form-action are among the directives that do 
 				<tr>
 					<td width="20%">Reference</td>
 					<td width="80%">
-							<a href="http://www.w3.org/TR/CSP2/">http://www.w3.org/TR/CSP2/</a>
+							<a href="https://www.w3.org/TR/CSP/">https://www.w3.org/TR/CSP/</a>
 							<br />
 						
-							<a href="http://www.w3.org/TR/CSP/">http://www.w3.org/TR/CSP/</a>
+							<a href="https://caniuse.com/#search=content+security+policy">https://caniuse.com/#search=content+security+policy</a>
 							<br />
 						
-							<a href="http://caniuse.com/#search=content+security+policy">http://caniuse.com/#search=content+security+policy</a>
-							<br />
-						
-							<a href="http://content-security-policy.com/">http://content-security-policy.com/</a>
+							<a href="https://content-security-policy.com/">https://content-security-policy.com/</a>
 							<br />
 						
 							<a href="https://github.com/shapesecurity/salvation">https://github.com/shapesecurity/salvation</a>
@@ -1476,7 +1596,38 @@ The directive(s): frame-ancestors, form-action are among the directives that do 
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/entreprises/angers-49000/conduite-d-engins-agricoles-et-forestiers">https://labonneboite.pole-emploi.fr/entreprises/angers-49000/conduite-d-engins-agricoles-et-forestiers</a></td>
+						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/data/sirets-for-email?email=zaproxy%40example.com">https://labonneboite.pole-emploi.fr/data/sirets-for-email?email=zaproxy%40example.com</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/entreprises/clermont-ferrand-63000/conduite-d-engins-agricoles-et-forestiers">https://labonneboite.pole-emploi.fr/entreprises/clermont-ferrand-63000/conduite-d-engins-agricoles-et-forestiers</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1569,7 +1720,7 @@ The directive(s): frame-ancestors, form-action are among the directives that do 
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/entreprises/saint-etienne-42000/conduite-d-engins-agricoles-et-forestiers">https://labonneboite.pole-emploi.fr/entreprises/saint-etienne-42000/conduite-d-engins-agricoles-et-forestiers</a></td>
+						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/entreprises/nimes-30000/conduite-d-engins-agricoles-et-forestiers">https://labonneboite.pole-emploi.fr/entreprises/nimes-30000/conduite-d-engins-agricoles-et-forestiers</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1600,7 +1751,7 @@ The directive(s): frame-ancestors, form-action are among the directives that do 
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/entreprises/toulon-83000/conduite-d-engins-agricoles-et-forestiers">https://labonneboite.pole-emploi.fr/entreprises/toulon-83000/conduite-d-engins-agricoles-et-forestiers</a></td>
+						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/entreprises/villeurbanne-69100/conduite-d-engins-agricoles-et-forestiers">https://labonneboite.pole-emploi.fr/entreprises/villeurbanne-69100/conduite-d-engins-agricoles-et-forestiers</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1692,7 +1843,7 @@ The directive(s): frame-ancestors, form-action are among the directives that do 
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">11</td>
+					<td width="80%">12</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -1710,19 +1861,19 @@ The directive(s): frame-ancestors, form-action are among the directives that do 
 							<a href="https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html">https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</a>
 							<br />
 						
-							<a href="http://www.w3.org/TR/CSP/">http://www.w3.org/TR/CSP/</a>
+							<a href="https://www.w3.org/TR/CSP/">https://www.w3.org/TR/CSP/</a>
 							<br />
 						
-							<a href="http://w3c.github.io/webappsec/specs/content-security-policy/csp-specification.dev.html">http://w3c.github.io/webappsec/specs/content-security-policy/csp-specification.dev.html</a>
+							<a href="https://w3c.github.io/webappsec-csp/">https://w3c.github.io/webappsec-csp/</a>
 							<br />
 						
-							<a href="http://www.html5rocks.com/en/tutorials/security/content-security-policy/">http://www.html5rocks.com/en/tutorials/security/content-security-policy/</a>
+							<a href="https://web.dev/articles/csp">https://web.dev/articles/csp</a>
 							<br />
 						
-							<a href="http://caniuse.com/#feat=contentsecuritypolicy">http://caniuse.com/#feat=contentsecuritypolicy</a>
+							<a href="https://caniuse.com/#feat=contentsecuritypolicy">https://caniuse.com/#feat=contentsecuritypolicy</a>
 							<br />
 						
-							<a href="http://content-security-policy.com/">http://content-security-policy.com/</a>
+							<a href="https://content-security-policy.com/">https://content-security-policy.com/</a>
 							
 						</td>
 				</tr>
@@ -2301,7 +2452,7 @@ CVE-2019-11358
 					<tr>
 						<td width="20%"
 							class="indent2">Other Info</td>
-						<td width="80%">Location header URI length: 623 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/individu/authorize?client_id=PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693&amp;redirect_uri=https://labonneboite.pole-emploi.fr/authorize/complete/peam-openidconnect/&amp;state=cZksn6orkKebMlPj4pfIz7DPWAfR5ASz&amp;response_type=code&amp;nonce=ZsaMB6IV8J4JOu1J9Vlk6kGVOcH3Qz7RIS69phTRIIpRr7okPKaU0eHjTYDmo01K&amp;scope=application_PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693+api_peconnect-individuv1+openid+profile+email+qos_silver_peconnect-individuv1+api_candidaturespontaneev1+ami+amiW&amp;realm=/individu].
+						<td width="80%">Location header URI length: 623 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/individu/authorize?client_id=PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693&amp;redirect_uri=https://labonneboite.pole-emploi.fr/authorize/complete/peam-openidconnect/&amp;state=ydsUdEmhNOHUtnMAn7ZmpqP3QzuintKe&amp;response_type=code&amp;nonce=Z7i8Yh1BltSGV4iXztbv0YCOsMEjZA9MpyuFEnpRCSAsmYy2HsPXiWtO3xpl7scN&amp;scope=application_PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693+api_peconnect-individuv1+openid+profile+email+qos_silver_peconnect-individuv1+api_candidaturespontaneev1+ami+amiW&amp;realm=/individu].
 Predicted response size: 923.
 Response Body Length: 1,481.</td>
 					</tr>
@@ -2334,7 +2485,7 @@ Response Body Length: 1,481.</td>
 					<tr>
 						<td width="20%"
 							class="indent2">Other Info</td>
-						<td width="80%">Location header URI length: 623 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/individu/authorize?client_id=PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693&amp;redirect_uri=https://labonneboite.pole-emploi.fr/authorize/complete/peam-openidconnect/&amp;state=8Tyh58VarVE1taa49K8mTq2LZJOrcDRH&amp;response_type=code&amp;nonce=5IhEtzlulbwogJ1ztcjcMf9lKP03NoZAexIYSuqIfASpheIdUAyY9VAdmW1FMe3z&amp;scope=application_PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693+api_peconnect-individuv1+openid+profile+email+qos_silver_peconnect-individuv1+api_candidaturespontaneev1+ami+amiW&amp;realm=/individu].
+						<td width="80%">Location header URI length: 623 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/individu/authorize?client_id=PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693&amp;redirect_uri=https://labonneboite.pole-emploi.fr/authorize/complete/peam-openidconnect/&amp;state=ydsUdEmhNOHUtnMAn7ZmpqP3QzuintKe&amp;response_type=code&amp;nonce=GJBco3rQt0raRvNl7ej9uPtwDadL69nLPtEyfXMmMa5Vy6eaG8xo3yxyjf5PM7L5&amp;scope=application_PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693+api_peconnect-individuv1+openid+profile+email+qos_silver_peconnect-individuv1+api_candidaturespontaneev1+ami+amiW&amp;realm=/individu].
 Predicted response size: 923.
 Response Body Length: 1,481.</td>
 					</tr>
@@ -2367,7 +2518,7 @@ Response Body Length: 1,481.</td>
 					<tr>
 						<td width="20%"
 							class="indent2">Other Info</td>
-						<td width="80%">Location header URI length: 623 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/individu/authorize?client_id=PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693&amp;redirect_uri=https://labonneboite.pole-emploi.fr/authorize/complete/peam-openidconnect/&amp;state=Koem9o6buaYUpYjPrWeyB97azdpIkm07&amp;response_type=code&amp;nonce=SjXZhJzmljBoS18IupDhjbisAxNTK6FenXZMERUwGEFoOnf2tJqhRNXVFeB12FVQ&amp;scope=application_PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693+api_peconnect-individuv1+openid+profile+email+qos_silver_peconnect-individuv1+api_candidaturespontaneev1+ami+amiW&amp;realm=/individu].
+						<td width="80%">Location header URI length: 623 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/individu/authorize?client_id=PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693&amp;redirect_uri=https://labonneboite.pole-emploi.fr/authorize/complete/peam-openidconnect/&amp;state=ydsUdEmhNOHUtnMAn7ZmpqP3QzuintKe&amp;response_type=code&amp;nonce=3Y1EofdiG7JMbx1lO7Yah5IOaTAPz1hGclJN4CxULjm2X9Bbdgs13aniUvmuBIEC&amp;scope=application_PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693+api_peconnect-individuv1+openid+profile+email+qos_silver_peconnect-individuv1+api_candidaturespontaneev1+ami+amiW&amp;realm=/individu].
 Predicted response size: 923.
 Response Body Length: 1,481.</td>
 					</tr>
@@ -2400,7 +2551,7 @@ Response Body Length: 1,481.</td>
 					<tr>
 						<td width="20%"
 							class="indent2">Other Info</td>
-						<td width="80%">Location header URI length: 623 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/individu/authorize?client_id=PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693&amp;redirect_uri=https://labonneboite.pole-emploi.fr/authorize/complete/peam-openidconnect/&amp;state=LeFHSyga7goXSndoMYECk23pI1aXNuQE&amp;response_type=code&amp;nonce=PRvQxav0onKCK5ew0ofPnduuTFTmB6yiVwNGprDQkb7B9YMov0y9LWP7YWdUreMk&amp;scope=application_PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693+api_peconnect-individuv1+openid+profile+email+qos_silver_peconnect-individuv1+api_candidaturespontaneev1+ami+amiW&amp;realm=/individu].
+						<td width="80%">Location header URI length: 623 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/individu/authorize?client_id=PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693&amp;redirect_uri=https://labonneboite.pole-emploi.fr/authorize/complete/peam-openidconnect/&amp;state=ydsUdEmhNOHUtnMAn7ZmpqP3QzuintKe&amp;response_type=code&amp;nonce=AWWqYBkzla4p0CNIMwPDcqiIQrNjZz3VygrjplOknMkzVwhQbq0C3l24iB5Z4amr&amp;scope=application_PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693+api_peconnect-individuv1+openid+profile+email+qos_silver_peconnect-individuv1+api_candidaturespontaneev1+ami+amiW&amp;realm=/individu].
 Predicted response size: 923.
 Response Body Length: 1,481.</td>
 					</tr>
@@ -2433,7 +2584,7 @@ Response Body Length: 1,481.</td>
 					<tr>
 						<td width="20%"
 							class="indent2">Other Info</td>
-						<td width="80%">Location header URI length: 623 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/individu/authorize?client_id=PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693&amp;redirect_uri=https://labonneboite.pole-emploi.fr/authorize/complete/peam-openidconnect/&amp;state=cXYfhASzHoQBVIMIOjva25kLSVi5L8vZ&amp;response_type=code&amp;nonce=9SmwsbEBsLxcVbPqSSMAde0yH05wQilrdCamRA3uJWAXI31imkQVHfFVPyYoElwF&amp;scope=application_PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693+api_peconnect-individuv1+openid+profile+email+qos_silver_peconnect-individuv1+api_candidaturespontaneev1+ami+amiW&amp;realm=/individu].
+						<td width="80%">Location header URI length: 623 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/individu/authorize?client_id=PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693&amp;redirect_uri=https://labonneboite.pole-emploi.fr/authorize/complete/peam-openidconnect/&amp;state=ydsUdEmhNOHUtnMAn7ZmpqP3QzuintKe&amp;response_type=code&amp;nonce=WUsEkNitF9wnQIgKciCXHyzOtfr7r0pURDmhkd8pdCfq9lb096pvr3GtHbjNrlKd&amp;scope=application_PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693+api_peconnect-individuv1+openid+profile+email+qos_silver_peconnect-individuv1+api_candidaturespontaneev1+ami+amiW&amp;realm=/individu].
 Predicted response size: 923.
 Response Body Length: 1,481.</td>
 					</tr>
@@ -2466,7 +2617,7 @@ Response Body Length: 1,481.</td>
 					<tr>
 						<td width="20%"
 							class="indent2">Other Info</td>
-						<td width="80%">Location header URI length: 623 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/individu/authorize?client_id=PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693&amp;redirect_uri=https://labonneboite.pole-emploi.fr/authorize/complete/peam-openidconnect/&amp;state=3w0QL9cnb2peK7J2CpVKWveeu0LtiOwQ&amp;response_type=code&amp;nonce=z3nwEn7xtkRy1QIe6TMOOxFiU9twFMgpHYyPn7KrKqN2ouaqSPLNkylP55Q5ETeo&amp;scope=application_PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693+api_peconnect-individuv1+openid+profile+email+qos_silver_peconnect-individuv1+api_candidaturespontaneev1+ami+amiW&amp;realm=/individu].
+						<td width="80%">Location header URI length: 623 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/individu/authorize?client_id=PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693&amp;redirect_uri=https://labonneboite.pole-emploi.fr/authorize/complete/peam-openidconnect/&amp;state=ydsUdEmhNOHUtnMAn7ZmpqP3QzuintKe&amp;response_type=code&amp;nonce=HANecV8RL369DRaW1Frezz8wij0zWyd6AqzocppIXOmNebFRtDMLTYJ9ZF2cjaaA&amp;scope=application_PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693+api_peconnect-individuv1+openid+profile+email+qos_silver_peconnect-individuv1+api_candidaturespontaneev1+ami+amiW&amp;realm=/individu].
 Predicted response size: 923.
 Response Body Length: 1,481.</td>
 					</tr>
@@ -2499,7 +2650,7 @@ Response Body Length: 1,481.</td>
 					<tr>
 						<td width="20%"
 							class="indent2">Other Info</td>
-						<td width="80%">Location header URI length: 623 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/individu/authorize?client_id=PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693&amp;redirect_uri=https://labonneboite.pole-emploi.fr/authorize/complete/peam-openidconnect/&amp;state=8Tyh58VarVE1taa49K8mTq2LZJOrcDRH&amp;response_type=code&amp;nonce=dsvF4Yjzja6lJKwsMwTyKXSpHCnBhMZaKQVOLK6Hso2sgbQgpeQh0zDQNy1O19hh&amp;scope=application_PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693+api_peconnect-individuv1+openid+profile+email+qos_silver_peconnect-individuv1+api_candidaturespontaneev1+ami+amiW&amp;realm=/individu].
+						<td width="80%">Location header URI length: 623 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/individu/authorize?client_id=PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693&amp;redirect_uri=https://labonneboite.pole-emploi.fr/authorize/complete/peam-openidconnect/&amp;state=ydsUdEmhNOHUtnMAn7ZmpqP3QzuintKe&amp;response_type=code&amp;nonce=eoOx0R8gLtb7jw4iuL8JQg96fNGE2BG4vIRUuPARPwpVBXxiPSJ0okuImq6H62Ks&amp;scope=application_PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693+api_peconnect-individuv1+openid+profile+email+qos_silver_peconnect-individuv1+api_candidaturespontaneev1+ami+amiW&amp;realm=/individu].
 Predicted response size: 923.
 Response Body Length: 1,481.</td>
 					</tr>
@@ -2532,7 +2683,7 @@ Response Body Length: 1,481.</td>
 					<tr>
 						<td width="20%"
 							class="indent2">Other Info</td>
-						<td width="80%">Location header URI length: 623 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/individu/authorize?client_id=PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693&amp;redirect_uri=https://labonneboite.pole-emploi.fr/authorize/complete/peam-openidconnect/&amp;state=ad5juD0P2o9JsWqOE1aGIvLnCdasHJ8N&amp;response_type=code&amp;nonce=JHEZ1mdvftJiRpTY95hpwyLn6jlH29OIbEWrRpKK2QBoWp2zsNq1fKEui0fcRv3A&amp;scope=application_PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693+api_peconnect-individuv1+openid+profile+email+qos_silver_peconnect-individuv1+api_candidaturespontaneev1+ami+amiW&amp;realm=/individu].
+						<td width="80%">Location header URI length: 623 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/individu/authorize?client_id=PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693&amp;redirect_uri=https://labonneboite.pole-emploi.fr/authorize/complete/peam-openidconnect/&amp;state=05C3MGHQECy50ONt80m3sluUsXwHT4AL&amp;response_type=code&amp;nonce=FBkMyKvRl9NzXqPeezHJvWUIu3P0mYQMkOZDtz6fQPUus4AAzeCFdIHv0ykdPEZH&amp;scope=application_PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693+api_peconnect-individuv1+openid+profile+email+qos_silver_peconnect-individuv1+api_candidaturespontaneev1+ami+amiW&amp;realm=/individu].
 Predicted response size: 923.
 Response Body Length: 1,481.</td>
 					</tr>
@@ -2565,7 +2716,7 @@ Response Body Length: 1,481.</td>
 					<tr>
 						<td width="20%"
 							class="indent2">Other Info</td>
-						<td width="80%">Location header URI length: 623 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/individu/authorize?client_id=PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693&amp;redirect_uri=https://labonneboite.pole-emploi.fr/authorize/complete/peam-openidconnect/&amp;state=3w0QL9cnb2peK7J2CpVKWveeu0LtiOwQ&amp;response_type=code&amp;nonce=GeDZY3whbX7qRdl30GyvXX395kZ0F9KchuaFpFIScPGLPWndJqNlihB1cgCFHr5K&amp;scope=application_PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693+api_peconnect-individuv1+openid+profile+email+qos_silver_peconnect-individuv1+api_candidaturespontaneev1+ami+amiW&amp;realm=/individu].
+						<td width="80%">Location header URI length: 623 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/individu/authorize?client_id=PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693&amp;redirect_uri=https://labonneboite.pole-emploi.fr/authorize/complete/peam-openidconnect/&amp;state=ydsUdEmhNOHUtnMAn7ZmpqP3QzuintKe&amp;response_type=code&amp;nonce=bCkNGgEhRVWynKdegwhTwpBbmg3Bn8NBj1cgyOcgP56WNJJW0vzhuywONttHEd6l&amp;scope=application_PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693+api_peconnect-individuv1+openid+profile+email+qos_silver_peconnect-individuv1+api_candidaturespontaneev1+ami+amiW&amp;realm=/individu].
 Predicted response size: 923.
 Response Body Length: 1,481.</td>
 					</tr>
@@ -2598,7 +2749,7 @@ Response Body Length: 1,481.</td>
 					<tr>
 						<td width="20%"
 							class="indent2">Other Info</td>
-						<td width="80%">Location header URI length: 623 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/individu/authorize?client_id=PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693&amp;redirect_uri=https://labonneboite.pole-emploi.fr/authorize/complete/peam-openidconnect/&amp;state=GtABDTX756ZGuzTwQ5X1O72uuYtMTRNk&amp;response_type=code&amp;nonce=ibSoL1SNhi8GeH8G7Jd2sPu6tVYDLJap72Vz9PZ1ATTXN87usdzlfsu9MOWueMyx&amp;scope=application_PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693+api_peconnect-individuv1+openid+profile+email+qos_silver_peconnect-individuv1+api_candidaturespontaneev1+ami+amiW&amp;realm=/individu].
+						<td width="80%">Location header URI length: 623 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/individu/authorize?client_id=PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693&amp;redirect_uri=https://labonneboite.pole-emploi.fr/authorize/complete/peam-openidconnect/&amp;state=ydsUdEmhNOHUtnMAn7ZmpqP3QzuintKe&amp;response_type=code&amp;nonce=y3nm0eZW1g2bDZlKT7qslLESkStolOFEGrzTFoPvuZSJM1UETfaO3dFvGuasmI0x&amp;scope=application_PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693+api_peconnect-individuv1+openid+profile+email+qos_silver_peconnect-individuv1+api_candidaturespontaneev1+ami+amiW&amp;realm=/individu].
 Predicted response size: 923.
 Response Body Length: 1,481.</td>
 					</tr>
@@ -2631,7 +2782,7 @@ Response Body Length: 1,481.</td>
 					<tr>
 						<td width="20%"
 							class="indent2">Other Info</td>
-						<td width="80%">Location header URI length: 623 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/individu/authorize?client_id=PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693&amp;redirect_uri=https://labonneboite.pole-emploi.fr/authorize/complete/peam-openidconnect/&amp;state=3w0QL9cnb2peK7J2CpVKWveeu0LtiOwQ&amp;response_type=code&amp;nonce=eNJkRwv8iM0d6KD3Bt4dOpW860dJHrmHfEbiEN6Z6Nf4ar6j9IrnvCBzsPhj7DrN&amp;scope=application_PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693+api_peconnect-individuv1+openid+profile+email+qos_silver_peconnect-individuv1+api_candidaturespontaneev1+ami+amiW&amp;realm=/individu].
+						<td width="80%">Location header URI length: 623 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/individu/authorize?client_id=PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693&amp;redirect_uri=https://labonneboite.pole-emploi.fr/authorize/complete/peam-openidconnect/&amp;state=ydsUdEmhNOHUtnMAn7ZmpqP3QzuintKe&amp;response_type=code&amp;nonce=imHcYn3gVdEkcjTUXf4J3GtTm7LcDnbaOLuktcCm27JPYfpvjTtorCuCqLFfPdL9&amp;scope=application_PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693+api_peconnect-individuv1+openid+profile+email+qos_silver_peconnect-individuv1+api_candidaturespontaneev1+ami+amiW&amp;realm=/individu].
 Predicted response size: 923.
 Response Body Length: 1,481.</td>
 					</tr>
@@ -2664,7 +2815,7 @@ Response Body Length: 1,481.</td>
 					<tr>
 						<td width="20%"
 							class="indent2">Other Info</td>
-						<td width="80%">Location header URI length: 623 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/individu/authorize?client_id=PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693&amp;redirect_uri=https://labonneboite.pole-emploi.fr/authorize/complete/peam-openidconnect/&amp;state=GtABDTX756ZGuzTwQ5X1O72uuYtMTRNk&amp;response_type=code&amp;nonce=L3hbG8z2IRxTvSDWAqRlCzYLh2deYSRB2eIQTWVZ7zFJfXgkTqEUyqYib9ku6UPN&amp;scope=application_PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693+api_peconnect-individuv1+openid+profile+email+qos_silver_peconnect-individuv1+api_candidaturespontaneev1+ami+amiW&amp;realm=/individu].
+						<td width="80%">Location header URI length: 623 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/individu/authorize?client_id=PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693&amp;redirect_uri=https://labonneboite.pole-emploi.fr/authorize/complete/peam-openidconnect/&amp;state=ydsUdEmhNOHUtnMAn7ZmpqP3QzuintKe&amp;response_type=code&amp;nonce=ZP4Fjn1WF7IRS1dT4eRyKsIDgx0GDvxj1ohRlreGSQgq4g9uBko5RCBDj9nUwbwJ&amp;scope=application_PAR_labonneboite_612fceb5dfaf6baf57e146684a2dd497db31e7715804a7379d3d159ada5dc693+api_peconnect-individuv1+openid+profile+email+qos_silver_peconnect-individuv1+api_candidaturespontaneev1+ami+amiW&amp;realm=/individu].
 Predicted response size: 923.
 Response Body Length: 1,481.</td>
 					</tr>
@@ -4121,7 +4272,38 @@ Response Body Length: 1,481.</td>
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/entreprises/angers-49000/conduite-d-engins-agricoles-et-forestiers">https://labonneboite.pole-emploi.fr/entreprises/angers-49000/conduite-d-engins-agricoles-et-forestiers</a></td>
+						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/data/sirets-for-email?email=zaproxy%40example.com">https://labonneboite.pole-emploi.fr/data/sirets-for-email?email=zaproxy%40example.com</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/entreprises/clermont-ferrand-63000/conduite-d-engins-agricoles-et-forestiers">https://labonneboite.pole-emploi.fr/entreprises/clermont-ferrand-63000/conduite-d-engins-agricoles-et-forestiers</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -4214,7 +4396,7 @@ Response Body Length: 1,481.</td>
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/entreprises/saint-etienne-42000/conduite-d-engins-agricoles-et-forestiers">https://labonneboite.pole-emploi.fr/entreprises/saint-etienne-42000/conduite-d-engins-agricoles-et-forestiers</a></td>
+						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/entreprises/nimes-30000/conduite-d-engins-agricoles-et-forestiers">https://labonneboite.pole-emploi.fr/entreprises/nimes-30000/conduite-d-engins-agricoles-et-forestiers</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -4245,7 +4427,7 @@ Response Body Length: 1,481.</td>
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/entreprises/toulon-83000/conduite-d-engins-agricoles-et-forestiers">https://labonneboite.pole-emploi.fr/entreprises/toulon-83000/conduite-d-engins-agricoles-et-forestiers</a></td>
+						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/entreprises/villeurbanne-69100/conduite-d-engins-agricoles-et-forestiers">https://labonneboite.pole-emploi.fr/entreprises/villeurbanne-69100/conduite-d-engins-agricoles-et-forestiers</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -4337,7 +4519,7 @@ Response Body Length: 1,481.</td>
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">11</td>
+					<td width="80%">12</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -4355,13 +4537,13 @@ Response Body Length: 1,481.</td>
 							<a href="https://owasp.org/www-community/Security_Headers">https://owasp.org/www-community/Security_Headers</a>
 							<br />
 						
-							<a href="http://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security">http://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</a>
+							<a href="https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security">https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</a>
 							<br />
 						
-							<a href="http://caniuse.com/stricttransportsecurity">http://caniuse.com/stricttransportsecurity</a>
+							<a href="https://caniuse.com/stricttransportsecurity">https://caniuse.com/stricttransportsecurity</a>
 							<br />
 						
-							<a href="http://tools.ietf.org/html/rfc6797">http://tools.ietf.org/html/rfc6797</a>
+							<a href="https://datatracker.ietf.org/doc/html/rfc6797">https://datatracker.ietf.org/doc/html/rfc6797</a>
 							
 						</td>
 				</tr>
@@ -4538,76 +4720,12 @@ Response Body Length: 1,481.</td>
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">eyJfcGVybWFuZW50Ijp0cnVlLCJjc3JmX3Rva2VuIjoiMDkwYjU4YjI0MTM5MmVlMTc4ODhlYjQxMjI2ZTllODJkMGMzZjkzZSJ9</td>
+						<td width="80%">eyJfcGVybWFuZW50Ijp0cnVlLCJjc3JmX3Rva2VuIjoiMmY2NzQ3MjNhNDA4ZGY5OTBkY2NlMWFhZjk0ZTIxMTg4NzA2NWYyZiJ9</td>
 					</tr>
 					<tr>
 						<td width="20%"
 							class="indent2">Other Info</td>
-						<td width="80%">{&quot;_permanent&quot;:true,&quot;csrf_token&quot;:&quot;090b58b241392ee17888eb41226e9e82d0c3f93e&quot;}</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://labonneboite.pole-emploi.fr">https://labonneboite.pole-emploi.fr</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">eyJfcGVybWFuZW50Ijp0cnVlLCJjc3JmX3Rva2VuIjoiYWJlZDg3NjBlNWUzM2VhYmY2Y2I5YmZlOWNhZjBmNTc4YTYyMmFjOCJ9</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">{&quot;_permanent&quot;:true,&quot;csrf_token&quot;:&quot;abed8760e5e33eabf6cb9bfe9caf0f578a622ac8&quot;}</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/">https://labonneboite.pole-emploi.fr/</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">eJwNyEEKgCAQBdC7zLqFKJp6GRntD0FlobaK7l5v-R5K0tBXisJ7x0TpQju4og6Ko93_lN4kjXNDpUicsfjZKVgYA87iSg5ZEAqLEjt7dlpz8fR-jVId8Q</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">x��A
-� л̺�(�z�Ae����^o�J��W��{�D�B;��������$�sC�H����)X��JY
-�;{vZs��~�R�</td>
+						<td width="80%">{&quot;_permanent&quot;:true,&quot;csrf_token&quot;:&quot;2f674723a408df990dcce1aaf94e211887065f2f&quot;}</td>
 					</tr>
 				
 					<tr>
@@ -4633,14 +4751,12 @@ Response Body Length: 1,481.</td>
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">eJwNyEEKgCAQBdC7zLqFKJp6GRntD0FlobaK7l5v-R5K0tBXisJ7x0TpQju4og6Ko93_lN4kjXNDpUicsfjZKVgYA87iSg5ZEAqLEjt7dlpz8fR-jVId8Q</td>
+						<td width="80%">eyJfZnJlc2giOmZhbHNlLCJfcGVybWFuZW50Ijp0cnVlLCJjc3JmX3Rva2VuIjoiNTI2YTc4MTg2NTEzOWNjYzQ5ZjIzN2YyOTE4MDg3Yzg0Yjk0N2Y0MCJ9</td>
 					</tr>
 					<tr>
 						<td width="20%"
 							class="indent2">Other Info</td>
-						<td width="80%">x��A
-� л̺�(�z�Ae����^o�J��W��{�D�B;��������$�sC�H����)X��JY
-�;{vZs��~�R�</td>
+						<td width="80%">{&quot;_fresh&quot;:false,&quot;_permanent&quot;:true,&quot;csrf_token&quot;:&quot;526a781865139ccc49f237f2918087c84b947f40&quot;}</td>
 					</tr>
 				
 					<tr>
@@ -4666,12 +4782,12 @@ Response Body Length: 1,481.</td>
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">cZksn6orkKebMlPj4pfIz7DPWAfR5ASz</td>
+						<td width="80%">ydsUdEmhNOHUtnMAn7ZmpqP3QzuintKe</td>
 					</tr>
 					<tr>
 						<td width="20%"
 							class="indent2">Other Info</td>
-						<td width="80%">q�,��+���2S���ϰ�X���</td>
+						<td width="80%">��tI�4�Զs ��f���C;��Ҟ</td>
 					</tr>
 				
 					<tr>
@@ -4697,12 +4813,12 @@ Response Body Length: 1,481.</td>
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">ad5juD0P2o9JsWqOE1aGIvLnCdasHJ8N</td>
+						<td width="80%">05C3MGHQECy50ONt80m3sluUsXwHT4AL</td>
 					</tr>
 					<tr>
 						<td width="20%"
 							class="indent2">Other Info</td>
-						<td width="80%">i�c�=ڏI�j�V�&quot;��	֬�</td>
+						<td width="80%">Ӑ�0a�,���m�I��[��|O�</td>
 					</tr>
 				
 					<tr>
@@ -4728,14 +4844,12 @@ Response Body Length: 1,481.</td>
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">eJwNyEEKgCAQBdC7zLqFKJp6GRntD0FlobaK7l5v-R5K0tBXisJ7x0TpQju4og6Ko93_lN4kjXNDpUicsfjZKVgYA87iSg5ZEAqLEjt7dlpz8fR-jVId8Q</td>
+						<td width="80%">eyJfZnJlc2giOmZhbHNlLCJfcGVybWFuZW50Ijp0cnVlLCJjc3JmX3Rva2VuIjoiNTI2YTc4MTg2NTEzOWNjYzQ5ZjIzN2YyOTE4MDg3Yzg0Yjk0N2Y0MCJ9</td>
 					</tr>
 					<tr>
 						<td width="20%"
 							class="indent2">Other Info</td>
-						<td width="80%">x��A
-� л̺�(�z�Ae����^o�J��W��{�D�B;��������$�sC�H����)X��JY
-�;{vZs��~�R�</td>
+						<td width="80%">{&quot;_fresh&quot;:false,&quot;_permanent&quot;:true,&quot;csrf_token&quot;:&quot;526a781865139ccc49f237f2918087c84b947f40&quot;}</td>
 					</tr>
 				
 					<tr>
@@ -4761,14 +4875,12 @@ Response Body Length: 1,481.</td>
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">eJwNyEEKgCAQBdC7zLqFKJp6GRntD0FlobaK7l5v-R5K0tBXisJ7x0TpQju4og6Ko93_lN4kjXNDpUicsfjZKVgYA87iSg5ZEAqLEjt7dlpz8fR-jVId8Q</td>
+						<td width="80%">eyJfZnJlc2giOmZhbHNlLCJfcGVybWFuZW50Ijp0cnVlLCJjc3JmX3Rva2VuIjoiNTI2YTc4MTg2NTEzOWNjYzQ5ZjIzN2YyOTE4MDg3Yzg0Yjk0N2Y0MCJ9</td>
 					</tr>
 					<tr>
 						<td width="20%"
 							class="indent2">Other Info</td>
-						<td width="80%">x��A
-� л̺�(�z�Ae����^o�J��W��{�D�B;��������$�sC�H����)X��JY
-�;{vZs��~�R�</td>
+						<td width="80%">{&quot;_fresh&quot;:false,&quot;_permanent&quot;:true,&quot;csrf_token&quot;:&quot;526a781865139ccc49f237f2918087c84b947f40&quot;}</td>
 					</tr>
 				
 					<tr>
@@ -4794,14 +4906,12 @@ Response Body Length: 1,481.</td>
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">eJwNyEEKgCAQBdC7zLqFKJp6GRntD0FlobaK7l5v-R5K0tBXisJ7x0TpQju4og6Ko93_lN4kjXNDpUicsfjZKVgYA87iSg5ZEAqLEjt7dlpz8fR-jVId8Q</td>
+						<td width="80%">eyJfZnJlc2giOmZhbHNlLCJfcGVybWFuZW50Ijp0cnVlLCJjc3JmX3Rva2VuIjoiNTI2YTc4MTg2NTEzOWNjYzQ5ZjIzN2YyOTE4MDg3Yzg0Yjk0N2Y0MCJ9</td>
 					</tr>
 					<tr>
 						<td width="20%"
 							class="indent2">Other Info</td>
-						<td width="80%">x��A
-� л̺�(�z�Ae����^o�J��W��{�D�B;��������$�sC�H����)X��JY
-�;{vZs��~�R�</td>
+						<td width="80%">{&quot;_fresh&quot;:false,&quot;_permanent&quot;:true,&quot;csrf_token&quot;:&quot;526a781865139ccc49f237f2918087c84b947f40&quot;}</td>
 					</tr>
 				
 					<tr>
@@ -4827,14 +4937,12 @@ Response Body Length: 1,481.</td>
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">eJwNyEEKgCAQBdC7zLqFKJp6GRntD0FlobaK7l5v-R5K0tBXisJ7x0TpQju4og6Ko93_lN4kjXNDpUicsfjZKVgYA87iSg5ZEAqLEjt7dlpz8fR-jVId8Q</td>
+						<td width="80%">eyJfZnJlc2giOmZhbHNlLCJfcGVybWFuZW50Ijp0cnVlLCJjc3JmX3Rva2VuIjoiNTI2YTc4MTg2NTEzOWNjYzQ5ZjIzN2YyOTE4MDg3Yzg0Yjk0N2Y0MCJ9</td>
 					</tr>
 					<tr>
 						<td width="20%"
 							class="indent2">Other Info</td>
-						<td width="80%">x��A
-� л̺�(�z�Ae����^o�J��W��{�D�B;��������$�sC�H����)X��JY
-�;{vZs��~�R�</td>
+						<td width="80%">{&quot;_fresh&quot;:false,&quot;_permanent&quot;:true,&quot;csrf_token&quot;:&quot;526a781865139ccc49f237f2918087c84b947f40&quot;}</td>
 					</tr>
 				
 					<tr>
@@ -4860,14 +4968,12 @@ Response Body Length: 1,481.</td>
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">eJwNyEEKgCAQBdC7zLqFKJp6GRntD0FlobaK7l5v-R5K0tBXisJ7x0TpQju4og6Ko93_lN4kjXNDpUicsfjZKVgYA87iSg5ZEAqLEjt7dlpz8fR-jVId8Q</td>
+						<td width="80%">eyJfZnJlc2giOmZhbHNlLCJfcGVybWFuZW50Ijp0cnVlLCJjc3JmX3Rva2VuIjoiNTI2YTc4MTg2NTEzOWNjYzQ5ZjIzN2YyOTE4MDg3Yzg0Yjk0N2Y0MCJ9</td>
 					</tr>
 					<tr>
 						<td width="20%"
 							class="indent2">Other Info</td>
-						<td width="80%">x��A
-� л̺�(�z�Ae����^o�J��W��{�D�B;��������$�sC�H����)X��JY
-�;{vZs��~�R�</td>
+						<td width="80%">{&quot;_fresh&quot;:false,&quot;_permanent&quot;:true,&quot;csrf_token&quot;:&quot;526a781865139ccc49f237f2918087c84b947f40&quot;}</td>
 					</tr>
 				
 					<tr>
@@ -4893,19 +4999,17 @@ Response Body Length: 1,481.</td>
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">eJwNyEEKgCAQBdC7zLqFKJp6GRntD0FlobaK7l5v-R5K0tBXisJ7x0TpQju4og6Ko93_lN4kjXNDpUicsfjZKVgYA87iSg5ZEAqLEjt7dlpz8fR-jVId8Q</td>
+						<td width="80%">eyJfZnJlc2giOmZhbHNlLCJfcGVybWFuZW50Ijp0cnVlLCJjc3JmX3Rva2VuIjoiNTI2YTc4MTg2NTEzOWNjYzQ5ZjIzN2YyOTE4MDg3Yzg0Yjk0N2Y0MCJ9</td>
 					</tr>
 					<tr>
 						<td width="20%"
 							class="indent2">Other Info</td>
-						<td width="80%">x��A
-� л̺�(�z�Ae����^o�J��W��{�D�B;��������$�sC�H����)X��JY
-�;{vZs��~�R�</td>
+						<td width="80%">{&quot;_fresh&quot;:false,&quot;_permanent&quot;:true,&quot;csrf_token&quot;:&quot;526a781865139ccc49f237f2918087c84b947f40&quot;}</td>
 					</tr>
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">12</td>
+					<td width="80%">10</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -4934,6 +5038,87 @@ Response Body Length: 1,481.</td>
 					<td width="20%">Plugin Id</td>
 					<td width="80%"><a
 						href="https://www.zaproxy.org/docs/alerts/10094/">10094</a></td>
+				</tr>
+			</table>
+			<div class="spacer"></div>
+		
+			<table class="results">
+				<tr height="24">
+					<th width="20%" class="risk-0"><a
+						id="10024"></a>
+						<div>Informational</div></th>
+					<th class="risk-0">Information Disclosure - Sensitive Information in URL</th>
+				</tr>
+				<tr>
+					<td width="20%">Description</td>
+					<td width="80%">
+							<div>The request appeared to contain sensitive information leaked in the URL. This can violate PCI and most organizational compliance policies. You can configure the list of strings for this check to add or remove values specific to your environment.</div>
+							
+						</td>
+				</tr>
+				<TR vAlign="top">
+					<TD colspan="2"></TD>
+				</TR>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/data/sirets-for-email?email=zaproxy%40example.com">https://labonneboite.pole-emploi.fr/data/sirets-for-email?email=zaproxy%40example.com</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">email</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">zaproxy@example.com</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">The URL contains email address(es).</td>
+					</tr>
+				
+				<tr>
+					<td width="20%">Instances</td>
+					<td width="80%">1</td>
+				</tr>
+				<tr>
+					<td width="20%">Solution</td>
+					<td width="80%">
+							<div>Do not pass sensitive information in URIs.</div>
+							
+						</td>
+				</tr>
+				<tr>
+					<td width="20%">Reference</td>
+					<td width="80%"></td>
+				</tr>
+				<tr>
+					<td width="20%">CWE Id</td>
+					<td width="80%"><a
+						href="https://cwe.mitre.org/data/definitions/200.html">200</a></td>
+				</tr>
+				<tr>
+					<td width="20%">WASC Id</td>
+					<td width="80%">13</td>
+				</tr>
+				<tr>
+					<td width="20%">Plugin Id</td>
+					<td width="80%"><a
+						href="https://www.zaproxy.org/docs/alerts/10024/">10024</a></td>
 				</tr>
 			</table>
 			<div class="spacer"></div>
@@ -5956,7 +6141,7 @@ Response Body Length: 1,481.</td>
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/connexion-recruteur?action_name=update_jobs&amp;siret">https://labonneboite.pole-emploi.fr/connexion-recruteur?action_name=update_jobs&amp;siret</a></td>
+						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/entreprises?departments&amp;ij&amp;j=ZAP&amp;l=ZAP&amp;lat&amp;lon&amp;occupation">https://labonneboite.pole-emploi.fr/entreprises?departments&amp;ij&amp;j=ZAP&amp;l=ZAP&amp;lat&amp;lon&amp;occupation</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -6201,7 +6386,7 @@ Response Body Length: 1,481.</td>
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/informations-entreprise/action">https://labonneboite.pole-emploi.fr/informations-entreprise/action</a></td>
+						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/">https://labonneboite.pole-emploi.fr/</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -6347,7 +6532,7 @@ Response Body Length: 1,481.</td>
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/informations-entreprise/action">https://labonneboite.pole-emploi.fr/informations-entreprise/action</a></td>
+						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/">https://labonneboite.pole-emploi.fr/</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -6493,7 +6678,7 @@ Response Body Length: 1,481.</td>
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/informations-entreprise/action">https://labonneboite.pole-emploi.fr/informations-entreprise/action</a></td>
+						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/">https://labonneboite.pole-emploi.fr/</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -6639,7 +6824,7 @@ Response Body Length: 1,481.</td>
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/informations-entreprise/action">https://labonneboite.pole-emploi.fr/informations-entreprise/action</a></td>
+						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/">https://labonneboite.pole-emploi.fr/</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -6774,7 +6959,7 @@ Response Body Length: 1,481.</td>
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">eyJfcGVybWFuZW50Ijp0cnVlLCJjc3JmX3Rva2VuIjoiMDkwYjU4YjI0MTM5MmVlMTc4ODhlYjQxMjI2ZTllODJkMGMzZjkzZSJ9.ZaQyqQ.BJLwQqDnGX6jDfATHwgMSq3E8zQ</td>
+						<td width="80%">eyJfcGVybWFuZW50Ijp0cnVlLCJjc3JmX3Rva2VuIjoiMmY2NzQ3MjNhNDA4ZGY5OTBkY2NlMWFhZjk0ZTIxMTg4NzA2NWYyZiJ9.Za1rHw.L61UMASQpPK3w7pDZJ1JJumJ73w</td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -6806,7 +6991,7 @@ cookie:session</td>
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">eyJfcGVybWFuZW50Ijp0cnVlLCJjc3JmX3Rva2VuIjoiYWJlZDg3NjBlNWUzM2VhYmY2Y2I5YmZlOWNhZjBmNTc4YTYyMmFjOCJ9.ZaQyqQ.PsvqzRORd-hK24871BGw1eSHVYg</td>
+						<td width="80%">eyJfcGVybWFuZW50Ijp0cnVlLCJjc3JmX3Rva2VuIjoiNTI2YTc4MTg2NTEzOWNjYzQ5ZjIzN2YyOTE4MDg3Yzg0Yjk0N2Y0MCJ9.Za1rIA.41M-joj2UCbcoD92WbLQAjUsn6M</td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -6838,7 +7023,7 @@ cookie:session</td>
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">.eJwNyEEKgCAQBdC7zLqFKJp6GRntD0FlobaK7l5v-R5K0tBXisJ7x0TpQju4og6Ko93_lN4kjXNDpUicsfjZKVgYA87iSg5ZEAqLEjt7dlpz8fR-jVId8Q.ZaQyqg.NVHFZe337oAsnd9Zuo1BMyPAh1s</td>
+						<td width="80%">eyJfZnJlc2giOmZhbHNlLCJfcGVybWFuZW50Ijp0cnVlLCJjc3JmX3Rva2VuIjoiNTI2YTc4MTg2NTEzOWNjYzQ5ZjIzN2YyOTE4MDg3Yzg0Yjk0N2Y0MCJ9.Za1rIA.Q9crwDeWzCOBbn4u5vGpp1dQUf8</td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -6870,7 +7055,7 @@ cookie:session</td>
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">.eJwNyEEKgCAQBdC7zLqFKJp6GRntD0FlobaK7l5v-R5K0tBXisJ7x0TpQju4og6Ko93_lN4kjXNDpUicsfjZKVgYA87iSg5ZEAqLEjt7dlpz8fR-jVId8Q.ZaQyqg.NVHFZe337oAsnd9Zuo1BMyPAh1s</td>
+						<td width="80%">eyJfZnJlc2giOmZhbHNlLCJfcGVybWFuZW50Ijp0cnVlLCJjc3JmX3Rva2VuIjoiNTI2YTc4MTg2NTEzOWNjYzQ5ZjIzN2YyOTE4MDg3Yzg0Yjk0N2Y0MCJ9.Za1rIA.Q9crwDeWzCOBbn4u5vGpp1dQUf8</td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -6902,7 +7087,7 @@ cookie:session</td>
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">.eJwVjE1rAjEURf_LW6tj1flwdkI3RQSxi0I3w0u8D8fJJCF5glj635vuLpdzzg8NkpBv1Au7jAUNEWlmD6_Ua3qUx-Ykg4YJnnpig2vXNmvU2G7BRhpr9kawtyxrqduOm82GbUcLmoBYjLcyPZ4lRzfVmPuqcmyC9zBhVKxicFhiji6MK0lVoSN4XoYIP17tP2d1yMqKUrDfU_ZNSNMR5uTO912Uj1f7fv46yKU-fL7o9w_Mn0bH.ZaQyqg.vG7J0jX2i0egV8EMz_k8L_Pvgxs</td>
+						<td width="80%">.eJwVjLuOwjAQRf9laiDkAXbSUSCttFoeBQ1N5DhjJUo89tqDxEP8O6a7ujrnvKA1AeMAjVFzxAW0HoNVhMTQcLilR8dgWnYTEjSwKbZKyFxuN3lZa62r2hSlMEWdy7UUWlZdXQlTrWEBE6JPRp4m4T3lYGD2scmyWXWOCDs3Mq68m3GJ1s9uXJmQJdqjskvnkcZefznNbWTFmAqPPl76vR0Ox58L09-OxNX6_1N5ft5G4l-E9wd6zEUJ.Za1rIA.wzFe0PGGqlz1WA_PVdlzKlooWgI</td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -6934,167 +7119,7 @@ cookie:session</td>
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">.eJwVjcFOwzAQBf9lz2kTUiVNfG0RUCHKjWO0dp7VtI5t7A1CQv130uvTzLw_GmxCvpCy7DIKGiLSzB5eSEla1sXkZAcJN3hSxBpjt28rNNjtwNq2RvfaojdsK9vsO27rmk1HBd2ASMovzhXk8bv26CISsypLxzp4Dx0mwTYGhw3m6MK0talczQieNyHCT6N5cEaGLCx4_I_NdTlWn3XoT_nr-_z8xC9vP-_-MHJ-PXUfdP8HZQJHRw.ZaQyqg.oupmsUwe7g0nAB_GfaaeU1BRhRs</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">
-cookie:session</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/espace-presse">https://labonneboite.pole-emploi.fr/espace-presse</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%">session</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">.eJwNyEEKgCAQBdC7zLqFKJp6GRntD0FlobaK7l5v-R5K0tBXisJ7x0TpQju4og6Ko93_lN4kjXNDpUicsfjZKVgYA87iSg5ZEAqLEjt7dlpz8fR-jVId8Q.ZaQyqg.NVHFZe337oAsnd9Zuo1BMyPAh1s</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">
-cookie:session</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/faq">https://labonneboite.pole-emploi.fr/faq</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%">session</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">.eJwNyEEKgCAQBdC7zLqFKJp6GRntD0FlobaK7l5v-R5K0tBXisJ7x0TpQju4og6Ko93_lN4kjXNDpUicsfjZKVgYA87iSg5ZEAqLEjt7dlpz8fR-jVId8Q.ZaQyqg.NVHFZe337oAsnd9Zuo1BMyPAh1s</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">
-cookie:session</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/informations-entreprise/action">https://labonneboite.pole-emploi.fr/informations-entreprise/action</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%">session</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">.eJwNyEEKgCAQBdC7zLqFKJp6GRntD0FlobaK7l5v-R5K0tBXisJ7x0TpQju4og6Ko93_lN4kjXNDpUicsfjZKVgYA87iSg5ZEAqLEjt7dlpz8fR-jVId8Q.ZaQyqg.NVHFZe337oAsnd9Zuo1BMyPAh1s</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">
-cookie:session</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/robots.txt">https://labonneboite.pole-emploi.fr/robots.txt</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%">session</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">.eJwNyEEKgCAQBdC7zLqFKJp6GRntD0FlobaK7l5v-R5K0tBXisJ7x0TpQju4og6Ko93_lN4kjXNDpUicsfjZKVgYA87iSg5ZEAqLEjt7dlpz8fR-jVId8Q.ZaQyqg.NVHFZe337oAsnd9Zuo1BMyPAh1s</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">
-cookie:session</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://labonneboite.pole-emploi.fr">https://labonneboite.pole-emploi.fr</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%">session</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">eyJfcGVybWFuZW50Ijp0cnVlLCJjc3JmX3Rva2VuIjoiYWJlZDg3NjBlNWUzM2VhYmY2Y2I5YmZlOWNhZjBmNTc4YTYyMmFjOCJ9.ZaQyqQ.PsvqzRORd-hK24871BGw1eSHVYg</td>
+						<td width="80%">.eJwVjMGKwjAUAP_lnatN29SmuYmIHtRFcGFvJY0vWEyTkLyii_jv1uswMy_oTMR0A2mUTZhBFzCOyqEjkBSnmegUTUf-jg4k1OVKNaIQq7qoWq01b01ZNaZsC8FEowXvW94YziCDO2IA6SZrM3D4nH9wIwpJ5rlVvXcOez8QLoO3uMAxWD8sTcznMqAaFz6gG67662nqEinC-cDqTXXc7c_bzX_Nfk4k2FglO_2mv8f-wtcHeH8A-F1ERg.Za1rIA.vEhcoUSsOll2wLlwuM7i5tZ64t4</td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -7126,7 +7151,199 @@ cookie:session</td>
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">.eJwNyEEKgCAQBdC7zLqFKJp6GRntD0FlobaK7l5v-R5K0tBXisJ7x0TpQju4og6Ko93_lN4kjXNDpUicsfjZKVgYA87iSg5ZEAqLEjt7dlpz8fR-jVId8Q.ZaQyqg.NVHFZe337oAsnd9Zuo1BMyPAh1s</td>
+						<td width="80%">eyJfZnJlc2giOmZhbHNlLCJfcGVybWFuZW50Ijp0cnVlLCJjc3JmX3Rva2VuIjoiNTI2YTc4MTg2NTEzOWNjYzQ5ZjIzN2YyOTE4MDg3Yzg0Yjk0N2Y0MCJ9.Za1rIA.Q9crwDeWzCOBbn4u5vGpp1dQUf8</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">
+cookie:session</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/espace-presse">https://labonneboite.pole-emploi.fr/espace-presse</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">session</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">eyJfZnJlc2giOmZhbHNlLCJfcGVybWFuZW50Ijp0cnVlLCJjc3JmX3Rva2VuIjoiNTI2YTc4MTg2NTEzOWNjYzQ5ZjIzN2YyOTE4MDg3Yzg0Yjk0N2Y0MCJ9.Za1rIA.Q9crwDeWzCOBbn4u5vGpp1dQUf8</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">
+cookie:session</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/faq">https://labonneboite.pole-emploi.fr/faq</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">session</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">eyJfZnJlc2giOmZhbHNlLCJfcGVybWFuZW50Ijp0cnVlLCJjc3JmX3Rva2VuIjoiNTI2YTc4MTg2NTEzOWNjYzQ5ZjIzN2YyOTE4MDg3Yzg0Yjk0N2Y0MCJ9.Za1rIA.Q9crwDeWzCOBbn4u5vGpp1dQUf8</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">
+cookie:session</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/informations-entreprise/action">https://labonneboite.pole-emploi.fr/informations-entreprise/action</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">session</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">eyJfZnJlc2giOmZhbHNlLCJfcGVybWFuZW50Ijp0cnVlLCJjc3JmX3Rva2VuIjoiNTI2YTc4MTg2NTEzOWNjYzQ5ZjIzN2YyOTE4MDg3Yzg0Yjk0N2Y0MCJ9.Za1rIA.Q9crwDeWzCOBbn4u5vGpp1dQUf8</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">
+cookie:session</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/robots.txt">https://labonneboite.pole-emploi.fr/robots.txt</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">session</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">eyJfZnJlc2giOmZhbHNlLCJfcGVybWFuZW50Ijp0cnVlLCJjc3JmX3Rva2VuIjoiNTI2YTc4MTg2NTEzOWNjYzQ5ZjIzN2YyOTE4MDg3Yzg0Yjk0N2Y0MCJ9.Za1rIA.Q9crwDeWzCOBbn4u5vGpp1dQUf8</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">
+cookie:session</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://labonneboite.pole-emploi.fr">https://labonneboite.pole-emploi.fr</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">session</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">eyJfcGVybWFuZW50Ijp0cnVlLCJjc3JmX3Rva2VuIjoiNTI2YTc4MTg2NTEzOWNjYzQ5ZjIzN2YyOTE4MDg3Yzg0Yjk0N2Y0MCJ9.Za1rIA.41M-joj2UCbcoD92WbLQAjUsn6M</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">
+cookie:session</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/conditions-generales">https://labonneboite.pole-emploi.fr/conditions-generales</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">session</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">eyJfZnJlc2giOmZhbHNlLCJfcGVybWFuZW50Ijp0cnVlLCJjc3JmX3Rva2VuIjoiNTI2YTc4MTg2NTEzOWNjYzQ5ZjIzN2YyOTE4MDg3Yzg0Yjk0N2Y0MCJ9.Za1rIA.Q9crwDeWzCOBbn4u5vGpp1dQUf8</td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -7137,7 +7354,7 @@ cookie:session</td>
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">12</td>
+					<td width="80%">13</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -7314,6 +7531,37 @@ cookie:session</td>
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
+						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/conditions-generales">https://labonneboite.pole-emploi.fr/conditions-generales</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
 						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/espace-presse">https://labonneboite.pole-emploi.fr/espace-presse</a></td>
 					</tr>
 					<tr>
@@ -7402,37 +7650,6 @@ cookie:session</td>
 						<td width="20%"
 							class="indent2">Other Info</td>
 						<td width="80%">In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://labonneboite.pole-emploi.fr/static/images/logo-mariane.svg">https://labonneboite.pole-emploi.fr/static/images/logo-mariane.svg</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">max-age=31536000</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%"></td>
 					</tr>
 				
 				<tr>
@@ -8338,7 +8555,7 @@ zap</td>
 				<tr>
 					<td width="20%">Reference</td>
 					<td width="80%">
-							<a href="http://websecuritytool.codeplex.com/wikipage?title=Checks#user-controlled-html-attribute">http://websecuritytool.codeplex.com/wikipage?title=Checks#user-controlled-html-attribute</a>
+							<a href="https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html">https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html</a>
 							
 						</td>
 				</tr>

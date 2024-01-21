@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 14 Jan 2024 08:28:36",
+	"@generated": "Sun, 21 Jan 2024 07:57:00",
 	"site":[ 
 		{
 			"@name": "https://pad.incubateur.net",
@@ -39,10 +39,10 @@
 					"count": "2",
 					"solution": "<p>Phase: Architecture and Design</p><p>Use a vetted library or framework that does not allow this weakness to occur or provides constructs that make this weakness easier to avoid.</p><p>For example, use anti-CSRF packages such as the OWASP CSRFGuard.</p><p></p><p>Phase: Implementation</p><p>Ensure that your application is free of cross-site scripting issues, because most CSRF defenses can be bypassed using attacker-controlled script.</p><p></p><p>Phase: Architecture and Design</p><p>Generate a unique nonce for each form, place the nonce into the form, and verify the nonce upon receipt of the form. Be sure that the nonce is not predictable (CWE-330).</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Identify especially dangerous operations. When the user performs a dangerous operation, send a separate confirmation request to ensure that the user intended to perform that operation.</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Use the ESAPI Session Management control.</p><p>This control includes a component for CSRF.</p><p></p><p>Do not use the GET method for any request that triggers a state change.</p><p></p><p>Phase: Implementation</p><p>Check the HTTP Referer header to see if the request originated from an expected page. This could break legitimate functionality, because users or proxies may have disabled sending the Referer for privacy reasons.</p>",
 					"otherinfo": "<p>No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"\" ].</p>",
-					"reference": "<p>http://projects.webappsec.org/Cross-Site-Request-Forgery</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10055",
@@ -59,7 +59,7 @@
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
-							"evidence": "default-src 'self';script-src 'self' vimeo.com https://gist.github.com www.slideshare.net 'unsafe-eval' https://disqus.com https://*.disqus.com https://*.disquscdn.com https://www.google-analytics.com 'nonce-549c7def-0556-469f-9178-02551e697de3' 'sha256-81acLZNZISnyGYZrSuoYhpzwDTTxi7vC1YM4uNxqWaM=';img-src *;style-src 'self' 'unsafe-inline' https://github.githubassets.com https://*.disquscdn.com;font-src 'self' data: https://public.slidesharecdn.com https://*.disquscdn.com;object-src *;media-src *;child-src *;connect-src *",
+							"evidence": "default-src 'self';script-src 'self' vimeo.com https://gist.github.com www.slideshare.net 'unsafe-eval' https://disqus.com https://*.disqus.com https://*.disquscdn.com https://www.google-analytics.com 'nonce-06dd8417-1068-4a25-b2f3-fce9f32ef7d8' 'sha256-81acLZNZISnyGYZrSuoYhpzwDTTxi7vC1YM4uNxqWaM=';img-src *;style-src 'self' 'unsafe-inline' https://github.githubassets.com https://*.disquscdn.com;font-src 'self' data: https://public.slidesharecdn.com https://*.disquscdn.com;object-src *;media-src *;child-src *;connect-src *",
 							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nimg-src, connect-src, frame-src, frame-ancestors, media-src, object-src, worker-src, form-action\n\nThe directive(s): frame-ancestors, form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything."
 						},
 						{
@@ -67,7 +67,7 @@
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
-							"evidence": "default-src 'self';script-src 'self' vimeo.com https://gist.github.com www.slideshare.net 'unsafe-eval' https://disqus.com https://*.disqus.com https://*.disquscdn.com https://www.google-analytics.com 'nonce-aafdb8f0-4ef7-4923-948a-223d57f72aed' 'sha256-81acLZNZISnyGYZrSuoYhpzwDTTxi7vC1YM4uNxqWaM=';img-src *;style-src 'self' 'unsafe-inline' https://github.githubassets.com https://*.disquscdn.com;font-src 'self' data: https://public.slidesharecdn.com https://*.disquscdn.com;object-src *;media-src *;child-src *;connect-src *",
+							"evidence": "default-src 'self';script-src 'self' vimeo.com https://gist.github.com www.slideshare.net 'unsafe-eval' https://disqus.com https://*.disqus.com https://*.disquscdn.com https://www.google-analytics.com 'nonce-e0508727-6fb4-4446-be2e-55f15e974614' 'sha256-81acLZNZISnyGYZrSuoYhpzwDTTxi7vC1YM4uNxqWaM=';img-src *;style-src 'self' 'unsafe-inline' https://github.githubassets.com https://*.disquscdn.com;font-src 'self' data: https://public.slidesharecdn.com https://*.disquscdn.com;object-src *;media-src *;child-src *;connect-src *",
 							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nimg-src, connect-src, frame-src, frame-ancestors, media-src, object-src, worker-src, form-action\n\nThe directive(s): frame-ancestors, form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything."
 						},
 						{
@@ -75,7 +75,7 @@
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
-							"evidence": "default-src 'self';script-src 'self' vimeo.com https://gist.github.com www.slideshare.net 'unsafe-eval' https://disqus.com https://*.disqus.com https://*.disquscdn.com https://www.google-analytics.com 'nonce-b94b5bfe-d0f5-401b-995d-e712ee8373cb' 'sha256-81acLZNZISnyGYZrSuoYhpzwDTTxi7vC1YM4uNxqWaM=';img-src *;style-src 'self' 'unsafe-inline' https://github.githubassets.com https://*.disquscdn.com;font-src 'self' data: https://public.slidesharecdn.com https://*.disquscdn.com;object-src *;media-src *;child-src *;connect-src *",
+							"evidence": "default-src 'self';script-src 'self' vimeo.com https://gist.github.com www.slideshare.net 'unsafe-eval' https://disqus.com https://*.disqus.com https://*.disquscdn.com https://www.google-analytics.com 'nonce-da9c5828-3aca-4d96-b14d-99bd14a2b66f' 'sha256-81acLZNZISnyGYZrSuoYhpzwDTTxi7vC1YM4uNxqWaM=';img-src *;style-src 'self' 'unsafe-inline' https://github.githubassets.com https://*.disquscdn.com;font-src 'self' data: https://public.slidesharecdn.com https://*.disquscdn.com;object-src *;media-src *;child-src *;connect-src *",
 							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nimg-src, connect-src, frame-src, frame-ancestors, media-src, object-src, worker-src, form-action\n\nThe directive(s): frame-ancestors, form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything."
 						},
 						{
@@ -83,17 +83,17 @@
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
-							"evidence": "default-src 'self';script-src 'self' vimeo.com https://gist.github.com www.slideshare.net 'unsafe-eval' https://disqus.com https://*.disqus.com https://*.disquscdn.com https://www.google-analytics.com 'nonce-b6ee58ae-e7b1-4c29-b653-44bab642bc3d' 'sha256-81acLZNZISnyGYZrSuoYhpzwDTTxi7vC1YM4uNxqWaM=';img-src *;style-src 'self' 'unsafe-inline' https://github.githubassets.com https://*.disquscdn.com;font-src 'self' data: https://public.slidesharecdn.com https://*.disquscdn.com;object-src *;media-src *;child-src *;connect-src *",
+							"evidence": "default-src 'self';script-src 'self' vimeo.com https://gist.github.com www.slideshare.net 'unsafe-eval' https://disqus.com https://*.disqus.com https://*.disquscdn.com https://www.google-analytics.com 'nonce-03eae1fc-124d-4099-9a53-2a6c3e24f641' 'sha256-81acLZNZISnyGYZrSuoYhpzwDTTxi7vC1YM4uNxqWaM=';img-src *;style-src 'self' 'unsafe-inline' https://github.githubassets.com https://*.disquscdn.com;font-src 'self' data: https://public.slidesharecdn.com https://*.disquscdn.com;object-src *;media-src *;child-src *;connect-src *",
 							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nimg-src, connect-src, frame-src, frame-ancestors, media-src, object-src, worker-src, form-action\n\nThe directive(s): frame-ancestors, form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything."
 						}
 					],
 					"count": "4",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is properly configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "<p>The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: </p><p>img-src, connect-src, frame-src, frame-ancestors, media-src, object-src, worker-src, form-action</p><p></p><p>The directive(s): frame-ancestors, form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything.</p>",
-					"reference": "<p>http://www.w3.org/TR/CSP2/</p><p>http://www.w3.org/TR/CSP/</p><p>http://caniuse.com/#search=content+security+policy</p><p>http://content-security-policy.com/</p><p>https://github.com/shapesecurity/salvation</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
+					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/shapesecurity/salvation</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10055",
@@ -110,7 +110,7 @@
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
-							"evidence": "default-src 'self';script-src 'self' vimeo.com https://gist.github.com www.slideshare.net 'unsafe-eval' https://disqus.com https://*.disqus.com https://*.disquscdn.com https://www.google-analytics.com 'nonce-549c7def-0556-469f-9178-02551e697de3' 'sha256-81acLZNZISnyGYZrSuoYhpzwDTTxi7vC1YM4uNxqWaM=';img-src *;style-src 'self' 'unsafe-inline' https://github.githubassets.com https://*.disquscdn.com;font-src 'self' data: https://public.slidesharecdn.com https://*.disquscdn.com;object-src *;media-src *;child-src *;connect-src *",
+							"evidence": "default-src 'self';script-src 'self' vimeo.com https://gist.github.com www.slideshare.net 'unsafe-eval' https://disqus.com https://*.disqus.com https://*.disquscdn.com https://www.google-analytics.com 'nonce-06dd8417-1068-4a25-b2f3-fce9f32ef7d8' 'sha256-81acLZNZISnyGYZrSuoYhpzwDTTxi7vC1YM4uNxqWaM=';img-src *;style-src 'self' 'unsafe-inline' https://github.githubassets.com https://*.disquscdn.com;font-src 'self' data: https://public.slidesharecdn.com https://*.disquscdn.com;object-src *;media-src *;child-src *;connect-src *",
 							"otherinfo": "script-src includes unsafe-eval."
 						},
 						{
@@ -118,7 +118,7 @@
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
-							"evidence": "default-src 'self';script-src 'self' vimeo.com https://gist.github.com www.slideshare.net 'unsafe-eval' https://disqus.com https://*.disqus.com https://*.disquscdn.com https://www.google-analytics.com 'nonce-aafdb8f0-4ef7-4923-948a-223d57f72aed' 'sha256-81acLZNZISnyGYZrSuoYhpzwDTTxi7vC1YM4uNxqWaM=';img-src *;style-src 'self' 'unsafe-inline' https://github.githubassets.com https://*.disquscdn.com;font-src 'self' data: https://public.slidesharecdn.com https://*.disquscdn.com;object-src *;media-src *;child-src *;connect-src *",
+							"evidence": "default-src 'self';script-src 'self' vimeo.com https://gist.github.com www.slideshare.net 'unsafe-eval' https://disqus.com https://*.disqus.com https://*.disquscdn.com https://www.google-analytics.com 'nonce-e0508727-6fb4-4446-be2e-55f15e974614' 'sha256-81acLZNZISnyGYZrSuoYhpzwDTTxi7vC1YM4uNxqWaM=';img-src *;style-src 'self' 'unsafe-inline' https://github.githubassets.com https://*.disquscdn.com;font-src 'self' data: https://public.slidesharecdn.com https://*.disquscdn.com;object-src *;media-src *;child-src *;connect-src *",
 							"otherinfo": "script-src includes unsafe-eval."
 						},
 						{
@@ -126,7 +126,7 @@
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
-							"evidence": "default-src 'self';script-src 'self' vimeo.com https://gist.github.com www.slideshare.net 'unsafe-eval' https://disqus.com https://*.disqus.com https://*.disquscdn.com https://www.google-analytics.com 'nonce-b94b5bfe-d0f5-401b-995d-e712ee8373cb' 'sha256-81acLZNZISnyGYZrSuoYhpzwDTTxi7vC1YM4uNxqWaM=';img-src *;style-src 'self' 'unsafe-inline' https://github.githubassets.com https://*.disquscdn.com;font-src 'self' data: https://public.slidesharecdn.com https://*.disquscdn.com;object-src *;media-src *;child-src *;connect-src *",
+							"evidence": "default-src 'self';script-src 'self' vimeo.com https://gist.github.com www.slideshare.net 'unsafe-eval' https://disqus.com https://*.disqus.com https://*.disquscdn.com https://www.google-analytics.com 'nonce-da9c5828-3aca-4d96-b14d-99bd14a2b66f' 'sha256-81acLZNZISnyGYZrSuoYhpzwDTTxi7vC1YM4uNxqWaM=';img-src *;style-src 'self' 'unsafe-inline' https://github.githubassets.com https://*.disquscdn.com;font-src 'self' data: https://public.slidesharecdn.com https://*.disquscdn.com;object-src *;media-src *;child-src *;connect-src *",
 							"otherinfo": "script-src includes unsafe-eval."
 						},
 						{
@@ -134,17 +134,17 @@
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
-							"evidence": "default-src 'self';script-src 'self' vimeo.com https://gist.github.com www.slideshare.net 'unsafe-eval' https://disqus.com https://*.disqus.com https://*.disquscdn.com https://www.google-analytics.com 'nonce-b6ee58ae-e7b1-4c29-b653-44bab642bc3d' 'sha256-81acLZNZISnyGYZrSuoYhpzwDTTxi7vC1YM4uNxqWaM=';img-src *;style-src 'self' 'unsafe-inline' https://github.githubassets.com https://*.disquscdn.com;font-src 'self' data: https://public.slidesharecdn.com https://*.disquscdn.com;object-src *;media-src *;child-src *;connect-src *",
+							"evidence": "default-src 'self';script-src 'self' vimeo.com https://gist.github.com www.slideshare.net 'unsafe-eval' https://disqus.com https://*.disqus.com https://*.disquscdn.com https://www.google-analytics.com 'nonce-03eae1fc-124d-4099-9a53-2a6c3e24f641' 'sha256-81acLZNZISnyGYZrSuoYhpzwDTTxi7vC1YM4uNxqWaM=';img-src *;style-src 'self' 'unsafe-inline' https://github.githubassets.com https://*.disquscdn.com;font-src 'self' data: https://public.slidesharecdn.com https://*.disquscdn.com;object-src *;media-src *;child-src *;connect-src *",
 							"otherinfo": "script-src includes unsafe-eval."
 						}
 					],
 					"count": "4",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is properly configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "<p>script-src includes unsafe-eval.</p>",
-					"reference": "<p>http://www.w3.org/TR/CSP2/</p><p>http://www.w3.org/TR/CSP/</p><p>http://caniuse.com/#search=content+security+policy</p><p>http://content-security-policy.com/</p><p>https://github.com/shapesecurity/salvation</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
+					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/shapesecurity/salvation</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10055",
@@ -161,7 +161,7 @@
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
-							"evidence": "default-src 'self';script-src 'self' vimeo.com https://gist.github.com www.slideshare.net 'unsafe-eval' https://disqus.com https://*.disqus.com https://*.disquscdn.com https://www.google-analytics.com 'nonce-549c7def-0556-469f-9178-02551e697de3' 'sha256-81acLZNZISnyGYZrSuoYhpzwDTTxi7vC1YM4uNxqWaM=';img-src *;style-src 'self' 'unsafe-inline' https://github.githubassets.com https://*.disquscdn.com;font-src 'self' data: https://public.slidesharecdn.com https://*.disquscdn.com;object-src *;media-src *;child-src *;connect-src *",
+							"evidence": "default-src 'self';script-src 'self' vimeo.com https://gist.github.com www.slideshare.net 'unsafe-eval' https://disqus.com https://*.disqus.com https://*.disquscdn.com https://www.google-analytics.com 'nonce-06dd8417-1068-4a25-b2f3-fce9f32ef7d8' 'sha256-81acLZNZISnyGYZrSuoYhpzwDTTxi7vC1YM4uNxqWaM=';img-src *;style-src 'self' 'unsafe-inline' https://github.githubassets.com https://*.disquscdn.com;font-src 'self' data: https://public.slidesharecdn.com https://*.disquscdn.com;object-src *;media-src *;child-src *;connect-src *",
 							"otherinfo": "style-src includes unsafe-inline."
 						},
 						{
@@ -169,7 +169,7 @@
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
-							"evidence": "default-src 'self';script-src 'self' vimeo.com https://gist.github.com www.slideshare.net 'unsafe-eval' https://disqus.com https://*.disqus.com https://*.disquscdn.com https://www.google-analytics.com 'nonce-aafdb8f0-4ef7-4923-948a-223d57f72aed' 'sha256-81acLZNZISnyGYZrSuoYhpzwDTTxi7vC1YM4uNxqWaM=';img-src *;style-src 'self' 'unsafe-inline' https://github.githubassets.com https://*.disquscdn.com;font-src 'self' data: https://public.slidesharecdn.com https://*.disquscdn.com;object-src *;media-src *;child-src *;connect-src *",
+							"evidence": "default-src 'self';script-src 'self' vimeo.com https://gist.github.com www.slideshare.net 'unsafe-eval' https://disqus.com https://*.disqus.com https://*.disquscdn.com https://www.google-analytics.com 'nonce-e0508727-6fb4-4446-be2e-55f15e974614' 'sha256-81acLZNZISnyGYZrSuoYhpzwDTTxi7vC1YM4uNxqWaM=';img-src *;style-src 'self' 'unsafe-inline' https://github.githubassets.com https://*.disquscdn.com;font-src 'self' data: https://public.slidesharecdn.com https://*.disquscdn.com;object-src *;media-src *;child-src *;connect-src *",
 							"otherinfo": "style-src includes unsafe-inline."
 						},
 						{
@@ -177,7 +177,7 @@
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
-							"evidence": "default-src 'self';script-src 'self' vimeo.com https://gist.github.com www.slideshare.net 'unsafe-eval' https://disqus.com https://*.disqus.com https://*.disquscdn.com https://www.google-analytics.com 'nonce-b94b5bfe-d0f5-401b-995d-e712ee8373cb' 'sha256-81acLZNZISnyGYZrSuoYhpzwDTTxi7vC1YM4uNxqWaM=';img-src *;style-src 'self' 'unsafe-inline' https://github.githubassets.com https://*.disquscdn.com;font-src 'self' data: https://public.slidesharecdn.com https://*.disquscdn.com;object-src *;media-src *;child-src *;connect-src *",
+							"evidence": "default-src 'self';script-src 'self' vimeo.com https://gist.github.com www.slideshare.net 'unsafe-eval' https://disqus.com https://*.disqus.com https://*.disquscdn.com https://www.google-analytics.com 'nonce-da9c5828-3aca-4d96-b14d-99bd14a2b66f' 'sha256-81acLZNZISnyGYZrSuoYhpzwDTTxi7vC1YM4uNxqWaM=';img-src *;style-src 'self' 'unsafe-inline' https://github.githubassets.com https://*.disquscdn.com;font-src 'self' data: https://public.slidesharecdn.com https://*.disquscdn.com;object-src *;media-src *;child-src *;connect-src *",
 							"otherinfo": "style-src includes unsafe-inline."
 						},
 						{
@@ -185,17 +185,17 @@
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
-							"evidence": "default-src 'self';script-src 'self' vimeo.com https://gist.github.com www.slideshare.net 'unsafe-eval' https://disqus.com https://*.disqus.com https://*.disquscdn.com https://www.google-analytics.com 'nonce-b6ee58ae-e7b1-4c29-b653-44bab642bc3d' 'sha256-81acLZNZISnyGYZrSuoYhpzwDTTxi7vC1YM4uNxqWaM=';img-src *;style-src 'self' 'unsafe-inline' https://github.githubassets.com https://*.disquscdn.com;font-src 'self' data: https://public.slidesharecdn.com https://*.disquscdn.com;object-src *;media-src *;child-src *;connect-src *",
+							"evidence": "default-src 'self';script-src 'self' vimeo.com https://gist.github.com www.slideshare.net 'unsafe-eval' https://disqus.com https://*.disqus.com https://*.disquscdn.com https://www.google-analytics.com 'nonce-03eae1fc-124d-4099-9a53-2a6c3e24f641' 'sha256-81acLZNZISnyGYZrSuoYhpzwDTTxi7vC1YM4uNxqWaM=';img-src *;style-src 'self' 'unsafe-inline' https://github.githubassets.com https://*.disquscdn.com;font-src 'self' data: https://public.slidesharecdn.com https://*.disquscdn.com;object-src *;media-src *;child-src *;connect-src *",
 							"otherinfo": "style-src includes unsafe-inline."
 						}
 					],
 					"count": "4",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is properly configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "<p>style-src includes unsafe-inline.</p>",
-					"reference": "<p>http://www.w3.org/TR/CSP2/</p><p>http://www.w3.org/TR/CSP/</p><p>http://caniuse.com/#search=content+security+policy</p><p>http://content-security-policy.com/</p><p>https://github.com/shapesecurity/salvation</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
+					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/shapesecurity/salvation</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10020",
@@ -270,7 +270,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options</p>",
 					"cweid": "1021",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90003",
@@ -297,7 +297,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity</p>",
 					"cweid": "345",
 					"wascid": "15",
-					"sourceid": "93"
+					"sourceid": "95"
 				},
 				{
 					"pluginid": "10003",
@@ -340,7 +340,7 @@
 					"reference": "<p>https://github.com/moment/moment/security/advisories/GHSA-wc69-rhjr-hc9g</p><p>https://security.snyk.io/vuln/SNYK-JS-MOMENT-2944238</p><p>https://github.com/moment/moment/security/advisories/GHSA-8hfj-j24r-96c4</p><p></p>",
 					"cweid": "829",
 					"wascid": "-1",
-					"sourceid": "99"
+					"sourceid": "101"
 				},
 				{
 					"pluginid": "10110",
@@ -399,7 +399,7 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "84"
+					"sourceid": "96"
 				},
 				{
 					"pluginid": "10063",
@@ -428,14 +428,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://pad.incubateur.net/build/common.9a80e4667cfe74cd3793.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://pad.incubateur.net/build/MathJax/config/Safe.js",
 							"method": "GET",
 							"param": "",
@@ -445,6 +437,14 @@
 						},
 						{
 							"uri": "https://pad.incubateur.net/build/MathJax/config/TeX-AMS-MML_HTMLorMML.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://pad.incubateur.net/build/MathJax/MathJax.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -551,14 +551,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://pad.incubateur.net/icons/favicon-16x16.png",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "X-Powered-By: Express",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://pad.incubateur.net/logout",
 							"method": "GET",
 							"param": "",
@@ -576,6 +568,14 @@
 						},
 						{
 							"uri": "https://pad.incubateur.net/me/export",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "X-Powered-By: Express",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://pad.incubateur.net/new",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -610,14 +610,14 @@
 					"count": "11",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress \"X-Powered-By\" headers.</p>",
 					"otherinfo": "",
-					"reference": "<p>http://blogs.msdn.com/b/varunm/archive/2013/04/23/remove-unwanted-http-response-headers.aspx</p><p>http://www.troyhunt.com/2012/02/shhh-dont-let-your-response-headers.html</p>",
+					"reference": "<p>https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/01-Information_Gathering/08-Fingerprint_Web_Application_Framework</p><p>https://www.troyhunt.com/2012/02/shhh-dont-let-your-response-headers.html</p>",
 					"cweid": "200",
 					"wascid": "13",
 					"sourceid": "1"
 				},
 				{
 					"pluginid": "10035",
-					"alertRef": "10035",
+					"alertRef": "10035-3",
 					"alert": "Strict-Transport-Security Multiple Header Entries (Non-compliant with Spec)",
 					"name": "Strict-Transport-Security Multiple Header Entries (Non-compliant with Spec)",
 					"riskcode": "1",
@@ -651,14 +651,6 @@
 						},
 						{
 							"uri": "https://pad.incubateur.net/icons/apple-touch-icon.png",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://pad.incubateur.net/icons/favicon-16x16.png",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -722,13 +714,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "12",
+					"count": "11",
 					"solution": "<p>Ensure that only one component in your stack: code, web server, application server, load balancer, etc. is configured to set or add a HTTP Strict-Transport-Security (HSTS) header.</p>",
 					"otherinfo": "",
-					"reference": "<p>http://tools.ietf.org/html/rfc6797#section-8.1</p>",
+					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc6797#section-8.1</p>",
 					"cweid": "319",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10096",
@@ -968,14 +960,6 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://pad.incubateur.net/config",
-							"method": "GET",
-							"param": "x-content-type-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
-						},
-						{
 							"uri": "https://pad.incubateur.net/icons/apple-touch-icon.png",
 							"method": "GET",
 							"param": "x-content-type-options",
@@ -1032,10 +1016,10 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						}
 					],
-					"count": "12",
+					"count": "11",
 					"solution": "<p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p>",
 					"otherinfo": "<p>This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.</p><p>At \"High\" threshold this scan rule will not alert on client or server error responses.</p>",
-					"reference": "<p>http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx</p><p>https://owasp.org/www-community/Security_Headers</p>",
+					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
 					"cweid": "693",
 					"wascid": "15",
 					"sourceid": "1"
@@ -1055,101 +1039,101 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "3ADZpaahF9VI6f_Z640mLuyCWaiGWE4Ns8",
-							"otherinfo": "\uFFFD\\x0000\u0665\uFFFD\uFFFD\\x0017\uFFFDH\uFFFD\uFFFD\uFFFD\uFFFD&.\uFFFDY\uFFFD\uFFFDXN\r\uFFFD"
+							"evidence": "3ACBCD5tcW142zfcNWLrm5Pu7Yx4h4wDu4",
+							"otherinfo": "\uFFFD\\x0000\uFFFD\\x0008>mqmx\uFFFD7\uFFFD5b\uB6D3\uFFFD\uFFFDx\uFFFD\uFFFD\\x0003\uFFFD"
 						},
 						{
 							"uri": "https://pad.incubateur.net",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "3AubPzIea1hAIS3BO9RKc3RWIBlPM6OCPX",
-							"otherinfo": "\uFFFD\\x000b\uFFFD?2\\x001ekX@!-\uFFFD;\uFFFDJstV \\x0019O3\uFFFD\uFFFD="
+							"evidence": "3AfeEAbA-BVzKadpom5Uc4vuxm1dOcd7mI",
+							"otherinfo": "\uFFFD\\x0007\uFFFD\\x0010\\x0006\uFFFD\uFFFD\\x0015s)\uFFFDi\uFFFDnTs\uFFFD\uFFFD\uFFFDm]9\uFFFD{\uFFFD"
 						},
 						{
 							"uri": "https://pad.incubateur.net/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "3AubPzIea1hAIS3BO9RKc3RWIBlPM6OCPX",
-							"otherinfo": "\uFFFD\\x000b\uFFFD?2\\x001ekX@!-\uFFFD;\uFFFDJstV \\x0019O3\uFFFD\uFFFD="
+							"evidence": "3AfeEAbA-BVzKadpom5Uc4vuxm1dOcd7mI",
+							"otherinfo": "\uFFFD\\x0007\uFFFD\\x0010\\x0006\uFFFD\uFFFD\\x0015s)\uFFFDi\uFFFDnTs\uFFFD\uFFFD\uFFFDm]9\uFFFD{\uFFFD"
 						},
 						{
 							"uri": "https://pad.incubateur.net/auth/oauth2",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "3AubPzIea1hAIS3BO9RKc3RWIBlPM6OCPX",
-							"otherinfo": "\uFFFD\\x000b\uFFFD?2\\x001ekX@!-\uFFFD;\uFFFDJstV \\x0019O3\uFFFD\uFFFD="
+							"evidence": "3AfeEAbA-BVzKadpom5Uc4vuxm1dOcd7mI",
+							"otherinfo": "\uFFFD\\x0007\uFFFD\\x0010\\x0006\uFFFD\uFFFD\\x0015s)\uFFFDi\uFFFDnTs\uFFFD\uFFFD\uFFFDm]9\uFFFD{\uFFFD"
 						},
 						{
-							"uri": "https://pad.incubateur.net/config",
+							"uri": "https://pad.incubateur.net/features",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "3AubPzIea1hAIS3BO9RKc3RWIBlPM6OCPX",
-							"otherinfo": "\uFFFD\\x000b\uFFFD?2\\x001ekX@!-\uFFFD;\uFFFDJstV \\x0019O3\uFFFD\uFFFD="
+							"evidence": "3AfeEAbA-BVzKadpom5Uc4vuxm1dOcd7mI",
+							"otherinfo": "\uFFFD\\x0007\uFFFD\\x0010\\x0006\uFFFD\uFFFD\\x0015s)\uFFFDi\uFFFDnTs\uFFFD\uFFFD\uFFFDm]9\uFFFD{\uFFFD"
 						},
 						{
 							"uri": "https://pad.incubateur.net/logout",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "3AubPzIea1hAIS3BO9RKc3RWIBlPM6OCPX",
-							"otherinfo": "\uFFFD\\x000b\uFFFD?2\\x001ekX@!-\uFFFD;\uFFFDJstV \\x0019O3\uFFFD\uFFFD="
+							"evidence": "3AfeEAbA-BVzKadpom5Uc4vuxm1dOcd7mI",
+							"otherinfo": "\uFFFD\\x0007\uFFFD\\x0010\\x0006\uFFFD\uFFFD\\x0015s)\uFFFDi\uFFFDnTs\uFFFD\uFFFD\uFFFDm]9\uFFFD{\uFFFD"
 						},
 						{
 							"uri": "https://pad.incubateur.net/me/delete/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "3AubPzIea1hAIS3BO9RKc3RWIBlPM6OCPX",
-							"otherinfo": "\uFFFD\\x000b\uFFFD?2\\x001ekX@!-\uFFFD;\uFFFDJstV \\x0019O3\uFFFD\uFFFD="
+							"evidence": "3AfeEAbA-BVzKadpom5Uc4vuxm1dOcd7mI",
+							"otherinfo": "\uFFFD\\x0007\uFFFD\\x0010\\x0006\uFFFD\uFFFD\\x0015s)\uFFFDi\uFFFDnTs\uFFFD\uFFFD\uFFFDm]9\uFFFD{\uFFFD"
 						},
 						{
 							"uri": "https://pad.incubateur.net/me/export",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "3AubPzIea1hAIS3BO9RKc3RWIBlPM6OCPX",
-							"otherinfo": "\uFFFD\\x000b\uFFFD?2\\x001ekX@!-\uFFFD;\uFFFDJstV \\x0019O3\uFFFD\uFFFD="
+							"evidence": "3AfeEAbA-BVzKadpom5Uc4vuxm1dOcd7mI",
+							"otherinfo": "\uFFFD\\x0007\uFFFD\\x0010\\x0006\uFFFD\uFFFD\\x0015s)\uFFFDi\uFFFDnTs\uFFFD\uFFFD\uFFFDm]9\uFFFD{\uFFFD"
 						},
 						{
 							"uri": "https://pad.incubateur.net/new",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "3AubPzIea1hAIS3BO9RKc3RWIBlPM6OCPX",
-							"otherinfo": "\uFFFD\\x000b\uFFFD?2\\x001ekX@!-\uFFFD;\uFFFDJstV \\x0019O3\uFFFD\uFFFD="
+							"evidence": "3AfeEAbA-BVzKadpom5Uc4vuxm1dOcd7mI",
+							"otherinfo": "\uFFFD\\x0007\uFFFD\\x0010\\x0006\uFFFD\uFFFD\\x0015s)\uFFFDi\uFFFDnTs\uFFFD\uFFFD\uFFFDm]9\uFFFD{\uFFFD"
 						},
 						{
 							"uri": "https://pad.incubateur.net/robots.txt",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "3AubPzIea1hAIS3BO9RKc3RWIBlPM6OCPX",
-							"otherinfo": "\uFFFD\\x000b\uFFFD?2\\x001ekX@!-\uFFFD;\uFFFDJstV \\x0019O3\uFFFD\uFFFD="
+							"evidence": "3AfeEAbA-BVzKadpom5Uc4vuxm1dOcd7mI",
+							"otherinfo": "\uFFFD\\x0007\uFFFD\\x0010\\x0006\uFFFD\uFFFD\\x0015s)\uFFFDi\uFFFDnTs\uFFFD\uFFFD\uFFFDm]9\uFFFD{\uFFFD"
 						},
 						{
 							"uri": "https://pad.incubateur.net/s/terms-of-use",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "3AubPzIea1hAIS3BO9RKc3RWIBlPM6OCPX",
-							"otherinfo": "\uFFFD\\x000b\uFFFD?2\\x001ekX@!-\uFFFD;\uFFFDJstV \\x0019O3\uFFFD\uFFFD="
+							"evidence": "3AfeEAbA-BVzKadpom5Uc4vuxm1dOcd7mI",
+							"otherinfo": "\uFFFD\\x0007\uFFFD\\x0010\\x0006\uFFFD\uFFFD\\x0015s)\uFFFDi\uFFFDnTs\uFFFD\uFFFD\uFFFDm]9\uFFFD{\uFFFD"
 						},
 						{
 							"uri": "https://pad.incubateur.net/sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "3AubPzIea1hAIS3BO9RKc3RWIBlPM6OCPX",
-							"otherinfo": "\uFFFD\\x000b\uFFFD?2\\x001ekX@!-\uFFFD;\uFFFDJstV \\x0019O3\uFFFD\uFFFD="
+							"evidence": "3AfeEAbA-BVzKadpom5Uc4vuxm1dOcd7mI",
+							"otherinfo": "\uFFFD\\x0007\uFFFD\\x0010\\x0006\uFFFD\uFFFD\\x0015s)\uFFFDi\uFFFDnTs\uFFFD\uFFFD\uFFFDm]9\uFFFD{\uFFFD"
 						}
 					],
 					"count": "12",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>\uFFFD\\x0000\u0665\uFFFD\uFFFD\\x0017\uFFFDH\uFFFD\uFFFD\uFFFD\uFFFD&.\uFFFDY\uFFFD\uFFFDXN\r\uFFFD</p>",
+					"otherinfo": "<p>\uFFFD\\x0000\uFFFD\\x0008>mqmx\uFFFD7\uFFFD5b\uB6D3\uFFFD\uFFFDx\uFFFD\uFFFD\\x0003\uFFFD</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
@@ -1292,7 +1276,7 @@
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "84"
+					"sourceid": "96"
 				},
 				{
 					"pluginid": "10109",
@@ -1367,7 +1351,7 @@
 					"reference": "",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10049",
@@ -1385,6 +1369,14 @@
 							"param": "",
 							"attack": "",
 							"evidence": "302",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://pad.incubateur.net/features",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "private",
 							"otherinfo": ""
 						},
 						{
@@ -1436,13 +1428,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "7",
+					"count": "8",
 					"solution": "<p>The content may be marked as storable by ensuring that the following conditions are satisfied:</p><p>The request method must be understood by the cache and defined as being cacheable (\"GET\", \"HEAD\", and \"POST\" are currently defined as cacheable)</p><p>The response status code must be understood by the cache (one of the 1XX, 2XX, 3XX, 4XX, or 5XX response classes are generally understood)</p><p>The \"no-store\" cache directive must not appear in the request or response header fields</p><p>For caching by \"shared\" caches such as \"proxy\" caches, the \"private\" response directive must not appear in the response</p><p>For caching by \"shared\" caches such as \"proxy\" caches, the \"Authorization\" header field must not appear in the request, unless the response explicitly allows it (using one of the \"must-revalidate\", \"public\", or \"s-maxage\" Cache-Control response directives)</p><p>In addition to the conditions above, at least one of the following conditions must also be satisfied by the response:</p><p>It must contain an \"Expires\" header field</p><p>It must contain a \"max-age\" response directive</p><p>For \"shared\" caches such as \"proxy\" caches, it must contain a \"s-maxage\" response directive</p><p>It must contain a \"Cache Control Extension\" that allows it to be cached</p><p>It must have a status code that is defined as cacheable by default (200, 203, 204, 206, 300, 301, 404, 405, 410, 414, 501).   </p>",
 					"otherinfo": "",
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "49"
+					"sourceid": "59"
 				},
 				{
 					"pluginid": "10015",
@@ -1554,7 +1546,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://pad.incubateur.net/robots.txt",
+							"uri": "https://pad.incubateur.net/",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -1562,7 +1554,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://pad.incubateur.net/sitemap.xml",
+							"uri": "https://pad.incubateur.net/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -1597,7 +1589,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://pad.incubateur.net/robots.txt",
+							"uri": "https://pad.incubateur.net/",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -1605,7 +1597,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://pad.incubateur.net/sitemap.xml",
+							"uri": "https://pad.incubateur.net/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -1619,7 +1611,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -1640,7 +1632,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://pad.incubateur.net/robots.txt",
+							"uri": "https://pad.incubateur.net/",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -1648,7 +1640,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://pad.incubateur.net/sitemap.xml",
+							"uri": "https://pad.incubateur.net/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -1662,7 +1654,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -1683,7 +1675,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://pad.incubateur.net/robots.txt",
+							"uri": "https://pad.incubateur.net/",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -1691,7 +1683,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://pad.incubateur.net/sitemap.xml",
+							"uri": "https://pad.incubateur.net/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -1722,7 +1714,7 @@
 							"method": "GET",
 							"param": "connect.sid",
 							"attack": "",
-							"evidence": "s%3ADZpaahF9VI6f_Z640mLuyCWaiGWE4Ns8.DBnO7G6ZKjQ5An%2BeKTKJ%2BE%2BS2HSt4BgfoIGvO8AjRJk",
+							"evidence": "s%3ACBCD5tcW142zfcNWLrm5Pu7Yx4h4wDu4.LkIHN5Ndc%2FJ5K94vEgYkvjifqF%2BOZn63HL1nl4A9ce4",
 							"otherinfo": "\ncookie:connect.sid"
 						},
 						{
@@ -1730,7 +1722,7 @@
 							"method": "GET",
 							"param": "connect.sid",
 							"attack": "",
-							"evidence": "s%3AubPzIea1hAIS3BO9RKc3RWIBlPM6OCPX.rRnd%2FYLLn7VBrKIq6j9eantldAqRfPf4vP%2FTccTesA4",
+							"evidence": "s%3AfeEAbA-BVzKadpom5Uc4vuxm1dOcd7mI.dsJn75uMU8kKGyJAMRVVEn507hGzIvPXACDZmpQypSg",
 							"otherinfo": "\ncookie:connect.sid"
 						},
 						{
@@ -1738,7 +1730,7 @@
 							"method": "GET",
 							"param": "connect.sid",
 							"attack": "",
-							"evidence": "s%3AubPzIea1hAIS3BO9RKc3RWIBlPM6OCPX.rRnd%2FYLLn7VBrKIq6j9eantldAqRfPf4vP%2FTccTesA4",
+							"evidence": "s%3AfeEAbA-BVzKadpom5Uc4vuxm1dOcd7mI.dsJn75uMU8kKGyJAMRVVEn507hGzIvPXACDZmpQypSg",
 							"otherinfo": "\ncookie:connect.sid"
 						},
 						{
@@ -1746,7 +1738,7 @@
 							"method": "GET",
 							"param": "connect.sid",
 							"attack": "",
-							"evidence": "s%3AubPzIea1hAIS3BO9RKc3RWIBlPM6OCPX.rRnd%2FYLLn7VBrKIq6j9eantldAqRfPf4vP%2FTccTesA4",
+							"evidence": "s%3AfeEAbA-BVzKadpom5Uc4vuxm1dOcd7mI.dsJn75uMU8kKGyJAMRVVEn507hGzIvPXACDZmpQypSg",
 							"otherinfo": "\ncookie:connect.sid"
 						},
 						{
@@ -1754,7 +1746,7 @@
 							"method": "GET",
 							"param": "connect.sid",
 							"attack": "",
-							"evidence": "s%3AubPzIea1hAIS3BO9RKc3RWIBlPM6OCPX.rRnd%2FYLLn7VBrKIq6j9eantldAqRfPf4vP%2FTccTesA4",
+							"evidence": "s%3AfeEAbA-BVzKadpom5Uc4vuxm1dOcd7mI.dsJn75uMU8kKGyJAMRVVEn507hGzIvPXACDZmpQypSg",
 							"otherinfo": "\ncookie:connect.sid"
 						},
 						{
@@ -1762,7 +1754,7 @@
 							"method": "GET",
 							"param": "connect.sid",
 							"attack": "",
-							"evidence": "s%3AubPzIea1hAIS3BO9RKc3RWIBlPM6OCPX.rRnd%2FYLLn7VBrKIq6j9eantldAqRfPf4vP%2FTccTesA4",
+							"evidence": "s%3AfeEAbA-BVzKadpom5Uc4vuxm1dOcd7mI.dsJn75uMU8kKGyJAMRVVEn507hGzIvPXACDZmpQypSg",
 							"otherinfo": "\ncookie:connect.sid"
 						},
 						{
@@ -1770,7 +1762,7 @@
 							"method": "GET",
 							"param": "connect.sid",
 							"attack": "",
-							"evidence": "s%3AubPzIea1hAIS3BO9RKc3RWIBlPM6OCPX.rRnd%2FYLLn7VBrKIq6j9eantldAqRfPf4vP%2FTccTesA4",
+							"evidence": "s%3AfeEAbA-BVzKadpom5Uc4vuxm1dOcd7mI.dsJn75uMU8kKGyJAMRVVEn507hGzIvPXACDZmpQypSg",
 							"otherinfo": "\ncookie:connect.sid"
 						},
 						{
@@ -1778,7 +1770,7 @@
 							"method": "GET",
 							"param": "connect.sid",
 							"attack": "",
-							"evidence": "s%3AubPzIea1hAIS3BO9RKc3RWIBlPM6OCPX.rRnd%2FYLLn7VBrKIq6j9eantldAqRfPf4vP%2FTccTesA4",
+							"evidence": "s%3AfeEAbA-BVzKadpom5Uc4vuxm1dOcd7mI.dsJn75uMU8kKGyJAMRVVEn507hGzIvPXACDZmpQypSg",
 							"otherinfo": "\ncookie:connect.sid"
 						},
 						{
@@ -1786,7 +1778,7 @@
 							"method": "GET",
 							"param": "connect.sid",
 							"attack": "",
-							"evidence": "s%3AubPzIea1hAIS3BO9RKc3RWIBlPM6OCPX.rRnd%2FYLLn7VBrKIq6j9eantldAqRfPf4vP%2FTccTesA4",
+							"evidence": "s%3AfeEAbA-BVzKadpom5Uc4vuxm1dOcd7mI.dsJn75uMU8kKGyJAMRVVEn507hGzIvPXACDZmpQypSg",
 							"otherinfo": "\ncookie:connect.sid"
 						},
 						{
@@ -1794,7 +1786,7 @@
 							"method": "GET",
 							"param": "connect.sid",
 							"attack": "",
-							"evidence": "s%3AubPzIea1hAIS3BO9RKc3RWIBlPM6OCPX.rRnd%2FYLLn7VBrKIq6j9eantldAqRfPf4vP%2FTccTesA4",
+							"evidence": "s%3AfeEAbA-BVzKadpom5Uc4vuxm1dOcd7mI.dsJn75uMU8kKGyJAMRVVEn507hGzIvPXACDZmpQypSg",
 							"otherinfo": "\ncookie:connect.sid"
 						},
 						{
@@ -1802,15 +1794,15 @@
 							"method": "GET",
 							"param": "connect.sid",
 							"attack": "",
-							"evidence": "s%3AubPzIea1hAIS3BO9RKc3RWIBlPM6OCPX.rRnd%2FYLLn7VBrKIq6j9eantldAqRfPf4vP%2FTccTesA4",
+							"evidence": "s%3AfeEAbA-BVzKadpom5Uc4vuxm1dOcd7mI.dsJn75uMU8kKGyJAMRVVEn507hGzIvPXACDZmpQypSg",
 							"otherinfo": "\ncookie:connect.sid"
 						},
 						{
-							"uri": "https://pad.incubateur.net/yaml-metadata",
+							"uri": "https://pad.incubateur.net/slide-example",
 							"method": "GET",
 							"param": "connect.sid",
 							"attack": "",
-							"evidence": "s%3AubPzIea1hAIS3BO9RKc3RWIBlPM6OCPX.rRnd%2FYLLn7VBrKIq6j9eantldAqRfPf4vP%2FTccTesA4",
+							"evidence": "s%3AfeEAbA-BVzKadpom5Uc4vuxm1dOcd7mI.dsJn75uMU8kKGyJAMRVVEn507hGzIvPXACDZmpQypSg",
 							"otherinfo": "\ncookie:connect.sid"
 						}
 					],

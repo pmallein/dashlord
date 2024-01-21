@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 14 Jan 2024 12:11:19",
+	"@generated": "Sun, 21 Jan 2024 11:53:08",
 	"site":[ 
 		{
 			"@name": "https://civilsdeladefense.fabnum.fr",
@@ -31,7 +31,7 @@
 					"count": "1",
 					"solution": "<p>Phase: Architecture and Design</p><p>Use a vetted library or framework that does not allow this weakness to occur or provides constructs that make this weakness easier to avoid.</p><p>For example, use anti-CSRF packages such as the OWASP CSRFGuard.</p><p></p><p>Phase: Implementation</p><p>Ensure that your application is free of cross-site scripting issues, because most CSRF defenses can be bypassed using attacker-controlled script.</p><p></p><p>Phase: Architecture and Design</p><p>Generate a unique nonce for each form, place the nonce into the form, and verify the nonce upon receipt of the form. Be sure that the nonce is not predictable (CWE-330).</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Identify especially dangerous operations. When the user performs a dangerous operation, send a separate confirmation request to ensure that the user intended to perform that operation.</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Use the ESAPI Session Management control.</p><p>This control includes a component for CSRF.</p><p></p><p>Do not use the GET method for any request that triggers a state change.</p><p></p><p>Phase: Implementation</p><p>Check the HTTP Referer header to see if the request originated from an expected page. This could break legitimate functionality, because users or proxies may have disabled sending the Referer for privacy reasons.</p>",
 					"otherinfo": "<p>No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"q\" ].</p>",
-					"reference": "<p>http://projects.webappsec.org/Cross-Site-Request-Forgery</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
 					"sourceid": "1"
@@ -58,7 +58,7 @@
 					"count": "1",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "",
-					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>http://www.w3.org/TR/CSP/</p><p>http://w3c.github.io/webappsec/specs/content-security-policy/csp-specification.dev.html</p><p>http://www.html5rocks.com/en/tutorials/security/content-security-policy/</p><p>http://caniuse.com/#feat=contentsecuritypolicy</p><p>http://content-security-policy.com/</p>",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>https://www.w3.org/TR/CSP/</p><p>https://w3c.github.io/webappsec-csp/</p><p>https://web.dev/articles/csp</p><p>https://caniuse.com/#feat=contentsecuritypolicy</p><p>https://content-security-policy.com/</p>",
 					"cweid": "693",
 					"wascid": "15",
 					"sourceid": "1"
@@ -92,7 +92,7 @@
 				},
 				{
 					"pluginid": "10035",
-					"alertRef": "10035",
+					"alertRef": "10035-1",
 					"alert": "Strict-Transport-Security Header Not Set",
 					"name": "Strict-Transport-Security Header Not Set",
 					"riskcode": "1",
@@ -128,10 +128,10 @@
 					"count": "3",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to enforce Strict-Transport-Security.</p>",
 					"otherinfo": "",
-					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>http://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>http://caniuse.com/stricttransportsecurity</p><p>http://tools.ietf.org/html/rfc6797</p>",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>https://caniuse.com/stricttransportsecurity</p><p>https://datatracker.ietf.org/doc/html/rfc6797</p>",
 					"cweid": "319",
 					"wascid": "15",
-					"sourceid": "8"
+					"sourceid": "7"
 				},
 				{
 					"pluginid": "10094",
@@ -148,13 +148,13 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "Mzd9IkTQUJLQ1wY3uOrS67LXzGdvLBou1tmIznkpXb",
-							"otherinfo": "37}\"D\uFFFDP\uFFFD\uFFFD\uFFFD\\x00067\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDgo,\\x001a.\uFFFD\u0648\uFFFDy)]"
+							"evidence": "hpzlDoB3gzNg8R2Lbuv5mbIwKdxBwIDtJAqjdf2HsYrNcUaWIWxzWtl6UZg0T13iZLVe",
+							"otherinfo": "\uFFFD\uFFFD\uFFFD\\x000e\uFFFDw\uFFFD3`\uFFFD\\x001d\uFFFDn\uFFFD\uFFFD\uFFFD\uFFFD0)\uFFFDA\uFFFD\uFFFD\uFFFD$\n\uFFFDu\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDqF\uFFFD!lsZ\uFFFDzQ\uFFFD4O]\uFFFDd\uFFFD^"
 						}
 					],
 					"count": "1",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>37}\"D\uFFFDP\uFFFD\uFFFD\uFFFD\\x00067\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDgo,\\x001a.\uFFFD\u0648\uFFFDy)]</p>",
+					"otherinfo": "<p>\uFFFD\uFFFD\uFFFD\\x000e\uFFFDw\uFFFD3`\uFFFD\\x001d\uFFFDn\uFFFD\uFFFD\uFFFD\uFFFD0)\uFFFDA\uFFFD\uFFFD\uFFFD$</p><p>\uFFFDu\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDqF\uFFFD!lsZ\uFFFDzQ\uFFFD4O]\uFFFDd\uFFFD^</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
@@ -255,7 +255,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "8"
+					"sourceid": "7"
 				},
 				{
 					"pluginid": "90005",
@@ -298,7 +298,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "8"
+					"sourceid": "7"
 				},
 				{
 					"pluginid": "90005",
@@ -311,23 +311,7 @@
 					"desc": "<p>Specifies the relationship between request initiator's origin and target's origin.</p>",
 					"instances":[ 
 						{
-							"uri": "https://civilsdeladefense.fabnum.fr/",
-							"method": "GET",
-							"param": "Sec-Fetch-Site",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://civilsdeladefense.fabnum.fr/robots.txt",
-							"method": "GET",
-							"param": "Sec-Fetch-Site",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://civilsdeladefense.fabnum.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -335,13 +319,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "1",
 					"solution": "<p>Ensure that Sec-Fetch-Site header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "8"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -384,7 +368,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "8"
+					"sourceid": "7"
 				},
 				{
 					"pluginid": "10112",
@@ -401,7 +385,7 @@
 							"method": "GET",
 							"param": "_civilsdeladefense_session",
 							"attack": "",
-							"evidence": "Mzd9IkTQUJLQ1wY3uOrS67LXzGdvLBou1tmIznkpXb%2BWBnoXm3%2Bz46HpXpFoxEWZHeP99V4a7hrtHWbRslJALdA4vFP6EDLYSxqycdWZVw6g2RkOz0CuxWn%2BYK6WgtWepYCbTcAIZs%2FX6RZy5dphwcx02Chnf1II7ymUEwZgVusIK%2Fr9BnoCNPKmp4BwMbFOHhRZFyXu%2B%2BPDS6K2fOe2%2B08ENIPsZf6592WKJkHygC6XWAJ5gIY%2BJ9b6DKIFEywcj9qXbaFaTRWTp5vdWYiYHrqkQEf61ZfxVZ%2FShWN4ec3upQ%3D%3D--0kknIDtYcwG72XtN--A0BKS3yqQ%2Bb9ennaQIulyA%3D%3D",
+							"evidence": "hpzlDoB3gzNg8R2Lbuv5mbIwKdxBwIDtJAqjdf2HsYrNcUaWIWxzWtl6UZg0T13iZLVe%2B%2BAWoN0fM8ba9Nk0uS0b3EdSTcJfSMiCOMDyJ1vjejNA8OcoL3MtdKzTTIY7lKVUvEO1lYyEDltYzh22HbnwQAMFnRoOaWsHZgvyQphia%2BUaS7OlwiYxsAmGG2q281l1TSw392%2FEH%2B9SxPUsNXnPLKMjHtfvPxdcQPo2QKfjg3xJtlg%2B55q5YdisLGliZAj01CPUqaOiCHVKU90QUmvaWFHuTjP0A3POvVr4sUvIZQ%3D%3D--T0aHNynd%2FnThcTwj--IPPZDJzLbEkKcz9qFYRHyw%3D%3D",
 							"otherinfo": "\ncookie:_civilsdeladefense_session"
 						}
 					],
@@ -454,7 +438,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "8"
+					"sourceid": "7"
 				}
 			]
 		}

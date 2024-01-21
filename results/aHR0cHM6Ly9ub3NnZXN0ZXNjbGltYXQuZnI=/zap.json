@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 14 Jan 2024 07:47:28",
+	"@generated": "Sun, 21 Jan 2024 07:35:46",
 	"site":[ 
 		{
 			"@name": "https://nosgestesclimat.fr",
@@ -28,7 +28,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/",
+							"uri": "https://nosgestesclimat.fr/a-propos",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -36,7 +36,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/actions",
+							"uri": "https://nosgestesclimat.fr/actions-plus",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -44,7 +44,15 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/amis",
+							"uri": "https://nosgestesclimat.fr/ambassadeurs",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://nosgestesclimat.fr/contact",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -60,7 +68,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/documentation",
+							"uri": "https://nosgestesclimat.fr/faq",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -68,7 +76,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/profil",
+							"uri": "https://nosgestesclimat.fr/nouveautes",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -76,7 +84,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/questions-frequentes",
+							"uri": "https://nosgestesclimat.fr/personas",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -92,15 +100,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/simulateur/bilan",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://nosgestesclimat.fr/tutoriel",
+							"uri": "https://nosgestesclimat.fr/stats",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -111,10 +111,10 @@
 					"count": "11",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "",
-					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>http://www.w3.org/TR/CSP/</p><p>http://w3c.github.io/webappsec/specs/content-security-policy/csp-specification.dev.html</p><p>http://www.html5rocks.com/en/tutorials/security/content-security-policy/</p><p>http://caniuse.com/#feat=contentsecuritypolicy</p><p>http://content-security-policy.com/</p>",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>https://www.w3.org/TR/CSP/</p><p>https://w3c.github.io/webappsec-csp/</p><p>https://web.dev/articles/csp</p><p>https://caniuse.com/#feat=contentsecuritypolicy</p><p>https://content-security-policy.com/</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "7"
+					"sourceid": "401"
 				},
 				{
 					"pluginid": "10098",
@@ -127,6 +127,22 @@
 					"desc": "<p>Web browser data loading may be possible, due to a Cross Origin Resource Sharing (CORS) misconfiguration on the web server</p>",
 					"instances":[ 
 						{
+							"uri": "https://nosgestesclimat.fr/_next/static/chunks/396464d2-4d5a127528e0c515.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Access-Control-Allow-Origin: *",
+							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
+						},
+						{
+							"uri": "https://nosgestesclimat.fr/_next/static/chunks/8531-5e99c2a6004c48f4.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Access-Control-Allow-Origin: *",
+							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
+						},
+						{
 							"uri": "https://nosgestesclimat.fr/_next/static/chunks/fd9d1056-f2f2958594b51492.js",
 							"method": "GET",
 							"param": "",
@@ -135,7 +151,7 @@
 							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/_next/static/chunks/webpack-2f5a386a21a5da1f.js",
+							"uri": "https://nosgestesclimat.fr/_next/static/chunks/main-app-075391062e7bc616.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -143,7 +159,15 @@
 							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/_next/static/css/ef25a987d232bba0.css",
+							"uri": "https://nosgestesclimat.fr/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Access-Control-Allow-Origin: *",
+							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
+						},
+						{
+							"uri": "https://nosgestesclimat.fr/_next/static/chunks/webpack-a0bf344ac189c9e9.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -191,30 +215,6 @@
 							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/_next/static/media/d8d156f058e97361-s.p.woff2",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "Access-Control-Allow-Origin: *",
-							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
-						},
-						{
-							"uri": "https://nosgestesclimat.fr/images/misc/favicon.png",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "Access-Control-Allow-Origin: *",
-							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
-						},
-						{
-							"uri": "https://nosgestesclimat.fr/manifest.webmanifest",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "Access-Control-Allow-Origin: *",
-							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
-						},
-						{
 							"uri": "https://nosgestesclimat.fr/sitemap.xml",
 							"method": "GET",
 							"param": "",
@@ -229,7 +229,7 @@
 					"reference": "<p>https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.html5_overly_permissive_cors_policy</p>",
 					"cweid": "264",
 					"wascid": "14",
-					"sourceid": "2647"
+					"sourceid": "3750"
 				},
 				{
 					"pluginid": "10020",
@@ -258,7 +258,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/actions",
+							"uri": "https://nosgestesclimat.fr/a-propos",
 							"method": "GET",
 							"param": "x-frame-options",
 							"attack": "",
@@ -266,7 +266,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/amis",
+							"uri": "https://nosgestesclimat.fr/ambassadeurs",
 							"method": "GET",
 							"param": "x-frame-options",
 							"attack": "",
@@ -274,7 +274,15 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/blog",
+							"uri": "https://nosgestesclimat.fr/blog/affichage-ges-transport",
+							"method": "GET",
+							"param": "x-frame-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://nosgestesclimat.fr/contact",
 							"method": "GET",
 							"param": "x-frame-options",
 							"attack": "",
@@ -298,7 +306,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/profil",
+							"uri": "https://nosgestesclimat.fr/nouveautes",
 							"method": "GET",
 							"param": "x-frame-options",
 							"attack": "",
@@ -306,7 +314,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/questions-frequentes",
+							"uri": "https://nosgestesclimat.fr/personas",
 							"method": "GET",
 							"param": "x-frame-options",
 							"attack": "",
@@ -314,15 +322,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/simulateur/bilan",
-							"method": "GET",
-							"param": "x-frame-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://nosgestesclimat.fr/tutoriel",
+							"uri": "https://nosgestesclimat.fr/stats",
 							"method": "GET",
 							"param": "x-frame-options",
 							"attack": "",
@@ -336,7 +336,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options</p>",
 					"cweid": "1021",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "401"
 				},
 				{
 					"pluginid": "90003",
@@ -369,51 +369,27 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<link rel=\"preload\" href=\"https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver\" as=\"script\"/>",
+							"evidence": "<link rel=\"preload\" as=\"image\" href=\"https://twemoji.maxcdn.com/2/svg/1f440.svg\"/>",
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/diffuser",
+							"uri": "https://nosgestesclimat.fr",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<link rel=\"preload\" as=\"image\" href=\"https://twemoji.maxcdn.com/2/svg/1f30d.svg\"/>",
+							"evidence": "<link rel=\"preload\" as=\"image\" href=\"https://twemoji.maxcdn.com/2/svg/1f50d.svg\"/>",
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/diffuser",
+							"uri": "https://nosgestesclimat.fr",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<link rel=\"preload\" as=\"image\" href=\"https://twemoji.maxcdn.com/2/svg/1f3e2.svg\"/>",
+							"evidence": "<link rel=\"preload\" as=\"image\" href=\"https://twemoji.maxcdn.com/2/svg/1f58b.svg\"/>",
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/diffuser",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<link rel=\"preload\" href=\"https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver\" as=\"script\"/>",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://nosgestesclimat.fr/documentation",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<link rel=\"preload\" as=\"image\" href=\"https://twemoji.maxcdn.com/2/svg/1f30d.svg\"/>",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://nosgestesclimat.fr/documentation",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<link rel=\"preload\" as=\"image\" href=\"https://twemoji.maxcdn.com/2/svg/1f3e2.svg\"/>",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://nosgestesclimat.fr/documentation",
+							"uri": "https://nosgestesclimat.fr",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -421,7 +397,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/profil",
+							"uri": "https://nosgestesclimat.fr/a-propos",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -429,7 +405,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/profil",
+							"uri": "https://nosgestesclimat.fr/a-propos",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -437,7 +413,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/profil",
+							"uri": "https://nosgestesclimat.fr/a-propos",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -445,17 +421,17 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "12",
+					"count": "9",
 					"solution": "<p>Provide a valid integrity attribute to the tag.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity</p>",
 					"cweid": "345",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "401"
 				},
 				{
 					"pluginid": "10044",
-					"alertRef": "10044",
+					"alertRef": "10044-1",
 					"alert": "Big Redirect Detected (Potential Sensitive Information Leak)",
 					"name": "Big Redirect Detected (Potential Sensitive Information Leak)",
 					"riskcode": "1",
@@ -469,15 +445,15 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "Location header URI length: 4 [/404].\nPredicted response size: 304.\nResponse Body Length: 25,771."
+							"otherinfo": "Location header URI length: 4 [/404].\nPredicted response size: 304.\nResponse Body Length: 25,927."
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/documentation/alimentation/d%C3%A9chets/dechetterie/emcombrants-et-tout%E2%80%91venant/fin-de-vie-moyenne-DIB/pourcentage",
+							"uri": "https://nosgestesclimat.fr/documentation/alimentation/d%C3%A9chets/dechetterie/emcombrants-et-tout%E2%80%91venant/fin-de-vie-moyenne-DIB",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "Location header URI length: 4 [/404].\nPredicted response size: 304.\nResponse Body Length: 26,024."
+							"otherinfo": "Location header URI length: 4 [/404].\nPredicted response size: 304.\nResponse Body Length: 26,092."
 						},
 						{
 							"uri": "https://nosgestesclimat.fr/documentation/alimentation/d%C3%A9chets/dechetterie/emcombrants-et-tout%E2%80%91venant/quantit%C3%A9",
@@ -485,7 +461,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "Location header URI length: 4 [/404].\nPredicted response size: 304.\nResponse Body Length: 25,873."
+							"otherinfo": "Location header URI length: 4 [/404].\nPredicted response size: 304.\nResponse Body Length: 26,029."
 						},
 						{
 							"uri": "https://nosgestesclimat.fr/documentation/alimentation/d%C3%A9chets/dechetterie/emcombrants-et-tout%E2%80%91venant/quantit%C3%A9-r%C3%A9elle",
@@ -493,7 +469,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "Location header URI length: 4 [/404].\nPredicted response size: 304.\nResponse Body Length: 25,957."
+							"otherinfo": "Location header URI length: 4 [/404].\nPredicted response size: 304.\nResponse Body Length: 26,113."
 						},
 						{
 							"uri": "https://nosgestesclimat.fr/documentation/alimentation/r%C3%A9duire-viande",
@@ -501,7 +477,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "Location header URI length: 4 [/404].\nPredicted response size: 304.\nResponse Body Length: 25,483."
+							"otherinfo": "Location header URI length: 4 [/404].\nPredicted response size: 304.\nResponse Body Length: 25,639."
 						},
 						{
 							"uri": "https://nosgestesclimat.fr/documentation/divers/d%C3%A9chets",
@@ -509,7 +485,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "Location header URI length: 4 [/404].\nPredicted response size: 304.\nResponse Body Length: 25,392."
+							"otherinfo": "Location header URI length: 4 [/404].\nPredicted response size: 304.\nResponse Body Length: 25,548."
 						},
 						{
 							"uri": "https://nosgestesclimat.fr/documentation/guide",
@@ -517,7 +493,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "Location header URI length: 4 [/404].\nPredicted response size: 304.\nResponse Body Length: 25,290."
+							"otherinfo": "Location header URI length: 4 [/404].\nPredicted response size: 304.\nResponse Body Length: 25,446."
 						},
 						{
 							"uri": "https://nosgestesclimat.fr/documentation/modele",
@@ -525,7 +501,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "Location header URI length: 4 [/404].\nPredicted response size: 304.\nResponse Body Length: 25,297."
+							"otherinfo": "Location header URI length: 4 [/404].\nPredicted response size: 304.\nResponse Body Length: 25,453."
 						},
 						{
 							"uri": "https://nosgestesclimat.fr/documentation/transport/%C3%A9co%E2%80%91conduite",
@@ -533,7 +509,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "Location header URI length: 4 [/404].\nPredicted response size: 304.\nResponse Body Length: 25,504."
+							"otherinfo": "Location header URI length: 4 [/404].\nPredicted response size: 304.\nResponse Body Length: 25,660."
 						},
 						{
 							"uri": "https://nosgestesclimat.fr/documentation/transport/%C3%A9co%E2%80%91conduite/recalcul",
@@ -541,7 +517,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "Location header URI length: 4 [/404].\nPredicted response size: 304.\nResponse Body Length: 25,571."
+							"otherinfo": "Location header URI length: 4 [/404].\nPredicted response size: 304.\nResponse Body Length: 25,727."
 						},
 						{
 							"uri": "https://nosgestesclimat.fr/documentation/transport/%C3%A9co%E2%80%91conduite/usage-r%C3%A9duit",
@@ -549,7 +525,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "Location header URI length: 4 [/404].\nPredicted response size: 304.\nResponse Body Length: 25,634."
+							"otherinfo": "Location header URI length: 4 [/404].\nPredicted response size: 304.\nResponse Body Length: 25,790."
 						},
 						{
 							"uri": "https://nosgestesclimat.fr/documentation/transport/distance-moyenne-aller%E2%80%91retour-trajet-court",
@@ -557,16 +533,16 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "Location header URI length: 4 [/404].\nPredicted response size: 304.\nResponse Body Length: 25,679."
+							"otherinfo": "Location header URI length: 4 [/404].\nPredicted response size: 304.\nResponse Body Length: 25,835."
 						}
 					],
 					"count": "12",
 					"solution": "<p>Ensure that no sensitive information is leaked via redirect responses. Redirect responses should have almost no content.</p>",
-					"otherinfo": "<p>Location header URI length: 4 [/404].</p><p>Predicted response size: 304.</p><p>Response Body Length: 25,771.</p>",
+					"otherinfo": "<p>Location header URI length: 4 [/404].</p><p>Predicted response size: 304.</p><p>Response Body Length: 25,927.</p>",
 					"reference": "",
 					"cweid": "201",
 					"wascid": "13",
-					"sourceid": "3370"
+					"sourceid": "3274"
 				},
 				{
 					"pluginid": "10110",
@@ -579,7 +555,7 @@
 					"desc": "<p>A dangerous JS function seems to be in use that would leave the site vulnerable.</p>",
 					"instances":[ 
 						{
-							"uri": "https://nosgestesclimat.fr/_next/static/chunks/9340-f95828c3c12aac7e.js",
+							"uri": "https://nosgestesclimat.fr/_next/static/chunks/8531-5e99c2a6004c48f4.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -593,7 +569,7 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "2662"
+					"sourceid": "3752"
 				},
 				{
 					"pluginid": "10063",
@@ -622,7 +598,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/actions",
+							"uri": "https://nosgestesclimat.fr/a-propos",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -630,7 +606,23 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/amis",
+							"uri": "https://nosgestesclimat.fr/actions-plus",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://nosgestesclimat.fr/ambassadeurs",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://nosgestesclimat.fr/contact",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -646,7 +638,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/documentation",
+							"uri": "https://nosgestesclimat.fr/faq",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -654,7 +646,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/profil",
+							"uri": "https://nosgestesclimat.fr/nouveautes",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -662,7 +654,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/questions-frequentes",
+							"uri": "https://nosgestesclimat.fr/personas",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -671,22 +663,6 @@
 						},
 						{
 							"uri": "https://nosgestesclimat.fr/robots.txt",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://nosgestesclimat.fr/simulateur/bilan",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://nosgestesclimat.fr/tutoriel",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -721,7 +697,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/",
+							"uri": "https://nosgestesclimat.fr/a-propos",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -729,7 +705,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/actions",
+							"uri": "https://nosgestesclimat.fr/actions-plus",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -737,7 +713,15 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/amis",
+							"uri": "https://nosgestesclimat.fr/ambassadeurs",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "X-Powered-By: Next.js",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://nosgestesclimat.fr/contact",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -753,7 +737,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/documentation",
+							"uri": "https://nosgestesclimat.fr/faq",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -761,7 +745,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/profil",
+							"uri": "https://nosgestesclimat.fr/nouveautes",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -769,7 +753,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/questions-frequentes",
+							"uri": "https://nosgestesclimat.fr/personas",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -785,15 +769,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/simulateur/bilan",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "X-Powered-By: Next.js",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://nosgestesclimat.fr/tutoriel",
+							"uri": "https://nosgestesclimat.fr/stats",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -804,10 +780,10 @@
 					"count": "11",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress \"X-Powered-By\" headers.</p>",
 					"otherinfo": "",
-					"reference": "<p>http://blogs.msdn.com/b/varunm/archive/2013/04/23/remove-unwanted-http-response-headers.aspx</p><p>http://www.troyhunt.com/2012/02/shhh-dont-let-your-response-headers.html</p>",
+					"reference": "<p>https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/01-Information_Gathering/08-Fingerprint_Web_Application_Framework</p><p>https://www.troyhunt.com/2012/02/shhh-dont-let-your-response-headers.html</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "7"
+					"sourceid": "401"
 				},
 				{
 					"pluginid": "10096",
@@ -820,7 +796,7 @@
 					"desc": "<p>A timestamp was disclosed by the application/web server - Unix</p>",
 					"instances":[ 
 						{
-							"uri": "https://nosgestesclimat.fr/_next/static/chunks/9340-f95828c3c12aac7e.js",
+							"uri": "https://nosgestesclimat.fr/_next/static/chunks/8531-5e99c2a6004c48f4.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -866,7 +842,7 @@
 					"reference": "<p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "2662"
+					"sourceid": "3752"
 				},
 				{
 					"pluginid": "10021",
@@ -887,7 +863,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/",
+							"uri": "https://nosgestesclimat.fr/a-propos",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -895,7 +871,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/actions",
+							"uri": "https://nosgestesclimat.fr/ambassadeurs",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -903,7 +879,15 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/amis",
+							"uri": "https://nosgestesclimat.fr/blog/affichage-ges-transport",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://nosgestesclimat.fr/contact",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -927,7 +911,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/profil",
+							"uri": "https://nosgestesclimat.fr/nouveautes",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -935,15 +919,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/questions-frequentes",
-							"method": "GET",
-							"param": "x-content-type-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
-						},
-						{
-							"uri": "https://nosgestesclimat.fr/simulateur/bilan",
+							"uri": "https://nosgestesclimat.fr/personas",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -959,7 +935,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/tutoriel",
+							"uri": "https://nosgestesclimat.fr/stats",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -970,10 +946,10 @@
 					"count": "11",
 					"solution": "<p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p>",
 					"otherinfo": "<p>This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.</p><p>At \"High\" threshold this scan rule will not alert on client or server error responses.</p>",
-					"reference": "<p>http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx</p><p>https://owasp.org/www-community/Security_Headers</p>",
+					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "7"
+					"sourceid": "401"
 				},
 				{
 					"pluginid": "10094",
@@ -994,7 +970,7 @@
 							"otherinfo": "\uFFFD\\x000f`<\uFFFD\uFFFD\uFFFD\uFFFD+\\x0008\uFFFD\uFFFD\n\uFFFD.JGH(\uFFFDz\uFFFDVs\u04640\uFFFD\uFFFD \uFFFDW"
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/actions",
+							"uri": "https://nosgestesclimat.fr/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1002,7 +978,7 @@
 							"otherinfo": "\uFFFD\\x000f`<\uFFFD\uFFFD\uFFFD\uFFFD+\\x0008\uFFFD\uFFFD\n\uFFFD.JGH(\uFFFDz\uFFFDVs\u04640\uFFFD\uFFFD \uFFFDW"
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/amis",
+							"uri": "https://nosgestesclimat.fr/a-propos",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1010,7 +986,15 @@
 							"otherinfo": "\uFFFD\\x000f`<\uFFFD\uFFFD\uFFFD\uFFFD+\\x0008\uFFFD\uFFFD\n\uFFFD.JGH(\uFFFDz\uFFFDVs\u04640\uFFFD\uFFFD \uFFFDW"
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/blog",
+							"uri": "https://nosgestesclimat.fr/ambassadeurs",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "oQ9gPKS4kocrCJP6CoguSkdIKKZ6ilZz0aQw_ZIgtVc",
+							"otherinfo": "\uFFFD\\x000f`<\uFFFD\uFFFD\uFFFD\uFFFD+\\x0008\uFFFD\uFFFD\n\uFFFD.JGH(\uFFFDz\uFFFDVs\u04640\uFFFD\uFFFD \uFFFDW"
+						},
+						{
+							"uri": "https://nosgestesclimat.fr/contact",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1034,7 +1018,7 @@
 							"otherinfo": "\uFFFD\\x000f`<\uFFFD\uFFFD\uFFFD\uFFFD+\\x0008\uFFFD\uFFFD\n\uFFFD.JGH(\uFFFDz\uFFFDVs\u04640\uFFFD\uFFFD \uFFFDW"
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/profil",
+							"uri": "https://nosgestesclimat.fr/nouveautes",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1042,15 +1026,7 @@
 							"otherinfo": "\uFFFD\\x000f`<\uFFFD\uFFFD\uFFFD\uFFFD+\\x0008\uFFFD\uFFFD\n\uFFFD.JGH(\uFFFDz\uFFFDVs\u04640\uFFFD\uFFFD \uFFFDW"
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/questions-frequentes",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "oQ9gPKS4kocrCJP6CoguSkdIKKZ6ilZz0aQw_ZIgtVc",
-							"otherinfo": "\uFFFD\\x000f`<\uFFFD\uFFFD\uFFFD\uFFFD+\\x0008\uFFFD\uFFFD\n\uFFFD.JGH(\uFFFDz\uFFFDVs\u04640\uFFFD\uFFFD \uFFFDW"
-						},
-						{
-							"uri": "https://nosgestesclimat.fr/simulateur/bilan",
+							"uri": "https://nosgestesclimat.fr/personas",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1066,7 +1042,7 @@
 							"otherinfo": "~\uFFFD\u0761\u02E6z{Z\uFFFD*'\uFFFD\u9A6D\u89F5\uF6ED\uFFFD\u0705\uFFFD\uFFFD\uFFFD"
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/tutoriel",
+							"uri": "https://nosgestesclimat.fr/stats",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1083,33 +1059,6 @@
 					"sourceid": "1"
 				},
 				{
-					"pluginid": "10024",
-					"alertRef": "10024",
-					"alert": "Information Disclosure - Sensitive Information in URL",
-					"name": "Information Disclosure - Sensitive Information in URL",
-					"riskcode": "0",
-					"confidence": "2",
-					"riskdesc": "Informational (Medium)",
-					"desc": "<p>The request appeared to contain sensitive information leaked in the URL. This can violate PCI and most organizational compliance policies. You can configure the list of strings for this check to add or remove values specific to your environment.</p>",
-					"instances":[ 
-						{
-							"uri": "https://nosgestesclimat.fr/_next/image?q=75&url=%2Fimages%2Fmisc%2Fpetit-logo%403x.png&w=640",
-							"method": "GET",
-							"param": "url",
-							"attack": "",
-							"evidence": "/images/misc/petit-logo@3x.png",
-							"otherinfo": "The URL contains email address(es)."
-						}
-					],
-					"count": "1",
-					"solution": "<p>Do not pass sensitive information in URIs.</p>",
-					"otherinfo": "<p>The URL contains email address(es).</p>",
-					"reference": "",
-					"cweid": "200",
-					"wascid": "13",
-					"sourceid": "2778"
-				},
-				{
 					"pluginid": "10027",
 					"alertRef": "10027",
 					"alert": "Information Disclosure - Suspicious Comments",
@@ -1124,27 +1073,35 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "bug",
-							"otherinfo": "The following pattern was used: \\bBUG\\b and was detected 8 times, the first in the element starting with: \"<script>self.__next_f.push([1,\"\\r\\n![Glacier d'Aletsch](https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Aletschgletsch\", see evidence field for the suspicious comment/snippet."
+							"evidence": "user",
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script>self.__next_f.push([1,\"c:[\\\"$\\\",\\\"html\\\",null,{\\\"lang\\\":\\\"fr\\\",\\\"dir\\\":\\\"ltr\\\",\\\"children\\\":[[\\\"$\\\",\\\"head\\\",null,{\\\"chi\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://nosgestesclimat.fr",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "bugs",
-							"otherinfo": "The following pattern was used: \\bBUGS\\b and was detected 8 times, the first in the element starting with: \"<script>self.__next_f.push([1,\"\\r\\n![Glacier d'Arcouzan](https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Col_de_Pause_\", see evidence field for the suspicious comment/snippet."
-						},
-						{
-							"uri": "https://nosgestesclimat.fr",
+							"uri": "https://nosgestesclimat.fr/a-propos",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "user",
-							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected 11 times, the first in the element starting with: \"<script>self.__next_f.push([1,\"c:[\\\"$\\\",\\\"html\\\",null,{\\\"lang\\\":\\\"fr\\\",\\\"dir\\\":\\\"ltr\\\",\\\"children\\\":[[\\\"$\\\",\\\"head\\\",null,{\\\"chi\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script>self.__next_f.push([1,\"c:[\\\"$\\\",\\\"html\\\",null,{\\\"lang\\\":\\\"fr\\\",\\\"dir\\\":\\\"ltr\\\",\\\"children\\\":[[\\\"$\\\",\\\"head\\\",null,{\\\"chi\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/amis",
+							"uri": "https://nosgestesclimat.fr/actions-plus",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "user",
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script>self.__next_f.push([1,\"c:[\\\"$\\\",\\\"html\\\",null,{\\\"lang\\\":\\\"fr\\\",\\\"dir\\\":\\\"ltr\\\",\\\"children\\\":[[\\\"$\\\",\\\"head\\\",null,{\\\"chi\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"uri": "https://nosgestesclimat.fr/ambassadeurs",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "user",
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script>self.__next_f.push([1,\"c:[\\\"$\\\",\\\"html\\\",null,{\\\"lang\\\":\\\"fr\\\",\\\"dir\\\":\\\"ltr\\\",\\\"children\\\":[[\\\"$\\\",\\\"head\\\",null,{\\\"chi\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"uri": "https://nosgestesclimat.fr/contact",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1160,7 +1117,7 @@
 							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script>self.__next_f.push([1,\"c:[\\\"$\\\",\\\"html\\\",null,{\\\"lang\\\":\\\"fr\\\",\\\"dir\\\":\\\"ltr\\\",\\\"children\\\":[[\\\"$\\\",\\\"head\\\",null,{\\\"chi\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/documentation",
+							"uri": "https://nosgestesclimat.fr/faq",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1168,7 +1125,15 @@
 							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script>self.__next_f.push([1,\"c:[\\\"$\\\",\\\"html\\\",null,{\\\"lang\\\":\\\"fr\\\",\\\"dir\\\":\\\"ltr\\\",\\\"children\\\":[[\\\"$\\\",\\\"head\\\",null,{\\\"chi\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/profil",
+							"uri": "https://nosgestesclimat.fr/nouveautes",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "user",
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected 2 times, the first in the element starting with: \"<script>self.__next_f.push([1,\"c:[\\\"$\\\",\\\"html\\\",null,{\\\"lang\\\":\\\"fr\\\",\\\"dir\\\":\\\"ltr\\\",\\\"children\\\":[[\\\"$\\\",\\\"head\\\",null,{\\\"chi\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"uri": "https://nosgestesclimat.fr/personas",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1184,7 +1149,7 @@
 							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script>self.__next_f.push([1,\"c:[\\\"$\\\",\\\"html\\\",null,{\\\"lang\\\":\\\"fr\\\",\\\"dir\\\":\\\"ltr\\\",\\\"children\\\":[[\\\"$\\\",\\\"head\\\",null,{\\\"chi\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/simulateur/bilan",
+							"uri": "https://nosgestesclimat.fr/stats",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1192,13 +1157,13 @@
 							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script>self.__next_f.push([1,\"c:[\\\"$\\\",\\\"html\\\",null,{\\\"lang\\\":\\\"fr\\\",\\\"dir\\\":\\\"ltr\\\",\\\"children\\\":[[\\\"$\\\",\\\"head\\\",null,{\\\"chi\", see evidence field for the suspicious comment/snippet."
 						}
 					],
-					"count": "9",
+					"count": "11",
 					"solution": "<p>Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</p>",
-					"otherinfo": "<p>The following pattern was used: \\bBUG\\b and was detected 8 times, the first in the element starting with: \"<script>self.__next_f.push([1,\"\\r\\n![Glacier d'Aletsch](https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Aletschgletsch\", see evidence field for the suspicious comment/snippet.</p>",
+					"otherinfo": "<p>The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script>self.__next_f.push([1,\"c:[\\\"$\\\",\\\"html\\\",null,{\\\"lang\\\":\\\"fr\\\",\\\"dir\\\":\\\"ltr\\\",\\\"children\\\":[[\\\"$\\\",\\\"head\\\",null,{\\\"chi\", see evidence field for the suspicious comment/snippet.</p>",
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "401"
 				},
 				{
 					"pluginid": "10109",
@@ -1210,38 +1175,6 @@
 					"riskdesc": "Informational (Medium)",
 					"desc": "<p>The application appears to be a modern web application. If you need to explore it automatically then the Ajax Spider may well be more effective than the standard one.</p>",
 					"instances":[ 
-						{
-							"uri": "https://nosgestesclimat.fr/%2Fimages%2Fmisc%2Flogo-ABC-web.png&w=1200&q=75",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<script src=\"/_next/static/chunks/fd9d1056-f2f2958594b51492.js\" async=\"\"></script>",
-							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
-						},
-						{
-							"uri": "https://nosgestesclimat.fr/%2Fimages%2Fmisc%2Flogo-ABC-web.png&w=640&q=75",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<script src=\"/_next/static/chunks/fd9d1056-f2f2958594b51492.js\" async=\"\"></script>",
-							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
-						},
-						{
-							"uri": "https://nosgestesclimat.fr/%2Fimages%2Fmisc%2Fpetit-logo%403x.png&w=256&q=75",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<script src=\"/_next/static/chunks/fd9d1056-f2f2958594b51492.js\" async=\"\"></script>",
-							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
-						},
-						{
-							"uri": "https://nosgestesclimat.fr/%2Fimages%2Fmisc%2Fpetit-logo%403x.png&w=640&q=75",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<script src=\"/_next/static/chunks/fd9d1056-f2f2958594b51492.js\" async=\"\"></script>",
-							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
-						},
 						{
 							"uri": "https://nosgestesclimat.fr/actions-plus",
 							"method": "GET",
@@ -1291,6 +1224,38 @@
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
+							"uri": "https://nosgestesclimat.fr/documentation/transport/%C3%A9co%E2%80%91conduite",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<script src=\"/_next/static/chunks/fd9d1056-f2f2958594b51492.js\" async=\"\"></script>",
+							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
+						},
+						{
+							"uri": "https://nosgestesclimat.fr/documentation/transport/%C3%A9co%E2%80%91conduite/recalcul",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<script src=\"/_next/static/chunks/fd9d1056-f2f2958594b51492.js\" async=\"\"></script>",
+							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
+						},
+						{
+							"uri": "https://nosgestesclimat.fr/documentation/transport/%C3%A9co%E2%80%91conduite/usage-r%C3%A9duit",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<script src=\"/_next/static/chunks/fd9d1056-f2f2958594b51492.js\" async=\"\"></script>",
+							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
+						},
+						{
+							"uri": "https://nosgestesclimat.fr/documentation/transport/distance-moyenne-aller%E2%80%91retour-trajet-court",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<script src=\"/_next/static/chunks/fd9d1056-f2f2958594b51492.js\" async=\"\"></script>",
+							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
+						},
+						{
 							"uri": "https://nosgestesclimat.fr/faq",
 							"method": "GET",
 							"param": "",
@@ -1313,7 +1278,7 @@
 					"reference": "",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "2795"
+					"sourceid": "717"
 				},
 				{
 					"pluginid": "10049",
@@ -1334,7 +1299,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/actions",
+							"uri": "https://nosgestesclimat.fr/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1342,7 +1307,23 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/amis",
+							"uri": "https://nosgestesclimat.fr/a-propos",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "no-store",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://nosgestesclimat.fr/actions-plus",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "no-store",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://nosgestesclimat.fr/contact",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1358,7 +1339,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/documentation",
+							"uri": "https://nosgestesclimat.fr/nouveautes",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1366,15 +1347,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/profil",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "no-store",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://nosgestesclimat.fr/questions-frequentes",
+							"uri": "https://nosgestesclimat.fr/personas",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1388,25 +1361,9 @@
 							"attack": "",
 							"evidence": "no-store",
 							"otherinfo": ""
-						},
-						{
-							"uri": "https://nosgestesclimat.fr/simulateur/bilan",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "no-store",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://nosgestesclimat.fr/tutoriel",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "no-store",
-							"otherinfo": ""
 						}
 					],
-					"count": "10",
+					"count": "9",
 					"solution": "<p>The content may be marked as storable by ensuring that the following conditions are satisfied:</p><p>The request method must be understood by the cache and defined as being cacheable (\"GET\", \"HEAD\", and \"POST\" are currently defined as cacheable)</p><p>The response status code must be understood by the cache (one of the 1XX, 2XX, 3XX, 4XX, or 5XX response classes are generally understood)</p><p>The \"no-store\" cache directive must not appear in the request or response header fields</p><p>For caching by \"shared\" caches such as \"proxy\" caches, the \"private\" response directive must not appear in the response</p><p>For caching by \"shared\" caches such as \"proxy\" caches, the \"Authorization\" header field must not appear in the request, unless the response explicitly allows it (using one of the \"must-revalidate\", \"public\", or \"s-maxage\" Cache-Control response directives)</p><p>In addition to the conditions above, at least one of the following conditions must also be satisfied by the response:</p><p>It must contain an \"Expires\" header field</p><p>It must contain a \"max-age\" response directive</p><p>For \"shared\" caches such as \"proxy\" caches, it must contain a \"s-maxage\" response directive</p><p>It must contain a \"Cache Control Extension\" that allows it to be cached</p><p>It must have a status code that is defined as cacheable by default (200, 203, 204, 206, 300, 301, 404, 405, 410, 414, 501).   </p>",
 					"otherinfo": "",
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
@@ -1447,7 +1404,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control</p><p>https://grayduck.mn/2021/09/13/cache-control-recommendations/</p>",
 					"cweid": "525",
 					"wascid": "13",
-					"sourceid": "2343"
+					"sourceid": "4121"
 				},
 				{
 					"pluginid": "10050",
@@ -1468,7 +1425,7 @@
 							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/actions",
+							"uri": "https://nosgestesclimat.fr/a-propos",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1476,7 +1433,23 @@
 							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/amis",
+							"uri": "https://nosgestesclimat.fr/actions-plus",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Age: 0",
+							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
+						},
+						{
+							"uri": "https://nosgestesclimat.fr/ambassadeurs",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Age: 0",
+							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
+						},
+						{
+							"uri": "https://nosgestesclimat.fr/contact",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1492,7 +1465,7 @@
 							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/documentation",
+							"uri": "https://nosgestesclimat.fr/faq",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1500,15 +1473,7 @@
 							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/profil",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "Age: 0",
-							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
-						},
-						{
-							"uri": "https://nosgestesclimat.fr/questions-frequentes",
+							"uri": "https://nosgestesclimat.fr/personas",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1524,23 +1489,15 @@
 							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/simulateur/bilan",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "Age: 0",
-							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
-						},
-						{
 							"uri": "https://nosgestesclimat.fr/sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "Age: 148994",
+							"evidence": "Age: 94682",
 							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
-							"uri": "https://nosgestesclimat.fr/tutoriel",
+							"uri": "https://nosgestesclimat.fr/stats",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1551,10 +1508,10 @@
 					"count": "11",
 					"solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information.  If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request.</p>",
 					"otherinfo": "<p>The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use.</p>",
-					"reference": "<p>https://tools.ietf.org/html/rfc7234</p><p>https://tools.ietf.org/html/rfc7231</p><p>http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html (obsoleted by rfc7234)</p>",
+					"reference": "<p>https://tools.ietf.org/html/rfc7234</p><p>https://tools.ietf.org/html/rfc7231</p><p>https://www.rfc-editor.org/rfc/rfc9110.html (obsoleted by rfc7234)</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "7"
+					"sourceid": "401"
 				},
 				{
 					"pluginid": "90005",
@@ -1567,15 +1524,7 @@
 					"desc": "<p>Specifies how and where the data would be used. For instance, if the value is audio, then the requested resource must be audio data and not any other type of resource.</p>",
 					"instances":[ 
 						{
-							"uri": "https://nosgestesclimat.fr/documentation",
-							"method": "GET",
-							"param": "Sec-Fetch-Dest",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://nosgestesclimat.fr/profil",
+							"uri": "https://nosgestesclimat.fr",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -1591,13 +1540,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"solution": "<p>Ensure that Sec-Fetch-Dest header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "480"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -1610,15 +1559,7 @@
 					"desc": "<p>Allows to differentiate between requests for navigating between HTML pages and requests for loading resources like images, audio etc.</p>",
 					"instances":[ 
 						{
-							"uri": "https://nosgestesclimat.fr/documentation",
-							"method": "GET",
-							"param": "Sec-Fetch-Mode",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://nosgestesclimat.fr/profil",
+							"uri": "https://nosgestesclimat.fr",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -1634,13 +1575,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"solution": "<p>Ensure that Sec-Fetch-Mode header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "480"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -1653,15 +1594,7 @@
 					"desc": "<p>Specifies the relationship between request initiator's origin and target's origin.</p>",
 					"instances":[ 
 						{
-							"uri": "https://nosgestesclimat.fr/documentation",
-							"method": "GET",
-							"param": "Sec-Fetch-Site",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://nosgestesclimat.fr/profil",
+							"uri": "https://nosgestesclimat.fr",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -1677,13 +1610,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"solution": "<p>Ensure that Sec-Fetch-Site header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "480"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -1696,15 +1629,7 @@
 					"desc": "<p>Specifies if a navigation request was initiated by a user.</p>",
 					"instances":[ 
 						{
-							"uri": "https://nosgestesclimat.fr/documentation",
-							"method": "GET",
-							"param": "Sec-Fetch-User",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://nosgestesclimat.fr/profil",
+							"uri": "https://nosgestesclimat.fr",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -1720,13 +1645,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"solution": "<p>Ensure that Sec-Fetch-User header is included in user initiated requests.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "480"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10049",
@@ -1745,50 +1670,23 @@
 							"attack": "",
 							"evidence": "max-age=0",
 							"otherinfo": ""
+						},
+						{
+							"uri": "https://nosgestesclimat.fr/vie-privee",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=0",
+							"otherinfo": ""
 						}
 					],
-					"count": "1",
+					"count": "2",
 					"solution": "",
 					"otherinfo": "",
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "8"
-				},
-				{
-					"pluginid": "10031",
-					"alertRef": "10031",
-					"alert": "User Controllable HTML Element Attribute (Potential XSS)",
-					"name": "User Controllable HTML Element Attribute (Potential XSS)",
-					"riskcode": "0",
-					"confidence": "1",
-					"riskdesc": "Informational (Low)",
-					"desc": "<p>This check looks at user-supplied input in query string parameters and POST data to identify where certain HTML attribute values might be controlled. This provides hot-spot detection for XSS (cross-site scripting) that will require further review by a security analyst to determine exploitability.</p>",
-					"instances":[ 
-						{
-							"uri": "https://nosgestesclimat.fr/guide?lang=fr",
-							"method": "GET",
-							"param": "lang",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\r\n\r\nhttps://nosgestesclimat.fr/guide?lang=fr\r\n\r\nappears to include user input in: \r\n\r\na(n) [button] tag [lang] attribute \r\n\r\nThe user input found was:\r\nlang=fr\r\n\r\nThe user-controlled value was:\r\nfr"
-						},
-						{
-							"uri": "https://nosgestesclimat.fr/guide?lang=fr",
-							"method": "GET",
-							"param": "lang",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\r\n\r\nhttps://nosgestesclimat.fr/guide?lang=fr\r\n\r\nappears to include user input in: \r\n\r\na(n) [html] tag [lang] attribute \r\n\r\nThe user input found was:\r\nlang=fr\r\n\r\nThe user-controlled value was:\r\nfr"
-						}
-					],
-					"count": "2",
-					"solution": "<p>Validate all input and sanitize output it before writing to any HTML attributes.</p>",
-					"otherinfo": "<p>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:</p><p></p><p>https://nosgestesclimat.fr/guide?lang=fr</p><p></p><p>appears to include user input in: </p><p></p><p>a(n) [button] tag [lang] attribute </p><p></p><p>The user input found was:</p><p>lang=fr</p><p></p><p>The user-controlled value was:</p><p>fr</p>",
-					"reference": "<p>http://websecuritytool.codeplex.com/wikipage?title=Checks#user-controlled-html-attribute</p>",
-					"cweid": "20",
-					"wascid": "20",
-					"sourceid": "3424"
+					"sourceid": "6"
 				}
 			]
 		}

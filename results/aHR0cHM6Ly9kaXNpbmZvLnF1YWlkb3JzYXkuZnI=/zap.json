@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 14 Jan 2024 16:12:13",
+	"@generated": "Sun, 21 Jan 2024 16:04:48",
 	"site":[ 
 		{
 			"@name": "https://disinfo.quaidorsay.fr",
@@ -9,41 +9,6 @@
 			"@port": "443",
 			"@ssl": "true",
 			"alerts": [ 
-				{
-					"pluginid": "10062",
-					"alertRef": "10062",
-					"alert": "PII Disclosure",
-					"name": "PII Disclosure",
-					"riskcode": "3",
-					"confidence": "3",
-					"riskdesc": "High (High)",
-					"desc": "<p>The response contains Personally Identifiable Information, such as CC number, SSN and similar sensitive data.</p>",
-					"instances":[ 
-						{
-							"uri": "https://disinfo.quaidorsay.fr/political-ads/main.d1bd8bc97459c22507fb.chunk.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "3562001638983595",
-							"otherinfo": "Credit Card Type detected: Jcb\nBank Identification Number: 356200\nBrand: JCB\nCategory: \nIssuer: JCB INTERNATIONAL CREDIT CARD CO., LTD."
-						},
-						{
-							"uri": "https://disinfo.quaidorsay.fr/political-ads/npm.redux-saga.8b2c062024b18b54c207.chunk.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "3562001638983595",
-							"otherinfo": "Credit Card Type detected: Jcb\nBank Identification Number: 356200\nBrand: JCB\nCategory: \nIssuer: JCB INTERNATIONAL CREDIT CARD CO., LTD."
-						}
-					],
-					"count": "2",
-					"solution": "<p>Check the response for the potential presence of personally identifiable information (PII), ensure nothing sensitive is leaked by the application.</p>",
-					"otherinfo": "<p>Credit Card Type detected: Jcb</p><p>Bank Identification Number: 356200</p><p>Brand: JCB</p><p>Category: </p><p>Issuer: JCB INTERNATIONAL CREDIT CARD CO., LTD.</p>",
-					"reference": "",
-					"cweid": "359",
-					"wascid": "13",
-					"sourceid": "359"
-				},
 				{
 					"pluginid": "10202",
 					"alertRef": "10202",
@@ -63,7 +28,7 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"form_firstdocumentdate\" \"form_seconddocumentdate\" ]."
 						},
 						{
-							"uri": "https://disinfo.quaidorsay.fr/en/open-terms-archive/scripta-manent?form_firstdocumentdate=2024-01-14&form_seconddocumentdate=2024-01-14",
+							"uri": "https://disinfo.quaidorsay.fr/en/open-terms-archive/scripta-manent?form_firstdocumentdate=2024-01-21&form_seconddocumentdate=2024-01-21",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -79,7 +44,7 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"form_firstdocumentdate\" \"form_seconddocumentdate\" ]."
 						},
 						{
-							"uri": "https://disinfo.quaidorsay.fr/fr/open-terms-archive/scripta-manent?form_firstdocumentdate=2024-01-14&form_seconddocumentdate=2024-01-14",
+							"uri": "https://disinfo.quaidorsay.fr/fr/open-terms-archive/scripta-manent?form_firstdocumentdate=2024-01-21&form_seconddocumentdate=2024-01-21",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -95,7 +60,7 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"form_firstdocumentdate\" \"form_seconddocumentdate\" ]."
 						},
 						{
-							"uri": "https://disinfo.quaidorsay.fr/zh-Hant/open-terms-archive/scripta-manent?form_firstdocumentdate=2024-01-14&form_seconddocumentdate=2024-01-14",
+							"uri": "https://disinfo.quaidorsay.fr/zh-Hant/open-terms-archive/scripta-manent?form_firstdocumentdate=2024-01-21&form_seconddocumentdate=2024-01-21",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -106,10 +71,10 @@
 					"count": "6",
 					"solution": "<p>Phase: Architecture and Design</p><p>Use a vetted library or framework that does not allow this weakness to occur or provides constructs that make this weakness easier to avoid.</p><p>For example, use anti-CSRF packages such as the OWASP CSRFGuard.</p><p></p><p>Phase: Implementation</p><p>Ensure that your application is free of cross-site scripting issues, because most CSRF defenses can be bypassed using attacker-controlled script.</p><p></p><p>Phase: Architecture and Design</p><p>Generate a unique nonce for each form, place the nonce into the form, and verify the nonce upon receipt of the form. Be sure that the nonce is not predictable (CWE-330).</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Identify especially dangerous operations. When the user performs a dangerous operation, send a separate confirmation request to ensure that the user intended to perform that operation.</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Use the ESAPI Session Management control.</p><p>This control includes a component for CSRF.</p><p></p><p>Do not use the GET method for any request that triggers a state change.</p><p></p><p>Phase: Implementation</p><p>Check the HTTP Referer header to see if the request originated from an expected page. This could break legitimate functionality, because users or proxies may have disabled sending the Referer for privacy reasons.</p>",
 					"otherinfo": "<p>No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"form_firstdocumentdate\" \"form_seconddocumentdate\" ].</p>",
-					"reference": "<p>http://projects.webappsec.org/Cross-Site-Request-Forgery</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "164"
+					"sourceid": "252"
 				},
 				{
 					"pluginid": "10038",
@@ -146,31 +111,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://disinfo.quaidorsay.fr/en/our-work",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://disinfo.quaidorsay.fr/encyclopedia/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://disinfo.quaidorsay.fr/encyclopedia/introduction/examples",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://disinfo.quaidorsay.fr/encyclopedia/publications/",
+							"uri": "https://disinfo.quaidorsay.fr/encyclopedia/introduction/examples/fr",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -179,6 +120,22 @@
 						},
 						{
 							"uri": "https://disinfo.quaidorsay.fr/fr",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://disinfo.quaidorsay.fr/fr/nos-travaux",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://disinfo.quaidorsay.fr/mentions-legales.html",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -202,6 +159,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://disinfo.quaidorsay.fr/suivi-d-audience-et-vie-privee",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://disinfo.quaidorsay.fr/zh-Hant",
 							"method": "GET",
 							"param": "",
@@ -213,7 +178,7 @@
 					"count": "11",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "",
-					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>http://www.w3.org/TR/CSP/</p><p>http://w3c.github.io/webappsec/specs/content-security-policy/csp-specification.dev.html</p><p>http://www.html5rocks.com/en/tutorials/security/content-security-policy/</p><p>http://caniuse.com/#feat=contentsecuritypolicy</p><p>http://content-security-policy.com/</p>",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>https://www.w3.org/TR/CSP/</p><p>https://w3c.github.io/webappsec-csp/</p><p>https://web.dev/articles/csp</p><p>https://caniuse.com/#feat=contentsecuritypolicy</p><p>https://content-security-policy.com/</p>",
 					"cweid": "693",
 					"wascid": "15",
 					"sourceid": "6"
@@ -261,30 +226,6 @@
 							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
 						},
 						{
-							"uri": "https://disinfo.quaidorsay.fr/en/our-work",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "Access-Control-Allow-Origin: *",
-							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
-						},
-						{
-							"uri": "https://disinfo.quaidorsay.fr/encyclopedia/introduction/examples",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "Access-Control-Allow-Origin: *",
-							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
-						},
-						{
-							"uri": "https://disinfo.quaidorsay.fr/encyclopedia/publications/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "Access-Control-Allow-Origin: *",
-							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
-						},
-						{
 							"uri": "https://disinfo.quaidorsay.fr/favicon.ico",
 							"method": "GET",
 							"param": "",
@@ -301,6 +242,22 @@
 							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
 						},
 						{
+							"uri": "https://disinfo.quaidorsay.fr/fr/nos-travaux",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Access-Control-Allow-Origin: *",
+							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
+						},
+						{
+							"uri": "https://disinfo.quaidorsay.fr/mentions-legales.html",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Access-Control-Allow-Origin: *",
+							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
+						},
+						{
 							"uri": "https://disinfo.quaidorsay.fr/robots.txt",
 							"method": "GET",
 							"param": "",
@@ -310,6 +267,14 @@
 						},
 						{
 							"uri": "https://disinfo.quaidorsay.fr/sitemap.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Access-Control-Allow-Origin: *",
+							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
+						},
+						{
+							"uri": "https://disinfo.quaidorsay.fr/suivi-d-audience-et-vie-privee",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -368,23 +333,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://disinfo.quaidorsay.fr/encyclopedia/",
-							"method": "GET",
-							"param": "x-frame-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://disinfo.quaidorsay.fr/encyclopedia/introduction/definitions",
-							"method": "GET",
-							"param": "x-frame-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://disinfo.quaidorsay.fr/encyclopedia/introduction/examples",
+							"uri": "https://disinfo.quaidorsay.fr/encyclopedia/introduction/examples/fr",
 							"method": "GET",
 							"param": "x-frame-options",
 							"attack": "",
@@ -408,7 +357,23 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://disinfo.quaidorsay.fr/tracking.html",
+							"uri": "https://disinfo.quaidorsay.fr/fr/nos-travaux",
+							"method": "GET",
+							"param": "x-frame-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://disinfo.quaidorsay.fr/mentions-legales.html",
+							"method": "GET",
+							"param": "x-frame-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://disinfo.quaidorsay.fr/suivi-d-audience-et-vie-privee",
 							"method": "GET",
 							"param": "x-frame-options",
 							"attack": "",
@@ -430,7 +395,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options</p>",
 					"cweid": "1021",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90003",
@@ -529,7 +494,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity</p>",
 					"cweid": "345",
 					"wascid": "15",
-					"sourceid": "319"
+					"sourceid": "306"
 				},
 				{
 					"pluginid": "10017",
@@ -596,7 +561,7 @@
 					"reference": "",
 					"cweid": "829",
 					"wascid": "15",
-					"sourceid": "319"
+					"sourceid": "306"
 				},
 				{
 					"pluginid": "10063",
@@ -711,7 +676,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy</p><p>https://developer.chrome.com/blog/feature-policy/</p><p>https://scotthelme.co.uk/a-new-security-header-feature-policy/</p><p>https://w3c.github.io/webappsec-feature-policy/</p><p>https://www.smashingmagazine.com/2018/12/feature-policy/</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "270"
+					"sourceid": "229"
 				},
 				{
 					"pluginid": "10037",
@@ -735,10 +700,10 @@
 					"count": "1",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress \"X-Powered-By\" headers.</p>",
 					"otherinfo": "",
-					"reference": "<p>http://blogs.msdn.com/b/varunm/archive/2013/04/23/remove-unwanted-http-response-headers.aspx</p><p>http://www.troyhunt.com/2012/02/shhh-dont-let-your-response-headers.html</p>",
+					"reference": "<p>https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/01-Information_Gathering/08-Fingerprint_Web_Application_Framework</p><p>https://www.troyhunt.com/2012/02/shhh-dont-let-your-response-headers.html</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "250"
+					"sourceid": "317"
 				},
 				{
 					"pluginid": "10036",
@@ -775,31 +740,15 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://disinfo.quaidorsay.fr/assets/img/casestudies/cambrige.jpg",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "nginx/1.18.0",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://disinfo.quaidorsay.fr/en",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "nginx/1.18.0",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://disinfo.quaidorsay.fr/en/our-work",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "nginx/1.18.0",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://disinfo.quaidorsay.fr/encyclopedia/introduction/examples",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "nginx/1.18.0",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://disinfo.quaidorsay.fr/encyclopedia/publications/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -823,6 +772,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://disinfo.quaidorsay.fr/mentions-legales.html",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "nginx/1.18.0",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://disinfo.quaidorsay.fr/robots.txt",
 							"method": "GET",
 							"param": "",
@@ -837,19 +794,27 @@
 							"attack": "",
 							"evidence": "nginx/1.18.0",
 							"otherinfo": ""
+						},
+						{
+							"uri": "https://disinfo.quaidorsay.fr/suivi-d-audience-et-vie-privee",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "nginx/1.18.0",
+							"otherinfo": ""
 						}
 					],
 					"count": "11",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress the \"Server\" header or provide generic details.</p>",
 					"otherinfo": "",
-					"reference": "<p>http://httpd.apache.org/docs/current/mod/core.html#servertokens</p><p>http://msdn.microsoft.com/en-us/library/ff648552.aspx#ht_urlscan_007</p><p>http://blogs.msdn.com/b/varunm/archive/2013/04/23/remove-unwanted-http-response-headers.aspx</p><p>http://www.troyhunt.com/2012/02/shhh-dont-let-your-response-headers.html</p>",
+					"reference": "<p>https://httpd.apache.org/docs/current/mod/core.html#servertokens</p><p>https://learn.microsoft.com/en-us/previous-versions/msp-n-p/ff648552(v=pandp.10)</p><p>https://www.troyhunt.com/shhh-dont-let-your-response-headers/</p>",
 					"cweid": "200",
 					"wascid": "13",
 					"sourceid": "1"
 				},
 				{
 					"pluginid": "10035",
-					"alertRef": "10035",
+					"alertRef": "10035-1",
 					"alert": "Strict-Transport-Security Header Not Set",
 					"name": "Strict-Transport-Security Header Not Set",
 					"riskcode": "1",
@@ -957,10 +922,10 @@
 					"count": "12",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to enforce Strict-Transport-Security.</p>",
 					"otherinfo": "",
-					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>http://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>http://caniuse.com/stricttransportsecurity</p><p>http://tools.ietf.org/html/rfc6797</p>",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>https://caniuse.com/stricttransportsecurity</p><p>https://datatracker.ietf.org/doc/html/rfc6797</p>",
 					"cweid": "319",
 					"wascid": "15",
-					"sourceid": "250"
+					"sourceid": "317"
 				},
 				{
 					"pluginid": "10096",
@@ -1003,7 +968,7 @@
 					"reference": "<p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "117"
+					"sourceid": "174"
 				},
 				{
 					"pluginid": "10021",
@@ -1064,30 +1029,6 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://disinfo.quaidorsay.fr/en/our-work",
-							"method": "GET",
-							"param": "x-content-type-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
-						},
-						{
-							"uri": "https://disinfo.quaidorsay.fr/encyclopedia/introduction/examples",
-							"method": "GET",
-							"param": "x-content-type-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
-						},
-						{
-							"uri": "https://disinfo.quaidorsay.fr/encyclopedia/publications/",
-							"method": "GET",
-							"param": "x-content-type-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
-						},
-						{
 							"uri": "https://disinfo.quaidorsay.fr/favicon.ico",
 							"method": "GET",
 							"param": "x-content-type-options",
@@ -1102,12 +1043,36 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://disinfo.quaidorsay.fr/fr/nos-travaux",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://disinfo.quaidorsay.fr/mentions-legales.html",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://disinfo.quaidorsay.fr/suivi-d-audience-et-vie-privee",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						}
 					],
 					"count": "11",
 					"solution": "<p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p>",
 					"otherinfo": "<p>This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.</p><p>At \"High\" threshold this scan rule will not alert on client or server error responses.</p>",
-					"reference": "<p>http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx</p><p>https://owasp.org/www-community/Security_Headers</p>",
+					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
 					"cweid": "693",
 					"wascid": "15",
 					"sourceid": "1"
@@ -1201,7 +1166,7 @@
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "84"
+					"sourceid": "47"
 				},
 				{
 					"pluginid": "10027",
@@ -1294,6 +1259,14 @@
 							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"(window.webpackJsonp=window.webpackJsonp||[]).push([[0],{\"00729990b6a163560b74\":function(e,t){var n=e.exports={version:\"2.6.5\"};\", see evidence field for the suspicious comment/snippet."
 						},
 						{
+							"uri": "https://disinfo.quaidorsay.fr/political-ads/npm.connected-react-router.b89cc15901e75246dadc.chunk.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "from",
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{\"0f29a1925f6bdf1729f9\":function(e,t,r){\"use strict\";Object.defineProper\", see evidence field for the suspicious comment/snippet."
+						},
+						{
 							"uri": "https://disinfo.quaidorsay.fr/political-ads/npm.linkifyjs.3f64c9b2e3e0f1f8bbe2.chunk.js",
 							"method": "GET",
 							"param": "",
@@ -1310,13 +1283,13 @@
 							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"(window.webpackJsonp=window.webpackJsonp||[]).push([[10],{\"04f7e20f0f503a97a08f\":function(e,t){var n=Math.ceil,r=Math.floor;e.ex\", see evidence field for the suspicious comment/snippet."
 						}
 					],
-					"count": "12",
+					"count": "13",
 					"solution": "<p>Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</p>",
 					"otherinfo": "<p>The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"\"use strict\";require(\"regenerator-runtime/runtime\"),require(\"better-dom/dist/better-dom\"),require(\"better-dateinput-polyfill/dis\", see evidence field for the suspicious comment/snippet.</p>",
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "301"
+					"sourceid": "284"
 				},
 				{
 					"pluginid": "10109",
@@ -1353,31 +1326,7 @@
 							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
 						},
 						{
-							"uri": "https://disinfo.quaidorsay.fr/en/our-work",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<noscript><img src=\"https://stats.data.gouv.fr/matomo.php?idsite=89&rec=1\" style=\"border:0;\" alt=\"\" /></noscript>",
-							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
-						},
-						{
-							"uri": "https://disinfo.quaidorsay.fr/encyclopedia/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<noscript><img src=\"https://stats.data.gouv.fr/matomo.php?idsite=89&rec=1\" style=\"border:0;\" alt=\"\" /></noscript>",
-							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
-						},
-						{
-							"uri": "https://disinfo.quaidorsay.fr/encyclopedia/introduction/examples",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<noscript><img src=\"https://stats.data.gouv.fr/matomo.php?idsite=89&rec=1\" style=\"border:0;\" alt=\"\" /></noscript>",
-							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
-						},
-						{
-							"uri": "https://disinfo.quaidorsay.fr/encyclopedia/publications/",
+							"uri": "https://disinfo.quaidorsay.fr/encyclopedia/introduction/examples/fr",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1386,6 +1335,22 @@
 						},
 						{
 							"uri": "https://disinfo.quaidorsay.fr/fr",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<noscript><img src=\"https://stats.data.gouv.fr/matomo.php?idsite=89&rec=1\" style=\"border:0;\" alt=\"\" /></noscript>",
+							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
+						},
+						{
+							"uri": "https://disinfo.quaidorsay.fr/fr/nos-travaux",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<noscript><img src=\"https://stats.data.gouv.fr/matomo.php?idsite=89&rec=1\" style=\"border:0;\" alt=\"\" /></noscript>",
+							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
+						},
+						{
+							"uri": "https://disinfo.quaidorsay.fr/mentions-legales.html",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1407,6 +1372,14 @@
 							"attack": "",
 							"evidence": "<a href=\"\" class=\"header_langnav_link\">\r\n\t\t\t\t\t\t\t<span>Fran\u00E7ais</span>\r\n\t\t\t\t\t\t</a>",
 							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
+						},
+						{
+							"uri": "https://disinfo.quaidorsay.fr/suivi-d-audience-et-vie-privee",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<noscript><img src=\"https://stats.data.gouv.fr/matomo.php?idsite=89&rec=1\" style=\"border:0;\" alt=\"\" /></noscript>",
+							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
 						},
 						{
 							"uri": "https://disinfo.quaidorsay.fr/zh-Hant",
@@ -1468,23 +1441,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://disinfo.quaidorsay.fr/encyclopedia/",
-							"method": "GET",
-							"param": "cache-control",
-							"attack": "",
-							"evidence": "max-age=600",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://disinfo.quaidorsay.fr/encyclopedia/introduction/definitions",
-							"method": "GET",
-							"param": "cache-control",
-							"attack": "",
-							"evidence": "max-age=600",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://disinfo.quaidorsay.fr/encyclopedia/introduction/examples",
+							"uri": "https://disinfo.quaidorsay.fr/encyclopedia/introduction/examples/fr",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -1508,7 +1465,23 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://disinfo.quaidorsay.fr/tracking.html",
+							"uri": "https://disinfo.quaidorsay.fr/fr/nos-travaux",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "max-age=600",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://disinfo.quaidorsay.fr/mentions-legales.html",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "max-age=600",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://disinfo.quaidorsay.fr/suivi-d-audience-et-vie-privee",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -1551,6 +1524,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://disinfo.quaidorsay.fr",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Age: 0",
+							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
+						},
+						{
 							"uri": "https://disinfo.quaidorsay.fr/",
 							"method": "GET",
 							"param": "",
@@ -1567,31 +1548,15 @@
 							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
+							"uri": "https://disinfo.quaidorsay.fr/assets/img/casestudies/cambrige.jpg",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Age: 0",
+							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
+						},
+						{
 							"uri": "https://disinfo.quaidorsay.fr/en",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "Age: 0",
-							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
-						},
-						{
-							"uri": "https://disinfo.quaidorsay.fr/en/our-work",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "Age: 0",
-							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
-						},
-						{
-							"uri": "https://disinfo.quaidorsay.fr/encyclopedia/introduction/examples",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "Age: 0",
-							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
-						},
-						{
-							"uri": "https://disinfo.quaidorsay.fr/encyclopedia/publications/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1615,6 +1580,14 @@
 							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
+							"uri": "https://disinfo.quaidorsay.fr/mentions-legales.html",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Age: 0",
+							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
+						},
+						{
 							"uri": "https://disinfo.quaidorsay.fr/robots.txt",
 							"method": "GET",
 							"param": "",
@@ -1629,15 +1602,23 @@
 							"attack": "",
 							"evidence": "Age: 0",
 							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
+						},
+						{
+							"uri": "https://disinfo.quaidorsay.fr/suivi-d-audience-et-vie-privee",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Age: 0",
+							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
 						}
 					],
-					"count": "11",
+					"count": "12",
 					"solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information.  If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request.</p>",
 					"otherinfo": "",
-					"reference": "<p>https://tools.ietf.org/html/rfc7234</p><p>https://tools.ietf.org/html/rfc7231</p><p>http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html (obsoleted by rfc7234)</p>",
+					"reference": "<p>https://tools.ietf.org/html/rfc7234</p><p>https://tools.ietf.org/html/rfc7231</p><p>https://www.rfc-editor.org/rfc/rfc9110.html (obsoleted by rfc7234)</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -1658,7 +1639,15 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://disinfo.quaidorsay.fr/favicon.ico",
+							"uri": "https://disinfo.quaidorsay.fr/robots.txt",
+							"method": "GET",
+							"param": "Sec-Fetch-Dest",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://disinfo.quaidorsay.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -1666,13 +1655,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-Dest header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -1693,7 +1682,15 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://disinfo.quaidorsay.fr/favicon.ico",
+							"uri": "https://disinfo.quaidorsay.fr/robots.txt",
+							"method": "GET",
+							"param": "Sec-Fetch-Mode",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://disinfo.quaidorsay.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -1701,7 +1698,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-Mode header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
@@ -1726,23 +1723,15 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
-						},
-						{
-							"uri": "https://disinfo.quaidorsay.fr/favicon.ico",
-							"method": "GET",
-							"param": "Sec-Fetch-Site",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "1",
 					"solution": "<p>Ensure that Sec-Fetch-Site header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -1763,7 +1752,15 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://disinfo.quaidorsay.fr/favicon.ico",
+							"uri": "https://disinfo.quaidorsay.fr/robots.txt",
+							"method": "GET",
+							"param": "Sec-Fetch-User",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://disinfo.quaidorsay.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -1771,13 +1768,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-User header is included in user initiated requests.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10049",
@@ -1822,30 +1819,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://disinfo.quaidorsay.fr/en/our-work",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "max-age=600",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://disinfo.quaidorsay.fr/encyclopedia/introduction/examples",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "max-age=600",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://disinfo.quaidorsay.fr/encyclopedia/publications/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "max-age=600",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://disinfo.quaidorsay.fr/favicon.ico",
 							"method": "GET",
 							"param": "",
@@ -1855,6 +1828,22 @@
 						},
 						{
 							"uri": "https://disinfo.quaidorsay.fr/fr",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=600",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://disinfo.quaidorsay.fr/fr/nos-travaux",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=600",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://disinfo.quaidorsay.fr/mentions-legales.html",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1876,6 +1865,14 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
+							"uri": "https://disinfo.quaidorsay.fr/suivi-d-audience-et-vie-privee",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=600",
+							"otherinfo": ""
 						}
 					],
 					"count": "11",
@@ -1884,7 +1881,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "6"
+					"sourceid": "1"
 				}
 			]
 		}

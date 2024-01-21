@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 14 Jan 2024 02:21:19",
+	"@generated": "Sun, 21 Jan 2024 02:08:30",
 	"site":[ 
 		{
 			"@name": "https://audioconf.numerique.gouv.fr",
@@ -39,7 +39,7 @@
 					"count": "2",
 					"solution": "<p>Phase: Architecture and Design</p><p>Use a vetted library or framework that does not allow this weakness to occur or provides constructs that make this weakness easier to avoid.</p><p>For example, use anti-CSRF packages such as the OWASP CSRFGuard.</p><p></p><p>Phase: Implementation</p><p>Ensure that your application is free of cross-site scripting issues, because most CSRF defenses can be bypassed using attacker-controlled script.</p><p></p><p>Phase: Architecture and Design</p><p>Generate a unique nonce for each form, place the nonce into the form, and verify the nonce upon receipt of the form. Be sure that the nonce is not predictable (CWE-330).</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Identify especially dangerous operations. When the user performs a dangerous operation, send a separate confirmation request to ensure that the user intended to perform that operation.</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Use the ESAPI Session Management control.</p><p>This control includes a component for CSRF.</p><p></p><p>Do not use the GET method for any request that triggers a state change.</p><p></p><p>Phase: Implementation</p><p>Check the HTTP Referer header to see if the request originated from an expected page. This could break legitimate functionality, because users or proxies may have disabled sending the Referer for privacy reasons.</p>",
 					"otherinfo": "<p>No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"email\" \"userTimezoneOffset\" ].</p>",
-					"reference": "<p>http://projects.webappsec.org/Cross-Site-Request-Forgery</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
 					"sourceid": "1"
@@ -74,7 +74,7 @@
 					"count": "2",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is properly configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "<p>The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: </p><p>frame-ancestors, form-action</p><p></p><p>The directive(s): frame-ancestors, form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything.</p>",
-					"reference": "<p>http://www.w3.org/TR/CSP2/</p><p>http://www.w3.org/TR/CSP/</p><p>http://caniuse.com/#search=content+security+policy</p><p>http://content-security-policy.com/</p><p>https://github.com/shapesecurity/salvation</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
+					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/shapesecurity/salvation</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
 					"cweid": "693",
 					"wascid": "15",
 					"sourceid": "21"
@@ -141,7 +141,7 @@
 					"count": "6",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "",
-					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>http://www.w3.org/TR/CSP/</p><p>http://w3c.github.io/webappsec/specs/content-security-policy/csp-specification.dev.html</p><p>http://www.html5rocks.com/en/tutorials/security/content-security-policy/</p><p>http://caniuse.com/#feat=contentsecuritypolicy</p><p>http://content-security-policy.com/</p>",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>https://www.w3.org/TR/CSP/</p><p>https://w3c.github.io/webappsec-csp/</p><p>https://web.dev/articles/csp</p><p>https://caniuse.com/#feat=contentsecuritypolicy</p><p>https://content-security-policy.com/</p>",
 					"cweid": "693",
 					"wascid": "15",
 					"sourceid": "1"
@@ -158,6 +158,14 @@
 					"instances":[ 
 						{
 							"uri": "https://audioconf.numerique.gouv.fr",
+							"method": "GET",
+							"param": "x-frame-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://audioconf.numerique.gouv.fr/",
 							"method": "GET",
 							"param": "x-frame-options",
 							"attack": "",
@@ -197,7 +205,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "5",
+					"count": "6",
 					"solution": "<p>Modern Web browsers support the Content-Security-Policy and X-Frame-Options HTTP headers. Ensure one of them is set on all web pages returned by your site/app.</p><p>If you expect the page to be framed only by pages on your server (e.g. it's part of a FRAMESET) then you'll want to use SAMEORIGIN, otherwise if you never expect the page to be framed, you should use DENY. Alternatively consider implementing Content Security Policy's \"frame-ancestors\" directive.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options</p>",
@@ -224,7 +232,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://audioconf.numerique.gouv.fr/stats",
+							"uri": "https://audioconf.numerique.gouv.fr/questions-frequentes",
 							"method": "GET",
 							"param": "connect.sid",
 							"attack": "",
@@ -307,14 +315,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://audioconf.numerique.gouv.fr/static/gouvfr/js/dsfr.module.min.js",
-							"method": "GET",
-							"param": "sc-sticky-session",
-							"attack": "",
-							"evidence": "Set-Cookie: sc-sticky-session",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://audioconf.numerique.gouv.fr/static/images/favicon/favicon-16x16.png",
 							"method": "GET",
 							"param": "sc-sticky-session",
@@ -347,7 +347,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "12",
+					"count": "11",
 					"solution": "<p>Ensure that the SameSite attribute is set to either 'lax' or ideally 'strict' for all cookies.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://tools.ietf.org/html/draft-ietf-httpbis-cookie-same-site</p>",
@@ -489,6 +489,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://audioconf.numerique.gouv.fr/questions-frequentes",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "X-Powered-By: Express",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://audioconf.numerique.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "",
@@ -506,14 +514,6 @@
 						},
 						{
 							"uri": "https://audioconf.numerique.gouv.fr/static/css/custom.css",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "X-Powered-By: Express",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://audioconf.numerique.gouv.fr/static/gouvfr/js/dsfr.module.min.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -556,7 +556,7 @@
 					"count": "11",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress \"X-Powered-By\" headers.</p>",
 					"otherinfo": "",
-					"reference": "<p>http://blogs.msdn.com/b/varunm/archive/2013/04/23/remove-unwanted-http-response-headers.aspx</p><p>http://www.troyhunt.com/2012/02/shhh-dont-let-your-response-headers.html</p>",
+					"reference": "<p>https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/01-Information_Gathering/08-Fingerprint_Web_Application_Framework</p><p>https://www.troyhunt.com/2012/02/shhh-dont-let-your-response-headers.html</p>",
 					"cweid": "200",
 					"wascid": "13",
 					"sourceid": "1"
@@ -652,6 +652,14 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
+							"uri": "https://audioconf.numerique.gouv.fr/static/remixicon/remixicon.css",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
 							"uri": "https://audioconf.numerique.gouv.fr/stats",
 							"method": "GET",
 							"param": "x-content-type-options",
@@ -660,10 +668,10 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						}
 					],
-					"count": "11",
+					"count": "12",
 					"solution": "<p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p>",
 					"otherinfo": "<p>This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.</p><p>At \"High\" threshold this scan rule will not alert on client or server error responses.</p>",
-					"reference": "<p>http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx</p><p>https://owasp.org/www-community/Security_Headers</p>",
+					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
 					"cweid": "693",
 					"wascid": "15",
 					"sourceid": "1"
@@ -683,32 +691,48 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "3ACf-e_OnUKEEpat3NAXduAxw6FQFDchGH",
-							"otherinfo": "\uFFFD\\x0000\uFFFD\uFFFD\uFFFD\u039DB\uFFFD\\x0012\uFFFD\uFFFD\uFFFD\uFFFD\\x0017v\uFFFD1\u00E1P\\x00147!\\x0018"
+							"evidence": "3AB4wNgc8ex_znipHmGTozqiBGF-OyW0Ad",
+							"otherinfo": "\uFFFD\\x0000x\uFFFD\uFFFD\\x001c\uFFFD\uFFFD\uFFFDx\uFFFD\\x001ea\uFFFD\uFFFD:\uFFFD\\x0004a~;%\uFFFD\\x0001"
 						},
 						{
 							"uri": "https://audioconf.numerique.gouv.fr",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "3AtETLNuEUbbYxcPdwkQsS2CzsfeeHnSKt",
-							"otherinfo": "\uFFFD\\x000bDL\uFFFDn\\x0011F\uFFFDc\\x0017\\x000fw\t\\x0010\uFFFD-\uFFFD\uFFFD\uFFFD\uFFFDxy\uFFFD*"
+							"evidence": "3ArYIvzAiHPhbHq1Q1mo2ZRoRz4Bu85AZJ",
+							"otherinfo": "\uFFFD\n\uFFFD\"\uFFFD\uFFFD\uFFFDs\uFFFDlz\uFFFDCY\uFFFD\u0654hG>\\x0001\uFFFD\uFFFD@d"
 						},
 						{
 							"uri": "https://audioconf.numerique.gouv.fr/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "ZFOeW74xu5QZWfFK65YwI8Isljr+fcJgq1JnLyfDdFnUTnn6eQBg3452cMk7896tMC98OdtCskRTlV0Ux8YhoQ==",
-							"otherinfo": "dS\uFFFD[\uFFFD1\uFFFD\uFFFD\\x0019Y\uFFFDJ\uFFFD0#\uFFFD,\uFFFD:\uFFFD}\uFFFD`\uFFFDRg/'\uFFFDtY\uFFFDNy\uFFFDy\\x0000`\u07CEvp\uFFFD;\uFFFD\u07AD0/|9\uFFFDB\uFFFDDS\uFFFD]\\x0014\uFFFD\uFFFD!\uFFFD"
+							"evidence": "Zi/yaut7jV78mW3u5AV7qx577B2vrmIHcdR141j2qndsaUwYrpK5plbXhQdZ4+yvSJl/cLQOPtmjw/hplR/t6Q==",
+							"otherinfo": "f/\uFFFDj\uFFFD{\uFFFD^\uFFFD\uFFFDm\uFFFD\uFFFD\\x0005{\uFFFD\\x001e{\uFFFD\\x001d\uFFFD\uFFFDb\\x0007q\uFFFDu\uFFFDX\uFFFD\uFFFDwliL\\x0018\uFFFD\uFFFD\uFFFD\uFFFDV\u05C5\\x0007Y\uFFFD\uFFFDH\uFFFDp\uFFFD\\x000e>\u0663\uFFFD\uFFFDi\uFFFD\\x001f\uFFFD\uFFFD"
 						},
 						{
 							"uri": "https://audioconf.numerique.gouv.fr/contact",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "Gy3nAx22o6I7P4+GjOUQS262Efj5kr6reS8wR5I9B5/lv8kUBcy7Upxl0Ktl8CCwcXptPgvrNrQmN0a1CklAyA==",
-							"otherinfo": "\\x001b-\uFFFD\\x0003\\x001d\uFFFD\uFFFD\uFFFD;?\uFFFD\uFFFD\uFFFD\uFFFD\\x0010Kn\uFFFD\\x0011\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDy/0G\uFFFD=\\x0007\uFFFD\uFFFD\uFFFD\\x0014\\x0005\u033BR\uFFFDe\u042Be\uFFFD \uFFFDqzm>\\x000b\uFFFD6\uFFFD&7F\uFFFD\nI@\uFFFD"
+							"evidence": "Zi/yaut7jV78mW3u5AV7qx577B2vrmIHcdR141j2qndsaUwYrpK5plbXhQdZ4+yvSJl/cLQOPtmjw/hplR/t6Q==",
+							"otherinfo": "f/\uFFFDj\uFFFD{\uFFFD^\uFFFD\uFFFDm\uFFFD\uFFFD\\x0005{\uFFFD\\x001e{\uFFFD\\x001d\uFFFD\uFFFDb\\x0007q\uFFFDu\uFFFDX\uFFFD\uFFFDwliL\\x0018\uFFFD\uFFFD\uFFFD\uFFFDV\u05C5\\x0007Y\uFFFD\uFFFDH\uFFFDp\uFFFD\\x000e>\u0663\uFFFD\uFFFDi\uFFFD\\x001f\uFFFD\uFFFD"
+						},
+						{
+							"uri": "https://audioconf.numerique.gouv.fr/mentions-legales",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "zaEWGMU93dBF7UPpMyEp9liExFaN2bp2k3eys4cEdRQejw+YGpt8dd+ZjGS/WI+nT67gt4kUGkFmzzYtfnZ7Tg==",
+							"otherinfo": "\u0361\\x0016\\x0018\uFFFD=\uFFFD\uFFFDE\uFFFDC\uFFFD3!)\uFFFDX\uFFFD\uFFFDV\uFFFD\u067Av\uFFFDw\uFFFD\uFFFD\uFFFD\\x0004u\\x0014\\x001e\uFFFD\\x000f\uFFFD\\x001a\uFFFD|u\u07D9\uFFFDd\uFFFDX\uFFFD\uFFFDO\uFFFD\u0DC9\\x0014\\x001aAf\uFFFD6-~v{N"
+						},
+						{
+							"uri": "https://audioconf.numerique.gouv.fr/questions-frequentes",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "3AuEHuBUnAU9NZ3k5-xVTKe_3lQP95qjmM",
+							"otherinfo": "\uFFFD\\x000b\uFFFD\\x001e\uFFFDT\uFFFD\\x0005=5\uFFFD\uFFFD\uFFFD\uFFFDUL\uFFFD\uFFFD\uFFFDT\\x000f\uFFFD\uFFFD\uFFFD\uFFFD"
 						},
 						{
 							"uri": "https://audioconf.numerique.gouv.fr/robots.txt",
@@ -731,57 +755,41 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "ZFOeW74xu5QZWfFK65YwI8Isljr+fcJgq1JnLyfDdFnUTnn6eQBg3452cMk7896tMC98OdtCskRTlV0Ux8YhoQ==",
-							"otherinfo": "dS\uFFFD[\uFFFD1\uFFFD\uFFFD\\x0019Y\uFFFDJ\uFFFD0#\uFFFD,\uFFFD:\uFFFD}\uFFFD`\uFFFDRg/'\uFFFDtY\uFFFDNy\uFFFDy\\x0000`\u07CEvp\uFFFD;\uFFFD\u07AD0/|9\uFFFDB\uFFFDDS\uFFFD]\\x0014\uFFFD\uFFFD!\uFFFD"
-						},
-						{
-							"uri": "https://audioconf.numerique.gouv.fr/static/gouvfr/js/dsfr.module.min.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "ZFOeW74xu5QZWfFK65YwI8Isljr+fcJgq1JnLyfDdFnUTnn6eQBg3452cMk7896tMC98OdtCskRTlV0Ux8YhoQ==",
-							"otherinfo": "dS\uFFFD[\uFFFD1\uFFFD\uFFFD\\x0019Y\uFFFDJ\uFFFD0#\uFFFD,\uFFFD:\uFFFD}\uFFFD`\uFFFDRg/'\uFFFDtY\uFFFDNy\uFFFDy\\x0000`\u07CEvp\uFFFD;\uFFFD\u07AD0/|9\uFFFDB\uFFFDDS\uFFFD]\\x0014\uFFFD\uFFFD!\uFFFD"
+							"evidence": "Zi/yaut7jV78mW3u5AV7qx577B2vrmIHcdR141j2qndsaUwYrpK5plbXhQdZ4+yvSJl/cLQOPtmjw/hplR/t6Q==",
+							"otherinfo": "f/\uFFFDj\uFFFD{\uFFFD^\uFFFD\uFFFDm\uFFFD\uFFFD\\x0005{\uFFFD\\x001e{\uFFFD\\x001d\uFFFD\uFFFDb\\x0007q\uFFFDu\uFFFDX\uFFFD\uFFFDwliL\\x0018\uFFFD\uFFFD\uFFFD\uFFFDV\u05C5\\x0007Y\uFFFD\uFFFDH\uFFFDp\uFFFD\\x000e>\u0663\uFFFD\uFFFDi\uFFFD\\x001f\uFFFD\uFFFD"
 						},
 						{
 							"uri": "https://audioconf.numerique.gouv.fr/static/images/favicon/favicon-16x16.png",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "ZFOeW74xu5QZWfFK65YwI8Isljr+fcJgq1JnLyfDdFnUTnn6eQBg3452cMk7896tMC98OdtCskRTlV0Ux8YhoQ==",
-							"otherinfo": "dS\uFFFD[\uFFFD1\uFFFD\uFFFD\\x0019Y\uFFFDJ\uFFFD0#\uFFFD,\uFFFD:\uFFFD}\uFFFD`\uFFFDRg/'\uFFFDtY\uFFFDNy\uFFFDy\\x0000`\u07CEvp\uFFFD;\uFFFD\u07AD0/|9\uFFFDB\uFFFDDS\uFFFD]\\x0014\uFFFD\uFFFD!\uFFFD"
+							"evidence": "OB5yy/a+JKvDjDyKJeI1ak3OSAwL5jXWrdlZWuZ6EWKD8M4TiSiXljbGoOarnzbFLDelQ9yGuvUusZJhbliw6A==",
+							"otherinfo": "8\\x001er\uFFFD\uFFFD\uFFFD$\uFFFD\u00CC<\uFFFD%\uFFFD5jM\uFFFDH\\x000c\\x000b\uFFFD5\u05AD\uFFFDYZ\uFFFDz\\x0011b\uFFFD\uFFFD\uFFFD\\x0013\uFFFD(\uFFFD\uFFFD6\u01A0\u6ADF6\uFFFD,7\uFFFDC\u0706\uFFFD\uFFFD.\uFFFD\uFFFDanX\uFFFD\uFFFD"
 						},
 						{
 							"uri": "https://audioconf.numerique.gouv.fr/static/images/favicon/favicon-32x32.png",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "ZFOeW74xu5QZWfFK65YwI8Isljr+fcJgq1JnLyfDdFnUTnn6eQBg3452cMk7896tMC98OdtCskRTlV0Ux8YhoQ==",
-							"otherinfo": "dS\uFFFD[\uFFFD1\uFFFD\uFFFD\\x0019Y\uFFFDJ\uFFFD0#\uFFFD,\uFFFD:\uFFFD}\uFFFD`\uFFFDRg/'\uFFFDtY\uFFFDNy\uFFFDy\\x0000`\u07CEvp\uFFFD;\uFFFD\u07AD0/|9\uFFFDB\uFFFDDS\uFFFD]\\x0014\uFFFD\uFFFD!\uFFFD"
+							"evidence": "Zi/yaut7jV78mW3u5AV7qx577B2vrmIHcdR141j2qndsaUwYrpK5plbXhQdZ4+yvSJl/cLQOPtmjw/hplR/t6Q==",
+							"otherinfo": "f/\uFFFDj\uFFFD{\uFFFD^\uFFFD\uFFFDm\uFFFD\uFFFD\\x0005{\uFFFD\\x001e{\uFFFD\\x001d\uFFFD\uFFFDb\\x0007q\uFFFDu\uFFFDX\uFFFD\uFFFDwliL\\x0018\uFFFD\uFFFD\uFFFD\uFFFDV\u05C5\\x0007Y\uFFFD\uFFFDH\uFFFDp\uFFFD\\x000e>\u0663\uFFFD\uFFFDi\uFFFD\\x001f\uFFFD\uFFFD"
 						},
 						{
 							"uri": "https://audioconf.numerique.gouv.fr/stats",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "3AHjeVrlMJkwkLFyRtaIIejV9B6MD-Y4l3",
-							"otherinfo": "\uFFFD\\x0001\uFFFDyZ\uFFFD0\uFFFD0\uFFFD\uFFFDrF\u0588!\uFFFD\uFFFD\uFFFD\\x001e\uFFFD\\x000f\uFFFD8\uFFFD"
-						},
-						{
-							"uri": "https://audioconf.numerique.gouv.fr/commencer-authentification",
-							"method": "POST",
-							"param": "",
-							"attack": "",
-							"evidence": "8H-u4rvIYsh6m3upneck3NGYbXR_SfDuCXrMdZBdHMNYn4xhZ5vfJKEyVQz9f7-n0MtJIHF_QPtHW0M5zH2OljoxYaE2_A9b278v8JyKULpkCax9YhFcj4nag-kCt6PNucQdVkRdptDXSs6134GkQoj5eNyzrKYlMy3BGx5CP00",
-							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFDb\uFFFDz\uFFFD{\uFFFD\uFFFD\uFFFD$\uFFFD\u0458mtI\uFFFD\uFFFD\tz\uFFFDu\uFFFD]\\x001c\uFFFDX\uFFFD\uFFFDag\uFFFD\uFFFD$\uFFFD2U\\x000c\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDI q@\uFFFDG[C9\uFFFD}\uFFFD\uFFFD:1a\uFFFD6\uFFFD\\x000f[\u06FF/\uFFFDP\uFFFDd\t\uFFFD}b\\x0011\\\uFFFD\uFFFD\u0683\uFFFD\\x0002\uFFFD\uFFFD\u0379\uFFFD\\x001dVD]\uFFFD\uFFFD\uFFFDJ\u03B5\u07C1\uFFFDB\uFFFD\uFFFDx\u0733\uFFFD\uFFFD%3-\uFFFD\\x001b\\x001eB?M"
+							"evidence": "Gy3nAx22o6I7P4+GjOUQS262Efj5kr6reS8wR5I9B5/lv8kUBcy7Upxl0Ktl8CCwcXptPgvrNrQmN0a1CklAyA==",
+							"otherinfo": "\\x001b-\uFFFD\\x0003\\x001d\uFFFD\uFFFD\uFFFD;?\uFFFD\uFFFD\uFFFD\uFFFD\\x0010Kn\uFFFD\\x0011\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDy/0G\uFFFD=\\x0007\uFFFD\uFFFD\uFFFD\\x0014\\x0005\u033BR\uFFFDe\u042Be\uFFFD \uFFFDqzm>\\x000b\uFFFD6\uFFFD&7F\uFFFD\nI@\uFFFD"
 						}
 					],
 					"count": "12",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>\uFFFD\\x0000\uFFFD\uFFFD\uFFFD\u039DB\uFFFD\\x0012\uFFFD\uFFFD\uFFFD\uFFFD\\x0017v\uFFFD1\u00E1P\\x00147!\\x0018</p>",
+					"otherinfo": "<p>\uFFFD\\x0000x\uFFFD\uFFFD\\x001c\uFFFD\uFFFD\uFFFDx\uFFFD\\x001ea\uFFFD\uFFFD:\uFFFD\\x0004a~;%\uFFFD\\x0001</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10027",
@@ -880,7 +888,7 @@
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10049",
@@ -987,23 +995,23 @@
 					"desc": "<p>Specifies how and where the data would be used. For instance, if the value is audio, then the requested resource must be audio data and not any other type of resource.</p>",
 					"instances":[ 
 						{
+							"uri": "https://audioconf.numerique.gouv.fr",
+							"method": "GET",
+							"param": "Sec-Fetch-Dest",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://audioconf.numerique.gouv.fr/",
+							"method": "GET",
+							"param": "Sec-Fetch-Dest",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://audioconf.numerique.gouv.fr/robots.txt",
-							"method": "GET",
-							"param": "Sec-Fetch-Dest",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://audioconf.numerique.gouv.fr/sitemap.xml",
-							"method": "GET",
-							"param": "Sec-Fetch-Dest",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://audioconf.numerique.gouv.fr/static/css/custom.css",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -1017,7 +1025,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "21"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -1030,23 +1038,23 @@
 					"desc": "<p>Allows to differentiate between requests for navigating between HTML pages and requests for loading resources like images, audio etc.</p>",
 					"instances":[ 
 						{
+							"uri": "https://audioconf.numerique.gouv.fr",
+							"method": "GET",
+							"param": "Sec-Fetch-Mode",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://audioconf.numerique.gouv.fr/",
+							"method": "GET",
+							"param": "Sec-Fetch-Mode",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://audioconf.numerique.gouv.fr/robots.txt",
-							"method": "GET",
-							"param": "Sec-Fetch-Mode",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://audioconf.numerique.gouv.fr/sitemap.xml",
-							"method": "GET",
-							"param": "Sec-Fetch-Mode",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://audioconf.numerique.gouv.fr/static/css/custom.css",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -1060,7 +1068,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "21"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -1073,23 +1081,23 @@
 					"desc": "<p>Specifies the relationship between request initiator's origin and target's origin.</p>",
 					"instances":[ 
 						{
+							"uri": "https://audioconf.numerique.gouv.fr",
+							"method": "GET",
+							"param": "Sec-Fetch-Site",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://audioconf.numerique.gouv.fr/",
+							"method": "GET",
+							"param": "Sec-Fetch-Site",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://audioconf.numerique.gouv.fr/robots.txt",
-							"method": "GET",
-							"param": "Sec-Fetch-Site",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://audioconf.numerique.gouv.fr/sitemap.xml",
-							"method": "GET",
-							"param": "Sec-Fetch-Site",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://audioconf.numerique.gouv.fr/static/css/custom.css",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -1103,7 +1111,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "21"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -1116,23 +1124,23 @@
 					"desc": "<p>Specifies if a navigation request was initiated by a user.</p>",
 					"instances":[ 
 						{
+							"uri": "https://audioconf.numerique.gouv.fr",
+							"method": "GET",
+							"param": "Sec-Fetch-User",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://audioconf.numerique.gouv.fr/",
+							"method": "GET",
+							"param": "Sec-Fetch-User",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://audioconf.numerique.gouv.fr/robots.txt",
-							"method": "GET",
-							"param": "Sec-Fetch-User",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://audioconf.numerique.gouv.fr/sitemap.xml",
-							"method": "GET",
-							"param": "Sec-Fetch-User",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://audioconf.numerique.gouv.fr/static/css/custom.css",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -1146,7 +1154,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "21"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10112",
@@ -1163,7 +1171,7 @@
 							"method": "GET",
 							"param": "connect.sid",
 							"attack": "",
-							"evidence": "s%3ACf-e_OnUKEEpat3NAXduAxw6FQFDchGH.F4nZkNgISPhvontthGFIk1FvI3jnsS3OOCrMWQc3XTs",
+							"evidence": "s%3AB4wNgc8ex_znipHmGTozqiBGF-OyW0Ad.m9t84qVmVcHXTiXWl1frmavXAPfkozboYQA4ThEnj6E",
 							"otherinfo": "\ncookie:connect.sid\ncookie:sc-sticky-session"
 						},
 						{
@@ -1171,7 +1179,7 @@
 							"method": "GET",
 							"param": "connect.sid",
 							"attack": "",
-							"evidence": "s%3AtETLNuEUbbYxcPdwkQsS2CzsfeeHnSKt.ipKK%2BlLSwyNukvBBWaM4efQ6szdfKnxoP31q63MJGjg",
+							"evidence": "s%3ArYIvzAiHPhbHq1Q1mo2ZRoRz4Bu85AZJ.ApumoSshzyH0vXVJ1catDaOd2scl8Z5pj1eHc1Y4QUs",
 							"otherinfo": "\ncookie:connect.sid\ncookie:sc-sticky-session"
 						},
 						{
@@ -1179,15 +1187,7 @@
 							"method": "GET",
 							"param": "sc-sticky-session",
 							"attack": "",
-							"evidence": "ZFOeW74xu5QZWfFK65YwI8Isljr+fcJgq1JnLyfDdFnUTnn6eQBg3452cMk7896tMC98OdtCskRTlV0Ux8YhoQ==",
-							"otherinfo": "\ncookie:sc-sticky-session"
-						},
-						{
-							"uri": "https://audioconf.numerique.gouv.fr/contact",
-							"method": "GET",
-							"param": "sc-sticky-session",
-							"attack": "",
-							"evidence": "Gy3nAx22o6I7P4+GjOUQS262Efj5kr6reS8wR5I9B5/lv8kUBcy7Upxl0Ktl8CCwcXptPgvrNrQmN0a1CklAyA==",
+							"evidence": "Zi/yaut7jV78mW3u5AV7qx577B2vrmIHcdR141j2qndsaUwYrpK5plbXhQdZ4+yvSJl/cLQOPtmjw/hplR/t6Q==",
 							"otherinfo": "\ncookie:sc-sticky-session"
 						},
 						{
@@ -1211,7 +1211,7 @@
 							"method": "GET",
 							"param": "sc-sticky-session",
 							"attack": "",
-							"evidence": "ZFOeW74xu5QZWfFK65YwI8Isljr+fcJgq1JnLyfDdFnUTnn6eQBg3452cMk7896tMC98OdtCskRTlV0Ux8YhoQ==",
+							"evidence": "Zi/yaut7jV78mW3u5AV7qx577B2vrmIHcdR141j2qndsaUwYrpK5plbXhQdZ4+yvSJl/cLQOPtmjw/hplR/t6Q==",
 							"otherinfo": "\ncookie:sc-sticky-session"
 						},
 						{
@@ -1219,15 +1219,15 @@
 							"method": "GET",
 							"param": "sc-sticky-session",
 							"attack": "",
-							"evidence": "ZFOeW74xu5QZWfFK65YwI8Isljr+fcJgq1JnLyfDdFnUTnn6eQBg3452cMk7896tMC98OdtCskRTlV0Ux8YhoQ==",
+							"evidence": "OB5yy/a+JKvDjDyKJeI1ak3OSAwL5jXWrdlZWuZ6EWKD8M4TiSiXljbGoOarnzbFLDelQ9yGuvUusZJhbliw6A==",
 							"otherinfo": "\ncookie:sc-sticky-session"
 						},
 						{
-							"uri": "https://audioconf.numerique.gouv.fr/static/images/favicon/favicon-32x32.png",
+							"uri": "https://audioconf.numerique.gouv.fr/stats",
 							"method": "GET",
 							"param": "sc-sticky-session",
 							"attack": "",
-							"evidence": "ZFOeW74xu5QZWfFK65YwI8Isljr+fcJgq1JnLyfDdFnUTnn6eQBg3452cMk7896tMC98OdtCskRTlV0Ux8YhoQ==",
+							"evidence": "Gy3nAx22o6I7P4+GjOUQS262Efj5kr6reS8wR5I9B5/lv8kUBcy7Upxl0Ktl8CCwcXptPgvrNrQmN0a1CklAyA==",
 							"otherinfo": "\ncookie:sc-sticky-session"
 						},
 						{
@@ -1235,33 +1235,33 @@
 							"method": "GET",
 							"param": "connect.sid",
 							"attack": "",
-							"evidence": "s%3AtETLNuEUbbYxcPdwkQsS2CzsfeeHnSKt.ipKK%2BlLSwyNukvBBWaM4efQ6szdfKnxoP31q63MJGjg",
+							"evidence": "s%3AB4wNgc8ex_znipHmGTozqiBGF-OyW0Ad.m9t84qVmVcHXTiXWl1frmavXAPfkozboYQA4ThEnj6E",
 							"otherinfo": "\ncookie:connect.sid"
 						},
 						{
-							"uri": "https://audioconf.numerique.gouv.fr/static/gouvfr/css/dsfr.min.css",
-							"method": "GET",
-							"param": "sc-sticky-session",
-							"attack": "",
-							"evidence": "ZFOeW74xu5QZWfFK65YwI8Isljr+fcJgq1JnLyfDdFnUTnn6eQBg3452cMk7896tMC98OdtCskRTlV0Ux8YhoQ==",
-							"otherinfo": "\ncookie:sc-sticky-session"
-						},
-						{
-							"uri": "https://audioconf.numerique.gouv.fr/static/remixicon/remixicon.css",
+							"uri": "https://audioconf.numerique.gouv.fr/static/gouvfr/js/dsfr.module.min.js",
 							"method": "GET",
 							"param": "sc-sticky-session",
 							"attack": "",
 							"evidence": "OB5yy/a+JKvDjDyKJeI1ak3OSAwL5jXWrdlZWuZ6EWKD8M4TiSiXljbGoOarnzbFLDelQ9yGuvUusZJhbliw6A==",
 							"otherinfo": "\ncookie:sc-sticky-session"
+						},
+						{
+							"uri": "https://audioconf.numerique.gouv.fr/commencer-authentification",
+							"method": "POST",
+							"param": "sc-sticky-session",
+							"attack": "",
+							"evidence": "Zi/yaut7jV78mW3u5AV7qx577B2vrmIHcdR141j2qndsaUwYrpK5plbXhQdZ4+yvSJl/cLQOPtmjw/hplR/t6Q==",
+							"otherinfo": "\ncookie:sc-sticky-session"
 						}
 					],
-					"count": "12",
+					"count": "11",
 					"solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
 					"otherinfo": "<p></p><p>cookie:connect.sid</p><p>cookie:sc-sticky-session</p>",
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10049",
@@ -1306,6 +1306,14 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
+							"uri": "https://audioconf.numerique.gouv.fr/questions-frequentes",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
 							"uri": "https://audioconf.numerique.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "",
@@ -1330,7 +1338,7 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						}
 					],
-					"count": "7",
+					"count": "8",
 					"solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information.  If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request. </p>",
 					"otherinfo": "<p>In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.</p>",
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",

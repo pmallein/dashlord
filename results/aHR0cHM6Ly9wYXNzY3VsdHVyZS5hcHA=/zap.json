@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 14 Jan 2024 08:39:02",
+	"@generated": "Sun, 21 Jan 2024 08:21:49",
 	"site":[ 
 		{
 			"@name": "https://passculture.app",
@@ -9,57 +9,6 @@
 			"@port": "443",
 			"@ssl": "true",
 			"alerts": [ 
-				{
-					"pluginid": "10062",
-					"alertRef": "10062",
-					"alert": "PII Disclosure",
-					"name": "PII Disclosure",
-					"riskcode": "3",
-					"confidence": "3",
-					"riskdesc": "High (High)",
-					"desc": "<p>The response contains Personally Identifiable Information, such as CC number, SSN and similar sensitive data.</p>",
-					"instances":[ 
-						{
-							"uri": "https://passculture.app/static/js/2.0b508592.chunk.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "4411991904017",
-							"otherinfo": "Credit Card Type detected: Visa\nBank Identification Number: 441199\nBrand: VISA\nCategory: \nIssuer: VISA DEBIT PROCESSING SERVICE"
-						},
-						{
-							"uri": "https://passculture.app/static/js/2.0b508592.chunk.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "4411992014865",
-							"otherinfo": "Credit Card Type detected: Visa\nBank Identification Number: 441199\nBrand: VISA\nCategory: \nIssuer: VISA DEBIT PROCESSING SERVICE"
-						},
-						{
-							"uri": "https://passculture.app/static/js/main.ab8b8bb0.chunk.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "4411991904017",
-							"otherinfo": "Credit Card Type detected: Visa\nBank Identification Number: 441199\nBrand: VISA\nCategory: \nIssuer: VISA DEBIT PROCESSING SERVICE"
-						},
-						{
-							"uri": "https://passculture.app/static/js/main.ab8b8bb0.chunk.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "4411992014865",
-							"otherinfo": "Credit Card Type detected: Visa\nBank Identification Number: 441199\nBrand: VISA\nCategory: \nIssuer: VISA DEBIT PROCESSING SERVICE"
-						}
-					],
-					"count": "4",
-					"solution": "<p>Check the response for the potential presence of personally identifiable information (PII), ensure nothing sensitive is leaked by the application.</p>",
-					"otherinfo": "<p>Credit Card Type detected: Visa</p><p>Bank Identification Number: 441199</p><p>Brand: VISA</p><p>Category: </p><p>Issuer: VISA DEBIT PROCESSING SERVICE</p>",
-					"reference": "",
-					"cweid": "359",
-					"wascid": "13",
-					"sourceid": "148"
-				},
 				{
 					"pluginid": "10055",
 					"alertRef": "10055-4",
@@ -75,7 +24,7 @@
 							"method": "GET",
 							"param": "content-security-policy",
 							"attack": "",
-							"evidence": "base-uri 'self'; object-src 'none'; script-src 'self' *.youtube.com https://websdk.appsflyer.com https://www.googletagmanager.com https://www.gstatic.com/recaptcha/ https://www.google.com/recaptcha/ https://accounts.google.com/gsi/client https://oos.eu-west-2.outscale.com/public-ubble-ai/ https://passculture.app/static/ 'sha256-jrGJnrgzfvIs35CtCz51cyyxZEBgxeKRKFCZB+pd3CM=' 'sha256-sxxkOvFVQyEw0LGhj+A4h8EBzelUjS5Dr2QvKLSuyTM=' 'sha256-2Okpzl87Wqt94kg+jXsXyZiKZ3NNt0PRjsiIoHqurvU=' 'sha256-UBSRAnoOYOfJP7Nk/gehSuwkrlDQBqCcv80qnJb+m4Y='; style-src 'unsafe-inline' 'self' 'unsafe-eval'",
+							"evidence": "base-uri 'self'; object-src 'none'; script-src 'self' *.youtube.com https://websdk.appsflyer.com https://www.googletagmanager.com https://www.gstatic.com/recaptcha/ https://www.google.com/recaptcha/ https://accounts.google.com/gsi/client https://oos.eu-west-2.outscale.com/public-ubble-ai/ https://passculture.app/static/ 'sha256-jrGJnrgzfvIs35CtCz51cyyxZEBgxeKRKFCZB+pd3CM=' 'sha256-sxxkOvFVQyEw0LGhj+A4h8EBzelUjS5Dr2QvKLSuyTM=' 'sha256-2Okpzl87Wqt94kg+jXsXyZiKZ3NNt0PRjsiIoHqurvU=' 'sha256-W+JoCby/S5Y45jEbPwc54KT5JUN9Vbu6dwBD0oHMU7g='; style-src 'unsafe-inline' 'self' 'unsafe-eval'",
 							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nimg-src, connect-src, frame-src, font-src, media-src, manifest-src, form-action\n\nThe directive(s): form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything."
 						},
 						{
@@ -83,23 +32,23 @@
 							"method": "GET",
 							"param": "content-security-policy",
 							"attack": "",
-							"evidence": "base-uri 'self'; object-src 'none'; script-src 'self' *.youtube.com https://websdk.appsflyer.com https://www.googletagmanager.com https://www.gstatic.com/recaptcha/ https://www.google.com/recaptcha/ https://accounts.google.com/gsi/client https://oos.eu-west-2.outscale.com/public-ubble-ai/ https://passculture.app/static/ 'sha256-jrGJnrgzfvIs35CtCz51cyyxZEBgxeKRKFCZB+pd3CM=' 'sha256-sxxkOvFVQyEw0LGhj+A4h8EBzelUjS5Dr2QvKLSuyTM=' 'sha256-2Okpzl87Wqt94kg+jXsXyZiKZ3NNt0PRjsiIoHqurvU=' 'sha256-UBSRAnoOYOfJP7Nk/gehSuwkrlDQBqCcv80qnJb+m4Y='; style-src 'unsafe-inline' 'self' 'unsafe-eval'",
+							"evidence": "base-uri 'self'; object-src 'none'; script-src 'self' *.youtube.com https://websdk.appsflyer.com https://www.googletagmanager.com https://www.gstatic.com/recaptcha/ https://www.google.com/recaptcha/ https://accounts.google.com/gsi/client https://oos.eu-west-2.outscale.com/public-ubble-ai/ https://passculture.app/static/ 'sha256-jrGJnrgzfvIs35CtCz51cyyxZEBgxeKRKFCZB+pd3CM=' 'sha256-sxxkOvFVQyEw0LGhj+A4h8EBzelUjS5Dr2QvKLSuyTM=' 'sha256-2Okpzl87Wqt94kg+jXsXyZiKZ3NNt0PRjsiIoHqurvU=' 'sha256-W+JoCby/S5Y45jEbPwc54KT5JUN9Vbu6dwBD0oHMU7g='; style-src 'unsafe-inline' 'self' 'unsafe-eval'",
 							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nimg-src, connect-src, frame-src, font-src, media-src, manifest-src, form-action\n\nThe directive(s): form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything."
 						},
 						{
-							"uri": "https://passculture.app/offre/6652358",
+							"uri": "https://passculture.app/offre/30079319",
 							"method": "GET",
 							"param": "content-security-policy",
 							"attack": "",
-							"evidence": "base-uri 'self'; object-src 'none'; script-src 'self' *.youtube.com https://websdk.appsflyer.com https://www.googletagmanager.com https://www.gstatic.com/recaptcha/ https://www.google.com/recaptcha/ https://accounts.google.com/gsi/client https://oos.eu-west-2.outscale.com/public-ubble-ai/ https://passculture.app/static/ 'sha256-jrGJnrgzfvIs35CtCz51cyyxZEBgxeKRKFCZB+pd3CM=' 'sha256-sxxkOvFVQyEw0LGhj+A4h8EBzelUjS5Dr2QvKLSuyTM=' 'sha256-2Okpzl87Wqt94kg+jXsXyZiKZ3NNt0PRjsiIoHqurvU=' 'sha256-UBSRAnoOYOfJP7Nk/gehSuwkrlDQBqCcv80qnJb+m4Y='; style-src 'unsafe-inline' 'self' 'unsafe-eval'",
+							"evidence": "base-uri 'self'; object-src 'none'; script-src 'self' *.youtube.com https://websdk.appsflyer.com https://www.googletagmanager.com https://www.gstatic.com/recaptcha/ https://www.google.com/recaptcha/ https://accounts.google.com/gsi/client https://oos.eu-west-2.outscale.com/public-ubble-ai/ https://passculture.app/static/ 'sha256-jrGJnrgzfvIs35CtCz51cyyxZEBgxeKRKFCZB+pd3CM=' 'sha256-sxxkOvFVQyEw0LGhj+A4h8EBzelUjS5Dr2QvKLSuyTM=' 'sha256-2Okpzl87Wqt94kg+jXsXyZiKZ3NNt0PRjsiIoHqurvU=' 'sha256-W+JoCby/S5Y45jEbPwc54KT5JUN9Vbu6dwBD0oHMU7g='; style-src 'unsafe-inline' 'self' 'unsafe-eval'",
 							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nimg-src, connect-src, frame-src, font-src, media-src, manifest-src, form-action\n\nThe directive(s): form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything."
 						},
 						{
-							"uri": "https://passculture.app/offre/78546742",
+							"uri": "https://passculture.app/offre/78546610",
 							"method": "GET",
 							"param": "content-security-policy",
 							"attack": "",
-							"evidence": "base-uri 'self'; object-src 'none'; script-src 'self' *.youtube.com https://websdk.appsflyer.com https://www.googletagmanager.com https://www.gstatic.com/recaptcha/ https://www.google.com/recaptcha/ https://accounts.google.com/gsi/client https://oos.eu-west-2.outscale.com/public-ubble-ai/ https://passculture.app/static/ 'sha256-jrGJnrgzfvIs35CtCz51cyyxZEBgxeKRKFCZB+pd3CM=' 'sha256-sxxkOvFVQyEw0LGhj+A4h8EBzelUjS5Dr2QvKLSuyTM=' 'sha256-2Okpzl87Wqt94kg+jXsXyZiKZ3NNt0PRjsiIoHqurvU=' 'sha256-UBSRAnoOYOfJP7Nk/gehSuwkrlDQBqCcv80qnJb+m4Y='; style-src 'unsafe-inline' 'self' 'unsafe-eval'",
+							"evidence": "base-uri 'self'; object-src 'none'; script-src 'self' *.youtube.com https://websdk.appsflyer.com https://www.googletagmanager.com https://www.gstatic.com/recaptcha/ https://www.google.com/recaptcha/ https://accounts.google.com/gsi/client https://oos.eu-west-2.outscale.com/public-ubble-ai/ https://passculture.app/static/ 'sha256-jrGJnrgzfvIs35CtCz51cyyxZEBgxeKRKFCZB+pd3CM=' 'sha256-sxxkOvFVQyEw0LGhj+A4h8EBzelUjS5Dr2QvKLSuyTM=' 'sha256-2Okpzl87Wqt94kg+jXsXyZiKZ3NNt0PRjsiIoHqurvU=' 'sha256-W+JoCby/S5Y45jEbPwc54KT5JUN9Vbu6dwBD0oHMU7g='; style-src 'unsafe-inline' 'self' 'unsafe-eval'",
 							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nimg-src, connect-src, frame-src, font-src, media-src, manifest-src, form-action\n\nThe directive(s): form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything."
 						},
 						{
@@ -107,17 +56,17 @@
 							"method": "GET",
 							"param": "content-security-policy",
 							"attack": "",
-							"evidence": "base-uri 'self'; object-src 'none'; script-src 'self' *.youtube.com https://websdk.appsflyer.com https://www.googletagmanager.com https://www.gstatic.com/recaptcha/ https://www.google.com/recaptcha/ https://accounts.google.com/gsi/client https://oos.eu-west-2.outscale.com/public-ubble-ai/ https://passculture.app/static/ 'sha256-jrGJnrgzfvIs35CtCz51cyyxZEBgxeKRKFCZB+pd3CM=' 'sha256-sxxkOvFVQyEw0LGhj+A4h8EBzelUjS5Dr2QvKLSuyTM=' 'sha256-2Okpzl87Wqt94kg+jXsXyZiKZ3NNt0PRjsiIoHqurvU=' 'sha256-UBSRAnoOYOfJP7Nk/gehSuwkrlDQBqCcv80qnJb+m4Y='; style-src 'unsafe-inline' 'self' 'unsafe-eval'",
+							"evidence": "base-uri 'self'; object-src 'none'; script-src 'self' *.youtube.com https://websdk.appsflyer.com https://www.googletagmanager.com https://www.gstatic.com/recaptcha/ https://www.google.com/recaptcha/ https://accounts.google.com/gsi/client https://oos.eu-west-2.outscale.com/public-ubble-ai/ https://passculture.app/static/ 'sha256-jrGJnrgzfvIs35CtCz51cyyxZEBgxeKRKFCZB+pd3CM=' 'sha256-sxxkOvFVQyEw0LGhj+A4h8EBzelUjS5Dr2QvKLSuyTM=' 'sha256-2Okpzl87Wqt94kg+jXsXyZiKZ3NNt0PRjsiIoHqurvU=' 'sha256-W+JoCby/S5Y45jEbPwc54KT5JUN9Vbu6dwBD0oHMU7g='; style-src 'unsafe-inline' 'self' 'unsafe-eval'",
 							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nimg-src, connect-src, frame-src, font-src, media-src, manifest-src, form-action\n\nThe directive(s): form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything."
 						}
 					],
 					"count": "5",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is properly configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "<p>The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: </p><p>img-src, connect-src, frame-src, font-src, media-src, manifest-src, form-action</p><p></p><p>The directive(s): form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything.</p>",
-					"reference": "<p>http://www.w3.org/TR/CSP2/</p><p>http://www.w3.org/TR/CSP/</p><p>http://caniuse.com/#search=content+security+policy</p><p>http://content-security-policy.com/</p><p>https://github.com/shapesecurity/salvation</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
+					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/shapesecurity/salvation</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10055",
@@ -134,7 +83,7 @@
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
-							"evidence": "base-uri 'self'; object-src 'none'; script-src 'self' *.youtube.com https://websdk.appsflyer.com https://www.googletagmanager.com https://www.gstatic.com/recaptcha/ https://www.google.com/recaptcha/ https://accounts.google.com/gsi/client https://oos.eu-west-2.outscale.com/public-ubble-ai/ https://passculture.app/static/ 'sha256-jrGJnrgzfvIs35CtCz51cyyxZEBgxeKRKFCZB+pd3CM=' 'sha256-sxxkOvFVQyEw0LGhj+A4h8EBzelUjS5Dr2QvKLSuyTM=' 'sha256-2Okpzl87Wqt94kg+jXsXyZiKZ3NNt0PRjsiIoHqurvU=' 'sha256-UBSRAnoOYOfJP7Nk/gehSuwkrlDQBqCcv80qnJb+m4Y='; style-src 'unsafe-inline' 'self' 'unsafe-eval'",
+							"evidence": "base-uri 'self'; object-src 'none'; script-src 'self' *.youtube.com https://websdk.appsflyer.com https://www.googletagmanager.com https://www.gstatic.com/recaptcha/ https://www.google.com/recaptcha/ https://accounts.google.com/gsi/client https://oos.eu-west-2.outscale.com/public-ubble-ai/ https://passculture.app/static/ 'sha256-jrGJnrgzfvIs35CtCz51cyyxZEBgxeKRKFCZB+pd3CM=' 'sha256-sxxkOvFVQyEw0LGhj+A4h8EBzelUjS5Dr2QvKLSuyTM=' 'sha256-2Okpzl87Wqt94kg+jXsXyZiKZ3NNt0PRjsiIoHqurvU=' 'sha256-W+JoCby/S5Y45jEbPwc54KT5JUN9Vbu6dwBD0oHMU7g='; style-src 'unsafe-inline' 'self' 'unsafe-eval'",
 							"otherinfo": "style-src includes unsafe-inline."
 						},
 						{
@@ -142,23 +91,23 @@
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
-							"evidence": "base-uri 'self'; object-src 'none'; script-src 'self' *.youtube.com https://websdk.appsflyer.com https://www.googletagmanager.com https://www.gstatic.com/recaptcha/ https://www.google.com/recaptcha/ https://accounts.google.com/gsi/client https://oos.eu-west-2.outscale.com/public-ubble-ai/ https://passculture.app/static/ 'sha256-jrGJnrgzfvIs35CtCz51cyyxZEBgxeKRKFCZB+pd3CM=' 'sha256-sxxkOvFVQyEw0LGhj+A4h8EBzelUjS5Dr2QvKLSuyTM=' 'sha256-2Okpzl87Wqt94kg+jXsXyZiKZ3NNt0PRjsiIoHqurvU=' 'sha256-UBSRAnoOYOfJP7Nk/gehSuwkrlDQBqCcv80qnJb+m4Y='; style-src 'unsafe-inline' 'self' 'unsafe-eval'",
+							"evidence": "base-uri 'self'; object-src 'none'; script-src 'self' *.youtube.com https://websdk.appsflyer.com https://www.googletagmanager.com https://www.gstatic.com/recaptcha/ https://www.google.com/recaptcha/ https://accounts.google.com/gsi/client https://oos.eu-west-2.outscale.com/public-ubble-ai/ https://passculture.app/static/ 'sha256-jrGJnrgzfvIs35CtCz51cyyxZEBgxeKRKFCZB+pd3CM=' 'sha256-sxxkOvFVQyEw0LGhj+A4h8EBzelUjS5Dr2QvKLSuyTM=' 'sha256-2Okpzl87Wqt94kg+jXsXyZiKZ3NNt0PRjsiIoHqurvU=' 'sha256-W+JoCby/S5Y45jEbPwc54KT5JUN9Vbu6dwBD0oHMU7g='; style-src 'unsafe-inline' 'self' 'unsafe-eval'",
 							"otherinfo": "style-src includes unsafe-inline."
 						},
 						{
-							"uri": "https://passculture.app/offre/6652358",
+							"uri": "https://passculture.app/offre/30079319",
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
-							"evidence": "base-uri 'self'; object-src 'none'; script-src 'self' *.youtube.com https://websdk.appsflyer.com https://www.googletagmanager.com https://www.gstatic.com/recaptcha/ https://www.google.com/recaptcha/ https://accounts.google.com/gsi/client https://oos.eu-west-2.outscale.com/public-ubble-ai/ https://passculture.app/static/ 'sha256-jrGJnrgzfvIs35CtCz51cyyxZEBgxeKRKFCZB+pd3CM=' 'sha256-sxxkOvFVQyEw0LGhj+A4h8EBzelUjS5Dr2QvKLSuyTM=' 'sha256-2Okpzl87Wqt94kg+jXsXyZiKZ3NNt0PRjsiIoHqurvU=' 'sha256-UBSRAnoOYOfJP7Nk/gehSuwkrlDQBqCcv80qnJb+m4Y='; style-src 'unsafe-inline' 'self' 'unsafe-eval'",
+							"evidence": "base-uri 'self'; object-src 'none'; script-src 'self' *.youtube.com https://websdk.appsflyer.com https://www.googletagmanager.com https://www.gstatic.com/recaptcha/ https://www.google.com/recaptcha/ https://accounts.google.com/gsi/client https://oos.eu-west-2.outscale.com/public-ubble-ai/ https://passculture.app/static/ 'sha256-jrGJnrgzfvIs35CtCz51cyyxZEBgxeKRKFCZB+pd3CM=' 'sha256-sxxkOvFVQyEw0LGhj+A4h8EBzelUjS5Dr2QvKLSuyTM=' 'sha256-2Okpzl87Wqt94kg+jXsXyZiKZ3NNt0PRjsiIoHqurvU=' 'sha256-W+JoCby/S5Y45jEbPwc54KT5JUN9Vbu6dwBD0oHMU7g='; style-src 'unsafe-inline' 'self' 'unsafe-eval'",
 							"otherinfo": "style-src includes unsafe-inline."
 						},
 						{
-							"uri": "https://passculture.app/offre/78546742",
+							"uri": "https://passculture.app/offre/78546610",
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
-							"evidence": "base-uri 'self'; object-src 'none'; script-src 'self' *.youtube.com https://websdk.appsflyer.com https://www.googletagmanager.com https://www.gstatic.com/recaptcha/ https://www.google.com/recaptcha/ https://accounts.google.com/gsi/client https://oos.eu-west-2.outscale.com/public-ubble-ai/ https://passculture.app/static/ 'sha256-jrGJnrgzfvIs35CtCz51cyyxZEBgxeKRKFCZB+pd3CM=' 'sha256-sxxkOvFVQyEw0LGhj+A4h8EBzelUjS5Dr2QvKLSuyTM=' 'sha256-2Okpzl87Wqt94kg+jXsXyZiKZ3NNt0PRjsiIoHqurvU=' 'sha256-UBSRAnoOYOfJP7Nk/gehSuwkrlDQBqCcv80qnJb+m4Y='; style-src 'unsafe-inline' 'self' 'unsafe-eval'",
+							"evidence": "base-uri 'self'; object-src 'none'; script-src 'self' *.youtube.com https://websdk.appsflyer.com https://www.googletagmanager.com https://www.gstatic.com/recaptcha/ https://www.google.com/recaptcha/ https://accounts.google.com/gsi/client https://oos.eu-west-2.outscale.com/public-ubble-ai/ https://passculture.app/static/ 'sha256-jrGJnrgzfvIs35CtCz51cyyxZEBgxeKRKFCZB+pd3CM=' 'sha256-sxxkOvFVQyEw0LGhj+A4h8EBzelUjS5Dr2QvKLSuyTM=' 'sha256-2Okpzl87Wqt94kg+jXsXyZiKZ3NNt0PRjsiIoHqurvU=' 'sha256-W+JoCby/S5Y45jEbPwc54KT5JUN9Vbu6dwBD0oHMU7g='; style-src 'unsafe-inline' 'self' 'unsafe-eval'",
 							"otherinfo": "style-src includes unsafe-inline."
 						},
 						{
@@ -166,44 +115,17 @@
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
-							"evidence": "base-uri 'self'; object-src 'none'; script-src 'self' *.youtube.com https://websdk.appsflyer.com https://www.googletagmanager.com https://www.gstatic.com/recaptcha/ https://www.google.com/recaptcha/ https://accounts.google.com/gsi/client https://oos.eu-west-2.outscale.com/public-ubble-ai/ https://passculture.app/static/ 'sha256-jrGJnrgzfvIs35CtCz51cyyxZEBgxeKRKFCZB+pd3CM=' 'sha256-sxxkOvFVQyEw0LGhj+A4h8EBzelUjS5Dr2QvKLSuyTM=' 'sha256-2Okpzl87Wqt94kg+jXsXyZiKZ3NNt0PRjsiIoHqurvU=' 'sha256-UBSRAnoOYOfJP7Nk/gehSuwkrlDQBqCcv80qnJb+m4Y='; style-src 'unsafe-inline' 'self' 'unsafe-eval'",
+							"evidence": "base-uri 'self'; object-src 'none'; script-src 'self' *.youtube.com https://websdk.appsflyer.com https://www.googletagmanager.com https://www.gstatic.com/recaptcha/ https://www.google.com/recaptcha/ https://accounts.google.com/gsi/client https://oos.eu-west-2.outscale.com/public-ubble-ai/ https://passculture.app/static/ 'sha256-jrGJnrgzfvIs35CtCz51cyyxZEBgxeKRKFCZB+pd3CM=' 'sha256-sxxkOvFVQyEw0LGhj+A4h8EBzelUjS5Dr2QvKLSuyTM=' 'sha256-2Okpzl87Wqt94kg+jXsXyZiKZ3NNt0PRjsiIoHqurvU=' 'sha256-W+JoCby/S5Y45jEbPwc54KT5JUN9Vbu6dwBD0oHMU7g='; style-src 'unsafe-inline' 'self' 'unsafe-eval'",
 							"otherinfo": "style-src includes unsafe-inline."
 						}
 					],
 					"count": "5",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is properly configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "<p>style-src includes unsafe-inline.</p>",
-					"reference": "<p>http://www.w3.org/TR/CSP2/</p><p>http://www.w3.org/TR/CSP/</p><p>http://caniuse.com/#search=content+security+policy</p><p>http://content-security-policy.com/</p><p>https://github.com/shapesecurity/salvation</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
+					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/shapesecurity/salvation</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1"
-				},
-				{
-					"pluginid": "10038",
-					"alertRef": "10038-1",
-					"alert": "Content Security Policy (CSP) Header Not Set",
-					"name": "Content Security Policy (CSP) Header Not Set",
-					"riskcode": "2",
-					"confidence": "3",
-					"riskdesc": "Medium (High)",
-					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
-					"instances":[ 
-						{
-							"uri": "https://passculture.app/offre/81754359",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						}
-					],
-					"count": "1",
-					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
-					"otherinfo": "",
-					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>http://www.w3.org/TR/CSP/</p><p>http://w3c.github.io/webappsec/specs/content-security-policy/csp-specification.dev.html</p><p>http://www.html5rocks.com/en/tutorials/security/content-security-policy/</p><p>http://caniuse.com/#feat=contentsecuritypolicy</p><p>http://content-security-policy.com/</p>",
-					"cweid": "693",
-					"wascid": "15",
-					"sourceid": "123"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10020",
@@ -240,6 +162,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://passculture.app/offre/30079319",
+							"method": "GET",
+							"param": "x-frame-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://passculture.app/offre/44895811",
 							"method": "GET",
 							"param": "x-frame-options",
@@ -256,7 +186,15 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://passculture.app/offre/46139041",
+							"uri": "https://passculture.app/offre/59674857",
+							"method": "GET",
+							"param": "x-frame-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://passculture.app/offre/6119313",
 							"method": "GET",
 							"param": "x-frame-options",
 							"attack": "",
@@ -288,14 +226,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://passculture.app/offre/78546742",
-							"method": "GET",
-							"param": "x-frame-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://passculture.app/recherche",
 							"method": "GET",
 							"param": "x-frame-options",
@@ -304,13 +234,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "11",
+					"count": "12",
 					"solution": "<p>Modern Web browsers support the Content-Security-Policy and X-Frame-Options HTTP headers. Ensure one of them is set on all web pages returned by your site/app.</p><p>If you expect the page to be framed only by pages on your server (e.g. it's part of a FRAMESET) then you'll want to use SAMEORIGIN, otherwise if you never expect the page to be framed, you should use DENY. Alternatively consider implementing Content Security Policy's \"frame-ancestors\" directive.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options</p>",
 					"cweid": "1021",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10110",
@@ -323,7 +253,7 @@
 					"desc": "<p>A dangerous JS function seems to be in use that would leave the site vulnerable.</p>",
 					"instances":[ 
 						{
-							"uri": "https://passculture.app/static/js/2.0b508592.chunk.js",
+							"uri": "https://passculture.app/static/js/2.a87c3f9b.chunk.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -337,7 +267,7 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "148"
+					"sourceid": "118"
 				},
 				{
 					"pluginid": "10063",
@@ -366,7 +296,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://passculture.app/offre/45800261",
+							"uri": "https://passculture.app/offre/30079319",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -374,7 +304,15 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://passculture.app/offre/46139041",
+							"uri": "https://passculture.app/offre/44895811",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://passculture.app/offre/45800261",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -406,14 +344,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://passculture.app/offre/78546742",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://passculture.app/recherche",
 							"method": "GET",
 							"param": "",
@@ -422,7 +352,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://passculture.app/static/js/3.4052250d.chunk.js",
+							"uri": "https://passculture.app/static/js/3.19f19030.chunk.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -430,7 +360,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://passculture.app/static/js/4.1e5aa944.chunk.js",
+							"uri": "https://passculture.app/static/js/4.87f5e787.chunk.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -457,7 +387,7 @@
 					"desc": "<p>A private IP (such as 10.x.x.x, 172.x.x.x, 192.168.x.x) or an Amazon EC2 private hostname (for example, ip-10-0-56-78) has been found in the HTTP response body. This information might be helpful for further attacks targeting internal systems.</p>",
 					"instances":[ 
 						{
-							"uri": "https://passculture.app/static/js/main.ab8b8bb0.chunk.js",
+							"uri": "https://passculture.app/static/js/main.c26aaab9.chunk.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -471,7 +401,7 @@
 					"reference": "<p>https://tools.ietf.org/html/rfc1918</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "147"
+					"sourceid": "120"
 				},
 				{
 					"pluginid": "10037",
@@ -532,7 +462,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://passculture.app/iosSplashscreens/iphoneplus_splash.png",
+							"uri": "https://passculture.app/iosSplashscreens/iphonex_splash.png",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -540,7 +470,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://passculture.app/iosSplashscreens/iphonex_splash.png",
+							"uri": "https://passculture.app/manifest.json",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -575,14 +505,14 @@
 					"count": "11",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress \"X-Powered-By\" headers.</p>",
 					"otherinfo": "",
-					"reference": "<p>http://blogs.msdn.com/b/varunm/archive/2013/04/23/remove-unwanted-http-response-headers.aspx</p><p>http://www.troyhunt.com/2012/02/shhh-dont-let-your-response-headers.html</p>",
+					"reference": "<p>https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/01-Information_Gathering/08-Fingerprint_Web_Application_Framework</p><p>https://www.troyhunt.com/2012/02/shhh-dont-let-your-response-headers.html</p>",
 					"cweid": "200",
 					"wascid": "13",
 					"sourceid": "6"
 				},
 				{
 					"pluginid": "10035",
-					"alertRef": "10035",
+					"alertRef": "10035-1",
 					"alert": "Strict-Transport-Security Header Not Set",
 					"name": "Strict-Transport-Security Header Not Set",
 					"riskcode": "1",
@@ -639,7 +569,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://passculture.app/iosSplashscreens/iphoneplus_splash.png",
+							"uri": "https://passculture.app/iosSplashscreens/iphonex_splash.png",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -647,7 +577,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://passculture.app/iosSplashscreens/iphonex_splash.png",
+							"uri": "https://passculture.app/manifest.json",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -682,10 +612,10 @@
 					"count": "11",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to enforce Strict-Transport-Security.</p>",
 					"otherinfo": "",
-					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>http://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>http://caniuse.com/stricttransportsecurity</p><p>http://tools.ietf.org/html/rfc6797</p>",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>https://caniuse.com/stricttransportsecurity</p><p>https://datatracker.ietf.org/doc/html/rfc6797</p>",
 					"cweid": "319",
 					"wascid": "15",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10096",
@@ -710,33 +640,41 @@
 							"method": "GET",
 							"param": "x-goog-meta-goog-reserved-file-mtime",
 							"attack": "",
-							"evidence": "1704883537",
-							"otherinfo": "1704883537, which evaluates to: 2024-01-10 10:45:37"
+							"evidence": "1705590484",
+							"otherinfo": "1705590484, which evaluates to: 2024-01-18 15:08:04"
 						},
 						{
-							"uri": "https://passculture.app/images/app-icon-iphone.png",
+							"uri": "https://passculture.app/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1557887412",
+							"otherinfo": "1557887412, which evaluates to: 2019-05-15 02:30:12"
+						},
+						{
+							"uri": "https://passculture.app/",
 							"method": "GET",
 							"param": "x-goog-meta-goog-reserved-file-mtime",
 							"attack": "",
-							"evidence": "1702304340",
-							"otherinfo": "1702304340, which evaluates to: 2023-12-11 14:19:00"
+							"evidence": "1705590484",
+							"otherinfo": "1705590484, which evaluates to: 2024-01-18 15:08:04"
 						},
 						{
 							"uri": "https://passculture.app/robots.txt",
 							"method": "GET",
 							"param": "x-goog-meta-goog-reserved-file-mtime",
 							"attack": "",
-							"evidence": "1704883400",
-							"otherinfo": "1704883400, which evaluates to: 2024-01-10 10:43:20"
+							"evidence": "1705590336",
+							"otherinfo": "1705590336, which evaluates to: 2024-01-18 15:05:36"
 						}
 					],
-					"count": "4",
+					"count": "5",
 					"solution": "<p>Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.</p>",
 					"otherinfo": "<p>1557887412, which evaluates to: 2019-05-15 02:30:12</p>",
 					"reference": "<p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10021",
@@ -797,7 +735,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://passculture.app/iosSplashscreens/iphoneplus_splash.png",
+							"uri": "https://passculture.app/iosSplashscreens/iphonex_splash.png",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -805,7 +743,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://passculture.app/iosSplashscreens/iphonex_splash.png",
+							"uri": "https://passculture.app/manifest.json",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -840,7 +778,7 @@
 					"count": "11",
 					"solution": "<p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p>",
 					"otherinfo": "<p>This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.</p><p>At \"High\" threshold this scan rule will not alert on client or server error responses.</p>",
-					"reference": "<p>http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx</p><p>https://owasp.org/www-community/Security_Headers</p>",
+					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
 					"cweid": "693",
 					"wascid": "15",
 					"sourceid": "6"
@@ -860,93 +798,93 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "ABPtcPqs_hBYpsKRPhQOaxX3So8RkwGs22ovtHLsBU59pmiELUwOIz6a4erYiHmyVZ6UeVK06XeWYkEtjw",
-							"otherinfo": "\\x0000\\x0013\uFFFDp\uFFFD\uFFFD\uFFFD\\x0010X\uFFFD\u0091>\\x0014\\x000ek\\x0015\uFFFDJ\uFFFD\\x0011\uFFFD\\x0001\uFFFD\uFFFDj/\uFFFDr\uFFFD\\x0005N}\uFFFDh\uFFFD-L\\x000e#>\uFFFD\uFFFD\uFFFD\u0608y\uFFFDU\uFFFD\uFFFDyR\uFFFD\uFFFDw\uFFFDbA-\uFFFD"
+							"evidence": "ABPtcPqLqdHpBHpZQfJyiEVFVcVIA07rYBK1cRrlPb5tLphZAAuNoWCF43eruC0EreJ7PMfZquk",
+							"otherinfo": "\\x0000\\x0013\uFFFDp\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x0004zYA\uFFFDr\uFFFDEEU\uFFFDH\\x0003N\uFFFD`\\x0012\uFFFDq\\x001a\uFFFD=\uFFFDm.\uFFFDY\\x0000\\x000b\uFFFD\uFFFD`\uFFFD\uFFFDw\uFFFD\uFFFD-\\x0004\uFFFD\uFFFD{<\uFFFD\u066A\uFFFD"
 						},
 						{
 							"uri": "https://passculture.app/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "ABPtcPqs_hBYpsKRPhQOaxX3So8RkwGs22ovtHLsBU59pmiELUwOIz6a4erYiHmyVZ6UeVK06XeWYkEtjw",
-							"otherinfo": "\\x0000\\x0013\uFFFDp\uFFFD\uFFFD\uFFFD\\x0010X\uFFFD\u0091>\\x0014\\x000ek\\x0015\uFFFDJ\uFFFD\\x0011\uFFFD\\x0001\uFFFD\uFFFDj/\uFFFDr\uFFFD\\x0005N}\uFFFDh\uFFFD-L\\x000e#>\uFFFD\uFFFD\uFFFD\u0608y\uFFFDU\uFFFD\uFFFDyR\uFFFD\uFFFDw\uFFFDbA-\uFFFD"
+							"evidence": "ABPtcPqLqdHpBHpZQfJyiEVFVcVIA07rYBK1cRrlPb5tLphZAAuNoWCF43eruC0EreJ7PMfZquk",
+							"otherinfo": "\\x0000\\x0013\uFFFDp\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x0004zYA\uFFFDr\uFFFDEEU\uFFFDH\\x0003N\uFFFD`\\x0012\uFFFDq\\x001a\uFFFD=\uFFFDm.\uFFFDY\\x0000\\x000b\uFFFD\uFFFD`\uFFFD\uFFFDw\uFFFD\uFFFD-\\x0004\uFFFD\uFFFD{<\uFFFD\u066A\uFFFD"
 						},
 						{
 							"uri": "https://passculture.app/images/app-icon-iphone.png",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "ABPtcPqs_iFiL0n-4Xb8wxavRU2EL78SQ7JxXZZ2lGDUj7mGUdjiN144z_4PzY_kUSeaZ9oALqwY29BK5A",
-							"otherinfo": "\\x0000\\x0013\uFFFDp\uFFFD\uFFFD\uFFFD!b/I\uFFFD\uFFFDv\uFFFD\uFFFD\\x0016\uFFFDEM\uFFFD/\uFFFD\\x0012C\uFFFDq]\uFFFDv\uFFFD`\u050F\uFFFD\uFFFDQ\uFFFD\uFFFD7^8\uFFFD\uFFFD\\x000f\u034F\uFFFDQ'\uFFFDg\uFFFD\\x0000.\uFFFD\\x0018\uFFFD\uFFFDJ\uFFFD"
+							"evidence": "ABPtcPqi8Jn7aHRLHLPrpctDZcvlrwl5D5sA13EJUjKXI-8I2SThvYF_0lOj5-2kh4czlOQA-oc",
+							"otherinfo": "\\x0000\\x0013\uFFFDp\uFFFD\uFFFD\uFFFD\uFFFDhtK\\x001c\uFFFD\uFFFD\uFFFDCe\uFFFD\uFFFD\ty\\x000f\uFFFD\\x0000\uFFFDq\tR2\uFFFD#\uFFFD\\x0008\uFFFD$\u1F41\uFFFDS\uFFFD\uFFFD\uFFFD\uFFFD3\uFFFD\uFFFD\\x0000\uFFFD\uFFFD"
 						},
 						{
 							"uri": "https://passculture.app/images/app-icon-iphone@3x.png",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "ABPtcPpg6N1tAFxtPbRJ4e4EgJynJaHKGab2D67f1ZKdYS43HnJ0FmYUenUAzvJQorvy8KUfy0A",
-							"otherinfo": "\\x0000\\x0013\uFFFDp\uFFFD`\uFFFD\uFFFDm\\x0000\\m=\uFFFDI\uFFFD\uFFFD\\x0004\uFFFD\uFFFD\uFFFD%\uFFFD\uFFFD\\x0019\uFFFD\uFFFD\\x000f\uFFFD\uFFFD\u0552\uFFFDa.7\\x001ert\\x0016f\\x0014zu\\x0000\uFFFD\uFFFDP\uFFFD\uFFFD\uFFFD\uFFFD\\x001f\uFFFD@"
+							"evidence": "ABPtcPpyh7qQoyPUwBRNixmfct3UVOtzn7O38hmReibA7ZI2yllwYwBazFqCJgi1ybgmN0VLy58",
+							"otherinfo": "\\x0000\\x0013\uFFFDp\uFFFDr\uFFFD\uFFFD\uFFFD\uFFFD#\uFFFD\uFFFD\\x0014M\uFFFD\\x0019\uFFFDr\uFFFD\uFFFDT\uFFFDs\uFFFD\uFFFD\uFFFD\uFFFD\\x0019\uFFFDz&\uFFFD\uFFFD6\uFFFDYpc\\x0000Z\uFFFDZ\uFFFD&\\x0008\uFFFD\u0278&7EK\u02DF"
 						},
 						{
 							"uri": "https://passculture.app/iosSplashscreens/iphone5_splash.png",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "ABPtcPokYiLZx9Td_b-lpjDNZGzAvpVgXcCwv9uX2xgH3XUECDtTnD9ZN59Hs826z9u2Cw34GWFshC3yCQ",
-							"otherinfo": "\\x0000\\x0013\uFFFDp\uFFFD$b\"\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD0\uFFFDdl\uFFFD\uFFFD\uFFFD`]\uFFFD\uFFFD\uFFFD\u06D7\uFFFD\\x0018\\x0007\uFFFDu\\x0004\\x0008;S\uFFFD?Y7\uFFFDG\uFFFD\u037A\uFFFD\u06F6\\x000b\r\uFFFD\\x0019al\uFFFD-\uFFFD\t"
+							"evidence": "ABPtcPoq8KORylF2DQ-WGd0hRvAv3q59orfprB4xdA6Zz-M6hpC3il3AMxGf8jecILo68neQdQ",
+							"otherinfo": "\\x0000\\x0013\uFFFDp\uFFFD*\uFFFD\uFFFDQv\r\\x000f\uFFFD\\x0019\uFFFD!F\uFFFD/\u07AE}\uFFFD\uFFFD\uFFFD\\x001e1t\\x000e\uFFFD\uFFFD\uFFFD:\uFFFD\uFFFD\uFFFD\uFFFD]\uFFFD3\\x0011\uFFFD\uFFFD7\uFFFD \uFFFD:\uFFFDw\uFFFDu"
 						},
 						{
 							"uri": "https://passculture.app/iosSplashscreens/iphone6_splash.png",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "ABPtcPqPRfcA9h2zDAMLDW0b0z5MOvjtVsqVnv03P58ZqvEfCfm7i54QzwQuRvZ2gfEkKNNzDC7pUwlckQ",
-							"otherinfo": "\\x0000\\x0013\uFFFDp\uFFFD\uFFFDE\uFFFD\\x0000\uFFFD\\x001d\uFFFD\\x000c\\x0003\\x000b\rm\\x001b\uFFFD>L:\uFFFD\uFFFDV\u0295\uFFFD\uFFFD7?\uFFFD\\x0019\uFFFD\uFFFD\\x001f\t\uFFFD\uFFFD\uFFFD\uFFFD\\x0010\uFFFD\\x0004.F\uFFFDv\uFFFD\uFFFD$(\uFFFDs\\x000c.\uFFFDS\t\\\uFFFD"
+							"evidence": "ABPtcPoEU5pIvFATtIiGXCbXBIVqoH14o0eOqSn0yhYSDJCgpKQntz5_6GoxVlj1jho44-P7A3k",
+							"otherinfo": "\\x0000\\x0013\uFFFDp\uFFFD\\x0004S\uFFFDH\uFFFDP\\x0013\uFFFD\uFFFD\uFFFD\\&\uFFFD\\x0004\uFFFDj\uFFFD}x\uFFFDG\uFFFD\uFFFD)\uFFFD\uFFFD\\x0016\\x0012\\x000c\uFFFD\uFFFD\uFFFD\uFFFD'\uFFFD>\uFFFDj1VX\uFFFD\uFFFD\\x001a8\uFFFD\uFFFD\uFFFD\\x0003y"
 						},
 						{
 							"uri": "https://passculture.app/iosSplashscreens/iphoneplus_splash.png",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "ABPtcPqNZ2N3MUf0juX-eh4dboGil2D73gf51wW-iAojHJtDMtS00lkI5Dky3p0hAWtGmZoJE8Ayrjh9jw",
-							"otherinfo": "\\x0000\\x0013\uFFFDp\uFFFD\uFFFDgcw1G\uFFFD\uFFFD\uFFFDz\\x001e\\x001dn\uFFFD\uFFFD\uFFFD`\uFFFD\uFFFD\\x0007\uFFFD\uFFFD\\x0005\uFFFD\uFFFD\n#\\x001c\uFFFDC2\u0534\uFFFDY\\x0008\uFFFD92\u079D!\\x0001kF\uFFFD\uFFFD\t\\x0013\uFFFD2\uFFFD8}\uFFFD"
+							"evidence": "ABPtcPpGzkx9kdjBFCYjJzFCeq5GLFlRPiLVLkonKsdFwdj6xVT2kXemhOBWZUib3ZtRhKMWnTg",
+							"otherinfo": "\\x0000\\x0013\uFFFDp\uFFFDF\uFFFDL}\uFFFD\uFFFD\uFFFD\\x0014&#'1Bz\uFFFDF,YQ>\"\uFFFD.J'*\uFFFDE\uFFFD\uFFFD\uFFFD\uFFFDT\uFFFD\uFFFDw\uFFFD\uFFFD\uFFFDVeH\uFFFD\u075BQ\uFFFD\uFFFD\\x0016\uFFFD8"
 						},
 						{
 							"uri": "https://passculture.app/iosSplashscreens/iphonex_splash.png",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "ABPtcPpAqOpbBC-b8ondmMRt47irQkN4KzQIacjP562LYnSH0uvx5zsfF1YkFkDZcA5IRSxGvj7rHlb6BQ",
-							"otherinfo": "\\x0000\\x0013\uFFFDp\uFFFD@\uFFFD\uFFFD[\\x0004/\uFFFD\uFFFD\u0758\uFFFDm\u3E2BBCx+4\\x0008i\uFFFD\uFFFD\u7B4Bbt\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD;\\x001f\\x0017V$\\x0016@\uFFFDp\\x000eHE,F\uFFFD>\uFFFD\\x001eV\uFFFD\\x0005"
+							"evidence": "ABPtcPrFmtTEE71jNiseLCI5Cr0Bn-CE6KSRF7eaxOy7q-bTGwkdbrCYVT85ik7kJ8ABizk4WZwjNVE-pQ",
+							"otherinfo": "\\x0000\\x0013\uFFFDp\uFFFD\u015A\uFFFD\uFFFD\\x0013\uFFFDc6+\\x001e,\"9\n\uFFFD\\x0001\uFFFD\uFFFD\uFFFD\u8911\\x0017\uFFFD\uFFFD\uFFFD\uCEEB\uFFFD\uFFFD\\x001b\t\\x001dn\uFFFD\uFFFDU?9\uFFFDN\uFFFD'\uFFFD\\x0001\uFFFD98Y\uFFFD#5Q>\uFFFD"
 						},
 						{
 							"uri": "https://passculture.app/recherche",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "ABPtcPqeyol-RNScRN0xoK5xWj1yAplEpO0npR_9IvQ5FATZc5BvF9eGRGoLcKS824MEJsCj7G1hgQlOTw",
-							"otherinfo": "\\x0000\\x0013\uFFFDp\uFFFD\uFFFD\u0289~D\u051CD\uFFFD1\uFFFD\uFFFDqZ=r\\x0002\uFFFDD\uFFFD\uFFFD'\uFFFD\\x001f\uFFFD\"\uFFFD9\\x0014\\x0004\uFFFDs\uFFFDo\\x0017\u05C6Dj\\x000bp\uFFFD\uFFFD\u06C3\\x0004&\uFFFD\uFFFD\uFFFDma\uFFFD\tNO"
+							"evidence": "ABPtcPrlAZRP19Tn8lJKMn_bFeWhaCyAC3EWO95Q2LiGE_lkQgxxepVVGV3So_Qx_DRPbgiv5VE",
+							"otherinfo": "\\x0000\\x0013\uFFFDp\uFFFD\uFFFD\\x0001\uFFFDO\uFFFD\uFFFD\uFFFD\uFFFDRJ2\uFFFD\\x0015\uFFFDh,\uFFFD\\x000bq\\x0016;\uFFFDP\u0638\uFFFD\\x0013\uFFFDdB\\x000cqz\uFFFDU\\x0019]\u04A3\uFFFD1\uFFFD4On\\x0008\uFFFD\uFFFDQ"
 						},
 						{
 							"uri": "https://passculture.app/robots.txt",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "ABPtcPo_ygPz-_bWZg4-adOSxRukvMV-q_wotlhNFG3PEnG1Yca2oNb3MWr_SA113UPUuG5f7MJ9v0SNug",
-							"otherinfo": "\\x0000\\x0013\uFFFDp\uFFFD?\uFFFD\\x0003\uFFFD\uFFFD\uFFFD\uFFFDf\\x000e>i\u04D2\uFFFD\\x001b\uFFFD\uFFFD\uFFFD~\uFFFD\uFFFD(\uFFFDXM\\x0014m\uFFFD\\x0012q\uFFFDa\u01B6\uFFFD\uFFFD\uFFFD1j\uFFFDH\ru\uFFFDC\u0538n_\uFFFD\uFFFD}\uFFFDD\uFFFD\uFFFD"
+							"evidence": "ABPtcPoObMm_nKievCXaXyZ7lUz07C9CuktvJNQQCgULRVI0fCpSKsXJauKu9-krIVYLczvkHeZ1VGNYHQ",
+							"otherinfo": "\\x0000\\x0013\uFFFDp\uFFFD\\x000el\u027F\uFFFD\uFFFD\uFFFD\uFFFD%\uFFFD_&{\uFFFDL\uFFFD\uFFFD/B\uFFFDKo$\uFFFD\\x0010\n\\x0005\\x000bER4|*R*\uFFFD\uFFFDj\uFFFD\uFFFD\uFFFD+!V\\x000bs;\uFFFD\\x001d\uFFFDuTcX\\x001d"
 						},
 						{
 							"uri": "https://passculture.app/sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "ABPtcPpDttlHrDosnT2WcSGaRO6ROUGDVCMSWM7e5MxyaY-wEUeSEkTX5OH9Ar5MZVgv8ep713OwGVi7e8AjD5U",
-							"otherinfo": "\\x0000\\x0013\uFFFDp\uFFFDC\uFFFD\uFFFDG\uFFFD:,\uFFFD=\uFFFDq!\uFFFDD\uFFFD9A\uFFFDT#\\x0012X\uFFFD\uFFFD\uFFFD\uFFFDri\uFFFD\uFFFD\\x0011G\uFFFD\\x0012D\uFFFD\uFFFD\uFFFD\uFFFD\\x0002\uFFFDLeX/\uFFFD\uFFFD{\uFFFDs\uFFFD\\x0019X\uFFFD{\uFFFD#\\x000f\uFFFD"
+							"evidence": "ABPtcPribqy5wlsWfZD_RK0_IrJhLp4c505bbas2c1mbRL5-GDgsl8UXTZxK3Hi3_xHK8PorqIM",
+							"otherinfo": "\\x0000\\x0013\uFFFDp\uFFFD\uFFFDn\uFFFD\uFFFD\uFFFD[\\x0016}\uFFFD\uFFFDD\uFFFD?\"\uFFFDa.\uFFFD\\x001c\uFFFDN[m\uFFFD6sY\uFFFDD\uFFFD~\\x00188,\uFFFD\uFFFD\\x0017M\uFFFDJ\uFFFDx\uFFFD\uFFFD\\x0011\uFFFD\uFFFD\uFFFD+\uFFFD\uFFFD"
 						}
 					],
 					"count": "11",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>\\x0000\\x0013\uFFFDp\uFFFD\uFFFD\uFFFD\\x0010X\uFFFD\u0091>\\x0014\\x000ek\\x0015\uFFFDJ\uFFFD\\x0011\uFFFD\\x0001\uFFFD\uFFFDj/\uFFFDr\uFFFD\\x0005N}\uFFFDh\uFFFD-L\\x000e#>\uFFFD\uFFFD\uFFFD\u0608y\uFFFDU\uFFFD\uFFFDyR\uFFFD\uFFFDw\uFFFDbA-\uFFFD</p>",
+					"otherinfo": "<p>\\x0000\\x0013\uFFFDp\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x0004zYA\uFFFDr\uFFFDEEU\uFFFDH\\x0003N\uFFFD`\\x0012\uFFFDq\\x001a\uFFFD=\uFFFDm.\uFFFDY\\x0000\\x000b\uFFFD\uFFFD`\uFFFD\uFFFDw\uFFFD\uFFFD-\\x0004\uFFFD\uFFFD{<\uFFFD\u066A\uFFFD</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
@@ -963,23 +901,23 @@
 					"desc": "<p>The response appears to contain suspicious comments which may help an attacker. Note: Matches made within script blocks or files are against the entire content not only comments.</p>",
 					"instances":[ 
 						{
-							"uri": "https://passculture.app/static/js/2.0b508592.chunk.js",
+							"uri": "https://passculture.app/static/js/2.a87c3f9b.chunk.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "bug",
-							"otherinfo": "The following pattern was used: \\bBUG\\b and was detected in the element starting with: \"(this.webpackJsonpPassCulture=this.webpackJsonpPassCulture||[]).push([[2],[function(e,t,n){\"use strict\";e.exports=n(1789)},funct\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bBUG\\b and was detected in the element starting with: \"(this.webpackJsonpPassCulture=this.webpackJsonpPassCulture||[]).push([[2],[function(e,t,n){\"use strict\";e.exports=n(1790)},funct\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://passculture.app/static/js/3.4052250d.chunk.js",
+							"uri": "https://passculture.app/static/js/3.19f19030.chunk.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "select",
-							"otherinfo": "The following pattern was used: \\bSELECT\\b and was detected in the element starting with: \"(this.webpackJsonpPassCulture=this.webpackJsonpPassCulture||[]).push([[3],{3056:function(e,t,i){var n=i(1);Object.defineProperty\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bSELECT\\b and was detected in the element starting with: \"(this.webpackJsonpPassCulture=this.webpackJsonpPassCulture||[]).push([[3],{3058:function(e,t,i){var n=i(1);Object.defineProperty\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://passculture.app/static/js/main.ab8b8bb0.chunk.js",
+							"uri": "https://passculture.app/static/js/main.c26aaab9.chunk.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -989,11 +927,11 @@
 					],
 					"count": "3",
 					"solution": "<p>Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</p>",
-					"otherinfo": "<p>The following pattern was used: \\bBUG\\b and was detected in the element starting with: \"(this.webpackJsonpPassCulture=this.webpackJsonpPassCulture||[]).push([[2],[function(e,t,n){\"use strict\";e.exports=n(1789)},funct\", see evidence field for the suspicious comment/snippet.</p>",
+					"otherinfo": "<p>The following pattern was used: \\bBUG\\b and was detected in the element starting with: \"(this.webpackJsonpPassCulture=this.webpackJsonpPassCulture||[]).push([[2],[function(e,t,n){\"use strict\";e.exports=n(1790)},funct\", see evidence field for the suspicious comment/snippet.</p>",
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "148"
+					"sourceid": "118"
 				},
 				{
 					"pluginid": "10109",
@@ -1026,7 +964,15 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"OCS\",\"description\":\"1 mois d&apos;abonnement \u00E0 OCS.\\nVous \u00EAtes fan de nouveaut\u00E9s, nous avons les prochaines exclusivit\u00E9s :\\nProfitez des derniers films \u00E0 partir de 6 mois apr\u00E8s leur sortie en salle et de vos s\u00E9ries moins de 24 heures apr\u00E8s leur diffusion US \u00E0 regarder sur nos cha\u00EEnes ou \u00E0 streamer et t\u00E9l\u00E9charger sur notre application.\\nEn ce moment sur OCS : Game of Thrones, The Handmaid&apos;s Tale, Euphoria, Zack Snyder&apos;s Justice League, Hors normes, C&apos;est quoi cette mamie ?! \u2026\\n\\nOffre valable en France m\u00E9tropolitaine (Corse comprise, hors DROM-COM) \u00E0 partir du 26 mai 2021 et jusqu\u2019au 31 juillet 2023 inclus, pour un acc\u00E8s au service OCS sur tablette, mobile et ordinateur, hors TV sous r\u00E9serve de disposer d\u2019une connexion Internet haut d\u00E9bit.\u00A0 Offre limit\u00E9e aux 25000 premi\u00E8res souscriptions et r\u00E9serv\u00E9e aux personnes n&apos;ayant jamais \u00E9t\u00E9 abonn\u00E9es. \\nVoir modalit\u00E9s d\u2019acc\u00E8s sur ocs.fr\",\"image\":\"https://storage.googleapis.com/passculture-metier-prod-production-assets-fine-grained/thumbs/mediations/BA7SE\",\"offers\":{\"@type\":\"AggregateOffer\",\"priceCurrency\":\"EUR\",\"lowPrice\":\"10.99\",\"url\":\"https://passculture.app/offre/11242\"}}</script>",
+							"evidence": "<script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"OCS\",\"description\":\"1 mois d&apos;abonnement \u00E0 OCS.\\nVous \u00EAtes fan de nouveaut\u00E9s, nous avons les prochaines exclusivit\u00E9s :\\nProfitez des derniers films \u00E0 partir de 6 mois apr\u00E8s leur sortie en salle et de vos s\u00E9ries moins de 24 heures apr\u00E8s leur diffusion US \u00E0 regarder sur nos cha\u00EEnes ou \u00E0 streamer et t\u00E9l\u00E9charger sur notre application.\\nEn ce moment sur OCS : Game of Thrones, The Handmaid&apos;s Tale, Euphoria, Zack Snyder&apos;s Justice League, Hors normes, C&apos;est quoi cette mamie ?! \u2026\\n\\nOffre valable en France m\u00E9tropolitaine (Corse comprise, hors DROM-COM) \u00E0 partir du 26 mai 2021 et jusqu\u2019au 31 juillet 2023 inclus, pour un acc\u00E8s au service OCS sur tablette, mobile et ordinateur, hors TV sous r\u00E9serve de disposer d\u2019une connexion Internet haut d\u00E9bit.\u00A0 Offre limit\u00E9e aux 25000 premi\u00E8res souscriptions et r\u00E9serv\u00E9e aux personnes n&apos;ayant jamais \u00E9t\u00E9 abonn\u00E9es. \\nVoir modalit\u00E9s d\u2019acc\u00E8s sur ocs.fr\",\"image\":\"https://storage.googleapis.com/passculture-metier-prod-production-assets-fine-grained/thumbs/mediations/BA7SE\",\"offers\":{\"@type\":\"AggregateOffer\",\"priceCurrency\":\"EUR\",\"lowPrice\":\"10.99\",\"url\":\"https://passculture.app/offre/11242\",\"availability\":\"https://schema.org/InStock\"}}</script>",
+							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
+						},
+						{
+							"uri": "https://passculture.app/offre/30079319",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"PASS CINE 5 PLACES\",\"description\":\"Le PASS CINE KINEPOLIS est une carte digitale de 5 places de cin\u00E9ma. Les Places donnent acc\u00E8s \u00E0 tous les films, toutes les s\u00E9ances, hors suppl\u00E9ments et \u00E9v\u00E8nements sp\u00E9ciaux. Pour certains \u00E9v\u00E8nements, il est possible d&apos;utiliser les places du PASS CINE moyennant un suppl\u00E9ment (\u00E0 r\u00E9gler lors de l&apos;achat sur le site internet kinepolis.fr ou aux caisses du cin\u00E9ma).\\nLa carte est valable 6 mois \u00E0 compter de la date d&apos;achat.\",\"image\":\"https://storage.googleapis.com/passculture-metier-prod-production-assets-fine-grained/thumbs/mediations/AMCZ6\",\"offers\":{\"@type\":\"AggregateOffer\",\"priceCurrency\":\"EUR\",\"lowPrice\":\"47.00\",\"url\":\"https://passculture.app/offre/30079319\",\"availability\":\"https://schema.org/InStock\"}}</script>",
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
@@ -1034,7 +980,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"Offre duo Gr\u00E9vin Paris\",\"description\":\"Vous avez l\u2019\u00E2me d\u2019une star de la musique ou d\u2019un acteur de cin\u00E9ma ? Vous avez toujours r\u00EAv\u00E9 de vivre les plus grands moments de l\u2019Histoire de France ? Vous souhaitez vous confronter aux plus grands athl\u00E8tes ? A Gr\u00E9vin Paris c\u2019est possible ! \\n\\n\u2022 Vivez l\u2019exp\u00E9rience de c\u00E9l\u00E8bres \u00E9missions TV telles que Koh-Lanta et The Voice.\\n\u2022 Le web d\u00E9baque \u00E0 Gr\u00E9vin ! Faites un live avec le cr\u00E9ateur de contenu Squeezie et son chien Natsu !\\n\u2022 Venez \u00E9crire l\u2019Histoire de France en famille de la pr\u00E9histoire \u00E0 mai 68.\\n\u2022 Explorez les mondes imaginaires et rencontrez les stars pr\u00E9f\u00E9r\u00E9es des enfants : Miraculous, Scrat, Kev Adams\u2026\\n\u2022 D\u00E9couvrez les backstages d\u2019un studio avec Gims! De Phil Collins \u00E0 Edith Piaf en passant par Soprano, partagez des duos inoubliables !\\n\u2022 Int\u00E9grez la Jet-Set et rejoignez Leonardo DiCaprio ou Omar Sy\\n\u2022 D\u00E9couvrez les coulisses de la politique et d\u00E9battez avec Emmanuel Macron\\n\u2022 Ramenez la coupe \u00E0 la maison avec Kylian Mbapp\u00E9, puis affrontez Tony Parker et bien d\u2019autres\",\"image\":\"https://storage.googleapis.com/passculture-metier-prod-production-assets-fine-grained/thumbs/mediations/BKTLU\",\"offers\":{\"@type\":\"AggregateOffer\",\"priceCurrency\":\"EUR\",\"lowPrice\":\"38.00\",\"url\":\"https://passculture.app/offre/44895811\"}}</script>",
+							"evidence": "<script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"Offre duo Gr\u00E9vin Paris\",\"description\":\"Vous avez l\u2019\u00E2me d\u2019une star de la musique ou d\u2019un acteur de cin\u00E9ma ? Vous avez toujours r\u00EAv\u00E9 de vivre les plus grands moments de l\u2019Histoire de France ? Vous souhaitez vous confronter aux plus grands athl\u00E8tes ? A Gr\u00E9vin Paris c\u2019est possible ! \\n\\n\u2022 Vivez l\u2019exp\u00E9rience de c\u00E9l\u00E8bres \u00E9missions TV telles que Koh-Lanta et The Voice.\\n\u2022 Le web d\u00E9baque \u00E0 Gr\u00E9vin ! Faites un live avec le cr\u00E9ateur de contenu Squeezie et son chien Natsu !\\n\u2022 Venez \u00E9crire l\u2019Histoire de France en famille de la pr\u00E9histoire \u00E0 mai 68.\\n\u2022 Explorez les mondes imaginaires et rencontrez les stars pr\u00E9f\u00E9r\u00E9es des enfants : Miraculous, Scrat, Kev Adams\u2026\\n\u2022 D\u00E9couvrez les backstages d\u2019un studio avec Gims! De Phil Collins \u00E0 Edith Piaf en passant par Soprano, partagez des duos inoubliables !\\n\u2022 Int\u00E9grez la Jet-Set et rejoignez Leonardo DiCaprio ou Omar Sy\\n\u2022 D\u00E9couvrez les coulisses de la politique et d\u00E9battez avec Emmanuel Macron\\n\u2022 Ramenez la coupe \u00E0 la maison avec Kylian Mbapp\u00E9, puis affrontez Tony Parker et bien d\u2019autres\",\"image\":\"https://storage.googleapis.com/passculture-metier-prod-production-assets-fine-grained/thumbs/mediations/BKTLU\",\"offers\":{\"@type\":\"AggregateOffer\",\"priceCurrency\":\"EUR\",\"lowPrice\":\"38.00\",\"url\":\"https://passculture.app/offre/44895811\",\"availability\":\"https://schema.org/InStock\"}}</script>",
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
@@ -1042,15 +988,15 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"PASS CINE 10 PLACES\",\"description\":\"Le PASS CINE KINEPOLIS est une carte digitale de 10 places de cin\u00E9ma. Les places donnent acc\u00E8s \u00E0 tous les films, toutes les s\u00E9ances, hors suppl\u00E9ments et \u00E9v\u00E8nements sp\u00E9ciaux. Pour certains \u00E9v\u00E8nements, il est possible d&apos;utiliser les places du PASS CINE moyennant un suppl\u00E9ment (\u00E0 r\u00E9gler lors de l&apos;achat sur le site internet kinepolis.fr ou aux caisses du cin\u00E9ma).\\n\\nLa carte est valable 12 mois \u00E0 compter de la date d&apos;achat.\",\"image\":\"https://storage.googleapis.com/passculture-metier-prod-production-assets-fine-grained/thumbs/mediations/ATJ58\",\"offers\":{\"@type\":\"AggregateOffer\",\"priceCurrency\":\"EUR\",\"lowPrice\":\"92.00\",\"url\":\"https://passculture.app/offre/45800261\"}}</script>",
+							"evidence": "<script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"PASS CINE 10 PLACES\",\"description\":\"Le PASS CINE KINEPOLIS est une carte digitale de 10 places de cin\u00E9ma. Les places donnent acc\u00E8s \u00E0 tous les films, toutes les s\u00E9ances, hors suppl\u00E9ments et \u00E9v\u00E8nements sp\u00E9ciaux. Pour certains \u00E9v\u00E8nements, il est possible d&apos;utiliser les places du PASS CINE moyennant un suppl\u00E9ment (\u00E0 r\u00E9gler lors de l&apos;achat sur le site internet kinepolis.fr ou aux caisses du cin\u00E9ma).\\n\\nLa carte est valable 12 mois \u00E0 compter de la date d&apos;achat.\",\"image\":\"https://storage.googleapis.com/passculture-metier-prod-production-assets-fine-grained/thumbs/mediations/ATJ58\",\"offers\":{\"@type\":\"AggregateOffer\",\"priceCurrency\":\"EUR\",\"lowPrice\":\"92.00\",\"url\":\"https://passculture.app/offre/45800261\",\"availability\":\"https://schema.org/InStock\"}}</script>",
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
-							"uri": "https://passculture.app/offre/46139041",
+							"uri": "https://passculture.app/offre/59674857",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"PC Game Pass - Abonnement 3 mois\",\"description\":\"Joue \u00E0 des centaines de jeux incontournables sur PC en illimit\u00E9 avec le PC Game Pass:\\n- T\u00E9l\u00E9charge et joue \u00E0 tes jeux favoris sur PC, comme Minecraft, Forza Horizon 5 ou FIFA 22. Avec de nouveaux jeux ajout\u00E9s en permanence, tu es certain de trouver un jeu \u00E0 ton go\u00FBt ou mieux... Ton prochain jeu pr\u00E9f\u00E9r\u00E9!\\n- D\u00E9bloque du contenu premium sur les jeux Riot comme League of Legends ou Valorant gr\u00E2ce au PC Game Pass. Avec le Game Pass tu d\u00E9bloqueras notamment tous les agents du moment dans Valorant, et plus de 160 champions dans League of Legends!\\n- Profite des jeux Xbox Game Studios d\u00E8s leur jour de sortie comme Minecraft Legends, Forza Motorsport ou Starfield sans co\u00FBt additionnel\\n- Acc\u00E8de au meilleur d&apos;Electronic Arts avec un abonnement EA Play inclus dans le Game Pass pour PC\\n\\nOffre accessible uniquement en France m\u00E9tropolitaine.\",\"image\":\"https://storage.googleapis.com/passculture-metier-prod-production-assets-fine-grained/thumbs/mediations/BNN9U\",\"offers\":{\"@type\":\"AggregateOffer\",\"priceCurrency\":\"EUR\",\"lowPrice\":\"29.99\",\"url\":\"https://passculture.app/offre/46139041\"}}</script>",
+							"evidence": "<script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"Les p\u00E9pites Rap FR des Ambassadeurs\",\"description\":\"Retrouvez une s\u00E9lection de p\u00E9pites du rap fran\u00E7ais chin\u00E9es par un groupe de jeunes du pass Culture passionn\u00E9s de sons !\",\"image\":\"https://storage.googleapis.com/passculture-metier-prod-production-assets-fine-grained/thumbs/mediations/A34S8\",\"offers\":{\"@type\":\"AggregateOffer\",\"priceCurrency\":\"EUR\",\"lowPrice\":\"0.00\",\"url\":\"https://passculture.app/offre/59674857\",\"availability\":\"https://schema.org/InStock\"}}</script>",
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
@@ -1058,7 +1004,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"One Piece, le meilleur manga ?\",\"description\":\"450 millions d&apos;exemplaires vendus dans le monde, 900 \u00E9pisodes d&apos;anime : One Piece est plus qu&apos;un monument de la culture manga. Une l\u00E9gende, tout simplement. Alors entrez Dans La L\u00E9gende de One Piece\",\"image\":\"https://storage.googleapis.com/passculture-metier-prod-production-assets-fine-grained/thumbs/mediations/AEDQ2\",\"offers\":{\"@type\":\"AggregateOffer\",\"priceCurrency\":\"EUR\",\"lowPrice\":\"0.00\",\"url\":\"https://passculture.app/offre/6652358\"}}</script>",
+							"evidence": "<script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"One Piece, le meilleur manga ?\",\"description\":\"450 millions d&apos;exemplaires vendus dans le monde, 900 \u00E9pisodes d&apos;anime : One Piece est plus qu&apos;un monument de la culture manga. Une l\u00E9gende, tout simplement. Alors entrez Dans La L\u00E9gende de One Piece\",\"image\":\"https://storage.googleapis.com/passculture-metier-prod-production-assets-fine-grained/thumbs/mediations/AEDQ2\",\"offers\":{\"@type\":\"AggregateOffer\",\"priceCurrency\":\"EUR\",\"lowPrice\":\"0.00\",\"url\":\"https://passculture.app/offre/6652358\",\"availability\":\"https://schema.org/InStock\"}}</script>",
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
@@ -1066,7 +1012,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"PASS CINE 2 PLACES\",\"description\":\"Le PASS CINE KINEPOLIS est une carte digitale de 2 places de cin\u00E9ma. Les Places donnent acc\u00E8s \u00E0 tous les films, toutes les s\u00E9ances, hors suppl\u00E9ments et \u00E9v\u00E8nements sp\u00E9ciaux. Pour certains \u00E9v\u00E8nements, il est possible d&apos;utiliser les places du PASS CINE moyennant un suppl\u00E9ment (\u00E0 r\u00E9gler lors de l&apos;achat sur le site internet kinepolis.fr ou aux caisses du cin\u00E9ma). La carte est valable 3 mois \u00E0 compter de la date d&apos;achat.\",\"image\":\"https://storage.googleapis.com/passculture-metier-prod-production-assets-fine-grained/thumbs/mediations/BHPX8\",\"offers\":{\"@type\":\"AggregateOffer\",\"priceCurrency\":\"EUR\",\"lowPrice\":\"18.50\",\"url\":\"https://passculture.app/offre/78546610\"}}</script>",
+							"evidence": "<script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"PASS CINE 2 PLACES\",\"description\":\"Le PASS CINE KINEPOLIS est une carte digitale de 2 places de cin\u00E9ma. Les Places donnent acc\u00E8s \u00E0 tous les films, toutes les s\u00E9ances, hors suppl\u00E9ments et \u00E9v\u00E8nements sp\u00E9ciaux. Pour certains \u00E9v\u00E8nements, il est possible d&apos;utiliser les places du PASS CINE moyennant un suppl\u00E9ment (\u00E0 r\u00E9gler lors de l&apos;achat sur le site internet kinepolis.fr ou aux caisses du cin\u00E9ma). La carte est valable 3 mois \u00E0 compter de la date d&apos;achat.\",\"image\":\"https://storage.googleapis.com/passculture-metier-prod-production-assets-fine-grained/thumbs/mediations/BHPX8\",\"offers\":{\"@type\":\"AggregateOffer\",\"priceCurrency\":\"EUR\",\"lowPrice\":\"18.50\",\"url\":\"https://passculture.app/offre/78546610\",\"availability\":\"https://schema.org/InStock\"}}</script>",
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
@@ -1074,15 +1020,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"PASS CINE 3 PLACES\",\"description\":\"Le PASS CINE KINEPOLIS est une carte digitale de 3 places de cin\u00E9ma. Les Places donnent acc\u00E8s \u00E0 tous les films, toutes les s\u00E9ances, hors suppl\u00E9ments et \u00E9v\u00E8nements sp\u00E9ciaux. Pour certains \u00E9v\u00E8nements, il est possible d&apos;utiliser les places du PASS CINE moyennant un suppl\u00E9ment (\u00E0 r\u00E9gler lors de l&apos;achat sur le site internet kinepolis.fr ou aux caisses du cin\u00E9ma). La carte est valable 3 mois \u00E0 compter de la date d&apos;achat.\",\"image\":\"https://storage.googleapis.com/passculture-metier-prod-production-assets-fine-grained/thumbs/mediations/BHPXS\",\"offers\":{\"@type\":\"AggregateOffer\",\"priceCurrency\":\"EUR\",\"lowPrice\":\"27.75\",\"url\":\"https://passculture.app/offre/78546660\"}}</script>",
-							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
-						},
-						{
-							"uri": "https://passculture.app/offre/78546742",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"PASS CINE 4 PLACES\",\"description\":\"Le PASS CINE KINEPOLIS est une carte digitale de 4 places de cin\u00E9ma. Les Places donnent acc\u00E8s \u00E0 tous les films, toutes les s\u00E9ances, hors suppl\u00E9ments et \u00E9v\u00E8nements sp\u00E9ciaux. Pour certains \u00E9v\u00E8nements, il est possible d&apos;utiliser les places du PASS CINE moyennant un suppl\u00E9ment (\u00E0 r\u00E9gler lors de l&apos;achat sur le site internet kinepolis.fr ou aux caisses du cin\u00E9ma). La carte est valable 3 mois \u00E0 compter de la date d&apos;achat.\",\"image\":\"https://storage.googleapis.com/passculture-metier-prod-production-assets-fine-grained/thumbs/mediations/BHPXW\",\"offers\":{\"@type\":\"AggregateOffer\",\"priceCurrency\":\"EUR\",\"lowPrice\":\"37.00\",\"url\":\"https://passculture.app/offre/78546742\"}}</script>",
+							"evidence": "<script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"PASS CINE 3 PLACES\",\"description\":\"Le PASS CINE KINEPOLIS est une carte digitale de 3 places de cin\u00E9ma. Les Places donnent acc\u00E8s \u00E0 tous les films, toutes les s\u00E9ances, hors suppl\u00E9ments et \u00E9v\u00E8nements sp\u00E9ciaux. Pour certains \u00E9v\u00E8nements, il est possible d&apos;utiliser les places du PASS CINE moyennant un suppl\u00E9ment (\u00E0 r\u00E9gler lors de l&apos;achat sur le site internet kinepolis.fr ou aux caisses du cin\u00E9ma). La carte est valable 3 mois \u00E0 compter de la date d&apos;achat.\",\"image\":\"https://storage.googleapis.com/passculture-metier-prod-production-assets-fine-grained/thumbs/mediations/BHPXS\",\"offers\":{\"@type\":\"AggregateOffer\",\"priceCurrency\":\"EUR\",\"lowPrice\":\"27.75\",\"url\":\"https://passculture.app/offre/78546660\",\"availability\":\"https://schema.org/InStock\"}}</script>",
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
@@ -1100,7 +1038,7 @@
 					"reference": "",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10015",
@@ -1137,7 +1075,15 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://passculture.app/offre/46139041",
+							"uri": "https://passculture.app/offre/30079319",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "public, max-age=3600",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://passculture.app/offre/45800261",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -1162,14 +1108,6 @@
 						},
 						{
 							"uri": "https://passculture.app/offre/78546660",
-							"method": "GET",
-							"param": "cache-control",
-							"attack": "",
-							"evidence": "public, max-age=3600",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://passculture.app/offre/78546742",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -1207,7 +1145,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control</p><p>https://grayduck.mn/2021/09/13/cache-control-recommendations/</p>",
 					"cweid": "525",
 					"wascid": "13",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10050",
@@ -1224,7 +1162,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "Age: 1331",
+							"evidence": "Age: 1",
 							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
@@ -1232,7 +1170,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "Age: 1331",
+							"evidence": "Age: 1",
 							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
@@ -1248,7 +1186,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "Age: 852",
+							"evidence": "Age: 0",
 							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
@@ -1268,7 +1206,7 @@
 							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
-							"uri": "https://passculture.app/iosSplashscreens/iphoneplus_splash.png",
+							"uri": "https://passculture.app/iosSplashscreens/iphonex_splash.png",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1276,11 +1214,11 @@
 							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
-							"uri": "https://passculture.app/iosSplashscreens/iphonex_splash.png",
+							"uri": "https://passculture.app/manifest.json",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "Age: 0",
+							"evidence": "Age: 2475",
 							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
@@ -1296,7 +1234,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "Age: 206",
+							"evidence": "Age: 58",
 							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
@@ -1311,10 +1249,10 @@
 					"count": "11",
 					"solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information.  If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request.</p>",
 					"otherinfo": "<p>The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use.</p>",
-					"reference": "<p>https://tools.ietf.org/html/rfc7234</p><p>https://tools.ietf.org/html/rfc7231</p><p>http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html (obsoleted by rfc7234)</p>",
+					"reference": "<p>https://tools.ietf.org/html/rfc7234</p><p>https://tools.ietf.org/html/rfc7231</p><p>https://www.rfc-editor.org/rfc/rfc9110.html (obsoleted by rfc7234)</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -1335,6 +1273,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://passculture.app/",
+							"method": "GET",
+							"param": "Sec-Fetch-Dest",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://passculture.app/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
@@ -1343,7 +1289,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-Dest header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
@@ -1370,6 +1316,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://passculture.app/",
+							"method": "GET",
+							"param": "Sec-Fetch-Mode",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://passculture.app/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
@@ -1378,7 +1332,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-Mode header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
@@ -1405,6 +1359,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://passculture.app/",
+							"method": "GET",
+							"param": "Sec-Fetch-Site",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://passculture.app/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
@@ -1413,7 +1375,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-Site header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
@@ -1440,6 +1402,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://passculture.app/",
+							"method": "GET",
+							"param": "Sec-Fetch-User",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://passculture.app/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
@@ -1448,7 +1418,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-User header is included in user initiated requests.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",

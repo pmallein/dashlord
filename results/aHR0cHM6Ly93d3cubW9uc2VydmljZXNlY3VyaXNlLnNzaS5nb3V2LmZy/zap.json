@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 14 Jan 2024 18:25:45",
+	"@generated": "Sun, 21 Jan 2024 18:07:22",
 	"site":[ 
 		{
 			"@name": "https://www.monservicesecurise.ssi.gouv.fr",
@@ -55,10 +55,10 @@
 					"count": "4",
 					"solution": "<p>Phase: Architecture and Design</p><p>Use a vetted library or framework that does not allow this weakness to occur or provides constructs that make this weakness easier to avoid.</p><p>For example, use anti-CSRF packages such as the OWASP CSRFGuard.</p><p></p><p>Phase: Implementation</p><p>Ensure that your application is free of cross-site scripting issues, because most CSRF defenses can be bypassed using attacker-controlled script.</p><p></p><p>Phase: Architecture and Design</p><p>Generate a unique nonce for each form, place the nonce into the form, and verify the nonce upon receipt of the form. Be sure that the nonce is not predictable (CWE-330).</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Identify especially dangerous operations. When the user performs a dangerous operation, send a separate confirmation request to ensure that the user intended to perform that operation.</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Use the ESAPI Session Management control.</p><p>This control includes a component for CSRF.</p><p></p><p>Do not use the GET method for any request that triggers a state change.</p><p></p><p>Phase: Implementation</p><p>Check the HTTP Referer header to see if the request originated from an expected page. This could break legitimate functionality, because users or proxies may have disabled sending the Referer for privacy reasons.</p>",
 					"otherinfo": "<p>No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"login\" \"mot-de-passe\" ].</p>",
-					"reference": "<p>http://projects.webappsec.org/Cross-Site-Request-Forgery</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "87"
+					"sourceid": "88"
 				},
 				{
 					"pluginid": "10055",
@@ -162,10 +162,10 @@
 					"count": "11",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is properly configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "<p>The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: </p><p>frame-ancestors, form-action</p><p></p><p>The directive(s): frame-ancestors, form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything.</p>",
-					"reference": "<p>http://www.w3.org/TR/CSP2/</p><p>http://www.w3.org/TR/CSP/</p><p>http://caniuse.com/#search=content+security+policy</p><p>http://content-security-policy.com/</p><p>https://github.com/shapesecurity/salvation</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
+					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/shapesecurity/salvation</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10003",
@@ -299,7 +299,7 @@
 					"reference": "<p>https://tools.ietf.org/html/draft-ietf-httpbis-cookie-same-site</p>",
 					"cweid": "1275",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10110",
@@ -450,101 +450,101 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "eyJfY3NyZlNlY3JldCI6IkNuaTNmVURjOFA4UTlnPT0iLCJtYWludGVuYW50IjoyODQyMDk0NX0=",
-							"otherinfo": "{\"_csrfSecret\":\"Cni3fUDc8P8Q9g==\",\"maintenant\":28420945}"
+							"evidence": "eyJfY3NyZlNlY3JldCI6IjNWcnZoOTV5N2w1dlpnPT0iLCJtYWludGVuYW50IjoyODQzMTAwN30=",
+							"otherinfo": "{\"_csrfSecret\":\"3Vrvh95y7l5vZg==\",\"maintenant\":28431007}"
 						},
 						{
 							"uri": "https://www.monservicesecurise.ssi.gouv.fr",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "eyJfY3NyZlNlY3JldCI6IlpINXBHeUlFRTJNSzFRPT0iLCJtYWludGVuYW50IjoyODQyMDk0NX0=",
-							"otherinfo": "{\"_csrfSecret\":\"ZH5pGyIEE2MK1Q==\",\"maintenant\":28420945}"
+							"evidence": "eyJfY3NyZlNlY3JldCI6Ijd3YmZsdEg0cG50dGd3PT0iLCJtYWludGVuYW50IjoyODQzMTAwN30=",
+							"otherinfo": "{\"_csrfSecret\":\"7wbfltH4pnttgw==\",\"maintenant\":28431007}"
 						},
 						{
 							"uri": "https://www.monservicesecurise.ssi.gouv.fr/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "89bEsjI4J84S96Rc4L0Br5U7lxqgwRoHb0VBU00ihj92iA80xPGidvfl2mHX3SjCitx29AahQkjmkKyluEA4ihufDCpyYkEhPsJ22QTSkyc=",
-							"otherinfo": "\uFFFD\uFFFD\u013228'\uFFFD\\x0012\uFFFD\uFFFD\\\uFFFD\\x0001\uFFFD\uFFFD;\uFFFD\\x001a\uFFFD\uFFFD\\x001a\\x0007oEASM\"\uFFFD?v\uFFFD\\x000f4\uFFFD\uFFFDv\uFFFD\uFFFD\uFFFDa\uFFFD\uFFFD(\u008A\uFFFDv\uFFFD\\x0006\uFFFDBH\u642C\uFFFD\uFFFD@8\uFFFD\\x001b\uFFFD\\x000c*rbA!>\uFFFDv\uFFFD\\x0004\u0493'"
+							"evidence": "iE3mfROMLwNTlJmK6TfWSkAop9WD+V2rkG/BO8QszWFnOpjs/GWDW65qzABVjG9AMWs/iaHZBTDwJggiOlZb9pItle4UDF7Hj7AqEPzt6Uk=",
+							"otherinfo": "\uFFFDM\uFFFD}\\x0013\uFFFD/\\x0003S\uFFFD\uFFFD\uFFFD\uFFFD7\uFFFDJ@(\uFFFD\u0543\uFFFD]\uFFFD\uFFFDo\uFFFD;\uFFFD,\uFFFDag:\uFFFD\uFFFD\uFFFDe\uFFFD[\uFFFDj\uFFFD\\x0000U\uFFFDo@1k?\uFFFD\uFFFD\uFFFD\\x00050\uFFFD&\\x0008\":V[\uFFFD\uFFFD-\uFFFD\uFFFD\\x0014\\x000c^\u01CF\uFFFD*\\x0010\uFFFD\uFFFD\uFFFDI"
 						},
 						{
 							"uri": "https://www.monservicesecurise.ssi.gouv.fr/accessibilite",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "89bEsjI4J84S96Rc4L0Br5U7lxqgwRoHb0VBU00ihj92iA80xPGidvfl2mHX3SjCitx29AahQkjmkKyluEA4ihufDCpyYkEhPsJ22QTSkyc=",
-							"otherinfo": "\uFFFD\uFFFD\u013228'\uFFFD\\x0012\uFFFD\uFFFD\\\uFFFD\\x0001\uFFFD\uFFFD;\uFFFD\\x001a\uFFFD\uFFFD\\x001a\\x0007oEASM\"\uFFFD?v\uFFFD\\x000f4\uFFFD\uFFFDv\uFFFD\uFFFD\uFFFDa\uFFFD\uFFFD(\u008A\uFFFDv\uFFFD\\x0006\uFFFDBH\u642C\uFFFD\uFFFD@8\uFFFD\\x001b\uFFFD\\x000c*rbA!>\uFFFDv\uFFFD\\x0004\u0493'"
+							"evidence": "iE3mfROMLwNTlJmK6TfWSkAop9WD+V2rkG/BO8QszWFnOpjs/GWDW65qzABVjG9AMWs/iaHZBTDwJggiOlZb9pItle4UDF7Hj7AqEPzt6Uk=",
+							"otherinfo": "\uFFFDM\uFFFD}\\x0013\uFFFD/\\x0003S\uFFFD\uFFFD\uFFFD\uFFFD7\uFFFDJ@(\uFFFD\u0543\uFFFD]\uFFFD\uFFFDo\uFFFD;\uFFFD,\uFFFDag:\uFFFD\uFFFD\uFFFDe\uFFFD[\uFFFDj\uFFFD\\x0000U\uFFFDo@1k?\uFFFD\uFFFD\uFFFD\\x00050\uFFFD&\\x0008\":V[\uFFFD\uFFFD-\uFFFD\uFFFD\\x0014\\x000c^\u01CF\uFFFD*\\x0010\uFFFD\uFFFD\uFFFDI"
 						},
 						{
 							"uri": "https://www.monservicesecurise.ssi.gouv.fr/aPropos",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "89bEsjI4J84S96Rc4L0Br5U7lxqgwRoHb0VBU00ihj92iA80xPGidvfl2mHX3SjCitx29AahQkjmkKyluEA4ihufDCpyYkEhPsJ22QTSkyc=",
-							"otherinfo": "\uFFFD\uFFFD\u013228'\uFFFD\\x0012\uFFFD\uFFFD\\\uFFFD\\x0001\uFFFD\uFFFD;\uFFFD\\x001a\uFFFD\uFFFD\\x001a\\x0007oEASM\"\uFFFD?v\uFFFD\\x000f4\uFFFD\uFFFDv\uFFFD\uFFFD\uFFFDa\uFFFD\uFFFD(\u008A\uFFFDv\uFFFD\\x0006\uFFFDBH\u642C\uFFFD\uFFFD@8\uFFFD\\x001b\uFFFD\\x000c*rbA!>\uFFFDv\uFFFD\\x0004\u0493'"
+							"evidence": "iE3mfROMLwNTlJmK6TfWSkAop9WD+V2rkG/BO8QszWFnOpjs/GWDW65qzABVjG9AMWs/iaHZBTDwJggiOlZb9pItle4UDF7Hj7AqEPzt6Uk=",
+							"otherinfo": "\uFFFDM\uFFFD}\\x0013\uFFFD/\\x0003S\uFFFD\uFFFD\uFFFD\uFFFD7\uFFFDJ@(\uFFFD\u0543\uFFFD]\uFFFD\uFFFDo\uFFFD;\uFFFD,\uFFFDag:\uFFFD\uFFFD\uFFFDe\uFFFD[\uFFFDj\uFFFD\\x0000U\uFFFDo@1k?\uFFFD\uFFFD\uFFFD\\x00050\uFFFD&\\x0008\":V[\uFFFD\uFFFD-\uFFFD\uFFFD\\x0014\\x000c^\u01CF\uFFFD*\\x0010\uFFFD\uFFFD\uFFFDI"
+						},
+						{
+							"uri": "https://www.monservicesecurise.ssi.gouv.fr/inscription",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "iE3mfROMLwNTlJmK6TfWSkAop9WD+V2rkG/BO8QszWFnOpjs/GWDW65qzABVjG9AMWs/iaHZBTDwJggiOlZb9pItle4UDF7Hj7AqEPzt6Uk=",
+							"otherinfo": "\uFFFDM\uFFFD}\\x0013\uFFFD/\\x0003S\uFFFD\uFFFD\uFFFD\uFFFD7\uFFFDJ@(\uFFFD\u0543\uFFFD]\uFFFD\uFFFDo\uFFFD;\uFFFD,\uFFFDag:\uFFFD\uFFFD\uFFFDe\uFFFD[\uFFFDj\uFFFD\\x0000U\uFFFDo@1k?\uFFFD\uFFFD\uFFFD\\x00050\uFFFD&\\x0008\":V[\uFFFD\uFFFD-\uFFFD\uFFFD\\x0014\\x000c^\u01CF\uFFFD*\\x0010\uFFFD\uFFFD\uFFFDI"
 						},
 						{
 							"uri": "https://www.monservicesecurise.ssi.gouv.fr/mentionsLegales",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "89bEsjI4J84S96Rc4L0Br5U7lxqgwRoHb0VBU00ihj92iA80xPGidvfl2mHX3SjCitx29AahQkjmkKyluEA4ihufDCpyYkEhPsJ22QTSkyc=",
-							"otherinfo": "\uFFFD\uFFFD\u013228'\uFFFD\\x0012\uFFFD\uFFFD\\\uFFFD\\x0001\uFFFD\uFFFD;\uFFFD\\x001a\uFFFD\uFFFD\\x001a\\x0007oEASM\"\uFFFD?v\uFFFD\\x000f4\uFFFD\uFFFDv\uFFFD\uFFFD\uFFFDa\uFFFD\uFFFD(\u008A\uFFFDv\uFFFD\\x0006\uFFFDBH\u642C\uFFFD\uFFFD@8\uFFFD\\x001b\uFFFD\\x000c*rbA!>\uFFFDv\uFFFD\\x0004\u0493'"
+							"evidence": "iE3mfROMLwNTlJmK6TfWSkAop9WD+V2rkG/BO8QszWFnOpjs/GWDW65qzABVjG9AMWs/iaHZBTDwJggiOlZb9pItle4UDF7Hj7AqEPzt6Uk=",
+							"otherinfo": "\uFFFDM\uFFFD}\\x0013\uFFFD/\\x0003S\uFFFD\uFFFD\uFFFD\uFFFD7\uFFFDJ@(\uFFFD\u0543\uFFFD]\uFFFD\uFFFDo\uFFFD;\uFFFD,\uFFFDag:\uFFFD\uFFFD\uFFFDe\uFFFD[\uFFFDj\uFFFD\\x0000U\uFFFDo@1k?\uFFFD\uFFFD\uFFFD\\x00050\uFFFD&\\x0008\":V[\uFFFD\uFFFD-\uFFFD\uFFFD\\x0014\\x000c^\u01CF\uFFFD*\\x0010\uFFFD\uFFFD\uFFFDI"
 						},
 						{
 							"uri": "https://www.monservicesecurise.ssi.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "89bEsjI4J84S96Rc4L0Br5U7lxqgwRoHb0VBU00ihj92iA80xPGidvfl2mHX3SjCitx29AahQkjmkKyluEA4ihufDCpyYkEhPsJ22QTSkyc=",
-							"otherinfo": "\uFFFD\uFFFD\u013228'\uFFFD\\x0012\uFFFD\uFFFD\\\uFFFD\\x0001\uFFFD\uFFFD;\uFFFD\\x001a\uFFFD\uFFFD\\x001a\\x0007oEASM\"\uFFFD?v\uFFFD\\x000f4\uFFFD\uFFFDv\uFFFD\uFFFD\uFFFDa\uFFFD\uFFFD(\u008A\uFFFDv\uFFFD\\x0006\uFFFDBH\u642C\uFFFD\uFFFD@8\uFFFD\\x001b\uFFFD\\x000c*rbA!>\uFFFDv\uFFFD\\x0004\u0493'"
+							"evidence": "iE3mfROMLwNTlJmK6TfWSkAop9WD+V2rkG/BO8QszWFnOpjs/GWDW65qzABVjG9AMWs/iaHZBTDwJggiOlZb9pItle4UDF7Hj7AqEPzt6Uk=",
+							"otherinfo": "\uFFFDM\uFFFD}\\x0013\uFFFD/\\x0003S\uFFFD\uFFFD\uFFFD\uFFFD7\uFFFDJ@(\uFFFD\u0543\uFFFD]\uFFFD\uFFFDo\uFFFD;\uFFFD,\uFFFDag:\uFFFD\uFFFD\uFFFDe\uFFFD[\uFFFDj\uFFFD\\x0000U\uFFFDo@1k?\uFFFD\uFFFD\uFFFD\\x00050\uFFFD&\\x0008\":V[\uFFFD\uFFFD-\uFFFD\uFFFD\\x0014\\x000c^\u01CF\uFFFD*\\x0010\uFFFD\uFFFD\uFFFDI"
 						},
 						{
 							"uri": "https://www.monservicesecurise.ssi.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "89bEsjI4J84S96Rc4L0Br5U7lxqgwRoHb0VBU00ihj92iA80xPGidvfl2mHX3SjCitx29AahQkjmkKyluEA4ihufDCpyYkEhPsJ22QTSkyc=",
-							"otherinfo": "\uFFFD\uFFFD\u013228'\uFFFD\\x0012\uFFFD\uFFFD\\\uFFFD\\x0001\uFFFD\uFFFD;\uFFFD\\x001a\uFFFD\uFFFD\\x001a\\x0007oEASM\"\uFFFD?v\uFFFD\\x000f4\uFFFD\uFFFDv\uFFFD\uFFFD\uFFFDa\uFFFD\uFFFD(\u008A\uFFFDv\uFFFD\\x0006\uFFFDBH\u642C\uFFFD\uFFFD@8\uFFFD\\x001b\uFFFD\\x000c*rbA!>\uFFFDv\uFFFD\\x0004\u0493'"
+							"evidence": "iE3mfROMLwNTlJmK6TfWSkAop9WD+V2rkG/BO8QszWFnOpjs/GWDW65qzABVjG9AMWs/iaHZBTDwJggiOlZb9pItle4UDF7Hj7AqEPzt6Uk=",
+							"otherinfo": "\uFFFDM\uFFFD}\\x0013\uFFFD/\\x0003S\uFFFD\uFFFD\uFFFD\uFFFD7\uFFFDJ@(\uFFFD\u0543\uFFFD]\uFFFD\uFFFDo\uFFFD;\uFFFD,\uFFFDag:\uFFFD\uFFFD\uFFFDe\uFFFD[\uFFFDj\uFFFD\\x0000U\uFFFDo@1k?\uFFFD\uFFFD\uFFFD\\x00050\uFFFD&\\x0008\":V[\uFFFD\uFFFD-\uFFFD\uFFFD\\x0014\\x000c^\u01CF\uFFFD*\\x0010\uFFFD\uFFFD\uFFFDI"
 						},
 						{
 							"uri": "https://www.monservicesecurise.ssi.gouv.fr/statique/assets/images/favicons/favicon.ico",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "89bEsjI4J84S96Rc4L0Br5U7lxqgwRoHb0VBU00ihj92iA80xPGidvfl2mHX3SjCitx29AahQkjmkKyluEA4ihufDCpyYkEhPsJ22QTSkyc=",
-							"otherinfo": "\uFFFD\uFFFD\u013228'\uFFFD\\x0012\uFFFD\uFFFD\\\uFFFD\\x0001\uFFFD\uFFFD;\uFFFD\\x001a\uFFFD\uFFFD\\x001a\\x0007oEASM\"\uFFFD?v\uFFFD\\x000f4\uFFFD\uFFFDv\uFFFD\uFFFD\uFFFDa\uFFFD\uFFFD(\u008A\uFFFDv\uFFFD\\x0006\uFFFDBH\u642C\uFFFD\uFFFD@8\uFFFD\\x001b\uFFFD\\x000c*rbA!>\uFFFDv\uFFFD\\x0004\u0493'"
-						},
-						{
-							"uri": "https://www.monservicesecurise.ssi.gouv.fr/statique/assets/styles/fonts.css",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "89bEsjI4J84S96Rc4L0Br5U7lxqgwRoHb0VBU00ihj92iA80xPGidvfl2mHX3SjCitx29AahQkjmkKyluEA4ihufDCpyYkEhPsJ22QTSkyc=",
-							"otherinfo": "\uFFFD\uFFFD\u013228'\uFFFD\\x0012\uFFFD\uFFFD\\\uFFFD\\x0001\uFFFD\uFFFD;\uFFFD\\x001a\uFFFD\uFFFD\\x001a\\x0007oEASM\"\uFFFD?v\uFFFD\\x000f4\uFFFD\uFFFDv\uFFFD\uFFFD\uFFFDa\uFFFD\uFFFD(\u008A\uFFFDv\uFFFD\\x0006\uFFFDBH\u642C\uFFFD\uFFFD@8\uFFFD\\x001b\uFFFD\\x000c*rbA!>\uFFFDv\uFFFD\\x0004\u0493'"
+							"evidence": "iE3mfROMLwNTlJmK6TfWSkAop9WD+V2rkG/BO8QszWFnOpjs/GWDW65qzABVjG9AMWs/iaHZBTDwJggiOlZb9pItle4UDF7Hj7AqEPzt6Uk=",
+							"otherinfo": "\uFFFDM\uFFFD}\\x0013\uFFFD/\\x0003S\uFFFD\uFFFD\uFFFD\uFFFD7\uFFFDJ@(\uFFFD\u0543\uFFFD]\uFFFD\uFFFDo\uFFFD;\uFFFD,\uFFFDag:\uFFFD\uFFFD\uFFFDe\uFFFD[\uFFFDj\uFFFD\\x0000U\uFFFDo@1k?\uFFFD\uFFFD\uFFFD\\x00050\uFFFD&\\x0008\":V[\uFFFD\uFFFD-\uFFFD\uFFFD\\x0014\\x000c^\u01CF\uFFFD*\\x0010\uFFFD\uFFFD\uFFFDI"
 						},
 						{
 							"uri": "https://www.monservicesecurise.ssi.gouv.fr/statique/assets/styles/palette.css",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "89bEsjI4J84S96Rc4L0Br5U7lxqgwRoHb0VBU00ihj92iA80xPGidvfl2mHX3SjCitx29AahQkjmkKyluEA4ihufDCpyYkEhPsJ22QTSkyc=",
-							"otherinfo": "\uFFFD\uFFFD\u013228'\uFFFD\\x0012\uFFFD\uFFFD\\\uFFFD\\x0001\uFFFD\uFFFD;\uFFFD\\x001a\uFFFD\uFFFD\\x001a\\x0007oEASM\"\uFFFD?v\uFFFD\\x000f4\uFFFD\uFFFDv\uFFFD\uFFFD\uFFFDa\uFFFD\uFFFD(\u008A\uFFFDv\uFFFD\\x0006\uFFFDBH\u642C\uFFFD\uFFFD@8\uFFFD\\x001b\uFFFD\\x000c*rbA!>\uFFFDv\uFFFD\\x0004\u0493'"
+							"evidence": "iE3mfROMLwNTlJmK6TfWSkAop9WD+V2rkG/BO8QszWFnOpjs/GWDW65qzABVjG9AMWs/iaHZBTDwJggiOlZb9pItle4UDF7Hj7AqEPzt6Uk=",
+							"otherinfo": "\uFFFDM\uFFFD}\\x0013\uFFFD/\\x0003S\uFFFD\uFFFD\uFFFD\uFFFD7\uFFFDJ@(\uFFFD\u0543\uFFFD]\uFFFD\uFFFDo\uFFFD;\uFFFD,\uFFFDag:\uFFFD\uFFFD\uFFFDe\uFFFD[\uFFFDj\uFFFD\\x0000U\uFFFDo@1k?\uFFFD\uFFFD\uFFFD\\x00050\uFFFD&\\x0008\":V[\uFFFD\uFFFD-\uFFFD\uFFFD\\x0014\\x000c^\u01CF\uFFFD*\\x0010\uFFFD\uFFFD\uFFFDI"
 						},
 						{
 							"uri": "https://www.monservicesecurise.ssi.gouv.fr/statistiques",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "89bEsjI4J84S96Rc4L0Br5U7lxqgwRoHb0VBU00ihj92iA80xPGidvfl2mHX3SjCitx29AahQkjmkKyluEA4ihufDCpyYkEhPsJ22QTSkyc=",
-							"otherinfo": "\uFFFD\uFFFD\u013228'\uFFFD\\x0012\uFFFD\uFFFD\\\uFFFD\\x0001\uFFFD\uFFFD;\uFFFD\\x001a\uFFFD\uFFFD\\x001a\\x0007oEASM\"\uFFFD?v\uFFFD\\x000f4\uFFFD\uFFFDv\uFFFD\uFFFD\uFFFDa\uFFFD\uFFFD(\u008A\uFFFDv\uFFFD\\x0006\uFFFDBH\u642C\uFFFD\uFFFD@8\uFFFD\\x001b\uFFFD\\x000c*rbA!>\uFFFDv\uFFFD\\x0004\u0493'"
+							"evidence": "iE3mfROMLwNTlJmK6TfWSkAop9WD+V2rkG/BO8QszWFnOpjs/GWDW65qzABVjG9AMWs/iaHZBTDwJggiOlZb9pItle4UDF7Hj7AqEPzt6Uk=",
+							"otherinfo": "\uFFFDM\uFFFD}\\x0013\uFFFD/\\x0003S\uFFFD\uFFFD\uFFFD\uFFFD7\uFFFDJ@(\uFFFD\u0543\uFFFD]\uFFFD\uFFFDo\uFFFD;\uFFFD,\uFFFDag:\uFFFD\uFFFD\uFFFDe\uFFFD[\uFFFDj\uFFFD\\x0000U\uFFFDo@1k?\uFFFD\uFFFD\uFFFD\\x00050\uFFFD&\\x0008\":V[\uFFFD\uFFFD-\uFFFD\uFFFD\\x0014\\x000c^\u01CF\uFFFD*\\x0010\uFFFD\uFFFD\uFFFDI"
 						}
 					],
 					"count": "12",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>{\"_csrfSecret\":\"Cni3fUDc8P8Q9g==\",\"maintenant\":28420945}</p>",
+					"otherinfo": "<p>{\"_csrfSecret\":\"3Vrvh95y7l5vZg==\",\"maintenant\":28431007}</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
@@ -575,7 +575,7 @@
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "104"
+					"sourceid": "103"
 				},
 				{
 					"pluginid": "10027",
@@ -783,14 +783,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.monservicesecurise.ssi.gouv.fr/reinitialisationMotDePasse",
-							"method": "GET",
-							"param": "cache-control",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://www.monservicesecurise.ssi.gouv.fr/statistiques",
 							"method": "GET",
 							"param": "cache-control",
@@ -799,13 +791,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "12",
+					"count": "11",
 					"solution": "<p>For secure content, ensure the cache-control HTTP header is set with \"no-cache, no-store, must-revalidate\". If an asset should be cached consider setting the directives \"public, max-age, immutable\".</p>",
 					"otherinfo": "",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control</p><p>https://grayduck.mn/2021/09/13/cache-control-recommendations/</p>",
 					"cweid": "525",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -826,7 +818,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.monservicesecurise.ssi.gouv.fr/robots.txt",
+							"uri": "https://www.monservicesecurise.ssi.gouv.fr/",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -869,7 +861,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.monservicesecurise.ssi.gouv.fr/robots.txt",
+							"uri": "https://www.monservicesecurise.ssi.gouv.fr/",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -912,7 +904,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.monservicesecurise.ssi.gouv.fr/robots.txt",
+							"uri": "https://www.monservicesecurise.ssi.gouv.fr/",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -955,7 +947,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.monservicesecurise.ssi.gouv.fr/robots.txt",
+							"uri": "https://www.monservicesecurise.ssi.gouv.fr/",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -994,7 +986,7 @@
 							"method": "GET",
 							"param": "token.sig",
 							"attack": "",
-							"evidence": "RsPGsVnf6lSfa-ucGFlm-F4ht2w",
+							"evidence": "-0Fhu13G8NNYvG2eMZ4Sqv9OepE",
 							"otherinfo": "\ncookie:token.sig\ncookie:token\ncookie:sc-sticky-session"
 						},
 						{
@@ -1002,7 +994,7 @@
 							"method": "GET",
 							"param": "token.sig",
 							"attack": "",
-							"evidence": "jsib6pBmD18YKk336FDvvP0KQYQ",
+							"evidence": "QVuAHYd0oih6EStXN5abRHutfbs",
 							"otherinfo": "\ncookie:token.sig\ncookie:token\ncookie:sc-sticky-session"
 						},
 						{
@@ -1010,7 +1002,7 @@
 							"method": "GET",
 							"param": "sc-sticky-session",
 							"attack": "",
-							"evidence": "89bEsjI4J84S96Rc4L0Br5U7lxqgwRoHb0VBU00ihj92iA80xPGidvfl2mHX3SjCitx29AahQkjmkKyluEA4ihufDCpyYkEhPsJ22QTSkyc=",
+							"evidence": "iE3mfROMLwNTlJmK6TfWSkAop9WD+V2rkG/BO8QszWFnOpjs/GWDW65qzABVjG9AMWs/iaHZBTDwJggiOlZb9pItle4UDF7Hj7AqEPzt6Uk=",
 							"otherinfo": "\ncookie:sc-sticky-session"
 						},
 						{
@@ -1018,7 +1010,7 @@
 							"method": "GET",
 							"param": "sc-sticky-session",
 							"attack": "",
-							"evidence": "89bEsjI4J84S96Rc4L0Br5U7lxqgwRoHb0VBU00ihj92iA80xPGidvfl2mHX3SjCitx29AahQkjmkKyluEA4ihufDCpyYkEhPsJ22QTSkyc=",
+							"evidence": "iE3mfROMLwNTlJmK6TfWSkAop9WD+V2rkG/BO8QszWFnOpjs/GWDW65qzABVjG9AMWs/iaHZBTDwJggiOlZb9pItle4UDF7Hj7AqEPzt6Uk=",
 							"otherinfo": "\ncookie:sc-sticky-session"
 						},
 						{
@@ -1026,7 +1018,7 @@
 							"method": "GET",
 							"param": "sc-sticky-session",
 							"attack": "",
-							"evidence": "89bEsjI4J84S96Rc4L0Br5U7lxqgwRoHb0VBU00ihj92iA80xPGidvfl2mHX3SjCitx29AahQkjmkKyluEA4ihufDCpyYkEhPsJ22QTSkyc=",
+							"evidence": "iE3mfROMLwNTlJmK6TfWSkAop9WD+V2rkG/BO8QszWFnOpjs/GWDW65qzABVjG9AMWs/iaHZBTDwJggiOlZb9pItle4UDF7Hj7AqEPzt6Uk=",
 							"otherinfo": "\ncookie:sc-sticky-session"
 						},
 						{
@@ -1034,7 +1026,7 @@
 							"method": "GET",
 							"param": "sc-sticky-session",
 							"attack": "",
-							"evidence": "89bEsjI4J84S96Rc4L0Br5U7lxqgwRoHb0VBU00ihj92iA80xPGidvfl2mHX3SjCitx29AahQkjmkKyluEA4ihufDCpyYkEhPsJ22QTSkyc=",
+							"evidence": "iE3mfROMLwNTlJmK6TfWSkAop9WD+V2rkG/BO8QszWFnOpjs/GWDW65qzABVjG9AMWs/iaHZBTDwJggiOlZb9pItle4UDF7Hj7AqEPzt6Uk=",
 							"otherinfo": "\ncookie:sc-sticky-session"
 						},
 						{
@@ -1042,7 +1034,7 @@
 							"method": "GET",
 							"param": "sc-sticky-session",
 							"attack": "",
-							"evidence": "89bEsjI4J84S96Rc4L0Br5U7lxqgwRoHb0VBU00ihj92iA80xPGidvfl2mHX3SjCitx29AahQkjmkKyluEA4ihufDCpyYkEhPsJ22QTSkyc=",
+							"evidence": "iE3mfROMLwNTlJmK6TfWSkAop9WD+V2rkG/BO8QszWFnOpjs/GWDW65qzABVjG9AMWs/iaHZBTDwJggiOlZb9pItle4UDF7Hj7AqEPzt6Uk=",
 							"otherinfo": "\ncookie:sc-sticky-session"
 						},
 						{
@@ -1050,7 +1042,7 @@
 							"method": "GET",
 							"param": "sc-sticky-session",
 							"attack": "",
-							"evidence": "89bEsjI4J84S96Rc4L0Br5U7lxqgwRoHb0VBU00ihj92iA80xPGidvfl2mHX3SjCitx29AahQkjmkKyluEA4ihufDCpyYkEhPsJ22QTSkyc=",
+							"evidence": "iE3mfROMLwNTlJmK6TfWSkAop9WD+V2rkG/BO8QszWFnOpjs/GWDW65qzABVjG9AMWs/iaHZBTDwJggiOlZb9pItle4UDF7Hj7AqEPzt6Uk=",
 							"otherinfo": "\ncookie:sc-sticky-session"
 						},
 						{
@@ -1058,15 +1050,7 @@
 							"method": "GET",
 							"param": "sc-sticky-session",
 							"attack": "",
-							"evidence": "89bEsjI4J84S96Rc4L0Br5U7lxqgwRoHb0VBU00ihj92iA80xPGidvfl2mHX3SjCitx29AahQkjmkKyluEA4ihufDCpyYkEhPsJ22QTSkyc=",
-							"otherinfo": "\ncookie:sc-sticky-session"
-						},
-						{
-							"uri": "https://www.monservicesecurise.ssi.gouv.fr/statique/assets/styles/bouton.css",
-							"method": "GET",
-							"param": "sc-sticky-session",
-							"attack": "",
-							"evidence": "89bEsjI4J84S96Rc4L0Br5U7lxqgwRoHb0VBU00ihj92iA80xPGidvfl2mHX3SjCitx29AahQkjmkKyluEA4ihufDCpyYkEhPsJ22QTSkyc=",
+							"evidence": "iE3mfROMLwNTlJmK6TfWSkAop9WD+V2rkG/BO8QszWFnOpjs/GWDW65qzABVjG9AMWs/iaHZBTDwJggiOlZb9pItle4UDF7Hj7AqEPzt6Uk=",
 							"otherinfo": "\ncookie:sc-sticky-session"
 						},
 						{
@@ -1074,7 +1058,7 @@
 							"method": "GET",
 							"param": "sc-sticky-session",
 							"attack": "",
-							"evidence": "89bEsjI4J84S96Rc4L0Br5U7lxqgwRoHb0VBU00ihj92iA80xPGidvfl2mHX3SjCitx29AahQkjmkKyluEA4ihufDCpyYkEhPsJ22QTSkyc=",
+							"evidence": "iE3mfROMLwNTlJmK6TfWSkAop9WD+V2rkG/BO8QszWFnOpjs/GWDW65qzABVjG9AMWs/iaHZBTDwJggiOlZb9pItle4UDF7Hj7AqEPzt6Uk=",
 							"otherinfo": "\ncookie:sc-sticky-session"
 						},
 						{
@@ -1082,7 +1066,7 @@
 							"method": "GET",
 							"param": "sc-sticky-session",
 							"attack": "",
-							"evidence": "89bEsjI4J84S96Rc4L0Br5U7lxqgwRoHb0VBU00ihj92iA80xPGidvfl2mHX3SjCitx29AahQkjmkKyluEA4ihufDCpyYkEhPsJ22QTSkyc=",
+							"evidence": "iE3mfROMLwNTlJmK6TfWSkAop9WD+V2rkG/BO8QszWFnOpjs/GWDW65qzABVjG9AMWs/iaHZBTDwJggiOlZb9pItle4UDF7Hj7AqEPzt6Uk=",
 							"otherinfo": "\ncookie:sc-sticky-session"
 						},
 						{
@@ -1090,11 +1074,11 @@
 							"method": "GET",
 							"param": "sc-sticky-session",
 							"attack": "",
-							"evidence": "89bEsjI4J84S96Rc4L0Br5U7lxqgwRoHb0VBU00ihj92iA80xPGidvfl2mHX3SjCitx29AahQkjmkKyluEA4ihufDCpyYkEhPsJ22QTSkyc=",
+							"evidence": "iE3mfROMLwNTlJmK6TfWSkAop9WD+V2rkG/BO8QszWFnOpjs/GWDW65qzABVjG9AMWs/iaHZBTDwJggiOlZb9pItle4UDF7Hj7AqEPzt6Uk=",
 							"otherinfo": "\ncookie:sc-sticky-session"
 						}
 					],
-					"count": "13",
+					"count": "12",
 					"solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
 					"otherinfo": "<p></p><p>cookie:token.sig</p><p>cookie:token</p><p>cookie:sc-sticky-session</p>",
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id</p>",
@@ -1145,6 +1129,14 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
+							"uri": "https://www.monservicesecurise.ssi.gouv.fr/inscription",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
 							"uri": "https://www.monservicesecurise.ssi.gouv.fr/mentionsLegales",
 							"method": "GET",
 							"param": "",
@@ -1170,14 +1162,6 @@
 						},
 						{
 							"uri": "https://www.monservicesecurise.ssi.gouv.fr/statique/assets/images/favicons/favicon.ico",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "max-age=3600",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://www.monservicesecurise.ssi.gouv.fr/statique/assets/styles/fonts.css",
 							"method": "GET",
 							"param": "",
 							"attack": "",

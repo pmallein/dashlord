@@ -1,43 +1,6 @@
 [
   [
     {
-      "template": "dns/caa-fingerprint.yaml",
-      "template-url": "https://templates.nuclei.sh/public/caa-fingerprint",
-      "template-id": "caa-fingerprint",
-      "template-path": "/home/runner/nuclei-templates/dns/caa-fingerprint.yaml",
-      "info": {
-        "name": "CAA Record",
-        "author": [
-          "pdteam"
-        ],
-        "tags": [
-          "dns",
-          "caa"
-        ],
-        "description": "A CAA record was discovered. A CAA record is used to specify which certificate authorities (CAs) are allowed to issue certificates for a domain.",
-        "reference": [
-          "https://support.dnsimple.com/articles/caa-record/#whats-a-caa-record"
-        ],
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-200"
-          ]
-        }
-      },
-      "type": "dns",
-      "host": "chauffage-urbain.beta.gouv.fr.",
-      "matched-at": "chauffage-urbain.beta.gouv.fr",
-      "request": ";; opcode: QUERY, status: NOERROR, id: 22444\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;chauffage-urbain.beta.gouv.fr.\tIN\t CAA\n",
-      "response": ";; opcode: QUERY, status: NOERROR, id: 22444\n;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n; EDE: 18 (Prohibited): ()\n\n;; QUESTION SECTION:\n;chauffage-urbain.beta.gouv.fr.\tIN\t CAA\n\n;; ANSWER SECTION:\nchauffage-urbain.beta.gouv.fr.\t10800\tIN\tCNAME\tbetagouv-redirections.osc-fr1.scalingo.io.\nbetagouv-redirections.osc-fr1.scalingo.io.\t300\tIN\tCNAME\tsc-lb-pool-01.osc-fr1.scalingo-network.com.\n\n;; AUTHORITY SECTION:\nscalingo-network.com.\t1800\tIN\tSOA\tburt.ns.cloudflare.com. dns.cloudflare.com. 2329389717 10000 2400 604800 1800\n",
-      "timestamp": "2024-01-14T03:39:10.130694399Z",
-      "matcher-status": true
-    },
-    {
       "template": "dns/dns-saas-service-detection.yaml",
       "template-url": "https://templates.nuclei.sh/public/dns-saas-service-detection",
       "template-id": "dns-saas-service-detection",
@@ -69,9 +32,46 @@
       "extracted-results": [
         "betagouv-redirections.osc-fr1.scalingo.io."
       ],
-      "request": ";; opcode: QUERY, status: NOERROR, id: 1866\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;chauffage-urbain.beta.gouv.fr.\tIN\t CNAME\n",
-      "response": ";; opcode: QUERY, status: NOERROR, id: 1866\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;chauffage-urbain.beta.gouv.fr.\tIN\t CNAME\n\n;; ANSWER SECTION:\nchauffage-urbain.beta.gouv.fr.\t10799\tIN\tCNAME\tbetagouv-redirections.osc-fr1.scalingo.io.\n",
-      "timestamp": "2024-01-14T03:39:10.883618507Z",
+      "request": ";; opcode: QUERY, status: NOERROR, id: 39768\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;chauffage-urbain.beta.gouv.fr.\tIN\t CNAME\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 39768\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;chauffage-urbain.beta.gouv.fr.\tIN\t CNAME\n\n;; ANSWER SECTION:\nchauffage-urbain.beta.gouv.fr.\t10800\tIN\tCNAME\tbetagouv-redirections.osc-fr1.scalingo.io.\n",
+      "timestamp": "2024-01-21T03:31:30.683629102Z",
+      "matcher-status": true
+    },
+    {
+      "template": "dns/caa-fingerprint.yaml",
+      "template-url": "https://templates.nuclei.sh/public/caa-fingerprint",
+      "template-id": "caa-fingerprint",
+      "template-path": "/home/runner/nuclei-templates/dns/caa-fingerprint.yaml",
+      "info": {
+        "name": "CAA Record",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "dns",
+          "caa"
+        ],
+        "description": "A CAA record was discovered. A CAA record is used to specify which certificate authorities (CAs) are allowed to issue certificates for a domain.",
+        "reference": [
+          "https://support.dnsimple.com/articles/caa-record/#whats-a-caa-record"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ]
+        }
+      },
+      "type": "dns",
+      "host": "chauffage-urbain.beta.gouv.fr.",
+      "matched-at": "chauffage-urbain.beta.gouv.fr",
+      "request": ";; opcode: QUERY, status: NOERROR, id: 18525\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;chauffage-urbain.beta.gouv.fr.\tIN\t CAA\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 18525\n;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;chauffage-urbain.beta.gouv.fr.\tIN\t CAA\n\n;; ANSWER SECTION:\nchauffage-urbain.beta.gouv.fr.\t10800\tIN\tCNAME\tbetagouv-redirections.osc-fr1.scalingo.io.\nbetagouv-redirections.osc-fr1.scalingo.io.\t300\tIN\tCNAME\tsc-lb-pool-01.osc-fr1.scalingo-network.com.\n\n;; AUTHORITY SECTION:\nscalingo-network.com.\t1800\tIN\tSOA\tburt.ns.cloudflare.com. dns.cloudflare.com. 2330923650 10000 2400 604800 1800\n",
+      "timestamp": "2024-01-21T03:31:30.717376935Z",
       "matcher-status": true
     },
     {
@@ -110,9 +110,9 @@
       "host": "https://chauffage-urbain.beta.gouv.fr",
       "matched-at": "https://chauffage-urbain.beta.gouv.fr/",
       "request": "POST / HTTP/1.1\r\nHost: chauffage-urbain.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nContent-Length: 27\r\nContent-Type: application/x-www-form-urlencoded\r\nAccept-Encoding: gzip\r\n\r\n_=<script>alert(1)</script>",
-      "response": "HTTP/1.1 301 Moved Permanently\r\nConnection: close\r\nContent-Length: 162\r\nContent-Type: text/html\r\nDate: Sun, 14 Jan 2024 03:40:16 GMT\r\nLocation: https://france-chaleur-urbaine.beta.gouv.fr\r\nX-Request-Id: 9175a411-32e4-4340-95c2-00ef71795133\r\n\r\n<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body>\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
+      "response": "HTTP/1.1 301 Moved Permanently\r\nConnection: close\r\nContent-Length: 162\r\nContent-Type: text/html\r\nDate: Sun, 21 Jan 2024 03:32:52 GMT\r\nLocation: https://france-chaleur-urbaine.beta.gouv.fr\r\nX-Request-Id: 854313f5-b347-4405-813a-9e1aba2a37fe\r\n\r\n<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body>\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
       "ip": "5.104.101.30",
-      "timestamp": "2024-01-14T03:40:16.360228913Z",
+      "timestamp": "2024-01-21T03:32:52.425348157Z",
       "curl-command": "curl -X 'POST' -d '_=<script>alert(1)</script>' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Host: chauffage-urbain.beta.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://chauffage-urbain.beta.gouv.fr/'",
       "matcher-status": true
     },
@@ -143,7 +143,7 @@
         "Let's Encrypt"
       ],
       "ip": "5.104.101.30",
-      "timestamp": "2024-01-14T03:45:55.873346535Z",
+      "timestamp": "2024-01-21T03:38:33.053711736Z",
       "matcher-status": true
     },
     {
@@ -173,7 +173,7 @@
         "chauffage-urbain.beta.gouv.fr"
       ],
       "ip": "5.104.101.30",
-      "timestamp": "2024-01-14T03:45:55.873453954Z",
+      "timestamp": "2024-01-21T03:38:33.053838963Z",
       "matcher-status": true
     },
     {
@@ -204,7 +204,7 @@
         "tls12"
       ],
       "ip": "5.104.101.30",
-      "timestamp": "2024-01-14T03:45:56.934843191Z",
+      "timestamp": "2024-01-21T03:38:36.664158038Z",
       "matcher-status": true
     },
     {
@@ -235,7 +235,7 @@
         "tls13"
       ],
       "ip": "5.104.101.30",
-      "timestamp": "2024-01-14T03:45:57.124210093Z",
+      "timestamp": "2024-01-21T03:38:36.92260409Z",
       "matcher-status": true
     }
   ]

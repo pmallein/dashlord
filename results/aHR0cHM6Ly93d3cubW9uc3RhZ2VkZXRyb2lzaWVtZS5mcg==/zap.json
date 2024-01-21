@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 14 Jan 2024 12:10:22",
+	"@generated": "Sun, 21 Jan 2024 11:50:45",
 	"site":[ 
 		{
 			"@name": "https://www.monstagedetroisieme.fr",
@@ -57,7 +57,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "<form data-turbo=\"false\" id=\"home_search_form\" action=\"/offres-de-stage\" accept-charset=\"UTF-8\" method=\"get\">",
-							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"checkbox_264\" \"checkbox_265\" \"checkbox_266\" \"checkbox_267\" \"checkbox_268\" \"checkbox_269\" \"checkbox_270\" \"checkbox_271\" \"checkbox_272\" \"checkbox_273\" \"checkbox_274\" \"checkbox_275\" \"checkbox_276\" \"checkbox_277\" \"checkbox_278\" \"checkbox_279\" \"checkbox_280\" \"checkbox_281\" \"checkbox_282\" \"checkbox_283\" \"input-search-by-week\" ]."
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"checkbox_265\" \"checkbox_266\" \"checkbox_267\" \"checkbox_268\" \"checkbox_269\" \"checkbox_270\" \"checkbox_271\" \"checkbox_272\" \"checkbox_273\" \"checkbox_274\" \"checkbox_275\" \"checkbox_276\" \"checkbox_277\" \"checkbox_278\" \"checkbox_279\" \"checkbox_280\" \"checkbox_281\" \"checkbox_282\" \"checkbox_283\" \"input-search-by-week\" ]."
 						},
 						{
 							"uri": "https://www.monstagedetroisieme.fr/mentions-legales",
@@ -66,14 +66,6 @@
 							"attack": "",
 							"evidence": "<form method=\"dialog\">",
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"\" ]."
-						},
-						{
-							"uri": "https://www.monstagedetroisieme.fr/offres-de-stage",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<form data-turbo=\"false\" id=\"desktop_internship_offers_index_search_form\" action=\"/offres-de-stage\" accept-charset=\"UTF-8\" method=\"get\">",
-							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"checkbox_264\" \"checkbox_265\" \"checkbox_266\" \"checkbox_267\" \"checkbox_268\" \"checkbox_269\" \"checkbox_270\" \"checkbox_271\" \"checkbox_272\" \"checkbox_273\" \"checkbox_274\" \"checkbox_275\" \"checkbox_276\" \"checkbox_277\" \"checkbox_278\" \"checkbox_279\" \"checkbox_280\" \"checkbox_281\" \"checkbox_282\" \"checkbox_283\" \"input-search-by-week\" ]."
 						},
 						{
 							"uri": "https://www.monstagedetroisieme.fr/politique-de-confidentialite",
@@ -92,6 +84,14 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"\" ]."
 						},
 						{
+							"uri": "https://www.monstagedetroisieme.fr/utilisateurs/confirmation/nouveau.user",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form method=\"dialog\">",
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 2: \"\" ]."
+						},
+						{
 							"uri": "https://www.monstagedetroisieme.fr/utilisateurs/connexion",
 							"method": "GET",
 							"param": "",
@@ -100,7 +100,7 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 2: \"\" ]."
 						},
 						{
-							"uri": "https://www.monstagedetroisieme.fr/utilisateurs/inscription?as=Employer",
+							"uri": "https://www.monstagedetroisieme.fr/utilisateurs/inscription?as=SchoolManagement",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -119,10 +119,10 @@
 					"count": "12",
 					"solution": "<p>Phase: Architecture and Design</p><p>Use a vetted library or framework that does not allow this weakness to occur or provides constructs that make this weakness easier to avoid.</p><p>For example, use anti-CSRF packages such as the OWASP CSRFGuard.</p><p></p><p>Phase: Implementation</p><p>Ensure that your application is free of cross-site scripting issues, because most CSRF defenses can be bypassed using attacker-controlled script.</p><p></p><p>Phase: Architecture and Design</p><p>Generate a unique nonce for each form, place the nonce into the form, and verify the nonce upon receipt of the form. Be sure that the nonce is not predictable (CWE-330).</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Identify especially dangerous operations. When the user performs a dangerous operation, send a separate confirmation request to ensure that the user intended to perform that operation.</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Use the ESAPI Session Management control.</p><p>This control includes a component for CSRF.</p><p></p><p>Do not use the GET method for any request that triggers a state change.</p><p></p><p>Phase: Implementation</p><p>Check the HTTP Referer header to see if the request originated from an expected page. This could break legitimate functionality, because users or proxies may have disabled sending the Referer for privacy reasons.</p>",
 					"otherinfo": "<p>No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"\" ].</p>",
-					"reference": "<p>http://projects.webappsec.org/Cross-Site-Request-Forgery</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "89"
+					"sourceid": "93"
 				},
 				{
 					"pluginid": "10038",
@@ -226,37 +226,10 @@
 					"count": "11",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "",
-					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>http://www.w3.org/TR/CSP/</p><p>http://w3c.github.io/webappsec/specs/content-security-policy/csp-specification.dev.html</p><p>http://www.html5rocks.com/en/tutorials/security/content-security-policy/</p><p>http://caniuse.com/#feat=contentsecuritypolicy</p><p>http://content-security-policy.com/</p>",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>https://www.w3.org/TR/CSP/</p><p>https://w3c.github.io/webappsec-csp/</p><p>https://web.dev/articles/csp</p><p>https://caniuse.com/#feat=contentsecuritypolicy</p><p>https://content-security-policy.com/</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1"
-				},
-				{
-					"pluginid": "10099",
-					"alertRef": "10099",
-					"alert": "Source Code Disclosure - PHP",
-					"name": "Source Code Disclosure - PHP",
-					"riskcode": "2",
-					"confidence": "2",
-					"riskdesc": "Medium (Medium)",
-					"desc": "<p>Application Source Code was disclosed by the web server - PHP</p>",
-					"instances":[ 
-						{
-							"uri": "https://www.monstagedetroisieme.fr/documents_utiles/CarnetStagePro_USEA_WEB-2.pdf",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<?=T(#%J636lS.2E9gGp-S'@'5];hno_\nIunL6Gh-Q-C45eD@!)4u5WUmP9E[]ncs$&\\Nga01?mou9\"[A*(HBopV5sM088tZE+\n8(5lH52)AcG'7<<gf#p8bV.eos/=$;C`$=qD(WDrjfA]lRYim,RqrACdejgO/AF>(\n/:tg]_t>sDIL8P<ndm?OOg2bg,-Em:1jeEn-[97]R[[bI(P]d%f!I;eeb'o)qeJ7,\nB.cOqT*d(nYRO5hkDtb5$C0au\"Tu@Gd5re*4LT0a7a1s2(FCIYl*Hscd?$6a1aIjm\n`#s0m!>?_.0o<c)d:14=0]UGQjn;]0qKM`<7PPUaM-O)AhPTW$':M2&0_hHReg`^d\n7R:TK-mVk@qM%4_RD&Zoj*$-:O\\,P7G8CNp$hFmd47K<8U_e8pRSKd[0+J5ELBKfW\n9L7',Oq*H#neRo8?p<q%gkY'iJ^MpD;p9Z&0HV^R_Q8>,=2iEcr<Rg<bF`7PF$4(]\n7=;9#?7M7#FSgN'HKh'jS#/aY66j[4MXrY:L>ZOF;(Wn!kIE`M_?jL64MdEt,m)Yc\nq)k2_XWMBFeot(QWg#\\eAS8p.1#t0Oh:R&-2fIWY4$4OTG4i\"eHMFCbG%eAR>[fpD\nDUAgu&;\"Vg$-7)+o:(\\%WDg[DHaj=nPCQTMYbl%pT\"7k`gGf;5csf#*;r&)CH+o&S\n,iC5aJQd)D_edC]SdIK.>-h`N(pX2/]qhur8]&$Vfr@,nVo+@bQqo[;hEa5/e+dSU\nr+qq.!4%H/QLeg@]Q7`s:MnoKRc*j44?N\\<_*jGI1b!)b'6*q4!7^H/3W~>\rendstream\rendobj\r363 0 obj\r<</BitsPerComponent 8/ColorSpace 243 0 R/Filter[/ASCII85Decode/FlateDecode]/Height 74/Length 898/Width 104>>stream\r\n8;Yht=gir*%*^G4G5iM&4&7\"b7LWDdH.UM[.3p1*%.=!D[e*/GoW!24mC6KLF/o$H\np3`V+%Q2YE''\\'1:9K9-l24&s/bZuO5L@E$h>/oJ-qd@`=`@5g9LpcuIZsmteEn[l\nMR\"c_mp'jPLS$@Lp;?48*kW^2g7J!48]XJC'=-./.-<F:16<p$QJk-biV8T01k(,X\n6&m@BfR?>",
-							"otherinfo": ""
-						}
-					],
-					"count": "1",
-					"solution": "<p>Ensure that application Source Code is not available with alternative extensions, and ensure that source code is not present within other files or data deployed to the web server, or served by the web server. </p>",
-					"otherinfo": "",
-					"reference": "<p>https://www.wsj.com/articles/BL-CIOB-2999</p>",
-					"cweid": "540",
-					"wascid": "13",
-					"sourceid": "141"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90003",
@@ -341,6 +314,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://www.monstagedetroisieme.fr/eleves",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<script src=\"https://player.vimeo.com/api/player.js\"></script>",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://www.monstagedetroisieme.fr/utilisateurs/connexion",
 							"method": "GET",
 							"param": "",
@@ -365,13 +346,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "12",
+					"count": "13",
 					"solution": "<p>Provide a valid integrity attribute to the tag.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity</p>",
 					"cweid": "345",
 					"wascid": "15",
-					"sourceid": "85"
+					"sourceid": "88"
 				},
 				{
 					"pluginid": "90022",
@@ -407,33 +388,6 @@
 					"cweid": "200",
 					"wascid": "13",
 					"sourceid": "33"
-				},
-				{
-					"pluginid": "10010",
-					"alertRef": "10010",
-					"alert": "Cookie No HttpOnly Flag",
-					"name": "Cookie No HttpOnly Flag",
-					"riskcode": "1",
-					"confidence": "2",
-					"riskdesc": "Low (Medium)",
-					"desc": "<p>A cookie has been set without the HttpOnly flag, which means that the cookie can be accessed by JavaScript. If a malicious script can be run on this page then the cookie will be accessible and can be transmitted to another site. If this is a session cookie then session hijacking may be possible.</p>",
-					"instances":[ 
-						{
-							"uri": "https://www.monstagedetroisieme.fr/utilisateurs/connexion",
-							"method": "POST",
-							"param": "prefered_channel",
-							"attack": "",
-							"evidence": "Set-Cookie: prefered_channel",
-							"otherinfo": ""
-						}
-					],
-					"count": "1",
-					"solution": "<p>Ensure that the HttpOnly flag is set for all cookies.</p>",
-					"otherinfo": "",
-					"reference": "<p>https://owasp.org/www-community/HttpOnly</p>",
-					"cweid": "1004",
-					"wascid": "13",
-					"sourceid": "142"
 				},
 				{
 					"pluginid": "10017",
@@ -556,7 +510,7 @@
 					"reference": "",
 					"cweid": "829",
 					"wascid": "15",
-					"sourceid": "89"
+					"sourceid": "93"
 				},
 				{
 					"pluginid": "10110",
@@ -569,7 +523,7 @@
 					"desc": "<p>A dangerous JS function seems to be in use that would leave the site vulnerable.</p>",
 					"instances":[ 
 						{
-							"uri": "https://www.monstagedetroisieme.fr/packs/js/application-5d99b9e04ee00038a6cc.js",
+							"uri": "https://www.monstagedetroisieme.fr/packs/js/application-fec8d2edf5d5ce0b663b.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -583,7 +537,7 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "123"
+					"sourceid": "137"
 				},
 				{
 					"pluginid": "10023",
@@ -717,11 +671,11 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy</p><p>https://developer.chrome.com/blog/feature-policy/</p><p>https://scotthelme.co.uk/a-new-security-header-feature-policy/</p><p>https://w3c.github.io/webappsec-feature-policy/</p><p>https://www.smashingmagazine.com/2018/12/feature-policy/</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10035",
-					"alertRef": "10035",
+					"alertRef": "10035-1",
 					"alert": "Strict-Transport-Security Header Not Set",
 					"name": "Strict-Transport-Security Header Not Set",
 					"riskcode": "1",
@@ -730,7 +684,7 @@
 					"desc": "<p>HTTP Strict Transport Security (HSTS) is a web security policy mechanism whereby a web server declares that complying user agents (such as a web browser) are to interact with it using only secure HTTPS connections (i.e. HTTP layered over TLS/SSL). HSTS is an IETF standards track protocol and is specified in RFC 6797.</p>",
 					"instances":[ 
 						{
-							"uri": "https://www.monstagedetroisieme.fr/packs/css/application-531a1fab.css",
+							"uri": "https://www.monstagedetroisieme.fr/packs/css/application-1df7932a.css",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -829,10 +783,10 @@
 					"count": "12",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to enforce Strict-Transport-Security.</p>",
 					"otherinfo": "",
-					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>http://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>http://caniuse.com/stricttransportsecurity</p><p>http://tools.ietf.org/html/rfc6797</p>",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>https://caniuse.com/stricttransportsecurity</p><p>https://datatracker.ietf.org/doc/html/rfc6797</p>",
 					"cweid": "319",
 					"wascid": "15",
-					"sourceid": "56"
+					"sourceid": "60"
 				},
 				{
 					"pluginid": "10096",
@@ -845,7 +799,7 @@
 					"desc": "<p>A timestamp was disclosed by the application/web server - Unix</p>",
 					"instances":[ 
 						{
-							"uri": "https://www.monstagedetroisieme.fr/packs/js/application-5d99b9e04ee00038a6cc.js",
+							"uri": "https://www.monstagedetroisieme.fr/packs/js/application-fec8d2edf5d5ce0b663b.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -853,7 +807,7 @@
 							"otherinfo": "1416354905, which evaluates to: 2014-11-18 23:55:05"
 						},
 						{
-							"uri": "https://www.monstagedetroisieme.fr/packs/js/application-5d99b9e04ee00038a6cc.js",
+							"uri": "https://www.monstagedetroisieme.fr/packs/js/application-fec8d2edf5d5ce0b663b.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -861,7 +815,7 @@
 							"otherinfo": "1444681467, which evaluates to: 2015-10-12 20:24:27"
 						},
 						{
-							"uri": "https://www.monstagedetroisieme.fr/packs/js/application-5d99b9e04ee00038a6cc.js",
+							"uri": "https://www.monstagedetroisieme.fr/packs/js/application-fec8d2edf5d5ce0b663b.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -869,7 +823,7 @@
 							"otherinfo": "1473231341, which evaluates to: 2016-09-07 06:55:41"
 						},
 						{
-							"uri": "https://www.monstagedetroisieme.fr/packs/js/application-5d99b9e04ee00038a6cc.js",
+							"uri": "https://www.monstagedetroisieme.fr/packs/js/application-fec8d2edf5d5ce0b663b.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -877,7 +831,7 @@
 							"otherinfo": "1502002290, which evaluates to: 2017-08-06 06:51:30"
 						},
 						{
-							"uri": "https://www.monstagedetroisieme.fr/packs/js/application-5d99b9e04ee00038a6cc.js",
+							"uri": "https://www.monstagedetroisieme.fr/packs/js/application-fec8d2edf5d5ce0b663b.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -885,7 +839,7 @@
 							"otherinfo": "1530992060, which evaluates to: 2018-07-07 19:34:20"
 						},
 						{
-							"uri": "https://www.monstagedetroisieme.fr/packs/js/application-5d99b9e04ee00038a6cc.js",
+							"uri": "https://www.monstagedetroisieme.fr/packs/js/application-fec8d2edf5d5ce0b663b.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -893,7 +847,7 @@
 							"otherinfo": "1560198380, which evaluates to: 2019-06-10 20:26:20"
 						},
 						{
-							"uri": "https://www.monstagedetroisieme.fr/packs/js/application-5d99b9e04ee00038a6cc.js",
+							"uri": "https://www.monstagedetroisieme.fr/packs/js/application-fec8d2edf5d5ce0b663b.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -901,7 +855,7 @@
 							"otherinfo": "1700485571, which evaluates to: 2023-11-20 13:06:11"
 						},
 						{
-							"uri": "https://www.monstagedetroisieme.fr/packs/js/application-5d99b9e04ee00038a6cc.js",
+							"uri": "https://www.monstagedetroisieme.fr/packs/js/application-fec8d2edf5d5ce0b663b.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -909,7 +863,7 @@
 							"otherinfo": "1732584193, which evaluates to: 2024-11-26 01:23:13"
 						},
 						{
-							"uri": "https://www.monstagedetroisieme.fr/packs/js/application-5d99b9e04ee00038a6cc.js",
+							"uri": "https://www.monstagedetroisieme.fr/packs/js/application-fec8d2edf5d5ce0b663b.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -917,7 +871,7 @@
 							"otherinfo": "1732584194, which evaluates to: 2024-11-26 01:23:14"
 						},
 						{
-							"uri": "https://www.monstagedetroisieme.fr/packs/js/application-5d99b9e04ee00038a6cc.js",
+							"uri": "https://www.monstagedetroisieme.fr/packs/js/application-fec8d2edf5d5ce0b663b.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -925,7 +879,7 @@
 							"otherinfo": "1735328473, which evaluates to: 2024-12-27 19:41:13"
 						},
 						{
-							"uri": "https://www.monstagedetroisieme.fr/packs/js/application-5d99b9e04ee00038a6cc.js",
+							"uri": "https://www.monstagedetroisieme.fr/packs/js/application-fec8d2edf5d5ce0b663b.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -933,7 +887,7 @@
 							"otherinfo": "1770035416, which evaluates to: 2026-02-02 12:30:16"
 						},
 						{
-							"uri": "https://www.monstagedetroisieme.fr/packs/js/application-5d99b9e04ee00038a6cc.js",
+							"uri": "https://www.monstagedetroisieme.fr/packs/js/application-fec8d2edf5d5ce0b663b.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -941,7 +895,7 @@
 							"otherinfo": "1804603682, which evaluates to: 2027-03-09 14:48:02"
 						},
 						{
-							"uri": "https://www.monstagedetroisieme.fr/packs/js/application-5d99b9e04ee00038a6cc.js",
+							"uri": "https://www.monstagedetroisieme.fr/packs/js/application-fec8d2edf5d5ce0b663b.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -949,7 +903,7 @@
 							"otherinfo": "1839030562, which evaluates to: 2028-04-11 01:49:22"
 						},
 						{
-							"uri": "https://www.monstagedetroisieme.fr/packs/js/application-5d99b9e04ee00038a6cc.js",
+							"uri": "https://www.monstagedetroisieme.fr/packs/js/application-fec8d2edf5d5ce0b663b.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -957,7 +911,7 @@
 							"otherinfo": "1873313359, which evaluates to: 2029-05-12 20:49:19"
 						},
 						{
-							"uri": "https://www.monstagedetroisieme.fr/packs/js/application-5d99b9e04ee00038a6cc.js",
+							"uri": "https://www.monstagedetroisieme.fr/packs/js/application-fec8d2edf5d5ce0b663b.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -965,7 +919,7 @@
 							"otherinfo": "1894986606, which evaluates to: 2030-01-18 17:10:06"
 						},
 						{
-							"uri": "https://www.monstagedetroisieme.fr/packs/js/application-5d99b9e04ee00038a6cc.js",
+							"uri": "https://www.monstagedetroisieme.fr/packs/js/application-fec8d2edf5d5ce0b663b.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -973,7 +927,7 @@
 							"otherinfo": "1926607734, which evaluates to: 2031-01-19 16:48:54"
 						},
 						{
-							"uri": "https://www.monstagedetroisieme.fr/packs/js/application-5d99b9e04ee00038a6cc.js",
+							"uri": "https://www.monstagedetroisieme.fr/packs/js/application-fec8d2edf5d5ce0b663b.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -981,7 +935,7 @@
 							"otherinfo": "1958414417, which evaluates to: 2032-01-22 20:00:17"
 						},
 						{
-							"uri": "https://www.monstagedetroisieme.fr/packs/js/application-5d99b9e04ee00038a6cc.js",
+							"uri": "https://www.monstagedetroisieme.fr/packs/js/application-fec8d2edf5d5ce0b663b.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -995,7 +949,7 @@
 					"reference": "<p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "123"
+					"sourceid": "137"
 				},
 				{
 					"pluginid": "10021",
@@ -1007,14 +961,6 @@
 					"riskdesc": "Low (Medium)",
 					"desc": "<p>The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</p>",
 					"instances":[ 
-						{
-							"uri": "https://www.monstagedetroisieme.fr/packs/css/application-531a1fab.css",
-							"method": "GET",
-							"param": "x-content-type-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
-						},
 						{
 							"uri": "https://www.monstagedetroisieme.fr/packs/media/images/favicon-d21ba7166343077ed001c60d663a06e1.png",
 							"method": "GET",
@@ -1033,6 +979,14 @@
 						},
 						{
 							"uri": "https://www.monstagedetroisieme.fr/packs/media/images/homepage/02-e1bc1a5ffe6f70c67464e3d04e8885d5.svg",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://www.monstagedetroisieme.fr/packs/media/images/homepage/03-2d05d5473453461a9f2c6505aa681d9f.svg",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -1107,10 +1061,10 @@
 					"count": "12",
 					"solution": "<p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p>",
 					"otherinfo": "<p>This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.</p><p>At \"High\" threshold this scan rule will not alert on client or server error responses.</p>",
-					"reference": "<p>http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx</p><p>https://owasp.org/www-community/Security_Headers</p>",
+					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "56"
+					"sourceid": "90"
 				},
 				{
 					"pluginid": "10111",
@@ -1177,7 +1131,7 @@
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/auth-req-id/</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "142"
+					"sourceid": "143"
 				},
 				{
 					"pluginid": "10094",
@@ -1194,132 +1148,105 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2FfYTf2rAYkZ8yL09HPr12VXrP2kbkokFafpEOpLBLC0aTw05f9UzLtt1Ryhsm0S6Kw",
-							"otherinfo": "\uFFFDW\uFFFDM\uFFFD\uFFFD\\x0001\uFFFD\\x0019\uFFFD\"\uFFFD\uFFFDs\uFFFD\uFFFDeW\uFFFD\uFFFD\uFFFDnJ$\\x0015\uFFFD\uFFFD\\x0010\uFFFDK\\x0004\uFFFD\uFFFDi<4\uFFFD\uFFFDT\u033Bm\uFFFD\\x001c\uFFFD\uFFFDm\\x0012\uFFFD"
+							"evidence": "2BUjqkmI7foeQeMPEnrfrM0XSjH6P6",
+							"otherinfo": "\uFFFD\\x0015#\uFFFDI\uFFFD\uFFFD\uFFFD\\x001eA\uFFFD\\x000f\\x0012z\u07EC\uFFFD\\x0017J1\uFFFD?"
 						},
 						{
 							"uri": "https://www.monstagedetroisieme.fr",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2Fop9CimhKpCUAA7srjUWTqXSRC3QGKSgTkqLZoB4cVjelKLwOhuA7ELX3klpdPcoGOWcDTCkLiLhrAoC9URK83TP1NLQ1mKIte",
-							"otherinfo": "\uFFFDZ)\uFFFD(\uFFFD\uFFFD\uFFFDBP\\x0000;\uFFFD\uFFFD\uFFFDY:\uFFFDI\\x0010\uFFFD@b\uFFFD\uFFFD9*-\uFFFD\\x0001\uFFFD\uFFFDczR\uFFFD\uFFFD\uFFFDn\\x0003\uFFFD\\x000b_y%\uFFFD\uFFFD\u0720c\uFFFDp4\u0090\uFFFD\uFFFD\uFFFD\uFFFD(\\x000b\uFFFD\\x0011+\uFFFD\uFFFD?SKCY\uFFFD\"\uFFFD"
+							"evidence": "2Bf2AsvCQrx2zRVwonB4PLZGcfoDaMqqDs",
+							"otherinfo": "\uFFFD\\x0017\uFFFD\\x0002\uFFFD\uFFFDB\uFFFDv\uFFFD\\x0015p\uFFFDpx<\uFFFDFq\uFFFD\\x0003h\u02AA\\x000e"
 						},
 						{
 							"uri": "https://www.monstagedetroisieme.fr/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2B4L074lYHIBRsF2HZ82nO9OO7H81ShyTecLVUqpj1nVPm7FwHUypzZ56ciscFhD5XefvZReDJ9VTGOstiJ",
-							"otherinfo": "\uFFFD\\x001e\\x000b\u04FE%`r\\x0001F\uFFFDv\\x001d\uFFFD6\uFFFD\uFFFDN;\uFFFD\uFFFD\uFFFD(rM\uFFFD\\x000bUJ\uFFFD\uFFFDY\uFFFD>n\uFFFD\uFFFDu2\uFFFD6y\uFFFD\u022CpXC\uFFFDw\uFFFD\uFFFD\uFFFD^\\x000c\uFFFDULc\uFFFD\uFFFD\""
-						},
-						{
-							"uri": "https://www.monstagedetroisieme.fr/conditions-d-utilisation",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "2F2ScFIAi9BhpOCGRARJUNcvFbHKhzJE8oYzV4O93yqIMuCGMUc1TvGvmO",
-							"otherinfo": "\uFFFD]\uFFFDpR\\x0000\uFFFD\uFFFDa\uFFFD\uFFFD\uFFFDD\\x0004IP\uFFFD/\\x0015\uFFFD\u02872D\uFFFD3W\uFFFD\uFFFD\uFFFD*\uFFFD2\uFFFD\uFFFD1G5N\uFFFD"
+							"evidence": "2BfotME9CrlJScZmjG7ua3XlKzTbkYNJzXqePgUway4l",
+							"otherinfo": "\uFFFD\\x0017\uFFFD\uFFFD=\n\uFFFDII\uFFFDf\uFFFDn\uFFFDku\uFFFD+4\u06D1\uFFFDI\uFFFDz\uFFFD>\\x00050k.%"
 						},
 						{
 							"uri": "https://www.monstagedetroisieme.fr/contact",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2FssvPSbuj4fOFxQl5dpQeWYEGXfbinampYavHBp3m6UuwcpdNQYM4T9r5XiBbEqJeMSSoga7JsEcatgm1Za0bAhsjbFNBpkLHqaJT7B0qEF02jFkbgYGQfEFUc4SEHTwYbXYlbAKXoeYnkxeYKoc2ti4CtwTON",
-							"otherinfo": "\uFFFD[,\uFFFD\uFFFD\uFFFD\uFFFD>\\x001f8\\P\uFFFD\uFFFDiA\uFFFD\\x0010e\uFFFDn)\u069A\uFFFD\\x001a\uFFFDpi\uFFFDn\uFFFD\uFFFD\\x0007)t\uFFFD\\x00183\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x0005\uFFFD*%\uFFFD\\x0012J\uFFFD\\x001a\uFFFD\\x0004q\uFFFD`\uFFFDVZ\u0470!\uFFFD6\uFFFD4\\x001ad,z\uFFFD%>\uFFFD\u04A1\\x0005\uFFFDh\u0151\uFFFD\\x0018\\x0019\\x0007\uFFFD\\x0015G8HA\uFFFD\uFFFD\uFFFD\uFFFDbV\uFFFD)z\\x001eby1y\uFFFD\uFFFDskb\uFFFD+pL\uFFFD"
+							"evidence": "2BITfEfUs1sfli8KtpHdaIujMJty99fsreZlFiEeov92K0PzoGbV",
+							"otherinfo": "\uFFFD\\x0012\\x0013|G\u0533[\\x001f\uFFFD/\n\uFFFD\uFFFD\uFFFDh\uFFFD\uFFFD0\uFFFDr\uFFFD\uFFFD\uFFFD\uFFFDe\\x0016!\\x001e\uFFFD\uFFFDv+C\uFFFDf\uFFFD"
 						},
 						{
 							"uri": "https://www.monstagedetroisieme.fr/documents-utiles",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "QyiWLbNz7IIaK7N6jAVsJyDYm9GbvgKH4PbN0XTz6Ec1HD5dzgvMVUATefHlV0eLutf7Dzy72uY9lPkWG1l9D9y",
-							"otherinfo": "C(\uFFFD-\uFFFDs\uFFFD\\x001a+\uFFFDz\uFFFD\\x0005l' \u061B\u045B\uFFFD\\x0002\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDt\uFFFD\uFFFDG5\\x001c>]\uFFFD\\x000b\uFFFDU@\\x0013y\uFFFD\uFFFDWG\uFFFD\uFFFD\uFFFD\uFFFD\\x000f<\uFFFD\uFFFD\uFFFD=\uFFFD\uFFFD\\x0016\\x001bY}\\x000f\uFFFD"
+							"evidence": "DUM2BGkrsgps7RUQyN59t84Hb3YCe8gVqDWI",
+							"otherinfo": "\rC6\\x0004i+\uFFFD\nl\uFFFD\\x0015\\x0010\uFFFD\uFFFD}\uFFFD\uFFFD\\x0007ov\\x0002{\uFFFD\\x0015\uFFFD5\uFFFD"
+						},
+						{
+							"uri": "https://www.monstagedetroisieme.fr/eleves",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "2BD5cLfATKKmAiBZQlNmhK7Tl53KWgIAXtwrFjTyBh8jRaZlgjRCLAFCQDjmo0",
+							"otherinfo": "\uFFFD\\x0010\uFFFDp\uFFFD\uFFFDL\uFFFD\uFFFD\\x0002 YBSf\uFFFD\uFFFD\u04D7\uFFFD\uFFFDZ\\x0002\\x0000^\uFFFD+\\x00164\uFFFD\\x0006\\x001f#E\uFFFDe\uFFFD4B,\\x0001B@8\uFFFD"
 						},
 						{
 							"uri": "https://www.monstagedetroisieme.fr/equipe-pedagogique",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2B0IJlvesz8jisErVkCaRLte9gNIwntaWAhZSkqWMe0H",
-							"otherinfo": "\uFFFD\\x001d\\x0008&[\u07B3?#\uFFFD\uFFFD+V@\uFFFDD\uFFFD^\uFFFD\\x0003H\uFFFD{ZX\\x0008YJJ\uFFFD1\uFFFD\\x0007"
+							"evidence": "2FHKUiqAUotE7qpz7cKOjcttY0wT7ADrBvvTRA4cF2x7SdnXdVAI",
+							"otherinfo": "\uFFFDQ\uFFFDR*\uFFFDR\uFFFDD\uFFFDs\uFFFD\u008E\uFFFD\uFFFDmcL\\x0013\uFFFD\\x0000\uFFFD\\x0006\uFFFD\uFFFDD\\x000e\\x001c\\x0017l{I\uFFFD\uFFFDuP\\x0008"
+						},
+						{
+							"uri": "https://www.monstagedetroisieme.fr/packs/css/application-1df7932a.css",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "/packs/media/fonts/Marianne-Light-0c3211fd",
+							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDy\u061A\uFFFD\uFFFD'\uFFFD\uFFFD\uFFFDj\uFFFD\uFFFD\uFFFDw\uFFFD.(!\uFFFD\uFFFD\\x001c\uFFFDmu}"
 						},
 						{
 							"uri": "https://www.monstagedetroisieme.fr/professionnels",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2gu9w31OZigOEsak1c46lAvhIQ2WhBwK0R8N",
-							"otherinfo": "\uFFFD\\x000b\uFFFD\uFFFD}Nf(\\x000e\\x0012\u01A4\uFFFD\uFFFD:\uFFFD\\x000b\uFFFD!\r\uFFFD\uFFFD\\x001c\n\uFFFD\\x001f\r"
+							"evidence": "2FPMfG5JxMb3sUG7dZc3dHSSQeW1OYHdiG8e5HMT",
+							"otherinfo": "\uFFFDS\uFFFD|nI\uFFFD\uFFFD\uFFFD\uFFFDA\uFFFDu\uFFFD7tt\uFFFDA\uFFFD9\uFFFD\u0748o\\x001e\uFFFDs\\x0013"
 						},
 						{
 							"uri": "https://www.monstagedetroisieme.fr/referents",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2BsCDTg4We9GI0VrUPhX1GVIkm1AarBJGJ9sxTEntc9x8QSOB7wOWU3",
-							"otherinfo": "\uFFFD\\x001b\\x0002\r88Y\uFFFDF#EkP\uFFFDW\uFFFDeH\uFFFDm@j\uFFFDI\\x0018\uFFFDl\uFFFD1'\uFFFD\uFFFDq\uFFFD\\x0004\uFFFD\\x0007\uFFFD\\x000eYM"
-						},
-						{
-							"uri": "https://www.monstagedetroisieme.fr/statistiques",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "hU8dTCFobPqUhtNLkFx5LUbZCqspGrVls8peM52HNVE2sK4554qoBF2jy4D3X1BrfVUxvnAaPVAx5sTs8KoSBqwufQKOsAhTRI9LHXCuloahheh3yxi4nYrhTZghir",
-							"otherinfo": "\uFFFDO\\x001dL!hl\uFFFD\uFFFD\uFFFD\uFFFDK\uFFFD\\y-F\uFFFD\n\uFFFD)\\x001a\uFFFDe\uFFFD\uFFFD^3\uFFFD\uFFFD5Q6\uFFFD\uFFFD9\u72A8\\x0004]\uFFFD\u02C0\uFFFD_Pk}U1\uFFFDp\\x001a=P1\uFFFD\uFFFD\uFFFD\uFFFD\\x0012\\x0006\uFFFD.}\\x0002\uFFFD\uFFFD\\x0008SD\uFFFDK\\x001dp\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDw\uFFFD\\x0018\uFFFD\uFFFD\uFFFD\uFFFDM\uFFFD!\uFFFD"
+							"evidence": "2FKGhxtVUTD5lRbkKVCYoTKHcssbjCVv1IJdKtGl821l64GJPC3",
+							"otherinfo": "\uFFFDR\uFFFD\uFFFD\\x001bUQ0\uFFFD\uFFFD\\x0016\uFFFD)P\uFFFD\uFFFD2\uFFFDr\uFFFD\\x001b\uFFFD%o\u0502]*\u0465\uFFFDme\uB049<-"
 						},
 						{
 							"uri": "https://www.monstagedetroisieme.fr/utilisateurs/connexion",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "CHs2yJOAWki3N4VZHvXuBfkmSYNWwnQiVdVhqWZ",
-							"otherinfo": "\\x0008{6\u0213\uFFFDZH\uFFFD7\uFFFDY\\x001e\uFFFD\uFFFD\\x0005\uFFFD&I\uFFFDV\uFFFDt\"U\uFFFDa\uFFFDf"
+							"evidence": "2FJG71G1ByuHPcc9F72x0gXUEyK1CPOB9iYb7FnKAaROHo96sZuD",
+							"otherinfo": "\uFFFDRF\uFFFDQ\uFFFD\\x0007+\uFFFD=\uFFFD=\\x0017\uFFFD\uFFFD\uFFFD\\x0005\uFFFD\\x0013\"\uFFFD\\x0008\uFFFD\uFFFD&\\x001b\uFFFDY\uFFFD\\x0001\uFFFDN\\x001e\uFFFDz\uFFFD\uFFFD\uFFFD"
 						},
 						{
 							"uri": "https://www.monstagedetroisieme.fr/utilisateurs/inscription",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2Fg8avLdhqY2E4dfTHLePy8S5L0RndCXmLZhRwoPVz96tG9V4XVic7tALm",
-							"otherinfo": "\uFFFDX<j\uFFFD\u0746\uFFFD6\\x0013\uFFFD_Lr\uFFFD?/\\x0012\uFFFD\\x0011\uFFFD\u0417\uFFFD\uFFFDaG\n\\x000fW?z\uFFFDoU\uFFFDubs\uFFFD@."
+							"evidence": "D3aygy39EneY5ioC7x3qgzK494oXUkoi975gWA6Lkn6bIJOD71kduLIX6smkpEaAuvLYb9dOkOjkQct6cV63SYzxzn4nbb4dTkNvIdZ8oTALqnyKDBpyhtJbm3j1c3Q3",
+							"otherinfo": "\\x000fv\uFFFD\uFFFD-\uFFFD\\x0012w\uFFFD\uFFFD*\\x0002\uFFFD\\x001d\uFFFD2\uFFFD\uFFFD\uFFFD\\x0017RJ\"\uFFFD\uFFFD`X\\x000e\uFFFD\uFFFD~\uFFFD \uFFFD\uFFFD\uFFFDY\\x001d\uFFFD\uFFFD\\x0017\uFFFD\u0264\uFFFDF\uFFFD\uFFFD\uFFFD\uFFFDo\uFFFDN\uFFFD\uFFFD\uFFFDA\uFFFDzq^\uFFFDI\uFFFD\uFFFD\uFFFD~'m\uFFFD\\x001dNCo!\uFFFD|\uFFFD0\\x000b\uFFFD|\uFFFD\\x000c\\x001ar\uFFFD\uFFFD[\uFFFDx\uFFFDst7"
 						}
 					],
 					"count": "12",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>\uFFFDW\uFFFDM\uFFFD\uFFFD\\x0001\uFFFD\\x0019\uFFFD\"\uFFFD\uFFFDs\uFFFD\uFFFDeW\uFFFD\uFFFD\uFFFDnJ$\\x0015\uFFFD\uFFFD\\x0010\uFFFDK\\x0004\uFFFD\uFFFDi<4\uFFFD\uFFFDT\u033Bm\uFFFD\\x001c\uFFFD\uFFFDm\\x0012\uFFFD</p>",
+					"otherinfo": "<p>\uFFFD\\x0015#\uFFFDI\uFFFD\uFFFD\uFFFD\\x001eA\uFFFD\\x000f\\x0012z\u07EC\uFFFD\\x0017J1\uFFFD?</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "6"
-				},
-				{
-					"pluginid": "10029",
-					"alertRef": "10029",
-					"alert": "Cookie Poisoning",
-					"name": "Cookie Poisoning",
-					"riskcode": "0",
-					"confidence": "1",
-					"riskdesc": "Informational (Low)",
-					"desc": "<p>This check looks at user-supplied input in query string parameters and POST data to identify where cookie parameters might be controlled. This is called a cookie poisoning attack, and becomes exploitable when an attacker can manipulate the cookie in various ways. In some cases this will not be exploitable, however, allowing URL parameters to set cookie values is generally considered a bug.</p>",
-					"instances":[ 
-						{
-							"uri": "https://www.monstagedetroisieme.fr/utilisateurs/connexion",
-							"method": "POST",
-							"param": "user[channel]",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "An attacker may be able to poison cookie values through POST parameters. To test if this is a more serious issue, you should try resending that request as a GET, with the POST parameter included as a query string parameter. For example:  http://nottrusted.com/page?value=maliciousInput.\r\n\r\nThis was identified at:\r\n\r\nhttps://www.monstagedetroisieme.fr/utilisateurs/connexion\r\n\r\nUser-input was found in the following cookie:\r\nprefered_channel=email; path=/; SameSite=Lax; secure\r\n\r\nThe user input was:\r\nuser[channel]=email"
-						}
-					],
-					"count": "1",
-					"solution": "<p>Do not allow user input to control cookie names and values. If some query string parameters must be set in cookie values, be sure to filter out semicolon's that can serve as name/value pair delimiters.</p>",
-					"otherinfo": "<p>An attacker may be able to poison cookie values through POST parameters. To test if this is a more serious issue, you should try resending that request as a GET, with the POST parameter included as a query string parameter. For example:  http://nottrusted.com/page?value=maliciousInput.</p><p></p><p>This was identified at:</p><p></p><p>https://www.monstagedetroisieme.fr/utilisateurs/connexion</p><p></p><p>User-input was found in the following cookie:</p><p>prefered_channel=email; path=/; SameSite=Lax; secure</p><p></p><p>The user input was:</p><p>user[channel]=email</p>",
-					"reference": "<p>http://websecuritytool.codeplex.com/wikipage?title=Checks#user-controlled-cookie</p>",
-					"cweid": "20",
-					"wascid": "20",
-					"sourceid": "142"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10027",
@@ -1426,7 +1353,7 @@
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10109",
@@ -1533,7 +1460,7 @@
 					"reference": "",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10049",
@@ -1555,14 +1482,6 @@
 						},
 						{
 							"uri": "https://www.monstagedetroisieme.fr/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "private",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://www.monstagedetroisieme.fr/contact",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1594,19 +1513,19 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://www.monstagedetroisieme.fr/referents",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "private",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://www.monstagedetroisieme.fr/sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "500",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://www.monstagedetroisieme.fr/statistiques",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "private",
 							"otherinfo": ""
 						},
 						{
@@ -1626,7 +1545,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "10",
+					"count": "9",
 					"solution": "<p>The content may be marked as storable by ensuring that the following conditions are satisfied:</p><p>The request method must be understood by the cache and defined as being cacheable (\"GET\", \"HEAD\", and \"POST\" are currently defined as cacheable)</p><p>The response status code must be understood by the cache (one of the 1XX, 2XX, 3XX, 4XX, or 5XX response classes are generally understood)</p><p>The \"no-store\" cache directive must not appear in the request or response header fields</p><p>For caching by \"shared\" caches such as \"proxy\" caches, the \"private\" response directive must not appear in the response</p><p>For caching by \"shared\" caches such as \"proxy\" caches, the \"Authorization\" header field must not appear in the request, unless the response explicitly allows it (using one of the \"must-revalidate\", \"public\", or \"s-maxage\" Cache-Control response directives)</p><p>In addition to the conditions above, at least one of the following conditions must also be satisfied by the response:</p><p>It must contain an \"Expires\" header field</p><p>It must contain a \"max-age\" response directive</p><p>For \"shared\" caches such as \"proxy\" caches, it must contain a \"s-maxage\" response directive</p><p>It must contain a \"Cache Control Extension\" that allows it to be cached</p><p>It must have a status code that is defined as cacheable by default (200, 203, 204, 206, 300, 301, 404, 405, 410, 414, 501).   </p>",
 					"otherinfo": "",
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
@@ -1739,7 +1658,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control</p><p>https://grayduck.mn/2021/09/13/cache-control-recommendations/</p>",
 					"cweid": "525",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -1760,7 +1679,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.monstagedetroisieme.fr/sitemap.xml",
+							"uri": "https://www.monstagedetroisieme.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -1768,7 +1687,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.monstagedetroisieme.fr/utilisateurs/inscription",
+							"uri": "https://www.monstagedetroisieme.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -1782,7 +1701,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -1803,7 +1722,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.monstagedetroisieme.fr/sitemap.xml",
+							"uri": "https://www.monstagedetroisieme.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -1811,7 +1730,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.monstagedetroisieme.fr/utilisateurs/inscription",
+							"uri": "https://www.monstagedetroisieme.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -1825,7 +1744,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -1846,7 +1765,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.monstagedetroisieme.fr/sitemap.xml",
+							"uri": "https://www.monstagedetroisieme.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -1854,7 +1773,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.monstagedetroisieme.fr/utilisateurs/inscription",
+							"uri": "https://www.monstagedetroisieme.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -1868,7 +1787,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -1889,7 +1808,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.monstagedetroisieme.fr/sitemap.xml",
+							"uri": "https://www.monstagedetroisieme.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -1897,7 +1816,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.monstagedetroisieme.fr/utilisateurs/inscription",
+							"uri": "https://www.monstagedetroisieme.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -1911,7 +1830,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10112",
@@ -1928,7 +1847,7 @@
 							"method": "GET",
 							"param": "_monstage_session",
 							"attack": "",
-							"evidence": "NMIwxw4flRFiDQQWVQ%2F5%2Fop9CimhKpCUAA7srjUWTqXSRC3QGKSgTkqLZoB4cVjelKLwOhuA7ELX3klpdPcoGOWcDTCkLiLhrAoC9URK83TP1NLQ1mKIte%2BokTK2QpPf6RQL2lgiwXRbBeTIPdqhF5jyRqZGRT4W99IzdfO6pJpNU41NpgHhNuGO6KZHb1%2FAH4x7idtVkL7HVqqaMpSmHRLlcZTOvdIjfJ2juW9zouHNWQbMl3NUJr1H8R1lhj4V1jcYG4m3KO6KTceNb6p3O07FhP%2FvSxJblw%3D%3D--MOmLmowHgBwlnNdO--9c8%2FkKXyMcSIgumxoFgwOA%3D%3D",
+							"evidence": "e8gXSoR9MrMklVv2eTqrbaPGA4F1Ml8UT%2BUjqkmI7foeQeMPEnrfrM0XSjH6P6%2FTsT0EiG47xKACv8%2FE%2BpmAHLLw9S9KGl3X2kNvkhgsH%2Bt4UAF216PdcubZPfv%2B911krhefzYJqAFkiHfEUvvPD36m4A1Yi9d19nssZn1UCLI4c8SoWLktt4fq%2FhhH4MlIYShT2PvlFb5z4L38Nh8J1JGN6cl2ZXidtjwxNWB%2BxAmnXbMirQkC5czJTjv%2Bb0u38MMiaVz0oGB7lWDyths9RHaBqwJ8d%2BD%2F5Fw%3D%3D--eoUz8pxsQ0d95yvj--oURs%2BN%2F4mrN7T6jkDQyRxw%3D%3D",
 							"otherinfo": "\ncookie:_monstage_session"
 						},
 						{
@@ -1936,7 +1855,7 @@
 							"method": "GET",
 							"param": "_monstage_session",
 							"attack": "",
-							"evidence": "vKLbNeaH%2B9KMipVGJkvI3zqO4uYC4mvojnBtsGomwaAxBfe82cq1G5MIyJmw7Zy5p1dugJh4aC50rn1f%2FOIUICgd10Qjn4C9i%2FETj%2FvXE8zG2pUvIxmAM%2BeAPe%2BxYKWg%2FWxTaI45o3Sm0RiL3fnDi6uajHSVu4sqyq5KgreM%2B1C%2FaWZArTRQcFsfiMC%2Fng3KseE%2BjfPngvKo%2ByzDJox%2FNedUA%2BVdQ4a8%2FfYTf2rAYkZ8yL09HPr12VXrP2kbkokFafpEOpLBLC0aTw05f9UzLtt1Ryhsm0S6Kw%3D%3D--ZRrLXA7jW2%2BwdC3p--Yc0SGz2laWgrA4N7VRtHOw%3D%3D",
+							"evidence": "wEUZpYSfqiT4Gq6ZX7RHKMcdYssHn2pOS7jwyG923%2FAysakH2pEzzU3jEwTPEB6FSvxrza53W4Xx245DDSTg4%2Bkhkrno1KivuyzAjsJo6Qc%2Bf2AsvCQrx2zRVwonB4PLZGcfoDaMqqDs%2B14goGP5jQ6EdqCfm1S1oP7UzmpHhtqeoddkfgZjxitcQg5CYqsh%2BwXU1AMrxNvP74b0giFGtgvwsu0NNca49jXgHcnnuSnCI9an2iKoKlVjX%2BTGC8LjEEhkGsHgZwplH6EIwjo%2Bf9SIPaqt2kp0%2BA%3D%3D--v9D6F%2BhMka%2FlxIj0--U42oYqOM29mU7xhQ6FTuWA%3D%3D",
 							"otherinfo": "\ncookie:_monstage_session"
 						},
 						{
@@ -1944,23 +1863,7 @@
 							"method": "GET",
 							"param": "_monstage_session",
 							"attack": "",
-							"evidence": "LbVgz1k8AEgf2im9AS97lQAo4Kj%2FibqGwR3iwywXVyTAK2u3CDODxT1ZIHAidMVmx0aeUeJbs6RVByduoMKzktOFdxDZHIm4CqmywVcewkUIqGT%2FqHcxnSnvI9dDugr97LZjVuIFr%2FZ%2BUojiKUgHO%2FQ8NvbJr0%2B4L074lYHIBRsF2HZ82nO9OO7H81ShyTecLVUqpj1nVPm7FwHUypzZ56ciscFhD5XefvZReDJ9VTGOstiJ%2FH061A5HhVa80TGCD49bwfuXQtqpid1Uxg38uwDKo9Q4Ix1tmg%3D%3D--CMLe9RScumTvaEEt--3PpbztR%2Ba3VWx%2B%2Ffb%2FTBCg%3D%3D",
-							"otherinfo": "\ncookie:_monstage_session"
-						},
-						{
-							"uri": "https://www.monstagedetroisieme.fr/contact",
-							"method": "GET",
-							"param": "_monstage_session",
-							"attack": "",
-							"evidence": "9oP5CkGI%2B%2FssvPSbuj4fOFxQl5dpQeWYEGXfbinampYavHBp3m6UuwcpdNQYM4T9r5XiBbEqJeMSSoga7JsEcatgm1Za0bAhsjbFNBpkLHqaJT7B0qEF02jFkbgYGQfEFUc4SEHTwYbXYlbAKXoeYnkxeYKoc2ti4CtwTON%2FhXPoET49Xx8yyWPkku6RBxFOfdKNkAhFTSp0QdbIv%2FBhvpRKccZM%2B7ocwXwY8E%2FB%2BNW9Q97hD2JjLNWmqzIS2pVxG31BdunZi%2F2axpE36948bghoS48HRwWGkQ%3D%3D--sxsTIOR2yaAhEs52--ZnbOj9cRG5BKcgcaO7EEbg%3D%3D",
-							"otherinfo": "\ncookie:_monstage_session"
-						},
-						{
-							"uri": "https://www.monstagedetroisieme.fr/documents-utiles",
-							"method": "GET",
-							"param": "_monstage_session",
-							"attack": "",
-							"evidence": "QyiWLbNz7IIaK7N6jAVsJyDYm9GbvgKH4PbN0XTz6Ec1HD5dzgvMVUATefHlV0eLutf7Dzy72uY9lPkWG1l9D9y%2FCPU7Dn3fUf48xp8VDjHqNaKwTRWvh04HeuWuHDX%2B7hirgiiFYjyVY9smB9yPaFOz7rXThEdcmmGM%2Blv4KM00AKcHZxePIUYJjrusfkQ75MUUdcE3hmwQaaI0eJxHCuBXVb1rGUW60gnk60pC5iHibpDrNq4oK%2FrYDZxpthymMt14aJUU65UDDPTLmxhV3hu9uZHlXM%2BBug%3D%3D--5M%2B24CcfIOQFHEqv--RaID%2FqVc%2Fhb0Nd25mhOLLg%3D%3D",
+							"evidence": "0bZsl8wzEnYgJ%2F2EXnpVuEPIhdMqjeKMKospIlxwa%2F%2FP7ezVQOFMbigbnoF5kPFIw7qYr%2BkGmKoIAOevL685maZCxDr7PXb5IGF16DqaR05yT%2FzYshSZYUZkj7kRpoUhiK3WzHUZr72K5Xj0AfQovaAL72Z9cUT4rqyNu%2FzzNs5L8t%2BhnVPwvHhAiK22ZabAH%2BfotME9CrlJScZmjG7ua3XlKzTbkYNJzXqePgUway4l%2Fntmo0biAuxPfmloOuYzLEjTG%2FTKK8Jdr0gd8Z0sMMVpuJmo6S9mzg%3D%3D--DdFCevwdaYBtfHbf--dYFjRpmLJTNE500y4Q6R%2Bg%3D%3D",
 							"otherinfo": "\ncookie:_monstage_session"
 						},
 						{
@@ -1968,15 +1871,15 @@
 							"method": "GET",
 							"param": "_monstage_session",
 							"attack": "",
-							"evidence": "1GSB%2B0IJlvesz8jisErVkCaRLte9gNIwntaWAhZSkqWMe0H%2FDP56P%2FrFPw34NGHtfn4H2bgzt7LD%2FRTeFtLtOjviU7cYwXNGvWPKlv7xJcNHt6TtDlqQL0FUMfdhmZG76YG17embQYyf9IlZzAp%2BMCnz6stgx%2BJcKvFkxQtGw8QPRibdKC8%2BPTA2GaAj1%2FIqU6BhsRQuy5mtKm5EbBixN8uBKtPSHH%2BWdTqA8v%2FNM79JHFPv3Y2%2BEwCfdT3ZmsDQFySWal7nHpbHctcBl2y4hbPV%2B52Wm9KVkQ%3D%3D--adQfIL2lbVdzfpr3--g3BN6S9auoZssX%2FHB4XtBA%3D%3D",
+							"evidence": "Pua%2FzrDPkSa5lpXPpgylAmliXis5%2FjXuxXyFjQU9faVLZ5DztODz6PjCG0Nifl9gQHGNWiQwBGBn%2FHKUiqAUotE7qpz7cKOjcttY0wT7ADrBvvTRA4cF2x7SdnXdVAI%2FEt%2FgNffqTZ6ILus7A%2FEBnoQJIqRUYxsyH%2FTKVqJhR%2Ft07UPraQpzFCgoP51mjXLIquZZYyJZER2m2kHHpM%2BYPnzorlB%2BlZchMYyHCaqCJKt3rkF9VEOMYFCcRMYT%2FAg%2BINVVB6Hzj5Fzb2Vty97cGo9eiqOQOff0VA%3D%3D--%2Bm4pZgE455Rnqjso--X31XLX%2BN5dYMcXxKRVJgyg%3D%3D",
 							"otherinfo": "\ncookie:_monstage_session"
 						},
 						{
-							"uri": "https://www.monstagedetroisieme.fr/professionnels",
+							"uri": "https://www.monstagedetroisieme.fr/referents",
 							"method": "GET",
 							"param": "_monstage_session",
 							"attack": "",
-							"evidence": "2gu9w31OZigOEsak1c46lAvhIQ2WhBwK0R8N%2Bym5Z5dGtKxXMXxTZtfkLsGjAS7MK2XEfXQTM62fszA4m2gWDRF%2FQYlooB3c0FA21TMw98UKgyi7WIcsZfT5VIL9gsAbKYNczMKkZQeseGW2DTDznJYL9HQCSBuActeFuXNI9aVzgExm%2F7unGvQxSLDtv2STq11gBGnL23gsOUVSLVpfg6SRS8VtPyUMY4yIKVdpHaugk6%2FtQA8u%2BXLR%2FyZKnwuNwkF%2FP%2BzZK5pRbR6VfCufvKMkCCwujbANUw%3D%3D--%2FTgdnULZT5eEjWId--TXHR7164vxkCqHspOxsMUg%3D%3D",
+							"evidence": "TzLVKzKORArFYRhZKsZWHq%2FYLaTIBrbxISKVA4aqlgR0T23ZoZspXvFd3BEpcN%2FKGhxtVUTD5lRbkKVCYoTKHcssbjCVv1IJdKtGl821l64GJPC3%2Be3kzq4ezelgm%2BMvOfbOzXaiz3DJdYWnPSvPfpQP2tNDyqU37ur6ga%2BY91W%2F6j9%2FKbCxYmH9%2FgNGYbFy%2Bol80NBrsLNQibuMF67Y9Nt1B9lNK8ek87PI4FuImX75Nj%2B6Vo9OMWsX09Aldu%2FUCJ2JgvlwMT7g32%2FhLw%2FGupX%2FWODx77gLbg%3D%3D--%2BeYaIgY00APnasni--YZPnGEoq4ACZh9j4XgqLXw%3D%3D",
 							"otherinfo": "\ncookie:_monstage_session"
 						},
 						{
@@ -1984,7 +1887,7 @@
 							"method": "GET",
 							"param": "_monstage_session",
 							"attack": "",
-							"evidence": "CHs2yJOAWki3N4VZHvXuBfkmSYNWwnQiVdVhqWZ%2BgiW4Kkd%2BHEp9eUSeGNdWkTqEH2mWfYZWFYNmjvnKg02huwvqkD82KXVZFtZFp%2BCB1B1MzG%2BVY2cEojfq%2FCMvn6P0boKjJ4JLk%2BumOK5uVqNTlShxJjxZWwzVzDQ5h5%2FXO8pdebdn3Bs%2B2reiBFqbclCjGTPdq5sezNxi6W3EPik9r1sJzauvrEalB0lCSdy%2B85lTEczuaju0NyR3GGxPUGsNcO01ZXljxkRhlE4HDk7JLj7B128jVf6aTw%3D%3D--RsaCP6hWXgkCGeyJ--x%2Fr0oQ5c3UqmdlTKEiZejw%3D%3D",
+							"evidence": "yYyouZT9q6d%2FJG71G1ByuHPcc9F72x0gXUEyK1CPOB9iYb7FnKAaROHo96sZuD%2FAYtQchiSdRYJogWPggNrh49x7MW4BlomJBE108qZXHk2qHhnphDEPdnZoQzI8D4zhFgnUptIJiAHsxD3Le28uQuB0ZSqUrLnyhpTUfcBUoJOBaO0N051TL9OBwTKt2NQ5gAaTV2g9HDStvSYaRW9oBst53etlp9IzO0TLkeZuZYezZX7eAneXNinDCc2I17Cfo8J23EZNTVC%2BcDtzA%2BglK4JBVQ4LxKw1Vw%3D%3D--ehX3kfB%2BgLih2iWj--aGqieMZAA%2FrphY1RUqXHjg%3D%3D",
 							"otherinfo": "\ncookie:_monstage_session"
 						},
 						{
@@ -1992,7 +1895,7 @@
 							"method": "GET",
 							"param": "_monstage_session",
 							"attack": "",
-							"evidence": "BwFFlfhRZFhqYrCLWvn7NvSZaN%2FiuoI%2FpoSd3ka4Z%2FbCe9o8IQnjTnH3%2Fg8avLdhqY2E4dfTHLePy8S5L0RndCXmLZhRwoPVz96tG9V4XVic7tALm%2Bs%2FkvO7nO%2Bl8f0K9qKYSd%2BD8yhytJwiX21CDOeUZV3uI3i03pgIKpaIlct6n6XSJCc2iKgiKwzxWvmkrrxMCv7x%2BHoNjYo3ntkqM6mw2fLCs0yb4j7XV42kvNkXUqt%2BHBNFioLdvaOluBiHAK8VDX3%2BhxAS%2FZjpbwG3iobB13h9JK8ujQ%3D%3D--Xp9COKm%2FIUUujIfn--Joms0K3cIg3DR68sy7MwWg%3D%3D",
+							"evidence": "D3aygy39EneY5ioC7x3qgzK494oXUkoi975gWA6Lkn6bIJOD71kduLIX6smkpEaAuvLYb9dOkOjkQct6cV63SYzxzn4nbb4dTkNvIdZ8oTALqnyKDBpyhtJbm3j1c3Q3%2FsQRDucTrAOlp9lLzZVDb26yW%2B7xEnLOlxfVx6N8Z9RAOjaH8kHh4cSN0CBTmeOhCJt2KOIRpQtl1weaH%2BpLqirBXigmNZdpM8KaF6Bf9g5metRb%2FE9xhOBsKFeRM6sNYVnROnazHsdjb0XZUzDpQyiubaMyBFCugA%3D%3D--6e3OBnM0VVosCPeP--iYpVPkjgQVrZfbLjfqVahg%3D%3D",
 							"otherinfo": "\ncookie:_monstage_session"
 						},
 						{
@@ -2000,11 +1903,11 @@
 							"method": "GET",
 							"param": "_monstage_session",
 							"attack": "",
-							"evidence": "vKLbNeaH%2B9KMipVGJkvI3zqO4uYC4mvojnBtsGomwaAxBfe82cq1G5MIyJmw7Zy5p1dugJh4aC50rn1f%2FOIUICgd10Qjn4C9i%2FETj%2FvXE8zG2pUvIxmAM%2BeAPe%2BxYKWg%2FWxTaI45o3Sm0RiL3fnDi6uajHSVu4sqyq5KgreM%2B1C%2FaWZArTRQcFsfiMC%2Fng3KseE%2BjfPngvKo%2ByzDJox%2FNedUA%2BVdQ4a8%2FfYTf2rAYkZ8yL09HPr12VXrP2kbkokFafpEOpLBLC0aTw05f9UzLtt1Ryhsm0S6Kw%3D%3D--ZRrLXA7jW2%2BwdC3p--Yc0SGz2laWgrA4N7VRtHOw%3D%3D",
+							"evidence": "wEUZpYSfqiT4Gq6ZX7RHKMcdYssHn2pOS7jwyG923%2FAysakH2pEzzU3jEwTPEB6FSvxrza53W4Xx245DDSTg4%2Bkhkrno1KivuyzAjsJo6Qc%2Bf2AsvCQrx2zRVwonB4PLZGcfoDaMqqDs%2B14goGP5jQ6EdqCfm1S1oP7UzmpHhtqeoddkfgZjxitcQg5CYqsh%2BwXU1AMrxNvP74b0giFGtgvwsu0NNca49jXgHcnnuSnCI9an2iKoKlVjX%2BTGC8LjEEhkGsHgZwplH6EIwjo%2Bf9SIPaqt2kp0%2BA%3D%3D--v9D6F%2BhMka%2FlxIj0--U42oYqOM29mU7xhQ6FTuWA%3D%3D",
 							"otherinfo": "\ncookie:_monstage_session"
 						}
 					],
-					"count": "10",
+					"count": "8",
 					"solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
 					"otherinfo": "<p></p><p>cookie:_monstage_session</p>",
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id</p>",
@@ -2023,6 +1926,14 @@
 					"desc": "<p>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users.  If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
 					"instances":[ 
 						{
+							"uri": "https://www.monstagedetroisieme.fr/packs/css/application-1df7932a.css",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=315360000",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://www.monstagedetroisieme.fr/robots.txt",
 							"method": "GET",
 							"param": "",
@@ -2031,13 +1942,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "1",
+					"count": "2",
 					"solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information.  If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request. </p>",
 					"otherinfo": "",
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "32"
+					"sourceid": "60"
 				},
 				{
 					"pluginid": "10031",
@@ -2050,12 +1961,12 @@
 					"desc": "<p>This check looks at user-supplied input in query string parameters and POST data to identify where certain HTML attribute values might be controlled. This provides hot-spot detection for XSS (cross-site scripting) that will require further review by a security analyst to determine exploitability.</p>",
 					"instances":[ 
 						{
-							"uri": "https://www.monstagedetroisieme.fr/offres-de-stage?week_ids%5B%5D=264",
+							"uri": "https://www.monstagedetroisieme.fr/offres-de-stage?week_ids%5B%5D=265",
 							"method": "GET",
 							"param": "week_ids[]",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\r\n\r\nhttps://www.monstagedetroisieme.fr/offres-de-stage?week_ids%5B%5D=264\r\n\r\nappears to include user input in: \r\n\r\na(n) [input] tag [value] attribute \r\n\r\nThe user input found was:\r\nweek_ids[]=264\r\n\r\nThe user-controlled value was:\r\n264"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\r\n\r\nhttps://www.monstagedetroisieme.fr/offres-de-stage?week_ids%5B%5D=265\r\n\r\nappears to include user input in: \r\n\r\na(n) [input] tag [value] attribute \r\n\r\nThe user input found was:\r\nweek_ids[]=265\r\n\r\nThe user-controlled value was:\r\n265"
 						},
 						{
 							"uri": "https://www.monstagedetroisieme.fr/utilisateurs/inscription?as=Statistician",
@@ -2148,11 +2059,11 @@
 					],
 					"count": "12",
 					"solution": "<p>Validate all input and sanitize output it before writing to any HTML attributes.</p>",
-					"otherinfo": "<p>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:</p><p></p><p>https://www.monstagedetroisieme.fr/offres-de-stage?week_ids%5B%5D=264</p><p></p><p>appears to include user input in: </p><p></p><p>a(n) [input] tag [value] attribute </p><p></p><p>The user input found was:</p><p>week_ids[]=264</p><p></p><p>The user-controlled value was:</p><p>264</p>",
-					"reference": "<p>http://websecuritytool.codeplex.com/wikipage?title=Checks#user-controlled-html-attribute</p>",
+					"otherinfo": "<p>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:</p><p></p><p>https://www.monstagedetroisieme.fr/offres-de-stage?week_ids%5B%5D=265</p><p></p><p>appears to include user input in: </p><p></p><p>a(n) [input] tag [value] attribute </p><p></p><p>The user input found was:</p><p>week_ids[]=265</p><p></p><p>The user-controlled value was:</p><p>265</p>",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html</p>",
 					"cweid": "20",
 					"wascid": "20",
-					"sourceid": "160"
+					"sourceid": "164"
 				}
 			]
 		}

@@ -127,7 +127,7 @@ td {
 	</h2>
 
 	<h3>
-		Generated on Sun, 14 Jan 2024 07:39:10
+		Generated on Sun, 21 Jan 2024 07:24:06
 	</h3>
 
 	<h3>
@@ -205,22 +205,22 @@ td {
 			<tr>
 				<td><a href="#10055">CSP: Wildcard Directive</a></td>
 				<td align="center" class="risk-2">Medium</td>
-				<td align="center">2</td>
+				<td align="center">3</td>
 			</tr>
 			<tr>
 				<td><a href="#10055">CSP: script-src unsafe-eval</a></td>
 				<td align="center" class="risk-2">Medium</td>
-				<td align="center">2</td>
+				<td align="center">3</td>
 			</tr>
 			<tr>
 				<td><a href="#10055">CSP: script-src unsafe-inline</a></td>
 				<td align="center" class="risk-2">Medium</td>
-				<td align="center">2</td>
+				<td align="center">3</td>
 			</tr>
 			<tr>
 				<td><a href="#10055">CSP: style-src unsafe-inline</a></td>
 				<td align="center" class="risk-2">Medium</td>
-				<td align="center">2</td>
+				<td align="center">3</td>
 			</tr>
 			<tr>
 				<td><a href="#10038">Content Security Policy (CSP) Header Not Set</a></td>
@@ -265,7 +265,7 @@ td {
 			<tr>
 				<td><a href="#10021">X-Content-Type-Options Header Missing</a></td>
 				<td align="center" class="risk-1">Low</td>
-				<td align="center">11</td>
+				<td align="center">12</td>
 			</tr>
 			<tr>
 				<td><a href="#10094">Base64 Disclosure</a></td>
@@ -290,27 +290,27 @@ td {
 			<tr>
 				<td><a href="#10050">Retrieved from Cache</a></td>
 				<td align="center" class="risk-0">Informational</td>
-				<td align="center">11</td>
+				<td align="center">12</td>
 			</tr>
 			<tr>
 				<td><a href="#90005">Sec-Fetch-Dest Header is Missing</a></td>
 				<td align="center" class="risk-0">Informational</td>
-				<td align="center">3</td>
+				<td align="center">4</td>
 			</tr>
 			<tr>
 				<td><a href="#90005">Sec-Fetch-Mode Header is Missing</a></td>
 				<td align="center" class="risk-0">Informational</td>
-				<td align="center">3</td>
+				<td align="center">4</td>
 			</tr>
 			<tr>
 				<td><a href="#90005">Sec-Fetch-Site Header is Missing</a></td>
 				<td align="center" class="risk-0">Informational</td>
-				<td align="center">3</td>
+				<td align="center">4</td>
 			</tr>
 			<tr>
 				<td><a href="#90005">Sec-Fetch-User Header is Missing</a></td>
 				<td align="center" class="risk-0">Informational</td>
-				<td align="center">3</td>
+				<td align="center">4</td>
 			</tr>
 			<tr>
 				<td><a href="#10049">Storable and Cacheable Content</a></td>
@@ -478,7 +478,7 @@ td {
 				<tr>
 					<td width="20%">Reference</td>
 					<td width="80%">
-							<a href="http://projects.webappsec.org/Cross-Site-Request-Forgery">http://projects.webappsec.org/Cross-Site-Request-Forgery</a>
+							<a href="https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html">https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</a>
 							<br />
 						
 							<a href="https://cwe.mitre.org/data/definitions/352.html">https://cwe.mitre.org/data/definitions/352.html</a>
@@ -557,6 +557,40 @@ The directive(s): frame-ancestors are among the directives that do not fallback 
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/dev">https://mon-entreprise.urssaf.fr/dev</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">Content-Security-Policy</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">default-src &#39;self&#39; mon-entreprise.fr; style-src &#39;self&#39; &#39;unsafe-inline&#39; mon-entreprise.zammad.com; connect-src &#39;self&#39; *.incubateur.net raw.githubusercontent.com tm.urssaf.fr mon-entreprise.zammad.com api.recherche-entreprises.fabrique.social.gouv.fr geo.api.gouv.fr *.algolia.net *.algolianet.com polyfill.io jedonnemonavis.numerique.gouv.fr user-images.githubusercontent.com; form-action &#39;self&#39; *.sibforms.com *.incubateur.net mon-entreprise.zammad.com; script-src &#39;self&#39; &#39;unsafe-inline&#39; &#39;unsafe-eval&#39; tm.urssaf.fr *.incubateur.net stonly.com code.jquery.com mon-entreprise.zammad.com polyfill.io; img-src &#39;self&#39; data: mon-entreprise.urssaf.fr tm.urssaf.fr user-images.githubusercontent.com jedonnemonavis.numerique.gouv.fr; frame-src &#39;self&#39; https://www.youtube-nocookie.com https://codesandbox.io https://place-des-entreprises.beta.gouv.fr https://reso-staging.osc-fr1.scalingo.io https://stackblitz.com</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: 
+frame-ancestors
+
+The directive(s): frame-ancestors are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything.</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
 						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/sitemap.xml">https://mon-entreprise.urssaf.fr/sitemap.xml</a></td>
 					</tr>
 					<tr>
@@ -590,7 +624,7 @@ The directive(s): frame-ancestors are among the directives that do not fallback 
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">2</td>
+					<td width="80%">3</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -602,16 +636,13 @@ The directive(s): frame-ancestors are among the directives that do not fallback 
 				<tr>
 					<td width="20%">Reference</td>
 					<td width="80%">
-							<a href="http://www.w3.org/TR/CSP2/">http://www.w3.org/TR/CSP2/</a>
+							<a href="https://www.w3.org/TR/CSP/">https://www.w3.org/TR/CSP/</a>
 							<br />
 						
-							<a href="http://www.w3.org/TR/CSP/">http://www.w3.org/TR/CSP/</a>
+							<a href="https://caniuse.com/#search=content+security+policy">https://caniuse.com/#search=content+security+policy</a>
 							<br />
 						
-							<a href="http://caniuse.com/#search=content+security+policy">http://caniuse.com/#search=content+security+policy</a>
-							<br />
-						
-							<a href="http://content-security-policy.com/">http://content-security-policy.com/</a>
+							<a href="https://content-security-policy.com/">https://content-security-policy.com/</a>
 							<br />
 						
 							<a href="https://github.com/shapesecurity/salvation">https://github.com/shapesecurity/salvation</a>
@@ -690,6 +721,37 @@ The directive(s): frame-ancestors are among the directives that do not fallback 
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/dev">https://mon-entreprise.urssaf.fr/dev</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">Content-Security-Policy</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">default-src &#39;self&#39; mon-entreprise.fr; style-src &#39;self&#39; &#39;unsafe-inline&#39; mon-entreprise.zammad.com; connect-src &#39;self&#39; *.incubateur.net raw.githubusercontent.com tm.urssaf.fr mon-entreprise.zammad.com api.recherche-entreprises.fabrique.social.gouv.fr geo.api.gouv.fr *.algolia.net *.algolianet.com polyfill.io jedonnemonavis.numerique.gouv.fr user-images.githubusercontent.com; form-action &#39;self&#39; *.sibforms.com *.incubateur.net mon-entreprise.zammad.com; script-src &#39;self&#39; &#39;unsafe-inline&#39; &#39;unsafe-eval&#39; tm.urssaf.fr *.incubateur.net stonly.com code.jquery.com mon-entreprise.zammad.com polyfill.io; img-src &#39;self&#39; data: mon-entreprise.urssaf.fr tm.urssaf.fr user-images.githubusercontent.com jedonnemonavis.numerique.gouv.fr; frame-src &#39;self&#39; https://www.youtube-nocookie.com https://codesandbox.io https://place-des-entreprises.beta.gouv.fr https://reso-staging.osc-fr1.scalingo.io https://stackblitz.com</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">script-src includes unsafe-eval.</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
 						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/sitemap.xml">https://mon-entreprise.urssaf.fr/sitemap.xml</a></td>
 					</tr>
 					<tr>
@@ -720,7 +782,7 @@ The directive(s): frame-ancestors are among the directives that do not fallback 
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">2</td>
+					<td width="80%">3</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -732,16 +794,13 @@ The directive(s): frame-ancestors are among the directives that do not fallback 
 				<tr>
 					<td width="20%">Reference</td>
 					<td width="80%">
-							<a href="http://www.w3.org/TR/CSP2/">http://www.w3.org/TR/CSP2/</a>
+							<a href="https://www.w3.org/TR/CSP/">https://www.w3.org/TR/CSP/</a>
 							<br />
 						
-							<a href="http://www.w3.org/TR/CSP/">http://www.w3.org/TR/CSP/</a>
+							<a href="https://caniuse.com/#search=content+security+policy">https://caniuse.com/#search=content+security+policy</a>
 							<br />
 						
-							<a href="http://caniuse.com/#search=content+security+policy">http://caniuse.com/#search=content+security+policy</a>
-							<br />
-						
-							<a href="http://content-security-policy.com/">http://content-security-policy.com/</a>
+							<a href="https://content-security-policy.com/">https://content-security-policy.com/</a>
 							<br />
 						
 							<a href="https://github.com/shapesecurity/salvation">https://github.com/shapesecurity/salvation</a>
@@ -820,6 +879,37 @@ The directive(s): frame-ancestors are among the directives that do not fallback 
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/dev">https://mon-entreprise.urssaf.fr/dev</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">Content-Security-Policy</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">default-src &#39;self&#39; mon-entreprise.fr; style-src &#39;self&#39; &#39;unsafe-inline&#39; mon-entreprise.zammad.com; connect-src &#39;self&#39; *.incubateur.net raw.githubusercontent.com tm.urssaf.fr mon-entreprise.zammad.com api.recherche-entreprises.fabrique.social.gouv.fr geo.api.gouv.fr *.algolia.net *.algolianet.com polyfill.io jedonnemonavis.numerique.gouv.fr user-images.githubusercontent.com; form-action &#39;self&#39; *.sibforms.com *.incubateur.net mon-entreprise.zammad.com; script-src &#39;self&#39; &#39;unsafe-inline&#39; &#39;unsafe-eval&#39; tm.urssaf.fr *.incubateur.net stonly.com code.jquery.com mon-entreprise.zammad.com polyfill.io; img-src &#39;self&#39; data: mon-entreprise.urssaf.fr tm.urssaf.fr user-images.githubusercontent.com jedonnemonavis.numerique.gouv.fr; frame-src &#39;self&#39; https://www.youtube-nocookie.com https://codesandbox.io https://place-des-entreprises.beta.gouv.fr https://reso-staging.osc-fr1.scalingo.io https://stackblitz.com</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">script-src includes unsafe-inline.</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
 						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/sitemap.xml">https://mon-entreprise.urssaf.fr/sitemap.xml</a></td>
 					</tr>
 					<tr>
@@ -850,7 +940,7 @@ The directive(s): frame-ancestors are among the directives that do not fallback 
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">2</td>
+					<td width="80%">3</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -862,16 +952,13 @@ The directive(s): frame-ancestors are among the directives that do not fallback 
 				<tr>
 					<td width="20%">Reference</td>
 					<td width="80%">
-							<a href="http://www.w3.org/TR/CSP2/">http://www.w3.org/TR/CSP2/</a>
+							<a href="https://www.w3.org/TR/CSP/">https://www.w3.org/TR/CSP/</a>
 							<br />
 						
-							<a href="http://www.w3.org/TR/CSP/">http://www.w3.org/TR/CSP/</a>
+							<a href="https://caniuse.com/#search=content+security+policy">https://caniuse.com/#search=content+security+policy</a>
 							<br />
 						
-							<a href="http://caniuse.com/#search=content+security+policy">http://caniuse.com/#search=content+security+policy</a>
-							<br />
-						
-							<a href="http://content-security-policy.com/">http://content-security-policy.com/</a>
+							<a href="https://content-security-policy.com/">https://content-security-policy.com/</a>
 							<br />
 						
 							<a href="https://github.com/shapesecurity/salvation">https://github.com/shapesecurity/salvation</a>
@@ -950,6 +1037,37 @@ The directive(s): frame-ancestors are among the directives that do not fallback 
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/dev">https://mon-entreprise.urssaf.fr/dev</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">Content-Security-Policy</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">default-src &#39;self&#39; mon-entreprise.fr; style-src &#39;self&#39; &#39;unsafe-inline&#39; mon-entreprise.zammad.com; connect-src &#39;self&#39; *.incubateur.net raw.githubusercontent.com tm.urssaf.fr mon-entreprise.zammad.com api.recherche-entreprises.fabrique.social.gouv.fr geo.api.gouv.fr *.algolia.net *.algolianet.com polyfill.io jedonnemonavis.numerique.gouv.fr user-images.githubusercontent.com; form-action &#39;self&#39; *.sibforms.com *.incubateur.net mon-entreprise.zammad.com; script-src &#39;self&#39; &#39;unsafe-inline&#39; &#39;unsafe-eval&#39; tm.urssaf.fr *.incubateur.net stonly.com code.jquery.com mon-entreprise.zammad.com polyfill.io; img-src &#39;self&#39; data: mon-entreprise.urssaf.fr tm.urssaf.fr user-images.githubusercontent.com jedonnemonavis.numerique.gouv.fr; frame-src &#39;self&#39; https://www.youtube-nocookie.com https://codesandbox.io https://place-des-entreprises.beta.gouv.fr https://reso-staging.osc-fr1.scalingo.io https://stackblitz.com</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">style-src includes unsafe-inline.</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
 						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/sitemap.xml">https://mon-entreprise.urssaf.fr/sitemap.xml</a></td>
 					</tr>
 					<tr>
@@ -980,7 +1098,7 @@ The directive(s): frame-ancestors are among the directives that do not fallback 
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">2</td>
+					<td width="80%">3</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -992,16 +1110,13 @@ The directive(s): frame-ancestors are among the directives that do not fallback 
 				<tr>
 					<td width="20%">Reference</td>
 					<td width="80%">
-							<a href="http://www.w3.org/TR/CSP2/">http://www.w3.org/TR/CSP2/</a>
+							<a href="https://www.w3.org/TR/CSP/">https://www.w3.org/TR/CSP/</a>
 							<br />
 						
-							<a href="http://www.w3.org/TR/CSP/">http://www.w3.org/TR/CSP/</a>
+							<a href="https://caniuse.com/#search=content+security+policy">https://caniuse.com/#search=content+security+policy</a>
 							<br />
 						
-							<a href="http://caniuse.com/#search=content+security+policy">http://caniuse.com/#search=content+security+policy</a>
-							<br />
-						
-							<a href="http://content-security-policy.com/">http://content-security-policy.com/</a>
+							<a href="https://content-security-policy.com/">https://content-security-policy.com/</a>
 							<br />
 						
 							<a href="https://github.com/shapesecurity/salvation">https://github.com/shapesecurity/salvation</a>
@@ -1097,19 +1212,19 @@ The directive(s): frame-ancestors are among the directives that do not fallback 
 							<a href="https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html">https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</a>
 							<br />
 						
-							<a href="http://www.w3.org/TR/CSP/">http://www.w3.org/TR/CSP/</a>
+							<a href="https://www.w3.org/TR/CSP/">https://www.w3.org/TR/CSP/</a>
 							<br />
 						
-							<a href="http://w3c.github.io/webappsec/specs/content-security-policy/csp-specification.dev.html">http://w3c.github.io/webappsec/specs/content-security-policy/csp-specification.dev.html</a>
+							<a href="https://w3c.github.io/webappsec-csp/">https://w3c.github.io/webappsec-csp/</a>
 							<br />
 						
-							<a href="http://www.html5rocks.com/en/tutorials/security/content-security-policy/">http://www.html5rocks.com/en/tutorials/security/content-security-policy/</a>
+							<a href="https://web.dev/articles/csp">https://web.dev/articles/csp</a>
 							<br />
 						
-							<a href="http://caniuse.com/#feat=contentsecuritypolicy">http://caniuse.com/#feat=contentsecuritypolicy</a>
+							<a href="https://caniuse.com/#feat=contentsecuritypolicy">https://caniuse.com/#feat=contentsecuritypolicy</a>
 							<br />
 						
-							<a href="http://content-security-policy.com/">http://content-security-policy.com/</a>
+							<a href="https://content-security-policy.com/">https://content-security-policy.com/</a>
 							
 						</td>
 				</tr>
@@ -2248,6 +2363,40 @@ The directive(s): frame-ancestors are among the directives that do not fallback 
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/simulateurs/auto-entrepreneur">https://mon-entreprise.urssaf.fr/simulateurs/auto-entrepreneur</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">&lt;script
+			crossorigin=&quot;anonymous&quot;
+			src=&quot;https://polyfill.io/v3/polyfill.min.js?features=ResizeObserver%2CIntl.~locale.en%2CIntl.~locale.fr%2CString.prototype.replaceAll%2CObject.fromEntries%2CString.prototype.matchAll%2CrequestIdleCallback&quot;
+		&gt;&lt;/script&gt;</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
 						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/simulateurs/salaire-brut-net">https://mon-entreprise.urssaf.fr/simulateurs/salaire-brut-net</a></td>
 					</tr>
 					<tr>
@@ -2283,40 +2432,6 @@ The directive(s): frame-ancestors are among the directives that do not fallback 
 						<td width="20%"
 							class="indent1">URL</td>
 						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/sitemap.xml">https://mon-entreprise.urssaf.fr/sitemap.xml</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">&lt;script
-			crossorigin=&quot;anonymous&quot;
-			src=&quot;https://polyfill.io/v3/polyfill.min.js?features=ResizeObserver%2CIntl.~locale.en%2CIntl.~locale.fr%2CString.prototype.replaceAll%2CObject.fromEntries%2CString.prototype.matchAll%2CrequestIdleCallback&quot;
-		&gt;&lt;/script&gt;</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%"></td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/statistiques">https://mon-entreprise.urssaf.fr/statistiques</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3035,7 +3150,7 @@ The directive(s): frame-ancestors are among the directives that do not fallback 
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/assistants/choix-du-statut">https://mon-entreprise.urssaf.fr/assistants/choix-du-statut</a></td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/assets/modele-social.81471852.js">https://mon-entreprise.urssaf.fr/assets/modele-social.81471852.js</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3066,7 +3181,69 @@ The directive(s): frame-ancestors are among the directives that do not fallback 
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/budget">https://mon-entreprise.urssaf.fr/budget</a></td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/assets/mon-entreprise-051a3e0c.js">https://mon-entreprise.urssaf.fr/assets/mon-entreprise-051a3e0c.js</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/assets/polyfills-legacy-acb4073e.js">https://mon-entreprise.urssaf.fr/assets/polyfills-legacy-acb4073e.js</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/assistants/choix-du-statut">https://mon-entreprise.urssaf.fr/assistants/choix-du-statut</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3128,69 +3305,38 @@ The directive(s): frame-ancestors are among the directives that do not fallback 
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/nouveaut%C3%A9s">https://mon-entreprise.urssaf.fr/nouveaut%C3%A9s</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%"></td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/plan-du-site">https://mon-entreprise.urssaf.fr/plan-du-site</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%"></td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
 						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/simulateurs-et-assistants">https://mon-entreprise.urssaf.fr/simulateurs-et-assistants</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/simulateurs/auto-entrepreneur">https://mon-entreprise.urssaf.fr/simulateurs/auto-entrepreneur</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3253,37 +3399,6 @@ The directive(s): frame-ancestors are among the directives that do not fallback 
 						<td width="20%"
 							class="indent1">URL</td>
 						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/sitemap.xml">https://mon-entreprise.urssaf.fr/sitemap.xml</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%"></td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/statistiques">https://mon-entreprise.urssaf.fr/statistiques</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3805,71 +3920,7 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/">https://mon-entreprise.urssaf.fr/</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%">x-content-type-options</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.
-At &quot;High&quot; threshold this scan rule will not alert on client or server error responses.</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/assistants/choix-du-statut">https://mon-entreprise.urssaf.fr/assistants/choix-du-statut</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%">x-content-type-options</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.
-At &quot;High&quot; threshold this scan rule will not alert on client or server error responses.</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/budget">https://mon-entreprise.urssaf.fr/budget</a></td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/assets/mon-entreprise-051a3e0c.js">https://mon-entreprise.urssaf.fr/assets/mon-entreprise-051a3e0c.js</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3933,7 +3984,7 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/nouveaut%C3%A9s">https://mon-entreprise.urssaf.fr/nouveaut%C3%A9s</a></td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/favicon/apple-touch-icon.png?v=2.0">https://mon-entreprise.urssaf.fr/favicon/apple-touch-icon.png?v=2.0</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -3965,7 +4016,167 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/plan-du-site">https://mon-entreprise.urssaf.fr/plan-du-site</a></td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/favicon/favicon-16x16.png?v=2.0">https://mon-entreprise.urssaf.fr/favicon/favicon-16x16.png?v=2.0</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">x-content-type-options</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.
+At &quot;High&quot; threshold this scan rule will not alert on client or server error responses.</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/favicon/favicon-32x32.png?v=2.0">https://mon-entreprise.urssaf.fr/favicon/favicon-32x32.png?v=2.0</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">x-content-type-options</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.
+At &quot;High&quot; threshold this scan rule will not alert on client or server error responses.</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/favicon/favicon.ico?v=2.0">https://mon-entreprise.urssaf.fr/favicon/favicon.ico?v=2.0</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">x-content-type-options</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.
+At &quot;High&quot; threshold this scan rule will not alert on client or server error responses.</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/favicon/favicon.svg?v=2.0">https://mon-entreprise.urssaf.fr/favicon/favicon.svg?v=2.0</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">x-content-type-options</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.
+At &quot;High&quot; threshold this scan rule will not alert on client or server error responses.</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/favicon/safari-pinned-tab.svg?v=2.0">https://mon-entreprise.urssaf.fr/favicon/safari-pinned-tab.svg?v=2.0</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">x-content-type-options</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.
+At &quot;High&quot; threshold this scan rule will not alert on client or server error responses.</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/manifest.webmanifest">https://mon-entreprise.urssaf.fr/manifest.webmanifest</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -4029,70 +4240,6 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/simulateurs-et-assistants">https://mon-entreprise.urssaf.fr/simulateurs-et-assistants</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%">x-content-type-options</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.
-At &quot;High&quot; threshold this scan rule will not alert on client or server error responses.</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/simulateurs/salaire-brut-net">https://mon-entreprise.urssaf.fr/simulateurs/salaire-brut-net</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%">x-content-type-options</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.
-At &quot;High&quot; threshold this scan rule will not alert on client or server error responses.</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
 						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/sitemap.xml">https://mon-entreprise.urssaf.fr/sitemap.xml</a></td>
 					</tr>
 					<tr>
@@ -4124,7 +4271,7 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">11</td>
+					<td width="80%">12</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -4139,7 +4286,7 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 				<tr>
 					<td width="20%">Reference</td>
 					<td width="80%">
-							<a href="http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx">http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx</a>
+							<a href="https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)">https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</a>
 							<br />
 						
 							<a href="https://owasp.org/www-community/Security_Headers">https://owasp.org/www-community/Security_Headers</a>
@@ -4277,6 +4424,69 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/assets/sentry.1d3c4635.js">https://mon-entreprise.urssaf.fr/assets/sentry.1d3c4635.js</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">com/serve/MUIEACTpgg9LvLVG7P4mkAbGA91OHsC2kuCsR3VlW9bV2m0vliZ31_DvZbtg8R5Lhqzd1Mc1iwuIsBw3FHBDG8Mbr4pjpVSbTzq6SLdox3f41GzWuIsT2IPSZ6x7-wh3ohDNDmHE7wbrenXUnqyPnH8Dm0cP2Hxnrq7T72GzINJR9DWwZd-LsqY2XZrvElFcRz6TlR6l36wGik3X</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">r�����{� @N� ���Tn��i l`=���i.
+�wVU�m]���bg}�[��j��LsX����qG1�1���:UI�󫤋v�w�F�k��=�=&amp;zǿ��z!��N�n��]I�����9�p���z��&gt;�2%C[]��*ceٮ�%�s�9Q�]��h��</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/assets/vendor.042f79a8.js">https://mon-entreprise.urssaf.fr/assets/vendor.042f79a8.js</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">styles-module_container__2LiHz</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">�ܥzϦ�ۥ{�(�֢����b�</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
 						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/assistants/choix-du-statut">https://mon-entreprise.urssaf.fr/assistants/choix-du-statut</a></td>
 					</tr>
 					<tr>
@@ -4401,99 +4611,6 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/simulateurs/cout-creation-entreprise">https://mon-entreprise.urssaf.fr/simulateurs/cout-creation-entreprise</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">�^���!�m/�A��Ff����������]�fm&gt;�]/��!�m/�A��F</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/simulateurs/entreprise-individuelle">https://mon-entreprise.urssaf.fr/simulateurs/entreprise-individuelle</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">/assets/AutoEntrepreneurPreview-59a26d80</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">��,z�?�h{kz�ޝ�&gt;����&gt;�ֶ��4</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/simulateurs/eurl">https://mon-entreprise.urssaf.fr/simulateurs/eurl</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">�^���!�m/�A��Ff����������]�fm&gt;�]/��!�m/�A��F</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
 						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/simulateurs/salaire-brut-net">https://mon-entreprise.urssaf.fr/simulateurs/salaire-brut-net</a></td>
 					</tr>
 					<tr>
@@ -4520,6 +4637,37 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 						<td width="20%"
 							class="indent2">Other Info</td>
 						<td width="80%">��,z�?I�Z�����Mz��z���T~q��Ӯ�</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/simulateurs/sasu">https://mon-entreprise.urssaf.fr/simulateurs/sasu</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">�^���!�m/�A��Ff����������]�fm&gt;�]/��!�m/�A��F</td>
 					</tr>
 				
 				<tr>
@@ -4644,7 +4792,7 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/assistants/choix-du-statut">https://mon-entreprise.urssaf.fr/assistants/choix-du-statut</a></td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/assets/mon-entreprise-051a3e0c.js">https://mon-entreprise.urssaf.fr/assets/mon-entreprise-051a3e0c.js</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -4669,9 +4817,38 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 					<tr>
 						<td width="20%"
 							class="indent2">Other Info</td>
-						<td width="80%">The following pattern was used: \bFROM\b and was detected in the element starting with: &quot;&lt;script&gt;
-			// Set the main colors from the provided customization in the URL We do it
-			// before loading the whole JS bundle &quot;, see evidence field for the suspicious comment/snippet.</td>
+						<td width="80%">The following pattern was used: \bFROM\b and was detected in the element starting with: &quot;import{R as n}from&quot;./sentry.1d3c4635.js&quot;;import{w as a,i as s,c,j as t,$ as f}from&quot;./vendor.042f79a8.js&quot;;function u(){import.met&quot;, see evidence field for the suspicious comment/snippet.</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/assets/polyfills-legacy-acb4073e.js">https://mon-entreprise.urssaf.fr/assets/polyfills-legacy-acb4073e.js</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">from</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">The following pattern was used: \bFROM\b and was detected in the element starting with: &quot;!function(){&quot;use strict&quot;;var t=&quot;undefined&quot;!=typeof globalThis?globalThis:&quot;undefined&quot;!=typeof window?window:&quot;undefined&quot;!=typeof g&quot;, see evidence field for the suspicious comment/snippet.</td>
 					</tr>
 				
 					<tr>
@@ -4775,37 +4952,6 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 						<td width="20%"
 							class="indent1">URL</td>
 						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/">https://mon-entreprise.urssaf.fr/</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">USER</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">The following pattern was used: \bUSER\b and was detected in the element starting with: &quot;&lt;!-- USER AGENT DATA ATTRIBUTE  --&gt;&quot;, see evidence field for the suspicious comment/snippet.</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/assistants/choix-du-statut">https://mon-entreprise.urssaf.fr/assistants/choix-du-statut</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -5431,7 +5577,7 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/budget">https://mon-entreprise.urssaf.fr/budget</a></td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/dev">https://mon-entreprise.urssaf.fr/dev</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -5462,7 +5608,7 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/dev">https://mon-entreprise.urssaf.fr/dev</a></td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/manifest.webmanifest">https://mon-entreprise.urssaf.fr/manifest.webmanifest</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -5758,68 +5904,6 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">Age: 11479</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">The presence of the &#39;Age&#39; header indicates that that a HTTP/1.1 compliant caching server is in use.</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/">https://mon-entreprise.urssaf.fr/</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">Age: 11479</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">The presence of the &#39;Age&#39; header indicates that that a HTTP/1.1 compliant caching server is in use.</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/assistants/choix-du-statut">https://mon-entreprise.urssaf.fr/assistants/choix-du-statut</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
 						<td width="80%">Age: 0</td>
 					</tr>
 					<tr>
@@ -5831,7 +5915,7 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/budget">https://mon-entreprise.urssaf.fr/budget</a></td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/assets/mon-entreprise-051a3e0c.js">https://mon-entreprise.urssaf.fr/assets/mon-entreprise-051a3e0c.js</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -5851,7 +5935,7 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">Age: 0</td>
+						<td width="80%">Age: 10685</td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -5893,7 +5977,7 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/nouveaut%C3%A9s">https://mon-entreprise.urssaf.fr/nouveaut%C3%A9s</a></td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/favicon/apple-touch-icon.png?v=2.0">https://mon-entreprise.urssaf.fr/favicon/apple-touch-icon.png?v=2.0</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -5924,7 +6008,7 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/plan-du-site">https://mon-entreprise.urssaf.fr/plan-du-site</a></td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/favicon/favicon-16x16.png?v=2.0">https://mon-entreprise.urssaf.fr/favicon/favicon-16x16.png?v=2.0</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -5945,6 +6029,161 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 						<td width="20%"
 							class="indent2">Evidence</td>
 						<td width="80%">Age: 0</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">The presence of the &#39;Age&#39; header indicates that that a HTTP/1.1 compliant caching server is in use.</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/favicon/favicon-32x32.png?v=2.0">https://mon-entreprise.urssaf.fr/favicon/favicon-32x32.png?v=2.0</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">Age: 0</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">The presence of the &#39;Age&#39; header indicates that that a HTTP/1.1 compliant caching server is in use.</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/favicon/favicon.ico?v=2.0">https://mon-entreprise.urssaf.fr/favicon/favicon.ico?v=2.0</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">Age: 0</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">The presence of the &#39;Age&#39; header indicates that that a HTTP/1.1 compliant caching server is in use.</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/favicon/favicon.svg?v=2.0">https://mon-entreprise.urssaf.fr/favicon/favicon.svg?v=2.0</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">Age: 1</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">The presence of the &#39;Age&#39; header indicates that that a HTTP/1.1 compliant caching server is in use.</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/favicon/safari-pinned-tab.svg?v=2.0">https://mon-entreprise.urssaf.fr/favicon/safari-pinned-tab.svg?v=2.0</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">Age: 1</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">The presence of the &#39;Age&#39; header indicates that that a HTTP/1.1 compliant caching server is in use.</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/manifest.webmanifest">https://mon-entreprise.urssaf.fr/manifest.webmanifest</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">Age: 10422</td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -5975,69 +6214,7 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">Age: 1502</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">The presence of the &#39;Age&#39; header indicates that that a HTTP/1.1 compliant caching server is in use.</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/simulateurs-et-assistants">https://mon-entreprise.urssaf.fr/simulateurs-et-assistants</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">Age: 0</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">The presence of the &#39;Age&#39; header indicates that that a HTTP/1.1 compliant caching server is in use.</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/simulateurs/salaire-brut-net">https://mon-entreprise.urssaf.fr/simulateurs/salaire-brut-net</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">Age: 11483</td>
+						<td width="80%">Age: 7098</td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -6078,7 +6255,7 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">11</td>
+					<td width="80%">12</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -6108,7 +6285,7 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 							<a href="https://tools.ietf.org/html/rfc7231">https://tools.ietf.org/html/rfc7231</a>
 							<br />
 						
-							<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html (obsoleted by rfc7234)">http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html (obsoleted by rfc7234)</a>
+							<a href="https://www.rfc-editor.org/rfc/rfc9110.html (obsoleted by rfc7234)">https://www.rfc-editor.org/rfc/rfc9110.html (obsoleted by rfc7234)</a>
 							
 						</td>
 				</tr>
@@ -6149,6 +6326,37 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr">https://mon-entreprise.urssaf.fr</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">Sec-Fetch-Dest</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
 						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/dev">https://mon-entreprise.urssaf.fr/dev</a></td>
 					</tr>
 					<tr>
@@ -6241,7 +6449,7 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">3</td>
+					<td width="80%">4</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -6295,6 +6503,37 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr">https://mon-entreprise.urssaf.fr</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">Sec-Fetch-Mode</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
 						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/dev">https://mon-entreprise.urssaf.fr/dev</a></td>
 					</tr>
 					<tr>
@@ -6387,7 +6626,7 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">3</td>
+					<td width="80%">4</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -6441,6 +6680,37 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr">https://mon-entreprise.urssaf.fr</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">Sec-Fetch-Site</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
 						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/dev">https://mon-entreprise.urssaf.fr/dev</a></td>
 					</tr>
 					<tr>
@@ -6533,7 +6803,7 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">3</td>
+					<td width="80%">4</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -6587,6 +6857,37 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr">https://mon-entreprise.urssaf.fr</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">Sec-Fetch-User</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%"></td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
 						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/dev">https://mon-entreprise.urssaf.fr/dev</a></td>
 					</tr>
 					<tr>
@@ -6679,7 +6980,7 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">3</td>
+					<td width="80%">4</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -6795,68 +7096,6 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/assistants/choix-du-statut">https://mon-entreprise.urssaf.fr/assistants/choix-du-statut</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">The response is stale, and stale responses are not configured to be re-validated or blocked, using the &#39;must-revalidate&#39;, &#39;proxy-revalidate&#39;, &#39;s-maxage&#39;, or &#39;max-age&#39; response &#39;Cache-Control&#39; directives.</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/budget">https://mon-entreprise.urssaf.fr/budget</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">The response is stale, and stale responses are not configured to be re-validated or blocked, using the &#39;must-revalidate&#39;, &#39;proxy-revalidate&#39;, &#39;s-maxage&#39;, or &#39;max-age&#39; response &#39;Cache-Control&#39; directives.</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
 						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/dev">https://mon-entreprise.urssaf.fr/dev</a></td>
 					</tr>
 					<tr>
@@ -6888,7 +7127,7 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/nouveaut%C3%A9s">https://mon-entreprise.urssaf.fr/nouveaut%C3%A9s</a></td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/favicon/apple-touch-icon.png?v=2.0">https://mon-entreprise.urssaf.fr/favicon/apple-touch-icon.png?v=2.0</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -6919,7 +7158,131 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/plan-du-site">https://mon-entreprise.urssaf.fr/plan-du-site</a></td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/favicon/favicon-16x16.png?v=2.0">https://mon-entreprise.urssaf.fr/favicon/favicon-16x16.png?v=2.0</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">The response is stale, and stale responses are not configured to be re-validated or blocked, using the &#39;must-revalidate&#39;, &#39;proxy-revalidate&#39;, &#39;s-maxage&#39;, or &#39;max-age&#39; response &#39;Cache-Control&#39; directives.</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/favicon/favicon-32x32.png?v=2.0">https://mon-entreprise.urssaf.fr/favicon/favicon-32x32.png?v=2.0</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">The response is stale, and stale responses are not configured to be re-validated or blocked, using the &#39;must-revalidate&#39;, &#39;proxy-revalidate&#39;, &#39;s-maxage&#39;, or &#39;max-age&#39; response &#39;Cache-Control&#39; directives.</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/favicon/favicon.ico?v=2.0">https://mon-entreprise.urssaf.fr/favicon/favicon.ico?v=2.0</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">The response is stale, and stale responses are not configured to be re-validated or blocked, using the &#39;must-revalidate&#39;, &#39;proxy-revalidate&#39;, &#39;s-maxage&#39;, or &#39;max-age&#39; response &#39;Cache-Control&#39; directives.</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/favicon/favicon.svg?v=2.0">https://mon-entreprise.urssaf.fr/favicon/favicon.svg?v=2.0</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">The response is stale, and stale responses are not configured to be re-validated or blocked, using the &#39;must-revalidate&#39;, &#39;proxy-revalidate&#39;, &#39;s-maxage&#39;, or &#39;max-age&#39; response &#39;Cache-Control&#39; directives.</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/favicon/safari-pinned-tab.svg?v=2.0">https://mon-entreprise.urssaf.fr/favicon/safari-pinned-tab.svg?v=2.0</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -6951,68 +7314,6 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 						<td width="20%"
 							class="indent1">URL</td>
 						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/robots.txt">https://mon-entreprise.urssaf.fr/robots.txt</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">The response is stale, and stale responses are not configured to be re-validated or blocked, using the &#39;must-revalidate&#39;, &#39;proxy-revalidate&#39;, &#39;s-maxage&#39;, or &#39;max-age&#39; response &#39;Cache-Control&#39; directives.</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/simulateurs-et-assistants">https://mon-entreprise.urssaf.fr/simulateurs-et-assistants</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">The response is stale, and stale responses are not configured to be re-validated or blocked, using the &#39;must-revalidate&#39;, &#39;proxy-revalidate&#39;, &#39;s-maxage&#39;, or &#39;max-age&#39; response &#39;Cache-Control&#39; directives.</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://mon-entreprise.urssaf.fr/simulateurs/salaire-brut-net">https://mon-entreprise.urssaf.fr/simulateurs/salaire-brut-net</a></td>
 					</tr>
 					<tr>
 						<td width="20%"

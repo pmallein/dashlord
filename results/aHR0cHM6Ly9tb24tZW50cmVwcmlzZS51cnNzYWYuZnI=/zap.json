@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 14 Jan 2024 07:39:10",
+	"@generated": "Sun, 21 Jan 2024 07:24:06",
 	"site":[ 
 		{
 			"@name": "https://mon-entreprise.urssaf.fr",
@@ -39,10 +39,10 @@
 					"count": "2",
 					"solution": "<p>Phase: Architecture and Design</p><p>Use a vetted library or framework that does not allow this weakness to occur or provides constructs that make this weakness easier to avoid.</p><p>For example, use anti-CSRF packages such as the OWASP CSRFGuard.</p><p></p><p>Phase: Implementation</p><p>Ensure that your application is free of cross-site scripting issues, because most CSRF defenses can be bypassed using attacker-controlled script.</p><p></p><p>Phase: Architecture and Design</p><p>Generate a unique nonce for each form, place the nonce into the form, and verify the nonce upon receipt of the form. Be sure that the nonce is not predictable (CWE-330).</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Identify especially dangerous operations. When the user performs a dangerous operation, send a separate confirmation request to ensure that the user intended to perform that operation.</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Use the ESAPI Session Management control.</p><p>This control includes a component for CSRF.</p><p></p><p>Do not use the GET method for any request that triggers a state change.</p><p></p><p>Phase: Implementation</p><p>Check the HTTP Referer header to see if the request originated from an expected page. This could break legitimate functionality, because users or proxies may have disabled sending the Referer for privacy reasons.</p>",
 					"otherinfo": "<p>No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"radio-input-artisanale-entreprise___activit\u00E9___nature\" \"radio-input-commerciale-entreprise___activit\u00E9___nature\" \"radio-input-lib\u00E9rale-entreprise___activit\u00E9___nature\" ].</p>",
-					"reference": "<p>http://projects.webappsec.org/Cross-Site-Request-Forgery</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "208"
+					"sourceid": "200"
 				},
 				{
 					"pluginid": "10055",
@@ -63,6 +63,14 @@
 							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nframe-ancestors\n\nThe directive(s): frame-ancestors are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything."
 						},
 						{
+							"uri": "https://mon-entreprise.urssaf.fr/dev",
+							"method": "GET",
+							"param": "Content-Security-Policy",
+							"attack": "",
+							"evidence": "default-src 'self' mon-entreprise.fr; style-src 'self' 'unsafe-inline' mon-entreprise.zammad.com; connect-src 'self' *.incubateur.net raw.githubusercontent.com tm.urssaf.fr mon-entreprise.zammad.com api.recherche-entreprises.fabrique.social.gouv.fr geo.api.gouv.fr *.algolia.net *.algolianet.com polyfill.io jedonnemonavis.numerique.gouv.fr user-images.githubusercontent.com; form-action 'self' *.sibforms.com *.incubateur.net mon-entreprise.zammad.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' tm.urssaf.fr *.incubateur.net stonly.com code.jquery.com mon-entreprise.zammad.com polyfill.io; img-src 'self' data: mon-entreprise.urssaf.fr tm.urssaf.fr user-images.githubusercontent.com jedonnemonavis.numerique.gouv.fr; frame-src 'self' https://www.youtube-nocookie.com https://codesandbox.io https://place-des-entreprises.beta.gouv.fr https://reso-staging.osc-fr1.scalingo.io https://stackblitz.com",
+							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nframe-ancestors\n\nThe directive(s): frame-ancestors are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything."
+						},
+						{
 							"uri": "https://mon-entreprise.urssaf.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Content-Security-Policy",
@@ -71,10 +79,10 @@
 							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nframe-ancestors\n\nThe directive(s): frame-ancestors are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything."
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is properly configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "<p>The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: </p><p>frame-ancestors</p><p></p><p>The directive(s): frame-ancestors are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything.</p>",
-					"reference": "<p>http://www.w3.org/TR/CSP2/</p><p>http://www.w3.org/TR/CSP/</p><p>http://caniuse.com/#search=content+security+policy</p><p>http://content-security-policy.com/</p><p>https://github.com/shapesecurity/salvation</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
+					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/shapesecurity/salvation</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
 					"cweid": "693",
 					"wascid": "15",
 					"sourceid": "1"
@@ -98,6 +106,14 @@
 							"otherinfo": "script-src includes unsafe-eval."
 						},
 						{
+							"uri": "https://mon-entreprise.urssaf.fr/dev",
+							"method": "GET",
+							"param": "Content-Security-Policy",
+							"attack": "",
+							"evidence": "default-src 'self' mon-entreprise.fr; style-src 'self' 'unsafe-inline' mon-entreprise.zammad.com; connect-src 'self' *.incubateur.net raw.githubusercontent.com tm.urssaf.fr mon-entreprise.zammad.com api.recherche-entreprises.fabrique.social.gouv.fr geo.api.gouv.fr *.algolia.net *.algolianet.com polyfill.io jedonnemonavis.numerique.gouv.fr user-images.githubusercontent.com; form-action 'self' *.sibforms.com *.incubateur.net mon-entreprise.zammad.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' tm.urssaf.fr *.incubateur.net stonly.com code.jquery.com mon-entreprise.zammad.com polyfill.io; img-src 'self' data: mon-entreprise.urssaf.fr tm.urssaf.fr user-images.githubusercontent.com jedonnemonavis.numerique.gouv.fr; frame-src 'self' https://www.youtube-nocookie.com https://codesandbox.io https://place-des-entreprises.beta.gouv.fr https://reso-staging.osc-fr1.scalingo.io https://stackblitz.com",
+							"otherinfo": "script-src includes unsafe-eval."
+						},
+						{
 							"uri": "https://mon-entreprise.urssaf.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Content-Security-Policy",
@@ -106,10 +122,10 @@
 							"otherinfo": "script-src includes unsafe-eval."
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is properly configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "<p>script-src includes unsafe-eval.</p>",
-					"reference": "<p>http://www.w3.org/TR/CSP2/</p><p>http://www.w3.org/TR/CSP/</p><p>http://caniuse.com/#search=content+security+policy</p><p>http://content-security-policy.com/</p><p>https://github.com/shapesecurity/salvation</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
+					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/shapesecurity/salvation</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
 					"cweid": "693",
 					"wascid": "15",
 					"sourceid": "1"
@@ -133,6 +149,14 @@
 							"otherinfo": "script-src includes unsafe-inline."
 						},
 						{
+							"uri": "https://mon-entreprise.urssaf.fr/dev",
+							"method": "GET",
+							"param": "Content-Security-Policy",
+							"attack": "",
+							"evidence": "default-src 'self' mon-entreprise.fr; style-src 'self' 'unsafe-inline' mon-entreprise.zammad.com; connect-src 'self' *.incubateur.net raw.githubusercontent.com tm.urssaf.fr mon-entreprise.zammad.com api.recherche-entreprises.fabrique.social.gouv.fr geo.api.gouv.fr *.algolia.net *.algolianet.com polyfill.io jedonnemonavis.numerique.gouv.fr user-images.githubusercontent.com; form-action 'self' *.sibforms.com *.incubateur.net mon-entreprise.zammad.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' tm.urssaf.fr *.incubateur.net stonly.com code.jquery.com mon-entreprise.zammad.com polyfill.io; img-src 'self' data: mon-entreprise.urssaf.fr tm.urssaf.fr user-images.githubusercontent.com jedonnemonavis.numerique.gouv.fr; frame-src 'self' https://www.youtube-nocookie.com https://codesandbox.io https://place-des-entreprises.beta.gouv.fr https://reso-staging.osc-fr1.scalingo.io https://stackblitz.com",
+							"otherinfo": "script-src includes unsafe-inline."
+						},
+						{
 							"uri": "https://mon-entreprise.urssaf.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Content-Security-Policy",
@@ -141,10 +165,10 @@
 							"otherinfo": "script-src includes unsafe-inline."
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is properly configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "<p>script-src includes unsafe-inline.</p>",
-					"reference": "<p>http://www.w3.org/TR/CSP2/</p><p>http://www.w3.org/TR/CSP/</p><p>http://caniuse.com/#search=content+security+policy</p><p>http://content-security-policy.com/</p><p>https://github.com/shapesecurity/salvation</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
+					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/shapesecurity/salvation</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
 					"cweid": "693",
 					"wascid": "15",
 					"sourceid": "1"
@@ -168,6 +192,14 @@
 							"otherinfo": "style-src includes unsafe-inline."
 						},
 						{
+							"uri": "https://mon-entreprise.urssaf.fr/dev",
+							"method": "GET",
+							"param": "Content-Security-Policy",
+							"attack": "",
+							"evidence": "default-src 'self' mon-entreprise.fr; style-src 'self' 'unsafe-inline' mon-entreprise.zammad.com; connect-src 'self' *.incubateur.net raw.githubusercontent.com tm.urssaf.fr mon-entreprise.zammad.com api.recherche-entreprises.fabrique.social.gouv.fr geo.api.gouv.fr *.algolia.net *.algolianet.com polyfill.io jedonnemonavis.numerique.gouv.fr user-images.githubusercontent.com; form-action 'self' *.sibforms.com *.incubateur.net mon-entreprise.zammad.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' tm.urssaf.fr *.incubateur.net stonly.com code.jquery.com mon-entreprise.zammad.com polyfill.io; img-src 'self' data: mon-entreprise.urssaf.fr tm.urssaf.fr user-images.githubusercontent.com jedonnemonavis.numerique.gouv.fr; frame-src 'self' https://www.youtube-nocookie.com https://codesandbox.io https://place-des-entreprises.beta.gouv.fr https://reso-staging.osc-fr1.scalingo.io https://stackblitz.com",
+							"otherinfo": "style-src includes unsafe-inline."
+						},
+						{
 							"uri": "https://mon-entreprise.urssaf.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Content-Security-Policy",
@@ -176,10 +208,10 @@
 							"otherinfo": "style-src includes unsafe-inline."
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is properly configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "<p>style-src includes unsafe-inline.</p>",
-					"reference": "<p>http://www.w3.org/TR/CSP2/</p><p>http://www.w3.org/TR/CSP/</p><p>http://caniuse.com/#search=content+security+policy</p><p>http://content-security-policy.com/</p><p>https://github.com/shapesecurity/salvation</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
+					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/shapesecurity/salvation</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
 					"cweid": "693",
 					"wascid": "15",
 					"sourceid": "1"
@@ -206,10 +238,10 @@
 					"count": "1",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "",
-					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>http://www.w3.org/TR/CSP/</p><p>http://w3c.github.io/webappsec/specs/content-security-policy/csp-specification.dev.html</p><p>http://www.html5rocks.com/en/tutorials/security/content-security-policy/</p><p>http://caniuse.com/#feat=contentsecuritypolicy</p><p>http://content-security-policy.com/</p>",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>https://www.w3.org/TR/CSP/</p><p>https://w3c.github.io/webappsec-csp/</p><p>https://web.dev/articles/csp</p><p>https://caniuse.com/#feat=contentsecuritypolicy</p><p>https://content-security-policy.com/</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "511"
+					"sourceid": "477"
 				},
 				{
 					"pluginid": "10098",
@@ -324,7 +356,7 @@
 					"reference": "<p>https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.html5_overly_permissive_cors_policy</p>",
 					"cweid": "264",
 					"wascid": "14",
-					"sourceid": "158"
+					"sourceid": "157"
 				},
 				{
 					"pluginid": "10020",
@@ -508,6 +540,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://mon-entreprise.urssaf.fr/simulateurs/auto-entrepreneur",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<script\n\t\t\tcrossorigin=\"anonymous\"\n\t\t\tsrc=\"https://polyfill.io/v3/polyfill.min.js?features=ResizeObserver%2CIntl.~locale.en%2CIntl.~locale.fr%2CString.prototype.replaceAll%2CObject.fromEntries%2CString.prototype.matchAll%2CrequestIdleCallback\"\n\t\t></script>",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://mon-entreprise.urssaf.fr/simulateurs/salaire-brut-net",
 							"method": "GET",
 							"param": "",
@@ -522,14 +562,6 @@
 							"attack": "",
 							"evidence": "<script\n\t\t\tcrossorigin=\"anonymous\"\n\t\t\tsrc=\"https://polyfill.io/v3/polyfill.min.js?features=ResizeObserver%2CIntl.~locale.en%2CIntl.~locale.fr%2CString.prototype.replaceAll%2CObject.fromEntries%2CString.prototype.matchAll%2CrequestIdleCallback\"\n\t\t></script>",
 							"otherinfo": ""
-						},
-						{
-							"uri": "https://mon-entreprise.urssaf.fr/statistiques",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<script\n\t\t\tcrossorigin=\"anonymous\"\n\t\t\tsrc=\"https://polyfill.io/v3/polyfill.min.js?features=ResizeObserver%2CIntl.~locale.en%2CIntl.~locale.fr%2CString.prototype.replaceAll%2CObject.fromEntries%2CString.prototype.matchAll%2CrequestIdleCallback\"\n\t\t></script>",
-							"otherinfo": ""
 						}
 					],
 					"count": "11",
@@ -538,7 +570,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity</p>",
 					"cweid": "345",
 					"wascid": "15",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10017",
@@ -688,7 +720,7 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "526"
+					"sourceid": "525"
 				},
 				{
 					"pluginid": "10063",
@@ -717,7 +749,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://mon-entreprise.urssaf.fr/assistants/choix-du-statut",
+							"uri": "https://mon-entreprise.urssaf.fr/assets/modele-social.81471852.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -725,7 +757,23 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://mon-entreprise.urssaf.fr/budget",
+							"uri": "https://mon-entreprise.urssaf.fr/assets/mon-entreprise-051a3e0c.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://mon-entreprise.urssaf.fr/assets/polyfills-legacy-acb4073e.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://mon-entreprise.urssaf.fr/assistants/choix-du-statut",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -741,23 +789,15 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://mon-entreprise.urssaf.fr/nouveaut%C3%A9s",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://mon-entreprise.urssaf.fr/plan-du-site",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://mon-entreprise.urssaf.fr/simulateurs-et-assistants",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://mon-entreprise.urssaf.fr/simulateurs/auto-entrepreneur",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -779,14 +819,6 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
-						},
-						{
-							"uri": "https://mon-entreprise.urssaf.fr/statistiques",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
 						}
 					],
 					"count": "11",
@@ -795,7 +827,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy</p><p>https://developer.chrome.com/blog/feature-policy/</p><p>https://scotthelme.co.uk/a-new-security-header-feature-policy/</p><p>https://w3c.github.io/webappsec-feature-policy/</p><p>https://www.smashingmagazine.com/2018/12/feature-policy/</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10096",
@@ -902,7 +934,7 @@
 					"reference": "<p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "148"
+					"sourceid": "65"
 				},
 				{
 					"pluginid": "10021",
@@ -923,23 +955,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://mon-entreprise.urssaf.fr/",
-							"method": "GET",
-							"param": "x-content-type-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
-						},
-						{
-							"uri": "https://mon-entreprise.urssaf.fr/assistants/choix-du-statut",
-							"method": "GET",
-							"param": "x-content-type-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
-						},
-						{
-							"uri": "https://mon-entreprise.urssaf.fr/budget",
+							"uri": "https://mon-entreprise.urssaf.fr/assets/mon-entreprise-051a3e0c.js",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -955,7 +971,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://mon-entreprise.urssaf.fr/nouveaut%C3%A9s",
+							"uri": "https://mon-entreprise.urssaf.fr/favicon/apple-touch-icon.png?v=2.0",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -963,7 +979,47 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://mon-entreprise.urssaf.fr/plan-du-site",
+							"uri": "https://mon-entreprise.urssaf.fr/favicon/favicon-16x16.png?v=2.0",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://mon-entreprise.urssaf.fr/favicon/favicon-32x32.png?v=2.0",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://mon-entreprise.urssaf.fr/favicon/favicon.ico?v=2.0",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://mon-entreprise.urssaf.fr/favicon/favicon.svg?v=2.0",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://mon-entreprise.urssaf.fr/favicon/safari-pinned-tab.svg?v=2.0",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://mon-entreprise.urssaf.fr/manifest.webmanifest",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -979,22 +1035,6 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://mon-entreprise.urssaf.fr/simulateurs-et-assistants",
-							"method": "GET",
-							"param": "x-content-type-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
-						},
-						{
-							"uri": "https://mon-entreprise.urssaf.fr/simulateurs/salaire-brut-net",
-							"method": "GET",
-							"param": "x-content-type-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
-						},
-						{
 							"uri": "https://mon-entreprise.urssaf.fr/sitemap.xml",
 							"method": "GET",
 							"param": "x-content-type-options",
@@ -1003,10 +1043,10 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						}
 					],
-					"count": "11",
+					"count": "12",
 					"solution": "<p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p>",
 					"otherinfo": "<p>This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.</p><p>At \"High\" threshold this scan rule will not alert on client or server error responses.</p>",
-					"reference": "<p>http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx</p><p>https://owasp.org/www-community/Security_Headers</p>",
+					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
 					"cweid": "693",
 					"wascid": "15",
 					"sourceid": "1"
@@ -1046,6 +1086,22 @@
 							"otherinfo": "~\uFFFD\u38B7\uFFFD\uFFFD\uFFFD\uFFFD9\\x0011S\\x0011t\uFFFD\uFFFDM8\u06EE\uFFFD\u07DF"
 						},
 						{
+							"uri": "https://mon-entreprise.urssaf.fr/assets/sentry.1d3c4635.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "com/serve/MUIEACTpgg9LvLVG7P4mkAbGA91OHsC2kuCsR3VlW9bV2m0vliZ31_DvZbtg8R5Lhqzd1Mc1iwuIsBw3FHBDG8Mbr4pjpVSbTzq6SLdox3f41GzWuIsT2IPSZ6x7-wh3ohDNDmHE7wbrenXUnqyPnH8Dm0cP2Hxnrq7T72GzINJR9DWwZd-LsqY2XZrvElFcRz6TlR6l36wGik3X",
+							"otherinfo": "r\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD{\uFFFD\\x0014 @\\x0002N\uFFFD \uFFFD\uFFFD\uFFFDTn\uFFFD\uFFFDi\\x0000l`=\uFFFD\uFFFD\uFFFD\\x000bi.\n\uFFFDwVU\uFFFDm]\uFFFD\uFFFD\uFFFDbg}\\x000e\uFFFD[\uFFFD\\x000f\\x0011\uFFFDj\uFFFD\uFFFDLsX\uFFFD\uFFFD\uFFFD\\x0001\uFFFDqG\\x00041\uFFFD1\uFFFD\uFFFD\uFFFD:UI\uFFFD\uDB6E\uDD0Bv\uFFFDw\uFFFDF\uFFFDk\uFFFD\uFFFD=\uFFFD=&z\u01FF\uFFFD\uFFFDz!\\x000c\uFFFD\uFFFD\\x001cN\uFFFDn\uFFFD\uFFFD]I\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD9\uFFFDp\uFFFD\uFFFD\uFFFDz\uFFFD\uFFFD>\uFFFD\\x001b2\r%\\x001fC[\\x0006]\uFFFD\uFFFD*ce\u066E\uFFFD%\\x0015\uFFFDs\uFFFD9Q\uFFFD]\uFFFD\uFFFDh\uFFFD\uFFFD"
+						},
+						{
+							"uri": "https://mon-entreprise.urssaf.fr/assets/vendor.042f79a8.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "styles-module_container__2LiHz",
+							"otherinfo": "\uFFFD\u0725z\u03E6\uFFFD\u06E5{\uFFFD(\uFFFD\u05A2\uFFFD\uFFFD\uFFFD\uFFFDb\uFFFD\\x001f"
+						},
+						{
 							"uri": "https://mon-entreprise.urssaf.fr/assistants/choix-du-statut",
 							"method": "GET",
 							"param": "",
@@ -1078,36 +1134,20 @@
 							"otherinfo": "\uFFFD^\uFFFD\uFFFD\uFFFD!\uFFFDm/\uFFFDA\uFFFD\uFFFDFf\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001e\uFFFD\uFFFD\uFFFD\uFFFD\\x001f]\uFFFDfm>\uFFFD]/\uFFFD\uFFFD!\uFFFDm/\uFFFDA\uFFFD\uFFFDF"
 						},
 						{
-							"uri": "https://mon-entreprise.urssaf.fr/simulateurs/cout-creation-entreprise",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z",
-							"otherinfo": "\uFFFD^\uFFFD\uFFFD\uFFFD!\uFFFDm/\uFFFDA\uFFFD\uFFFDFf\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001e\uFFFD\uFFFD\uFFFD\uFFFD\\x001f]\uFFFDfm>\uFFFD]/\uFFFD\uFFFD!\uFFFDm/\uFFFDA\uFFFD\uFFFDF"
-						},
-						{
-							"uri": "https://mon-entreprise.urssaf.fr/simulateurs/entreprise-individuelle",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "/assets/AutoEntrepreneurPreview-59a26d80",
-							"otherinfo": "\uFFFD\uFFFD,z\uFFFD?\\x0002\uFFFDh\\x0012{kz\uFFFD\u079D\uFFFD>\uFFFD\uFFFD\uFFFD\uFFFD>\uFFFD\u05B6\uFFFD\uFFFD4"
-						},
-						{
-							"uri": "https://mon-entreprise.urssaf.fr/simulateurs/eurl",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z",
-							"otherinfo": "\uFFFD^\uFFFD\uFFFD\uFFFD!\uFFFDm/\uFFFDA\uFFFD\uFFFDFf\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001e\uFFFD\uFFFD\uFFFD\uFFFD\\x001f]\uFFFDfm>\uFFFD]/\uFFFD\uFFFD!\uFFFDm/\uFFFDA\uFFFD\uFFFDF"
-						},
-						{
 							"uri": "https://mon-entreprise.urssaf.fr/simulateurs/salaire-brut-net",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "/assets/SalaireBrutNetPreviewFR-cafa0670",
 							"otherinfo": "\uFFFD\uFFFD,z\uFFFD?I\uFFFDZ\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDMz\uFFFD\uFFFDz\uFFFD\uFFFD\uFFFDT~q\uFFFD\uFFFD\u04EE\uFFFD"
+						},
+						{
+							"uri": "https://mon-entreprise.urssaf.fr/simulateurs/sasu",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z",
+							"otherinfo": "\uFFFD^\uFFFD\uFFFD\uFFFD!\uFFFDm/\uFFFDA\uFFFD\uFFFDFf\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001e\uFFFD\uFFFD\uFFFD\uFFFD\\x001f]\uFFFDfm>\uFFFD]/\uFFFD\uFFFD!\uFFFDm/\uFFFDA\uFFFD\uFFFDF"
 						}
 					],
 					"count": "11",
@@ -1116,7 +1156,7 @@
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10027",
@@ -1145,12 +1185,20 @@
 							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"<script>\n\t\t\t// Set the main colors from the provided customization in the URL We do it\n\t\t\t// before loading the whole JS bundle \", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://mon-entreprise.urssaf.fr/assistants/choix-du-statut",
+							"uri": "https://mon-entreprise.urssaf.fr/assets/mon-entreprise-051a3e0c.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "from",
-							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"<script>\n\t\t\t// Set the main colors from the provided customization in the URL We do it\n\t\t\t// before loading the whole JS bundle \", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"import{R as n}from\"./sentry.1d3c4635.js\";import{w as a,i as s,c,j as t,$ as f}from\"./vendor.042f79a8.js\";function u(){import.met\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"uri": "https://mon-entreprise.urssaf.fr/assets/polyfills-legacy-acb4073e.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "from",
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"!function(){\"use strict\";var t=\"undefined\"!=typeof globalThis?globalThis:\"undefined\"!=typeof window?window:\"undefined\"!=typeof g\", see evidence field for the suspicious comment/snippet."
 						},
 						{
 							"uri": "https://mon-entreprise.urssaf.fr/dev",
@@ -1178,14 +1226,6 @@
 						},
 						{
 							"uri": "https://mon-entreprise.urssaf.fr/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "USER",
-							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<!-- USER AGENT DATA ATTRIBUTE  -->\", see evidence field for the suspicious comment/snippet."
-						},
-						{
-							"uri": "https://mon-entreprise.urssaf.fr/assistants/choix-du-statut",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1359,7 +1399,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://mon-entreprise.urssaf.fr/budget",
+							"uri": "https://mon-entreprise.urssaf.fr/dev",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -1367,7 +1407,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://mon-entreprise.urssaf.fr/dev",
+							"uri": "https://mon-entreprise.urssaf.fr/manifest.webmanifest",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -1446,31 +1486,15 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "Age: 11479",
-							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
-						},
-						{
-							"uri": "https://mon-entreprise.urssaf.fr/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "Age: 11479",
-							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
-						},
-						{
-							"uri": "https://mon-entreprise.urssaf.fr/assistants/choix-du-statut",
-							"method": "GET",
-							"param": "",
-							"attack": "",
 							"evidence": "Age: 0",
 							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
-							"uri": "https://mon-entreprise.urssaf.fr/budget",
+							"uri": "https://mon-entreprise.urssaf.fr/assets/mon-entreprise-051a3e0c.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "Age: 0",
+							"evidence": "Age: 10685",
 							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
@@ -1482,7 +1506,7 @@
 							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
-							"uri": "https://mon-entreprise.urssaf.fr/nouveaut%C3%A9s",
+							"uri": "https://mon-entreprise.urssaf.fr/favicon/apple-touch-icon.png?v=2.0",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1490,11 +1514,51 @@
 							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
-							"uri": "https://mon-entreprise.urssaf.fr/plan-du-site",
+							"uri": "https://mon-entreprise.urssaf.fr/favicon/favicon-16x16.png?v=2.0",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "Age: 0",
+							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
+						},
+						{
+							"uri": "https://mon-entreprise.urssaf.fr/favicon/favicon-32x32.png?v=2.0",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Age: 0",
+							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
+						},
+						{
+							"uri": "https://mon-entreprise.urssaf.fr/favicon/favicon.ico?v=2.0",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Age: 0",
+							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
+						},
+						{
+							"uri": "https://mon-entreprise.urssaf.fr/favicon/favicon.svg?v=2.0",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Age: 1",
+							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
+						},
+						{
+							"uri": "https://mon-entreprise.urssaf.fr/favicon/safari-pinned-tab.svg?v=2.0",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Age: 1",
+							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
+						},
+						{
+							"uri": "https://mon-entreprise.urssaf.fr/manifest.webmanifest",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Age: 10422",
 							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
@@ -1502,23 +1566,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "Age: 1502",
-							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
-						},
-						{
-							"uri": "https://mon-entreprise.urssaf.fr/simulateurs-et-assistants",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "Age: 0",
-							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
-						},
-						{
-							"uri": "https://mon-entreprise.urssaf.fr/simulateurs/salaire-brut-net",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "Age: 11483",
+							"evidence": "Age: 7098",
 							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
@@ -1530,10 +1578,10 @@
 							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
 						}
 					],
-					"count": "11",
+					"count": "12",
 					"solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information.  If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request.</p>",
 					"otherinfo": "<p>The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use.</p>",
-					"reference": "<p>https://tools.ietf.org/html/rfc7234</p><p>https://tools.ietf.org/html/rfc7231</p><p>http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html (obsoleted by rfc7234)</p>",
+					"reference": "<p>https://tools.ietf.org/html/rfc7234</p><p>https://tools.ietf.org/html/rfc7231</p><p>https://www.rfc-editor.org/rfc/rfc9110.html (obsoleted by rfc7234)</p>",
 					"cweid": "-1",
 					"wascid": "-1",
 					"sourceid": "1"
@@ -1549,6 +1597,14 @@
 					"desc": "<p>Specifies how and where the data would be used. For instance, if the value is audio, then the requested resource must be audio data and not any other type of resource.</p>",
 					"instances":[ 
 						{
+							"uri": "https://mon-entreprise.urssaf.fr",
+							"method": "GET",
+							"param": "Sec-Fetch-Dest",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://mon-entreprise.urssaf.fr/dev",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
@@ -1573,13 +1629,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"solution": "<p>Ensure that Sec-Fetch-Dest header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "31"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -1592,6 +1648,14 @@
 					"desc": "<p>Allows to differentiate between requests for navigating between HTML pages and requests for loading resources like images, audio etc.</p>",
 					"instances":[ 
 						{
+							"uri": "https://mon-entreprise.urssaf.fr",
+							"method": "GET",
+							"param": "Sec-Fetch-Mode",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://mon-entreprise.urssaf.fr/dev",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
@@ -1616,13 +1680,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"solution": "<p>Ensure that Sec-Fetch-Mode header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "31"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -1635,6 +1699,14 @@
 					"desc": "<p>Specifies the relationship between request initiator's origin and target's origin.</p>",
 					"instances":[ 
 						{
+							"uri": "https://mon-entreprise.urssaf.fr",
+							"method": "GET",
+							"param": "Sec-Fetch-Site",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://mon-entreprise.urssaf.fr/dev",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
@@ -1659,13 +1731,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"solution": "<p>Ensure that Sec-Fetch-Site header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "31"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -1678,6 +1750,14 @@
 					"desc": "<p>Specifies if a navigation request was initiated by a user.</p>",
 					"instances":[ 
 						{
+							"uri": "https://mon-entreprise.urssaf.fr",
+							"method": "GET",
+							"param": "Sec-Fetch-User",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://mon-entreprise.urssaf.fr/dev",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
@@ -1702,13 +1782,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"solution": "<p>Ensure that Sec-Fetch-User header is included in user initiated requests.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "31"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10049",
@@ -1737,22 +1817,6 @@
 							"otherinfo": "The response is stale, and stale responses are not configured to be re-validated or blocked, using the 'must-revalidate', 'proxy-revalidate', 's-maxage', or 'max-age' response 'Cache-Control' directives."
 						},
 						{
-							"uri": "https://mon-entreprise.urssaf.fr/assistants/choix-du-statut",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "The response is stale, and stale responses are not configured to be re-validated or blocked, using the 'must-revalidate', 'proxy-revalidate', 's-maxage', or 'max-age' response 'Cache-Control' directives."
-						},
-						{
-							"uri": "https://mon-entreprise.urssaf.fr/budget",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "The response is stale, and stale responses are not configured to be re-validated or blocked, using the 'must-revalidate', 'proxy-revalidate', 's-maxage', or 'max-age' response 'Cache-Control' directives."
-						},
-						{
 							"uri": "https://mon-entreprise.urssaf.fr/dev",
 							"method": "GET",
 							"param": "",
@@ -1761,7 +1825,7 @@
 							"otherinfo": "The response is stale, and stale responses are not configured to be re-validated or blocked, using the 'must-revalidate', 'proxy-revalidate', 's-maxage', or 'max-age' response 'Cache-Control' directives."
 						},
 						{
-							"uri": "https://mon-entreprise.urssaf.fr/nouveaut%C3%A9s",
+							"uri": "https://mon-entreprise.urssaf.fr/favicon/apple-touch-icon.png?v=2.0",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1769,7 +1833,39 @@
 							"otherinfo": "The response is stale, and stale responses are not configured to be re-validated or blocked, using the 'must-revalidate', 'proxy-revalidate', 's-maxage', or 'max-age' response 'Cache-Control' directives."
 						},
 						{
-							"uri": "https://mon-entreprise.urssaf.fr/plan-du-site",
+							"uri": "https://mon-entreprise.urssaf.fr/favicon/favicon-16x16.png?v=2.0",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "The response is stale, and stale responses are not configured to be re-validated or blocked, using the 'must-revalidate', 'proxy-revalidate', 's-maxage', or 'max-age' response 'Cache-Control' directives."
+						},
+						{
+							"uri": "https://mon-entreprise.urssaf.fr/favicon/favicon-32x32.png?v=2.0",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "The response is stale, and stale responses are not configured to be re-validated or blocked, using the 'must-revalidate', 'proxy-revalidate', 's-maxage', or 'max-age' response 'Cache-Control' directives."
+						},
+						{
+							"uri": "https://mon-entreprise.urssaf.fr/favicon/favicon.ico?v=2.0",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "The response is stale, and stale responses are not configured to be re-validated or blocked, using the 'must-revalidate', 'proxy-revalidate', 's-maxage', or 'max-age' response 'Cache-Control' directives."
+						},
+						{
+							"uri": "https://mon-entreprise.urssaf.fr/favicon/favicon.svg?v=2.0",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "The response is stale, and stale responses are not configured to be re-validated or blocked, using the 'must-revalidate', 'proxy-revalidate', 's-maxage', or 'max-age' response 'Cache-Control' directives."
+						},
+						{
+							"uri": "https://mon-entreprise.urssaf.fr/favicon/safari-pinned-tab.svg?v=2.0",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1778,22 +1874,6 @@
 						},
 						{
 							"uri": "https://mon-entreprise.urssaf.fr/robots.txt",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "The response is stale, and stale responses are not configured to be re-validated or blocked, using the 'must-revalidate', 'proxy-revalidate', 's-maxage', or 'max-age' response 'Cache-Control' directives."
-						},
-						{
-							"uri": "https://mon-entreprise.urssaf.fr/simulateurs-et-assistants",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "The response is stale, and stale responses are not configured to be re-validated or blocked, using the 'must-revalidate', 'proxy-revalidate', 's-maxage', or 'max-age' response 'Cache-Control' directives."
-						},
-						{
-							"uri": "https://mon-entreprise.urssaf.fr/simulateurs/salaire-brut-net",
 							"method": "GET",
 							"param": "",
 							"attack": "",

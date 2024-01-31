@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 21 Jan 2024 10:45:50",
+	"@generated": "Wed, 31 Jan 2024 07:22:20",
 	"site":[ 
 		{
 			"@name": "https://osmose.numerique.gouv.fr",
@@ -11,7 +11,7 @@
 			"alerts": [ 
 				{
 					"pluginid": "10054",
-					"alertRef": "10054",
+					"alertRef": "10054-1",
 					"alert": "Cookie without SameSite Attribute",
 					"name": "Cookie without SameSite Attribute",
 					"riskcode": "1",
@@ -34,7 +34,7 @@
 					"reference": "<p>https://tools.ietf.org/html/draft-ietf-httpbis-cookie-same-site</p>",
 					"cweid": "1275",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10049",
@@ -125,6 +125,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://osmose.numerique.gouv.fr/robots.txt",
+							"method": "GET",
+							"param": "Sec-Fetch-Dest",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://osmose.numerique.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
@@ -133,7 +141,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-Dest header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
@@ -160,6 +168,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://osmose.numerique.gouv.fr/robots.txt",
+							"method": "GET",
+							"param": "Sec-Fetch-Mode",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://osmose.numerique.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
@@ -168,7 +184,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-Mode header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
@@ -195,6 +211,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://osmose.numerique.gouv.fr/robots.txt",
+							"method": "GET",
+							"param": "Sec-Fetch-Site",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://osmose.numerique.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
@@ -203,13 +227,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-Site header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -230,6 +254,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://osmose.numerique.gouv.fr/robots.txt",
+							"method": "GET",
+							"param": "Sec-Fetch-User",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://osmose.numerique.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
@@ -238,7 +270,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-User header is included in user initiated requests.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
@@ -261,7 +293,7 @@
 							"method": "GET",
 							"param": "JSESSIONID",
 							"attack": "",
-							"evidence": "250B4AE6EAD42596522642F4D28613A9.n1",
+							"evidence": "03D3B56C3349F69E58BA5C588D91849B.n1",
 							"otherinfo": "\ncookie:JSESSIONID"
 						},
 						{
@@ -269,7 +301,7 @@
 							"method": "GET",
 							"param": "JSESSIONID",
 							"attack": "",
-							"evidence": "F99FEE7252429E0427B79B6A3639F9E4.n1",
+							"evidence": "2FE8CCDEDEF6DFC4C05219EBD45AD448.n1",
 							"otherinfo": "\ncookie:JSESSIONID"
 						},
 						{
@@ -277,7 +309,7 @@
 							"method": "GET",
 							"param": "JSESSIONID",
 							"attack": "",
-							"evidence": "250B4AE6EAD42596522642F4D28613A9.n1",
+							"evidence": "03D3B56C3349F69E58BA5C588D91849B.n1",
 							"otherinfo": "\ncookie:JSESSIONID"
 						}
 					],

@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 21 Jan 2024 17:37:44",
+	"@generated": "Wed, 31 Jan 2024 12:12:36",
 	"site":[ 
 		{
 			"@name": "https://candidat.pole-emploi.fr",
@@ -20,37 +20,29 @@
 					"desc": "<p>The response contains Personally Identifiable Information, such as CC number, SSN and similar sensitive data.</p>",
 					"instances":[ 
 						{
-							"uri": "https://candidat.pole-emploi.fr/*/recherche",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "4883325736472882",
-							"otherinfo": "Credit Card Type detected: Visa\nBank Identification Number: 488332\nBrand: VISA\nCategory: \nIssuer: "
-						},
-						{
 							"uri": "https://candidat.pole-emploi.fr/*auth",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "4883325655792450",
+							"evidence": "4883329246049164",
 							"otherinfo": "Credit Card Type detected: Visa\nBank Identification Number: 488332\nBrand: VISA\nCategory: \nIssuer: "
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/*t:ac",
+							"uri": "https://candidat.pole-emploi.fr/*JSESSIONID",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "4883325656126195",
+							"evidence": "4883329211131872",
 							"otherinfo": "Credit Card Type detected: Visa\nBank Identification Number: 488332\nBrand: VISA\nCategory: \nIssuer: "
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"solution": "<p>Check the response for the potential presence of personally identifiable information (PII), ensure nothing sensitive is leaked by the application.</p>",
 					"otherinfo": "<p>Credit Card Type detected: Visa</p><p>Bank Identification Number: 488332</p><p>Brand: VISA</p><p>Category: </p><p>Issuer: </p>",
 					"reference": "",
 					"cweid": "359",
 					"wascid": "13",
-					"sourceid": "143"
+					"sourceid": "188"
 				},
 				{
 					"pluginid": "10202",
@@ -67,7 +59,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<form data-async-trigger=\"true\" data-validate=\"submit\" action=\"/formations/recherche.myform;JSESSIONID_RECH_FORMATION=7SotGI2gOXcFdpGFYtcmYMm5Yl-FnB_I3vzFRdyM9VcpeheY1Gqu!-426741666\" method=\"post\" id=\"myForm\">",
+							"evidence": "<form data-async-trigger=\"true\" data-validate=\"submit\" action=\"/formations/recherche.myform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226\" method=\"post\" id=\"myForm\">",
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"checkboxAlternance\" \"controle\" \"dateFormation\" \"idCertifiante\" \"idFinancementPossibleOrganismeFinanceur_0\" \"idFinancementPossibleOrganismeFinanceur_1\" \"idFinancementPossibleOrganismeFinanceur_2\" \"idFinancementPossibleOrganismeFinanceur_3\" \"idFinancementPossibleOrganismeFinanceurCollapsed_0\" \"idFinancementPossibleOrganismeFinanceurCollapsed_1\" \"idFinancementPossibleOrganismeFinanceurCollapsed_10\" \"idFinancementPossibleOrganismeFinanceurCollapsed_11\" \"idFinancementPossibleOrganismeFinanceurCollapsed_12\" \"idFinancementPossibleOrganismeFinanceurCollapsed_13\" \"idFinancementPossibleOrganismeFinanceurCollapsed_2\" \"idFinancementPossibleOrganismeFinanceurCollapsed_3\" \"idFinancementPossibleOrganismeFinanceurCollapsed_4\" \"idFinancementPossibleOrganismeFinanceurCollapsed_5\" \"idFinancementPossibleOrganismeFinanceurCollapsed_6\" \"idFinancementPossibleOrganismeFinanceurCollapsed_7\" \"idFinancementPossibleOrganismeFinanceurCollapsed_8\" \"idFinancementPossibleOrganismeFinanceurCollapsed_9\" \"modalite_enseignement_vide\" \"modaliteEnseignementRadio\" \"modaliteEnseignementRadio_0\" \"modaliteEnseignementRadio_1\" \"niveau_d_entree_vide\" \"niveau_de_sortie_vide\" \"niveauDEntreeRadio\" \"niveauDEntreeRadio_0\" \"niveauDEntreeRadio_1\" \"niveauDEntreeRadio_2\" \"niveauDEntreeRadio_3\" \"niveauDEntreeRadio_4\" \"niveauDeSortieRadio\" \"niveauDeSortieRadio_0\" \"niveauDeSortieRadio_1\" \"niveauDeSortieRadio_2\" \"range\" \"t:formdata\" \"tri\" ]."
 						},
 						{
@@ -75,7 +67,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<form data-async-trigger=\"true\" data-validate=\"submit\" action=\"/formations/recherche.popinenregistrer.rechercheform;JSESSIONID_RECH_FORMATION=7SotGI2gOXcFdpGFYtcmYMm5Yl-FnB_I3vzFRdyM9VcpeheY1Gqu!-426741666\" method=\"post\" id=\"rechercheForm\">",
+							"evidence": "<form data-async-trigger=\"true\" data-validate=\"submit\" action=\"/formations/recherche.popinenregistrer.rechercheform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226\" method=\"post\" id=\"rechercheForm\">",
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 2: \"enregistrer\" \"nomRecherche\" \"range\" \"t:formdata\" \"tri\" ]."
 						},
 						{
@@ -83,7 +75,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<form data-async-trigger=\"true\" data-validate=\"submit\" action=\"/formations/recherche.voletdetail.popindemandedevis.demandedevisform;JSESSIONID_RECH_FORMATION=7SotGI2gOXcFdpGFYtcmYMm5Yl-FnB_I3vzFRdyM9VcpeheY1Gqu!-426741666\" method=\"post\" id=\"demandeDevisForm\">",
+							"evidence": "<form data-async-trigger=\"true\" data-validate=\"submit\" action=\"/formations/recherche.voletdetail.popindemandedevis.demandedevisform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226\" method=\"post\" id=\"demandeDevisForm\">",
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 3: \"accordTransmissionDonnees\" \"emailField\" \"envoyer\" \"nomField\" \"prenomField\" \"range\" \"t:formdata\" \"telephoneField\" \"textfield\" \"textfield_1\" \"textfield_2\" \"textfield_3\" \"textfield_4\" \"textfield_5\" \"textfield_6\" \"tri\" ]."
 						},
 						{
@@ -91,7 +83,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<form data-async-trigger=\"true\" data-validate=\"submit\" action=\"/formations/recherche.voletdetail.popinenvoiami.envoiamiform;JSESSIONID_RECH_FORMATION=7SotGI2gOXcFdpGFYtcmYMm5Yl-FnB_I3vzFRdyM9VcpeheY1Gqu!-426741666\" method=\"post\" id=\"envoiAmiForm\">",
+							"evidence": "<form data-async-trigger=\"true\" data-validate=\"submit\" action=\"/formations/recherche.voletdetail.popinenvoiami.envoiamiform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226\" method=\"post\" id=\"envoiAmiForm\">",
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 4: \"emailDestinataire\" \"emailExpediteur\" \"prenomNom\" \"range\" \"submit_3\" \"t:formdata\" \"tri\" ]."
 						},
 						{
@@ -165,15 +157,31 @@
 							"attack": "",
 							"evidence": "<form data-async-trigger=\"true\" data-validate=\"submit\" action=\"/offres/emploi.blocmetiers.metierform\" method=\"post\" id=\"metierForm\">",
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 2: \"searchform\" \"t:ac\" \"t:formdata\" ]."
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/offres/emploi/arts-du-spectacle/s4",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form data-async-trigger=\"true\" data-validate=\"submit\" action=\"/offres/emploi.recherchelandingpageform\" method=\"post\" id=\"rechercheLandingPageForm\">",
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"t:ac\" \"t:formdata\" ]."
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/offres/emploi/arts-du-spectacle/s4",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form data-async-trigger=\"true\" data-validate=\"submit\" action=\"/offres/emploi.blocmetiers.metierform\" method=\"post\" id=\"metierForm\">",
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 2: \"searchform\" \"t:ac\" \"t:formdata\" ]."
 						}
 					],
-					"count": "13",
+					"count": "15",
 					"solution": "<p>Phase: Architecture and Design</p><p>Use a vetted library or framework that does not allow this weakness to occur or provides constructs that make this weakness easier to avoid.</p><p>For example, use anti-CSRF packages such as the OWASP CSRFGuard.</p><p></p><p>Phase: Implementation</p><p>Ensure that your application is free of cross-site scripting issues, because most CSRF defenses can be bypassed using attacker-controlled script.</p><p></p><p>Phase: Architecture and Design</p><p>Generate a unique nonce for each form, place the nonce into the form, and verify the nonce upon receipt of the form. Be sure that the nonce is not predictable (CWE-330).</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Identify especially dangerous operations. When the user performs a dangerous operation, send a separate confirmation request to ensure that the user intended to perform that operation.</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Use the ESAPI Session Management control.</p><p>This control includes a component for CSRF.</p><p></p><p>Do not use the GET method for any request that triggers a state change.</p><p></p><p>Phase: Implementation</p><p>Check the HTTP Referer header to see if the request originated from an expected page. This could break legitimate functionality, because users or proxies may have disabled sending the Referer for privacy reasons.</p>",
 					"otherinfo": "<p>No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"checkboxAlternance\" \"controle\" \"dateFormation\" \"idCertifiante\" \"idFinancementPossibleOrganismeFinanceur_0\" \"idFinancementPossibleOrganismeFinanceur_1\" \"idFinancementPossibleOrganismeFinanceur_2\" \"idFinancementPossibleOrganismeFinanceur_3\" \"idFinancementPossibleOrganismeFinanceurCollapsed_0\" \"idFinancementPossibleOrganismeFinanceurCollapsed_1\" \"idFinancementPossibleOrganismeFinanceurCollapsed_10\" \"idFinancementPossibleOrganismeFinanceurCollapsed_11\" \"idFinancementPossibleOrganismeFinanceurCollapsed_12\" \"idFinancementPossibleOrganismeFinanceurCollapsed_13\" \"idFinancementPossibleOrganismeFinanceurCollapsed_2\" \"idFinancementPossibleOrganismeFinanceurCollapsed_3\" \"idFinancementPossibleOrganismeFinanceurCollapsed_4\" \"idFinancementPossibleOrganismeFinanceurCollapsed_5\" \"idFinancementPossibleOrganismeFinanceurCollapsed_6\" \"idFinancementPossibleOrganismeFinanceurCollapsed_7\" \"idFinancementPossibleOrganismeFinanceurCollapsed_8\" \"idFinancementPossibleOrganismeFinanceurCollapsed_9\" \"modalite_enseignement_vide\" \"modaliteEnseignementRadio\" \"modaliteEnseignementRadio_0\" \"modaliteEnseignementRadio_1\" \"niveau_d_entree_vide\" \"niveau_de_sortie_vide\" \"niveauDEntreeRadio\" \"niveauDEntreeRadio_0\" \"niveauDEntreeRadio_1\" \"niveauDEntreeRadio_2\" \"niveauDEntreeRadio_3\" \"niveauDEntreeRadio_4\" \"niveauDeSortieRadio\" \"niveauDeSortieRadio_0\" \"niveauDeSortieRadio_1\" \"niveauDeSortieRadio_2\" \"range\" \"t:formdata\" \"tri\" ].</p>",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "494"
+					"sourceid": "469"
 				},
 				{
 					"pluginid": "10038",
@@ -234,14 +242,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/assets/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/",
 							"method": "GET",
 							"param": "",
@@ -251,6 +251,14 @@
 						},
 						{
 							"uri": "https://candidat.pole-emploi.fr/mobiville/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/modules/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -333,7 +341,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/*jsessionid",
+							"uri": "https://candidat.pole-emploi.fr/*JSESSIONID",
 							"method": "GET",
 							"param": "x-frame-options",
 							"attack": "",
@@ -357,7 +365,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/*redirect",
+							"uri": "https://candidat.pole-emploi.fr/*rayon=",
 							"method": "GET",
 							"param": "x-frame-options",
 							"attack": "",
@@ -365,15 +373,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/*telechargerpdf",
-							"method": "GET",
-							"param": "x-frame-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/",
+							"uri": "https://candidat.pole-emploi.fr/*tri=",
 							"method": "GET",
 							"param": "x-frame-options",
 							"attack": "",
@@ -381,7 +381,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "11",
+					"count": "10",
 					"solution": "<p>Modern Web browsers support the Content-Security-Policy and X-Frame-Options HTTP headers. Ensure one of them is set on all web pages returned by your site/app.</p><p>If you expect the page to be framed only by pages on your server (e.g. it's part of a FRAMESET) then you'll want to use SAMEORIGIN, otherwise if you never expect the page to be framed, you should use DENY. Alternatively consider implementing Content Security Policy's \"frame-ancestors\" directive.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options</p>",
@@ -454,7 +454,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity</p>",
 					"cweid": "345",
 					"wascid": "15",
-					"sourceid": "39"
+					"sourceid": "100"
 				},
 				{
 					"pluginid": "90022",
@@ -483,7 +483,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/formations/recherche.popinenregistrer.rechercheform;JSESSIONID_RECH_FORMATION=7SotGI2gOXcFdpGFYtcmYMm5Yl-FnB_I3vzFRdyM9VcpeheY1Gqu!-426741666",
+							"uri": "https://candidat.pole-emploi.fr/formations/recherche.popinenregistrer.rechercheform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226",
 							"method": "POST",
 							"param": "",
 							"attack": "",
@@ -497,7 +497,7 @@
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "142"
+					"sourceid": "145"
 				},
 				{
 					"pluginid": "10044",
@@ -515,15 +515,15 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "Location header URI length: 759 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/authorize?client_id=USG_PN-de-web_ACB4408808B2D6DC228D6DD2D9C0809590A26FA8B64AC1FBE821C1E0FCD32F66&nonce=57924c7a42b5a4ac0f61c19121eb69a4ae5729e34e71043165a02dc75b1b2a98&realm=%2Findividu&redirect_uri=https%3A%2F%2Fcandidat.pole-emploi.fr%2Fcandidat%2Fauth%2Fconnect&response_type=code&scope=actualisation+actualisationW+document+documentW+prestations+openid+application_USG_PN-de-web_ACB4408808B2D6DC228D6DD2D9C0809590A26FA8B64AC1FBE821C1E0FCD32F66+idRci+contexteAuthentification+suppressionEspace+gestionCompte+courrier+individu+profile+etatcivil+navigation+attestationW+prdvl+accompagnementFinancierMobilite+aidesSocInd&state=4335672444a4891fa02d1763e4d860220520573653f32cd9b08941f382d5d520].\nPredicted response size: 1,059.\nResponse Body Length: 1,969."
+							"otherinfo": "Location header URI length: 759 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/authorize?client_id=USG_PN-de-web_ACB4408808B2D6DC228D6DD2D9C0809590A26FA8B64AC1FBE821C1E0FCD32F66&nonce=ebb50d251cae9672633888cbdf943e2f2528c3dffe8ebf7b799daf1328fe63ee&realm=%2Findividu&redirect_uri=https%3A%2F%2Fcandidat.pole-emploi.fr%2Fcandidat%2Fauth%2Fconnect&response_type=code&scope=actualisation+actualisationW+document+documentW+prestations+openid+application_USG_PN-de-web_ACB4408808B2D6DC228D6DD2D9C0809590A26FA8B64AC1FBE821C1E0FCD32F66+idRci+contexteAuthentification+suppressionEspace+gestionCompte+courrier+individu+profile+etatcivil+navigation+attestationW+prdvl+accompagnementFinancierMobilite+aidesSocInd&state=f578aa96c420349926036739050bd65bd7f932c3c5541c008c185844f81fe537].\nPredicted response size: 1,059.\nResponse Body Length: 1,969."
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/formations/recherche.layout.header.headernonconnecte.menuconnectionncjahianonconnecte.menuconnectionncinfojahiaavecappelrest:clickconnectioncandidat;JSESSIONID_RECH_FORMATION=7SotGI2gOXcFdpGFYtcmYMm5Yl-FnB_I3vzFRdyM9VcpeheY1Gqu!-426741666?range=0-9&tri=0",
+							"uri": "https://candidat.pole-emploi.fr/formations/recherche.layout.header.headernonconnecte.menuconnectionncjahianonconnecte.menuconnectionncinfojahiaavecappelrest:clickconnectioncandidat;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226?range=0-9&tri=0",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "Location header URI length: 837 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/authorize?client_id=USG_PN052-formation_437227408B360F3B13088FA236E242448CE4F12CC2BB03A67D0F94039911CF04&nonce=e095837c3833a7593fb5421d1eb5cd96daaf53dbf80cd6df920967e4bab7daaf&realm=%2Findividu&redirect_uri=https%3A%2F%2Fcandidat.pole-emploi.fr%2Fformations%2Fauth%2Fconnect&response_type=code&scope=referentielFormation+prestation+prestations+coordonnees+etatcivil+navigation+individu+profile+openid+formation+formationW+formationconseillerW+application_USG_PN052-formation_437227408B360F3B13088FA236E242448CE4F12CC2BB03A67D0F94039911CF04+contexteAuthentification+courrier+idRci+aide+aideW+conventionAfprPoe+offre+espaceEntreprise+organismeResponsable+lectureProfilParticulierEmployeur+lectureProfil&state=d6567b8ac04a1e74da9087c680e30af92264b95eeec9fc78383c7791b3f22de9].\nPredicted response size: 1,137.\nResponse Body Length: 2,159."
+							"otherinfo": "Location header URI length: 837 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/authorize?client_id=USG_PN052-formation_437227408B360F3B13088FA236E242448CE4F12CC2BB03A67D0F94039911CF04&nonce=9f73c72829d4a009a05bf9d5d314d587090ecaad1238871e0ea9bafbdf81e806&realm=%2Findividu&redirect_uri=https%3A%2F%2Fcandidat.pole-emploi.fr%2Fformations%2Fauth%2Fconnect&response_type=code&scope=referentielFormation+prestation+prestations+coordonnees+etatcivil+navigation+individu+profile+openid+formation+formationW+formationconseillerW+application_USG_PN052-formation_437227408B360F3B13088FA236E242448CE4F12CC2BB03A67D0F94039911CF04+contexteAuthentification+courrier+idRci+aide+aideW+conventionAfprPoe+offre+espaceEntreprise+organismeResponsable+lectureProfilParticulierEmployeur+lectureProfil&state=0ddfec1178487ac7719f0995874f9d755adf71b92060c9200248b9da493f487c].\nPredicted response size: 1,137.\nResponse Body Length: 2,159."
 						},
 						{
 							"uri": "https://candidat.pole-emploi.fr/offres/emploi.layout.header.headernonconnecte.menuconnectionncjahianonconnecte.menuconnectionncinfojahiaavecappelrest:clickconnectioncandidat",
@@ -531,7 +531,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "Location header URI length: 667 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/authorize?client_id=USG_PN055-rechercheoffre_7801094A94E212578CD62188B434CD785C63B300061B8469D4FB0CFE0C1D59EC&nonce=a17d0bf6a049d5fbfa213b53c955775cf314516380891fc2e922d8863c5531e7&realm=%2Findividu&redirect_uri=https%3A%2F%2Fcandidat.pole-emploi.fr%2Foffres%2Fauth%2Fconnect&response_type=code&scope=openid+idRci+profile+individu+offre+critereW+offreselection+offreselectionW+coordonnees+courrier+navigation+etatcivil+profilpro+application_USG_PN055-rechercheoffre_7801094A94E212578CD62188B434CD785C63B300061B8469D4FB0CFE0C1D59EC&state=f08859c801d2f96c6ffc154f2c21c2baffd0a4258b14d1d91a6f51fe0bb4bfe7].\nPredicted response size: 967.\nResponse Body Length: 1,739."
+							"otherinfo": "Location header URI length: 667 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/authorize?client_id=USG_PN055-rechercheoffre_7801094A94E212578CD62188B434CD785C63B300061B8469D4FB0CFE0C1D59EC&nonce=52414764e66173bc65e5393a7408e36acb2bd4856b6abb38d49e4f34550bfe86&realm=%2Findividu&redirect_uri=https%3A%2F%2Fcandidat.pole-emploi.fr%2Foffres%2Fauth%2Fconnect&response_type=code&scope=openid+idRci+profile+individu+offre+critereW+offreselection+offreselectionW+coordonnees+courrier+navigation+etatcivil+profilpro+application_USG_PN055-rechercheoffre_7801094A94E212578CD62188B434CD785C63B300061B8469D4FB0CFE0C1D59EC&state=1090dfa893991bc70b36515aecacbe4475e214cc9dd0666c0633ccc01ed202b9].\nPredicted response size: 967.\nResponse Body Length: 1,739."
 						},
 						{
 							"uri": "https://candidat.pole-emploi.fr/offres/emploi.layout.header.headernonconnecte.menuconnectionncjahianonconnecte.menuconnectionncinfojahiaencache:clickconnectioncandidat",
@@ -539,7 +539,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "Location header URI length: 667 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/authorize?client_id=USG_PN055-rechercheoffre_7801094A94E212578CD62188B434CD785C63B300061B8469D4FB0CFE0C1D59EC&nonce=a17d0bf6a049d5fbfa213b53c955775cf314516380891fc2e922d8863c5531e7&realm=%2Findividu&redirect_uri=https%3A%2F%2Fcandidat.pole-emploi.fr%2Foffres%2Fauth%2Fconnect&response_type=code&scope=openid+idRci+profile+individu+offre+critereW+offreselection+offreselectionW+coordonnees+courrier+navigation+etatcivil+profilpro+application_USG_PN055-rechercheoffre_7801094A94E212578CD62188B434CD785C63B300061B8469D4FB0CFE0C1D59EC&state=f08859c801d2f96c6ffc154f2c21c2baffd0a4258b14d1d91a6f51fe0bb4bfe7].\nPredicted response size: 967.\nResponse Body Length: 1,739."
+							"otherinfo": "Location header URI length: 667 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/authorize?client_id=USG_PN055-rechercheoffre_7801094A94E212578CD62188B434CD785C63B300061B8469D4FB0CFE0C1D59EC&nonce=52414764e66173bc65e5393a7408e36acb2bd4856b6abb38d49e4f34550bfe86&realm=%2Findividu&redirect_uri=https%3A%2F%2Fcandidat.pole-emploi.fr%2Foffres%2Fauth%2Fconnect&response_type=code&scope=openid+idRci+profile+individu+offre+critereW+offreselection+offreselectionW+coordonnees+courrier+navigation+etatcivil+profilpro+application_USG_PN055-rechercheoffre_7801094A94E212578CD62188B434CD785C63B300061B8469D4FB0CFE0C1D59EC&state=1090dfa893991bc70b36515aecacbe4475e214cc9dd0666c0633ccc01ed202b9].\nPredicted response size: 967.\nResponse Body Length: 1,739."
 						},
 						{
 							"uri": "https://candidat.pole-emploi.fr/offres/emploi.layout.header.headernonconnecte.menuconnectionncjahianonconnecte.menuconnectionncinfojahiaencache:clickconnectioncandidat?t:ac=agriculture-elevage/s1",
@@ -547,7 +547,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "Location header URI length: 667 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/authorize?client_id=USG_PN055-rechercheoffre_7801094A94E212578CD62188B434CD785C63B300061B8469D4FB0CFE0C1D59EC&nonce=a17d0bf6a049d5fbfa213b53c955775cf314516380891fc2e922d8863c5531e7&realm=%2Findividu&redirect_uri=https%3A%2F%2Fcandidat.pole-emploi.fr%2Foffres%2Fauth%2Fconnect&response_type=code&scope=openid+idRci+profile+individu+offre+critereW+offreselection+offreselectionW+coordonnees+courrier+navigation+etatcivil+profilpro+application_USG_PN055-rechercheoffre_7801094A94E212578CD62188B434CD785C63B300061B8469D4FB0CFE0C1D59EC&state=f08859c801d2f96c6ffc154f2c21c2baffd0a4258b14d1d91a6f51fe0bb4bfe7].\nPredicted response size: 967.\nResponse Body Length: 1,739."
+							"otherinfo": "Location header URI length: 667 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/authorize?client_id=USG_PN055-rechercheoffre_7801094A94E212578CD62188B434CD785C63B300061B8469D4FB0CFE0C1D59EC&nonce=52414764e66173bc65e5393a7408e36acb2bd4856b6abb38d49e4f34550bfe86&realm=%2Findividu&redirect_uri=https%3A%2F%2Fcandidat.pole-emploi.fr%2Foffres%2Fauth%2Fconnect&response_type=code&scope=openid+idRci+profile+individu+offre+critereW+offreselection+offreselectionW+coordonnees+courrier+navigation+etatcivil+profilpro+application_USG_PN055-rechercheoffre_7801094A94E212578CD62188B434CD785C63B300061B8469D4FB0CFE0C1D59EC&state=1090dfa893991bc70b36515aecacbe4475e214cc9dd0666c0633ccc01ed202b9].\nPredicted response size: 967.\nResponse Body Length: 1,739."
 						},
 						{
 							"uri": "https://candidat.pole-emploi.fr/offres/emploi.layout.header.headernonconnecte.menuconnectionncjahianonconnecte.menuconnectionncinfojahiaencache:clickconnectioncandidat?t:ac=architecture/s2",
@@ -555,7 +555,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "Location header URI length: 667 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/authorize?client_id=USG_PN055-rechercheoffre_7801094A94E212578CD62188B434CD785C63B300061B8469D4FB0CFE0C1D59EC&nonce=a17d0bf6a049d5fbfa213b53c955775cf314516380891fc2e922d8863c5531e7&realm=%2Findividu&redirect_uri=https%3A%2F%2Fcandidat.pole-emploi.fr%2Foffres%2Fauth%2Fconnect&response_type=code&scope=openid+idRci+profile+individu+offre+critereW+offreselection+offreselectionW+coordonnees+courrier+navigation+etatcivil+profilpro+application_USG_PN055-rechercheoffre_7801094A94E212578CD62188B434CD785C63B300061B8469D4FB0CFE0C1D59EC&state=f08859c801d2f96c6ffc154f2c21c2baffd0a4258b14d1d91a6f51fe0bb4bfe7].\nPredicted response size: 967.\nResponse Body Length: 1,739."
+							"otherinfo": "Location header URI length: 667 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/authorize?client_id=USG_PN055-rechercheoffre_7801094A94E212578CD62188B434CD785C63B300061B8469D4FB0CFE0C1D59EC&nonce=52414764e66173bc65e5393a7408e36acb2bd4856b6abb38d49e4f34550bfe86&realm=%2Findividu&redirect_uri=https%3A%2F%2Fcandidat.pole-emploi.fr%2Foffres%2Fauth%2Fconnect&response_type=code&scope=openid+idRci+profile+individu+offre+critereW+offreselection+offreselectionW+coordonnees+courrier+navigation+etatcivil+profilpro+application_USG_PN055-rechercheoffre_7801094A94E212578CD62188B434CD785C63B300061B8469D4FB0CFE0C1D59EC&state=1090dfa893991bc70b36515aecacbe4475e214cc9dd0666c0633ccc01ed202b9].\nPredicted response size: 967.\nResponse Body Length: 1,739."
 						},
 						{
 							"uri": "https://candidat.pole-emploi.fr/offres/emploi.layout.header.headernonconnecte.menuconnectionncjahianonconnecte.menuconnectionncinfojahiaencache:clickconnectioncandidat?t:ac=artisanat-d-art/s3",
@@ -563,7 +563,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "Location header URI length: 667 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/authorize?client_id=USG_PN055-rechercheoffre_7801094A94E212578CD62188B434CD785C63B300061B8469D4FB0CFE0C1D59EC&nonce=a17d0bf6a049d5fbfa213b53c955775cf314516380891fc2e922d8863c5531e7&realm=%2Findividu&redirect_uri=https%3A%2F%2Fcandidat.pole-emploi.fr%2Foffres%2Fauth%2Fconnect&response_type=code&scope=openid+idRci+profile+individu+offre+critereW+offreselection+offreselectionW+coordonnees+courrier+navigation+etatcivil+profilpro+application_USG_PN055-rechercheoffre_7801094A94E212578CD62188B434CD785C63B300061B8469D4FB0CFE0C1D59EC&state=f08859c801d2f96c6ffc154f2c21c2baffd0a4258b14d1d91a6f51fe0bb4bfe7].\nPredicted response size: 967.\nResponse Body Length: 1,739."
+							"otherinfo": "Location header URI length: 667 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/authorize?client_id=USG_PN055-rechercheoffre_7801094A94E212578CD62188B434CD785C63B300061B8469D4FB0CFE0C1D59EC&nonce=52414764e66173bc65e5393a7408e36acb2bd4856b6abb38d49e4f34550bfe86&realm=%2Findividu&redirect_uri=https%3A%2F%2Fcandidat.pole-emploi.fr%2Foffres%2Fauth%2Fconnect&response_type=code&scope=openid+idRci+profile+individu+offre+critereW+offreselection+offreselectionW+coordonnees+courrier+navigation+etatcivil+profilpro+application_USG_PN055-rechercheoffre_7801094A94E212578CD62188B434CD785C63B300061B8469D4FB0CFE0C1D59EC&state=1090dfa893991bc70b36515aecacbe4475e214cc9dd0666c0633ccc01ed202b9].\nPredicted response size: 967.\nResponse Body Length: 1,739."
 						},
 						{
 							"uri": "https://candidat.pole-emploi.fr/offres/emploi.layout.header.headernonconnecte.menuconnectionncjahianonconnecte.menuconnectionncinfojahiaencache:clickconnectioncandidat?t:ac=arts-du-spectacle/s4",
@@ -571,7 +571,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "Location header URI length: 667 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/authorize?client_id=USG_PN055-rechercheoffre_7801094A94E212578CD62188B434CD785C63B300061B8469D4FB0CFE0C1D59EC&nonce=a17d0bf6a049d5fbfa213b53c955775cf314516380891fc2e922d8863c5531e7&realm=%2Findividu&redirect_uri=https%3A%2F%2Fcandidat.pole-emploi.fr%2Foffres%2Fauth%2Fconnect&response_type=code&scope=openid+idRci+profile+individu+offre+critereW+offreselection+offreselectionW+coordonnees+courrier+navigation+etatcivil+profilpro+application_USG_PN055-rechercheoffre_7801094A94E212578CD62188B434CD785C63B300061B8469D4FB0CFE0C1D59EC&state=f08859c801d2f96c6ffc154f2c21c2baffd0a4258b14d1d91a6f51fe0bb4bfe7].\nPredicted response size: 967.\nResponse Body Length: 1,739."
+							"otherinfo": "Location header URI length: 667 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/authorize?client_id=USG_PN055-rechercheoffre_7801094A94E212578CD62188B434CD785C63B300061B8469D4FB0CFE0C1D59EC&nonce=52414764e66173bc65e5393a7408e36acb2bd4856b6abb38d49e4f34550bfe86&realm=%2Findividu&redirect_uri=https%3A%2F%2Fcandidat.pole-emploi.fr%2Foffres%2Fauth%2Fconnect&response_type=code&scope=openid+idRci+profile+individu+offre+critereW+offreselection+offreselectionW+coordonnees+courrier+navigation+etatcivil+profilpro+application_USG_PN055-rechercheoffre_7801094A94E212578CD62188B434CD785C63B300061B8469D4FB0CFE0C1D59EC&state=1090dfa893991bc70b36515aecacbe4475e214cc9dd0666c0633ccc01ed202b9].\nPredicted response size: 967.\nResponse Body Length: 1,739."
 						},
 						{
 							"uri": "https://candidat.pole-emploi.fr/offres/emploi.layout.header.headernonconnecte.menuconnectionncjahianonconnecte.menuconnectionncinfojahiaencache:clickconnectioncandidat?t:ac=audiovisuel-journalisme/s5",
@@ -579,7 +579,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "Location header URI length: 667 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/authorize?client_id=USG_PN055-rechercheoffre_7801094A94E212578CD62188B434CD785C63B300061B8469D4FB0CFE0C1D59EC&nonce=a17d0bf6a049d5fbfa213b53c955775cf314516380891fc2e922d8863c5531e7&realm=%2Findividu&redirect_uri=https%3A%2F%2Fcandidat.pole-emploi.fr%2Foffres%2Fauth%2Fconnect&response_type=code&scope=openid+idRci+profile+individu+offre+critereW+offreselection+offreselectionW+coordonnees+courrier+navigation+etatcivil+profilpro+application_USG_PN055-rechercheoffre_7801094A94E212578CD62188B434CD785C63B300061B8469D4FB0CFE0C1D59EC&state=f08859c801d2f96c6ffc154f2c21c2baffd0a4258b14d1d91a6f51fe0bb4bfe7].\nPredicted response size: 967.\nResponse Body Length: 1,739."
+							"otherinfo": "Location header URI length: 667 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/authorize?client_id=USG_PN055-rechercheoffre_7801094A94E212578CD62188B434CD785C63B300061B8469D4FB0CFE0C1D59EC&nonce=52414764e66173bc65e5393a7408e36acb2bd4856b6abb38d49e4f34550bfe86&realm=%2Findividu&redirect_uri=https%3A%2F%2Fcandidat.pole-emploi.fr%2Foffres%2Fauth%2Fconnect&response_type=code&scope=openid+idRci+profile+individu+offre+critereW+offreselection+offreselectionW+coordonnees+courrier+navigation+etatcivil+profilpro+application_USG_PN055-rechercheoffre_7801094A94E212578CD62188B434CD785C63B300061B8469D4FB0CFE0C1D59EC&state=1090dfa893991bc70b36515aecacbe4475e214cc9dd0666c0633ccc01ed202b9].\nPredicted response size: 967.\nResponse Body Length: 1,739."
 						},
 						{
 							"uri": "https://candidat.pole-emploi.fr/offres/emploi.layout.header.headernonconnecte.menuconnectionncjahianonconnecte.menuconnectionncinfojahiaencache:clickconnectioncandidat?t:ac=audit-conseil/s6",
@@ -587,32 +587,24 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "Location header URI length: 667 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/authorize?client_id=USG_PN055-rechercheoffre_7801094A94E212578CD62188B434CD785C63B300061B8469D4FB0CFE0C1D59EC&nonce=a17d0bf6a049d5fbfa213b53c955775cf314516380891fc2e922d8863c5531e7&realm=%2Findividu&redirect_uri=https%3A%2F%2Fcandidat.pole-emploi.fr%2Foffres%2Fauth%2Fconnect&response_type=code&scope=openid+idRci+profile+individu+offre+critereW+offreselection+offreselectionW+coordonnees+courrier+navigation+etatcivil+profilpro+application_USG_PN055-rechercheoffre_7801094A94E212578CD62188B434CD785C63B300061B8469D4FB0CFE0C1D59EC&state=f08859c801d2f96c6ffc154f2c21c2baffd0a4258b14d1d91a6f51fe0bb4bfe7].\nPredicted response size: 967.\nResponse Body Length: 1,739."
+							"otherinfo": "Location header URI length: 667 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/authorize?client_id=USG_PN055-rechercheoffre_7801094A94E212578CD62188B434CD785C63B300061B8469D4FB0CFE0C1D59EC&nonce=52414764e66173bc65e5393a7408e36acb2bd4856b6abb38d49e4f34550bfe86&realm=%2Findividu&redirect_uri=https%3A%2F%2Fcandidat.pole-emploi.fr%2Foffres%2Fauth%2Fconnect&response_type=code&scope=openid+idRci+profile+individu+offre+critereW+offreselection+offreselectionW+coordonnees+courrier+navigation+etatcivil+profilpro+application_USG_PN055-rechercheoffre_7801094A94E212578CD62188B434CD785C63B300061B8469D4FB0CFE0C1D59EC&state=1090dfa893991bc70b36515aecacbe4475e214cc9dd0666c0633ccc01ed202b9].\nPredicted response size: 967.\nResponse Body Length: 1,739."
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/offres/emploi.layout.header.headernonconnecte.menuconnectionncjahianonconnecte.menuconnectionncinfojahiaencache:clickconnectioncandidat?t:ac=commerce-distribution/s11",
+							"uri": "https://candidat.pole-emploi.fr/offres/emploi.layout.header.headernonconnecte.menuconnectionncjahianonconnecte.menuconnectionncinfojahiaencache:clickconnectioncandidat?t:ac=automobile/s7",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "Location header URI length: 667 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/authorize?client_id=USG_PN055-rechercheoffre_7801094A94E212578CD62188B434CD785C63B300061B8469D4FB0CFE0C1D59EC&nonce=a17d0bf6a049d5fbfa213b53c955775cf314516380891fc2e922d8863c5531e7&realm=%2Findividu&redirect_uri=https%3A%2F%2Fcandidat.pole-emploi.fr%2Foffres%2Fauth%2Fconnect&response_type=code&scope=openid+idRci+profile+individu+offre+critereW+offreselection+offreselectionW+coordonnees+courrier+navigation+etatcivil+profilpro+application_USG_PN055-rechercheoffre_7801094A94E212578CD62188B434CD785C63B300061B8469D4FB0CFE0C1D59EC&state=f08859c801d2f96c6ffc154f2c21c2baffd0a4258b14d1d91a6f51fe0bb4bfe7].\nPredicted response size: 967.\nResponse Body Length: 1,739."
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/offres/emploi.layout.header.headernonconnecte.menuconnectionncjahianonconnecte.menuconnectionncinfojahiaencache:clickconnectioncandidat?t:ac=comptabilite-gestion-ressources-humaines/s12",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "Location header URI length: 667 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/authorize?client_id=USG_PN055-rechercheoffre_7801094A94E212578CD62188B434CD785C63B300061B8469D4FB0CFE0C1D59EC&nonce=a17d0bf6a049d5fbfa213b53c955775cf314516380891fc2e922d8863c5531e7&realm=%2Findividu&redirect_uri=https%3A%2F%2Fcandidat.pole-emploi.fr%2Foffres%2Fauth%2Fconnect&response_type=code&scope=openid+idRci+profile+individu+offre+critereW+offreselection+offreselectionW+coordonnees+courrier+navigation+etatcivil+profilpro+application_USG_PN055-rechercheoffre_7801094A94E212578CD62188B434CD785C63B300061B8469D4FB0CFE0C1D59EC&state=f08859c801d2f96c6ffc154f2c21c2baffd0a4258b14d1d91a6f51fe0bb4bfe7].\nPredicted response size: 967.\nResponse Body Length: 1,739."
+							"otherinfo": "Location header URI length: 667 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/authorize?client_id=USG_PN055-rechercheoffre_7801094A94E212578CD62188B434CD785C63B300061B8469D4FB0CFE0C1D59EC&nonce=52414764e66173bc65e5393a7408e36acb2bd4856b6abb38d49e4f34550bfe86&realm=%2Findividu&redirect_uri=https%3A%2F%2Fcandidat.pole-emploi.fr%2Foffres%2Fauth%2Fconnect&response_type=code&scope=openid+idRci+profile+individu+offre+critereW+offreselection+offreselectionW+coordonnees+courrier+navigation+etatcivil+profilpro+application_USG_PN055-rechercheoffre_7801094A94E212578CD62188B434CD785C63B300061B8469D4FB0CFE0C1D59EC&state=1090dfa893991bc70b36515aecacbe4475e214cc9dd0666c0633ccc01ed202b9].\nPredicted response size: 967.\nResponse Body Length: 1,739."
 						}
 					],
-					"count": "12",
+					"count": "11",
 					"solution": "<p>Ensure that no sensitive information is leaked via redirect responses. Redirect responses should have almost no content.</p>",
-					"otherinfo": "<p>Location header URI length: 759 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/authorize?client_id=USG_PN-de-web_ACB4408808B2D6DC228D6DD2D9C0809590A26FA8B64AC1FBE821C1E0FCD32F66&nonce=57924c7a42b5a4ac0f61c19121eb69a4ae5729e34e71043165a02dc75b1b2a98&realm=%2Findividu&redirect_uri=https%3A%2F%2Fcandidat.pole-emploi.fr%2Fcandidat%2Fauth%2Fconnect&response_type=code&scope=actualisation+actualisationW+document+documentW+prestations+openid+application_USG_PN-de-web_ACB4408808B2D6DC228D6DD2D9C0809590A26FA8B64AC1FBE821C1E0FCD32F66+idRci+contexteAuthentification+suppressionEspace+gestionCompte+courrier+individu+profile+etatcivil+navigation+attestationW+prdvl+accompagnementFinancierMobilite+aidesSocInd&state=4335672444a4891fa02d1763e4d860220520573653f32cd9b08941f382d5d520].</p><p>Predicted response size: 1,059.</p><p>Response Body Length: 1,969.</p>",
+					"otherinfo": "<p>Location header URI length: 759 [https://authentification-candidat.pole-emploi.fr/connexion/oauth2/authorize?client_id=USG_PN-de-web_ACB4408808B2D6DC228D6DD2D9C0809590A26FA8B64AC1FBE821C1E0FCD32F66&nonce=ebb50d251cae9672633888cbdf943e2f2528c3dffe8ebf7b799daf1328fe63ee&realm=%2Findividu&redirect_uri=https%3A%2F%2Fcandidat.pole-emploi.fr%2Fcandidat%2Fauth%2Fconnect&response_type=code&scope=actualisation+actualisationW+document+documentW+prestations+openid+application_USG_PN-de-web_ACB4408808B2D6DC228D6DD2D9C0809590A26FA8B64AC1FBE821C1E0FCD32F66+idRci+contexteAuthentification+suppressionEspace+gestionCompte+courrier+individu+profile+etatcivil+navigation+attestationW+prdvl+accompagnementFinancierMobilite+aidesSocInd&state=f578aa96c420349926036739050bd65bd7f932c3c5541c008c185844f81fe537].</p><p>Predicted response size: 1,059.</p><p>Response Body Length: 1,969.</p>",
 					"reference": "",
 					"cweid": "201",
 					"wascid": "13",
-					"sourceid": "104"
+					"sourceid": "141"
 				},
 				{
 					"pluginid": "10010",
@@ -633,43 +625,51 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/assets/",
-							"method": "GET",
-							"param": "TS014195a1",
-							"attack": "",
-							"evidence": "Set-Cookie: TS014195a1",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/candidat/offresspecifiques/detailoffrealternance/",
-							"method": "GET",
-							"param": "TS014195a1",
-							"attack": "",
-							"evidence": "Set-Cookie: TS014195a1",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/candidat/offresspecifiques/detailoffrealternance/",
-							"method": "GET",
-							"param": "TS01a304aa",
-							"attack": "",
-							"evidence": "Set-Cookie: TS01a304aa",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/candidat/offresspecifiques/detailoffrealternance/",
-							"method": "GET",
-							"param": "userBadge",
-							"attack": "",
-							"evidence": "Set-Cookie: userBadge",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/",
 							"method": "GET",
 							"param": "TS01a771c6",
 							"attack": "",
 							"evidence": "Set-Cookie: TS01a771c6",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/assets/img/favicon/apple-touch-icon-114x114.png",
+							"method": "GET",
+							"param": "TS01a771c6",
+							"attack": "",
+							"evidence": "Set-Cookie: TS01a771c6",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/assets/img/favicon/apple-touch-icon-120x120.png",
+							"method": "GET",
+							"param": "TS01a771c6",
+							"attack": "",
+							"evidence": "Set-Cookie: TS01a771c6",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/assets/img/favicon/apple-touch-icon-144x144.png",
+							"method": "GET",
+							"param": "TS01a771c6",
+							"attack": "",
+							"evidence": "Set-Cookie: TS01a771c6",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/assets/img/favicon/favicon.ico",
+							"method": "GET",
+							"param": "TS01a771c6",
+							"attack": "",
+							"evidence": "Set-Cookie: TS01a771c6",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/favicon.ico",
+							"method": "GET",
+							"param": "TS014195a1",
+							"attack": "",
+							"evidence": "Set-Cookie: TS014195a1",
 							"otherinfo": ""
 						},
 						{
@@ -681,23 +681,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/index-homepage-services-secours.html",
-							"method": "GET",
-							"param": "TS014195a1",
-							"attack": "",
-							"evidence": "Set-Cookie: TS014195a1",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://candidat.pole-emploi.fr/mobiville/",
-							"method": "GET",
-							"param": "TS014195a1",
-							"attack": "",
-							"evidence": "Set-Cookie: TS014195a1",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/modules/",
 							"method": "GET",
 							"param": "TS014195a1",
 							"attack": "",
@@ -729,7 +713,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "13",
+					"count": "12",
 					"solution": "<p>Ensure that the HttpOnly flag is set for all cookies.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://owasp.org/www-community/HttpOnly</p>",
@@ -756,30 +740,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/assets/",
-							"method": "GET",
-							"param": "TS014195a1",
-							"attack": "",
-							"evidence": "Set-Cookie: TS014195a1",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/candidat/offresspecifiques/detailoffrealternance/",
-							"method": "GET",
-							"param": "TS014195a1",
-							"attack": "",
-							"evidence": "Set-Cookie: TS014195a1",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/candidat/offresspecifiques/detailoffrealternance/",
-							"method": "GET",
-							"param": "TS01a304aa",
-							"attack": "",
-							"evidence": "Set-Cookie: TS01a304aa",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/",
 							"method": "GET",
 							"param": "TS01a771c6",
@@ -788,15 +748,39 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/gw-metierscope/",
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/assets/img/favicon/apple-touch-icon-114x114.png",
 							"method": "GET",
-							"param": "TS014195a1",
+							"param": "TS01a771c6",
 							"attack": "",
-							"evidence": "Set-Cookie: TS014195a1",
+							"evidence": "Set-Cookie: TS01a771c6",
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/index-homepage-services-secours.html",
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/assets/img/favicon/apple-touch-icon-120x120.png",
+							"method": "GET",
+							"param": "TS01a771c6",
+							"attack": "",
+							"evidence": "Set-Cookie: TS01a771c6",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/assets/img/favicon/apple-touch-icon-144x144.png",
+							"method": "GET",
+							"param": "TS01a771c6",
+							"attack": "",
+							"evidence": "Set-Cookie: TS01a771c6",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/assets/img/favicon/favicon.ico",
+							"method": "GET",
+							"param": "TS01a771c6",
+							"attack": "",
+							"evidence": "Set-Cookie: TS01a771c6",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/favicon.ico",
 							"method": "GET",
 							"param": "TS014195a1",
 							"attack": "",
@@ -805,14 +789,6 @@
 						},
 						{
 							"uri": "https://candidat.pole-emploi.fr/mobiville/",
-							"method": "GET",
-							"param": "TS014195a1",
-							"attack": "",
-							"evidence": "Set-Cookie: TS014195a1",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/modules/",
 							"method": "GET",
 							"param": "TS014195a1",
 							"attack": "",
@@ -844,7 +820,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "12",
+					"count": "11",
 					"solution": "<p>Whenever a cookie contains sensitive information or is a session token, then it should always be passed using an encrypted channel. Ensure that the secure flag is set for cookies containing such sensitive information.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes.html</p>",
@@ -854,7 +830,7 @@
 				},
 				{
 					"pluginid": "10054",
-					"alertRef": "10054",
+					"alertRef": "10054-1",
 					"alert": "Cookie without SameSite Attribute",
 					"name": "Cookie without SameSite Attribute",
 					"riskcode": "1",
@@ -879,35 +855,19 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/assets/",
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/",
 							"method": "GET",
-							"param": "TS014195a1",
+							"param": "BIGipServerPOOL_TAS_SDDC_HTTP",
 							"attack": "",
-							"evidence": "Set-Cookie: TS014195a1",
+							"evidence": "Set-Cookie: BIGipServerPOOL_TAS_SDDC_HTTP",
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/mobiville/",
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/",
 							"method": "GET",
-							"param": "BIGipServerPOOL_Z2_PROD_MOP_HTTP",
+							"param": "TS01a771c6",
 							"attack": "",
-							"evidence": "Set-Cookie: BIGipServerPOOL_Z2_PROD_MOP_HTTP",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/mobiville/",
-							"method": "GET",
-							"param": "Path",
-							"attack": "",
-							"evidence": "Set-Cookie: Path",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/mobiville/",
-							"method": "GET",
-							"param": "TS014195a1",
-							"attack": "",
-							"evidence": "Set-Cookie: TS014195a1",
+							"evidence": "Set-Cookie: TS01a771c6",
 							"otherinfo": ""
 						},
 						{
@@ -945,13 +905,21 @@
 						{
 							"uri": "https://candidat.pole-emploi.fr/sitemap.xml",
 							"method": "GET",
+							"param": "BIGipServerPOOL_PROD_HTTP_ERR",
+							"attack": "",
+							"evidence": "Set-Cookie: BIGipServerPOOL_PROD_HTTP_ERR",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/sitemap.xml",
+							"method": "GET",
 							"param": "TS014195a1",
 							"attack": "",
 							"evidence": "Set-Cookie: TS014195a1",
 							"otherinfo": ""
 						}
 					],
-					"count": "11",
+					"count": "10",
 					"solution": "<p>Ensure that the SameSite attribute is set to either 'lax' or ideally 'strict' for all cookies.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://tools.ietf.org/html/draft-ietf-httpbis-cookie-same-site</p>",
@@ -1072,7 +1040,7 @@
 					"reference": "",
 					"cweid": "829",
 					"wascid": "15",
-					"sourceid": "494"
+					"sourceid": "469"
 				},
 				{
 					"pluginid": "10110",
@@ -1139,7 +1107,7 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "237"
+					"sourceid": "112"
 				},
 				{
 					"pluginid": "10063",
@@ -1153,22 +1121,6 @@
 					"instances":[ 
 						{
 							"uri": "https://candidat.pole-emploi.fr/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/*?idOffre",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/*assets",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1192,23 +1144,39 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/*modules",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/assets/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/runtime.aa159f73b8e590b8e477.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/js/ie8-svg-support.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/js/jquery.min.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/js/respond.min.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1345,7 +1313,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Transport_Layer_Protection_Cheat_Sheet.html</p>",
 					"cweid": "311",
 					"wascid": "4",
-					"sourceid": "61"
+					"sourceid": "135"
 				},
 				{
 					"pluginid": "10035",
@@ -1366,46 +1334,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/*?idOffre",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/*gw-metierscope",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/*mobiville",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/*modules",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/assets/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/",
 							"method": "GET",
 							"param": "",
@@ -1414,7 +1342,47 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/gw-metierscope/",
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/assets/img/favicon/apple-touch-icon-114x114.png",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/assets/img/favicon/apple-touch-icon-120x120.png",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/assets/img/favicon/apple-touch-icon-144x144.png",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/assets/img/favicon/apple-touch-icon-152x152.png",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/assets/img/favicon/apple-touch-icon-180x180.png",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/assets/img/favicon/favicon.ico",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1469,24 +1437,32 @@
 							"method": "GET",
 							"param": "Set-Cookie",
 							"attack": "",
-							"evidence": "1804798730",
-							"otherinfo": "1804798730, which evaluates to: 2027-03-11 20:58:50"
+							"evidence": "1838353162",
+							"otherinfo": "1838353162, which evaluates to: 2028-04-03 05:39:22"
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/candidat/offresspecifiques/detailoffrealternance/",
+							"method": "GET",
+							"param": "Set-Cookie",
+							"attack": "",
+							"evidence": "1458111175",
+							"otherinfo": "1458111175, which evaluates to: 2016-03-16 06:52:55"
 						},
 						{
 							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/",
 							"method": "GET",
 							"param": "Set-Cookie",
 							"attack": "",
-							"evidence": "1737689866",
-							"otherinfo": "1737689866, which evaluates to: 2025-01-24 03:37:46"
+							"evidence": "1838353162",
+							"otherinfo": "1838353162, which evaluates to: 2028-04-03 05:39:22"
 						},
 						{
 							"uri": "https://candidat.pole-emploi.fr/formations/recherche",
 							"method": "GET",
 							"param": "Set-Cookie",
 							"attack": "",
-							"evidence": "1916602890",
-							"otherinfo": "1916602890, which evaluates to: 2030-09-25 21:41:30"
+							"evidence": "1883048458",
+							"otherinfo": "1883048458, which evaluates to: 2029-09-02 13:00:58"
 						},
 						{
 							"uri": "https://candidat.pole-emploi.fr/metierscope/main.5b40a89b7f1ea86d.js",
@@ -1511,11 +1487,19 @@
 							"attack": "",
 							"evidence": "1540483477",
 							"otherinfo": "1540483477, which evaluates to: 2018-10-25 16:04:37"
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/offres/recherche:",
+							"method": "GET",
+							"param": "Set-Cookie",
+							"attack": "",
+							"evidence": "1881621479",
+							"otherinfo": "1881621479, which evaluates to: 2029-08-17 00:37:59"
 						}
 					],
-					"count": "6",
+					"count": "8",
 					"solution": "<p>Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.</p>",
-					"otherinfo": "<p>1804798730, which evaluates to: 2027-03-11 20:58:50</p>",
+					"otherinfo": "<p>1838353162, which evaluates to: 2028-04-03 05:39:22</p>",
 					"reference": "<p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
@@ -1540,71 +1524,79 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/*?idOffre",
-							"method": "GET",
-							"param": "x-content-type-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/*appellationV3",
-							"method": "GET",
-							"param": "x-content-type-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/*assets",
-							"method": "GET",
-							"param": "x-content-type-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/*gw-metierscope",
-							"method": "GET",
-							"param": "x-content-type-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/*jsessionid",
-							"method": "GET",
-							"param": "x-content-type-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/*mobiville",
-							"method": "GET",
-							"param": "x-content-type-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/*modules",
-							"method": "GET",
-							"param": "x-content-type-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/*telechargerpdf",
-							"method": "GET",
-							"param": "x-content-type-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
-						},
-						{
 							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/assets/img/favicon/apple-touch-icon-114x114.png",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/assets/img/favicon/apple-touch-icon-120x120.png",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/assets/img/favicon/apple-touch-icon-144x144.png",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/assets/img/favicon/apple-touch-icon-152x152.png",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/assets/img/favicon/apple-touch-icon-180x180.png",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/assets/img/favicon/apple-touch-icon-72x72.png",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/assets/img/favicon/favicon-194x194.png",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/assets/img/favicon/favicon-32x32.png",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/assets/img/favicon/favicon.ico",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -1620,7 +1612,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						}
 					],
-					"count": "11",
+					"count": "12",
 					"solution": "<p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p>",
 					"otherinfo": "<p>This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.</p><p>At \"High\" threshold this scan rule will not alert on client or server error responses.</p>",
 					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
@@ -1647,14 +1639,6 @@
 							"otherinfo": "Q!\uFFFD<\u07DD{\uFFFD\\x001eo\uFFFD\\x0002\\x0007\uFFFD4\uFFFD\uFFFD<\\x0007`\uFFFD\\x000c-\uFFFD\uFFFD>\uFFFD\\x000f`\uFFFD\\x000bO4\uFFFD\uFFFDt\\x0003n\uFFFD\\x0003\uFFFDz\uFFFD\\x0000\uFFFD\\x0014\\x0011<\uFFFDP\uFFFD\\x0013AB\\x000f}\uFFFD\uFFFD"
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/candidature/styles.71e5ba09dd8018177ef9.css",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "lastmodified-23-January-2023-03h06",
-							"otherinfo": "\uFFFD\uFFFD-\uFFFD\uFFFDb~'\uFFFD\uFFFDm\uFFFD%\uFFFD\uFFFDj\uFFFD\uFFFD\uFFFDM\uFFFD\uFFFDM\uFFFD\uFFFD"
-						},
-						{
 							"uri": "https://candidat.pole-emploi.fr/css/pages-autonomes.css",
 							"method": "GET",
 							"param": "",
@@ -1663,20 +1647,28 @@
 							"otherinfo": "~\uFFFD\uFFFDW\uFFFD\uFFFD\uFFFD\uFFFDz\u0220\uFFFD\uFFFD\uFFFD\uFFFD\u7B75\uFFFD?\"{^\uFFFDw\uFFFD\uFFFDm5\uFFFD\uFFFD\uFFFD~\uFFFD\uFFFD{\uFFFD,\uFFFD\uFFFD^\uFFFD\uFFFD'\uFFFD\uFFFD-"
 						},
 						{
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/main.0eedf48560d52dd547f8.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-",
+							"otherinfo": "\uFFFD]\uFFFD\u37BB\uFFFD\uFFFD\\x0001\\x00081\\x0005\\x0018r\t(\uFFFD\r8\uFFFD\\x0011I5\\x0015]\uFFFDZm\uFFFD^~\\x0008b\uFFFDIf\uFFFD\uFFFDj\uFFFD\uFFFDn\uFFFD\\x000cr\uFFFD"
+						},
+						{
 							"uri": "https://candidat.pole-emploi.fr/formations/recherche",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "7SotGI2gOXcFdpGFYtcmYMm5Yl-FnB_I3vzFRdyM9VcpeheY1Gqu",
-							"otherinfo": "\uFFFD*-\\x0018\uFFFD\uFFFD9w\\x0005v\uFFFD\uFFFDb\uFFFD&`\u0279b_\uFFFD\uFFFD\\x001f\uFFFD\uFFFD\uFFFD\uFFFDE\u070C\uFFFDW)z\\x0017\uFFFD\uFFFDj\uFFFD"
+							"evidence": "7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK",
+							"otherinfo": "\uFFFD\uFFFD_n\uFFFD4?\uFFFD\uFFFD\uFFFD+?\uFFFDk\u00CA\uFFFD7\uFFFD\uFFFDL\t\uFFFD\uFFFD\uFFFD\\x0014\\x0000\uFFFDUe\\x001ez\uFFFDF\uFFFD>^\uFFFD\uFFFD"
 						},
 						{
 							"uri": "https://candidat.pole-emploi.fr/inscription/preambule",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "a0gtGI2WvQ3zZimMgJC7yXI-oiSsBknty-SUe8zkkuF-mfaW2K3q",
-							"otherinfo": "kH-\\x0018\uFFFD\uFFFD\uFFFD\r\uFFFDf)\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDr>\uFFFD$\uFFFD\\x0006I\uFFFD\uFFFD\uFFFD{\uFFFD\uFFFD\uFFFD~\uFFFD\uFFFD\uFFFD\u062D\uFFFD"
+							"evidence": "13ZfboKrC9OUozLwrcQ2Xc_Hc0ii3sFZnPpTjbnUPdy7cfABnpF1",
+							"otherinfo": "\uFFFDv_n\uFFFD\uFFFD\\x000b\u04D4\uFFFD2\uFFFD\uFFFD6]\uFFFD\uFFFDsH\uFFFD\uFFFD\uFFFDY\uFFFD\uFFFDS\uFFFD\uFFFD\uFFFD=\u073Bq\uFFFD\\x0001\uFFFD\uFFFDu"
 						},
 						{
 							"uri": "https://candidat.pole-emploi.fr/mobiville/",
@@ -1723,16 +1715,16 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "alYtGH3GV9DtVY41l-lmMqRU15jrBrOLEaNGeYkRvB7JPIJ8LYeD",
-							"otherinfo": "jV-\\x0018}\uFFFDW\uFFFD\uFFFDU\uFFFD5\uFFFD\uFFFDf2\uFFFDT\u05D8\uFFFD\\x0006\uFFFD\uFFFD\\x0011\uFFFDFy\uFFFD\\x0011\uFFFD\\x001e\uFFFD<\uFFFD|-\uFFFD\uFFFD"
+							"evidence": "OkZfbnQXuYZpGqc_mNSs4g3FUxxg7niVNX08xz417a4t44vJakfH",
+							"otherinfo": ":F_nt\\x0017\uFFFD\uFFFDi\\x001a\uFFFD?\uFFFD\u052C\uFFFD\r\uFFFDS\\x001c`\uFFFDx\uFFFD5}<\uFFFD>5\uFFFD-\uFFFD\uFFFDjG\uFFFD"
 						},
 						{
 							"uri": "https://candidat.pole-emploi.fr/offres/recherche:",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "gfAtGH01HFV7W0eeJ4QotakjAaS-O_aOmG9AfnG-FHjNiqsKiE4G",
-							"otherinfo": "\uFFFD\uFFFD-\\x0018}5\\x001cU{[G\uFFFD'\uFFFD(\uFFFD\uFFFD#\\x0001\uFFFD\uFFFD;\uFFFD\uFFFD\uFFFDo@~q\uFFFD\\x0014x\u034A\uFFFD\n\uFFFDN\\x0006"
+							"evidence": "3aNfbnQcJzgGh0cXt5_gwy_mDgKHdxj7aQnnoKr75krbWXSu2yeK",
+							"otherinfo": "\u0763_nt\\x001c'8\\x0006\uFFFDG\\x0017\uFFFD\uFFFD\uFFFD\uFFFD/\uFFFD\\x000e\\x0002\uFFFDw\\x0018\uFFFDi\t\u782A\uFFFD\uFFFDJ\uFFFDYt\uFFFD\uFFFD'\uFFFD"
 						}
 					],
 					"count": "12",
@@ -1741,7 +1733,7 @@
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "104"
+					"sourceid": "141"
 				},
 				{
 					"pluginid": "10019",
@@ -1762,7 +1754,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/formations/recherche.layout.header.headernonconnecte.menuconnectionncjahianonconnecte.menuconnectionncinfojahiaavecappelrest:clickconnectioncandidat;JSESSIONID_RECH_FORMATION=7SotGI2gOXcFdpGFYtcmYMm5Yl-FnB_I3vzFRdyM9VcpeheY1Gqu!-426741666?range=0-9&tri=0",
+							"uri": "https://candidat.pole-emploi.fr/formations/recherche.layout.header.headernonconnecte.menuconnectionncjahianonconnecte.menuconnectionncinfojahiaavecappelrest:clickconnectioncandidat;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226?range=0-9&tri=0",
 							"method": "GET",
 							"param": "content-type",
 							"attack": "",
@@ -1770,7 +1762,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/formations/recherche.popinenregistrer:closepopinenregistrer;JSESSIONID_RECH_FORMATION=7SotGI2gOXcFdpGFYtcmYMm5Yl-FnB_I3vzFRdyM9VcpeheY1Gqu!-426741666?range=0-9&tri=0",
+							"uri": "https://candidat.pole-emploi.fr/formations/recherche.popinenregistrer:closepopinenregistrer;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226?range=0-9&tri=0",
 							"method": "GET",
 							"param": "content-type",
 							"attack": "",
@@ -1856,7 +1848,7 @@
 					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p>",
 					"cweid": "345",
 					"wascid": "12",
-					"sourceid": "104"
+					"sourceid": "141"
 				},
 				{
 					"pluginid": "10027",
@@ -1868,6 +1860,14 @@
 					"riskdesc": "Informational (Low)",
 					"desc": "<p>The response appears to contain suspicious comments which may help an attacker. Note: Matches made within script blocks or files are against the entire content not only comments.</p>",
 					"instances":[ 
+						{
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/main.0eedf48560d52dd547f8.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "bug",
+							"otherinfo": "The following pattern was used: \\bBUG\\b and was detected in the element starting with: \"(self.webpackChunkpn073_tdbcandidat_angular=self.webpackChunkpn073_tdbcandidat_angular||[]).push([[179],{98255:function(z){funct\", see evidence field for the suspicious comment/snippet."
+						},
 						{
 							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/polyfills-es5.57a3193087f7cf054fcd.js",
 							"method": "GET",
@@ -1933,14 +1933,6 @@
 							"otherinfo": "The following pattern was used: \\bSELECT\\b and was detected 2 times, the first in the element starting with: \"function xtL(xl){var xlel=['INPUT','SELECT','IFRAME','OBJECT','AREA','BUTTON'],xeln=xtnN(xl);if((xeln=='EMBED')&&(xtnN(xtpN(xl))\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/offres/assets/meta/socle/6f43b2cf/html5shiv.min.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "select",
-							"otherinfo": "The following pattern was used: \\bSELECT\\b and was detected in the element starting with: \"l||i(a,d),a}var k,l,m=\"3.7.2\",n=a.html5||{},o=/^<|^(?:button|map|select|textarea|object|iframe|option|optgroup)$/i,p=/^(?:a|b|co\", see evidence field for the suspicious comment/snippet."
-						},
-						{
 							"uri": "https://candidat.pole-emploi.fr/offres/emploi/",
 							"method": "GET",
 							"param": "",
@@ -1967,7 +1959,7 @@
 					],
 					"count": "12",
 					"solution": "<p>Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</p>",
-					"otherinfo": "<p>The following pattern was used: \\bSELECT\\b and was detected in the element starting with: \"(self.webpackChunkpn073_tdbcandidat_angular=self.webpackChunkpn073_tdbcandidat_angular||[]).push([[698,429],{52975:function(y,T,\", see evidence field for the suspicious comment/snippet.</p>",
+					"otherinfo": "<p>The following pattern was used: \\bBUG\\b and was detected in the element starting with: \"(self.webpackChunkpn073_tdbcandidat_angular=self.webpackChunkpn073_tdbcandidat_angular||[]).push([[179],{98255:function(z){funct\", see evidence field for the suspicious comment/snippet.</p>",
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
@@ -1989,7 +1981,15 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "The origin domain used for comparison was: \r\ncandidat.pole-emploi.fr\r\nuserBadge=0\r\n"
+							"otherinfo": "The origin domain used for comparison was: \ncandidat.pole-emploi.fr\nuserBadge=0\n"
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/offres/recherche.",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "The origin domain used for comparison was: \ncandidat.pole-emploi.fr\nuserBadge=0\n"
 						},
 						{
 							"uri": "https://candidat.pole-emploi.fr/offres/recherche:",
@@ -1997,16 +1997,16 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "The origin domain used for comparison was: \r\ncandidat.pole-emploi.fr\r\nuserBadge=0\r\n"
+							"otherinfo": "The origin domain used for comparison was: \ncandidat.pole-emploi.fr\nuserBadge=0\n"
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Always scope cookies to a FQDN (Fully Qualified Domain Name).</p>",
 					"otherinfo": "<p>The origin domain used for comparison was: </p><p>candidat.pole-emploi.fr</p><p>userBadge=0</p><p></p>",
 					"reference": "<p>https://tools.ietf.org/html/rfc6265#section-4.1</p><p>https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes.html</p><p>https://code.google.com/p/browsersec/wiki/Part2#Same-origin_policy_for_cookies</p>",
 					"cweid": "565",
 					"wascid": "15",
-					"sourceid": "104"
+					"sourceid": "141"
 				},
 				{
 					"pluginid": "10109",
@@ -2083,7 +2083,7 @@
 							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/pole-webdesign/maquettes/Internet/pole-emploi-framework/js/html5shiv.min.js",
+							"uri": "https://candidat.pole-emploi.fr/pole-webdesign/maquettes/Internet/pole-emploi-framework/js/ie8-svg-support.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2134,7 +2134,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/mobiville/",
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2193,14 +2193,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/*detail/00",
-							"method": "GET",
-							"param": "cache-control",
-							"attack": "",
-							"evidence": "no-cache",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://candidat.pole-emploi.fr/*gw-metierscope",
 							"method": "GET",
 							"param": "cache-control",
@@ -2209,7 +2201,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/*jsessionid",
+							"uri": "https://candidat.pole-emploi.fr/*JSESSIONID",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -2233,7 +2225,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/*redirect",
+							"uri": "https://candidat.pole-emploi.fr/*rayon=",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -2241,7 +2233,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/*telechargerpdf",
+							"uri": "https://candidat.pole-emploi.fr/*tri=",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -2257,13 +2249,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "12",
+					"count": "11",
 					"solution": "<p>For secure content, ensure the cache-control HTTP header is set with \"no-cache, no-store, must-revalidate\". If an asset should be cached consider setting the directives \"public, max-age, immutable\".</p>",
 					"otherinfo": "",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control</p><p>https://grayduck.mn/2021/09/13/cache-control-recommendations/</p>",
 					"cweid": "525",
 					"wascid": "13",
-					"sourceid": "143"
+					"sourceid": "175"
 				},
 				{
 					"pluginid": "90005",
@@ -2284,22 +2276,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/mobiville/",
-							"method": "GET",
-							"param": "Sec-Fetch-Dest",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/robots.txt",
-							"method": "GET",
-							"param": "Sec-Fetch-Dest",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://candidat.pole-emploi.fr/simucalculreprise",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
@@ -2308,13 +2284,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "4",
+					"count": "2",
 					"solution": "<p>Ensure that Sec-Fetch-Dest header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "3"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "90005",
@@ -2335,22 +2311,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/mobiville/",
-							"method": "GET",
-							"param": "Sec-Fetch-Mode",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/robots.txt",
-							"method": "GET",
-							"param": "Sec-Fetch-Mode",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://candidat.pole-emploi.fr/simucalculreprise",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
@@ -2359,13 +2319,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "4",
+					"count": "2",
 					"solution": "<p>Ensure that Sec-Fetch-Mode header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "3"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "90005",
@@ -2386,22 +2346,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/mobiville/",
-							"method": "GET",
-							"param": "Sec-Fetch-Site",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/robots.txt",
-							"method": "GET",
-							"param": "Sec-Fetch-Site",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://candidat.pole-emploi.fr/simucalculreprise",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
@@ -2410,13 +2354,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "4",
+					"count": "2",
 					"solution": "<p>Ensure that Sec-Fetch-Site header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "3"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "90005",
@@ -2437,22 +2381,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/mobiville/",
-							"method": "GET",
-							"param": "Sec-Fetch-User",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/robots.txt",
-							"method": "GET",
-							"param": "Sec-Fetch-User",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://candidat.pole-emploi.fr/simucalculreprise",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
@@ -2461,13 +2389,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "4",
+					"count": "2",
 					"solution": "<p>Ensure that Sec-Fetch-User header is included in user initiated requests.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "3"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "10112",
@@ -2484,39 +2412,55 @@
 							"method": "GET",
 							"param": "BIGipServerPOOL_TAS_SDDC_HTTP",
 							"attack": "",
-							"evidence": "1804798730.20480.0000",
+							"evidence": "1838353162.20480.0000",
 							"otherinfo": "\ncookie:BIGipServerPOOL_TAS_SDDC_HTTP\ncookie:TS01a771c6"
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/assets/",
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/",
 							"method": "GET",
-							"param": "TS014195a1",
+							"param": "BIGipServerPOOL_TAS_SDDC_HTTP",
 							"attack": "",
-							"evidence": "0150c672c3d847e189a9054534a51045363f6984608e10c689d30a4c79b486a9a124c2e724040a0f8677977b2407f343f6c763a00a",
-							"otherinfo": "\ncookie:TS014195a1"
+							"evidence": "1838353162.20480.0000",
+							"otherinfo": "\ncookie:BIGipServerPOOL_TAS_SDDC_HTTP\ncookie:TS01a771c6"
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/gw-metierscope/",
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/assets/img/favicon/apple-touch-icon-114x114.png",
 							"method": "GET",
-							"param": "BIGipServerPOOL_Z2_PROD_MOP_HTTPS",
+							"param": "BIGipServerPOOL_PWNOT-01PT01_HTTPS_PR003_TKT",
 							"attack": "",
-							"evidence": "2023492362.47873.0000",
-							"otherinfo": "\ncookie:BIGipServerPOOL_Z2_PROD_MOP_HTTPS\ncookie:TS014195a1"
+							"evidence": "1062668810.47956.0000",
+							"otherinfo": "\ncookie:BIGipServerPOOL_PWNOT-01PT01_HTTPS_PR003_TKT\ncookie:TS01a771c6"
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/mobiville/",
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/assets/img/favicon/apple-touch-icon-120x120.png",
 							"method": "GET",
-							"param": "TS014195a1",
+							"param": "BIGipServerPOOL_PWNOT-01PT01_HTTPS_PR003_TKT",
 							"attack": "",
-							"evidence": "0150c672c3d847e189a9054534a51045363f6984608e10c689d30a4c79b486a9a124c2e724040a0f8677977b2407f343f6c763a00a",
-							"otherinfo": "\ncookie:TS014195a1\ncookie:BIGipServerPOOL_Z2_PROD_MOP_HTTP"
+							"evidence": "1096223242.47956.0000",
+							"otherinfo": "\ncookie:BIGipServerPOOL_PWNOT-01PT01_HTTPS_PR003_TKT\ncookie:TS01a771c6"
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/assets/img/favicon/apple-touch-icon-144x144.png",
+							"method": "GET",
+							"param": "BIGipServerPOOL_PWNOT-01PT01_HTTPS_PR003_TKT",
+							"attack": "",
+							"evidence": "1062668810.47956.0000",
+							"otherinfo": "\ncookie:BIGipServerPOOL_PWNOT-01PT01_HTTPS_PR003_TKT\ncookie:TS01a771c6"
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/assets/img/favicon/favicon.ico",
+							"method": "GET",
+							"param": "BIGipServerPOOL_PWNOT-01PT01_HTTPS_PR003_TKT",
+							"attack": "",
+							"evidence": "1062668810.47956.0000",
+							"otherinfo": "\ncookie:BIGipServerPOOL_PWNOT-01PT01_HTTPS_PR003_TKT\ncookie:TS01a771c6"
 						},
 						{
 							"uri": "https://candidat.pole-emploi.fr/robots.txt",
 							"method": "GET",
 							"param": "BIGipServerPOOL_PROD_HTTP_ERR",
 							"attack": "",
-							"evidence": "688367808.6951.0000",
+							"evidence": "671590592.6951.0000",
 							"otherinfo": "\ncookie:BIGipServerPOOL_PROD_HTTP_ERR\ncookie:TS014195a1"
 						},
 						{
@@ -2530,17 +2474,49 @@
 						{
 							"uri": "https://candidat.pole-emploi.fr/simucalculreprise",
 							"method": "GET",
-							"param": "TS014195a1",
+							"param": "BIGipServerPOOL_PROD_HTTP_ERR",
 							"attack": "",
-							"evidence": "0150c672c3d847e189a9054534a51045363f6984608e10c689d30a4c79b486a9a124c2e724040a0f8677977b2407f343f6c763a00a",
-							"otherinfo": "\ncookie:TS014195a1"
+							"evidence": "688367808.6951.0000",
+							"otherinfo": "\ncookie:BIGipServerPOOL_PROD_HTTP_ERR\ncookie:TS014195a1"
 						},
 						{
 							"uri": "https://candidat.pole-emploi.fr/sitemap.xml",
 							"method": "GET",
+							"param": "BIGipServerPOOL_PROD_HTTP_ERR",
+							"attack": "",
+							"evidence": "671590592.6951.0000",
+							"otherinfo": "\ncookie:BIGipServerPOOL_PROD_HTTP_ERR\ncookie:TS014195a1"
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/",
+							"method": "GET",
+							"param": "BIGipServerPOOL_TAS_SDDC_HTTP",
+							"attack": "",
+							"evidence": "1838353162.20480.0000",
+							"otherinfo": "\ncookie:BIGipServerPOOL_TAS_SDDC_HTTP"
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/assets/img/favicon/apple-touch-icon-144x144.png",
+							"method": "GET",
+							"param": "BIGipServerPOOL_PWNOT-01PT01_HTTPS_PR003_TKT",
+							"attack": "",
+							"evidence": "1062668810.47956.0000",
+							"otherinfo": "\ncookie:BIGipServerPOOL_PWNOT-01PT01_HTTPS_PR003_TKT"
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/assets/img/favicon/apple-touch-icon-144x144.png",
+							"method": "GET",
+							"param": "TS01a771c6",
+							"attack": "",
+							"evidence": "0150c672c3b3611074d1935401fa35ce76ee6147f39e6380d2c926c1c99ef69fad494414335f87b463cc8a382cc62930872feee018",
+							"otherinfo": "\ncookie:TS01a771c6"
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/gw-metierscope/",
+							"method": "GET",
 							"param": "TS014195a1",
 							"attack": "",
-							"evidence": "0150c672c3d847e189a9054534a51045363f6984608e10c689d30a4c79b486a9a124c2e724040a0f8677977b2407f343f6c763a00a",
+							"evidence": "0150c672c3759b80dd0a21aca70e578c72d66247dfe43ccfd81d07187a81ae0f132f8d4b8df0871e82d08fea76635bf5f3747287c4",
 							"otherinfo": "\ncookie:TS014195a1"
 						},
 						{
@@ -2548,43 +2524,19 @@
 							"method": "GET",
 							"param": "TS014195a1",
 							"attack": "",
-							"evidence": "0150c672c3d847e189a9054534a51045363f6984608e10c689d30a4c79b486a9a124c2e724040a0f8677977b2407f343f6c763a00a",
+							"evidence": "0150c672c3759b80dd0a21aca70e578c72d66247dfe43ccfd81d07187a81ae0f132f8d4b8df0871e82d08fea76635bf5f3747287c4",
 							"otherinfo": "\ncookie:TS014195a1"
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/mobiville/",
-							"method": "GET",
-							"param": "BIGipServerPOOL_Z2_PROD_MOP_HTTP",
-							"attack": "",
-							"evidence": "2023492362.20480.0000",
-							"otherinfo": "\ncookie:BIGipServerPOOL_Z2_PROD_MOP_HTTP"
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/mobiville/logo192.png",
-							"method": "GET",
-							"param": "TS014195a1",
-							"attack": "",
-							"evidence": "0150c672c3d847e189a9054534a51045363f6984608e10c689d30a4c79b486a9a124c2e724040a0f8677977b2407f343f6c763a00a",
-							"otherinfo": "\ncookie:TS014195a1"
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/offres/recherche.",
-							"method": "GET",
-							"param": "TS014195a1",
-							"attack": "",
-							"evidence": "0150c672c3d847e189a9054534a51045363f6984608e10c689d30a4c79b486a9a124c2e724040a0f8677977b2407f343f6c763a00a",
-							"otherinfo": "\ncookie:TS014195a1"
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/robots.txt",
+							"uri": "https://candidat.pole-emploi.fr/sitemap.xml",
 							"method": "GET",
 							"param": "BIGipServerPOOL_PROD_HTTP_ERR",
 							"attack": "",
-							"evidence": "688367808.6951.0000",
+							"evidence": "671590592.6951.0000",
 							"otherinfo": "\ncookie:BIGipServerPOOL_PROD_HTTP_ERR"
 						}
 					],
-					"count": "13",
+					"count": "16",
 					"solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
 					"otherinfo": "<p></p><p>cookie:BIGipServerPOOL_TAS_SDDC_HTTP</p><p>cookie:TS01a771c6</p>",
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id</p>",
@@ -2611,12 +2563,44 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/assets/",
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/assets/img/favicon/apple-touch-icon-114x114.png",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "",
-							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+							"evidence": "max-age=1",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/assets/img/favicon/apple-touch-icon-120x120.png",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=1",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/assets/img/favicon/apple-touch-icon-144x144.png",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=1",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/assets/img/favicon/apple-touch-icon-152x152.png",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=1",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/espacepersonnel/assets/img/favicon/favicon.ico",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=1",
+							"otherinfo": ""
 						},
 						{
 							"uri": "https://candidat.pole-emploi.fr/robots.txt",
@@ -2643,64 +2627,13 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						}
 					],
-					"count": "5",
+					"count": "9",
 					"solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information.  If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request. </p>",
 					"otherinfo": "<p>In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.</p>",
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "46"
-				},
-				{
-					"pluginid": "10049",
-					"alertRef": "10049",
-					"alert": "Storable but Non-Cacheable Content",
-					"name": "Storable but Non-Cacheable Content",
-					"riskcode": "0",
-					"confidence": "2",
-					"riskdesc": "Informational (Medium)",
-					"desc": "<p>The response contents are storable by caching components such as proxy servers, but will not be retrieved directly from the cache, without validating the request upstream, in response to similar requests from other users. </p>",
-					"instances":[ 
-						{
-							"uri": "https://candidat.pole-emploi.fr/*assets",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "no-cache",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/*gw-metierscope",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "no-cache",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/*mobiville",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "no-cache",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/*modules",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "no-cache",
-							"otherinfo": ""
-						}
-					],
-					"count": "4",
-					"solution": "",
-					"otherinfo": "",
-					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
-					"cweid": "524",
-					"wascid": "13",
-					"sourceid": "64"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "10031",
@@ -2713,84 +2646,156 @@
 					"desc": "<p>This check looks at user-supplied input in query string parameters and POST data to identify where certain HTML attribute values might be controlled. This provides hot-spot detection for XSS (cross-site scripting) that will require further review by a security analyst to determine exploitability.</p>",
 					"instances":[ 
 						{
-							"uri": "https://candidat.pole-emploi.fr/formations/recherche;JSESSIONID_RECH_FORMATION=7SotGI2gOXcFdpGFYtcmYMm5Yl-FnB_I3vzFRdyM9VcpeheY1Gqu!-426741666?financementPossibleOrganismeFinanceur=4&modaliteEnseignement=1&quoi=COVID-19&range=0-9&tri=0",
+							"uri": "https://candidat.pole-emploi.fr/formations/recherche;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226?financementPossibleOrganismeFinanceur=4&modaliteEnseignement=1&quoi=COVID-19&range=0-9&tri=0",
 							"method": "GET",
 							"param": "range",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\r\n\r\nhttps://candidat.pole-emploi.fr/formations/recherche;JSESSIONID_RECH_FORMATION=7SotGI2gOXcFdpGFYtcmYMm5Yl-FnB_I3vzFRdyM9VcpeheY1Gqu!-426741666?financementPossibleOrganismeFinanceur=4&modaliteEnseignement=1&quoi=COVID-19&range=0-9&tri=0\r\n\r\nappears to include user input in: \r\n\r\na(n) [input] tag [value] attribute \r\n\r\nThe user input found was:\r\nrange=0-9\r\n\r\nThe user-controlled value was:\r\n0-9"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://candidat.pole-emploi.fr/formations/recherche;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226?financementPossibleOrganismeFinanceur=4&modaliteEnseignement=1&quoi=COVID-19&range=0-9&tri=0\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nrange=0-9\n\nThe user-controlled value was:\n0-9"
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/formations/recherche.voletdetail.popinenvoiami.envoiamiform;JSESSIONID_RECH_FORMATION=7SotGI2gOXcFdpGFYtcmYMm5Yl-FnB_I3vzFRdyM9VcpeheY1Gqu!-426741666",
+							"uri": "https://candidat.pole-emploi.fr/formations/recherche.voletdetail.popindemandedevis.demandedevisform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226",
 							"method": "POST",
-							"param": "emailDestinataire",
+							"param": "emailField",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\r\n\r\nhttps://candidat.pole-emploi.fr/formations/recherche.voletdetail.popinenvoiami.envoiamiform;JSESSIONID_RECH_FORMATION=7SotGI2gOXcFdpGFYtcmYMm5Yl-FnB_I3vzFRdyM9VcpeheY1Gqu!-426741666\r\n\r\nappears to include user input in: \r\n\r\na(n) [input] tag [value] attribute \r\n\r\nThe user input found was:\r\nemailDestinataire=ZAP\r\n\r\nThe user-controlled value was:\r\nzap"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://candidat.pole-emploi.fr/formations/recherche.voletdetail.popindemandedevis.demandedevisform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nemailField=ZAP\n\nThe user-controlled value was:\nzap"
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/formations/recherche.voletdetail.popinenvoiami.envoiamiform;JSESSIONID_RECH_FORMATION=7SotGI2gOXcFdpGFYtcmYMm5Yl-FnB_I3vzFRdyM9VcpeheY1Gqu!-426741666",
+							"uri": "https://candidat.pole-emploi.fr/formations/recherche.voletdetail.popindemandedevis.demandedevisform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226",
 							"method": "POST",
-							"param": "emailExpediteur",
+							"param": "envoyer",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\r\n\r\nhttps://candidat.pole-emploi.fr/formations/recherche.voletdetail.popinenvoiami.envoiamiform;JSESSIONID_RECH_FORMATION=7SotGI2gOXcFdpGFYtcmYMm5Yl-FnB_I3vzFRdyM9VcpeheY1Gqu!-426741666\r\n\r\nappears to include user input in: \r\n\r\na(n) [input] tag [value] attribute \r\n\r\nThe user input found was:\r\nemailExpediteur=ZAP\r\n\r\nThe user-controlled value was:\r\nzap"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://candidat.pole-emploi.fr/formations/recherche.voletdetail.popindemandedevis.demandedevisform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226\n\nappears to include user input in: \n\na(n) [button] tag [title] attribute \n\nThe user input found was:\nenvoyer=envoyer\n\nThe user-controlled value was:\nenvoyer \u00E0 un ami"
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/formations/recherche.voletdetail.popinenvoiami.envoiamiform;JSESSIONID_RECH_FORMATION=7SotGI2gOXcFdpGFYtcmYMm5Yl-FnB_I3vzFRdyM9VcpeheY1Gqu!-426741666",
+							"uri": "https://candidat.pole-emploi.fr/formations/recherche.voletdetail.popindemandedevis.demandedevisform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226",
 							"method": "POST",
-							"param": "prenomNom",
+							"param": "envoyer",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\r\n\r\nhttps://candidat.pole-emploi.fr/formations/recherche.voletdetail.popinenvoiami.envoiamiform;JSESSIONID_RECH_FORMATION=7SotGI2gOXcFdpGFYtcmYMm5Yl-FnB_I3vzFRdyM9VcpeheY1Gqu!-426741666\r\n\r\nappears to include user input in: \r\n\r\na(n) [input] tag [value] attribute \r\n\r\nThe user input found was:\r\nprenomNom=ZAP\r\n\r\nThe user-controlled value was:\r\nzap"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://candidat.pole-emploi.fr/formations/recherche.voletdetail.popindemandedevis.demandedevisform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226\n\nappears to include user input in: \n\na(n) [input] tag [id] attribute \n\nThe user input found was:\nenvoyer=envoyer\n\nThe user-controlled value was:\nenvoyer"
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/formations/recherche.voletdetail.popinenvoiami.envoiamiform;JSESSIONID_RECH_FORMATION=7SotGI2gOXcFdpGFYtcmYMm5Yl-FnB_I3vzFRdyM9VcpeheY1Gqu!-426741666",
+							"uri": "https://candidat.pole-emploi.fr/formations/recherche.voletdetail.popindemandedevis.demandedevisform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226",
+							"method": "POST",
+							"param": "envoyer",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://candidat.pole-emploi.fr/formations/recherche.voletdetail.popindemandedevis.demandedevisform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226\n\nappears to include user input in: \n\na(n) [input] tag [name] attribute \n\nThe user input found was:\nenvoyer=envoyer\n\nThe user-controlled value was:\nenvoyer"
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/formations/recherche.voletdetail.popindemandedevis.demandedevisform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226",
+							"method": "POST",
+							"param": "envoyer",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://candidat.pole-emploi.fr/formations/recherche.voletdetail.popindemandedevis.demandedevisform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nenvoyer=envoyer\n\nThe user-controlled value was:\nenvoyer"
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/formations/recherche.voletdetail.popindemandedevis.demandedevisform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226",
+							"method": "POST",
+							"param": "niveauEtude",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://candidat.pole-emploi.fr/formations/recherche.voletdetail.popindemandedevis.demandedevisform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226\n\nappears to include user input in: \n\na(n) [option] tag [value] attribute \n\nThe user input found was:\nniveauEtude=CAP, BEP\n\nThe user-controlled value was:\ncap, bep"
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/formations/recherche.voletdetail.popindemandedevis.demandedevisform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226",
+							"method": "POST",
+							"param": "nomField",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://candidat.pole-emploi.fr/formations/recherche.voletdetail.popindemandedevis.demandedevisform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nnomField=ZAP\n\nThe user-controlled value was:\nzap"
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/formations/recherche.voletdetail.popindemandedevis.demandedevisform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226",
+							"method": "POST",
+							"param": "prenomField",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://candidat.pole-emploi.fr/formations/recherche.voletdetail.popindemandedevis.demandedevisform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nprenomField=ZAP\n\nThe user-controlled value was:\nzap"
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/formations/recherche.voletdetail.popindemandedevis.demandedevisform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226",
 							"method": "POST",
 							"param": "range",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\r\n\r\nhttps://candidat.pole-emploi.fr/formations/recherche.voletdetail.popinenvoiami.envoiamiform;JSESSIONID_RECH_FORMATION=7SotGI2gOXcFdpGFYtcmYMm5Yl-FnB_I3vzFRdyM9VcpeheY1Gqu!-426741666\r\n\r\nappears to include user input in: \r\n\r\na(n) [input] tag [value] attribute \r\n\r\nThe user input found was:\r\nrange=0-9\r\n\r\nThe user-controlled value was:\r\n0-9"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://candidat.pole-emploi.fr/formations/recherche.voletdetail.popindemandedevis.demandedevisform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nrange=0-9\n\nThe user-controlled value was:\n0-9"
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/formations/recherche.voletdetail.popinenvoiami.envoiamiform;JSESSIONID_RECH_FORMATION=7SotGI2gOXcFdpGFYtcmYMm5Yl-FnB_I3vzFRdyM9VcpeheY1Gqu!-426741666",
-							"method": "POST",
-							"param": "submit_0",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\r\n\r\nhttps://candidat.pole-emploi.fr/formations/recherche.voletdetail.popinenvoiami.envoiamiform;JSESSIONID_RECH_FORMATION=7SotGI2gOXcFdpGFYtcmYMm5Yl-FnB_I3vzFRdyM9VcpeheY1Gqu!-426741666\r\n\r\nappears to include user input in: \r\n\r\na(n) [button] tag [title] attribute \r\n\r\nThe user input found was:\r\nsubmit_0=Envoyer\r\n\r\nThe user-controlled value was:\r\nenvoyer \u00E0 un ami"
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/formations/recherche.voletdetail.popinenvoiami.envoiamiform;JSESSIONID_RECH_FORMATION=7SotGI2gOXcFdpGFYtcmYMm5Yl-FnB_I3vzFRdyM9VcpeheY1Gqu!-426741666",
-							"method": "POST",
-							"param": "submit_0",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\r\n\r\nhttps://candidat.pole-emploi.fr/formations/recherche.voletdetail.popinenvoiami.envoiamiform;JSESSIONID_RECH_FORMATION=7SotGI2gOXcFdpGFYtcmYMm5Yl-FnB_I3vzFRdyM9VcpeheY1Gqu!-426741666\r\n\r\nappears to include user input in: \r\n\r\na(n) [input] tag [id] attribute \r\n\r\nThe user input found was:\r\nsubmit_0=Envoyer\r\n\r\nThe user-controlled value was:\r\nenvoyer"
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/formations/recherche.voletdetail.popinenvoiami.envoiamiform;JSESSIONID_RECH_FORMATION=7SotGI2gOXcFdpGFYtcmYMm5Yl-FnB_I3vzFRdyM9VcpeheY1Gqu!-426741666",
-							"method": "POST",
-							"param": "submit_0",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\r\n\r\nhttps://candidat.pole-emploi.fr/formations/recherche.voletdetail.popinenvoiami.envoiamiform;JSESSIONID_RECH_FORMATION=7SotGI2gOXcFdpGFYtcmYMm5Yl-FnB_I3vzFRdyM9VcpeheY1Gqu!-426741666\r\n\r\nappears to include user input in: \r\n\r\na(n) [input] tag [name] attribute \r\n\r\nThe user input found was:\r\nsubmit_0=Envoyer\r\n\r\nThe user-controlled value was:\r\nenvoyer"
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/formations/recherche.voletdetail.popinenvoiami.envoiamiform;JSESSIONID_RECH_FORMATION=7SotGI2gOXcFdpGFYtcmYMm5Yl-FnB_I3vzFRdyM9VcpeheY1Gqu!-426741666",
-							"method": "POST",
-							"param": "submit_0",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\r\n\r\nhttps://candidat.pole-emploi.fr/formations/recherche.voletdetail.popinenvoiami.envoiamiform;JSESSIONID_RECH_FORMATION=7SotGI2gOXcFdpGFYtcmYMm5Yl-FnB_I3vzFRdyM9VcpeheY1Gqu!-426741666\r\n\r\nappears to include user input in: \r\n\r\na(n) [input] tag [value] attribute \r\n\r\nThe user input found was:\r\nsubmit_0=Envoyer\r\n\r\nThe user-controlled value was:\r\nenvoyer"
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/formations/recherche.voletdetail.popinenvoiami.envoiamiform;JSESSIONID_RECH_FORMATION=7SotGI2gOXcFdpGFYtcmYMm5Yl-FnB_I3vzFRdyM9VcpeheY1Gqu!-426741666",
+							"uri": "https://candidat.pole-emploi.fr/formations/recherche.voletdetail.popindemandedevis.demandedevisform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226",
 							"method": "POST",
 							"param": "t:formdata",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\r\n\r\nhttps://candidat.pole-emploi.fr/formations/recherche.voletdetail.popinenvoiami.envoiamiform;JSESSIONID_RECH_FORMATION=7SotGI2gOXcFdpGFYtcmYMm5Yl-FnB_I3vzFRdyM9VcpeheY1Gqu!-426741666\r\n\r\nappears to include user input in: \r\n\r\na(n) [input] tag [value] attribute \r\n\r\nThe user input found was:\r\nt:formdata=cdj6r1+3o/96O6efiARMmTk47lY=:H4sIAAAAAAAAAKVSu0pDQRAdA4FIClGwsNdGyCYQI6KNwQcIIYgXa9l77xhX9uXu5GFj5U/Y+AVipV+Qws5/8ANsLKws3HsDURAkUdiF5ZydmcM5c/cKxf4GNI4wOUMX7mbPSKQUiQvJrLFCo+4ZwZVgqAKWoieheaAdgnfQMK7DuOWhlBG3gXWXDZYYh1LELOYeWTMOIE9oX6BMlyOkrl05HpZfFp8+CjDTgnJiNDkj21whwULrnPd4VXLdqUbkhO5sDSzBfD5999v0f8luTiv70JkEvY+6sRLeC6OH9+na6fvtcwFgYPs1qEyixTrURoUD/gKuAAhmR1DbqOl7ZC2K/XWoT2wDDiymgrDrxgLmcmJvTPy130hMBVYnKfaZjZQFsf1rEIlR1oQy8ix3nn7mcBO9LT0+XO8UoNCCUiJF+H2QZmqy1UKJKgDZauVQtkql0fST+tez9glknJYtCAMAAA==\r\n\r\nThe user-controlled value was:\r\ncdj6r1+3o/96o6efiarmmtk47ly=:h4siaaaaaaaaakvsu0pdqrada4ficlgwsndgycyqi6knwqciiygxa9l77xhx9uxu5gfj5u/y+avipv+qws5/8anslkws3hsdurakudif5zydmcm5c/ckxf4gni4woumx7mbpskquiqvjrlfco+4zwzvgqakwoieheaadgnfqmk7duowhlbg3gxwxdzyyh1leloyewtmoie9ox6bmlyokrl05hpzffp8+cjdtgnjindkj21whwulrnpd4vxldqubkho5sdszbfd5999v0f8lutiv70jkevy+6srlec6oh9+na6fvtcwfgyps1qeyixtruroud/gkuaahmr1dbqol7zc2k/xwot2wddiymgrdrxglmcmjvtpy130hmbvynkfazjzqfsf1reilr1oqy8ix3nn7mcbo9lt0+xo8uonccuijf+h2qzmqy1ukjkgdzauvqtkql0fst+tez9glknjytcamaaa=="
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://candidat.pole-emploi.fr/formations/recherche.voletdetail.popindemandedevis.demandedevisform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nt:formdata=xW4euZipmLSIPC7uCduD7Hwpjb8=:H4sIAAAAAAAAAK2Wv4/TMBTHH5VOHFRiQDDcDmvKtU0lfkhQ3YGEVAGiMCPHfu35lNjGdtPewnT/xC38BYgJ/oIb2Pgf+ANYGJgYcOqjaUWEUochkfW139cfx355/vAdduY9uPMS6RFq99zLZYqWoSU8jZRUXDDMiHsxzLmJhMwmHFMGRkMs9TQiirioyBKFxuqTOKJSY8qTKCEGo2HiRELtkyLm1hjtTN1+fd7+dvPLrxZcGkGbSmG1TJ+RDC1cHx2TnHRSIqadsdVcTO8vlIVdN+nSIBR0uC3oCy0pGjOeJRk3hktx/pH1Jz/ff20BLNR8AL26GEpjSfIW3gFYaHvRLynQq7Damfdhv26wxYXdxLiyksJ8PMIW/KvQN/vlt1gTQ70agHSrQLqhXg1AelUgvVCvBiD9KpB+qJcHiaFbN9i1ebp5Tq8uNZ8tYU6e4i4M6i8hRXUkBW6SXFvpnibccesNEjxHMnP/T4blBnnxcSGGejU4KXHVSYlDvRqADKpABqFeHuQhPKgbzNBQzZV1ZUImx0gtn5gV0Y213ud/ehu7e8ZDGNZ1IdRVO+YqnDAXFY1JIRBL0D0/5NXakEM/5P/M45G70KmdvyKXJ6iL+v3on/Wbyky5xBLWRMuCbf8u32fjH3ufP50etKA1gl2acjf6KSuQijuIS83MCcUdZCkVd47LF9OXrd+aXhoVKgkAAA==\n\nThe user-controlled value was:\nxw4euzipmlsipc7ucdud7hwpjb8=:h4siaaaaaaaaak2wv4/tmbthh5vohfriqddcdmvktu0lfkhq3ygevagimcphfu35lnjgdtpewnt/xc38bygj/oib2pgf+anygjgycoqjauweuochkfw139cfx355/vadduy9upms6rfq99zlzyqwosu8jzruxddmihsxzlmjhmwmhfmgrkms9tqiirioybkfxuqtokjsy8qtkcego2hireltkylm1hjttn1+fd7+dvplrxzcgkgbsmg1tj+rdc1chx2tnhrsiqadsdvcto8vlivdn+nsibr0uc3ocy0pgjoejrk3hktx/ph1jz/ff20blnr8al26gepjsfiw3gfyahvrlynqq7damfdhv26wxyxdxliyksj8pmiw/kvqn/vlt1gtq70aghsrqlqhxg1aelugvvcvbid9kpb+qjchiafbn9i1ebp5tq8unz8tyu6e4i4m6i8hrxukbw6sxfvpnibccesnejxhmnp/t4blbnnxcsggeju4kxhvsyldvrqadkpabqfehuqhpkgbznbqzzv1zuimx0gtn5gv0y213ud/ehu7e8zdgnz1idrvo+yqndaxfy1jirbl0d0/5nxakem/5p/m45g70kmdvykxj6il+v3on/wbyky5xblwrmucbf8u32fjh3ufp50etka1gl2acjf6ksuqijuis83mccudzckvd47lf9oxrd+axhovkgkaaa=="
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/formations/recherche.voletdetail.popindemandedevis.demandedevisform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226",
+							"method": "POST",
+							"param": "telephoneField",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://candidat.pole-emploi.fr/formations/recherche.voletdetail.popindemandedevis.demandedevisform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\ntelephoneField=ZAP\n\nThe user-controlled value was:\nzap"
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/formations/recherche.voletdetail.popindemandedevis.demandedevisform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226",
+							"method": "POST",
+							"param": "textfield",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://candidat.pole-emploi.fr/formations/recherche.voletdetail.popindemandedevis.demandedevisform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\ntextfield=ZAP\n\nThe user-controlled value was:\nzap"
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/formations/recherche.voletdetail.popindemandedevis.demandedevisform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226",
+							"method": "POST",
+							"param": "textfield_1",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://candidat.pole-emploi.fr/formations/recherche.voletdetail.popindemandedevis.demandedevisform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\ntextfield_1=ZAP\n\nThe user-controlled value was:\nzap"
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/formations/recherche.voletdetail.popindemandedevis.demandedevisform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226",
+							"method": "POST",
+							"param": "textfield_2",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://candidat.pole-emploi.fr/formations/recherche.voletdetail.popindemandedevis.demandedevisform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\ntextfield_2=ZAP\n\nThe user-controlled value was:\nzap"
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/formations/recherche.voletdetail.popindemandedevis.demandedevisform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226",
+							"method": "POST",
+							"param": "textfield_3",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://candidat.pole-emploi.fr/formations/recherche.voletdetail.popindemandedevis.demandedevisform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\ntextfield_3=ZAP\n\nThe user-controlled value was:\nzap"
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/formations/recherche.voletdetail.popindemandedevis.demandedevisform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226",
+							"method": "POST",
+							"param": "textfield_4",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://candidat.pole-emploi.fr/formations/recherche.voletdetail.popindemandedevis.demandedevisform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\ntextfield_4=ZAP\n\nThe user-controlled value was:\nzap"
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/formations/recherche.voletdetail.popindemandedevis.demandedevisform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226",
+							"method": "POST",
+							"param": "textfield_5",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://candidat.pole-emploi.fr/formations/recherche.voletdetail.popindemandedevis.demandedevisform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\ntextfield_5=ZAP\n\nThe user-controlled value was:\nzap"
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/formations/recherche.voletdetail.popindemandedevis.demandedevisform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226",
+							"method": "POST",
+							"param": "textfield_6",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://candidat.pole-emploi.fr/formations/recherche.voletdetail.popindemandedevis.demandedevisform;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\ntextfield_6=ZAP\n\nThe user-controlled value was:\nzap"
 						},
 						{
 							"uri": "https://candidat.pole-emploi.fr/offres/emploi.recherchelandingpageform",
@@ -2798,16 +2803,16 @@
 							"param": "t:formdata",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\r\n\r\nhttps://candidat.pole-emploi.fr/offres/emploi.recherchelandingpageform\r\n\r\nappears to include user input in: \r\n\r\na(n) [input] tag [value] attribute \r\n\r\nThe user input found was:\r\nt:formdata=oObVB+tq8EieKes9KbAjigpemWw=:H4sIAAAAAAAAAJ2RsUoDQRCGJ4GgmE7QwlpBCGwagxCroAaEQ8XDB9jbm5yre7vr7px3NrZa+wA+gfgSKex8Bx/A1krEvUQrQY3FwjLwz/f9zP0LtEoGnd3cKiP7vCAjTPgjSaMV16nUmeUZMpnmhrxQ6ME76BmXMW65OEFG3KInd9ljwjhUMmEJ98gGSRhyQUOJKl2NkQq7djxuPy89vjWhEUFbGE3OqH2eI8FidMoveDcQs25MLlC3KkuwMMVuB+w/LAezWh46I9D7uEhy6X3YPX5IN0avd09NgMqWHVj/g4GSWFTgz+EKgGDuczBTuM62yj5s/ppISPvalhyGli68kXF5XX7nx/L1NqNRk2eR1GeTxvS9/4G8uX1fudaTi82LYKdpL631GvV5lgN+Gj36wg8D/gNEnuBdVQIAAA==\r\n\r\nThe user-controlled value was:\r\noobvb+tq8eiekes9kbajigpemww=:h4siaaaaaaaaaj2rsuodqrcgj4ggme7qwlpbcgwagxcroaaeq8xdb9jbm5yre7vr7px3nrza+wa+gfgskex8bx/a1krevuqrqy3fwjlwz/f9zp0lteognd3ckip7vcajtpgjsamv16numeuzmpnmhrxq6me76bmxmw65oefg3kind9ljwjhummej98ggsrhyquojkl2nkqq7djxupy89vjwheufbge3oqh2ei8fidmovedcqs25mllc3kkuwmmvub+w/laezwh46i9d7uehy6x3ypx5in0avd09ngmqwhvj/g4gswftgz+ekggduczbtum62yj5s/ppispvalhygli68kxf5xx7nx/l1nqnrk2er1getxvs9/4g8ux1fudati82lykdpl631gvv5lgn+gj36wg8d/gnenubdvqiaaa=="
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://candidat.pole-emploi.fr/offres/emploi.recherchelandingpageform\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nt:formdata=oObVB+tq8EieKes9KbAjigpemWw=:H4sIAAAAAAAAAJ2RsUoDQRCGJ4GgmE7QwlpBCGwagxCroAaEQ8XDB9jbm5yre7vr7px3NrZa+wA+gfgSKex8Bx/A1krEvUQrQY3FwjLwz/f9zP0LtEoGnd3cKiP7vCAjTPgjSaMV16nUmeUZMpnmhrxQ6ME76BmXMW65OEFG3KInd9ljwjhUMmEJ98gGSRhyQUOJKl2NkQq7djxuPy89vjWhEUFbGE3OqH2eI8FidMoveDcQs25MLlC3KkuwMMVuB+w/LAezWh46I9D7uEhy6X3YPX5IN0avd09NgMqWHVj/g4GSWFTgz+EKgGDuczBTuM62yj5s/ppISPvalhyGli68kXF5XX7nx/L1NqNRk2eR1GeTxvS9/4G8uX1fudaTi82LYKdpL631GvV5lgN+Gj36wg8D/gNEnuBdVQIAAA==\n\nThe user-controlled value was:\noobvb+tq8eiekes9kbajigpemww=:h4siaaaaaaaaaj2rsuodqrcgj4ggme7qwlpbcgwagxcroaaeq8xdb9jbm5yre7vr7px3nrza+wa+gfgskex8bx/a1krevuqrqy3fwjlwz/f9zp0lteognd3ckip7vcajtpgjsamv16numeuzmpnmhrxq6me76bmxmw65oefg3kind9ljwjhummej98ggsrhyquojkl2nkqq7djxupy89vjwheufbge3oqh2ei8fidmovedcqs25mllc3kkuwmmvub+w/laezwh46i9d7uehy6x3ypx5in0avd09ngmqwhvj/g4gswftgz+ekggduczbtum62yj5s/ppispvalhygli68kxf5xx7nx/l1nqnrk2er1getxvs9/4g8ux1fudati82lykdpl631gvv5lgn+gj36wg8d/gnenubdvqiaaa=="
 						}
 					],
-					"count": "11",
+					"count": "20",
 					"solution": "<p>Validate all input and sanitize output it before writing to any HTML attributes.</p>",
-					"otherinfo": "<p>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:</p><p></p><p>https://candidat.pole-emploi.fr/formations/recherche;JSESSIONID_RECH_FORMATION=7SotGI2gOXcFdpGFYtcmYMm5Yl-FnB_I3vzFRdyM9VcpeheY1Gqu!-426741666?financementPossibleOrganismeFinanceur=4&modaliteEnseignement=1&quoi=COVID-19&range=0-9&tri=0</p><p></p><p>appears to include user input in: </p><p></p><p>a(n) [input] tag [value] attribute </p><p></p><p>The user input found was:</p><p>range=0-9</p><p></p><p>The user-controlled value was:</p><p>0-9</p>",
+					"otherinfo": "<p>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:</p><p></p><p>https://candidat.pole-emploi.fr/formations/recherche;JSESSIONID_RECH_FORMATION=7_RfboM0P7vwzSs_o2vDir838d9MCZTG9xQA2VVlHnryRpQ-XouK!854643226?financementPossibleOrganismeFinanceur=4&modaliteEnseignement=1&quoi=COVID-19&range=0-9&tri=0</p><p></p><p>appears to include user input in: </p><p></p><p>a(n) [input] tag [value] attribute </p><p></p><p>The user input found was:</p><p>range=0-9</p><p></p><p>The user-controlled value was:</p><p>0-9</p>",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html</p>",
 					"cweid": "20",
 					"wascid": "20",
-					"sourceid": "4252"
+					"sourceid": "4177"
 				}
 			]
 		}

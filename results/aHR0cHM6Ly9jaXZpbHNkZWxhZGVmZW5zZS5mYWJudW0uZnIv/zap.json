@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 21 Jan 2024 11:53:08",
+	"@generated": "Wed, 31 Jan 2024 08:40:25",
 	"site":[ 
 		{
 			"@name": "https://civilsdeladefense.fabnum.fr",
@@ -148,13 +148,13 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "hpzlDoB3gzNg8R2Lbuv5mbIwKdxBwIDtJAqjdf2HsYrNcUaWIWxzWtl6UZg0T13iZLVe",
-							"otherinfo": "\uFFFD\uFFFD\uFFFD\\x000e\uFFFDw\uFFFD3`\uFFFD\\x001d\uFFFDn\uFFFD\uFFFD\uFFFD\uFFFD0)\uFFFDA\uFFFD\uFFFD\uFFFD$\n\uFFFDu\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDqF\uFFFD!lsZ\uFFFDzQ\uFFFD4O]\uFFFDd\uFFFD^"
+							"evidence": "2BsGySOc6hY9u5Vm38udXSjs46RvokNzrhqdXKI2DAzcbWyYkn1vQsP74gjA",
+							"otherinfo": "\uFFFD\\x001b\\x0006\uFFFD#\uFFFD\uFFFD\\x0016=\uFFFD\uFFFDf\uFFFD\u02DD](\uFFFD\uFFFDo\uFFFDCs\uFFFD\\x001a\uFFFD\\\uFFFD6\\x000c\\x000c\uFFFDml\uFFFD\uFFFD}oB\uFFFD\uFFFD\uFFFD\\x0008\uFFFD"
 						}
 					],
 					"count": "1",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>\uFFFD\uFFFD\uFFFD\\x000e\uFFFDw\uFFFD3`\uFFFD\\x001d\uFFFDn\uFFFD\uFFFD\uFFFD\uFFFD0)\uFFFDA\uFFFD\uFFFD\uFFFD$</p><p>\uFFFDu\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDqF\uFFFD!lsZ\uFFFDzQ\uFFFD4O]\uFFFDd\uFFFD^</p>",
+					"otherinfo": "<p>\uFFFD\\x001b\\x0006\uFFFD#\uFFFD\uFFFD\\x0016=\uFFFD\uFFFDf\uFFFD\u02DD](\uFFFD\uFFFDo\uFFFDCs\uFFFD\\x001a\uFFFD\\\uFFFD6\\x000c\\x000c\uFFFDml\uFFFD\uFFFD}oB\uFFFD\uFFFD\uFFFD\\x0008\uFFFD</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
@@ -311,7 +311,23 @@
 					"desc": "<p>Specifies the relationship between request initiator's origin and target's origin.</p>",
 					"instances":[ 
 						{
+							"uri": "https://civilsdeladefense.fabnum.fr/",
+							"method": "GET",
+							"param": "Sec-Fetch-Site",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://civilsdeladefense.fabnum.fr/robots.txt",
+							"method": "GET",
+							"param": "Sec-Fetch-Site",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://civilsdeladefense.fabnum.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -319,13 +335,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "1",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-Site header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "7"
 				},
 				{
 					"pluginid": "90005",
@@ -368,7 +384,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "7"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10112",
@@ -385,7 +401,7 @@
 							"method": "GET",
 							"param": "_civilsdeladefense_session",
 							"attack": "",
-							"evidence": "hpzlDoB3gzNg8R2Lbuv5mbIwKdxBwIDtJAqjdf2HsYrNcUaWIWxzWtl6UZg0T13iZLVe%2B%2BAWoN0fM8ba9Nk0uS0b3EdSTcJfSMiCOMDyJ1vjejNA8OcoL3MtdKzTTIY7lKVUvEO1lYyEDltYzh22HbnwQAMFnRoOaWsHZgvyQphia%2BUaS7OlwiYxsAmGG2q281l1TSw392%2FEH%2B9SxPUsNXnPLKMjHtfvPxdcQPo2QKfjg3xJtlg%2B55q5YdisLGliZAj01CPUqaOiCHVKU90QUmvaWFHuTjP0A3POvVr4sUvIZQ%3D%3D--T0aHNynd%2FnThcTwj--IPPZDJzLbEkKcz9qFYRHyw%3D%3D",
+							"evidence": "nPCVL0Sz4ZU9QEBoAAxQMu%2BsGySOc6hY9u5Vm38udXSjs46RvokNzrhqdXKI2DAzcbWyYkn1vQsP74gjA%2FtPvh6J6OgpsP2DmUEp0zIMf9g%2B3laa9CFo6Vqtf%2Bn%2FlqEKM6EeeYULDzSQrlz1sSYwkOmkoJIr7OkNCITyeML9x5xvapTT1en9Kl%2FQf90dhxJVOOa2lXcX82FN5PhPzj%2FlPw8QSKZ2nvcZDkBC7njtdKtb%2Bl6UgeqxiIaqLwbVADwwe71w0sf66pPbQKVICiwejZvjeJh0epKzfgkYZRmrdi%2ByKA%3D%3D--Czaa7fIcOaEvPEc4--%2BTosLBA5OYL1aOglcZvSYg%3D%3D",
 							"otherinfo": "\ncookie:_civilsdeladefense_session"
 						}
 					],

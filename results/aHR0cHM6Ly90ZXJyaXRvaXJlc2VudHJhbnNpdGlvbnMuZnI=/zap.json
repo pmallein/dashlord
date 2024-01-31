@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 21 Jan 2024 17:28:23",
+	"@generated": "Wed, 31 Jan 2024 11:58:04",
 	"site":[ 
 		{
 			"@name": "https://territoiresentransitions.fr",
@@ -24,14 +24,14 @@
 							"method": "GET",
 							"param": "content-security-policy",
 							"attack": "",
-							"evidence": "default-src 'self'; script-src 'self' 'nonce-ZGMwNDljMmYtZTQwNC00MWRjLTg5OWYtMmE0NTdjMzVlMWRi' 'strict-dynamic';; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data: ytimg.com https://phenomenal-trust-ee3da2c906.media.strapiapp.com; font-src 'self'; object-src 'none'; connect-src 'self' https://rlarzronkgoyvtdkltqy.supabase.co https://phenomenal-trust-ee3da2c906.strapiapp.com ws://localhost:3000; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; frame-src youtube.com www.youtube.com dailymotion.com www.dailymotion.com; block-all-mixed-content; upgrade-insecure-requests;",
+							"evidence": "default-src 'self'; script-src 'self' 'nonce-ZWMwYWEyMzEtYjEwZS00YTZlLWJlNGYtY2Q0YTBhYTI2ODQ5' 'strict-dynamic';; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data: ytimg.com https://phenomenal-trust-ee3da2c906.media.strapiapp.com; font-src 'self'; object-src 'none'; connect-src 'self' https://rlarzronkgoyvtdkltqy.supabase.co https://phenomenal-trust-ee3da2c906.strapiapp.com ws://localhost:3000; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; frame-src youtube.com www.youtube.com dailymotion.com www.dailymotion.com; block-all-mixed-content; upgrade-insecure-requests;",
 							"otherinfo": "style-src includes unsafe-inline."
 						}
 					],
 					"count": "1",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is properly configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "<p>style-src includes unsafe-inline.</p>",
-					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/shapesecurity/salvation</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
+					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
 					"cweid": "693",
 					"wascid": "15",
 					"sourceid": "1"
@@ -175,25 +175,33 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "nonce-ZGMwNDljMmYtZTQwNC00MWRjLTg5OWYtMmE0NTdjMzVlMWRi",
-							"otherinfo": "\uFFFD\uFFFD\uFFFD{\uFFFDF3\\x0003C\uFFFD3&b\uFFFDSC\\x0003B\uFFFDC\\x0016F2\u04C3\uFFFD\uFFFDb\uFFFD&\\x0013CSv33VS\\x0016F"
+							"evidence": "2FApP28Ez2YVodGsVjBaScXwYaDD6MYtCXRZYB",
+							"otherinfo": "\uFFFDP)?o\\x0004\uFFFDf\\x0015\uFFFD\u046CV0ZI\uFFFD\uFFFDa\uFFFD\uFFFD\uFFFD\uFFFD-\ttY`"
 						},
 						{
-							"uri": "https://territoiresentransitions.fr/robots.txt",
+							"uri": "https://territoiresentransitions.fr",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2FPQYRPt8SeRCugPkX9WyHfFauuJJj",
-							"otherinfo": "\uFFFDS\uFFFDa\\x0013\uFFFD\uFFFD'\uFFFD\n\uFFFD\\x000f\uFFFDV\uFFFDw\uFFFDj\uFFFD&"
+							"evidence": "nonce-ZWMwYWEyMzEtYjEwZS00YTZlLWJlNGYtY2Q0YTBhYTI2ODQ5",
+							"otherinfo": "\uFFFD\uFFFD\uFFFD{\uFFFDV3\\x0006\\x0016\\x0013#3\\x0012\uFFFD#\\x0013\\x0006R\uFFFDF\\x0013fR\uFFFD&SFb\uFFFD6CF\\x0013\\x0006\\x0016\\x0013#c\uFFFDC"
+						},
+						{
+							"uri": "https://territoiresentransitions.fr/sitemap.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "2BYPgPW7qlUyUpsa1d1QsY7RukHywYXY",
+							"otherinfo": "\uFFFD\\x0016\\x000f\uFFFD\uFFFD\uFFFD\uFFFDU2R\uFFFD\\x001a\uFFFD\uFFFDP\uFFFD\uFFFD\u047AA\uFFFD\uFFFD\uFFFD\uFFFD"
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>\uFFFD\uFFFD\uFFFD{\uFFFDF3\\x0003C\uFFFD3&b\uFFFDSC\\x0003B\uFFFDC\\x0016F2\u04C3\uFFFD\uFFFDb\uFFFD&\\x0013CSv33VS\\x0016F</p>",
+					"otherinfo": "<p>\uFFFDP)?o\\x0004\uFFFDf\\x0015\uFFFD\u046CV0ZI\uFFFD\uFFFDa\uFFFD\uFFFD\uFFFD\uFFFD-\ttY`</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "7"
 				},
 				{
 					"pluginid": "10027",
@@ -211,12 +219,12 @@
 							"param": "",
 							"attack": "",
 							"evidence": "bugs",
-							"otherinfo": "The following pattern was used: \\bBUGS\\b and was detected in the element starting with: \"<script nonce=\"ZGMwNDljMmYtZTQwNC00MWRjLTg5OWYtMmE0NTdjMzVlMWRi\">self.__next_f.push([1,\"c:[[\\\"$\\\",\\\"section\\\",null,{\\\"id\\\":\\\"$un\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bBUGS\\b and was detected in the element starting with: \"<script nonce=\"ZWMwYWEyMzEtYjEwZS00YTZlLWJlNGYtY2Q0YTBhYTI2ODQ5\">self.__next_f.push([1,\"7:[[\\\"$\\\",\\\"section\\\",null,{\\\"id\\\":\\\"$un\", see evidence field for the suspicious comment/snippet."
 						}
 					],
 					"count": "1",
 					"solution": "<p>Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</p>",
-					"otherinfo": "<p>The following pattern was used: \\bBUGS\\b and was detected in the element starting with: \"<script nonce=\"ZGMwNDljMmYtZTQwNC00MWRjLTg5OWYtMmE0NTdjMzVlMWRi\">self.__next_f.push([1,\"c:[[\\\"$\\\",\\\"section\\\",null,{\\\"id\\\":\\\"$un\", see evidence field for the suspicious comment/snippet.</p>",
+					"otherinfo": "<p>The following pattern was used: \\bBUGS\\b and was detected in the element starting with: \"<script nonce=\"ZWMwYWEyMzEtYjEwZS00YTZlLWJlNGYtY2Q0YTBhYTI2ODQ5\">self.__next_f.push([1,\"7:[[\\\"$\\\",\\\"section\\\",null,{\\\"id\\\":\\\"$un\", see evidence field for the suspicious comment/snippet.</p>",
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",

@@ -44,6 +44,11 @@ jobs:
     name: Scan
     needs: init
     continue-on-error: true
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        sites: ${{ fromJson(needs.init.outputs.sites) }}
     steps:
       - uses: actions/checkout@v2
 
@@ -118,7 +123,12 @@ jobs:
         with:
           url: ${{ steps.betagouv.outputs.github_repository }}
           output: scans/github_repository.json
- 
+
+      - name: debug
+        run: |
+          ls -la scans
+          cat scans/*
+          
       - uses: SocialGouv/dashlord-actions/save@v1
         with:
           url: ${{ matrix.sites.url }}

@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Wed, 31 Jan 2024 14:30:44",
+	"@generated": "Sun, 4 Feb 2024 14:00:55",
 	"site":[ 
 		{
 			"@name": "https://vae.gouv.fr",
@@ -42,7 +42,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "66"
+					"sourceid": "70"
 				},
 				{
 					"pluginid": "10055",
@@ -69,23 +69,15 @@
 							"attack": "",
 							"evidence": "frame-ancestors 'self';",
 							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nscript-src, style-src, img-src, connect-src, frame-src, font-src, media-src, object-src, manifest-src, worker-src, form-action\n\nThe directive(s): form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything."
-						},
-						{
-							"uri": "https://vae.gouv.fr/sitemap.xml",
-							"method": "GET",
-							"param": "Content-Security-Policy",
-							"attack": "",
-							"evidence": "frame-ancestors 'self';",
-							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nscript-src, style-src, img-src, connect-src, frame-src, font-src, media-src, object-src, manifest-src, worker-src, form-action\n\nThe directive(s): form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything."
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is properly configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "<p>The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: </p><p>script-src, style-src, img-src, connect-src, frame-src, font-src, media-src, object-src, manifest-src, worker-src, form-action</p><p></p><p>The directive(s): form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything.</p>",
 					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "8"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10055",
@@ -128,7 +120,7 @@
 					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "8"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10055",
@@ -171,7 +163,7 @@
 					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "8"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10003",
@@ -198,7 +190,7 @@
 					"reference": "<p>https://github.com/advisories/GHSA-c59h-r6p8-q9wc</p><p></p>",
 					"cweid": "829",
 					"wascid": "-1",
-					"sourceid": "109"
+					"sourceid": "108"
 				},
 				{
 					"pluginid": "10054",
@@ -219,7 +211,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://vae.gouv.fr/admin2/_next/static/chunks/1659-92d799ed1d1faea4.js",
+							"uri": "https://vae.gouv.fr/admin2/_next/static/chunks/2472-e62285463dd09caf.js",
 							"method": "GET",
 							"param": "sc-sticky-session",
 							"attack": "",
@@ -227,7 +219,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://vae.gouv.fr/admin2/_next/static/chunks/9486-080e9fad68e3a00b.js",
+							"uri": "https://vae.gouv.fr/admin2/_next/static/chunks/8326-f605393766b26496.js",
 							"method": "GET",
 							"param": "sc-sticky-session",
 							"attack": "",
@@ -313,7 +305,7 @@
 					"reference": "<p>https://tools.ietf.org/html/draft-ietf-httpbis-cookie-same-site</p>",
 					"cweid": "1275",
 					"wascid": "13",
-					"sourceid": "200"
+					"sourceid": "191"
 				},
 				{
 					"pluginid": "10110",
@@ -356,7 +348,7 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "153"
+					"sourceid": "145"
 				},
 				{
 					"pluginid": "10063",
@@ -417,7 +409,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://vae.gouv.fr/espace-professionnel/creation/",
+							"uri": "https://vae.gouv.fr/espace-professionnel/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -425,7 +417,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://vae.gouv.fr/mentions-legales/",
+							"uri": "https://vae.gouv.fr/espace-professionnel/creation/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -463,7 +455,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy</p><p>https://developer.chrome.com/blog/feature-policy/</p><p>https://scotthelme.co.uk/a-new-security-header-feature-policy/</p><p>https://w3c.github.io/webappsec-feature-policy/</p><p>https://www.smashingmagazine.com/2018/12/feature-policy/</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "8"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10037",
@@ -492,14 +484,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://vae.gouv.fr/cgu-candidat/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "X-Powered-By: Next.js",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://vae.gouv.fr/confidentialite/",
 							"method": "GET",
 							"param": "",
@@ -509,6 +493,14 @@
 						},
 						{
 							"uri": "https://vae.gouv.fr/declaration-accessibilite/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "X-Powered-By: Next.js",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://vae.gouv.fr/espace-professionnel/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -570,7 +562,7 @@
 					"reference": "<p>https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/01-Information_Gathering/08-Fingerprint_Web_Application_Framework</p><p>https://www.troyhunt.com/2012/02/shhh-dont-let-your-response-headers.html</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "8"
+					"sourceid": "7"
 				},
 				{
 					"pluginid": "10096",
@@ -2325,7 +2317,7 @@
 					"reference": "<p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "150"
+					"sourceid": "143"
 				},
 				{
 					"pluginid": "10021",
@@ -2347,14 +2339,6 @@
 						},
 						{
 							"uri": "https://vae.gouv.fr/",
-							"method": "GET",
-							"param": "x-content-type-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
-						},
-						{
-							"uri": "https://vae.gouv.fr/_next/static/media/apple-touch-icon.1db30588.png",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -2387,6 +2371,14 @@
 						},
 						{
 							"uri": "https://vae.gouv.fr/declaration-accessibilite/",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://vae.gouv.fr/espace-professionnel/",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -2432,7 +2424,7 @@
 					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "8"
+					"sourceid": "7"
 				},
 				{
 					"pluginid": "10094",
@@ -2461,14 +2453,6 @@
 							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uCD6Bbs\uFFFDJ(\uFFFD\uFFFD~\uFFFD\uFFFDM\uFFFD\uFFFD\uFFFD\\x000c\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD'\u07B2"
 						},
 						{
-							"uri": "https://vae.gouv.fr/cgu-candidat/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "/_next/static/dKKN3zfvv4TbSEtAzR-6G/_buildManifest",
-							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uCD6Bbs\uFFFDJ(\uFFFD\uFFFD~\uFFFD\uFFFDM\uFFFD\uFFFD\uFFFD\\x000c\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD'\u07B2"
-						},
-						{
 							"uri": "https://vae.gouv.fr/confidentialite/",
 							"method": "GET",
 							"param": "",
@@ -2478,6 +2462,14 @@
 						},
 						{
 							"uri": "https://vae.gouv.fr/declaration-accessibilite/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "/_next/static/dKKN3zfvv4TbSEtAzR-6G/_buildManifest",
+							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uCD6Bbs\uFFFDJ(\uFFFD\uFFFD~\uFFFD\uFFFDM\uFFFD\uFFFD\uFFFD\\x000c\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD'\u07B2"
+						},
+						{
+							"uri": "https://vae.gouv.fr/espace-professionnel/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2539,7 +2531,7 @@
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "7"
 				},
 				{
 					"pluginid": "50007",
@@ -2566,7 +2558,7 @@
 					"reference": "<p>https://spec.graphql.org/October2021/#sec-Introspection</p>",
 					"cweid": "16",
 					"wascid": "15",
-					"sourceid": "199"
+					"sourceid": "225"
 				},
 				{
 					"pluginid": "50007",
@@ -2593,7 +2585,7 @@
 					"reference": "<p>https://github.com/mercurius-js/mercurius</p>",
 					"cweid": "205",
 					"wascid": "45",
-					"sourceid": "270"
+					"sourceid": "254"
 				},
 				{
 					"pluginid": "10027",
@@ -2630,20 +2622,20 @@
 							"otherinfo": "The following pattern was used: \\bADMIN\\b and was detected in the element starting with: \"<script type=\"module\" crossorigin src=\"/admin/assets/main-qHQ-svo5.js\"></script>\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://vae.gouv.fr/cgu-candidat/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "query",
-							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{}},\"page\":\"/cgu-candidat\",\"query\":{},\"buildId\":\"dKKN3z\", see evidence field for the suspicious comment/snippet."
-						},
-						{
 							"uri": "https://vae.gouv.fr/declaration-accessibilite/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "query",
 							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{}},\"page\":\"/declaration-accessibilite\",\"query\":{},\"bui\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"uri": "https://vae.gouv.fr/espace-professionnel/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "query",
+							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{}},\"page\":\"/espace-professionnel\",\"query\":{},\"buildId\"\", see evidence field for the suspicious comment/snippet."
 						},
 						{
 							"uri": "https://vae.gouv.fr/espace-professionnel/creation/",
@@ -2700,7 +2692,7 @@
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "8"
+					"sourceid": "7"
 				},
 				{
 					"pluginid": "10109",
@@ -2761,7 +2753,7 @@
 							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
 						},
 						{
-							"uri": "https://vae.gouv.fr/espace-professionnel/creation/",
+							"uri": "https://vae.gouv.fr/espace-professionnel/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2769,7 +2761,7 @@
 							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
 						},
 						{
-							"uri": "https://vae.gouv.fr/nous-contacter/",
+							"uri": "https://vae.gouv.fr/espace-professionnel/creation/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2807,7 +2799,7 @@
 					"reference": "",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "8"
+					"sourceid": "7"
 				},
 				{
 					"pluginid": "10015",
@@ -2860,7 +2852,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://vae.gouv.fr/cgu-candidat/",
+							"uri": "https://vae.gouv.fr/declaration-accessibilite/",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -2868,7 +2860,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://vae.gouv.fr/declaration-accessibilite/",
+							"uri": "https://vae.gouv.fr/espace-professionnel/",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -2914,7 +2906,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control</p><p>https://grayduck.mn/2021/09/13/cache-control-recommendations/</p>",
 					"cweid": "525",
 					"wascid": "13",
-					"sourceid": "8"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -2957,7 +2949,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "8"
+					"sourceid": "7"
 				},
 				{
 					"pluginid": "90005",
@@ -3000,7 +2992,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "8"
+					"sourceid": "7"
 				},
 				{
 					"pluginid": "90005",
@@ -3043,7 +3035,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "8"
+					"sourceid": "7"
 				},
 				{
 					"pluginid": "90005",
@@ -3086,7 +3078,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "8"
+					"sourceid": "7"
 				},
 				{
 					"pluginid": "10112",
@@ -3103,23 +3095,23 @@
 							"method": "GET",
 							"param": "sc-sticky-session",
 							"attack": "",
-							"evidence": "XQ8cauPeyLhfcwxXXXFul3KCgT2OaCGXEuH+1a1FeQsXNm58XaDKbnrr+2886zSPCQJ1gT6RHsenII/RCa4S67fpRSxD9zt4dXZCakxnJLuJKTyOeoNQSX1/2TF/f2vw",
+							"evidence": "FrlM/0fnLUSl0vMd8/Ipd+vM5kewOot0R99HEpBOIXHjA9s5ckJc0jTMNTWWH5jnNQ/bKYCV4bVst0TBVDao5r25Gfh8ZtEldAaKum4iGOiRMDZlXRAXwiacDJWiNZSC",
 							"otherinfo": "\ncookie:sc-sticky-session"
 						},
 						{
-							"uri": "https://vae.gouv.fr/admin2/_next/static/chunks/2757-49747e65fc3e1bb0.js",
+							"uri": "https://vae.gouv.fr/admin2",
 							"method": "GET",
 							"param": "sc-sticky-session",
 							"attack": "",
-							"evidence": "XQ8cauPeyLhfcwxXXXFul3KCgT2OaCGXEuH+1a1FeQsXNm58XaDKbnrr+2886zSPCQJ1gT6RHsenII/RCa4S67fpRSxD9zt4dXZCakxnJLuJKTyOeoNQSX1/2TF/f2vw",
+							"evidence": "FrlM/0fnLUSl0vMd8/Ipd+vM5kewOot0R99HEpBOIXHjA9s5ckJc0jTMNTWWH5jnNQ/bKYCV4bVst0TBVDao5r25Gfh8ZtEldAaKum4iGOiRMDZlXRAXwiacDJWiNZSC",
 							"otherinfo": "\ncookie:sc-sticky-session"
 						},
 						{
-							"uri": "https://vae.gouv.fr/admin2/_next/static/chunks/8326-f605393766b26496.js",
+							"uri": "https://vae.gouv.fr/admin2/_next/static/media/favicon.8c087985.ico",
 							"method": "GET",
 							"param": "sc-sticky-session",
 							"attack": "",
-							"evidence": "XQ8cauPeyLhfcwxXXXFul3KCgT2OaCGXEuH+1a1FeQsXNm58XaDKbnrr+2886zSPCQJ1gT6RHsenII/RCa4S67fpRSxD9zt4dXZCakxnJLuJKTyOeoNQSX1/2TF/f2vw",
+							"evidence": "FrlM/0fnLUSl0vMd8/Ipd+vM5kewOot0R99HEpBOIXHjA9s5ckJc0jTMNTWWH5jnNQ/bKYCV4bVst0TBVDao5r25Gfh8ZtEldAaKum4iGOiRMDZlXRAXwiacDJWiNZSC",
 							"otherinfo": "\ncookie:sc-sticky-session"
 						}
 					],
@@ -3129,7 +3121,7 @@
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "200"
+					"sourceid": "191"
 				},
 				{
 					"pluginid": "10049",
@@ -3166,20 +3158,20 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
+							"uri": "https://vae.gouv.fr/espace-professionnel/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
 							"uri": "https://vae.gouv.fr/espace-professionnel/creation/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "s-maxage=31536000",
 							"otherinfo": ""
-						},
-						{
-							"uri": "https://vae.gouv.fr/mentions-legales/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
 							"uri": "https://vae.gouv.fr/plan-du-site/",
@@ -3212,7 +3204,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "8"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10049",
@@ -3255,7 +3247,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "43"
+					"sourceid": "44"
 				}
 			]
 		}

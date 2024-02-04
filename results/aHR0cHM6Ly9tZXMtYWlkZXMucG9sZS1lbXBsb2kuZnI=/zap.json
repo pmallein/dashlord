@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Wed, 31 Jan 2024 13:25:12",
+	"@generated": "Sun, 4 Feb 2024 12:47:03",
 	"site":[ 
 		{
 			"@name": "https://mes-aides.pole-emploi.fr",
@@ -36,7 +36,7 @@
 							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nform-action\n\nThe directive(s): form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything."
 						},
 						{
-							"uri": "https://mes-aides.pole-emploi.fr/*?at_medium",
+							"uri": "https://mes-aides.pole-emploi.fr/*?2003",
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
@@ -44,7 +44,7 @@
 							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nform-action\n\nThe directive(s): form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything."
 						},
 						{
-							"uri": "https://mes-aides.pole-emploi.fr/*?codRome",
+							"uri": "https://mes-aides.pole-emploi.fr/*?at_campaign",
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
@@ -66,7 +66,7 @@
 					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10055",
@@ -95,7 +95,7 @@
 							"otherinfo": "style-src includes unsafe-inline."
 						},
 						{
-							"uri": "https://mes-aides.pole-emploi.fr/*?at_medium",
+							"uri": "https://mes-aides.pole-emploi.fr/*?2003",
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
@@ -103,7 +103,7 @@
 							"otherinfo": "style-src includes unsafe-inline."
 						},
 						{
-							"uri": "https://mes-aides.pole-emploi.fr/*?codRome",
+							"uri": "https://mes-aides.pole-emploi.fr/*?at_campaign",
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
@@ -125,7 +125,7 @@
 					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10035",
@@ -232,7 +232,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc6797#section-8.1</p>",
 					"cweid": "319",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10096",
@@ -323,7 +323,7 @@
 					"reference": "<p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "5356"
+					"sourceid": "5113"
 				},
 				{
 					"pluginid": "10094",
@@ -489,42 +489,7 @@
 					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p>",
 					"cweid": "345",
 					"wascid": "12",
-					"sourceid": "345"
-				},
-				{
-					"pluginid": "10024",
-					"alertRef": "10024",
-					"alert": "Information Disclosure - Sensitive Information in URL",
-					"name": "Information Disclosure - Sensitive Information in URL",
-					"riskcode": "0",
-					"confidence": "2",
-					"riskdesc": "Informational (Medium)",
-					"desc": "<p>The request appeared to contain sensitive information leaked in the URL. This can violate PCI and most organizational compliance policies. You can configure the list of strings for this check to add or remove values specific to your environment.</p>",
-					"instances":[ 
-						{
-							"uri": "https://mes-aides.pole-emploi.fr/bibus?160%2C15=x27f&ADRUM_BT1=x27f&Chercher=x27f&CiRestriction=x27f&CiSort=x27f&HTTP=x27f&HTTPS=x27f&MotifSignalement_11=x27f&PAE=x27f&SISP=x27f&SISP-MOBV06B=x27f&TS01b2d005=x27f&WebLogicSession=x27f&actu=x27f&annusearch=x27f&applicationLang=x27f&at_custom1=x27f&at_custom2=x27f&at_emailtype=x27f&at_medium=x27f&authIndexType=x27f&campagneId=x27f&cinematique=x27f&codeThemAtelier=x27f&criteria%5Blocationpath%5D=x27f&criteria%5Bsearch%5D=x27f&criteria_location=x27f&dal=x27f&dptId=x27f&dureeContratMax=x27f&dureeHebdo=x27f&estat_url=x27f&faq_dep=x27f&gtc=x27f&idAnalytics=x27f&idOffre=x27f&idOptimize=x27f&id_dossier=x27f&idarticle=x27f&mots=x27f&motsCles=x27f&notes_decimales=x27f&numPage=x27f&offresPartenaires=x27f&offresPeuDeCandidats=x27f&operationNationale=x27f&organisme=x27f&page-103228=x27f&page-110948=x27f&page-114919=x27f&page-115945=x27f&page-118426=x27f&page-127560=x27f&page-130474=x27f&page-130476=x27f&page-131108=x27f&page-133960=x27f&page-146077=x27f&page-166391=x27f&page-172657=x27f&page-174799=x27f&page-186955=x27f&page-194429=x27f&page-216685=x27f&page-221293=x27f&page-236452=x27f&page-249696=x27f&page-251738=x27f&page-252078=x27f&page-273413=x27f&page-277144=x27f&page-29907=x27f&page-30284=x27f&page-30709=x27f&page-30782=x27f&page-31263=x27f&page-400650=x27f&page-423903=x27f&page-44544=x27f&page-66519=x27f&page-68992=x27f&page-83203=x27f&page-88860=x27f&prev-txt=x27f&quot=x27f&rayon=x27f&redirect-meteo=x27f&rome_code=x27f&salaire=x27f&search-form-1=x27f&soustheme=x27f&src_cmp_indicateur2=x27f&tarteaucitronForceCDN=x27f&territory=x27f&tformdata=x27f&tri=x27f&userBadge=x27f&videocode=x27f&wekjvp=x27f",
-							"method": "GET",
-							"param": "userBadge",
-							"attack": "",
-							"evidence": "userBadge",
-							"otherinfo": "The URL contains potentially sensitive information. The following string was found via the pattern: user\nuserBadge"
-						},
-						{
-							"uri": "https://mes-aides.pole-emploi.fr/bibus?160%2C15=x27f&ADRUM_BT1=x27f&Chercher=x27f&CiRestriction=x27f&CiSort=x27f&HTTP=x27f&HTTPS=x27f&MotifSignalement_11=x27f&PAE=x27f&SISP=x27f&SISP-MOBV06B=x27f&TS01b2d005=x27f&WebLogicSession=x27f&actu=x27f&annusearch=x27f&applicationLang=x27f&at_custom1=x27f&at_custom2=x27f&at_emailtype=x27f&at_medium=x27f&authIndexType=x27f&campagneId=x27f&cinematique=x27f&codeThemAtelier=x27f&criteria%5Blocationpath%5D=x27f&criteria%5Bsearch%5D=x27f&criteria_location=x27f&dal=x27f&dptId=x27f&dureeContratMax=x27f&dureeHebdo=x27f&estat_url=x27f&faq_dep=x27f&gtc=x27f&idAnalytics=x27f&idOffre=x27f&idOptimize=x27f&id_dossier=x27f&idarticle=x27f&mots=x27f&motsCles=x27f&notes_decimales=x27f&numPage=x27f&offresPartenaires=x27f&offresPeuDeCandidats=x27f&operationNationale=x27f&organisme=x27f&page-103228=x27f&page-110948=x27f&page-114919=x27f&page-115945=x27f&page-118426=x27f&page-127560=x27f&page-130474=x27f&page-130476=x27f&page-131108=x27f&page-133960=x27f&page-146077=x27f&page-166391=x27f&page-172657=x27f&page-174799=x27f&page-186955=x27f&page-194429=x27f&page-216685=x27f&page-221293=x27f&page-236452=x27f&page-249696=x27f&page-251738=x27f&page-252078=x27f&page-273413=x27f&page-277144=x27f&page-29907=x27f&page-30284=x27f&page-30709=x27f&page-30782=x27f&page-31263=x27f&page-400650=x27f&page-423903=x27f&page-44544=x27f&page-66519=x27f&page-68992=x27f&page-83203=x27f&page-88860=x27f&prev-txt=x27f&quot=x27f&rayon=x27f&redirect-meteo=x27f&rome_code=x27f&salaire=x27f&search-form-1=x27f&soustheme=x27f&src_cmp_indicateur2=x27f&tarteaucitronForceCDN=x27f&territory=x27f&tformdata=x27f&tri=x27f&userBadge=x27f&videocode=x27f&wekjvp=x27f",
-							"method": "GET",
-							"param": "WebLogicSession",
-							"attack": "",
-							"evidence": "WebLogicSession",
-							"otherinfo": "The URL contains potentially sensitive information. The following string was found via the pattern: session\nWebLogicSession"
-						}
-					],
-					"count": "2",
-					"solution": "<p>Do not pass sensitive information in URIs.</p>",
-					"otherinfo": "<p>The URL contains potentially sensitive information. The following string was found via the pattern: user</p><p>userBadge</p>",
-					"reference": "",
-					"cweid": "200",
-					"wascid": "13",
-					"sourceid": "7431"
+					"sourceid": "274"
 				},
 				{
 					"pluginid": "10027",
@@ -631,7 +596,7 @@
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10109",
@@ -708,7 +673,7 @@
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
-							"uri": "https://mes-aides.pole-emploi.fr/404",
+							"uri": "https://mes-aides.pole-emploi.fr/appel-a-contribution",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -716,7 +681,7 @@
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
-							"uri": "https://mes-aides.pole-emploi.fr/cgu",
+							"uri": "https://mes-aides.pole-emploi.fr/bretagne",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -866,7 +831,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://mes-aides.pole-emploi.fr/",
+							"uri": "https://mes-aides.pole-emploi.fr/manifest.json",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -874,7 +839,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://mes-aides.pole-emploi.fr/sitemap.xml",
+							"uri": "https://mes-aides.pole-emploi.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -909,7 +874,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://mes-aides.pole-emploi.fr/",
+							"uri": "https://mes-aides.pole-emploi.fr/manifest.json",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -917,7 +882,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://mes-aides.pole-emploi.fr/sitemap.xml",
+							"uri": "https://mes-aides.pole-emploi.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -952,7 +917,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://mes-aides.pole-emploi.fr/",
+							"uri": "https://mes-aides.pole-emploi.fr/manifest.json",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -960,7 +925,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://mes-aides.pole-emploi.fr/sitemap.xml",
+							"uri": "https://mes-aides.pole-emploi.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -995,7 +960,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://mes-aides.pole-emploi.fr/",
+							"uri": "https://mes-aides.pole-emploi.fr/manifest.json",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -1003,7 +968,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://mes-aides.pole-emploi.fr/sitemap.xml",
+							"uri": "https://mes-aides.pole-emploi.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -1143,7 +1108,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "44"
+					"sourceid": "30"
 				}
 			]
 		}

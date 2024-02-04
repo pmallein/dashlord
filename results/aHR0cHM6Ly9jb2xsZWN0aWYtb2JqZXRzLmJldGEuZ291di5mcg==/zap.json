@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Wed, 31 Jan 2024 11:44:44",
+	"@generated": "Sun, 4 Feb 2024 10:37:31",
 	"site":[ 
 		{
 			"@name": "https://collectif-objets.beta.gouv.fr",
@@ -41,30 +41,6 @@
 							"param": "",
 							"attack": "",
 							"evidence": "<form class=\"button_to\" method=\"get\" action=\"/objets/27614\">",
-							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 3: \"\" ]."
-						},
-						{
-							"uri": "https://collectif-objets.beta.gouv.fr/objets/27615?galerie_objet_27615_photo_id=0",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<form class=\"button_to\" method=\"get\" action=\"/objets/27615\">",
-							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"\" ]."
-						},
-						{
-							"uri": "https://collectif-objets.beta.gouv.fr/objets/27615?galerie_objet_27615_photo_id=0",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<form class=\"button_to\" method=\"get\" action=\"/objets/27615\">",
-							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 2: \"\" ]."
-						},
-						{
-							"uri": "https://collectif-objets.beta.gouv.fr/objets/27615?galerie_objet_27615_photo_id=0",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<form class=\"button_to\" method=\"get\" action=\"/objets/27615\">",
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 3: \"\" ]."
 						},
 						{
@@ -140,13 +116,13 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 3: \"\" ]."
 						}
 					],
-					"count": "15",
+					"count": "12",
 					"solution": "<p>Phase: Architecture and Design</p><p>Use a vetted library or framework that does not allow this weakness to occur or provides constructs that make this weakness easier to avoid.</p><p>For example, use anti-CSRF packages such as the OWASP CSRFGuard.</p><p></p><p>Phase: Implementation</p><p>Ensure that your application is free of cross-site scripting issues, because most CSRF defenses can be bypassed using attacker-controlled script.</p><p></p><p>Phase: Architecture and Design</p><p>Generate a unique nonce for each form, place the nonce into the form, and verify the nonce upon receipt of the form. Be sure that the nonce is not predictable (CWE-330).</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Identify especially dangerous operations. When the user performs a dangerous operation, send a separate confirmation request to ensure that the user intended to perform that operation.</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Use the ESAPI Session Management control.</p><p>This control includes a component for CSRF.</p><p></p><p>Do not use the GET method for any request that triggers a state change.</p><p></p><p>Phase: Implementation</p><p>Check the HTTP Referer header to see if the request originated from an expected page. This could break legitimate functionality, because users or proxies may have disabled sending the Referer for privacy reasons.</p>",
 					"otherinfo": "<p>No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"\" ].</p>",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "365"
+					"sourceid": "6751"
 				},
 				{
 					"pluginid": "10055",
@@ -163,7 +139,7 @@
 							"method": "GET",
 							"param": "content-security-policy",
 							"attack": "",
-							"evidence": "report-uri https://sentry.incubateur.net/api/40/security/?sentry_key=5f6f9cf638ac413b82d1d9c8a9ba2025; default-src 'self' https:; script-src 'self' https: 'nonce-+UNcYIImN5E9Dn1pJT/lzA=='; img-src 'self' data: blob: https://s3.fr-par.scw.cloud/collectif-objets-development2/ https://s3.fr-par.scw.cloud/collectif-objets-staging2/ https://s3.fr-par.scw.cloud/collectif-objets-production/ https://s3.fr-par.scw.cloud/collectif-objets-public/ https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/ https://s3.eu-west-3.amazonaws.com/pop-phototeque/ https://collectif-objets.beta.gouv.fr/ https://stats.beta.gouv.fr; connect-src 'self' https://stats.beta.gouv.fr https://openmaptiles.geo.data.gouv.fr https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/; object-src 'self'; font-src 'self' https: data:; child-src blob:; worker-src blob:; style-src 'self' https: 'nonce-+UNcYIImN5E9Dn1pJT/lzA=='; frame-src 'self' https://collectif-objets-metabase.osc-secnum-fr1.scalingo.io/ https://tube.numerique.gouv.fr/ https://www.loom.com/",
+							"evidence": "report-uri https://sentry.incubateur.net/api/40/security/?sentry_key=5f6f9cf638ac413b82d1d9c8a9ba2025; default-src 'self' https:; script-src 'self' https: 'nonce-2kYssp4mEYuvbnfPzbvXWQ=='; img-src 'self' data: blob: https://s3.fr-par.scw.cloud/collectif-objets-development2/ https://s3.fr-par.scw.cloud/collectif-objets-staging2/ https://s3.fr-par.scw.cloud/collectif-objets-production/ https://s3.fr-par.scw.cloud/collectif-objets-public/ https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/ https://s3.eu-west-3.amazonaws.com/pop-phototeque/ https://collectif-objets.beta.gouv.fr/ https://stats.beta.gouv.fr; connect-src 'self' https://stats.beta.gouv.fr https://openmaptiles.geo.data.gouv.fr https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/; object-src 'self'; font-src 'self' https: data:; child-src blob:; worker-src blob:; style-src 'self' https: 'nonce-2kYssp4mEYuvbnfPzbvXWQ=='; frame-src 'self' https://collectif-objets-metabase.osc-secnum-fr1.scalingo.io/ https://tube.numerique.gouv.fr/ https://www.loom.com/",
 							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nscript-src, style-src, frame-ancestors, font-src, media-src, manifest-src, form-action\n\nThe directive(s): frame-ancestors, form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything."
 						},
 						{
@@ -171,7 +147,7 @@
 							"method": "GET",
 							"param": "content-security-policy",
 							"attack": "",
-							"evidence": "report-uri https://sentry.incubateur.net/api/40/security/?sentry_key=5f6f9cf638ac413b82d1d9c8a9ba2025; default-src 'self' https:; script-src 'self' https: 'nonce-SDik/Wl11lv0M1gcHhIirw=='; img-src 'self' data: blob: https://s3.fr-par.scw.cloud/collectif-objets-development2/ https://s3.fr-par.scw.cloud/collectif-objets-staging2/ https://s3.fr-par.scw.cloud/collectif-objets-production/ https://s3.fr-par.scw.cloud/collectif-objets-public/ https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/ https://s3.eu-west-3.amazonaws.com/pop-phototeque/ https://collectif-objets.beta.gouv.fr/ https://stats.beta.gouv.fr; connect-src 'self' https://stats.beta.gouv.fr https://openmaptiles.geo.data.gouv.fr https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/; object-src 'self'; font-src 'self' https: data:; child-src blob:; worker-src blob:; style-src 'self' https: 'nonce-SDik/Wl11lv0M1gcHhIirw=='; frame-src 'self' https://collectif-objets-metabase.osc-secnum-fr1.scalingo.io/ https://tube.numerique.gouv.fr/ https://www.loom.com/",
+							"evidence": "report-uri https://sentry.incubateur.net/api/40/security/?sentry_key=5f6f9cf638ac413b82d1d9c8a9ba2025; default-src 'self' https:; script-src 'self' https: 'nonce-oJgrDU1Xk/+f/VnEvUt1zA=='; img-src 'self' data: blob: https://s3.fr-par.scw.cloud/collectif-objets-development2/ https://s3.fr-par.scw.cloud/collectif-objets-staging2/ https://s3.fr-par.scw.cloud/collectif-objets-production/ https://s3.fr-par.scw.cloud/collectif-objets-public/ https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/ https://s3.eu-west-3.amazonaws.com/pop-phototeque/ https://collectif-objets.beta.gouv.fr/ https://stats.beta.gouv.fr; connect-src 'self' https://stats.beta.gouv.fr https://openmaptiles.geo.data.gouv.fr https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/; object-src 'self'; font-src 'self' https: data:; child-src blob:; worker-src blob:; style-src 'self' https: 'nonce-oJgrDU1Xk/+f/VnEvUt1zA=='; frame-src 'self' https://collectif-objets-metabase.osc-secnum-fr1.scalingo.io/ https://tube.numerique.gouv.fr/ https://www.loom.com/",
 							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nscript-src, style-src, frame-ancestors, font-src, media-src, manifest-src, form-action\n\nThe directive(s): frame-ancestors, form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything."
 						},
 						{
@@ -179,15 +155,7 @@
 							"method": "GET",
 							"param": "content-security-policy",
 							"attack": "",
-							"evidence": "report-uri https://sentry.incubateur.net/api/40/security/?sentry_key=5f6f9cf638ac413b82d1d9c8a9ba2025; default-src 'self' https:; script-src 'self' https: 'nonce-5A02HXaJwj2vxAJYIK4R0A=='; img-src 'self' data: blob: https://s3.fr-par.scw.cloud/collectif-objets-development2/ https://s3.fr-par.scw.cloud/collectif-objets-staging2/ https://s3.fr-par.scw.cloud/collectif-objets-production/ https://s3.fr-par.scw.cloud/collectif-objets-public/ https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/ https://s3.eu-west-3.amazonaws.com/pop-phototeque/ https://collectif-objets.beta.gouv.fr/ https://stats.beta.gouv.fr; connect-src 'self' https://stats.beta.gouv.fr https://openmaptiles.geo.data.gouv.fr https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/; object-src 'self'; font-src 'self' https: data:; child-src blob:; worker-src blob:; style-src 'self' https: 'nonce-5A02HXaJwj2vxAJYIK4R0A=='; frame-src 'self' https://collectif-objets-metabase.osc-secnum-fr1.scalingo.io/ https://tube.numerique.gouv.fr/ https://www.loom.com/",
-							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nscript-src, style-src, frame-ancestors, font-src, media-src, manifest-src, form-action\n\nThe directive(s): frame-ancestors, form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything."
-						},
-						{
-							"uri": "https://collectif-objets.beta.gouv.fr/comment-ca-marche",
-							"method": "GET",
-							"param": "content-security-policy",
-							"attack": "",
-							"evidence": "report-uri https://sentry.incubateur.net/api/40/security/?sentry_key=5f6f9cf638ac413b82d1d9c8a9ba2025; default-src 'self' https:; script-src 'self' https: 'nonce-HqHBUVzKOwpa0K/Vr69W0A=='; img-src 'self' data: blob: https://s3.fr-par.scw.cloud/collectif-objets-development2/ https://s3.fr-par.scw.cloud/collectif-objets-staging2/ https://s3.fr-par.scw.cloud/collectif-objets-production/ https://s3.fr-par.scw.cloud/collectif-objets-public/ https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/ https://s3.eu-west-3.amazonaws.com/pop-phototeque/ https://collectif-objets.beta.gouv.fr/ https://stats.beta.gouv.fr; connect-src 'self' https://stats.beta.gouv.fr https://openmaptiles.geo.data.gouv.fr https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/; object-src 'self'; font-src 'self' https: data:; child-src blob:; worker-src blob:; style-src 'self' https: 'nonce-HqHBUVzKOwpa0K/Vr69W0A=='; frame-src 'self' https://collectif-objets-metabase.osc-secnum-fr1.scalingo.io/ https://tube.numerique.gouv.fr/ https://www.loom.com/",
+							"evidence": "report-uri https://sentry.incubateur.net/api/40/security/?sentry_key=5f6f9cf638ac413b82d1d9c8a9ba2025; default-src 'self' https:; script-src 'self' https: 'nonce-5jtKSx2HQzCBf4ScKx3MQw=='; img-src 'self' data: blob: https://s3.fr-par.scw.cloud/collectif-objets-development2/ https://s3.fr-par.scw.cloud/collectif-objets-staging2/ https://s3.fr-par.scw.cloud/collectif-objets-production/ https://s3.fr-par.scw.cloud/collectif-objets-public/ https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/ https://s3.eu-west-3.amazonaws.com/pop-phototeque/ https://collectif-objets.beta.gouv.fr/ https://stats.beta.gouv.fr; connect-src 'self' https://stats.beta.gouv.fr https://openmaptiles.geo.data.gouv.fr https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/; object-src 'self'; font-src 'self' https: data:; child-src blob:; worker-src blob:; style-src 'self' https: 'nonce-5jtKSx2HQzCBf4ScKx3MQw=='; frame-src 'self' https://collectif-objets-metabase.osc-secnum-fr1.scalingo.io/ https://tube.numerique.gouv.fr/ https://www.loom.com/",
 							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nscript-src, style-src, frame-ancestors, font-src, media-src, manifest-src, form-action\n\nThe directive(s): frame-ancestors, form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything."
 						},
 						{
@@ -195,7 +163,15 @@
 							"method": "GET",
 							"param": "content-security-policy",
 							"attack": "",
-							"evidence": "report-uri https://sentry.incubateur.net/api/40/security/?sentry_key=5f6f9cf638ac413b82d1d9c8a9ba2025; default-src 'self' https:; script-src 'self' https: 'nonce-Sh0w3AbB726OJGU73O3/MA=='; img-src 'self' data: blob: https://s3.fr-par.scw.cloud/collectif-objets-development2/ https://s3.fr-par.scw.cloud/collectif-objets-staging2/ https://s3.fr-par.scw.cloud/collectif-objets-production/ https://s3.fr-par.scw.cloud/collectif-objets-public/ https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/ https://s3.eu-west-3.amazonaws.com/pop-phototeque/ https://collectif-objets.beta.gouv.fr/ https://stats.beta.gouv.fr; connect-src 'self' https://stats.beta.gouv.fr https://openmaptiles.geo.data.gouv.fr https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/; object-src 'self'; font-src 'self' https: data:; child-src blob:; worker-src blob:; style-src 'self' https: 'nonce-Sh0w3AbB726OJGU73O3/MA=='; frame-src 'self' https://collectif-objets-metabase.osc-secnum-fr1.scalingo.io/ https://tube.numerique.gouv.fr/ https://www.loom.com/",
+							"evidence": "report-uri https://sentry.incubateur.net/api/40/security/?sentry_key=5f6f9cf638ac413b82d1d9c8a9ba2025; default-src 'self' https:; script-src 'self' https: 'nonce-4Gemu2rRi68DOumfo5H4wg=='; img-src 'self' data: blob: https://s3.fr-par.scw.cloud/collectif-objets-development2/ https://s3.fr-par.scw.cloud/collectif-objets-staging2/ https://s3.fr-par.scw.cloud/collectif-objets-production/ https://s3.fr-par.scw.cloud/collectif-objets-public/ https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/ https://s3.eu-west-3.amazonaws.com/pop-phototeque/ https://collectif-objets.beta.gouv.fr/ https://stats.beta.gouv.fr; connect-src 'self' https://stats.beta.gouv.fr https://openmaptiles.geo.data.gouv.fr https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/; object-src 'self'; font-src 'self' https: data:; child-src blob:; worker-src blob:; style-src 'self' https: 'nonce-4Gemu2rRi68DOumfo5H4wg=='; frame-src 'self' https://collectif-objets-metabase.osc-secnum-fr1.scalingo.io/ https://tube.numerique.gouv.fr/ https://www.loom.com/",
+							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nscript-src, style-src, frame-ancestors, font-src, media-src, manifest-src, form-action\n\nThe directive(s): frame-ancestors, form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything."
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/stats",
+							"method": "GET",
+							"param": "content-security-policy",
+							"attack": "",
+							"evidence": "report-uri https://sentry.incubateur.net/api/40/security/?sentry_key=5f6f9cf638ac413b82d1d9c8a9ba2025; default-src 'self' https:; script-src 'self' https: 'nonce-ry7B2JDSjuKOMroSrym3NA=='; img-src 'self' data: blob: https://s3.fr-par.scw.cloud/collectif-objets-development2/ https://s3.fr-par.scw.cloud/collectif-objets-staging2/ https://s3.fr-par.scw.cloud/collectif-objets-production/ https://s3.fr-par.scw.cloud/collectif-objets-public/ https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/ https://s3.eu-west-3.amazonaws.com/pop-phototeque/ https://collectif-objets.beta.gouv.fr/ https://stats.beta.gouv.fr; connect-src 'self' https://stats.beta.gouv.fr https://openmaptiles.geo.data.gouv.fr https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/; object-src 'self'; font-src 'self' https: data:; child-src blob:; worker-src blob:; style-src 'self' https: 'nonce-ry7B2JDSjuKOMroSrym3NA=='; frame-src 'self' https://collectif-objets-metabase.osc-secnum-fr1.scalingo.io/ https://tube.numerique.gouv.fr/ https://www.loom.com/",
 							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nscript-src, style-src, frame-ancestors, font-src, media-src, manifest-src, form-action\n\nThe directive(s): frame-ancestors, form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything."
 						},
 						{
@@ -203,7 +179,7 @@
 							"method": "GET",
 							"param": "content-security-policy",
 							"attack": "",
-							"evidence": "report-uri https://sentry.incubateur.net/api/40/security/?sentry_key=5f6f9cf638ac413b82d1d9c8a9ba2025; default-src 'self' https:; script-src 'self' https: 'nonce-xvAXjcLrMNze0iV65YRa5g=='; img-src 'self' data: blob: https://s3.fr-par.scw.cloud/collectif-objets-development2/ https://s3.fr-par.scw.cloud/collectif-objets-staging2/ https://s3.fr-par.scw.cloud/collectif-objets-production/ https://s3.fr-par.scw.cloud/collectif-objets-public/ https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/ https://s3.eu-west-3.amazonaws.com/pop-phototeque/ https://collectif-objets.beta.gouv.fr/ https://stats.beta.gouv.fr; connect-src 'self' https://stats.beta.gouv.fr https://openmaptiles.geo.data.gouv.fr https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/; object-src 'self'; font-src 'self' https: data:; child-src blob:; worker-src blob:; style-src 'self' https: 'nonce-xvAXjcLrMNze0iV65YRa5g=='; frame-src 'self' https://collectif-objets-metabase.osc-secnum-fr1.scalingo.io/ https://tube.numerique.gouv.fr/ https://www.loom.com/",
+							"evidence": "report-uri https://sentry.incubateur.net/api/40/security/?sentry_key=5f6f9cf638ac413b82d1d9c8a9ba2025; default-src 'self' https:; script-src 'self' https: 'nonce-sZfzDSV7ky51oxa2pYc1zQ=='; img-src 'self' data: blob: https://s3.fr-par.scw.cloud/collectif-objets-development2/ https://s3.fr-par.scw.cloud/collectif-objets-staging2/ https://s3.fr-par.scw.cloud/collectif-objets-production/ https://s3.fr-par.scw.cloud/collectif-objets-public/ https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/ https://s3.eu-west-3.amazonaws.com/pop-phototeque/ https://collectif-objets.beta.gouv.fr/ https://stats.beta.gouv.fr; connect-src 'self' https://stats.beta.gouv.fr https://openmaptiles.geo.data.gouv.fr https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/; object-src 'self'; font-src 'self' https: data:; child-src blob:; worker-src blob:; style-src 'self' https: 'nonce-sZfzDSV7ky51oxa2pYc1zQ=='; frame-src 'self' https://collectif-objets-metabase.osc-secnum-fr1.scalingo.io/ https://tube.numerique.gouv.fr/ https://www.loom.com/",
 							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nscript-src, style-src, frame-ancestors, font-src, media-src, manifest-src, form-action\n\nThe directive(s): frame-ancestors, form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything."
 						}
 					],
@@ -257,7 +233,7 @@
 							"method": "GET",
 							"param": "content-security-policy",
 							"attack": "",
-							"evidence": "report-uri https://sentry.incubateur.net/api/40/security/?sentry_key=5f6f9cf638ac413b82d1d9c8a9ba2025; default-src 'self' https:; script-src 'self' https: 'nonce-+UNcYIImN5E9Dn1pJT/lzA=='; img-src 'self' data: blob: https://s3.fr-par.scw.cloud/collectif-objets-development2/ https://s3.fr-par.scw.cloud/collectif-objets-staging2/ https://s3.fr-par.scw.cloud/collectif-objets-production/ https://s3.fr-par.scw.cloud/collectif-objets-public/ https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/ https://s3.eu-west-3.amazonaws.com/pop-phototeque/ https://collectif-objets.beta.gouv.fr/ https://stats.beta.gouv.fr; connect-src 'self' https://stats.beta.gouv.fr https://openmaptiles.geo.data.gouv.fr https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/; object-src 'self'; font-src 'self' https: data:; child-src blob:; worker-src blob:; style-src 'self' https: 'nonce-+UNcYIImN5E9Dn1pJT/lzA=='; frame-src 'self' https://collectif-objets-metabase.osc-secnum-fr1.scalingo.io/ https://tube.numerique.gouv.fr/ https://www.loom.com/",
+							"evidence": "report-uri https://sentry.incubateur.net/api/40/security/?sentry_key=5f6f9cf638ac413b82d1d9c8a9ba2025; default-src 'self' https:; script-src 'self' https: 'nonce-2kYssp4mEYuvbnfPzbvXWQ=='; img-src 'self' data: blob: https://s3.fr-par.scw.cloud/collectif-objets-development2/ https://s3.fr-par.scw.cloud/collectif-objets-staging2/ https://s3.fr-par.scw.cloud/collectif-objets-production/ https://s3.fr-par.scw.cloud/collectif-objets-public/ https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/ https://s3.eu-west-3.amazonaws.com/pop-phototeque/ https://collectif-objets.beta.gouv.fr/ https://stats.beta.gouv.fr; connect-src 'self' https://stats.beta.gouv.fr https://openmaptiles.geo.data.gouv.fr https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/; object-src 'self'; font-src 'self' https: data:; child-src blob:; worker-src blob:; style-src 'self' https: 'nonce-2kYssp4mEYuvbnfPzbvXWQ=='; frame-src 'self' https://collectif-objets-metabase.osc-secnum-fr1.scalingo.io/ https://tube.numerique.gouv.fr/ https://www.loom.com/",
 							"otherinfo": "Warnings:\nThe report-uri directive has been deprecated in favor of the new report-to directive\n"
 						},
 						{
@@ -265,7 +241,7 @@
 							"method": "GET",
 							"param": "content-security-policy",
 							"attack": "",
-							"evidence": "report-uri https://sentry.incubateur.net/api/40/security/?sentry_key=5f6f9cf638ac413b82d1d9c8a9ba2025; default-src 'self' https:; script-src 'self' https: 'nonce-SDik/Wl11lv0M1gcHhIirw=='; img-src 'self' data: blob: https://s3.fr-par.scw.cloud/collectif-objets-development2/ https://s3.fr-par.scw.cloud/collectif-objets-staging2/ https://s3.fr-par.scw.cloud/collectif-objets-production/ https://s3.fr-par.scw.cloud/collectif-objets-public/ https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/ https://s3.eu-west-3.amazonaws.com/pop-phototeque/ https://collectif-objets.beta.gouv.fr/ https://stats.beta.gouv.fr; connect-src 'self' https://stats.beta.gouv.fr https://openmaptiles.geo.data.gouv.fr https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/; object-src 'self'; font-src 'self' https: data:; child-src blob:; worker-src blob:; style-src 'self' https: 'nonce-SDik/Wl11lv0M1gcHhIirw=='; frame-src 'self' https://collectif-objets-metabase.osc-secnum-fr1.scalingo.io/ https://tube.numerique.gouv.fr/ https://www.loom.com/",
+							"evidence": "report-uri https://sentry.incubateur.net/api/40/security/?sentry_key=5f6f9cf638ac413b82d1d9c8a9ba2025; default-src 'self' https:; script-src 'self' https: 'nonce-oJgrDU1Xk/+f/VnEvUt1zA=='; img-src 'self' data: blob: https://s3.fr-par.scw.cloud/collectif-objets-development2/ https://s3.fr-par.scw.cloud/collectif-objets-staging2/ https://s3.fr-par.scw.cloud/collectif-objets-production/ https://s3.fr-par.scw.cloud/collectif-objets-public/ https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/ https://s3.eu-west-3.amazonaws.com/pop-phototeque/ https://collectif-objets.beta.gouv.fr/ https://stats.beta.gouv.fr; connect-src 'self' https://stats.beta.gouv.fr https://openmaptiles.geo.data.gouv.fr https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/; object-src 'self'; font-src 'self' https: data:; child-src blob:; worker-src blob:; style-src 'self' https: 'nonce-oJgrDU1Xk/+f/VnEvUt1zA=='; frame-src 'self' https://collectif-objets-metabase.osc-secnum-fr1.scalingo.io/ https://tube.numerique.gouv.fr/ https://www.loom.com/",
 							"otherinfo": "Warnings:\nThe report-uri directive has been deprecated in favor of the new report-to directive\n"
 						},
 						{
@@ -273,15 +249,7 @@
 							"method": "GET",
 							"param": "content-security-policy",
 							"attack": "",
-							"evidence": "report-uri https://sentry.incubateur.net/api/40/security/?sentry_key=5f6f9cf638ac413b82d1d9c8a9ba2025; default-src 'self' https:; script-src 'self' https: 'nonce-5A02HXaJwj2vxAJYIK4R0A=='; img-src 'self' data: blob: https://s3.fr-par.scw.cloud/collectif-objets-development2/ https://s3.fr-par.scw.cloud/collectif-objets-staging2/ https://s3.fr-par.scw.cloud/collectif-objets-production/ https://s3.fr-par.scw.cloud/collectif-objets-public/ https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/ https://s3.eu-west-3.amazonaws.com/pop-phototeque/ https://collectif-objets.beta.gouv.fr/ https://stats.beta.gouv.fr; connect-src 'self' https://stats.beta.gouv.fr https://openmaptiles.geo.data.gouv.fr https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/; object-src 'self'; font-src 'self' https: data:; child-src blob:; worker-src blob:; style-src 'self' https: 'nonce-5A02HXaJwj2vxAJYIK4R0A=='; frame-src 'self' https://collectif-objets-metabase.osc-secnum-fr1.scalingo.io/ https://tube.numerique.gouv.fr/ https://www.loom.com/",
-							"otherinfo": "Warnings:\nThe report-uri directive has been deprecated in favor of the new report-to directive\n"
-						},
-						{
-							"uri": "https://collectif-objets.beta.gouv.fr/comment-ca-marche",
-							"method": "GET",
-							"param": "content-security-policy",
-							"attack": "",
-							"evidence": "report-uri https://sentry.incubateur.net/api/40/security/?sentry_key=5f6f9cf638ac413b82d1d9c8a9ba2025; default-src 'self' https:; script-src 'self' https: 'nonce-HqHBUVzKOwpa0K/Vr69W0A=='; img-src 'self' data: blob: https://s3.fr-par.scw.cloud/collectif-objets-development2/ https://s3.fr-par.scw.cloud/collectif-objets-staging2/ https://s3.fr-par.scw.cloud/collectif-objets-production/ https://s3.fr-par.scw.cloud/collectif-objets-public/ https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/ https://s3.eu-west-3.amazonaws.com/pop-phototeque/ https://collectif-objets.beta.gouv.fr/ https://stats.beta.gouv.fr; connect-src 'self' https://stats.beta.gouv.fr https://openmaptiles.geo.data.gouv.fr https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/; object-src 'self'; font-src 'self' https: data:; child-src blob:; worker-src blob:; style-src 'self' https: 'nonce-HqHBUVzKOwpa0K/Vr69W0A=='; frame-src 'self' https://collectif-objets-metabase.osc-secnum-fr1.scalingo.io/ https://tube.numerique.gouv.fr/ https://www.loom.com/",
+							"evidence": "report-uri https://sentry.incubateur.net/api/40/security/?sentry_key=5f6f9cf638ac413b82d1d9c8a9ba2025; default-src 'self' https:; script-src 'self' https: 'nonce-5jtKSx2HQzCBf4ScKx3MQw=='; img-src 'self' data: blob: https://s3.fr-par.scw.cloud/collectif-objets-development2/ https://s3.fr-par.scw.cloud/collectif-objets-staging2/ https://s3.fr-par.scw.cloud/collectif-objets-production/ https://s3.fr-par.scw.cloud/collectif-objets-public/ https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/ https://s3.eu-west-3.amazonaws.com/pop-phototeque/ https://collectif-objets.beta.gouv.fr/ https://stats.beta.gouv.fr; connect-src 'self' https://stats.beta.gouv.fr https://openmaptiles.geo.data.gouv.fr https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/; object-src 'self'; font-src 'self' https: data:; child-src blob:; worker-src blob:; style-src 'self' https: 'nonce-5jtKSx2HQzCBf4ScKx3MQw=='; frame-src 'self' https://collectif-objets-metabase.osc-secnum-fr1.scalingo.io/ https://tube.numerique.gouv.fr/ https://www.loom.com/",
 							"otherinfo": "Warnings:\nThe report-uri directive has been deprecated in favor of the new report-to directive\n"
 						},
 						{
@@ -289,7 +257,15 @@
 							"method": "GET",
 							"param": "content-security-policy",
 							"attack": "",
-							"evidence": "report-uri https://sentry.incubateur.net/api/40/security/?sentry_key=5f6f9cf638ac413b82d1d9c8a9ba2025; default-src 'self' https:; script-src 'self' https: 'nonce-Sh0w3AbB726OJGU73O3/MA=='; img-src 'self' data: blob: https://s3.fr-par.scw.cloud/collectif-objets-development2/ https://s3.fr-par.scw.cloud/collectif-objets-staging2/ https://s3.fr-par.scw.cloud/collectif-objets-production/ https://s3.fr-par.scw.cloud/collectif-objets-public/ https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/ https://s3.eu-west-3.amazonaws.com/pop-phototeque/ https://collectif-objets.beta.gouv.fr/ https://stats.beta.gouv.fr; connect-src 'self' https://stats.beta.gouv.fr https://openmaptiles.geo.data.gouv.fr https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/; object-src 'self'; font-src 'self' https: data:; child-src blob:; worker-src blob:; style-src 'self' https: 'nonce-Sh0w3AbB726OJGU73O3/MA=='; frame-src 'self' https://collectif-objets-metabase.osc-secnum-fr1.scalingo.io/ https://tube.numerique.gouv.fr/ https://www.loom.com/",
+							"evidence": "report-uri https://sentry.incubateur.net/api/40/security/?sentry_key=5f6f9cf638ac413b82d1d9c8a9ba2025; default-src 'self' https:; script-src 'self' https: 'nonce-4Gemu2rRi68DOumfo5H4wg=='; img-src 'self' data: blob: https://s3.fr-par.scw.cloud/collectif-objets-development2/ https://s3.fr-par.scw.cloud/collectif-objets-staging2/ https://s3.fr-par.scw.cloud/collectif-objets-production/ https://s3.fr-par.scw.cloud/collectif-objets-public/ https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/ https://s3.eu-west-3.amazonaws.com/pop-phototeque/ https://collectif-objets.beta.gouv.fr/ https://stats.beta.gouv.fr; connect-src 'self' https://stats.beta.gouv.fr https://openmaptiles.geo.data.gouv.fr https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/; object-src 'self'; font-src 'self' https: data:; child-src blob:; worker-src blob:; style-src 'self' https: 'nonce-4Gemu2rRi68DOumfo5H4wg=='; frame-src 'self' https://collectif-objets-metabase.osc-secnum-fr1.scalingo.io/ https://tube.numerique.gouv.fr/ https://www.loom.com/",
+							"otherinfo": "Warnings:\nThe report-uri directive has been deprecated in favor of the new report-to directive\n"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/stats",
+							"method": "GET",
+							"param": "content-security-policy",
+							"attack": "",
+							"evidence": "report-uri https://sentry.incubateur.net/api/40/security/?sentry_key=5f6f9cf638ac413b82d1d9c8a9ba2025; default-src 'self' https:; script-src 'self' https: 'nonce-ry7B2JDSjuKOMroSrym3NA=='; img-src 'self' data: blob: https://s3.fr-par.scw.cloud/collectif-objets-development2/ https://s3.fr-par.scw.cloud/collectif-objets-staging2/ https://s3.fr-par.scw.cloud/collectif-objets-production/ https://s3.fr-par.scw.cloud/collectif-objets-public/ https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/ https://s3.eu-west-3.amazonaws.com/pop-phototeque/ https://collectif-objets.beta.gouv.fr/ https://stats.beta.gouv.fr; connect-src 'self' https://stats.beta.gouv.fr https://openmaptiles.geo.data.gouv.fr https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/; object-src 'self'; font-src 'self' https: data:; child-src blob:; worker-src blob:; style-src 'self' https: 'nonce-ry7B2JDSjuKOMroSrym3NA=='; frame-src 'self' https://collectif-objets-metabase.osc-secnum-fr1.scalingo.io/ https://tube.numerique.gouv.fr/ https://www.loom.com/",
 							"otherinfo": "Warnings:\nThe report-uri directive has been deprecated in favor of the new report-to directive\n"
 						},
 						{
@@ -297,7 +273,7 @@
 							"method": "GET",
 							"param": "content-security-policy",
 							"attack": "",
-							"evidence": "report-uri https://sentry.incubateur.net/api/40/security/?sentry_key=5f6f9cf638ac413b82d1d9c8a9ba2025; default-src 'self' https:; script-src 'self' https: 'nonce-xvAXjcLrMNze0iV65YRa5g=='; img-src 'self' data: blob: https://s3.fr-par.scw.cloud/collectif-objets-development2/ https://s3.fr-par.scw.cloud/collectif-objets-staging2/ https://s3.fr-par.scw.cloud/collectif-objets-production/ https://s3.fr-par.scw.cloud/collectif-objets-public/ https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/ https://s3.eu-west-3.amazonaws.com/pop-phototeque/ https://collectif-objets.beta.gouv.fr/ https://stats.beta.gouv.fr; connect-src 'self' https://stats.beta.gouv.fr https://openmaptiles.geo.data.gouv.fr https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/; object-src 'self'; font-src 'self' https: data:; child-src blob:; worker-src blob:; style-src 'self' https: 'nonce-xvAXjcLrMNze0iV65YRa5g=='; frame-src 'self' https://collectif-objets-metabase.osc-secnum-fr1.scalingo.io/ https://tube.numerique.gouv.fr/ https://www.loom.com/",
+							"evidence": "report-uri https://sentry.incubateur.net/api/40/security/?sentry_key=5f6f9cf638ac413b82d1d9c8a9ba2025; default-src 'self' https:; script-src 'self' https: 'nonce-sZfzDSV7ky51oxa2pYc1zQ=='; img-src 'self' data: blob: https://s3.fr-par.scw.cloud/collectif-objets-development2/ https://s3.fr-par.scw.cloud/collectif-objets-staging2/ https://s3.fr-par.scw.cloud/collectif-objets-production/ https://s3.fr-par.scw.cloud/collectif-objets-public/ https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/ https://s3.eu-west-3.amazonaws.com/pop-phototeque/ https://collectif-objets.beta.gouv.fr/ https://stats.beta.gouv.fr; connect-src 'self' https://stats.beta.gouv.fr https://openmaptiles.geo.data.gouv.fr https://collectif-objets-development2.s3.fr-par.scw.cloud/ https://collectif-objets-staging2.s3.fr-par.scw.cloud/ https://collectif-objets-production.s3.fr-par.scw.cloud/ https://collectif-objets-public.s3.fr-par.scw.cloud/; object-src 'self'; font-src 'self' https: data:; child-src blob:; worker-src blob:; style-src 'self' https: 'nonce-sZfzDSV7ky51oxa2pYc1zQ=='; frame-src 'self' https://collectif-objets-metabase.osc-secnum-fr1.scalingo.io/ https://tube.numerique.gouv.fr/ https://www.loom.com/",
 							"otherinfo": "Warnings:\nThe report-uri directive has been deprecated in favor of the new report-to directive\n"
 						}
 					],
@@ -334,7 +310,7 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "153"
+					"sourceid": "154"
 				},
 				{
 					"pluginid": "10063",
@@ -596,9 +572,17 @@
 							"attack": "",
 							"evidence": "1990404162",
 							"otherinfo": "1990404162, which evaluates to: 2033-01-27 02:02:42"
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/photo_upload_component_controller-5d22e63e.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "2022574463",
+							"otherinfo": "2022574463, which evaluates to: 2034-02-03 10:14:23"
 						}
 					],
-					"count": "18",
+					"count": "19",
 					"solution": "<p>Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.</p>",
 					"otherinfo": "<p>1416354905, which evaluates to: 2014-11-18 23:55:05</p>",
 					"reference": "<p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
@@ -665,6 +649,14 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
+							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/application-f6cf8581.js",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
 							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/confirmation_component_controller-ea325ea6.js",
 							"method": "GET",
 							"param": "x-content-type-options",
@@ -690,14 +682,6 @@
 						},
 						{
 							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/miniatures_component_controller-2b5a3d7b.css",
-							"method": "GET",
-							"param": "x-content-type-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
-						},
-						{
-							"uri": "https://collectif-objets.beta.gouv.fr/vite/assets/miniatures_component_controller-f9e3f473.js",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -754,7 +738,7 @@
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/auth-req-id/</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "302"
+					"sourceid": "288"
 				},
 				{
 					"pluginid": "10094",
@@ -771,101 +755,101 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2BJ7TduVTx7utoEL2fhahksYoqnUdGRsNcju3wP",
-							"otherinfo": "\uFFFD\\x0012{M\u06D5O\\x001e\uED81\\x000b\uFFFD\uFFFDZ\uFFFDK\\x0018\uFFFD\uFFFD\uFFFDtdl5\uFFFD\uFFFD\uFFFD\\x0003"
+							"evidence": "bEhklyGFp7xUSrQEIQGaqjYuCf1CIPeNza",
+							"otherinfo": "lHd\uFFFD!\uFFFD\uFFFD\uFFFDTJ\uFFFD\\x0004!\\x0001\uFFFD\uFFFD6.\t\uFFFDB \uFFFD\uFFFD\uFFFD"
 						},
 						{
 							"uri": "https://collectif-objets.beta.gouv.fr",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2Fxz2HhZ7eKPQVOdVZnUw2l4H2AGir6q96",
-							"otherinfo": "\uFFFD\\s\uFFFDxY\uFFFD\uFFFDAS\uFFFDU\uFFFD\uFFFD\uFFFDix\\x001f`\\x0006\uFFFD\uFFFD\uFFFD\uFFFD"
+							"evidence": "2FbkW0KC8jHvpOk3EksHMAW7sM3ftSFZdk68BwKyid8s",
+							"otherinfo": "\uFFFDV\uFFFD[B\uFFFD\uFFFD1\uFFFD\uFFFD7\\x0012K\\x00070\\x0005\uFFFD\uFFFD\uFFFD\u07F5!YvN\uFFFD\\x0007\\x0002\uFFFD\uFFFD\uFFFD,"
 						},
 						{
 							"uri": "https://collectif-objets.beta.gouv.fr/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2FtiVD53OnXe6bsdZjuNMpNs0Epe6WodehFRB0j6aHPBRsYb9QaL",
-							"otherinfo": "\uFFFD[bT>w:u\uFFFD\uFFFD\\x001df;\uFFFD2\uFFFDl\uFFFDJ^\uFFFDj\\x001dz\\x0011Q\\x0007H\uFFFDhs\uFFFDF\uFFFD\\x001b\uFFFD\\x0006\uFFFD"
+							"evidence": "2FIWH6buWsZDEJcfYLhZyx39IJAqQLjjrkbUtUOrg3TO5gilwd4NoHqTNSDwMVf4qeVLgDIKkITR0c7vDLupGHe",
+							"otherinfo": "\uFFFDR\\x0016\\x001f\uFFFD\uFFFDZ\uFFFDC\\x0010\uFFFD\\x001f`\uFFFDY\uFFFD\\x001d\uFFFD \uFFFD*@\uFFFD\uFFFDF\u0535C\uFFFD\uFFFDt\uFFFD\uFFFD\\x0008\uFFFD\uFFFD\uFFFD\r\uFFFDz\uFFFD5 \uFFFD1W\uFFFD\uFFFD\uFFFDK\uFFFD2\n\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x000c\uFFFD\uFFFD\\x0018w"
 						},
 						{
 							"uri": "https://collectif-objets.beta.gouv.fr/accueil_conservateurs",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "hckP6VXtgA3NuJyAnBZ3Vtzc9YGwMOwjM09",
-							"otherinfo": "\uFFFD\uFFFD\\x000f\uFFFDU\uFFFD\r\u0378\uFFFD\uFFFD\uFFFD\\x0016wV\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD0\uFFFD#3O"
+							"evidence": "2BouImib3h8p2jjNSr10NnMsxXIIqKWftEZSEKPOH1FiKIO4jutQyLBZgyvQwJb4Ny5rsl3kWpZ6",
+							"otherinfo": "\uFFFD\\x001a.\"h\uFFFD\uFFFD\\x001f)\uFFFD8\uFFFDJ\uFFFDt6s,\uFFFDr\\x0008\uFFFD\uFFFD\uFFFD\uFFFDFR\\x0010\uFFFD\uFFFD\\x001fQb(\uFFFD\uFFFD\uFFFD\uFFFDP\u0230Y\uFFFD+\uFFFD\uFFFD\uFFFD\uFFFD7.k\uFFFD]\uFFFDZ\uFFFDz"
 						},
 						{
 							"uri": "https://collectif-objets.beta.gouv.fr/admin",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2FlrSvhpPfrB0T1fWbrVPQlTUuyQWn",
-							"otherinfo": "\uFFFDYkJ\uFFFDi=\uFFFD\uFFFD\uFFFD=_Y\uFFFD\uFFFD=\tSR\uFFFDZ"
+							"evidence": "2B6ZUWXHrMf7V1StwDS9lgWoPgpq7v3Nx2M7mKhstT0AtL",
+							"otherinfo": "\uFFFD\\x001e\uFFFDQe\u01EC\uFFFD\uFFFDWT\uFFFD\uFFFD4\uFFFD\uFFFD\\x0005\uFFFD>\nj\uFFFD\uFFFD\uFFFD\uFFFDc;\uFFFD\uFFFDl\uFFFD=\\x0000\uFFFD"
 						},
 						{
 							"uri": "https://collectif-objets.beta.gouv.fr/comment-ca-marche",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2FPpuDTjTJLyEpOk4fePQG7sMOH2LjSGYLtp6OziuU6hb0Kptzk7FBQFIxPBbg5PAeTCFNF7zn8Xiiyh7L7k5zQ5wWjJqjO3KMf9pk8ar343NhxndlHPQbx",
-							"otherinfo": "\uFFFDS\uFFFD4\uFFFDL\uFFFD\uFFFD\\x0012\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD@n\uFFFD0\uFFFD\uFFFD.4\uFFFD`\uFFFDi\uFFFD\uFFFD\uFFFDN\uFFFDoB\uFFFD\uFFFD9;\\x0014\\x0014\\x0005#\\x0013\uFFFDn\\x000eO\\x0001\uFFFD\uFFFD\\x0014\uFFFD{\uFFFD\\x0017\uFFFD,\uFFFD\uFFFD\uFFFD\uFFFD49\uFFFDh\u026A3\uFFFD(\uFFFD\uFFFD\uFFFDO\\x001a\uFFFD~76\\x001cgvQ\uFFFDA\uFFFD"
+							"evidence": "2FJIT6TpIa8yiJ7AsjRce61ack1NG0QgRfRQgSPsJh2eotqxtx5Fds5uvtcUdq5KfyQt2dYazJj6b8t9qtULyjI3X2PBAM5DcwPd0ZchmKFBJznb2qqJ3A6J8C68kezqyck",
+							"otherinfo": "\uFFFDRHO\uFFFD\uFFFD!\uFFFD2\uFFFD\uFFFD\uFFFD\uFFFD4\\{\uFFFDZrMM\\x001bD E\uFFFDP\uFFFD#\uFFFD&\\x001d\uFFFD\uFFFD\u06B1\uFFFD\\x001eEv\uFFFDn\uFFFD\uFFFD\\x0014v\uFFFDJ$-\uFFFD\uFFFD\\x001a\u0318\uFFFDo\uFFFD}\uFFFD\uFFFD\\x000b\uFFFD27_c\uFFFD\\x0000\uFFFDCs\\x0003\uFFFD\u0457!\uFFFD\uFFFDA'9\uFFFD\u06AA\uFFFD\uFFFD\\x000e\uFFFD\uFFFD.\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD"
 						},
 						{
 							"uri": "https://collectif-objets.beta.gouv.fr/conservateurs/sign_in",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2B7jIEavV9ycbjkbhPk6igonVXrkHFpdclOssAWlkj5PnTnWHgbDeJ7ITlsv5z",
-							"otherinfo": "\uFFFD\\x001e\uFFFD F\uFFFDW\u071Cn9\\x001b\uFFFD\uFFFD:\uFFFD\n'Uz\uFFFD\\x001cZ]rS\uFFFD\uFFFD\\x0005\uFFFD\uFFFD>O\uFFFD9\uFFFD\\x001e\\x0006\uFFFDx\uFFFD\uFFFDN[/\uFFFD"
+							"evidence": "2FiU22ukqRuUdWWSmiqAV9CERWFQbDATXx5bABizNMUjQM8s5bMh1syguW",
+							"otherinfo": "\uFFFDX\uFFFD\uFFFDk\uFFFD\uFFFD\\x001b\uFFFDue\uFFFD\uFFFD*\uFFFDW\u0404EaPl0\\x0013_\\x001e[\\x0000\\x0018\uFFFD4\uFFFD#@\uFFFD,\uFFFD!\uFFFD\u0320\uFFFD"
 						},
 						{
 							"uri": "https://collectif-objets.beta.gouv.fr/fiches",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2BrRw88kJ1CN82lUrcsaIpyIws4SqMMgr58qLfFjh9kskVS1u2J",
-							"otherinfo": "\uFFFD\\x001a\uFFFD\uFFFD\uFFFD$'P\uFFFD\uFFFDiT\uFFFD\uFFFD\\x001a\"\uFFFD\uFFFD\uFFFD\uFFFD\\x0012\uFFFD\uFFFD \uFFFD\uFFFD*-\uFFFDc\uFFFD\uFFFD,\uFFFDT\uFFFD\uFFFDb"
+							"evidence": "FGZQfHpouDARdvZ1VyeO17QI5uWPUTsaW4",
+							"otherinfo": "\\x0014fP|zh\uFFFD0\\x0011v\uFFFDuW'\uFFFD\u05F4\\x0008\uFFFD\uFFFDQ;\\x001a["
 						},
 						{
 							"uri": "https://collectif-objets.beta.gouv.fr/guide-de-recensement",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "9BVv2TjsQr86r7LJLP7KYDDWT46rvcWNJLw3lrR",
-							"otherinfo": "\uFFFD\\x0015o\uFFFD8\uFFFDB\uFFFD:\uFFFD\uFFFD\uFFFD,\uFFFD\uFFFD`0\uFFFDO\uFFFD\uFFFD\uFFFD\u014D$\uFFFD7\uFFFD\uFFFD"
+							"evidence": "2FCT8qnu7Ycy1izPRTloS9LTXyWzRZUlmXlOfPHJqVZCjzHiqnv5pwjbzUWu",
+							"otherinfo": "\uFFFDP\uFFFD\uFFFD\uFFFD\uFFFD2\uFFFD,\uFFFDE9hK\uFFFD\uFFFD_%\uFFFDE\uFFFD%\uFFFDyN|\uFFFD\u0269VB\uFFFD1\uFFFD{\uFFFD\uFFFD\\x0008\uFFFD\uFFFDE\uFFFD"
 						},
 						{
 							"uri": "https://collectif-objets.beta.gouv.fr/presse",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2FNLv839jSHvm3fFdWHtlZcUcEqbCIVdXnVc2cOA",
-							"otherinfo": "\uFFFDSK\uFFFD\uFFFD\uFFFD\uFFFD!\uFFFDw\uFFFDua\uD557\\x0014pJ\uFFFD\\x0008\uFFFD]^u\\\uFFFD\u00C0"
+							"evidence": "2BOQbSUGlS2nbHQg2g8ARa3bh9v1C3",
+							"otherinfo": "\uFFFD\\x0013\uFFFDm%\\x0006\uFFFD-\uFFFDlt \uFFFD\\x000f\\x0000E\uFFFD\u06C7\uFFFD\uFFFD\\x000b"
 						},
 						{
 							"uri": "https://collectif-objets.beta.gouv.fr/stats",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2F8ZnsPnBobczDJZmmHCNAZCib0yeoHVu66r",
-							"otherinfo": "\uFFFD_\\x0019\uFFFD\uFFFD\uFFFD\\x0006\uFFFD\uFFFD\uFFFD2Y\uFFFDa\uFFFD4\\x0006B\uFFFD\uFFFD2z\uFFFD\u057B\uFFFD\uFFFD"
+							"evidence": "2BaYYolXaIEB29GWKzibsJLVCFwk9RcmuiVP0J",
+							"otherinfo": "\uFFFD\\x0016\uFFFDb\uFFFDWh\uFFFD\\x0001\uFFFD\u0456+8\uFFFD\uFFFD\uFFFD\uFFFD\\x0008\\$\uFFFD\\x0017&\uFFFD%O\uFFFD"
 						},
 						{
 							"uri": "https://collectif-objets.beta.gouv.fr/users/sign_in",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2FmkO7PL5TZgQnwdz14skxnExdBbyezMxfllzAkNftyieUpNsAuAahw1ZI0vjU6AzdRxZ37aMMMMjUBc6wHslmoxMpIxgBkXOEzoVKiYoa2G6qh9Ow7Rq0mFrfPkzEM3xaLXknUwwX2rZ44rw4IptDJCXeyXOkgJc5s",
-							"otherinfo": "\uFFFDY\uFFFD;\uFFFD\uFFFD\uFFFD6`B|\\x001d\uFFFD^,\uFFFD\\x0019\uFFFD\uFFFD\uFFFD[\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDe\uFFFD\t\r~\u0722yJM\uFFFD\\x000b\uFFFDj\\x001c5d\uFFFD/\uFFFDN\uFFFD\uFFFD\uFFFDqg~\uFFFD0\uFFFD\\x000c\uFFFD@\\\uFFFD\\x0001\uFFFDj12\uFFFD1\uFFFD\\x0019\\x00178L\uFFFDT\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD};\\x000e\u046BI\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDC7\u0162\u05D2u0\uFFFD}\uFFFDg\uFFFD+\u00C2)\uFFFD2B]\uFFFD:H\ts\uFFFD"
+							"evidence": "2FGPyMEkmawzANZb15Y2Chn61Q8OhietbGDg",
+							"otherinfo": "\uFFFDQ\uFFFD\uFFFD\uFFFD$\uFFFD\uFFFD3\\x0000\uFFFD[\u05D66\n\\x0019\uFFFD\uFFFD\\x000f\\x000e\uFFFD'\uFFFDl`\uFFFD"
 						}
 					],
 					"count": "12",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>\uFFFD\\x0012{M\u06D5O\\x001e\uED81\\x000b\uFFFD\uFFFDZ\uFFFDK\\x0018\uFFFD\uFFFD\uFFFDtdl5\uFFFD\uFFFD\uFFFD\\x0003</p>",
+					"otherinfo": "<p>lHd\uFFFD!\uFFFD\uFFFD\uFFFDTJ\uFFFD\\x0004!\\x0001\uFFFD\uFFFD6.\t\uFFFDB \uFFFD\uFFFD\uFFFD</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
@@ -904,7 +888,7 @@
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "292"
+					"sourceid": "276"
 				},
 				{
 					"pluginid": "10027",
@@ -1019,7 +1003,7 @@
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "127"
+					"sourceid": "72"
 				},
 				{
 					"pluginid": "10109",
@@ -1126,7 +1110,7 @@
 					"reference": "",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10049",
@@ -1147,7 +1131,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://collectif-objets.beta.gouv.fr/comment-ca-marche",
+							"uri": "https://collectif-objets.beta.gouv.fr/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1311,9 +1295,17 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/sitemap.xml",
+							"method": "GET",
+							"param": "Sec-Fetch-Dest",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-Dest header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
@@ -1346,15 +1338,23 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/sitemap.xml",
+							"method": "GET",
+							"param": "Sec-Fetch-Mode",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-Mode header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -1381,15 +1381,23 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/sitemap.xml",
+							"method": "GET",
+							"param": "Sec-Fetch-Site",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-Site header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -1416,9 +1424,17 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
+						},
+						{
+							"uri": "https://collectif-objets.beta.gouv.fr/sitemap.xml",
+							"method": "GET",
+							"param": "Sec-Fetch-User",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-User header is included in user initiated requests.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
@@ -1441,7 +1457,7 @@
 							"method": "GET",
 							"param": "_collectif_objets_session",
 							"attack": "",
-							"evidence": "6tjLbz5nc5T%2FdVT%2BJ7TduVTx7utoEL2fhahksYoqnUdGRsNcju3wP%2FpjT3vvuHBTlnlt%2FLpz2CZHILjI8WfA3qlXHzNvWSayhKZ7e6uezJonDZEVM3NsdU8wgj7RZmCOTXFiFunDAcUHNC9V1zkXpBquR1iCb1P%2B19lpTmJ1rXuI5kaVDXsHeBX2fDGrOHNuMbUiGkna%2BUSyGVO03eToBCBKACGF9SJE6XCavQKcJOobW4J1Ooarjp1CeRqK3gt4aR05Af5JFOQSZnYEukzSx62pZIdJbeUlsziQxRNyww8B--vCVSyL3B3W%2BPJGxi--Guc2fWlujZ08H2Ajqg9XJQ%3D%3D",
+							"evidence": "JlsSjyhmK9sWgO1%2FIsMlTxf4R40jxPJPCA%2FJtQnwWXBZjzMj5z2Vn%2FFtPQHpIcoFbZeYi8Dy%2BAb1iPGV1IHVF9fTAIG66EgPJxs%2Bnno2Xd0ve2D0zB6SnPISwA9bhl01Akr7HKmIlMS5e5PEGYcJkZGFkQpVsOrPTK77RaNRSUoeIFq7AG86GqS%2BwABPq2IigBA5cZcXo2Klf3aaYf1eKPn8bRC1cpdVlazZo8oTcFwHeSvpdxT7eUdoxBIVLYy%2FbkW0KC8jHvpOk3EksHMAW7sM3ftSFZdk68BwKyid8s%2B2--1b69v2S6gAXT3pnC--OO%2B1WYOjetvGJ9H2oHiEvg%3D%3D",
 							"otherinfo": "\ncookie:_collectif_objets_session"
 						},
 						{
@@ -1449,7 +1465,7 @@
 							"method": "GET",
 							"param": "_collectif_objets_session",
 							"attack": "",
-							"evidence": "lIaFcq7TM9GPhIwOjf0YISB45bha%2Fxz2HhZ7eKPQVOdVZnUw2l4H2AGir6q96%2F8j7JMQkbWuD%2FDj3w07xqZ%2BBGR9HE2PYvUCv7bLfx186NstM3BnAQtD30%2Fy%2F1NCzEdkwvwvqaaRK7FyVU%2BJA2JoOyCWfioG%2FCAV3HuvQ2z81rY1BmynHwLqezcZjVxPi7aOjRnSRDLR4WapfMvdEGyHqAV%2Bvvllxg4s9U6%2FCz1pnHBDchF9Tl3mjWe86K%2BrNk53zM60VkYvamBKEaLlzVfty5LLRguk1pDpqAPcy%2B%2Fwzxnv--MXIAdjD9qKBNzWhg--PqFjfJ%2BMUzkMEyvbhAe01Q%3D%3D",
+							"evidence": "bEhklyGFp7xUSrQEIQGaqjYuCf1CIPeNza%2Bnu2kLTf1S6H8VKnKdKJKJWGv1Fuu%2Fqk7VN81WOe%2FJMhL0R%2FjYS0L7oI3LRE9fnseXGiQYUQAvKNBSeKgVm9%2FTjoW2LHBCI1M%2BYDqcPVNVIz7AOS5YhQV44nGudlWf3%2F7KQV65sOA0YZNjzP40FXUta%2FBQEgojnwG4OliCqzHhdjwB4ycfOhSL9a1C2NzLfSnJU38prOnquxwqiMocKvWVmVlYBE1GxlZeLlAMxv90fhMMCsQpdM3rZgcMY7Q%2FsNnKVIDpLvFq--bg99EmV5GtmOd2aT--aJZVBn3FLwxHTLbqArtAAg%3D%3D",
 							"otherinfo": "\ncookie:_collectif_objets_session"
 						},
 						{
@@ -1457,55 +1473,7 @@
 							"method": "GET",
 							"param": "_collectif_objets_session",
 							"attack": "",
-							"evidence": "LfvY%2B0erI%2BergHiivHqA0nEGixR8sLV%2FEWkhNpFUyoPlSGa7MvSa%2FrviunpQwaEkVjqDgvc%2BD%2F1t460DiWSc5gfGwyEjdcxC8WIoAEhAAwuj1iHp3%2B%2Bs7YWHPbkaiP4Jvod1O%2BWkxI7dbbcEhy9vWdzq%2FtiVD53OnXe6bsdZjuNMpNs0Epe6WodehFRB0j6aHPBRsYb9QaL%2F3Jq2x7OeicpjMlpM9knD7sj0IUPQGejoT8UIp1b%2B%2FPHcug991Sllrc7nphzOZsxoWftGnW4cg2krSYqQKRpqmI8S3%2BcslM1D--LXC%2Fi2Lu8sJybcWx--TjDsgiVgrIpqzLj0PND0lg%3D%3D",
-							"otherinfo": "\ncookie:_collectif_objets_session"
-						},
-						{
-							"uri": "https://collectif-objets.beta.gouv.fr/accueil_conservateurs",
-							"method": "GET",
-							"param": "_collectif_objets_session",
-							"attack": "",
-							"evidence": "hckP6VXtgA3NuJyAnBZ3Vtzc9YGwMOwjM09%2BBBBdclNfFutWN4YbFMQ1tJYLbxUuPqsG07JuCepTOj7JFIRA68td5iNACNMYokGCJab0NlBUMjUhfDn8j0G6gIS%2FL8CjrPxwvGxlffNoMEpjz7DW7pv8HvjV4OfwyF52VgS45i32ioI6ktzMbgJwBS4EqOAcoYlrZ46s3R9tSQB0Zn99OG2TyRCBNUuhlgO16oHj46m5tqX52iSudfnxVIoK5TLN2vH2k6YXkeMNpNTqnfLfGlYWkt%2FQVDfupyTLfjR1x%2BcD--ZsmEjY0sL40ni1iz--dItchjTwB7ThUPEw%2FYMOkA%3D%3D",
-							"otherinfo": "\ncookie:_collectif_objets_session"
-						},
-						{
-							"uri": "https://collectif-objets.beta.gouv.fr/comment-ca-marche",
-							"method": "GET",
-							"param": "_collectif_objets_session",
-							"attack": "",
-							"evidence": "WewXhWCRGK1%2FsVql%2B%2F%2FPpuDTjTJLyEpOk4fePQG7sMOH2LjSGYLtp6OziuU6hb0Kptzk7FBQFIxPBbg5PAeTCFNF7zn8Xiiyh7L7k5zQ5wWjJqjO3KMf9pk8ar343NhxndlHPQbx%2FlyLPsvwIfC0MBvskSvyxZbM3ZvMogKSRrexXDnVUOXFU0Tjms3UVeW%2FmfMVGn3B4WgP%2BhJ5akckv2R16KSu8LMbXdN6B%2F2asswH%2BttWwSR6EIwI1i4LGkP40eHLhqbGx0Nuv1rGxeVDikpiSbHroqi%2FnYdOYqzFx%2BKs--q37POH5NIMv3HRJe--GTLa2JFA7rZT0TumJOB%2F5A%3D%3D",
-							"otherinfo": "\ncookie:_collectif_objets_session"
-						},
-						{
-							"uri": "https://collectif-objets.beta.gouv.fr/conservateurs/sign_in",
-							"method": "GET",
-							"param": "_collectif_objets_session",
-							"attack": "",
-							"evidence": "TrMzJLqes1%2BusqO4R1n%2B7jIEavV9ycbjkbhPk6igonVXrkHFpdclOssAWlkj5PnTnWHgbDeJ7ITlsv5z%2Fmsjrxo6Vigp3P2mBz1UXwoFDyLFyKp2dyz60A7AKXmK4rKBodOjOxy3bsUbblh7QVe6cY1pzjSjgstrLPuG0LHJt3Hna8DiKP6LKrWk94RV%2BYEWwV1Dmzl0ZXpw5KbximfEtC1Qj75jW4CZboU9eeqWSh6hx9hOgVuJ1%2BujcB7JbRJcPx8%2FYMkYOIAYEbFobt2ml5MkYm4Mvg%2BzLUdwUXgzPvPG--HID1K0r%2FXar9kLG%2B--CBFWR9xmlEVmXaQ5J0uotw%3D%3D",
-							"otherinfo": "\ncookie:_collectif_objets_session"
-						},
-						{
-							"uri": "https://collectif-objets.beta.gouv.fr/guide-de-recensement",
-							"method": "GET",
-							"param": "_collectif_objets_session",
-							"attack": "",
-							"evidence": "9BVv2TjsQr86r7LJLP7KYDDWT46rvcWNJLw3lrR%2BzaOhqJwjAs%2FU6k4%2FgOBbPPt5JDsmodGeJfwhtlSeRQe6bs6YoqsUmj4xovgM8Iu%2Bo3axUwT4KDxXlTELMEx3srHPgQ1U1MZi7bOa%2BZXVlv%2BSMdpRuvX6vSqnELyZF%2FYbXtKIB65WlQ22xTYYHdECxJhc055GYYoMKKZRukGKrPD3w7v%2Bb%2F%2FPyZ6aXnxh07WXG2lXIHMIwDYJ2f4NPqopLckXmhnPxd%2BV9HtsvwTLKX0fBGciFQV6liv2OEurrPfo1nTg--1aSA8OTMQzH1nc%2Bt--AdZ5YucCkyMyrmjUZ7Gyig%3D%3D",
-							"otherinfo": "\ncookie:_collectif_objets_session"
-						},
-						{
-							"uri": "https://collectif-objets.beta.gouv.fr/presse",
-							"method": "GET",
-							"param": "_collectif_objets_session",
-							"attack": "",
-							"evidence": "U4gGSfov%2BP%2BtrhSQ3usEqgM6ggjYO9U17mtl%2FAL1H0ABrLMtfyzVIApUP%2F%2FNLv839jSHvm3fFdWHtlZcUcEqbCIVdXnVc2cOA%2BjH%2FHZsUAZbyd9NykNPmK4RX3amd467t8pSGoYOGjpJYT01xZ7K41u9N9lMmHMdWtf2GR6BX554Mrsnf9mt0FKx9CmvhkYUe%2F3jcIQG7aH1GSXAY1RufJSrDUg1tlYSlGNcGggZxMdseMfiAiPgvGkR7Yt0HWbDqDuKS%2BjoP%2Bf7odOdUUXTmjwlKd%2FApp4lbUZ7X2PBzixt--ry3%2BJPNd5jQfnPW%2B--fFaw2lnFhDQ8pTYbXNcMQA%3D%3D",
-							"otherinfo": "\ncookie:_collectif_objets_session"
-						},
-						{
-							"uri": "https://collectif-objets.beta.gouv.fr/stats",
-							"method": "GET",
-							"param": "_collectif_objets_session",
-							"attack": "",
-							"evidence": "j8m3h5%2BEbJaK9Vv9IU7bFLJH%2FddaRbpVBkM2JNJ%2BGFZXppyu5KCW%2F5eIPqTOtFF2cap%2F8ZnsPnBobczDJZmmHCNAZCib0yeoHVu66r%2FwuFPrJF26%2ByU3nDhdEAhxs1I0gLJ4ifTcQ0SF7WBxUGWeUSySoiD8yqgbXPp06JZHgYKmg03%2Fz1Fcyi5RBMeJo8X%2BPXZVvN%2F52NQc7ns9ROUOUepXzpQv5yEhMgBleci1z%2B1DOfb2gaddgf%2FVIfAJBW8Vz2Qv1XiCE%2Bx5R%2FighDY7VOkoPoOM53aY2SWJyBDUX3MX--EajMgFN4vVlJPRNQ--rpvdSypwMPEd0a2CQAJR3g%3D%3D",
+							"evidence": "Il3tVq%2FxBw2fKszG4d4B2%2FNI5BCNGq0LQC%2FeVjXzC%2FIWH6buWsZDEJcfYLhZyx39IJAqQLjjrkbUtUOrg3TO5gilwd4NoHqTNSDwMVf4qeVLgDIKkITR0c7vDLupGHe%2FJkp4ROMII4XLtuvNllXqjYs%2BjGueadvZ0hfrEsM6agNP9QlOwqjzXzIAfy5PgN1IbSrDCld510vSkr2MJoacEMu%2FofNiHqdNiJwFK0B9WZ59Rgzz7NLGKxSR6QXW%2B4M74UAwU1geNAOYprwy8k3gDQ9yCQTG4QUmiGSe5mzzALfc--ClLTT0xQ7nSFrCR9--RZAjx85RPNKqjlg7PmPsVg%3D%3D",
 							"otherinfo": "\ncookie:_collectif_objets_session"
 						},
 						{
@@ -1513,7 +1481,7 @@
 							"method": "GET",
 							"param": "_collectif_objets_session",
 							"attack": "",
-							"evidence": "w8z4mv3w%2F%2FFgBhk4b6f%2BRl64Kywx16acQUWMtYAsQ7MjGqb%2FIvSHTOFBpaRynM9bk5Z%2F2nWdUeQZZgeTANjlI3vVdkns%2FmkO7PL5TZgQnwdz14skxnExdBbyezMxfllzAkNftyieUpNsAuAahw1ZI0vjU6AzdRxZ37aMMMMjUBc6wHslmoxMpIxgBkXOEzoVKiYoa2G6qh9Ow7Rq0mFrfPkzEM3xaLXknUwwX2rZ44rw4IptDJCXeyXOkgJc5s%2BzcPE4Jrp%2F9DOXwW7GsEGLxHoNRyK2VnUTYuVk1A%2FELVfv--E4GWs%2BRieqnQQioC--24N6S0ilfw284U0r%2B06VAg%3D%3D",
+							"evidence": "e6r4AKFNFL7049Y%2FGPyMEkmawzANZb15Y2Chn61Q8OhietbGDg%2BEPCN3%2Bn%2BViykTB1PYvFf8ffU21XxlE0Bubk00qlle4Z41KxvgEUA1xl3hPY1Z40t%2Boo9xumrl5tf50XzxkNjwdaXUG03VaRg%2Flpc3mzxQ6P5jgqX5E6sjbJDRBenW1a4MJCf6CFiVtqJ3%2BG%2F9h2kQhF559WF7DC1Dr7yNaPnT5cw4AFvl40jBpvlH2cJTDTMpmEh2%2BfRWfrChcz5Xah6WWOwMx2pGt9EXHDC2mCsq1dy4ilp9yOoIu9nl--Q1crd9KuQZP2E6Ms--w0W%2FQExn4DJYA6xpJtQ1MA%3D%3D",
 							"otherinfo": "\ncookie:_collectif_objets_session"
 						},
 						{
@@ -1521,25 +1489,17 @@
 							"method": "GET",
 							"param": "_collectif_objets_session",
 							"attack": "",
-							"evidence": "6tjLbz5nc5T%2FdVT%2BJ7TduVTx7utoEL2fhahksYoqnUdGRsNcju3wP%2FpjT3vvuHBTlnlt%2FLpz2CZHILjI8WfA3qlXHzNvWSayhKZ7e6uezJonDZEVM3NsdU8wgj7RZmCOTXFiFunDAcUHNC9V1zkXpBquR1iCb1P%2B19lpTmJ1rXuI5kaVDXsHeBX2fDGrOHNuMbUiGkna%2BUSyGVO03eToBCBKACGF9SJE6XCavQKcJOobW4J1Ooarjp1CeRqK3gt4aR05Af5JFOQSZnYEukzSx62pZIdJbeUlsziQxRNyww8B--vCVSyL3B3W%2BPJGxi--Guc2fWlujZ08H2Ajqg9XJQ%3D%3D",
-							"otherinfo": "\ncookie:_collectif_objets_session"
-						},
-						{
-							"uri": "https://collectif-objets.beta.gouv.fr/accueil_conservateurs",
-							"method": "GET",
-							"param": "_collectif_objets_session",
-							"attack": "",
-							"evidence": "hckP6VXtgA3NuJyAnBZ3Vtzc9YGwMOwjM09%2BBBBdclNfFutWN4YbFMQ1tJYLbxUuPqsG07JuCepTOj7JFIRA68td5iNACNMYokGCJab0NlBUMjUhfDn8j0G6gIS%2FL8CjrPxwvGxlffNoMEpjz7DW7pv8HvjV4OfwyF52VgS45i32ioI6ktzMbgJwBS4EqOAcoYlrZ46s3R9tSQB0Zn99OG2TyRCBNUuhlgO16oHj46m5tqX52iSudfnxVIoK5TLN2vH2k6YXkeMNpNTqnfLfGlYWkt%2FQVDfupyTLfjR1x%2BcD--ZsmEjY0sL40ni1iz--dItchjTwB7ThUPEw%2FYMOkA%3D%3D",
+							"evidence": "bEhklyGFp7xUSrQEIQGaqjYuCf1CIPeNza%2Bnu2kLTf1S6H8VKnKdKJKJWGv1Fuu%2Fqk7VN81WOe%2FJMhL0R%2FjYS0L7oI3LRE9fnseXGiQYUQAvKNBSeKgVm9%2FTjoW2LHBCI1M%2BYDqcPVNVIz7AOS5YhQV44nGudlWf3%2F7KQV65sOA0YZNjzP40FXUta%2FBQEgojnwG4OliCqzHhdjwB4ycfOhSL9a1C2NzLfSnJU38prOnquxwqiMocKvWVmVlYBE1GxlZeLlAMxv90fhMMCsQpdM3rZgcMY7Q%2FsNnKVIDpLvFq--bg99EmV5GtmOd2aT--aJZVBn3FLwxHTLbqArtAAg%3D%3D",
 							"otherinfo": "\ncookie:_collectif_objets_session"
 						}
 					],
-					"count": "12",
+					"count": "5",
 					"solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
 					"otherinfo": "<p></p><p>cookie:_collectif_objets_session</p>",
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10049",
@@ -1614,7 +1574,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "61"
+					"sourceid": "59"
 				},
 				{
 					"pluginid": "10031",
@@ -1705,7 +1665,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html</p>",
 					"cweid": "20",
 					"wascid": "20",
-					"sourceid": "292"
+					"sourceid": "276"
 				}
 			]
 		}

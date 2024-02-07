@@ -22,6 +22,8 @@ on:
           - zap
           - ecoindex
           - dsfr
+          - declaration-a11y
+          - declaration-rgpd
   schedule:
     - cron: "0 0 * * 0" # At 00:00 on Sunday
 
@@ -283,6 +285,8 @@ jobs:
           cleanup: ${{ github.event.inputs.tool == 'all' && true || false }}
 
       - uses: actions/checkout@v4
+        with:
+          clean: false
 
       - uses: EndBug/add-and-commit@v9
         with:
@@ -291,3 +295,4 @@ jobs:
           author_email: "DashlordBetaGouvBot@incubateur.net"
           message: "update: ${{ matrix.sites.url }}"
           fetch: "--depth 50"
+          

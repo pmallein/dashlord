@@ -54,7 +54,7 @@ jobs:
       matrix:
         sites: ${{ fromJson(needs.init.outputs.sites) }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - run: |
           mkdir scans
@@ -281,6 +281,8 @@ jobs:
           url: ${{ matrix.sites.url }}
           # only clean up previous stats when all tools runned
           cleanup: ${{ github.event.inputs.tool == 'all' && true || false }}
+
+      - uses: actions/checkout@v4
 
       - uses: EndBug/add-and-commit@v9
         with:

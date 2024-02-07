@@ -284,15 +284,10 @@ jobs:
           # only clean up previous stats when all tools runned
           cleanup: ${{ github.event.inputs.tool == 'all' && true || false }}
 
-      - uses: actions/checkout@v4
-        with:
-          clean: false
-
       - uses: EndBug/add-and-commit@v9
         with:
           add: "results"
           author_name: "DashlordBetaGouvBot"
           author_email: "DashlordBetaGouvBot@incubateur.net"
           message: "update: ${{ matrix.sites.url }}"
-          fetch: "--depth 50"
           

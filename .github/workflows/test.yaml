@@ -1,24 +1,49 @@
 name: test
 
 on:
+  workflow_dispatch:
   push:
     branches: "*"
+
+
 jobs:
   init:
     runs-on: ubuntu-latest
     name: Prepare
-  
+    outputs:
+      sites: ${{ steps.init.outputs.sites }}
+      config: ${{ steps.init.outputs.config }}
+    steps:
+      - uses: actions/checkout@v2
+      - id: init
+        uses: "SocialGouv/dashlord-actions/init@v1"
+        with:
+          url: ${{ github.event.inputs.url }}
+          tool: ${{ github.event.inputs.tool }}
+
+  scans:
+    runs-on: ubuntu-latest
+    name: Scan
+    needs: init
+    continue-on-error: true
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        sites: ${{ fromJson(needs.init.outputs.sites) }}
     steps:
       - uses: actions/checkout@v4
       - run: |
-          echo "io"
+          echo "${{ matrix.sites.url }}"
           touch results/xxx
+          
+      - uses: actions/checkout@v4
       
       - uses: EndBug/add-and-commit@v9
         with:
           add: "results"
           author_name: "DashlordBetaGouvBot"
           author_email: "DashlordBetaGouvBot@incubateur.net"
-          fetch: "--depth 1"
+          fetch: "--depth 50"
          # message: "update: ${{ matrix.sites.url }}"
       #    pull: '--rebase --autostash'

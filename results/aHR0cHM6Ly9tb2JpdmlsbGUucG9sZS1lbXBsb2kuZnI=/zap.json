@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 4 Feb 2024 11:21:15",
+	"@generated": "Mon, 26 Feb 2024 21:00:30",
 	"site":[ 
 		{
 			"@name": "https://mobiville.pole-emploi.fr",
@@ -116,9 +116,9 @@
 						{
 							"uri": "https://mobiville.pole-emploi.fr",
 							"method": "GET",
-							"param": "TS014195a1",
+							"param": "TS016fc3b0",
 							"attack": "",
-							"evidence": "Set-Cookie: TS014195a1",
+							"evidence": "Set-Cookie: TS016fc3b0",
 							"otherinfo": ""
 						}
 					],
@@ -143,9 +143,9 @@
 						{
 							"uri": "https://mobiville.pole-emploi.fr",
 							"method": "GET",
-							"param": "TS014195a1",
+							"param": "TS016fc3b0",
 							"attack": "",
-							"evidence": "Set-Cookie: TS014195a1",
+							"evidence": "Set-Cookie: TS016fc3b0",
 							"otherinfo": ""
 						}
 					],
@@ -186,9 +186,9 @@
 						{
 							"uri": "https://mobiville.pole-emploi.fr",
 							"method": "GET",
-							"param": "TS014195a1",
+							"param": "TS016fc3b0",
 							"attack": "",
-							"evidence": "Set-Cookie: TS014195a1",
+							"evidence": "Set-Cookie: TS016fc3b0",
 							"otherinfo": ""
 						}
 					],
@@ -271,6 +271,33 @@
 					"sourceid": "1"
 				},
 				{
+					"pluginid": "10096",
+					"alertRef": "10096",
+					"alert": "Timestamp Disclosure - Unix",
+					"name": "Timestamp Disclosure - Unix",
+					"riskcode": "1",
+					"confidence": "1",
+					"riskdesc": "Low (Low)",
+					"desc": "<p>A timestamp was disclosed by the application/web server - Unix</p>",
+					"instances":[ 
+						{
+							"uri": "https://mobiville.pole-emploi.fr",
+							"method": "GET",
+							"param": "Set-Cookie",
+							"attack": "",
+							"evidence": "2023492362",
+							"otherinfo": "2023492362, which evaluates to: 2034-02-14 01:12:42"
+						}
+					],
+					"count": "1",
+					"solution": "<p>Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.</p>",
+					"otherinfo": "<p>2023492362, which evaluates to: 2034-02-14 01:12:42</p>",
+					"reference": "<p>https://cwe.mitre.org/data/definitions/200.html</p>",
+					"cweid": "200",
+					"wascid": "13",
+					"sourceid": "1"
+				},
+				{
 					"pluginid": "10094",
 					"alertRef": "10094-3",
 					"alert": "Base64 Disclosure",
@@ -298,6 +325,33 @@
 					"sourceid": "1"
 				},
 				{
+					"pluginid": "90033",
+					"alertRef": "90033",
+					"alert": "Loosely Scoped Cookie",
+					"name": "Loosely Scoped Cookie",
+					"riskcode": "0",
+					"confidence": "1",
+					"riskdesc": "Informational (Low)",
+					"desc": "<p>Cookies can be scoped by domain or path. This check is only concerned with domain scope.The domain scope applied to a cookie determines which domains can access it. For example, a cookie can be scoped strictly to a subdomain e.g. www.nottrusted.com, or loosely scoped to a parent domain e.g. nottrusted.com. In the latter case, any subdomain of nottrusted.com can access the cookie. Loosely scoped cookies are common in mega-applications like google.com and live.com. Cookies set from a subdomain like app.foo.bar are transmitted only to that domain by the browser. However, cookies scoped to a parent-level domain may be transmitted to the parent, or any subdomain of the parent.</p>",
+					"instances":[ 
+						{
+							"uri": "https://mobiville.pole-emploi.fr",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "The origin domain used for comparison was: \nmobiville.pole-emploi.fr\nTS016fc3b0=0150c672c3ecdfc37ddbcecbdc72317c368e1263954bee3ba511fc69c419864d3cb84c48ae96a688897ad55a53798406e479834e9b\n"
+						}
+					],
+					"count": "1",
+					"solution": "<p>Always scope cookies to a FQDN (Fully Qualified Domain Name).</p>",
+					"otherinfo": "<p>The origin domain used for comparison was: </p><p>mobiville.pole-emploi.fr</p><p>TS016fc3b0=0150c672c3ecdfc37ddbcecbdc72317c368e1263954bee3ba511fc69c419864d3cb84c48ae96a688897ad55a53798406e479834e9b</p><p></p>",
+					"reference": "<p>https://tools.ietf.org/html/rfc6265#section-4.1</p><p>https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes.html</p><p>https://code.google.com/p/browsersec/wiki/Part2#Same-origin_policy_for_cookies</p>",
+					"cweid": "565",
+					"wascid": "15",
+					"sourceid": "1"
+				},
+				{
 					"pluginid": "10109",
 					"alertRef": "10109",
 					"alert": "Modern Web Application",
@@ -312,7 +366,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script defer=\"defer\" src=\"/mobiville/static/js/main.ebfe0826.js\"></script>",
+							"evidence": "<script defer=\"defer\" src=\"/mobiville/static/js/main.e870e4db.js\"></script>",
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						}
 					],
@@ -536,15 +590,15 @@
 						{
 							"uri": "https://mobiville.pole-emploi.fr",
 							"method": "GET",
-							"param": "TS014195a1",
+							"param": "TS016fc3b0",
 							"attack": "",
-							"evidence": "0150c672c3a493e211a32e6738d422a2f58c2347b0fe87c458b0658e91973efda28ca8028949cc30a4be8af58213d5ac89a41dc3f8",
-							"otherinfo": "\ncookie:TS014195a1\ncookie:BIGipServerPOOL_Z2_PROD_MOP_HTTP"
+							"evidence": "0150c672c3ecdfc37ddbcecbdc72317c368e1263954bee3ba511fc69c419864d3cb84c48ae96a688897ad55a53798406e479834e9b",
+							"otherinfo": "\ncookie:TS016fc3b0\ncookie:BIGipServerPOOL_Z2_PROD_MOP_HTTP"
 						}
 					],
 					"count": "1",
 					"solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
-					"otherinfo": "<p></p><p>cookie:TS014195a1</p><p>cookie:BIGipServerPOOL_Z2_PROD_MOP_HTTP</p>",
+					"otherinfo": "<p></p><p>cookie:TS016fc3b0</p><p>cookie:BIGipServerPOOL_Z2_PROD_MOP_HTTP</p>",
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id</p>",
 					"cweid": "-1",
 					"wascid": "-1",

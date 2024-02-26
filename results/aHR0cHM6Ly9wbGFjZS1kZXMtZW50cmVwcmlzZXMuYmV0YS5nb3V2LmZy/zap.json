@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 4 Feb 2024 05:38:24",
+	"@generated": "Mon, 26 Feb 2024 16:27:12",
 	"site":[ 
 		{
 			"@name": "https://place-des-entreprises.beta.gouv.fr",
@@ -28,7 +28,7 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"anchor\" \"commit\" \"end_date\" \"start_date\" ]."
 						},
 						{
-							"uri": "https://place-des-entreprises.beta.gouv.fr/stats?anchor=stats-charts&commit=Filtrer&end_date=2024-02-04&start_date=2023-08-01&territory=126&theme=8",
+							"uri": "https://place-des-entreprises.beta.gouv.fr/stats?anchor=stats-charts&commit=Rechercher&end_date=2024-02-26&start_date=2023-08-01&territory=126&theme=8",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -42,7 +42,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "174"
+					"sourceid": "168"
 				},
 				{
 					"pluginid": "10055",
@@ -59,7 +59,7 @@
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
-							"evidence": "default-src 'self'; base-uri 'self'; font-src 'self' data: https://github.com https://fonts.gstatic.com; img-src 'self' data: https://jedonnemonavis.numerique.gouv.fr https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://www.google.com https://www.google.fr https://googleads.g.doubleclick.net https://www.googletagmanager.com https://www.googleadservices.com https://www.gstatic.com https://adservice.google.com 415474841.privacysandbox.googleadservices.com; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' blob: https://browser.sentry-cdn.com sentry.io https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-2TpdrpWZgBIBKqnb9t5Vmw=='; script-src-elem 'self' blob: https://browser.sentry-cdn.com sentry.io https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-2TpdrpWZgBIBKqnb9t5Vmw=='; frame-src 'self' stats.data.gouv.fr https://stats.data.gouv.fr/ browser.sentry-cdn.com https://cdn.jsdelivr.net/ https://bid.g.doubleclick.net https://tube.nocturlab.fr https://tpc.googlesyndication.com https://www.youtube-nocookie.com; connect-src 'self' *.sentry.io https://api-adresse.data.gouv.fr/ *.google.com https://adservice.google.com https://pagead2.googlesyndication.com https://tpc.googlesyndication.com https://googleads.g.doubleclick.net https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://www.googletagmanager.com https://browser.sentry-cdn.com https://cdn.jsdelivr.net/; report-uri https://o548798.ingest.sentry.io/api/5747178/security/?sentry_key=d975e83e2bee46cd8b3ca7be531a0a6b",
+							"evidence": "default-src 'self'; base-uri 'self'; font-src 'self' data: https://github.com https://fonts.gstatic.com; img-src 'self' data: https://jedonnemonavis.numerique.gouv.fr stats.data.gouv.fr https://stats.beta.gouv.fr/ https://www.google.com https://www.google.fr https://googleads.g.doubleclick.net https://www.googletagmanager.com https://www.googleadservices.com https://www.gstatic.com https://adservice.google.com 415474841.privacysandbox.googleadservices.com; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' blob: https://browser.sentry-cdn.com sentry.io stats.data.gouv.fr https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-R4RclynxxxQVTgVkM9skJQ=='; script-src-elem 'self' blob: https://browser.sentry-cdn.com sentry.io stats.data.gouv.fr https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-R4RclynxxxQVTgVkM9skJQ=='; frame-src 'self' stats.data.gouv.fr stats.beta.gouv.fr browser.sentry-cdn.com https://cdn.jsdelivr.net/ https://bid.g.doubleclick.net https://tube.nocturlab.fr https://tpc.googlesyndication.com https://www.youtube-nocookie.com; connect-src 'self' *.sentry.io https://api-adresse.data.gouv.fr/ *.google.com https://adservice.google.com https://pagead2.googlesyndication.com https://tpc.googlesyndication.com https://googleads.g.doubleclick.net stats.data.gouv.fr https://stats.beta.gouv.fr/ https://www.googletagmanager.com https://browser.sentry-cdn.com https://cdn.jsdelivr.net/; report-uri https://o548798.ingest.sentry.io/api/5747178/security/?sentry_key=d975e83e2bee46cd8b3ca7be531a0a6b",
 							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nframe-ancestors, form-action\n\nThe directive(s): frame-ancestors, form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything."
 						},
 						{
@@ -67,7 +67,7 @@
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
-							"evidence": "default-src 'self'; base-uri 'self'; font-src 'self' data: https://github.com https://fonts.gstatic.com; img-src 'self' data: https://jedonnemonavis.numerique.gouv.fr https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://www.google.com https://www.google.fr https://googleads.g.doubleclick.net https://www.googletagmanager.com https://www.googleadservices.com https://www.gstatic.com https://adservice.google.com 415474841.privacysandbox.googleadservices.com; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' blob: https://browser.sentry-cdn.com sentry.io https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-Lu5NkDFIHo7Wz2jxoa8NCA=='; script-src-elem 'self' blob: https://browser.sentry-cdn.com sentry.io https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-Lu5NkDFIHo7Wz2jxoa8NCA=='; frame-src 'self' stats.data.gouv.fr https://stats.data.gouv.fr/ browser.sentry-cdn.com https://cdn.jsdelivr.net/ https://bid.g.doubleclick.net https://tube.nocturlab.fr https://tpc.googlesyndication.com https://www.youtube-nocookie.com; connect-src 'self' *.sentry.io https://api-adresse.data.gouv.fr/ *.google.com https://adservice.google.com https://pagead2.googlesyndication.com https://tpc.googlesyndication.com https://googleads.g.doubleclick.net https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://www.googletagmanager.com https://browser.sentry-cdn.com https://cdn.jsdelivr.net/; report-uri https://o548798.ingest.sentry.io/api/5747178/security/?sentry_key=d975e83e2bee46cd8b3ca7be531a0a6b",
+							"evidence": "default-src 'self'; base-uri 'self'; font-src 'self' data: https://github.com https://fonts.gstatic.com; img-src 'self' data: https://jedonnemonavis.numerique.gouv.fr stats.data.gouv.fr https://stats.beta.gouv.fr/ https://www.google.com https://www.google.fr https://googleads.g.doubleclick.net https://www.googletagmanager.com https://www.googleadservices.com https://www.gstatic.com https://adservice.google.com 415474841.privacysandbox.googleadservices.com; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' blob: https://browser.sentry-cdn.com sentry.io stats.data.gouv.fr https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-cHOyirN2N2wFtIKJJjDwHA=='; script-src-elem 'self' blob: https://browser.sentry-cdn.com sentry.io stats.data.gouv.fr https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-cHOyirN2N2wFtIKJJjDwHA=='; frame-src 'self' stats.data.gouv.fr stats.beta.gouv.fr browser.sentry-cdn.com https://cdn.jsdelivr.net/ https://bid.g.doubleclick.net https://tube.nocturlab.fr https://tpc.googlesyndication.com https://www.youtube-nocookie.com; connect-src 'self' *.sentry.io https://api-adresse.data.gouv.fr/ *.google.com https://adservice.google.com https://pagead2.googlesyndication.com https://tpc.googlesyndication.com https://googleads.g.doubleclick.net stats.data.gouv.fr https://stats.beta.gouv.fr/ https://www.googletagmanager.com https://browser.sentry-cdn.com https://cdn.jsdelivr.net/; report-uri https://o548798.ingest.sentry.io/api/5747178/security/?sentry_key=d975e83e2bee46cd8b3ca7be531a0a6b",
 							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nframe-ancestors, form-action\n\nThe directive(s): frame-ancestors, form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything."
 						},
 						{
@@ -75,7 +75,7 @@
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
-							"evidence": "default-src 'self'; base-uri 'self'; font-src 'self' data: https://github.com https://fonts.gstatic.com; img-src 'self' data: https://jedonnemonavis.numerique.gouv.fr https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://www.google.com https://www.google.fr https://googleads.g.doubleclick.net https://www.googletagmanager.com https://www.googleadservices.com https://www.gstatic.com https://adservice.google.com 415474841.privacysandbox.googleadservices.com; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' blob: https://browser.sentry-cdn.com sentry.io https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-nSqUditRAJ/HYtzzSDWZzA=='; script-src-elem 'self' blob: https://browser.sentry-cdn.com sentry.io https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-nSqUditRAJ/HYtzzSDWZzA=='; frame-src 'self' stats.data.gouv.fr https://stats.data.gouv.fr/ browser.sentry-cdn.com https://cdn.jsdelivr.net/ https://bid.g.doubleclick.net https://tube.nocturlab.fr https://tpc.googlesyndication.com https://www.youtube-nocookie.com; connect-src 'self' *.sentry.io https://api-adresse.data.gouv.fr/ *.google.com https://adservice.google.com https://pagead2.googlesyndication.com https://tpc.googlesyndication.com https://googleads.g.doubleclick.net https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://www.googletagmanager.com https://browser.sentry-cdn.com https://cdn.jsdelivr.net/; report-uri https://o548798.ingest.sentry.io/api/5747178/security/?sentry_key=d975e83e2bee46cd8b3ca7be531a0a6b",
+							"evidence": "default-src 'self'; base-uri 'self'; font-src 'self' data: https://github.com https://fonts.gstatic.com; img-src 'self' data: https://jedonnemonavis.numerique.gouv.fr stats.data.gouv.fr https://stats.beta.gouv.fr/ https://www.google.com https://www.google.fr https://googleads.g.doubleclick.net https://www.googletagmanager.com https://www.googleadservices.com https://www.gstatic.com https://adservice.google.com 415474841.privacysandbox.googleadservices.com; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' blob: https://browser.sentry-cdn.com sentry.io stats.data.gouv.fr https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-Ps/tGqKiRVERf/NjfBz9Qw=='; script-src-elem 'self' blob: https://browser.sentry-cdn.com sentry.io stats.data.gouv.fr https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-Ps/tGqKiRVERf/NjfBz9Qw=='; frame-src 'self' stats.data.gouv.fr stats.beta.gouv.fr browser.sentry-cdn.com https://cdn.jsdelivr.net/ https://bid.g.doubleclick.net https://tube.nocturlab.fr https://tpc.googlesyndication.com https://www.youtube-nocookie.com; connect-src 'self' *.sentry.io https://api-adresse.data.gouv.fr/ *.google.com https://adservice.google.com https://pagead2.googlesyndication.com https://tpc.googlesyndication.com https://googleads.g.doubleclick.net stats.data.gouv.fr https://stats.beta.gouv.fr/ https://www.googletagmanager.com https://browser.sentry-cdn.com https://cdn.jsdelivr.net/; report-uri https://o548798.ingest.sentry.io/api/5747178/security/?sentry_key=d975e83e2bee46cd8b3ca7be531a0a6b",
 							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nframe-ancestors, form-action\n\nThe directive(s): frame-ancestors, form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything."
 						},
 						{
@@ -83,7 +83,7 @@
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
-							"evidence": "default-src 'self'; base-uri 'self'; font-src 'self' data: https://github.com https://fonts.gstatic.com; img-src 'self' data: https://jedonnemonavis.numerique.gouv.fr https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://www.google.com https://www.google.fr https://googleads.g.doubleclick.net https://www.googletagmanager.com https://www.googleadservices.com https://www.gstatic.com https://adservice.google.com 415474841.privacysandbox.googleadservices.com; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' blob: https://browser.sentry-cdn.com sentry.io https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-+SXkatw7tUFMwXEOnaFy/g=='; script-src-elem 'self' blob: https://browser.sentry-cdn.com sentry.io https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-+SXkatw7tUFMwXEOnaFy/g=='; frame-src 'self' stats.data.gouv.fr https://stats.data.gouv.fr/ browser.sentry-cdn.com https://cdn.jsdelivr.net/ https://bid.g.doubleclick.net https://tube.nocturlab.fr https://tpc.googlesyndication.com https://www.youtube-nocookie.com; connect-src 'self' *.sentry.io https://api-adresse.data.gouv.fr/ *.google.com https://adservice.google.com https://pagead2.googlesyndication.com https://tpc.googlesyndication.com https://googleads.g.doubleclick.net https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://www.googletagmanager.com https://browser.sentry-cdn.com https://cdn.jsdelivr.net/; report-uri https://o548798.ingest.sentry.io/api/5747178/security/?sentry_key=d975e83e2bee46cd8b3ca7be531a0a6b",
+							"evidence": "default-src 'self'; base-uri 'self'; font-src 'self' data: https://github.com https://fonts.gstatic.com; img-src 'self' data: https://jedonnemonavis.numerique.gouv.fr stats.data.gouv.fr https://stats.beta.gouv.fr/ https://www.google.com https://www.google.fr https://googleads.g.doubleclick.net https://www.googletagmanager.com https://www.googleadservices.com https://www.gstatic.com https://adservice.google.com 415474841.privacysandbox.googleadservices.com; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' blob: https://browser.sentry-cdn.com sentry.io stats.data.gouv.fr https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-EV3zXnauJ02dKmgeXsCH4A=='; script-src-elem 'self' blob: https://browser.sentry-cdn.com sentry.io stats.data.gouv.fr https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-EV3zXnauJ02dKmgeXsCH4A=='; frame-src 'self' stats.data.gouv.fr stats.beta.gouv.fr browser.sentry-cdn.com https://cdn.jsdelivr.net/ https://bid.g.doubleclick.net https://tube.nocturlab.fr https://tpc.googlesyndication.com https://www.youtube-nocookie.com; connect-src 'self' *.sentry.io https://api-adresse.data.gouv.fr/ *.google.com https://adservice.google.com https://pagead2.googlesyndication.com https://tpc.googlesyndication.com https://googleads.g.doubleclick.net stats.data.gouv.fr https://stats.beta.gouv.fr/ https://www.googletagmanager.com https://browser.sentry-cdn.com https://cdn.jsdelivr.net/; report-uri https://o548798.ingest.sentry.io/api/5747178/security/?sentry_key=d975e83e2bee46cd8b3ca7be531a0a6b",
 							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nframe-ancestors, form-action\n\nThe directive(s): frame-ancestors, form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything."
 						}
 					],
@@ -110,7 +110,7 @@
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
-							"evidence": "default-src 'self'; base-uri 'self'; font-src 'self' data: https://github.com https://fonts.gstatic.com; img-src 'self' data: https://jedonnemonavis.numerique.gouv.fr https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://www.google.com https://www.google.fr https://googleads.g.doubleclick.net https://www.googletagmanager.com https://www.googleadservices.com https://www.gstatic.com https://adservice.google.com 415474841.privacysandbox.googleadservices.com; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' blob: https://browser.sentry-cdn.com sentry.io https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-2TpdrpWZgBIBKqnb9t5Vmw=='; script-src-elem 'self' blob: https://browser.sentry-cdn.com sentry.io https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-2TpdrpWZgBIBKqnb9t5Vmw=='; frame-src 'self' stats.data.gouv.fr https://stats.data.gouv.fr/ browser.sentry-cdn.com https://cdn.jsdelivr.net/ https://bid.g.doubleclick.net https://tube.nocturlab.fr https://tpc.googlesyndication.com https://www.youtube-nocookie.com; connect-src 'self' *.sentry.io https://api-adresse.data.gouv.fr/ *.google.com https://adservice.google.com https://pagead2.googlesyndication.com https://tpc.googlesyndication.com https://googleads.g.doubleclick.net https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://www.googletagmanager.com https://browser.sentry-cdn.com https://cdn.jsdelivr.net/; report-uri https://o548798.ingest.sentry.io/api/5747178/security/?sentry_key=d975e83e2bee46cd8b3ca7be531a0a6b",
+							"evidence": "default-src 'self'; base-uri 'self'; font-src 'self' data: https://github.com https://fonts.gstatic.com; img-src 'self' data: https://jedonnemonavis.numerique.gouv.fr stats.data.gouv.fr https://stats.beta.gouv.fr/ https://www.google.com https://www.google.fr https://googleads.g.doubleclick.net https://www.googletagmanager.com https://www.googleadservices.com https://www.gstatic.com https://adservice.google.com 415474841.privacysandbox.googleadservices.com; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' blob: https://browser.sentry-cdn.com sentry.io stats.data.gouv.fr https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-R4RclynxxxQVTgVkM9skJQ=='; script-src-elem 'self' blob: https://browser.sentry-cdn.com sentry.io stats.data.gouv.fr https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-R4RclynxxxQVTgVkM9skJQ=='; frame-src 'self' stats.data.gouv.fr stats.beta.gouv.fr browser.sentry-cdn.com https://cdn.jsdelivr.net/ https://bid.g.doubleclick.net https://tube.nocturlab.fr https://tpc.googlesyndication.com https://www.youtube-nocookie.com; connect-src 'self' *.sentry.io https://api-adresse.data.gouv.fr/ *.google.com https://adservice.google.com https://pagead2.googlesyndication.com https://tpc.googlesyndication.com https://googleads.g.doubleclick.net stats.data.gouv.fr https://stats.beta.gouv.fr/ https://www.googletagmanager.com https://browser.sentry-cdn.com https://cdn.jsdelivr.net/; report-uri https://o548798.ingest.sentry.io/api/5747178/security/?sentry_key=d975e83e2bee46cd8b3ca7be531a0a6b",
 							"otherinfo": "style-src includes unsafe-inline."
 						},
 						{
@@ -118,7 +118,7 @@
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
-							"evidence": "default-src 'self'; base-uri 'self'; font-src 'self' data: https://github.com https://fonts.gstatic.com; img-src 'self' data: https://jedonnemonavis.numerique.gouv.fr https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://www.google.com https://www.google.fr https://googleads.g.doubleclick.net https://www.googletagmanager.com https://www.googleadservices.com https://www.gstatic.com https://adservice.google.com 415474841.privacysandbox.googleadservices.com; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' blob: https://browser.sentry-cdn.com sentry.io https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-Lu5NkDFIHo7Wz2jxoa8NCA=='; script-src-elem 'self' blob: https://browser.sentry-cdn.com sentry.io https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-Lu5NkDFIHo7Wz2jxoa8NCA=='; frame-src 'self' stats.data.gouv.fr https://stats.data.gouv.fr/ browser.sentry-cdn.com https://cdn.jsdelivr.net/ https://bid.g.doubleclick.net https://tube.nocturlab.fr https://tpc.googlesyndication.com https://www.youtube-nocookie.com; connect-src 'self' *.sentry.io https://api-adresse.data.gouv.fr/ *.google.com https://adservice.google.com https://pagead2.googlesyndication.com https://tpc.googlesyndication.com https://googleads.g.doubleclick.net https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://www.googletagmanager.com https://browser.sentry-cdn.com https://cdn.jsdelivr.net/; report-uri https://o548798.ingest.sentry.io/api/5747178/security/?sentry_key=d975e83e2bee46cd8b3ca7be531a0a6b",
+							"evidence": "default-src 'self'; base-uri 'self'; font-src 'self' data: https://github.com https://fonts.gstatic.com; img-src 'self' data: https://jedonnemonavis.numerique.gouv.fr stats.data.gouv.fr https://stats.beta.gouv.fr/ https://www.google.com https://www.google.fr https://googleads.g.doubleclick.net https://www.googletagmanager.com https://www.googleadservices.com https://www.gstatic.com https://adservice.google.com 415474841.privacysandbox.googleadservices.com; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' blob: https://browser.sentry-cdn.com sentry.io stats.data.gouv.fr https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-cHOyirN2N2wFtIKJJjDwHA=='; script-src-elem 'self' blob: https://browser.sentry-cdn.com sentry.io stats.data.gouv.fr https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-cHOyirN2N2wFtIKJJjDwHA=='; frame-src 'self' stats.data.gouv.fr stats.beta.gouv.fr browser.sentry-cdn.com https://cdn.jsdelivr.net/ https://bid.g.doubleclick.net https://tube.nocturlab.fr https://tpc.googlesyndication.com https://www.youtube-nocookie.com; connect-src 'self' *.sentry.io https://api-adresse.data.gouv.fr/ *.google.com https://adservice.google.com https://pagead2.googlesyndication.com https://tpc.googlesyndication.com https://googleads.g.doubleclick.net stats.data.gouv.fr https://stats.beta.gouv.fr/ https://www.googletagmanager.com https://browser.sentry-cdn.com https://cdn.jsdelivr.net/; report-uri https://o548798.ingest.sentry.io/api/5747178/security/?sentry_key=d975e83e2bee46cd8b3ca7be531a0a6b",
 							"otherinfo": "style-src includes unsafe-inline."
 						},
 						{
@@ -126,7 +126,7 @@
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
-							"evidence": "default-src 'self'; base-uri 'self'; font-src 'self' data: https://github.com https://fonts.gstatic.com; img-src 'self' data: https://jedonnemonavis.numerique.gouv.fr https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://www.google.com https://www.google.fr https://googleads.g.doubleclick.net https://www.googletagmanager.com https://www.googleadservices.com https://www.gstatic.com https://adservice.google.com 415474841.privacysandbox.googleadservices.com; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' blob: https://browser.sentry-cdn.com sentry.io https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-nSqUditRAJ/HYtzzSDWZzA=='; script-src-elem 'self' blob: https://browser.sentry-cdn.com sentry.io https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-nSqUditRAJ/HYtzzSDWZzA=='; frame-src 'self' stats.data.gouv.fr https://stats.data.gouv.fr/ browser.sentry-cdn.com https://cdn.jsdelivr.net/ https://bid.g.doubleclick.net https://tube.nocturlab.fr https://tpc.googlesyndication.com https://www.youtube-nocookie.com; connect-src 'self' *.sentry.io https://api-adresse.data.gouv.fr/ *.google.com https://adservice.google.com https://pagead2.googlesyndication.com https://tpc.googlesyndication.com https://googleads.g.doubleclick.net https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://www.googletagmanager.com https://browser.sentry-cdn.com https://cdn.jsdelivr.net/; report-uri https://o548798.ingest.sentry.io/api/5747178/security/?sentry_key=d975e83e2bee46cd8b3ca7be531a0a6b",
+							"evidence": "default-src 'self'; base-uri 'self'; font-src 'self' data: https://github.com https://fonts.gstatic.com; img-src 'self' data: https://jedonnemonavis.numerique.gouv.fr stats.data.gouv.fr https://stats.beta.gouv.fr/ https://www.google.com https://www.google.fr https://googleads.g.doubleclick.net https://www.googletagmanager.com https://www.googleadservices.com https://www.gstatic.com https://adservice.google.com 415474841.privacysandbox.googleadservices.com; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' blob: https://browser.sentry-cdn.com sentry.io stats.data.gouv.fr https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-Ps/tGqKiRVERf/NjfBz9Qw=='; script-src-elem 'self' blob: https://browser.sentry-cdn.com sentry.io stats.data.gouv.fr https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-Ps/tGqKiRVERf/NjfBz9Qw=='; frame-src 'self' stats.data.gouv.fr stats.beta.gouv.fr browser.sentry-cdn.com https://cdn.jsdelivr.net/ https://bid.g.doubleclick.net https://tube.nocturlab.fr https://tpc.googlesyndication.com https://www.youtube-nocookie.com; connect-src 'self' *.sentry.io https://api-adresse.data.gouv.fr/ *.google.com https://adservice.google.com https://pagead2.googlesyndication.com https://tpc.googlesyndication.com https://googleads.g.doubleclick.net stats.data.gouv.fr https://stats.beta.gouv.fr/ https://www.googletagmanager.com https://browser.sentry-cdn.com https://cdn.jsdelivr.net/; report-uri https://o548798.ingest.sentry.io/api/5747178/security/?sentry_key=d975e83e2bee46cd8b3ca7be531a0a6b",
 							"otherinfo": "style-src includes unsafe-inline."
 						},
 						{
@@ -134,7 +134,7 @@
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
-							"evidence": "default-src 'self'; base-uri 'self'; font-src 'self' data: https://github.com https://fonts.gstatic.com; img-src 'self' data: https://jedonnemonavis.numerique.gouv.fr https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://www.google.com https://www.google.fr https://googleads.g.doubleclick.net https://www.googletagmanager.com https://www.googleadservices.com https://www.gstatic.com https://adservice.google.com 415474841.privacysandbox.googleadservices.com; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' blob: https://browser.sentry-cdn.com sentry.io https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-+SXkatw7tUFMwXEOnaFy/g=='; script-src-elem 'self' blob: https://browser.sentry-cdn.com sentry.io https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-+SXkatw7tUFMwXEOnaFy/g=='; frame-src 'self' stats.data.gouv.fr https://stats.data.gouv.fr/ browser.sentry-cdn.com https://cdn.jsdelivr.net/ https://bid.g.doubleclick.net https://tube.nocturlab.fr https://tpc.googlesyndication.com https://www.youtube-nocookie.com; connect-src 'self' *.sentry.io https://api-adresse.data.gouv.fr/ *.google.com https://adservice.google.com https://pagead2.googlesyndication.com https://tpc.googlesyndication.com https://googleads.g.doubleclick.net https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://www.googletagmanager.com https://browser.sentry-cdn.com https://cdn.jsdelivr.net/; report-uri https://o548798.ingest.sentry.io/api/5747178/security/?sentry_key=d975e83e2bee46cd8b3ca7be531a0a6b",
+							"evidence": "default-src 'self'; base-uri 'self'; font-src 'self' data: https://github.com https://fonts.gstatic.com; img-src 'self' data: https://jedonnemonavis.numerique.gouv.fr stats.data.gouv.fr https://stats.beta.gouv.fr/ https://www.google.com https://www.google.fr https://googleads.g.doubleclick.net https://www.googletagmanager.com https://www.googleadservices.com https://www.gstatic.com https://adservice.google.com 415474841.privacysandbox.googleadservices.com; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' blob: https://browser.sentry-cdn.com sentry.io stats.data.gouv.fr https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-EV3zXnauJ02dKmgeXsCH4A=='; script-src-elem 'self' blob: https://browser.sentry-cdn.com sentry.io stats.data.gouv.fr https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-EV3zXnauJ02dKmgeXsCH4A=='; frame-src 'self' stats.data.gouv.fr stats.beta.gouv.fr browser.sentry-cdn.com https://cdn.jsdelivr.net/ https://bid.g.doubleclick.net https://tube.nocturlab.fr https://tpc.googlesyndication.com https://www.youtube-nocookie.com; connect-src 'self' *.sentry.io https://api-adresse.data.gouv.fr/ *.google.com https://adservice.google.com https://pagead2.googlesyndication.com https://tpc.googlesyndication.com https://googleads.g.doubleclick.net stats.data.gouv.fr https://stats.beta.gouv.fr/ https://www.googletagmanager.com https://browser.sentry-cdn.com https://cdn.jsdelivr.net/; report-uri https://o548798.ingest.sentry.io/api/5747178/security/?sentry_key=d975e83e2bee46cd8b3ca7be531a0a6b",
 							"otherinfo": "style-src includes unsafe-inline."
 						}
 					],
@@ -171,7 +171,7 @@
 					"reference": "<p>https://github.com/advisories/GHSA-gr4j-r575-g665</p><p>https://security.snyk.io/vuln/SNYK-JS-HIGHCHARTS-1290057</p><p>https://github.com/highcharts/highcharts/issues/13559</p><p></p>",
 					"cweid": "829",
 					"wascid": "-1",
-					"sourceid": "352"
+					"sourceid": "344"
 				},
 				{
 					"pluginid": "10055",
@@ -188,7 +188,7 @@
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
-							"evidence": "default-src 'self'; base-uri 'self'; font-src 'self' data: https://github.com https://fonts.gstatic.com; img-src 'self' data: https://jedonnemonavis.numerique.gouv.fr https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://www.google.com https://www.google.fr https://googleads.g.doubleclick.net https://www.googletagmanager.com https://www.googleadservices.com https://www.gstatic.com https://adservice.google.com 415474841.privacysandbox.googleadservices.com; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' blob: https://browser.sentry-cdn.com sentry.io https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-2TpdrpWZgBIBKqnb9t5Vmw=='; script-src-elem 'self' blob: https://browser.sentry-cdn.com sentry.io https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-2TpdrpWZgBIBKqnb9t5Vmw=='; frame-src 'self' stats.data.gouv.fr https://stats.data.gouv.fr/ browser.sentry-cdn.com https://cdn.jsdelivr.net/ https://bid.g.doubleclick.net https://tube.nocturlab.fr https://tpc.googlesyndication.com https://www.youtube-nocookie.com; connect-src 'self' *.sentry.io https://api-adresse.data.gouv.fr/ *.google.com https://adservice.google.com https://pagead2.googlesyndication.com https://tpc.googlesyndication.com https://googleads.g.doubleclick.net https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://www.googletagmanager.com https://browser.sentry-cdn.com https://cdn.jsdelivr.net/; report-uri https://o548798.ingest.sentry.io/api/5747178/security/?sentry_key=d975e83e2bee46cd8b3ca7be531a0a6b",
+							"evidence": "default-src 'self'; base-uri 'self'; font-src 'self' data: https://github.com https://fonts.gstatic.com; img-src 'self' data: https://jedonnemonavis.numerique.gouv.fr stats.data.gouv.fr https://stats.beta.gouv.fr/ https://www.google.com https://www.google.fr https://googleads.g.doubleclick.net https://www.googletagmanager.com https://www.googleadservices.com https://www.gstatic.com https://adservice.google.com 415474841.privacysandbox.googleadservices.com; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' blob: https://browser.sentry-cdn.com sentry.io stats.data.gouv.fr https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-R4RclynxxxQVTgVkM9skJQ=='; script-src-elem 'self' blob: https://browser.sentry-cdn.com sentry.io stats.data.gouv.fr https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-R4RclynxxxQVTgVkM9skJQ=='; frame-src 'self' stats.data.gouv.fr stats.beta.gouv.fr browser.sentry-cdn.com https://cdn.jsdelivr.net/ https://bid.g.doubleclick.net https://tube.nocturlab.fr https://tpc.googlesyndication.com https://www.youtube-nocookie.com; connect-src 'self' *.sentry.io https://api-adresse.data.gouv.fr/ *.google.com https://adservice.google.com https://pagead2.googlesyndication.com https://tpc.googlesyndication.com https://googleads.g.doubleclick.net stats.data.gouv.fr https://stats.beta.gouv.fr/ https://www.googletagmanager.com https://browser.sentry-cdn.com https://cdn.jsdelivr.net/; report-uri https://o548798.ingest.sentry.io/api/5747178/security/?sentry_key=d975e83e2bee46cd8b3ca7be531a0a6b",
 							"otherinfo": "Warnings:\nThe report-uri directive has been deprecated in favor of the new report-to directive\n"
 						},
 						{
@@ -196,7 +196,7 @@
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
-							"evidence": "default-src 'self'; base-uri 'self'; font-src 'self' data: https://github.com https://fonts.gstatic.com; img-src 'self' data: https://jedonnemonavis.numerique.gouv.fr https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://www.google.com https://www.google.fr https://googleads.g.doubleclick.net https://www.googletagmanager.com https://www.googleadservices.com https://www.gstatic.com https://adservice.google.com 415474841.privacysandbox.googleadservices.com; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' blob: https://browser.sentry-cdn.com sentry.io https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-Lu5NkDFIHo7Wz2jxoa8NCA=='; script-src-elem 'self' blob: https://browser.sentry-cdn.com sentry.io https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-Lu5NkDFIHo7Wz2jxoa8NCA=='; frame-src 'self' stats.data.gouv.fr https://stats.data.gouv.fr/ browser.sentry-cdn.com https://cdn.jsdelivr.net/ https://bid.g.doubleclick.net https://tube.nocturlab.fr https://tpc.googlesyndication.com https://www.youtube-nocookie.com; connect-src 'self' *.sentry.io https://api-adresse.data.gouv.fr/ *.google.com https://adservice.google.com https://pagead2.googlesyndication.com https://tpc.googlesyndication.com https://googleads.g.doubleclick.net https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://www.googletagmanager.com https://browser.sentry-cdn.com https://cdn.jsdelivr.net/; report-uri https://o548798.ingest.sentry.io/api/5747178/security/?sentry_key=d975e83e2bee46cd8b3ca7be531a0a6b",
+							"evidence": "default-src 'self'; base-uri 'self'; font-src 'self' data: https://github.com https://fonts.gstatic.com; img-src 'self' data: https://jedonnemonavis.numerique.gouv.fr stats.data.gouv.fr https://stats.beta.gouv.fr/ https://www.google.com https://www.google.fr https://googleads.g.doubleclick.net https://www.googletagmanager.com https://www.googleadservices.com https://www.gstatic.com https://adservice.google.com 415474841.privacysandbox.googleadservices.com; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' blob: https://browser.sentry-cdn.com sentry.io stats.data.gouv.fr https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-cHOyirN2N2wFtIKJJjDwHA=='; script-src-elem 'self' blob: https://browser.sentry-cdn.com sentry.io stats.data.gouv.fr https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-cHOyirN2N2wFtIKJJjDwHA=='; frame-src 'self' stats.data.gouv.fr stats.beta.gouv.fr browser.sentry-cdn.com https://cdn.jsdelivr.net/ https://bid.g.doubleclick.net https://tube.nocturlab.fr https://tpc.googlesyndication.com https://www.youtube-nocookie.com; connect-src 'self' *.sentry.io https://api-adresse.data.gouv.fr/ *.google.com https://adservice.google.com https://pagead2.googlesyndication.com https://tpc.googlesyndication.com https://googleads.g.doubleclick.net stats.data.gouv.fr https://stats.beta.gouv.fr/ https://www.googletagmanager.com https://browser.sentry-cdn.com https://cdn.jsdelivr.net/; report-uri https://o548798.ingest.sentry.io/api/5747178/security/?sentry_key=d975e83e2bee46cd8b3ca7be531a0a6b",
 							"otherinfo": "Warnings:\nThe report-uri directive has been deprecated in favor of the new report-to directive\n"
 						},
 						{
@@ -204,7 +204,7 @@
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
-							"evidence": "default-src 'self'; base-uri 'self'; font-src 'self' data: https://github.com https://fonts.gstatic.com; img-src 'self' data: https://jedonnemonavis.numerique.gouv.fr https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://www.google.com https://www.google.fr https://googleads.g.doubleclick.net https://www.googletagmanager.com https://www.googleadservices.com https://www.gstatic.com https://adservice.google.com 415474841.privacysandbox.googleadservices.com; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' blob: https://browser.sentry-cdn.com sentry.io https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-nSqUditRAJ/HYtzzSDWZzA=='; script-src-elem 'self' blob: https://browser.sentry-cdn.com sentry.io https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-nSqUditRAJ/HYtzzSDWZzA=='; frame-src 'self' stats.data.gouv.fr https://stats.data.gouv.fr/ browser.sentry-cdn.com https://cdn.jsdelivr.net/ https://bid.g.doubleclick.net https://tube.nocturlab.fr https://tpc.googlesyndication.com https://www.youtube-nocookie.com; connect-src 'self' *.sentry.io https://api-adresse.data.gouv.fr/ *.google.com https://adservice.google.com https://pagead2.googlesyndication.com https://tpc.googlesyndication.com https://googleads.g.doubleclick.net https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://www.googletagmanager.com https://browser.sentry-cdn.com https://cdn.jsdelivr.net/; report-uri https://o548798.ingest.sentry.io/api/5747178/security/?sentry_key=d975e83e2bee46cd8b3ca7be531a0a6b",
+							"evidence": "default-src 'self'; base-uri 'self'; font-src 'self' data: https://github.com https://fonts.gstatic.com; img-src 'self' data: https://jedonnemonavis.numerique.gouv.fr stats.data.gouv.fr https://stats.beta.gouv.fr/ https://www.google.com https://www.google.fr https://googleads.g.doubleclick.net https://www.googletagmanager.com https://www.googleadservices.com https://www.gstatic.com https://adservice.google.com 415474841.privacysandbox.googleadservices.com; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' blob: https://browser.sentry-cdn.com sentry.io stats.data.gouv.fr https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-Ps/tGqKiRVERf/NjfBz9Qw=='; script-src-elem 'self' blob: https://browser.sentry-cdn.com sentry.io stats.data.gouv.fr https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-Ps/tGqKiRVERf/NjfBz9Qw=='; frame-src 'self' stats.data.gouv.fr stats.beta.gouv.fr browser.sentry-cdn.com https://cdn.jsdelivr.net/ https://bid.g.doubleclick.net https://tube.nocturlab.fr https://tpc.googlesyndication.com https://www.youtube-nocookie.com; connect-src 'self' *.sentry.io https://api-adresse.data.gouv.fr/ *.google.com https://adservice.google.com https://pagead2.googlesyndication.com https://tpc.googlesyndication.com https://googleads.g.doubleclick.net stats.data.gouv.fr https://stats.beta.gouv.fr/ https://www.googletagmanager.com https://browser.sentry-cdn.com https://cdn.jsdelivr.net/; report-uri https://o548798.ingest.sentry.io/api/5747178/security/?sentry_key=d975e83e2bee46cd8b3ca7be531a0a6b",
 							"otherinfo": "Warnings:\nThe report-uri directive has been deprecated in favor of the new report-to directive\n"
 						},
 						{
@@ -212,7 +212,7 @@
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
-							"evidence": "default-src 'self'; base-uri 'self'; font-src 'self' data: https://github.com https://fonts.gstatic.com; img-src 'self' data: https://jedonnemonavis.numerique.gouv.fr https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://www.google.com https://www.google.fr https://googleads.g.doubleclick.net https://www.googletagmanager.com https://www.googleadservices.com https://www.gstatic.com https://adservice.google.com 415474841.privacysandbox.googleadservices.com; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' blob: https://browser.sentry-cdn.com sentry.io https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-+SXkatw7tUFMwXEOnaFy/g=='; script-src-elem 'self' blob: https://browser.sentry-cdn.com sentry.io https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-+SXkatw7tUFMwXEOnaFy/g=='; frame-src 'self' stats.data.gouv.fr https://stats.data.gouv.fr/ browser.sentry-cdn.com https://cdn.jsdelivr.net/ https://bid.g.doubleclick.net https://tube.nocturlab.fr https://tpc.googlesyndication.com https://www.youtube-nocookie.com; connect-src 'self' *.sentry.io https://api-adresse.data.gouv.fr/ *.google.com https://adservice.google.com https://pagead2.googlesyndication.com https://tpc.googlesyndication.com https://googleads.g.doubleclick.net https://stats.data.gouv.fr/ https://stats.beta.gouv.fr/ https://www.googletagmanager.com https://browser.sentry-cdn.com https://cdn.jsdelivr.net/; report-uri https://o548798.ingest.sentry.io/api/5747178/security/?sentry_key=d975e83e2bee46cd8b3ca7be531a0a6b",
+							"evidence": "default-src 'self'; base-uri 'self'; font-src 'self' data: https://github.com https://fonts.gstatic.com; img-src 'self' data: https://jedonnemonavis.numerique.gouv.fr stats.data.gouv.fr https://stats.beta.gouv.fr/ https://www.google.com https://www.google.fr https://googleads.g.doubleclick.net https://www.googletagmanager.com https://www.googleadservices.com https://www.gstatic.com https://adservice.google.com 415474841.privacysandbox.googleadservices.com; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' blob: https://browser.sentry-cdn.com sentry.io stats.data.gouv.fr https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-EV3zXnauJ02dKmgeXsCH4A=='; script-src-elem 'self' blob: https://browser.sentry-cdn.com sentry.io stats.data.gouv.fr https://stats.beta.gouv.fr/ https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com www.pagespeed-mod.com 'nonce-EV3zXnauJ02dKmgeXsCH4A=='; frame-src 'self' stats.data.gouv.fr stats.beta.gouv.fr browser.sentry-cdn.com https://cdn.jsdelivr.net/ https://bid.g.doubleclick.net https://tube.nocturlab.fr https://tpc.googlesyndication.com https://www.youtube-nocookie.com; connect-src 'self' *.sentry.io https://api-adresse.data.gouv.fr/ *.google.com https://adservice.google.com https://pagead2.googlesyndication.com https://tpc.googlesyndication.com https://googleads.g.doubleclick.net stats.data.gouv.fr https://stats.beta.gouv.fr/ https://www.googletagmanager.com https://browser.sentry-cdn.com https://cdn.jsdelivr.net/; report-uri https://o548798.ingest.sentry.io/api/5747178/security/?sentry_key=d975e83e2bee46cd8b3ca7be531a0a6b",
 							"otherinfo": "Warnings:\nThe report-uri directive has been deprecated in favor of the new report-to directive\n"
 						}
 					],
@@ -252,14 +252,6 @@
 						},
 						{
 							"uri": "https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/theme/developpement-commercial",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "eval",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/theme/droit-du-travail",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -307,7 +299,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://place-des-entreprises.beta.gouv.fr/mon_compte/sign_in",
+							"uri": "https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/theme/sante-securite-travail",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -315,11 +307,19 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://place-des-entreprises.beta.gouv.fr/packs/js/pages-5cdb92198febf8d4a3d2.js",
+							"uri": "https://place-des-entreprises.beta.gouv.fr/comment_ca_marche",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "Eval",
+							"evidence": "eval",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://place-des-entreprises.beta.gouv.fr/mon_compte/sign_in",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "eval",
 							"otherinfo": ""
 						}
 					],
@@ -358,7 +358,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/theme/droit-du-travail",
+							"uri": "https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/theme/entreprise-en-difficulte",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -366,7 +366,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/theme/entreprise-en-difficulte",
+							"uri": "https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/theme/environnement-transition-ecologique",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -382,6 +382,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/theme/internet-web",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/theme/recrutement-formation",
 							"method": "GET",
 							"param": "",
@@ -390,7 +398,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://place-des-entreprises.beta.gouv.fr/assets/pages-b58b817d91e520f29b4e6045adc2b62f403f1c7137a72d1c719a5fbd4b126e9e.js",
+							"uri": "https://place-des-entreprises.beta.gouv.fr/assets/pages-f6507469c6f8affd94c4bbdc9e7315b66f31ba9c2ac819d46a245a1d0f9b280e.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -406,7 +414,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://place-des-entreprises.beta.gouv.fr/packs/js/gouvfr-module-c10d257f91ae37e41969.js",
+							"uri": "https://place-des-entreprises.beta.gouv.fr/packs/js/gouvfr-module-53f1f813d18f7393272f.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -414,15 +422,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://place-des-entreprises.beta.gouv.fr/packs/js/gouvfr-nomodule-17eba51663d7de7cb8e3.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://place-des-entreprises.beta.gouv.fr/packs/js/pages-5cdb92198febf8d4a3d2.js",
+							"uri": "https://place-des-entreprises.beta.gouv.fr/packs/js/gouvfr-nomodule-e4973d8fbae07efe5d09.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -471,7 +471,7 @@
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/auth-req-id/</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "417"
+					"sourceid": "421"
 				},
 				{
 					"pluginid": "10094",
@@ -488,83 +488,75 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "sha384-uwCOEtT/vtuzGz5QiQB6J1L3YFYSbznHZGi3B5Vc6+bnyGS3O9nnDfh6dCvLrQ7X",
-							"otherinfo": "\uFFFD\\x0016\uFFFD\uFFFD\uFFFD#\uFFFD\uFFFD?\uFFFD\uFFFD\uFFFD\u03D4\"@\\x001e\uFFFD\u053D\uFFFD\\x0015\uFFFD\uFFFD\uFFFDq\uFFFD\\x001a-\uFFFD\uFFFDW:\uFFFD\uFFFD\uFFFD\\x0019-\uFFFD\uFFFDy\uFFFD~\\x001e\uFFFD\n\uFFFD\uFFFDC\uFFFD"
+							"evidence": "sha384-AcN5kJiCfqbrk/SICuAawqTeUR7KQrKpXMeDFL5XZh7x+IBWERL5to8nwE0gapz6",
+							"otherinfo": "\uFFFD\\x0016\uFFFD\uFFFDp\uFFFDd& \uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\"\\x0002\uFFFD\\x0006\uFFFD\uFFFD7\uFFFDG\uFFFD\uFFFD\uFFFD\uFFFDW1\uFFFD\uFFFD/\uFFFD\u0647\uFFFD~ \\x0015\uFFFDD\uFFFDm\uFFFD\uFFFD\uFFFD\\x0013H\\x001a\uFFFD>"
 						},
 						{
 							"uri": "https://place-des-entreprises.beta.gouv.fr/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "sha384-uwCOEtT/vtuzGz5QiQB6J1L3YFYSbznHZGi3B5Vc6+bnyGS3O9nnDfh6dCvLrQ7X",
-							"otherinfo": "\uFFFD\\x0016\uFFFD\uFFFD\uFFFD#\uFFFD\uFFFD?\uFFFD\uFFFD\uFFFD\u03D4\"@\\x001e\uFFFD\u053D\uFFFD\\x0015\uFFFD\uFFFD\uFFFDq\uFFFD\\x001a-\uFFFD\uFFFDW:\uFFFD\uFFFD\uFFFD\\x0019-\uFFFD\uFFFDy\uFFFD~\\x001e\uFFFD\n\uFFFD\uFFFDC\uFFFD"
+							"evidence": "sha384-AcN5kJiCfqbrk/SICuAawqTeUR7KQrKpXMeDFL5XZh7x+IBWERL5to8nwE0gapz6",
+							"otherinfo": "\uFFFD\\x0016\uFFFD\uFFFDp\uFFFDd& \uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\"\\x0002\uFFFD\\x0006\uFFFD\uFFFD7\uFFFDG\uFFFD\uFFFD\uFFFD\uFFFDW1\uFFFD\uFFFD/\uFFFD\u0647\uFFFD~ \\x0015\uFFFDD\uFFFDm\uFFFD\uFFFD\uFFFD\\x0013H\\x001a\uFFFD>"
 						},
 						{
 							"uri": "https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/theme/developpement-commercial",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "sha384-uwCOEtT/vtuzGz5QiQB6J1L3YFYSbznHZGi3B5Vc6+bnyGS3O9nnDfh6dCvLrQ7X",
-							"otherinfo": "\uFFFD\\x0016\uFFFD\uFFFD\uFFFD#\uFFFD\uFFFD?\uFFFD\uFFFD\uFFFD\u03D4\"@\\x001e\uFFFD\u053D\uFFFD\\x0015\uFFFD\uFFFD\uFFFDq\uFFFD\\x001a-\uFFFD\uFFFDW:\uFFFD\uFFFD\uFFFD\\x0019-\uFFFD\uFFFDy\uFFFD~\\x001e\uFFFD\n\uFFFD\uFFFDC\uFFFD"
-						},
-						{
-							"uri": "https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/theme/droit-du-travail",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "sha384-uwCOEtT/vtuzGz5QiQB6J1L3YFYSbznHZGi3B5Vc6+bnyGS3O9nnDfh6dCvLrQ7X",
-							"otherinfo": "\uFFFD\\x0016\uFFFD\uFFFD\uFFFD#\uFFFD\uFFFD?\uFFFD\uFFFD\uFFFD\u03D4\"@\\x001e\uFFFD\u053D\uFFFD\\x0015\uFFFD\uFFFD\uFFFDq\uFFFD\\x001a-\uFFFD\uFFFDW:\uFFFD\uFFFD\uFFFD\\x0019-\uFFFD\uFFFDy\uFFFD~\\x001e\uFFFD\n\uFFFD\uFFFDC\uFFFD"
+							"evidence": "sha384-AcN5kJiCfqbrk/SICuAawqTeUR7KQrKpXMeDFL5XZh7x+IBWERL5to8nwE0gapz6",
+							"otherinfo": "\uFFFD\\x0016\uFFFD\uFFFDp\uFFFDd& \uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\"\\x0002\uFFFD\\x0006\uFFFD\uFFFD7\uFFFDG\uFFFD\uFFFD\uFFFD\uFFFDW1\uFFFD\uFFFD/\uFFFD\u0647\uFFFD~ \\x0015\uFFFDD\uFFFDm\uFFFD\uFFFD\uFFFD\\x0013H\\x001a\uFFFD>"
 						},
 						{
 							"uri": "https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/theme/entreprise-en-difficulte",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "sha384-uwCOEtT/vtuzGz5QiQB6J1L3YFYSbznHZGi3B5Vc6+bnyGS3O9nnDfh6dCvLrQ7X",
-							"otherinfo": "\uFFFD\\x0016\uFFFD\uFFFD\uFFFD#\uFFFD\uFFFD?\uFFFD\uFFFD\uFFFD\u03D4\"@\\x001e\uFFFD\u053D\uFFFD\\x0015\uFFFD\uFFFD\uFFFDq\uFFFD\\x001a-\uFFFD\uFFFDW:\uFFFD\uFFFD\uFFFD\\x0019-\uFFFD\uFFFDy\uFFFD~\\x001e\uFFFD\n\uFFFD\uFFFDC\uFFFD"
+							"evidence": "sha384-AcN5kJiCfqbrk/SICuAawqTeUR7KQrKpXMeDFL5XZh7x+IBWERL5to8nwE0gapz6",
+							"otherinfo": "\uFFFD\\x0016\uFFFD\uFFFDp\uFFFDd& \uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\"\\x0002\uFFFD\\x0006\uFFFD\uFFFD7\uFFFDG\uFFFD\uFFFD\uFFFD\uFFFDW1\uFFFD\uFFFD/\uFFFD\u0647\uFFFD~ \\x0015\uFFFDD\uFFFDm\uFFFD\uFFFD\uFFFD\\x0013H\\x001a\uFFFD>"
 						},
 						{
 							"uri": "https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/theme/environnement-transition-ecologique",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "sha384-uwCOEtT/vtuzGz5QiQB6J1L3YFYSbznHZGi3B5Vc6+bnyGS3O9nnDfh6dCvLrQ7X",
-							"otherinfo": "\uFFFD\\x0016\uFFFD\uFFFD\uFFFD#\uFFFD\uFFFD?\uFFFD\uFFFD\uFFFD\u03D4\"@\\x001e\uFFFD\u053D\uFFFD\\x0015\uFFFD\uFFFD\uFFFDq\uFFFD\\x001a-\uFFFD\uFFFDW:\uFFFD\uFFFD\uFFFD\\x0019-\uFFFD\uFFFDy\uFFFD~\\x001e\uFFFD\n\uFFFD\uFFFDC\uFFFD"
+							"evidence": "sha384-AcN5kJiCfqbrk/SICuAawqTeUR7KQrKpXMeDFL5XZh7x+IBWERL5to8nwE0gapz6",
+							"otherinfo": "\uFFFD\\x0016\uFFFD\uFFFDp\uFFFDd& \uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\"\\x0002\uFFFD\\x0006\uFFFD\uFFFD7\uFFFDG\uFFFD\uFFFD\uFFFD\uFFFDW1\uFFFD\uFFFD/\uFFFD\u0647\uFFFD~ \\x0015\uFFFDD\uFFFDm\uFFFD\uFFFD\uFFFD\\x0013H\\x001a\uFFFD>"
 						},
 						{
 							"uri": "https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/theme/financement-projets",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "sha384-uwCOEtT/vtuzGz5QiQB6J1L3YFYSbznHZGi3B5Vc6+bnyGS3O9nnDfh6dCvLrQ7X",
-							"otherinfo": "\uFFFD\\x0016\uFFFD\uFFFD\uFFFD#\uFFFD\uFFFD?\uFFFD\uFFFD\uFFFD\u03D4\"@\\x001e\uFFFD\u053D\uFFFD\\x0015\uFFFD\uFFFD\uFFFDq\uFFFD\\x001a-\uFFFD\uFFFDW:\uFFFD\uFFFD\uFFFD\\x0019-\uFFFD\uFFFDy\uFFFD~\\x001e\uFFFD\n\uFFFD\uFFFDC\uFFFD"
+							"evidence": "sha384-AcN5kJiCfqbrk/SICuAawqTeUR7KQrKpXMeDFL5XZh7x+IBWERL5to8nwE0gapz6",
+							"otherinfo": "\uFFFD\\x0016\uFFFD\uFFFDp\uFFFDd& \uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\"\\x0002\uFFFD\\x0006\uFFFD\uFFFD7\uFFFDG\uFFFD\uFFFD\uFFFD\uFFFDW1\uFFFD\uFFFD/\uFFFD\u0647\uFFFD~ \\x0015\uFFFDD\uFFFDm\uFFFD\uFFFD\uFFFD\\x0013H\\x001a\uFFFD>"
 						},
 						{
 							"uri": "https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/theme/internet-web",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "sha384-uwCOEtT/vtuzGz5QiQB6J1L3YFYSbznHZGi3B5Vc6+bnyGS3O9nnDfh6dCvLrQ7X",
-							"otherinfo": "\uFFFD\\x0016\uFFFD\uFFFD\uFFFD#\uFFFD\uFFFD?\uFFFD\uFFFD\uFFFD\u03D4\"@\\x001e\uFFFD\u053D\uFFFD\\x0015\uFFFD\uFFFD\uFFFDq\uFFFD\\x001a-\uFFFD\uFFFDW:\uFFFD\uFFFD\uFFFD\\x0019-\uFFFD\uFFFDy\uFFFD~\\x001e\uFFFD\n\uFFFD\uFFFDC\uFFFD"
+							"evidence": "sha384-AcN5kJiCfqbrk/SICuAawqTeUR7KQrKpXMeDFL5XZh7x+IBWERL5to8nwE0gapz6",
+							"otherinfo": "\uFFFD\\x0016\uFFFD\uFFFDp\uFFFDd& \uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\"\\x0002\uFFFD\\x0006\uFFFD\uFFFD7\uFFFDG\uFFFD\uFFFD\uFFFD\uFFFDW1\uFFFD\uFFFD/\uFFFD\u0647\uFFFD~ \\x0015\uFFFDD\uFFFDm\uFFFD\uFFFD\uFFFD\\x0013H\\x001a\uFFFD>"
 						},
 						{
 							"uri": "https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/theme/recrutement-formation",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "sha384-uwCOEtT/vtuzGz5QiQB6J1L3YFYSbznHZGi3B5Vc6+bnyGS3O9nnDfh6dCvLrQ7X",
-							"otherinfo": "\uFFFD\\x0016\uFFFD\uFFFD\uFFFD#\uFFFD\uFFFD?\uFFFD\uFFFD\uFFFD\u03D4\"@\\x001e\uFFFD\u053D\uFFFD\\x0015\uFFFD\uFFFD\uFFFDq\uFFFD\\x001a-\uFFFD\uFFFDW:\uFFFD\uFFFD\uFFFD\\x0019-\uFFFD\uFFFDy\uFFFD~\\x001e\uFFFD\n\uFFFD\uFFFDC\uFFFD"
+							"evidence": "sha384-AcN5kJiCfqbrk/SICuAawqTeUR7KQrKpXMeDFL5XZh7x+IBWERL5to8nwE0gapz6",
+							"otherinfo": "\uFFFD\\x0016\uFFFD\uFFFDp\uFFFDd& \uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\"\\x0002\uFFFD\\x0006\uFFFD\uFFFD7\uFFFDG\uFFFD\uFFFD\uFFFD\uFFFDW1\uFFFD\uFFFD/\uFFFD\u0647\uFFFD~ \\x0015\uFFFDD\uFFFDm\uFFFD\uFFFD\uFFFD\\x0013H\\x001a\uFFFD>"
 						},
 						{
 							"uri": "https://place-des-entreprises.beta.gouv.fr/mon_compte/sign_in",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2FcUJboyM68NAbf2nuN7gJGx5GnteorziiaLqxpx0UPuDuuJZ4T6QziBVZ1Haqoj4vYJzAg",
-							"otherinfo": "\uFFFDW\\x0014%\uFFFD23\uFFFD\r\\x0001\uFFFD\uFFFD\uFFFD\uFFFD{\uFFFD\uFFFD\uFFFD\uFFFDi\uFFFDz\uFFFD\uFFFD&\uFFFD\uFFFD\\x001aq\uFFFDC\uFFFD\\x000e\uFFFDg\uFFFD\uFFFDC8\uFFFDU\uFFFDGj\uFFFD#\uFFFD\uFFFD\t\uFFFD\\x0008"
+							"evidence": "sha384-AcN5kJiCfqbrk/SICuAawqTeUR7KQrKpXMeDFL5XZh7x+IBWERL5to8nwE0gapz6",
+							"otherinfo": "\uFFFD\\x0016\uFFFD\uFFFDp\uFFFDd& \uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\"\\x0002\uFFFD\\x0006\uFFFD\uFFFD7\uFFFDG\uFFFD\uFFFD\uFFFD\uFFFDW1\uFFFD\uFFFD/\uFFFD\u0647\uFFFD~ \\x0015\uFFFDD\uFFFDm\uFFFD\uFFFD\uFFFD\\x0013H\\x001a\uFFFD>"
 						},
 						{
-							"uri": "https://place-des-entreprises.beta.gouv.fr/packs/js/gouvfr-nomodule-17eba51663d7de7cb8e3.js",
+							"uri": "https://place-des-entreprises.beta.gouv.fr/packs/js/gouvfr-nomodule-e4973d8fbae07efe5d09.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -576,13 +568,13 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2BBfZuhQCiYVxf3T9P2xhAFWn1RGwo4PhyZ9mUqz2SgTqhz4X61FhGeNJD",
-							"otherinfo": "\uFFFD\\x0010_f\uFFFDP\n&\\x0015\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x0001V\uFFFDTF\u008E\\x000f\uFFFD&}\uFFFDJ\uFFFD\uFFFD(\\x0013\uFFFD\\x001c\uFFFD_\uFFFDE\uFFFDg\uFFFD$"
+							"evidence": "2FYVTItNjGwZ829glnUvscjQaFYhzyCM",
+							"otherinfo": "\uFFFDV\\x0015L\uFFFDM\uFFFDl\\x0019\uFFFDo`\uFFFDu/\uFFFD\uFFFD\uFFFDhV!\uFFFD \uFFFD"
 						}
 					],
-					"count": "12",
+					"count": "11",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>\uFFFD\\x0016\uFFFD\uFFFD\uFFFD#\uFFFD\uFFFD?\uFFFD\uFFFD\uFFFD\u03D4\"@\\x001e\uFFFD\u053D\uFFFD\\x0015\uFFFD\uFFFD\uFFFDq\uFFFD\\x001a-\uFFFD\uFFFDW:\uFFFD\uFFFD\uFFFD\\x0019-\uFFFD\uFFFDy\uFFFD~\\x001e\uFFFD</p><p>\uFFFD\uFFFDC\uFFFD</p>",
+					"otherinfo": "<p>\uFFFD\\x0016\uFFFD\uFFFDp\uFFFDd& \uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\"\\x0002\uFFFD\\x0006\uFFFD\uFFFD7\uFFFDG\uFFFD\uFFFD\uFFFD\uFFFDW1\uFFFD\uFFFD/\uFFFD\u0647\uFFFD~ \\x0015\uFFFDD\uFFFDm\uFFFD\uFFFD\uFFFD\\x0013H\\x001a\uFFFD></p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
@@ -600,14 +592,6 @@
 					"instances":[ 
 						{
 							"uri": "https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/demande/conseil-retraite",
-							"method": "POST",
-							"param": "content-type",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/demande/diagnostic",
 							"method": "POST",
 							"param": "content-type",
 							"attack": "",
@@ -648,6 +632,14 @@
 						},
 						{
 							"uri": "https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/demande/organisation-du-travail",
+							"method": "POST",
+							"param": "content-type",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/demande/preparer-le-depart-ou-la-reconversion-de-salaries",
 							"method": "POST",
 							"param": "content-type",
 							"attack": "",
@@ -701,7 +693,7 @@
 					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p>",
 					"cweid": "345",
 					"wascid": "12",
-					"sourceid": "353"
+					"sourceid": "352"
 				},
 				{
 					"pluginid": "10027",
@@ -719,7 +711,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "from",
-							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"<script data-turbo-eval=\"false\" nonce=\"2TpdrpWZgBIBKqnb9t5Vmw==\">\n//<![CDATA[\n  var _paq = window._paq = window._paq || [];\n\n  /\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"<script data-turbo-eval=\"false\" nonce=\"cHOyirN2N2wFtIKJJjDwHA==\">\n//<![CDATA[\n  var _paq = window._paq = window._paq || [];\n\n  /\", see evidence field for the suspicious comment/snippet."
 						},
 						{
 							"uri": "https://place-des-entreprises.beta.gouv.fr",
@@ -727,7 +719,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "from",
-							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"<script data-turbo-eval=\"false\" nonce=\"Lu5NkDFIHo7Wz2jxoa8NCA==\">\n//<![CDATA[\n  var _paq = window._paq = window._paq || [];\n\n  /\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"<script data-turbo-eval=\"false\" nonce=\"R4RclynxxxQVTgVkM9skJQ==\">\n//<![CDATA[\n  var _paq = window._paq = window._paq || [];\n\n  /\", see evidence field for the suspicious comment/snippet."
 						},
 						{
 							"uri": "https://place-des-entreprises.beta.gouv.fr",
@@ -735,7 +727,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "user",
-							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script nonce=\"2TpdrpWZgBIBKqnb9t5Vmw==\">\n//<![CDATA[\n  tarteaucitron.services.google_ads = {\n    \"key\": \"google_ads\",\n    \"type\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script nonce=\"cHOyirN2N2wFtIKJJjDwHA==\">\n//<![CDATA[\n  tarteaucitron.services.google_ads = {\n    \"key\": \"google_ads\",\n    \"type\", see evidence field for the suspicious comment/snippet."
 						},
 						{
 							"uri": "https://place-des-entreprises.beta.gouv.fr",
@@ -743,7 +735,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "user",
-							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script nonce=\"Lu5NkDFIHo7Wz2jxoa8NCA==\">\n//<![CDATA[\n  tarteaucitron.services.google_ads = {\n    \"key\": \"google_ads\",\n    \"type\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script nonce=\"R4RclynxxxQVTgVkM9skJQ==\">\n//<![CDATA[\n  tarteaucitron.services.google_ads = {\n    \"key\": \"google_ads\",\n    \"type\", see evidence field for the suspicious comment/snippet."
 						},
 						{
 							"uri": "https://place-des-entreprises.beta.gouv.fr/",
@@ -751,7 +743,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "from",
-							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"<script data-turbo-eval=\"false\" nonce=\"nSqUditRAJ/HYtzzSDWZzA==\">\n//<![CDATA[\n  var _paq = window._paq = window._paq || [];\n\n  /\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"<script data-turbo-eval=\"false\" nonce=\"Ps/tGqKiRVERf/NjfBz9Qw==\">\n//<![CDATA[\n  var _paq = window._paq = window._paq || [];\n\n  /\", see evidence field for the suspicious comment/snippet."
 						},
 						{
 							"uri": "https://place-des-entreprises.beta.gouv.fr/",
@@ -759,7 +751,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "user",
-							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script nonce=\"nSqUditRAJ/HYtzzSDWZzA==\">\n//<![CDATA[\n  tarteaucitron.services.google_ads = {\n    \"key\": \"google_ads\",\n    \"type\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script nonce=\"Ps/tGqKiRVERf/NjfBz9Qw==\">\n//<![CDATA[\n  tarteaucitron.services.google_ads = {\n    \"key\": \"google_ads\",\n    \"type\", see evidence field for the suspicious comment/snippet."
 						},
 						{
 							"uri": "https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/theme/financement-projets",
@@ -767,7 +759,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "from",
-							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"<script data-turbo-eval=\"false\" nonce=\"UhPxWzz8CmjXcGB+CmuJ7A==\">\n//<![CDATA[\n  var _paq = window._paq = window._paq || [];\n\n  /\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"<script data-turbo-eval=\"false\" nonce=\"t3+4WNxFIyYdCKWHdUfhhQ==\">\n//<![CDATA[\n  var _paq = window._paq = window._paq || [];\n\n  /\", see evidence field for the suspicious comment/snippet."
 						},
 						{
 							"uri": "https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/theme/financement-projets",
@@ -775,10 +767,26 @@
 							"param": "",
 							"attack": "",
 							"evidence": "user",
-							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script nonce=\"UhPxWzz8CmjXcGB+CmuJ7A==\">\n//<![CDATA[\n  tarteaucitron.services.google_ads = {\n    \"key\": \"google_ads\",\n    \"type\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script nonce=\"t3+4WNxFIyYdCKWHdUfhhQ==\">\n//<![CDATA[\n  tarteaucitron.services.google_ads = {\n    \"key\": \"google_ads\",\n    \"type\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://place-des-entreprises.beta.gouv.fr/assets/pages-b58b817d91e520f29b4e6045adc2b62f403f1c7137a72d1c719a5fbd4b126e9e.js",
+							"uri": "https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/theme/recrutement-formation",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "from",
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"<script data-turbo-eval=\"false\" nonce=\"mXGyPKaByxlLYnid5KXtKw==\">\n//<![CDATA[\n  var _paq = window._paq = window._paq || [];\n\n  /\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"uri": "https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/theme/recrutement-formation",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "user",
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script nonce=\"mXGyPKaByxlLYnid5KXtKw==\">\n//<![CDATA[\n  tarteaucitron.services.google_ads = {\n    \"key\": \"google_ads\",\n    \"type\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"uri": "https://place-des-entreprises.beta.gouv.fr/assets/pages-f6507469c6f8affd94c4bbdc9e7315b66f31ba9c2ac819d46a245a1d0f9b280e.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -791,40 +799,24 @@
 							"param": "",
 							"attack": "",
 							"evidence": "from",
-							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"<script data-turbo-eval=\"false\" nonce=\"+SXkatw7tUFMwXEOnaFy/g==\">\n//<![CDATA[\n  var _paq = window._paq = window._paq || [];\n\n  /\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"<script data-turbo-eval=\"false\" nonce=\"EV3zXnauJ02dKmgeXsCH4A==\">\n//<![CDATA[\n  var _paq = window._paq = window._paq || [];\n\n  /\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://place-des-entreprises.beta.gouv.fr/packs/js/gouvfr-module-c10d257f91ae37e41969.js",
+							"uri": "https://place-des-entreprises.beta.gouv.fr/packs/js/gouvfr-module-53f1f813d18f7393272f.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "select",
 							"otherinfo": "The following pattern was used: \\bSELECT\\b and was detected in the element starting with: \"!function(e){var t={};function n(i){if(t[i])return t[i].exports;var s=t[i]={i:i,l:!1,exports:{}};return e[i].call(s.exports,s,s.\", see evidence field for the suspicious comment/snippet."
-						},
-						{
-							"uri": "https://place-des-entreprises.beta.gouv.fr/packs/js/gouvfr-nomodule-17eba51663d7de7cb8e3.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "select",
-							"otherinfo": "The following pattern was used: \\bSELECT\\b and was detected in the element starting with: \"!function(t){var e={};function n(i){if(e[i])return e[i].exports;var s=e[i]={i:i,l:!1,exports:{}};return t[i].call(s.exports,s,s.\", see evidence field for the suspicious comment/snippet."
-						},
-						{
-							"uri": "https://place-des-entreprises.beta.gouv.fr/packs/js/pages-5cdb92198febf8d4a3d2.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "query",
-							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"!function(t){function e(e){for(var n,i,o=e[0],a=e[1],s=0,c=[];s<o.length;s++)i=o[s],Object.prototype.hasOwnProperty.call(r,i)&&r\", see evidence field for the suspicious comment/snippet."
 						}
 					],
 					"count": "13",
 					"solution": "<p>Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</p>",
-					"otherinfo": "<p>The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"<script data-turbo-eval=\"false\" nonce=\"2TpdrpWZgBIBKqnb9t5Vmw==\"></p><p>//<![CDATA[</p><p>  var _paq = window._paq = window._paq || [];</p><p></p><p>  /\", see evidence field for the suspicious comment/snippet.</p>",
+					"otherinfo": "<p>The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"<script data-turbo-eval=\"false\" nonce=\"cHOyirN2N2wFtIKJJjDwHA==\"></p><p>//<![CDATA[</p><p>  var _paq = window._paq = window._paq || [];</p><p></p><p>  /\", see evidence field for the suspicious comment/snippet.</p>",
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10109",
@@ -836,14 +828,6 @@
 					"riskdesc": "Informational (Medium)",
 					"desc": "<p>The application appears to be a modern web application. If you need to explore it automatically then the Ajax Spider may well be more effective than the standard one.</p>",
 					"instances":[ 
-						{
-							"uri": "https://place-des-entreprises.beta.gouv.fr/accessibilite",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<a class=\"fr-breadcrumb__link\" aria-current=\"page\" href=\"#\">Accessibilit\u00E9</a>",
-							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
-						},
 						{
 							"uri": "https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/theme/cession-reprise",
 							"method": "GET",
@@ -931,6 +915,14 @@
 							"attack": "",
 							"evidence": "<a class=\"fr-breadcrumb__link\" aria-current=\"page\" href=\"#\">L\u2019\u00E9quipe</a>",
 							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
+						},
+						{
+							"uri": "https://place-des-entreprises.beta.gouv.fr/mentions_legales",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a class=\"fr-breadcrumb__link\" aria-current=\"page\" href=\"#\">Mentions l\u00E9gales</a>",
+							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
 						}
 					],
 					"count": "12",
@@ -939,7 +931,7 @@
 					"reference": "",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "159"
+					"sourceid": "142"
 				},
 				{
 					"pluginid": "10049",
@@ -968,7 +960,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/theme/entreprise-en-difficulte",
+							"uri": "https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/theme/financement-projets",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -976,7 +968,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/theme/financement-projets",
+							"uri": "https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/theme/recrutement-formation",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1043,7 +1035,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/theme/droit-du-travail",
+							"uri": "https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/theme/entreprise-en-difficulte",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -1051,7 +1043,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/theme/entreprise-en-difficulte",
+							"uri": "https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/theme/environnement-transition-ecologique",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -1302,7 +1294,7 @@
 							"method": "GET",
 							"param": "_PlaceDesEntreprises_session",
 							"attack": "",
-							"evidence": "UDyK84nv%2FCkzcmsE9FPm%2F3fpIzzYuuHe5aV4AxOIfPkpCDE67v8J%2F7YWkQll9YszI95XTk3TXlafkDnX02jUcxH50BJkOMXK2s0m2myOhyBXiW4jm1%2FEZW1F%2F8PLPLcjELaJ1Gud8qyStYw%2FUiwC22bL6YwrSauxcLivNttIYYKlqJEgY6JwKXU4QpQNmN%2Fr4GdAweMZPiWy7inQLNYTgsoD6sdExZzFC%2FtgWvXkkeCOJWoStMIUnt70OsWx26DJZ%2FXoR%2FQmnEsz2Clmr%2B%2BxAtpTu36j7qu4wmlmu30lX7HPBuzG--HlAujdVrlgzQpUGz--2XVi3bLPlOSsMa3Jdo8d5Q%3D%3D",
+							"evidence": "%2BhfJnw36pfYEXJif8GDsiopus18nQAMko49JxOs6WfDXqAIv%2FcDLpqetsJtBULBTKAnw1mUirkqzzgxQUDRkz8HabcuyNpmpIQR1mtQG4%2B8zdzHM0hN%2FORqPaTIPbUd73j60gUWAz4KEprAICtGrK3kntHDFCtOHfzE97moYICpgCpTkmPDjMSSW255wCYj678Eej95W7kKCpRfcilBoDTCnzwCrJMvcH%2BycOfeFFvwksGLjelRnSFJndFbQ6DOTafhnK3n%2Ff9N0A9WrtG4U%2Fe5K4jR9UV1kd%2BtJQLwO4WaUF8zX--01HsDua5BRbNc628--aImZb6PSq2Bi82meK4vlvA%3D%3D",
 							"otherinfo": "\ncookie:_PlaceDesEntreprises_session"
 						},
 						{
@@ -1310,7 +1302,7 @@
 							"method": "GET",
 							"param": "_PlaceDesEntreprises_session",
 							"attack": "",
-							"evidence": "raVT5TIi0qzfuMjgIRf4vpRSaM4ZaEQ2vXMMpxM39GKEUQcScWQduycfb72fclHnkBercQ4kWmpct96AM6ecycMQBvTMMtkdaqTKBe7KQ6Y29R%2BWuXFxgjMaSsOEc%2BWLo8HmGTWOCGrUmlaYEFHJTR4ITDJvJeooDLy9Uq6oC2hA0jAXpqI44q04VwJKHGIlh8JoJhkjw2mE6M4b9l%2FGIRYODX%2Fvg2mQcUkz6dibbkAwh3ZhXMMbfF%2BeSKNR66w4Z4QSkGKu73vlysrcNY%2FJpBDxuUcYqUyZb3Q3ma7YUATFhyRX--5pKAzCS%2BGidVLd7v--1TyA%2FXaf21WDz%2BTR2LW2IQ%3D%3D",
+							"evidence": "Ai8SUBsqcJD2JLsRQ6RMBuQ5QnSf56uzF74puANVew5TayKJnmdAIiRBR%2F%2BGHAkI%2FdfaNPdAJszQhcrTtetkfsXGuUMYwFPxxOEoje7bciu%2FnV1ApDtg9oPvkptdDWhv0QemSueFsNO1Lo%2BlByRoa%2BOiBD%2FVLNNg15%2BG6KzF2327IkAJ0Zz2SKs7tBN04Kl8jzR5YJPFvV67qFM85cbpwDbIE5VNCgmi0zZMqKG6wq0MluH7dYh4XjJVtm5CGXGXz2KzHvrnMRIApV1pTcssQle5%2F0vDbfClvqA%2Bf9RttGOjFuDK--JVGH9ls%2BYmsgKhV4--CgwF8f%2Fz%2Bu94talAsbv%2BAA%3D%3D",
 							"otherinfo": "\ncookie:_PlaceDesEntreprises_session"
 						},
 						{
@@ -1318,39 +1310,7 @@
 							"method": "GET",
 							"param": "_PlaceDesEntreprises_session",
 							"attack": "",
-							"evidence": "SXedhSAhCU9dJnv7CwdD4CrQKR69N84pmaAiP2EGyGzWNhhLz5Gql75eHCoG10hLmyzNoe7hn%2FT7RQq85aN1e2xKE2U9XaJLioDbQ3J0W9Dq%2BqWhUbVbnenDrKrLmsCsMXA6BZ0GUR2ERbtTMIHPm9VK1afuaeTzu69QiB2d5jQCzdLU2QgYs6w9amGIY8YC9ttoxIAD67CneWRqqNm%2B3u%2BFLZ6DDAsPmVRyuEjONH8PuCsxvvJtHe9adu3SuZWmknRTaxH6qTyRlnhomTwj93HxJoocK7EtqAvOB35cjcHNmccM--s4QfMH4IFSturDTI--%2BQlYz4HKORiiEbZHsrNC3Q%3D%3D",
-							"otherinfo": "\ncookie:_PlaceDesEntreprises_session"
-						},
-						{
-							"uri": "https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/theme/developpement-commercial",
-							"method": "GET",
-							"param": "_PlaceDesEntreprises_session",
-							"attack": "",
-							"evidence": "8cTn0w4K8dPNWXBOcmZsb9sCFA%2F2KM2ZLjgu9vOK50DXgQtPDOXtf1NPDHJlqV%2FKMn%2BoCfvvqTyV1nHSEewnk5%2BSTc%2F84rmvEH0F4rHGxDtttWKXp%2BkGj3s3M3vp%2FGALjbE6IcqYlsN8rrEF9rq6Lq%2B2nka9rVLf3EXantS7EoCIkAmck9nyDhex%2FMVSjX6jRI5rP77M5oHtKTaoV%2BAFDL3Dwnnm8f6diE8%2B0xfBPTzlWU8FeBhQ6K5trIZXHBfSZ9IqcKwbIQrmEQcb50JQPr8QZlHSiHycjeSmmKunYoj%2BScNJ--15NncWnV2EIFInLE--fbCcsywHVhaHsqxBeQA%2FUw%3D%3D",
-							"otherinfo": "\ncookie:_PlaceDesEntreprises_session"
-						},
-						{
-							"uri": "https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/theme/droit-du-travail",
-							"method": "GET",
-							"param": "_PlaceDesEntreprises_session",
-							"attack": "",
-							"evidence": "pFh3IT0ZzKl02rsDVk2Nr358p3l%2BVI85AaJxZHsk9VP%2BFgn1mUJcdPkRRERhg3ZEGRVUpKxFA%2BbmMJ9gk1gr0f0OU0bGnQnMO2s3hixMnP3m6fmKqbYxWML1E9WkA%2FtyYqcEYoYBi%2BEvhy0ZyRtLxjcBYuxaqv1Auat4KdFiob5RWpmWaGlsMJ6hWGnHH2ekRpaANxEWjNOJ2W6YsMLrmCEN%2FlHB3zijdgOrnicAYmDowjFCxCxPYyz0%2FoQx7YtjWNagPeQg6wVVIXKLAk1T%2BiGonb7r9SexNesprk3uPcyJ7XGd--7V4a85XLFvAjTiZN--tI1syThXsiFRjXl9e10afg%3D%3D",
-							"otherinfo": "\ncookie:_PlaceDesEntreprises_session"
-						},
-						{
-							"uri": "https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/theme/entreprise-en-difficulte",
-							"method": "GET",
-							"param": "_PlaceDesEntreprises_session",
-							"attack": "",
-							"evidence": "PRTB8PFLYNFaCEaH%2ByE2ruBFMGWHo0BMKCws4PzE6AOaQsM6khElrIWyHt8Ezp73YRnnxuH9B%2FWHpIHS8d%2FDkvX2C8r7qEQlcpDlNyiEv%2BPrYJM09JSGtHLCARPeVj6YbBxKdLGJqpMW8f%2B5SYGQOb3%2FROagbveeRoj4LcldkXvxylQnIaotlriBDtR8U9JGba0VRdEQS37iitu8evb0DfRsmGxtb24Dg%2FPGI5fLpXaDvnQqvQYgC3JRM6eWTPrphZJEEgcsGFF8DFVPuXYYq4xs2eom8kXoClPXDGiEFyqPUj09--voPDPA7LFurPvA1t--05aFM5v2hw7J5pkxSqGc3Q%3D%3D",
-							"otherinfo": "\ncookie:_PlaceDesEntreprises_session"
-						},
-						{
-							"uri": "https://place-des-entreprises.beta.gouv.fr/aide-entreprise/accueil/theme/financement-projets",
-							"method": "GET",
-							"param": "_PlaceDesEntreprises_session",
-							"attack": "",
-							"evidence": "jcsXOqNvjP3iCrEY%2BgcOZ%2B%2FESVFhBQOw4%2FNmULJx4N%2FrNudNiT1fuHYzfaVW2PfuuMXI%2FUEOa%2F%2FWwtJDEJN82EuHZPSAeLGMbf2CMhpuywAHUBcYyYWEuoVerFTnQNLAVtU77dhwvBTc4F7COBgmUycVvp1dJtPLnnLDLtiwCopd70bPuSZx6WQJ9PsiG5rSh682aXw0C2Eqc5seI9l7OW1rnXQ6ukytRTeCHnzPzkDnuwc3UIUHgdgmiOIBHhxa7xTa7CwK2UY9KzT8d3K78k1gnPXM%2BjRazn7HqYEnPzRqBMrV--A8MyyNnnayFXtkoH--sac%2FaQQjh7mG%2FS896vzTig%3D%3D",
+							"evidence": "NQEQi%2BvzGzDOHb%2Bmm%2FDh75vZykU7KPVxl3PLvCENt890cSOoJqvP9zU%2FAtQywHJbCIeydw5khot%2BunLpXAkU1E41i0DXECrZdC%2FbnjDK7ZqZubVXCP8oZTscvOA1RzfewE9XPnXa0bVniqlL08k2CeTRq6gIhvyaEdBi%2Bgt72ta9VukXrsP0CuDZh9R65%2BoljiWw7WUqXpIt8i7r5Zz4efBwCnlMUaUmQeLaZzk3uokKWYo9Kf0OKJSVBpSJeDThH%2F3CzJCMW6nhPWAeddeg0OPxYnxw5gA7zTjd6ZQ5Huf6g%2BJr--iAIKJvOw93lUd5%2Bi--AcoR2ExwVlfcaDm7hkxqMA%3D%3D",
 							"otherinfo": "\ncookie:_PlaceDesEntreprises_session"
 						},
 						{
@@ -1358,7 +1318,7 @@
 							"method": "GET",
 							"param": "_PlaceDesEntreprises_session",
 							"attack": "",
-							"evidence": "TX5W61fUuyEbNAfmltXsCQ88dx4yK3sKqcW5nd2HPX8tOe0F8KuhEY0U3cQfH%2BWnATTXaEeGoNRdk60aMUqrctdAH396OeLvCLJNk0t81In%2BSmF5oq86uA4b%2BDFSxjex6LZuzs54frtO8GkUUYBb6XFSUDAqw5hDLN1KIkW6WauyaZpD12sBA1V8f9PNaU74lUpF34YWPl4596xn1EVdbx8Fq4DkJXtokHszq5hhJNxhlSrJ0gxUM2sISf0IPENeY2SxehdTfLC%2FCTl9CcQ3BOlbSW%2FAlHhiKO12dC2ihURgYhwF--RhVtDyPDy3LejU8I--v5f6ljmu1%2FO4y4aq3hlafA%3D%3D",
+							"evidence": "vOVAyBDrjQDKBTh1PBtbbVpO7dzTL432JAI1mv65DjHqEbBX%2BuGmDwNQW2SuXt5vaOoZLXUh6qTFn9M2J%2FmjT21V7aKon6hHcKOzGUvdZPAprMRvh1xleBR25z3uwZveQJItBcJB1cQm57PxrYEBl08nbbTACF2%2FQ9lxmh39K%2BR4JEfvx9qzKxBTpe11RWv4ew%2BU2zbfMCqVYX1NZzIshwXPSFiLiWoLzJ9zTrs04MgIkJAsJzz3C2FkeKn1U139BsMNCrfJeHGA5A4nac2MRAhf2h0JcxzSUul5rucAeFMRy9ln--FCYkrYliAO23CEH3--pUrBwuZN1rINa0C3cE9M6g%3D%3D",
 							"otherinfo": "\ncookie:_PlaceDesEntreprises_session"
 						},
 						{
@@ -1366,7 +1326,7 @@
 							"method": "GET",
 							"param": "_PlaceDesEntreprises_session",
 							"attack": "",
-							"evidence": "lKpcohZENJzvnkPl6xtmAxb0%2BrkLW9nqFFe26FVXevHa3mAaKSyy5Dro0yT8j5ba9vNi%2BYy%2BrkJxj6uVHmi%2BzGaGDKDol66bGW4QgYqRuPXE%2BjKKA%2FaXZGGlxQeOVQ8oWsJJjTnAkOAqSaeknGlurW7PiHz2VVjwq8eL3n9GUXY0KZCIG%2FMq7j91D%2FcUJboyM68NAbf2nuN7gJGx5GnteorziiaLqxpx0UPuDuuJZ4T6QziBVZ1Haqoj4vYJzAg%2B4LGwrhJRgYCnn0luGFI4QJjXLS9T0GA0QdMhxlZ%2B2ONc2W8Z--a6aLH3Hi%2B3XokhLm--0n%2B0ulxFeWkGQrVVaG4pkQ%3D%3D",
+							"evidence": "UdVN%2FE%2FzRoVMvF88fK4xC3xtukwiqIAAayzNx%2BXIIuivS1XVmzN9xdM%2FN%2BGhlucusFxpRWcWR6SpEfE1xpofjExogToqWD3rO4m2Ku4YPSigkvjXQpGl5RIsOV6XlNK8JMjda3Xc6C5wqA1S0FBkHqCTnxSQvGOg4v4zlkydQRyFlDaj5prJcJZrf5xrvPC9zCcoaV0Vju2CqWuZk1%2B79AOAt3trbeqnr4t3EAmCfqeRofn3WC8SKpxqAB9jNbvsNQVVzoeanSJM%2BtVU5NFO%2BopiTc8p%2Bf1g2ikGpz4pT4SQNTcs--EwiXERvKF6EpqlKh--b2r1D9M%2FRfc%2Bg5OmUwRrAA%3D%3D",
 							"otherinfo": "\ncookie:_PlaceDesEntreprises_session"
 						},
 						{
@@ -1374,27 +1334,19 @@
 							"method": "GET",
 							"param": "_PlaceDesEntreprises_session",
 							"attack": "",
-							"evidence": "QuTcDkAC4PJD%2FctjV8xacLkQuPRnaRv17h1VPZBwYJavJzTtz1cUPyW5sDSeoZzWKeiN%2FTDn9cduBM%2BsB%2Bhm1kbBoEQTedggw24tPWo8d157vwNFJxyaDDuTGqa2t9ij7454cf33nFMDQq79KlJTcZITYDlmjgX8Y%2BSNVTVIAWRBkYdmxO3%2BBfZuhQCiYVxf3T9P2xhAFWn1RGwo4PhyZ9mUqz2SgTqhz4X61FhGeNJD%2FvSGw44GPu%2FSkXvptp8ARjG7lPbDfcCXXYyq0PQchzmCmNLOKme2bCrP2Eq94X%2BvlPHH--J3XQNvMUCbMxAqvp--oKDKGI88es%2FcsKm6rs4ZmQ%3D%3D",
+							"evidence": "%2F8Wg6o3vb%2BG74U0mbQV%2B4ZasRIcHvLKPv%2FYVTItNjGwZ829glnUvscjQaFYhzyCM%2F9vblBSM1SCrquz3MUvfN0V2MFWqv%2FZ7rqfGaByqP5T1yy%2F1GXhCXFiqBq2P2yPUAdiLiVUVDZOkzaFF1KV%2FucJpTEFmPvKnGf%2BK7H8DYNBYxVyNjVZjxvEa%2B1BrZFqz4OZW3gBz6ltdEM%2F49Oe2lipXehTa9EKTMGS6Kyc2CtKtthXJvEiV9FRQHjngQV6Ethyis4%2FrCfBMp3uIA0MmtWuSOy2urfWas4LQ9nrQaV0gM3o2--tBa%2BtjqHOc66IMSd--Y6b%2BMCm9bbvkAHbMIsA6wA%3D%3D",
 							"otherinfo": "\ncookie:_PlaceDesEntreprises_session"
 						},
 						{
-							"uri": "https://place-des-entreprises.beta.gouv.fr",
+							"uri": "https://place-des-entreprises.beta.gouv.fr/packs/js/pages-bd529e30bf1bd2e24df6.js",
 							"method": "GET",
 							"param": "_PlaceDesEntreprises_session",
 							"attack": "",
-							"evidence": "raVT5TIi0qzfuMjgIRf4vpRSaM4ZaEQ2vXMMpxM39GKEUQcScWQduycfb72fclHnkBercQ4kWmpct96AM6ecycMQBvTMMtkdaqTKBe7KQ6Y29R%2BWuXFxgjMaSsOEc%2BWLo8HmGTWOCGrUmlaYEFHJTR4ITDJvJeooDLy9Uq6oC2hA0jAXpqI44q04VwJKHGIlh8JoJhkjw2mE6M4b9l%2FGIRYODX%2Fvg2mQcUkz6dibbkAwh3ZhXMMbfF%2BeSKNR66w4Z4QSkGKu73vlysrcNY%2FJpBDxuUcYqUyZb3Q3ma7YUATFhyRX--5pKAzCS%2BGidVLd7v--1TyA%2FXaf21WDz%2BTR2LW2IQ%3D%3D",
-							"otherinfo": "\ncookie:_PlaceDesEntreprises_session"
-						},
-						{
-							"uri": "https://place-des-entreprises.beta.gouv.fr/mon_compte/sign_in",
-							"method": "GET",
-							"param": "_PlaceDesEntreprises_session",
-							"attack": "",
-							"evidence": "lKpcohZENJzvnkPl6xtmAxb0%2BrkLW9nqFFe26FVXevHa3mAaKSyy5Dro0yT8j5ba9vNi%2BYy%2BrkJxj6uVHmi%2BzGaGDKDol66bGW4QgYqRuPXE%2BjKKA%2FaXZGGlxQeOVQ8oWsJJjTnAkOAqSaeknGlurW7PiHz2VVjwq8eL3n9GUXY0KZCIG%2FMq7j91D%2FcUJboyM68NAbf2nuN7gJGx5GnteorziiaLqxpx0UPuDuuJZ4T6QziBVZ1Haqoj4vYJzAg%2B4LGwrhJRgYCnn0luGFI4QJjXLS9T0GA0QdMhxlZ%2B2ONc2W8Z--a6aLH3Hi%2B3XokhLm--0n%2B0ulxFeWkGQrVVaG4pkQ%3D%3D",
+							"evidence": "Ai8SUBsqcJD2JLsRQ6RMBuQ5QnSf56uzF74puANVew5TayKJnmdAIiRBR%2F%2BGHAkI%2FdfaNPdAJszQhcrTtetkfsXGuUMYwFPxxOEoje7bciu%2FnV1ApDtg9oPvkptdDWhv0QemSueFsNO1Lo%2BlByRoa%2BOiBD%2FVLNNg15%2BG6KzF2327IkAJ0Zz2SKs7tBN04Kl8jzR5YJPFvV67qFM85cbpwDbIE5VNCgmi0zZMqKG6wq0MluH7dYh4XjJVtm5CGXGXz2KzHvrnMRIApV1pTcssQle5%2F0vDbfClvqA%2Bf9RttGOjFuDK--JVGH9ls%2BYmsgKhV4--CgwF8f%2Fz%2Bu94talAsbv%2BAA%3D%3D",
 							"otherinfo": "\ncookie:_PlaceDesEntreprises_session"
 						}
 					],
-					"count": "12",
+					"count": "7",
 					"solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
 					"otherinfo": "<p></p><p>cookie:_PlaceDesEntreprises_session</p>",
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id</p>",
@@ -1421,7 +1373,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://place-des-entreprises.beta.gouv.fr/assets/pages-b58b817d91e520f29b4e6045adc2b62f403f1c7137a72d1c719a5fbd4b126e9e.js",
+							"uri": "https://place-des-entreprises.beta.gouv.fr/assets/pages-f6507469c6f8affd94c4bbdc9e7315b66f31ba9c2ac819d46a245a1d0f9b280e.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1429,7 +1381,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://place-des-entreprises.beta.gouv.fr/packs/js/gouvfr-module-c10d257f91ae37e41969.js",
+							"uri": "https://place-des-entreprises.beta.gouv.fr/packs/js/gouvfr-module-53f1f813d18f7393272f.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1437,7 +1389,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://place-des-entreprises.beta.gouv.fr/packs/js/gouvfr-nomodule-17eba51663d7de7cb8e3.js",
+							"uri": "https://place-des-entreprises.beta.gouv.fr/packs/js/gouvfr-nomodule-e4973d8fbae07efe5d09.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1472,68 +1424,68 @@
 					"desc": "<p>This check looks at user-supplied input in query string parameters and POST data to identify where certain HTML attribute values might be controlled. This provides hot-spot detection for XSS (cross-site scripting) that will require further review by a security analyst to determine exploitability.</p>",
 					"instances":[ 
 						{
-							"uri": "https://place-des-entreprises.beta.gouv.fr/stats?anchor=stats-charts&commit=Filtrer&end_date=2024-02-04&start_date=2023-08-01&territory=126&theme=8",
+							"uri": "https://place-des-entreprises.beta.gouv.fr/stats?anchor=stats-charts&commit=Rechercher&end_date=2024-02-26&start_date=2023-08-01&territory=126&theme=8",
 							"method": "GET",
 							"param": "anchor",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://place-des-entreprises.beta.gouv.fr/stats?anchor=stats-charts&commit=Filtrer&end_date=2024-02-04&start_date=2023-08-01&territory=126&theme=8\n\nappears to include user input in: \n\na(n) [div] tag [data-controller] attribute \n\nThe user input found was:\nanchor=stats-charts\n\nThe user-controlled value was:\nstats-charts"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://place-des-entreprises.beta.gouv.fr/stats?anchor=stats-charts&commit=Rechercher&end_date=2024-02-26&start_date=2023-08-01&territory=126&theme=8\n\nappears to include user input in: \n\na(n) [div] tag [data-controller] attribute \n\nThe user input found was:\nanchor=stats-charts\n\nThe user-controlled value was:\nstats-charts"
 						},
 						{
-							"uri": "https://place-des-entreprises.beta.gouv.fr/stats?anchor=stats-charts&commit=Filtrer&end_date=2024-02-04&start_date=2023-08-01&territory=126&theme=8",
+							"uri": "https://place-des-entreprises.beta.gouv.fr/stats?anchor=stats-charts&commit=Rechercher&end_date=2024-02-26&start_date=2023-08-01&territory=126&theme=8",
 							"method": "GET",
 							"param": "anchor",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://place-des-entreprises.beta.gouv.fr/stats?anchor=stats-charts&commit=Filtrer&end_date=2024-02-04&start_date=2023-08-01&territory=126&theme=8\n\nappears to include user input in: \n\na(n) [div] tag [id] attribute \n\nThe user input found was:\nanchor=stats-charts\n\nThe user-controlled value was:\nstats-charts"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://place-des-entreprises.beta.gouv.fr/stats?anchor=stats-charts&commit=Rechercher&end_date=2024-02-26&start_date=2023-08-01&territory=126&theme=8\n\nappears to include user input in: \n\na(n) [div] tag [id] attribute \n\nThe user input found was:\nanchor=stats-charts\n\nThe user-controlled value was:\nstats-charts"
 						},
 						{
-							"uri": "https://place-des-entreprises.beta.gouv.fr/stats?anchor=stats-charts&commit=Filtrer&end_date=2024-02-04&start_date=2023-08-01&territory=126&theme=8",
+							"uri": "https://place-des-entreprises.beta.gouv.fr/stats?anchor=stats-charts&commit=Rechercher&end_date=2024-02-26&start_date=2023-08-01&territory=126&theme=8",
 							"method": "GET",
 							"param": "anchor",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://place-des-entreprises.beta.gouv.fr/stats?anchor=stats-charts&commit=Filtrer&end_date=2024-02-04&start_date=2023-08-01&territory=126&theme=8\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nanchor=stats-charts\n\nThe user-controlled value was:\nstats-charts"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://place-des-entreprises.beta.gouv.fr/stats?anchor=stats-charts&commit=Rechercher&end_date=2024-02-26&start_date=2023-08-01&territory=126&theme=8\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nanchor=stats-charts\n\nThe user-controlled value was:\nstats-charts"
 						},
 						{
-							"uri": "https://place-des-entreprises.beta.gouv.fr/stats?anchor=stats-charts&commit=Filtrer&end_date=2024-02-04&start_date=2023-08-01&territory=126&theme=8",
+							"uri": "https://place-des-entreprises.beta.gouv.fr/stats?anchor=stats-charts&commit=Rechercher&end_date=2024-02-26&start_date=2023-08-01&territory=126&theme=8",
 							"method": "GET",
 							"param": "commit",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://place-des-entreprises.beta.gouv.fr/stats?anchor=stats-charts&commit=Filtrer&end_date=2024-02-04&start_date=2023-08-01&territory=126&theme=8\n\nappears to include user input in: \n\na(n) [input] tag [data-disable-with] attribute \n\nThe user input found was:\ncommit=Filtrer\n\nThe user-controlled value was:\nfiltrer"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://place-des-entreprises.beta.gouv.fr/stats?anchor=stats-charts&commit=Rechercher&end_date=2024-02-26&start_date=2023-08-01&territory=126&theme=8\n\nappears to include user input in: \n\na(n) [input] tag [data-disable-with] attribute \n\nThe user input found was:\ncommit=Rechercher\n\nThe user-controlled value was:\nrechercher"
 						},
 						{
-							"uri": "https://place-des-entreprises.beta.gouv.fr/stats?anchor=stats-charts&commit=Filtrer&end_date=2024-02-04&start_date=2023-08-01&territory=126&theme=8",
+							"uri": "https://place-des-entreprises.beta.gouv.fr/stats?anchor=stats-charts&commit=Rechercher&end_date=2024-02-26&start_date=2023-08-01&territory=126&theme=8",
 							"method": "GET",
 							"param": "commit",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://place-des-entreprises.beta.gouv.fr/stats?anchor=stats-charts&commit=Filtrer&end_date=2024-02-04&start_date=2023-08-01&territory=126&theme=8\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\ncommit=Filtrer\n\nThe user-controlled value was:\nfiltrer"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://place-des-entreprises.beta.gouv.fr/stats?anchor=stats-charts&commit=Rechercher&end_date=2024-02-26&start_date=2023-08-01&territory=126&theme=8\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\ncommit=Rechercher\n\nThe user-controlled value was:\nrechercher"
 						},
 						{
-							"uri": "https://place-des-entreprises.beta.gouv.fr/stats?anchor=stats-charts&commit=Filtrer&end_date=2024-02-04&start_date=2023-08-01&territory=126&theme=8",
+							"uri": "https://place-des-entreprises.beta.gouv.fr/stats?anchor=stats-charts&commit=Rechercher&end_date=2024-02-26&start_date=2023-08-01&territory=126&theme=8",
 							"method": "GET",
 							"param": "end_date",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://place-des-entreprises.beta.gouv.fr/stats?anchor=stats-charts&commit=Filtrer&end_date=2024-02-04&start_date=2023-08-01&territory=126&theme=8\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nend_date=2024-02-04\n\nThe user-controlled value was:\n2024-02-04"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://place-des-entreprises.beta.gouv.fr/stats?anchor=stats-charts&commit=Rechercher&end_date=2024-02-26&start_date=2023-08-01&territory=126&theme=8\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nend_date=2024-02-26\n\nThe user-controlled value was:\n2024-02-26"
 						},
 						{
-							"uri": "https://place-des-entreprises.beta.gouv.fr/stats?anchor=stats-charts&commit=Filtrer&end_date=2024-02-04&start_date=2023-08-01&territory=126&theme=8",
+							"uri": "https://place-des-entreprises.beta.gouv.fr/stats?anchor=stats-charts&commit=Rechercher&end_date=2024-02-26&start_date=2023-08-01&territory=126&theme=8",
 							"method": "GET",
 							"param": "start_date",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://place-des-entreprises.beta.gouv.fr/stats?anchor=stats-charts&commit=Filtrer&end_date=2024-02-04&start_date=2023-08-01&territory=126&theme=8\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nstart_date=2023-08-01\n\nThe user-controlled value was:\n2023-08-01"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://place-des-entreprises.beta.gouv.fr/stats?anchor=stats-charts&commit=Rechercher&end_date=2024-02-26&start_date=2023-08-01&territory=126&theme=8\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nstart_date=2023-08-01\n\nThe user-controlled value was:\n2023-08-01"
 						},
 						{
-							"uri": "https://place-des-entreprises.beta.gouv.fr/stats?anchor=stats-charts&commit=Filtrer&end_date=2024-02-04&start_date=2023-08-01&territory=126&theme=8",
+							"uri": "https://place-des-entreprises.beta.gouv.fr/stats?anchor=stats-charts&commit=Rechercher&end_date=2024-02-26&start_date=2023-08-01&territory=126&theme=8",
 							"method": "GET",
 							"param": "territory",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://place-des-entreprises.beta.gouv.fr/stats?anchor=stats-charts&commit=Filtrer&end_date=2024-02-04&start_date=2023-08-01&territory=126&theme=8\n\nappears to include user input in: \n\na(n) [option] tag [value] attribute \n\nThe user input found was:\nterritory=126\n\nThe user-controlled value was:\n126"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://place-des-entreprises.beta.gouv.fr/stats?anchor=stats-charts&commit=Rechercher&end_date=2024-02-26&start_date=2023-08-01&territory=126&theme=8\n\nappears to include user input in: \n\na(n) [option] tag [value] attribute \n\nThe user input found was:\nterritory=126\n\nThe user-controlled value was:\n126"
 						},
 						{
 							"uri": "https://place-des-entreprises.beta.gouv.fr/mon_compte/sign_in",
@@ -1562,7 +1514,7 @@
 					],
 					"count": "11",
 					"solution": "<p>Validate all input and sanitize output it before writing to any HTML attributes.</p>",
-					"otherinfo": "<p>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:</p><p></p><p>https://place-des-entreprises.beta.gouv.fr/stats?anchor=stats-charts&commit=Filtrer&end_date=2024-02-04&start_date=2023-08-01&territory=126&theme=8</p><p></p><p>appears to include user input in: </p><p></p><p>a(n) [div] tag [data-controller] attribute </p><p></p><p>The user input found was:</p><p>anchor=stats-charts</p><p></p><p>The user-controlled value was:</p><p>stats-charts</p>",
+					"otherinfo": "<p>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:</p><p></p><p>https://place-des-entreprises.beta.gouv.fr/stats?anchor=stats-charts&commit=Rechercher&end_date=2024-02-26&start_date=2023-08-01&territory=126&theme=8</p><p></p><p>appears to include user input in: </p><p></p><p>a(n) [div] tag [data-controller] attribute </p><p></p><p>The user input found was:</p><p>anchor=stats-charts</p><p></p><p>The user-controlled value was:</p><p>stats-charts</p>",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html</p>",
 					"cweid": "20",
 					"wascid": "20",

@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 4 Feb 2024 14:00:55",
+	"@generated": "Mon, 26 Feb 2024 23:15:17",
 	"site":[ 
 		{
 			"@name": "https://vae.gouv.fr",
@@ -42,7 +42,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "70"
+					"sourceid": "107"
 				},
 				{
 					"pluginid": "10055",
@@ -69,15 +69,23 @@
 							"attack": "",
 							"evidence": "frame-ancestors 'self';",
 							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nscript-src, style-src, img-src, connect-src, frame-src, font-src, media-src, object-src, manifest-src, worker-src, form-action\n\nThe directive(s): form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything."
+						},
+						{
+							"uri": "https://vae.gouv.fr/sitemap.xml",
+							"method": "GET",
+							"param": "Content-Security-Policy",
+							"attack": "",
+							"evidence": "frame-ancestors 'self';",
+							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nscript-src, style-src, img-src, connect-src, frame-src, font-src, media-src, object-src, manifest-src, worker-src, form-action\n\nThe directive(s): form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything."
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is properly configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "<p>The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: </p><p>script-src, style-src, img-src, connect-src, frame-src, font-src, media-src, object-src, manifest-src, worker-src, form-action</p><p></p><p>The directive(s): form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything.</p>",
 					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "10055",
@@ -120,7 +128,7 @@
 					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "10055",
@@ -163,7 +171,7 @@
 					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "10003",
@@ -190,7 +198,7 @@
 					"reference": "<p>https://github.com/advisories/GHSA-c59h-r6p8-q9wc</p><p></p>",
 					"cweid": "829",
 					"wascid": "-1",
-					"sourceid": "108"
+					"sourceid": "125"
 				},
 				{
 					"pluginid": "10054",
@@ -211,7 +219,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://vae.gouv.fr/admin2/_next/static/chunks/2472-e62285463dd09caf.js",
+							"uri": "https://vae.gouv.fr/admin2/_next/static/chunks/1659-bad7d9fe7ac14d1c.js",
 							"method": "GET",
 							"param": "sc-sticky-session",
 							"attack": "",
@@ -219,7 +227,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://vae.gouv.fr/admin2/_next/static/chunks/8326-f605393766b26496.js",
+							"uri": "https://vae.gouv.fr/admin2/_next/static/chunks/2472-d5d523ac7e7ced7b.js",
 							"method": "GET",
 							"param": "sc-sticky-session",
 							"attack": "",
@@ -227,7 +235,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://vae.gouv.fr/admin2/_next/static/chunks/fd9d1056-7d613a97a623f9f5.js",
+							"uri": "https://vae.gouv.fr/admin2/_next/static/chunks/2757-60d2a32564b0c1b3.js",
 							"method": "GET",
 							"param": "sc-sticky-session",
 							"attack": "",
@@ -235,7 +243,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://vae.gouv.fr/admin2/_next/static/chunks/main-app-be3eb572d1d4b3d1.js",
+							"uri": "https://vae.gouv.fr/admin2/_next/static/chunks/fd9d1056-3568d7451f7984ff.js",
 							"method": "GET",
 							"param": "sc-sticky-session",
 							"attack": "",
@@ -243,7 +251,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://vae.gouv.fr/admin2/_next/static/chunks/webpack-e3436e22e6a7db8b.js",
+							"uri": "https://vae.gouv.fr/admin2/_next/static/chunks/main-app-a5dcfe1165c34781.js",
 							"method": "GET",
 							"param": "sc-sticky-session",
 							"attack": "",
@@ -251,7 +259,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://vae.gouv.fr/admin2/_next/static/css/5538777aae40b94f.css",
+							"uri": "https://vae.gouv.fr/admin2/_next/static/chunks/webpack-aea3330073ca441f.js",
 							"method": "GET",
 							"param": "sc-sticky-session",
 							"attack": "",
@@ -259,7 +267,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://vae.gouv.fr/admin2/_next/static/css/85425a844ef22290.css",
+							"uri": "https://vae.gouv.fr/admin2/_next/static/css/bfedf2dcec0d5cf4.css",
 							"method": "GET",
 							"param": "sc-sticky-session",
 							"attack": "",
@@ -305,7 +313,7 @@
 					"reference": "<p>https://tools.ietf.org/html/draft-ietf-httpbis-cookie-same-site</p>",
 					"cweid": "1275",
 					"wascid": "13",
-					"sourceid": "191"
+					"sourceid": "221"
 				},
 				{
 					"pluginid": "10110",
@@ -318,7 +326,7 @@
 					"desc": "<p>A dangerous JS function seems to be in use that would leave the site vulnerable.</p>",
 					"instances":[ 
 						{
-							"uri": "https://vae.gouv.fr/admin/assets/main-qHQ-svo5.js",
+							"uri": "https://vae.gouv.fr/admin/assets/main-CzyfLF-N.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -326,7 +334,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://vae.gouv.fr/admin2/_next/static/chunks/1659-92d799ed1d1faea4.js",
+							"uri": "https://vae.gouv.fr/admin2/_next/static/chunks/1659-bad7d9fe7ac14d1c.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -334,7 +342,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -348,7 +356,7 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "145"
+					"sourceid": "170"
 				},
 				{
 					"pluginid": "10063",
@@ -401,6 +409,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://vae.gouv.fr/confidentialite/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://vae.gouv.fr/declaration-accessibilite/",
 							"method": "GET",
 							"param": "",
@@ -409,15 +425,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://vae.gouv.fr/espace-professionnel/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://vae.gouv.fr/espace-professionnel/creation/",
+							"uri": "https://vae.gouv.fr/mentions-legales/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -484,6 +492,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://vae.gouv.fr/cgu-candidat/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "X-Powered-By: Next.js",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://vae.gouv.fr/confidentialite/",
 							"method": "GET",
 							"param": "",
@@ -493,22 +509,6 @@
 						},
 						{
 							"uri": "https://vae.gouv.fr/declaration-accessibilite/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "X-Powered-By: Next.js",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://vae.gouv.fr/espace-professionnel/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "X-Powered-By: Next.js",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://vae.gouv.fr/espace-professionnel/creation/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -548,6 +548,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://vae.gouv.fr/savoir-plus/articles/qui-accompagne-a-la-vae/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "X-Powered-By: Next.js",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://vae.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "",
@@ -562,7 +570,7 @@
 					"reference": "<p>https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/01-Information_Gathering/08-Fingerprint_Web_Application_Framework</p><p>https://www.troyhunt.com/2012/02/shhh-dont-let-your-response-headers.html</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "7"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "10096",
@@ -575,15 +583,7 @@
 					"desc": "<p>A timestamp was disclosed by the application/web server - Unix</p>",
 					"instances":[ 
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "1392781812",
-							"otherinfo": "1392781812, which evaluates to: 2014-02-19 03:50:12"
-						},
-						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -591,7 +591,7 @@
 							"otherinfo": "1393555694, which evaluates to: 2014-02-28 02:48:14"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -599,7 +599,7 @@
 							"otherinfo": "1393639104, which evaluates to: 2014-03-01 01:58:24"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -607,7 +607,7 @@
 							"otherinfo": "1395535956, which evaluates to: 2014-03-23 00:52:36"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -615,7 +615,7 @@
 							"otherinfo": "1395751752, which evaluates to: 2014-03-25 12:49:12"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -623,7 +623,7 @@
 							"otherinfo": "1396182291, which evaluates to: 2014-03-30 12:24:51"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -631,7 +631,7 @@
 							"otherinfo": "1398893684, which evaluates to: 2014-04-30 21:34:44"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -639,7 +639,7 @@
 							"otherinfo": "1399257539, which evaluates to: 2014-05-05 02:38:59"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -647,7 +647,7 @@
 							"otherinfo": "1404054877, which evaluates to: 2014-06-29 15:14:37"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -655,7 +655,7 @@
 							"otherinfo": "1405279636, which evaluates to: 2014-07-13 19:27:16"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -663,7 +663,7 @@
 							"otherinfo": "1412390302, which evaluates to: 2014-10-04 02:38:22"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -671,7 +671,7 @@
 							"otherinfo": "1413257819, which evaluates to: 2014-10-14 03:36:59"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -679,7 +679,7 @@
 							"otherinfo": "1414112111, which evaluates to: 2014-10-24 00:55:11"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -687,7 +687,7 @@
 							"otherinfo": "1426881987, which evaluates to: 2015-03-20 20:06:27"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -695,7 +695,7 @@
 							"otherinfo": "1427272223, which evaluates to: 2015-03-25 08:30:23"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -703,7 +703,7 @@
 							"otherinfo": "1430667929, which evaluates to: 2015-05-03 15:45:29"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -711,7 +711,7 @@
 							"otherinfo": "1431517754, which evaluates to: 2015-05-13 11:49:14"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -719,7 +719,7 @@
 							"otherinfo": "1431655765, which evaluates to: 2015-05-15 02:09:25"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -727,7 +727,7 @@
 							"otherinfo": "1432378464, which evaluates to: 2015-05-23 10:54:24"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -735,7 +735,7 @@
 							"otherinfo": "1432588573, which evaluates to: 2015-05-25 21:16:13"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -743,7 +743,7 @@
 							"otherinfo": "1432725776, which evaluates to: 2015-05-27 11:22:56"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -751,7 +751,7 @@
 							"otherinfo": "1434042557, which evaluates to: 2015-06-11 17:09:17"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -759,7 +759,7 @@
 							"otherinfo": "1437099964, which evaluates to: 2015-07-17 02:26:04"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -767,7 +767,7 @@
 							"otherinfo": "1439316330, which evaluates to: 2015-08-11 18:05:30"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -775,7 +775,7 @@
 							"otherinfo": "1442658625, which evaluates to: 2015-09-19 10:30:25"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -783,7 +783,7 @@
 							"otherinfo": "1449415276, which evaluates to: 2015-12-06 15:21:16"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -791,7 +791,7 @@
 							"otherinfo": "1450815602, which evaluates to: 2015-12-22 20:20:02"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -799,7 +799,7 @@
 							"otherinfo": "1452454533, which evaluates to: 2016-01-10 19:35:33"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -807,7 +807,7 @@
 							"otherinfo": "1455516326, which evaluates to: 2016-02-15 06:05:26"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -815,7 +815,7 @@
 							"otherinfo": "1456262402, which evaluates to: 2016-02-23 21:20:02"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -823,7 +823,7 @@
 							"otherinfo": "1457606340, which evaluates to: 2016-03-10 10:39:00"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -831,7 +831,7 @@
 							"otherinfo": "1461121720, which evaluates to: 2016-04-20 03:08:40"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -839,7 +839,7 @@
 							"otherinfo": "1461446943, which evaluates to: 2016-04-23 21:29:03"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -847,7 +847,7 @@
 							"otherinfo": "1463355134, which evaluates to: 2016-05-15 23:32:14"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -855,7 +855,7 @@
 							"otherinfo": "1464375394, which evaluates to: 2016-05-27 18:56:34"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -863,7 +863,7 @@
 							"otherinfo": "1464380207, which evaluates to: 2016-05-27 20:16:47"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -871,7 +871,7 @@
 							"otherinfo": "1467031594, which evaluates to: 2016-06-27 12:46:34"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -879,7 +879,7 @@
 							"otherinfo": "1469046755, which evaluates to: 2016-07-20 20:32:35"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -887,7 +887,7 @@
 							"otherinfo": "1471733935, which evaluates to: 2016-08-20 22:58:55"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -895,7 +895,7 @@
 							"otherinfo": "1475708069, which evaluates to: 2016-10-05 22:54:29"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -903,7 +903,7 @@
 							"otherinfo": "1476395008, which evaluates to: 2016-10-13 21:43:28"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -911,7 +911,7 @@
 							"otherinfo": "1476395009, which evaluates to: 2016-10-13 21:43:29"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -919,7 +919,7 @@
 							"otherinfo": "1480756522, which evaluates to: 2016-12-03 09:15:22"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -927,7 +927,7 @@
 							"otherinfo": "1483529935, which evaluates to: 2017-01-04 11:38:55"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -935,7 +935,7 @@
 							"otherinfo": "1491858159, which evaluates to: 2017-04-10 21:02:39"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -943,7 +943,7 @@
 							"otherinfo": "1495573769, which evaluates to: 2017-05-23 21:09:29"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -951,7 +951,7 @@
 							"otherinfo": "1495990901, which evaluates to: 2017-05-28 17:01:41"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -959,7 +959,7 @@
 							"otherinfo": "1501505948, which evaluates to: 2017-07-31 12:59:08"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -967,7 +967,7 @@
 							"otherinfo": "1507829418, which evaluates to: 2017-10-12 17:30:18"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -975,7 +975,7 @@
 							"otherinfo": "1508970993, which evaluates to: 2017-10-25 22:36:33"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -983,7 +983,7 @@
 							"otherinfo": "1510255612, which evaluates to: 2017-11-09 19:26:52"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -991,7 +991,7 @@
 							"otherinfo": "1514023603, which evaluates to: 2017-12-23 10:06:43"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -999,7 +999,7 @@
 							"otherinfo": "1517677493, which evaluates to: 2018-02-03 17:04:53"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1007,7 +1007,7 @@
 							"otherinfo": "1518500249, which evaluates to: 2018-02-13 05:37:29"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1015,7 +1015,7 @@
 							"otherinfo": "1518925132, which evaluates to: 2018-02-18 03:38:52"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1023,7 +1023,7 @@
 							"otherinfo": "1521486534, which evaluates to: 2018-03-19 19:08:54"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1031,7 +1031,7 @@
 							"otherinfo": "1522805485, which evaluates to: 2018-04-04 01:31:25"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1039,7 +1039,7 @@
 							"otherinfo": "1522871579, which evaluates to: 2018-04-04 19:52:59"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1047,7 +1047,7 @@
 							"otherinfo": "1524020338, which evaluates to: 2018-04-18 02:58:58"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1055,7 +1055,7 @@
 							"otherinfo": "1531092325, which evaluates to: 2018-07-08 23:25:25"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1063,7 +1063,7 @@
 							"otherinfo": "1533947780, which evaluates to: 2018-08-11 00:36:20"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1071,7 +1071,7 @@
 							"otherinfo": "1535977030, which evaluates to: 2018-09-03 12:17:10"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1079,7 +1079,7 @@
 							"otherinfo": "1537002063, which evaluates to: 2018-09-15 09:01:03"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1087,7 +1087,7 @@
 							"otherinfo": "1539241949, which evaluates to: 2018-10-11 07:12:29"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1095,7 +1095,7 @@
 							"otherinfo": "1541459225, which evaluates to: 2018-11-05 23:07:05"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1103,7 +1103,7 @@
 							"otherinfo": "1546045734, which evaluates to: 2018-12-29 01:08:54"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1111,7 +1111,7 @@
 							"otherinfo": "1548603684, which evaluates to: 2019-01-27 15:41:24"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1119,7 +1119,7 @@
 							"otherinfo": "1549556828, which evaluates to: 2019-02-07 16:27:08"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1127,7 +1127,7 @@
 							"otherinfo": "1555064734, which evaluates to: 2019-04-12 10:25:34"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1135,7 +1135,7 @@
 							"otherinfo": "1555081692, which evaluates to: 2019-04-12 15:08:12"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1143,7 +1143,7 @@
 							"otherinfo": "1565136089, which evaluates to: 2019-08-07 00:01:29"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1151,7 +1151,7 @@
 							"otherinfo": "1569222167, which evaluates to: 2019-09-23 07:02:47"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1159,7 +1159,7 @@
 							"otherinfo": "1575780402, which evaluates to: 2019-12-08 04:46:42"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1167,7 +1167,7 @@
 							"otherinfo": "1575990012, which evaluates to: 2019-12-10 15:00:12"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1175,7 +1175,7 @@
 							"otherinfo": "1583128258, which evaluates to: 2020-03-02 05:50:58"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1183,7 +1183,7 @@
 							"otherinfo": "1593081372, which evaluates to: 2020-06-25 10:36:12"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1191,7 +1191,7 @@
 							"otherinfo": "1594956187, which evaluates to: 2020-07-17 03:23:07"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1199,7 +1199,7 @@
 							"otherinfo": "1595750129, which evaluates to: 2020-07-26 07:55:29"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1207,7 +1207,7 @@
 							"otherinfo": "1607167915, which evaluates to: 2020-12-05 11:31:55"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1215,7 +1215,7 @@
 							"otherinfo": "1610612736, which evaluates to: 2021-01-14 08:25:36"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1223,7 +1223,7 @@
 							"otherinfo": "1610612737, which evaluates to: 2021-01-14 08:25:37"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1231,7 +1231,7 @@
 							"otherinfo": "1610833997, which evaluates to: 2021-01-16 21:53:17"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1239,7 +1239,7 @@
 							"otherinfo": "1613405280, which evaluates to: 2021-02-15 16:08:00"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1247,7 +1247,7 @@
 							"otherinfo": "1614419982, which evaluates to: 2021-02-27 09:59:42"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1255,7 +1255,7 @@
 							"otherinfo": "1617046695, which evaluates to: 2021-03-29 19:38:15"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1263,7 +1263,7 @@
 							"otherinfo": "1618508792, which evaluates to: 2021-04-15 17:46:32"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1271,7 +1271,7 @@
 							"otherinfo": "1628790961, which evaluates to: 2021-08-12 17:56:01"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1279,7 +1279,7 @@
 							"otherinfo": "1637815568, which evaluates to: 2021-11-25 04:46:08"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1287,7 +1287,7 @@
 							"otherinfo": "1638401717, which evaluates to: 2021-12-01 23:35:17"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1295,7 +1295,7 @@
 							"otherinfo": "1641548236, which evaluates to: 2022-01-07 09:37:16"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1303,7 +1303,7 @@
 							"otherinfo": "1641649973, which evaluates to: 2022-01-08 13:52:53"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1311,7 +1311,7 @@
 							"otherinfo": "1648197032, which evaluates to: 2022-03-25 08:30:32"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1319,7 +1319,7 @@
 							"otherinfo": "1653985193, which evaluates to: 2022-05-31 08:19:53"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1327,7 +1327,7 @@
 							"otherinfo": "1654270250, which evaluates to: 2022-06-03 15:30:50"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1335,7 +1335,7 @@
 							"otherinfo": "1655181056, which evaluates to: 2022-06-14 04:30:56"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1343,7 +1343,7 @@
 							"otherinfo": "1660621633, which evaluates to: 2022-08-16 03:47:13"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1351,7 +1351,7 @@
 							"otherinfo": "1661551462, which evaluates to: 2022-08-26 22:04:22"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1359,7 +1359,7 @@
 							"otherinfo": "1667834072, which evaluates to: 2022-11-07 15:14:32"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1367,7 +1367,7 @@
 							"otherinfo": "1668267050, which evaluates to: 2022-11-12 15:30:50"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1375,7 +1375,7 @@
 							"otherinfo": "1669523910, which evaluates to: 2022-11-27 04:38:30"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1383,7 +1383,7 @@
 							"otherinfo": "1676153920, which evaluates to: 2023-02-11 22:18:40"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1391,7 +1391,7 @@
 							"otherinfo": "1676643554, which evaluates to: 2023-02-17 14:19:14"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1399,7 +1399,7 @@
 							"otherinfo": "1679025792, which evaluates to: 2023-03-17 04:03:12"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1407,7 +1407,7 @@
 							"otherinfo": "1682292957, which evaluates to: 2023-04-23 23:35:57"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1415,7 +1415,7 @@
 							"otherinfo": "1685915746, which evaluates to: 2023-06-04 21:55:46"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1423,7 +1423,7 @@
 							"otherinfo": "1686838959, which evaluates to: 2023-06-15 14:22:39"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1431,7 +1431,7 @@
 							"otherinfo": "1689216846, which evaluates to: 2023-07-13 02:54:06"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1439,7 +1439,7 @@
 							"otherinfo": "1692713982, which evaluates to: 2023-08-22 14:19:42"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1447,7 +1447,7 @@
 							"otherinfo": "1694076839, which evaluates to: 2023-09-07 08:53:59"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1455,7 +1455,7 @@
 							"otherinfo": "1695183700, which evaluates to: 2023-09-20 04:21:40"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1463,7 +1463,7 @@
 							"otherinfo": "1699332808, which evaluates to: 2023-11-07 04:53:28"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1471,7 +1471,7 @@
 							"otherinfo": "1699691293, which evaluates to: 2023-11-11 08:28:13"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1479,7 +1479,7 @@
 							"otherinfo": "1700274565, which evaluates to: 2023-11-18 02:29:25"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1487,7 +1487,7 @@
 							"otherinfo": "1700445008, which evaluates to: 2023-11-20 01:50:08"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1495,7 +1495,7 @@
 							"otherinfo": "1701076831, which evaluates to: 2023-11-27 09:20:31"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1503,7 +1503,7 @@
 							"otherinfo": "1712269319, which evaluates to: 2024-04-04 22:21:59"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1511,7 +1511,7 @@
 							"otherinfo": "1713906067, which evaluates to: 2024-04-23 21:01:07"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1519,7 +1519,7 @@
 							"otherinfo": "1714227617, which evaluates to: 2024-04-27 14:20:17"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1527,7 +1527,7 @@
 							"otherinfo": "1719377915, which evaluates to: 2024-06-26 04:58:35"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1535,7 +1535,7 @@
 							"otherinfo": "1721773893, which evaluates to: 2024-07-23 22:31:33"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1543,7 +1543,7 @@
 							"otherinfo": "1724537150, which evaluates to: 2024-08-24 22:05:50"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1551,7 +1551,7 @@
 							"otherinfo": "1728879713, which evaluates to: 2024-10-14 04:21:53"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1559,7 +1559,7 @@
 							"otherinfo": "1729034894, which evaluates to: 2024-10-15 23:28:14"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1567,7 +1567,7 @@
 							"otherinfo": "1731405415, which evaluates to: 2024-11-12 09:56:55"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1575,7 +1575,7 @@
 							"otherinfo": "1732584193, which evaluates to: 2024-11-26 01:23:13"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1583,7 +1583,7 @@
 							"otherinfo": "1734335097, which evaluates to: 2024-12-16 07:44:57"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1591,7 +1591,7 @@
 							"otherinfo": "1738483198, which evaluates to: 2025-02-02 07:59:58"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1599,7 +1599,7 @@
 							"otherinfo": "1744830464, which evaluates to: 2025-04-16 19:07:44"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1607,7 +1607,7 @@
 							"otherinfo": "1744830465, which evaluates to: 2025-04-16 19:07:45"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1615,7 +1615,7 @@
 							"otherinfo": "1745797284, which evaluates to: 2025-04-27 23:41:24"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1623,7 +1623,7 @@
 							"otherinfo": "1747873779, which evaluates to: 2025-05-22 00:29:39"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1631,7 +1631,7 @@
 							"otherinfo": "1749149687, which evaluates to: 2025-06-05 18:54:47"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1639,7 +1639,7 @@
 							"otherinfo": "1749200295, which evaluates to: 2025-06-06 08:58:15"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1647,7 +1647,7 @@
 							"otherinfo": "1750603025, which evaluates to: 2025-06-22 14:37:05"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1655,7 +1655,7 @@
 							"otherinfo": "1753167236, which evaluates to: 2025-07-22 06:53:56"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1663,7 +1663,7 @@
 							"otherinfo": "1754252060, which evaluates to: 2025-08-03 20:14:20"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1671,7 +1671,7 @@
 							"otherinfo": "1756076034, which evaluates to: 2025-08-24 22:53:54"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1679,7 +1679,7 @@
 							"otherinfo": "1759253602, which evaluates to: 2025-09-30 17:33:22"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1687,7 +1687,7 @@
 							"otherinfo": "1761308591, which evaluates to: 2025-10-24 12:23:11"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1695,7 +1695,7 @@
 							"otherinfo": "1762651403, which evaluates to: 2025-11-09 01:23:23"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1703,7 +1703,7 @@
 							"otherinfo": "1767581616, which evaluates to: 2026-01-05 02:53:36"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1711,7 +1711,7 @@
 							"otherinfo": "1770335741, which evaluates to: 2026-02-05 23:55:41"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1719,7 +1719,7 @@
 							"otherinfo": "1771706367, which evaluates to: 2026-02-21 20:39:27"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1727,7 +1727,7 @@
 							"otherinfo": "1774776394, which evaluates to: 2026-03-29 09:26:34"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1735,7 +1735,7 @@
 							"otherinfo": "1774941330, which evaluates to: 2026-03-31 07:15:30"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1743,7 +1743,7 @@
 							"otherinfo": "1779033703, which evaluates to: 2026-05-17 16:01:43"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1751,7 +1751,7 @@
 							"otherinfo": "1779581495, which evaluates to: 2026-05-24 00:11:35"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1759,7 +1759,7 @@
 							"otherinfo": "1780907670, which evaluates to: 2026-06-08 08:34:30"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1767,7 +1767,7 @@
 							"otherinfo": "1781354906, which evaluates to: 2026-06-13 12:48:26"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1775,7 +1775,7 @@
 							"otherinfo": "1781952180, which evaluates to: 2026-06-20 10:43:00"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1783,7 +1783,7 @@
 							"otherinfo": "1783734482, which evaluates to: 2026-07-11 01:48:02"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1791,7 +1791,7 @@
 							"otherinfo": "1797494240, which evaluates to: 2026-12-17 07:57:20"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1799,7 +1799,7 @@
 							"otherinfo": "1800124847, which evaluates to: 2027-01-16 18:40:47"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1807,7 +1807,7 @@
 							"otherinfo": "1802137761, which evaluates to: 2027-02-09 01:49:21"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1815,7 +1815,7 @@
 							"otherinfo": "1804592342, which evaluates to: 2027-03-09 11:39:02"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1823,7 +1823,7 @@
 							"otherinfo": "1804850592, which evaluates to: 2027-03-12 11:23:12"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1831,7 +1831,7 @@
 							"otherinfo": "1807016891, which evaluates to: 2027-04-06 13:08:11"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1839,7 +1839,7 @@
 							"otherinfo": "1814182875, which evaluates to: 2027-06-28 11:41:15"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1847,7 +1847,7 @@
 							"otherinfo": "1814351708, which evaluates to: 2027-06-30 10:35:08"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1855,7 +1855,7 @@
 							"otherinfo": "1816402316, which evaluates to: 2027-07-24 04:11:56"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1863,7 +1863,7 @@
 							"otherinfo": "1817252668, which evaluates to: 2027-08-03 00:24:28"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1871,7 +1871,7 @@
 							"otherinfo": "1822297739, which evaluates to: 2027-09-30 09:48:59"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1879,7 +1879,7 @@
 							"otherinfo": "1835478071, which evaluates to: 2028-02-29 23:01:11"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1887,7 +1887,7 @@
 							"otherinfo": "1836072691, which evaluates to: 2028-03-07 20:11:31"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1895,7 +1895,7 @@
 							"otherinfo": "1841049896, which evaluates to: 2028-05-04 10:44:56"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1903,7 +1903,7 @@
 							"otherinfo": "1845252383, which evaluates to: 2028-06-22 02:06:23"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1911,7 +1911,7 @@
 							"otherinfo": "1846949527, which evaluates to: 2028-07-11 17:32:07"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1919,7 +1919,7 @@
 							"otherinfo": "1854211946, which evaluates to: 2028-10-03 18:52:26"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1927,7 +1927,7 @@
 							"otherinfo": "1856431235, which evaluates to: 2028-10-29 11:20:35"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1935,7 +1935,7 @@
 							"otherinfo": "1859775393, which evaluates to: 2028-12-07 04:16:33"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1943,7 +1943,7 @@
 							"otherinfo": "1861159788, which evaluates to: 2028-12-23 04:49:48"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1951,7 +1951,7 @@
 							"otherinfo": "1862657033, which evaluates to: 2029-01-09 12:43:53"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1959,7 +1959,7 @@
 							"otherinfo": "1866414978, which evaluates to: 2029-02-22 00:36:18"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1967,7 +1967,7 @@
 							"otherinfo": "1866599683, which evaluates to: 2029-02-24 03:54:43"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1975,7 +1975,7 @@
 							"otherinfo": "1876281319, which evaluates to: 2029-06-16 05:15:19"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1983,7 +1983,7 @@
 							"otherinfo": "1879048192, which evaluates to: 2029-07-18 05:49:52"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1991,7 +1991,7 @@
 							"otherinfo": "1879048193, which evaluates to: 2029-07-18 05:49:53"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1999,7 +1999,7 @@
 							"otherinfo": "1894007588, which evaluates to: 2030-01-07 09:13:08"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2007,7 +2007,7 @@
 							"otherinfo": "1895095763, which evaluates to: 2030-01-19 23:29:23"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2015,7 +2015,7 @@
 							"otherinfo": "1897031941, which evaluates to: 2030-02-11 09:19:01"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2023,7 +2023,7 @@
 							"otherinfo": "1899447441, which evaluates to: 2030-03-11 08:17:21"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2031,7 +2031,7 @@
 							"otherinfo": "1899903192, which evaluates to: 2030-03-16 14:53:12"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2039,7 +2039,7 @@
 							"otherinfo": "1901547113, which evaluates to: 2030-04-04 15:31:53"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2047,7 +2047,7 @@
 							"otherinfo": "1904987480, which evaluates to: 2030-05-14 11:11:20"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2055,7 +2055,7 @@
 							"otherinfo": "1908823572, which evaluates to: 2030-06-27 20:46:12"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2063,7 +2063,7 @@
 							"otherinfo": "1910503582, which evaluates to: 2030-07-17 07:26:22"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2071,7 +2071,7 @@
 							"otherinfo": "1914138554, which evaluates to: 2030-08-28 09:09:14"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2079,7 +2079,7 @@
 							"otherinfo": "1917689273, which evaluates to: 2030-10-08 11:27:53"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2087,7 +2087,7 @@
 							"otherinfo": "1921955416, which evaluates to: 2030-11-26 20:30:16"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2095,7 +2095,7 @@
 							"otherinfo": "1925078388, which evaluates to: 2031-01-01 23:59:48"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2103,7 +2103,7 @@
 							"otherinfo": "1927990952, which evaluates to: 2031-02-04 17:02:32"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2111,7 +2111,7 @@
 							"otherinfo": "1946737175, which evaluates to: 2031-09-09 16:19:35"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2119,7 +2119,7 @@
 							"otherinfo": "1947078029, which evaluates to: 2031-09-13 15:00:29"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2127,7 +2127,7 @@
 							"otherinfo": "1947742710, which evaluates to: 2031-09-21 07:38:30"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2135,7 +2135,7 @@
 							"otherinfo": "1955562222, which evaluates to: 2031-12-20 19:43:42"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2143,7 +2143,7 @@
 							"otherinfo": "1963543593, which evaluates to: 2032-03-22 04:46:33"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2151,7 +2151,7 @@
 							"otherinfo": "1966332200, which evaluates to: 2032-04-23 11:23:20"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2159,7 +2159,7 @@
 							"otherinfo": "1970579870, which evaluates to: 2032-06-11 15:17:50"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2167,7 +2167,7 @@
 							"otherinfo": "1979897079, which evaluates to: 2032-09-27 11:24:39"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2175,7 +2175,7 @@
 							"otherinfo": "1983633131, which evaluates to: 2032-11-09 17:12:11"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2183,7 +2183,7 @@
 							"otherinfo": "1986661051, which evaluates to: 2032-12-14 18:17:31"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2191,7 +2191,7 @@
 							"otherinfo": "1996064986, which evaluates to: 2033-04-02 14:29:46"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2199,7 +2199,7 @@
 							"otherinfo": "1998579484, which evaluates to: 2033-05-01 16:58:04"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2207,7 +2207,7 @@
 							"otherinfo": "2000651841, which evaluates to: 2033-05-25 16:37:21"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2215,7 +2215,7 @@
 							"otherinfo": "2001055236, which evaluates to: 2033-05-30 08:40:36"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2223,7 +2223,7 @@
 							"otherinfo": "2001714738, which evaluates to: 2033-06-06 23:52:18"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2231,7 +2231,7 @@
 							"otherinfo": "2003034995, which evaluates to: 2033-06-22 06:36:35"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2239,7 +2239,7 @@
 							"otherinfo": "2006996926, which evaluates to: 2033-08-07 03:08:46"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2247,7 +2247,7 @@
 							"otherinfo": "2007800933, which evaluates to: 2033-08-16 10:28:53"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2255,7 +2255,7 @@
 							"otherinfo": "2007998917, which evaluates to: 2033-08-18 17:28:37"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2263,7 +2263,7 @@
 							"otherinfo": "2008414854, which evaluates to: 2033-08-23 13:00:54"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2271,7 +2271,7 @@
 							"otherinfo": "2012875353, which evaluates to: 2033-10-14 04:02:33"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2279,7 +2279,7 @@
 							"otherinfo": "2013265920, which evaluates to: 2033-10-18 16:32:00"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2287,7 +2287,7 @@
 							"otherinfo": "2013265921, which evaluates to: 2033-10-18 16:32:01"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2295,7 +2295,7 @@
 							"otherinfo": "2016342300, which evaluates to: 2033-11-23 07:05:00"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2303,21 +2303,29 @@
 							"otherinfo": "2019080857, which evaluates to: 2033-12-24 23:47:37"
 						},
 						{
-							"uri": "https://vae.gouv.fr/app/static/js/main.8b27cbe2.js",
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "2019492241",
 							"otherinfo": "2019492241, which evaluates to: 2033-12-29 18:04:01"
+						},
+						{
+							"uri": "https://vae.gouv.fr/app/static/js/main.f433fb57.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "2024104815",
+							"otherinfo": "2024104815, which evaluates to: 2034-02-21 03:20:15"
 						}
 					],
 					"count": "217",
 					"solution": "<p>Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.</p>",
-					"otherinfo": "<p>1392781812, which evaluates to: 2014-02-19 03:50:12</p>",
-					"reference": "<p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
+					"otherinfo": "<p>1393555694, which evaluates to: 2014-02-28 02:48:14</p>",
+					"reference": "<p>https://cwe.mitre.org/data/definitions/200.html</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "143"
+					"sourceid": "168"
 				},
 				{
 					"pluginid": "10021",
@@ -2370,23 +2378,23 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
+							"uri": "https://vae.gouv.fr/cgu-candidat/",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://vae.gouv.fr/confidentialite/",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
 							"uri": "https://vae.gouv.fr/declaration-accessibilite/",
-							"method": "GET",
-							"param": "x-content-type-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
-						},
-						{
-							"uri": "https://vae.gouv.fr/espace-professionnel/",
-							"method": "GET",
-							"param": "x-content-type-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
-						},
-						{
-							"uri": "https://vae.gouv.fr/espace-professionnel/creation/",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -2424,7 +2432,7 @@
 					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "7"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "10094",
@@ -2441,97 +2449,116 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "/_next/static/dKKN3zfvv4TbSEtAzR-6G/_buildManifest",
-							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uCD6Bbs\uFFFDJ(\uFFFD\uFFFD~\uFFFD\uFFFDM\uFFFD\uFFFD\uFFFD\\x000c\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD'\u07B2"
+							"evidence": "/_next/static/yybV4G45uvWNZwwxh0p3h/_buildManifest",
+							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uCD6Bbs\uFFFD\uFFFDm^\\x0006\u36EFX\uFFFDp\uFFFD\\x0018t\uFFFDx\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD'\u07B2"
 						},
 						{
 							"uri": "https://vae.gouv.fr/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "/_next/static/dKKN3zfvv4TbSEtAzR-6G/_buildManifest",
-							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uCD6Bbs\uFFFDJ(\uFFFD\uFFFD~\uFFFD\uFFFDM\uFFFD\uFFFD\uFFFD\\x000c\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD'\u07B2"
+							"evidence": "/_next/static/yybV4G45uvWNZwwxh0p3h/_buildManifest",
+							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uCD6Bbs\uFFFD\uFFFDm^\\x0006\u36EFX\uFFFDp\uFFFD\\x0018t\uFFFDx\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD'\u07B2"
+						},
+						{
+							"uri": "https://vae.gouv.fr/cgu-candidat/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "/_next/static/yybV4G45uvWNZwwxh0p3h/_buildManifest",
+							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uCD6Bbs\uFFFD\uFFFDm^\\x0006\u36EFX\uFFFDp\uFFFD\\x0018t\uFFFDx\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD'\u07B2"
 						},
 						{
 							"uri": "https://vae.gouv.fr/confidentialite/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "/_next/static/dKKN3zfvv4TbSEtAzR-6G/_buildManifest",
-							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uCD6Bbs\uFFFDJ(\uFFFD\uFFFD~\uFFFD\uFFFDM\uFFFD\uFFFD\uFFFD\\x000c\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD'\u07B2"
+							"evidence": "/_next/static/yybV4G45uvWNZwwxh0p3h/_buildManifest",
+							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uCD6Bbs\uFFFD\uFFFDm^\\x0006\u36EFX\uFFFDp\uFFFD\\x0018t\uFFFDx\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD'\u07B2"
 						},
 						{
 							"uri": "https://vae.gouv.fr/declaration-accessibilite/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "/_next/static/dKKN3zfvv4TbSEtAzR-6G/_buildManifest",
-							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uCD6Bbs\uFFFDJ(\uFFFD\uFFFD~\uFFFD\uFFFDM\uFFFD\uFFFD\uFFFD\\x000c\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD'\u07B2"
-						},
-						{
-							"uri": "https://vae.gouv.fr/espace-professionnel/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "/_next/static/dKKN3zfvv4TbSEtAzR-6G/_buildManifest",
-							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uCD6Bbs\uFFFDJ(\uFFFD\uFFFD~\uFFFD\uFFFDM\uFFFD\uFFFD\uFFFD\\x000c\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD'\u07B2"
-						},
-						{
-							"uri": "https://vae.gouv.fr/espace-professionnel/creation/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "/_next/static/dKKN3zfvv4TbSEtAzR-6G/_buildManifest",
-							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uCD6Bbs\uFFFDJ(\uFFFD\uFFFD~\uFFFD\uFFFDM\uFFFD\uFFFD\uFFFD\\x000c\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD'\u07B2"
+							"evidence": "/_next/static/yybV4G45uvWNZwwxh0p3h/_buildManifest",
+							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uCD6Bbs\uFFFD\uFFFDm^\\x0006\u36EFX\uFFFDp\uFFFD\\x0018t\uFFFDx\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD'\u07B2"
 						},
 						{
 							"uri": "https://vae.gouv.fr/mentions-legales/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "/_next/static/dKKN3zfvv4TbSEtAzR-6G/_buildManifest",
-							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uCD6Bbs\uFFFDJ(\uFFFD\uFFFD~\uFFFD\uFFFDM\uFFFD\uFFFD\uFFFD\\x000c\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD'\u07B2"
+							"evidence": "/_next/static/yybV4G45uvWNZwwxh0p3h/_buildManifest",
+							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uCD6Bbs\uFFFD\uFFFDm^\\x0006\u36EFX\uFFFDp\uFFFD\\x0018t\uFFFDx\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD'\u07B2"
 						},
 						{
 							"uri": "https://vae.gouv.fr/nous-contacter/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "/_next/static/dKKN3zfvv4TbSEtAzR-6G/_buildManifest",
-							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uCD6Bbs\uFFFDJ(\uFFFD\uFFFD~\uFFFD\uFFFDM\uFFFD\uFFFD\uFFFD\\x000c\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD'\u07B2"
+							"evidence": "/_next/static/yybV4G45uvWNZwwxh0p3h/_buildManifest",
+							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uCD6Bbs\uFFFD\uFFFDm^\\x0006\u36EFX\uFFFDp\uFFFD\\x0018t\uFFFDx\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD'\u07B2"
 						},
 						{
 							"uri": "https://vae.gouv.fr/plan-du-site/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "/_next/static/dKKN3zfvv4TbSEtAzR-6G/_buildManifest",
-							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uCD6Bbs\uFFFDJ(\uFFFD\uFFFD~\uFFFD\uFFFDM\uFFFD\uFFFD\uFFFD\\x000c\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD'\u07B2"
+							"evidence": "/_next/static/yybV4G45uvWNZwwxh0p3h/_buildManifest",
+							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uCD6Bbs\uFFFD\uFFFDm^\\x0006\u36EFX\uFFFDp\uFFFD\\x0018t\uFFFDx\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD'\u07B2"
 						},
 						{
-							"uri": "https://vae.gouv.fr/robots.txt",
+							"uri": "https://vae.gouv.fr/savoir-plus/articles/qui-accompagne-a-la-vae/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "/_next/static/dKKN3zfvv4TbSEtAzR-6G/_buildManifest",
-							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uCD6Bbs\uFFFDJ(\uFFFD\uFFFD~\uFFFD\uFFFDM\uFFFD\uFFFD\uFFFD\\x000c\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD'\u07B2"
+							"evidence": "/_next/static/yybV4G45uvWNZwwxh0p3h/_buildManifest",
+							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uCD6Bbs\uFFFD\uFFFDm^\\x0006\u36EFX\uFFFDp\uFFFD\\x0018t\uFFFDx\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD'\u07B2"
 						},
 						{
 							"uri": "https://vae.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "/_next/static/dKKN3zfvv4TbSEtAzR-6G/_buildManifest",
-							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uCD6Bbs\uFFFDJ(\uFFFD\uFFFD~\uFFFD\uFFFDM\uFFFD\uFFFD\uFFFD\\x000c\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD'\u07B2"
+							"evidence": "/_next/static/yybV4G45uvWNZwwxh0p3h/_buildManifest",
+							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uCD6Bbs\uFFFD\uFFFDm^\\x0006\u36EFX\uFFFDp\uFFFD\\x0018t\uFFFDx\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD'\u07B2"
 						}
 					],
-					"count": "11",
+					"count": "10",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uCD6Bbs\uFFFDJ(\uFFFD\uFFFD~\uFFFD\uFFFDM\uFFFD\uFFFD\uFFFD\\x000c\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD'\u07B2</p>",
+					"otherinfo": "<p>\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uCD6Bbs\uFFFD\uFFFDm^\\x0006\u36EFX\uFFFDp\uFFFD\\x0018t\uFFFDx\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD'\u07B2</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "7"
+					"sourceid": "8"
+				},
+				{
+					"pluginid": "10019",
+					"alertRef": "10019-1",
+					"alert": "Content-Type Header Missing",
+					"name": "Content-Type Header Missing",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
+					"desc": "<p>The Content-Type header was either missing or empty.</p>",
+					"instances":[ 
+						{
+							"uri": "https://vae.gouv.fr/espace-professionnel/creation",
+							"method": "GET",
+							"param": "content-type",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						}
+					],
+					"count": "1",
+					"solution": "<p>Ensure each page is setting the specific and appropriate content-type value for the content being delivered.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p>",
+					"cweid": "345",
+					"wascid": "12",
+					"sourceid": "270"
 				},
 				{
 					"pluginid": "50007",
@@ -2558,7 +2585,7 @@
 					"reference": "<p>https://spec.graphql.org/October2021/#sec-Introspection</p>",
 					"cweid": "16",
 					"wascid": "15",
-					"sourceid": "225"
+					"sourceid": "218"
 				},
 				{
 					"pluginid": "50007",
@@ -2585,7 +2612,7 @@
 					"reference": "<p>https://github.com/mercurius-js/mercurius</p>",
 					"cweid": "205",
 					"wascid": "45",
-					"sourceid": "254"
+					"sourceid": "287"
 				},
 				{
 					"pluginid": "10027",
@@ -2603,7 +2630,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "query",
-							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{}},\"page\":\"/\",\"query\":{},\"buildId\":\"dKKN3zfvv4TbSEtAzR\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{}},\"page\":\"/\",\"query\":{},\"buildId\":\"yybV4G45uvWNZwwxh0\", see evidence field for the suspicious comment/snippet."
 						},
 						{
 							"uri": "https://vae.gouv.fr/",
@@ -2611,7 +2638,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "query",
-							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{}},\"page\":\"/\",\"query\":{},\"buildId\":\"dKKN3zfvv4TbSEtAzR\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{}},\"page\":\"/\",\"query\":{},\"buildId\":\"yybV4G45uvWNZwwxh0\", see evidence field for the suspicious comment/snippet."
 						},
 						{
 							"uri": "https://vae.gouv.fr/admin/",
@@ -2619,7 +2646,23 @@
 							"param": "",
 							"attack": "",
 							"evidence": "admin",
-							"otherinfo": "The following pattern was used: \\bADMIN\\b and was detected in the element starting with: \"<script type=\"module\" crossorigin src=\"/admin/assets/main-qHQ-svo5.js\"></script>\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bADMIN\\b and was detected in the element starting with: \"<script type=\"module\" crossorigin src=\"/admin/assets/main-CzyfLF-N.js\"></script>\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"uri": "https://vae.gouv.fr/cgu-candidat/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "query",
+							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{}},\"page\":\"/cgu-candidat\",\"query\":{},\"buildId\":\"yybV4G\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"uri": "https://vae.gouv.fr/confidentialite/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "query",
+							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{}},\"page\":\"/confidentialite\",\"query\":{},\"buildId\":\"yyb\", see evidence field for the suspicious comment/snippet."
 						},
 						{
 							"uri": "https://vae.gouv.fr/declaration-accessibilite/",
@@ -2630,28 +2673,12 @@
 							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{}},\"page\":\"/declaration-accessibilite\",\"query\":{},\"bui\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://vae.gouv.fr/espace-professionnel/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "query",
-							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{}},\"page\":\"/espace-professionnel\",\"query\":{},\"buildId\"\", see evidence field for the suspicious comment/snippet."
-						},
-						{
-							"uri": "https://vae.gouv.fr/espace-professionnel/creation/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "query",
-							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{\"availableDomaines\":[{\"id\":\"4462f3ed-d605-4e08-bb87-b4\", see evidence field for the suspicious comment/snippet."
-						},
-						{
 							"uri": "https://vae.gouv.fr/mentions-legales/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "query",
-							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{}},\"page\":\"/mentions-legales\",\"query\":{},\"buildId\":\"dK\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{}},\"page\":\"/mentions-legales\",\"query\":{},\"buildId\":\"yy\", see evidence field for the suspicious comment/snippet."
 						},
 						{
 							"uri": "https://vae.gouv.fr/nous-contacter/",
@@ -2659,7 +2686,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "query",
-							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{}},\"page\":\"/nous-contacter\",\"query\":{},\"buildId\":\"dKKN\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{}},\"page\":\"/nous-contacter\",\"query\":{},\"buildId\":\"yybV\", see evidence field for the suspicious comment/snippet."
 						},
 						{
 							"uri": "https://vae.gouv.fr/plan-du-site/",
@@ -2667,7 +2694,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "query",
-							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{}},\"page\":\"/plan-du-site\",\"query\":{},\"buildId\":\"dKKN3z\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{}},\"page\":\"/plan-du-site\",\"query\":{},\"buildId\":\"yybV4G\", see evidence field for the suspicious comment/snippet."
 						},
 						{
 							"uri": "https://vae.gouv.fr/robots.txt",
@@ -2675,7 +2702,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "query",
-							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{}},\"page\":\"/404\",\"query\":{},\"buildId\":\"dKKN3zfvv4TbSEt\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{}},\"page\":\"/404\",\"query\":{},\"buildId\":\"yybV4G45uvWNZww\", see evidence field for the suspicious comment/snippet."
 						},
 						{
 							"uri": "https://vae.gouv.fr/sitemap.xml",
@@ -2683,16 +2710,16 @@
 							"param": "",
 							"attack": "",
 							"evidence": "query",
-							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{}},\"page\":\"/404\",\"query\":{},\"buildId\":\"dKKN3zfvv4TbSEt\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{}},\"page\":\"/404\",\"query\":{},\"buildId\":\"yybV4G45uvWNZww\", see evidence field for the suspicious comment/snippet."
 						}
 					],
 					"count": "11",
 					"solution": "<p>Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</p>",
-					"otherinfo": "<p>The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{}},\"page\":\"/\",\"query\":{},\"buildId\":\"dKKN3zfvv4TbSEtAzR\", see evidence field for the suspicious comment/snippet.</p>",
+					"otherinfo": "<p>The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{}},\"page\":\"/\",\"query\":{},\"buildId\":\"yybV4G45uvWNZwwxh0\", see evidence field for the suspicious comment/snippet.</p>",
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "7"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "10109",
@@ -2725,7 +2752,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script type=\"module\" crossorigin src=\"/admin/assets/main-qHQ-svo5.js\"></script>",
+							"evidence": "<script type=\"module\" crossorigin src=\"/admin/assets/main-CzyfLF-N.js\"></script>",
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
@@ -2733,7 +2760,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script defer=\"defer\" src=\"/app/static/js/main.8b27cbe2.js\"></script>",
+							"evidence": "<script defer=\"defer\" src=\"/app/static/js/main.f433fb57.js\"></script>",
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
@@ -2741,8 +2768,16 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script defer=\"defer\" src=\"/app/static/js/main.8b27cbe2.js\"></script>",
+							"evidence": "<script defer=\"defer\" src=\"/app/static/js/main.f433fb57.js\"></script>",
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
+						},
+						{
+							"uri": "https://vae.gouv.fr/confidentialite/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<noscript data-n-css=\"\"></noscript>",
+							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
 						},
 						{
 							"uri": "https://vae.gouv.fr/declaration-accessibilite/",
@@ -2753,15 +2788,7 @@
 							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
 						},
 						{
-							"uri": "https://vae.gouv.fr/espace-professionnel/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<noscript data-n-css=\"\"></noscript>",
-							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
-						},
-						{
-							"uri": "https://vae.gouv.fr/espace-professionnel/creation/",
+							"uri": "https://vae.gouv.fr/mentions-legales/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2799,7 +2826,7 @@
 					"reference": "",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "7"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "10015",
@@ -2852,27 +2879,27 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://vae.gouv.fr/cgu-candidat/",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://vae.gouv.fr/confidentialite/",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://vae.gouv.fr/declaration-accessibilite/",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://vae.gouv.fr/espace-professionnel/",
-							"method": "GET",
-							"param": "cache-control",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://vae.gouv.fr/espace-professionnel/creation/",
-							"method": "GET",
-							"param": "cache-control",
-							"attack": "",
-							"evidence": "s-maxage=31536000, stale-while-revalidate",
 							"otherinfo": ""
 						},
 						{
@@ -2906,7 +2933,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control</p><p>https://grayduck.mn/2021/09/13/cache-control-recommendations/</p>",
 					"cweid": "525",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "90005",
@@ -2949,7 +2976,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "7"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "90005",
@@ -2992,7 +3019,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "7"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "90005",
@@ -3035,7 +3062,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "7"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "90005",
@@ -3078,7 +3105,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "7"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "10112",
@@ -3095,33 +3122,25 @@
 							"method": "GET",
 							"param": "sc-sticky-session",
 							"attack": "",
-							"evidence": "FrlM/0fnLUSl0vMd8/Ipd+vM5kewOot0R99HEpBOIXHjA9s5ckJc0jTMNTWWH5jnNQ/bKYCV4bVst0TBVDao5r25Gfh8ZtEldAaKum4iGOiRMDZlXRAXwiacDJWiNZSC",
+							"evidence": "DqVDldRO+9PN5T9akqbYdIkmYv6MaAwOf3TQ05QP7HpgWLL6Saf/I/EywRTE2VJ9shQ/VDAvmGMtWzAoibXf/8aL1Rqxx5XH2/DgxEhOD6Fd7C0Z5YKPa0o/KPPnHTW+",
 							"otherinfo": "\ncookie:sc-sticky-session"
 						},
 						{
-							"uri": "https://vae.gouv.fr/admin2",
+							"uri": "https://vae.gouv.fr/admin",
 							"method": "GET",
 							"param": "sc-sticky-session",
 							"attack": "",
-							"evidence": "FrlM/0fnLUSl0vMd8/Ipd+vM5kewOot0R99HEpBOIXHjA9s5ckJc0jTMNTWWH5jnNQ/bKYCV4bVst0TBVDao5r25Gfh8ZtEldAaKum4iGOiRMDZlXRAXwiacDJWiNZSC",
-							"otherinfo": "\ncookie:sc-sticky-session"
-						},
-						{
-							"uri": "https://vae.gouv.fr/admin2/_next/static/media/favicon.8c087985.ico",
-							"method": "GET",
-							"param": "sc-sticky-session",
-							"attack": "",
-							"evidence": "FrlM/0fnLUSl0vMd8/Ipd+vM5kewOot0R99HEpBOIXHjA9s5ckJc0jTMNTWWH5jnNQ/bKYCV4bVst0TBVDao5r25Gfh8ZtEldAaKum4iGOiRMDZlXRAXwiacDJWiNZSC",
+							"evidence": "DqVDldRO+9PN5T9akqbYdIkmYv6MaAwOf3TQ05QP7HpgWLL6Saf/I/EywRTE2VJ9shQ/VDAvmGMtWzAoibXf/8aL1Rqxx5XH2/DgxEhOD6Fd7C0Z5YKPa0o/KPPnHTW+",
 							"otherinfo": "\ncookie:sc-sticky-session"
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
 					"otherinfo": "<p></p><p>cookie:sc-sticky-session</p>",
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "191"
+					"sourceid": "221"
 				},
 				{
 					"pluginid": "10049",
@@ -3150,6 +3169,14 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
+							"uri": "https://vae.gouv.fr/confidentialite/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
 							"uri": "https://vae.gouv.fr/declaration-accessibilite/",
 							"method": "GET",
 							"param": "",
@@ -3158,20 +3185,12 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"uri": "https://vae.gouv.fr/espace-professionnel/",
+							"uri": "https://vae.gouv.fr/mentions-legales/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "",
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
-						},
-						{
-							"uri": "https://vae.gouv.fr/espace-professionnel/creation/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "s-maxage=31536000",
-							"otherinfo": ""
 						},
 						{
 							"uri": "https://vae.gouv.fr/plan-du-site/",
@@ -3204,7 +3223,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "10049",
@@ -3247,7 +3266,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "44"
+					"sourceid": "52"
 				}
 			]
 		}

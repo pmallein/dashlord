@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 4 Feb 2024 09:34:58",
+	"@generated": "Mon, 26 Feb 2024 19:44:55",
 	"site":[ 
 		{
 			"@name": "https://dora.fabrique.social.gouv.fr",
@@ -25,12 +25,12 @@
 							"param": "",
 							"attack": "",
 							"evidence": "<form class=\"svelte-qvm6rm\">",
-							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"city\" ]."
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"address\" ]."
 						}
 					],
 					"count": "1",
 					"solution": "<p>Phase: Architecture and Design</p><p>Use a vetted library or framework that does not allow this weakness to occur or provides constructs that make this weakness easier to avoid.</p><p>For example, use anti-CSRF packages such as the OWASP CSRFGuard.</p><p></p><p>Phase: Implementation</p><p>Ensure that your application is free of cross-site scripting issues, because most CSRF defenses can be bypassed using attacker-controlled script.</p><p></p><p>Phase: Architecture and Design</p><p>Generate a unique nonce for each form, place the nonce into the form, and verify the nonce upon receipt of the form. Be sure that the nonce is not predictable (CWE-330).</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Identify especially dangerous operations. When the user performs a dangerous operation, send a separate confirmation request to ensure that the user intended to perform that operation.</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Use the ESAPI Session Management control.</p><p>This control includes a component for CSRF.</p><p></p><p>Do not use the GET method for any request that triggers a state change.</p><p></p><p>Phase: Implementation</p><p>Check the HTTP Referer header to see if the request originated from an expected page. This could break legitimate functionality, because users or proxies may have disabled sending the Referer for privacy reasons.</p>",
-					"otherinfo": "<p>No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"city\" ].</p>",
+					"otherinfo": "<p>No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"address\" ].</p>",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
@@ -51,7 +51,7 @@
 							"method": "GET",
 							"param": "content-security-policy",
 							"attack": "",
-							"evidence": "child-src https://aide.dora.inclusion.beta.gouv.fr/ https://metabase.dora.inclusion.beta.gouv.fr https://plausible.io https://tally.so; default-src 'none'; worker-src 'self' blob:; connect-src 'self' https://api.dora.inclusion.beta.gouv.fr https://*.sentry.gip-inclusion.org https://*.sentry.gip-inclusion.cloud-ed.fr https://sentry.gip-inclusion.org https://sentry.gip-inclusion.cloud-ed.fr https://api-adresse.data.gouv.fr/ https://plausible.io/api/event https://openmaptiles.geo.data.gouv.fr/ https://openmaptiles.github.io/osm-bright-gl-style/ https://matomo.inclusion.beta.gouv.fr; font-src 'self'; img-src 'self' data:; script-src 'self' 'strict-dynamic' 'unsafe-inline' https://plausible.io/js/ https://tally.so/widgets/embed.js 'nonce-S3X+IkqP1M6H0g5+j+Wv4g=='; style-src 'self' https://tally.so/widgets/embed.js 'unsafe-inline'; base-uri 'self'",
+							"evidence": "child-src https://aide.dora.inclusion.beta.gouv.fr/ https://metabase.dora.inclusion.beta.gouv.fr https://tally.so https://tube.numerique.gouv.fr; default-src 'none'; worker-src 'self' blob:; connect-src 'self' https://api.dora.inclusion.beta.gouv.fr https://*.sentry.gip-inclusion.org https://*.sentry.gip-inclusion.cloud-ed.fr https://sentry.gip-inclusion.org https://sentry.gip-inclusion.cloud-ed.fr https://api-adresse.data.gouv.fr/ https://openmaptiles.geo.data.gouv.fr/ https://openmaptiles.github.io/osm-bright-gl-style/ https://matomo.inclusion.beta.gouv.fr; font-src 'self'; img-src 'self' data:; script-src 'self' 'strict-dynamic' 'unsafe-inline' https://tally.so/widgets/embed.js 'nonce-gyMkq4Pu0unYwJibr7lSfw=='; style-src 'self' https://tally.so/widgets/embed.js 'unsafe-inline'; base-uri 'self'",
 							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nframe-ancestors, form-action\n\nThe directive(s): frame-ancestors, form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything."
 						}
 					],
@@ -78,7 +78,7 @@
 							"method": "GET",
 							"param": "content-security-policy",
 							"attack": "",
-							"evidence": "child-src https://aide.dora.inclusion.beta.gouv.fr/ https://metabase.dora.inclusion.beta.gouv.fr https://plausible.io https://tally.so; default-src 'none'; worker-src 'self' blob:; connect-src 'self' https://api.dora.inclusion.beta.gouv.fr https://*.sentry.gip-inclusion.org https://*.sentry.gip-inclusion.cloud-ed.fr https://sentry.gip-inclusion.org https://sentry.gip-inclusion.cloud-ed.fr https://api-adresse.data.gouv.fr/ https://plausible.io/api/event https://openmaptiles.geo.data.gouv.fr/ https://openmaptiles.github.io/osm-bright-gl-style/ https://matomo.inclusion.beta.gouv.fr; font-src 'self'; img-src 'self' data:; script-src 'self' 'strict-dynamic' 'unsafe-inline' https://plausible.io/js/ https://tally.so/widgets/embed.js 'nonce-S3X+IkqP1M6H0g5+j+Wv4g=='; style-src 'self' https://tally.so/widgets/embed.js 'unsafe-inline'; base-uri 'self'",
+							"evidence": "child-src https://aide.dora.inclusion.beta.gouv.fr/ https://metabase.dora.inclusion.beta.gouv.fr https://tally.so https://tube.numerique.gouv.fr; default-src 'none'; worker-src 'self' blob:; connect-src 'self' https://api.dora.inclusion.beta.gouv.fr https://*.sentry.gip-inclusion.org https://*.sentry.gip-inclusion.cloud-ed.fr https://sentry.gip-inclusion.org https://sentry.gip-inclusion.cloud-ed.fr https://api-adresse.data.gouv.fr/ https://openmaptiles.geo.data.gouv.fr/ https://openmaptiles.github.io/osm-bright-gl-style/ https://matomo.inclusion.beta.gouv.fr; font-src 'self'; img-src 'self' data:; script-src 'self' 'strict-dynamic' 'unsafe-inline' https://tally.so/widgets/embed.js 'nonce-gyMkq4Pu0unYwJibr7lSfw=='; style-src 'self' https://tally.so/widgets/embed.js 'unsafe-inline'; base-uri 'self'",
 							"otherinfo": "style-src includes unsafe-inline."
 						}
 					],
@@ -87,60 +87,6 @@
 					"otherinfo": "<p>style-src includes unsafe-inline.</p>",
 					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
 					"cweid": "693",
-					"wascid": "15",
-					"sourceid": "1"
-				},
-				{
-					"pluginid": "90003",
-					"alertRef": "90003",
-					"alert": "Sub Resource Integrity Attribute Missing",
-					"name": "Sub Resource Integrity Attribute Missing",
-					"riskcode": "2",
-					"confidence": "3",
-					"riskdesc": "Medium (High)",
-					"desc": "<p>The integrity attribute is missing on a script or link tag served by an external server. The integrity tag prevents an attacker who have gained access to this server from injecting a malicious content. </p>",
-					"instances":[ 
-						{
-							"uri": "https://dora.fabrique.social.gouv.fr",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<script\n      type=\"text/javascript\"\n      data-domain=\"dora.inclusion.beta.gouv.fr\"\n      src=\"https://plausible.io/js/plausible.js\"\n      nonce=\"S3X+IkqP1M6H0g5+j+Wv4g==\"\n    ></script>",
-							"otherinfo": ""
-						}
-					],
-					"count": "1",
-					"solution": "<p>Provide a valid integrity attribute to the tag.</p>",
-					"otherinfo": "",
-					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity</p>",
-					"cweid": "345",
-					"wascid": "15",
-					"sourceid": "1"
-				},
-				{
-					"pluginid": "10017",
-					"alertRef": "10017",
-					"alert": "Cross-Domain JavaScript Source File Inclusion",
-					"name": "Cross-Domain JavaScript Source File Inclusion",
-					"riskcode": "1",
-					"confidence": "2",
-					"riskdesc": "Low (Medium)",
-					"desc": "<p>The page includes one or more script files from a third-party domain.</p>",
-					"instances":[ 
-						{
-							"uri": "https://dora.fabrique.social.gouv.fr",
-							"method": "GET",
-							"param": "https://plausible.io/js/plausible.js",
-							"attack": "",
-							"evidence": "<script\n      type=\"text/javascript\"\n      data-domain=\"dora.inclusion.beta.gouv.fr\"\n      src=\"https://plausible.io/js/plausible.js\"\n      nonce=\"S3X+IkqP1M6H0g5+j+Wv4g==\"\n    ></script>",
-							"otherinfo": ""
-						}
-					],
-					"count": "1",
-					"solution": "<p>Ensure JavaScript source files are loaded from only trusted sources, and the sources can't be controlled by end users of the application.</p>",
-					"otherinfo": "",
-					"reference": "",
-					"cweid": "829",
 					"wascid": "15",
 					"sourceid": "1"
 				},
@@ -212,7 +158,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>https://caniuse.com/stricttransportsecurity</p><p>https://datatracker.ietf.org/doc/html/rfc6797</p>",
 					"cweid": "319",
 					"wascid": "15",
-					"sourceid": "7"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "10094",
@@ -309,7 +255,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "7"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -352,7 +298,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "7"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -395,7 +341,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "7"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -438,7 +384,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "7"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10049",
@@ -481,7 +427,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "7"
+					"sourceid": "1"
 				}
 			]
 		}

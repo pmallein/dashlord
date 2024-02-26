@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 4 Feb 2024 09:09:24",
+	"@generated": "Mon, 26 Feb 2024 19:29:11",
 	"site":[ 
 		{
 			"@name": "https://my.fabnum.fr",
@@ -28,6 +28,14 @@
 							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nscript-src, style-src, img-src, connect-src, font-src, worker-src"
 						},
 						{
+							"uri": "https://my.fabnum.fr/%7B%7Baction%7D%7D",
+							"method": "GET",
+							"param": "Content-Security-Policy",
+							"attack": "",
+							"evidence": "default-src 'none'; frame-src 'self' cloudron.io *.cloudron.io; connect-src wss: https: 'self' *.cloudron.io; script-src https: 'self' 'unsafe-inline' 'unsafe-eval'; img-src * data:; style-src https: 'unsafe-inline'; object-src 'none'; font-src https: 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self';",
+							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nscript-src, style-src, img-src, connect-src, font-src, worker-src"
+						},
+						{
 							"uri": "https://my.fabnum.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Content-Security-Policy",
@@ -36,7 +44,7 @@
 							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nscript-src, style-src, img-src, connect-src, font-src, worker-src"
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is properly configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "<p>The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: </p><p>script-src, style-src, img-src, connect-src, font-src, worker-src</p>",
 					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
@@ -63,6 +71,14 @@
 							"otherinfo": "script-src includes unsafe-eval."
 						},
 						{
+							"uri": "https://my.fabnum.fr/%7B%7Baction%7D%7D",
+							"method": "GET",
+							"param": "Content-Security-Policy",
+							"attack": "",
+							"evidence": "default-src 'none'; frame-src 'self' cloudron.io *.cloudron.io; connect-src wss: https: 'self' *.cloudron.io; script-src https: 'self' 'unsafe-inline' 'unsafe-eval'; img-src * data:; style-src https: 'unsafe-inline'; object-src 'none'; font-src https: 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self';",
+							"otherinfo": "script-src includes unsafe-eval."
+						},
+						{
 							"uri": "https://my.fabnum.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Content-Security-Policy",
@@ -71,7 +87,7 @@
 							"otherinfo": "script-src includes unsafe-eval."
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is properly configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "<p>script-src includes unsafe-eval.</p>",
 					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
@@ -98,6 +114,14 @@
 							"otherinfo": "script-src includes unsafe-inline."
 						},
 						{
+							"uri": "https://my.fabnum.fr/%7B%7Baction%7D%7D",
+							"method": "GET",
+							"param": "Content-Security-Policy",
+							"attack": "",
+							"evidence": "default-src 'none'; frame-src 'self' cloudron.io *.cloudron.io; connect-src wss: https: 'self' *.cloudron.io; script-src https: 'self' 'unsafe-inline' 'unsafe-eval'; img-src * data:; style-src https: 'unsafe-inline'; object-src 'none'; font-src https: 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self';",
+							"otherinfo": "script-src includes unsafe-inline."
+						},
+						{
 							"uri": "https://my.fabnum.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Content-Security-Policy",
@@ -106,7 +130,7 @@
 							"otherinfo": "script-src includes unsafe-inline."
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is properly configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "<p>script-src includes unsafe-inline.</p>",
 					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
@@ -133,6 +157,14 @@
 							"otherinfo": "style-src includes unsafe-inline."
 						},
 						{
+							"uri": "https://my.fabnum.fr/%7B%7Baction%7D%7D",
+							"method": "GET",
+							"param": "Content-Security-Policy",
+							"attack": "",
+							"evidence": "default-src 'none'; frame-src 'self' cloudron.io *.cloudron.io; connect-src wss: https: 'self' *.cloudron.io; script-src https: 'self' 'unsafe-inline' 'unsafe-eval'; img-src * data:; style-src https: 'unsafe-inline'; object-src 'none'; font-src https: 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self';",
+							"otherinfo": "style-src includes unsafe-inline."
+						},
+						{
 							"uri": "https://my.fabnum.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Content-Security-Policy",
@@ -141,7 +173,7 @@
 							"otherinfo": "style-src includes unsafe-inline."
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is properly configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "<p>style-src includes unsafe-inline.</p>",
 					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
@@ -230,7 +262,7 @@
 					"reference": "<p>https://github.com/angular/angular.js/blob/master/CHANGELOG.md#169-fiery-basilisk-2018-02-02</p><p>https://github.com/angular/angular.js/blob/master/CHANGELOG.md</p><p>https://github.com/advisories/GHSA-2vrf-hf26-jrp5</p><p>https://vulnerabledoma.in/ngSanitize1.6.8_bypass.html</p><p>https://github.com/advisories/GHSA-28hp-fgcr-2r4h</p><p>https://github.com/angular/angular.js/commit/8f31f1ff43b673a24f84422d5c13d6312b2c4d94</p><p>https://github.com/advisories/GHSA-5cp4-xmrw-59wf</p><p>https://nvd.nist.gov/vuln/detail/CVE-2020-7676</p><p>https://github.com/angular/angular.js/pull/15699</p><p>https://blog.angular.io/discontinued-long-term-support-for-angularjs-cc066b82e65a?gi=9d3103b5445c</p><p>https://github.com/mozilla/addons-linter/issues/1000#issuecomment-282083435</p><p>https://github.com/advisories/GHSA-qwqh-hm9m-p5hr</p><p>http://pastebin.com/raw/kGrdaypP</p><p>https://github.com/advisories/GHSA-prc3-vjfx-vhm9</p><p>https://github.com/angular/angular.js/commit/726f49dcf6c23106ddaf5cfd5e2e592841db743a</p><p>https://github.com/advisories/GHSA-2qqx-w9hr-q5gx</p><p>https://github.com/angular/angular.js/blob/master/CHANGELOG.md#179-pollution-eradication-2019-11-19</p><p></p>",
 					"cweid": "829",
 					"wascid": "-1",
-					"sourceid": "72"
+					"sourceid": "73"
 				},
 				{
 					"pluginid": "10110",
@@ -305,7 +337,7 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "93"
+					"sourceid": "94"
 				},
 				{
 					"pluginid": "10063",
@@ -358,23 +390,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://my.fabnum.fr/3rdparty/js/angular-md5.min.js?b923925a6ce74ffa2c0cde4b8b6e9a5d937fae4c",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://my.fabnum.fr/3rdparty/js/angular-route.min.js?b923925a6ce74ffa2c0cde4b8b6e9a5d937fae4c",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://my.fabnum.fr/3rdparty/js/angular-sanitize.min.js?b923925a6ce74ffa2c0cde4b8b6e9a5d937fae4c",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -399,6 +415,22 @@
 						},
 						{
 							"uri": "https://my.fabnum.fr/3rdparty/js/canvas-to-blob.min.js?b923925a6ce74ffa2c0cde4b8b6e9a5d937fae4c",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://my.fabnum.fr/3rdparty/js/jquery.min.js?b923925a6ce74ffa2c0cde4b8b6e9a5d937fae4c",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://my.fabnum.fr/3rdparty/js/slick.js?b923925a6ce74ffa2c0cde4b8b6e9a5d937fae4c",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -439,7 +471,7 @@
 					"reference": "<p>https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/01-Information_Gathering/08-Fingerprint_Web_Application_Framework</p><p>https://www.troyhunt.com/2012/02/shhh-dont-let-your-response-headers.html</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "49"
+					"sourceid": "52"
 				},
 				{
 					"pluginid": "10096",
@@ -511,10 +543,10 @@
 					"count": "7",
 					"solution": "<p>Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.</p>",
 					"otherinfo": "<p>1700485571, which evaluates to: 2023-11-20 13:06:11</p>",
-					"reference": "<p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
+					"reference": "<p>https://cwe.mitre.org/data/definitions/200.html</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "76"
+					"sourceid": "75"
 				},
 				{
 					"pluginid": "10094",
@@ -573,7 +605,7 @@
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "73"
+					"sourceid": "74"
 				},
 				{
 					"pluginid": "10027",
@@ -752,7 +784,7 @@
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "72"
+					"sourceid": "73"
 				},
 				{
 					"pluginid": "10109",
@@ -779,7 +811,7 @@
 					"reference": "",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10049",
@@ -814,7 +846,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "60"
+					"sourceid": "49"
 				},
 				{
 					"pluginid": "10015",
@@ -849,7 +881,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control</p><p>https://grayduck.mn/2021/09/13/cache-control-recommendations/</p>",
 					"cweid": "525",
 					"wascid": "13",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -870,7 +902,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://my.fabnum.fr/api/v1/cloudron/avatar",
+							"uri": "https://my.fabnum.fr/%7B%7Baction%7D%7D",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -884,17 +916,9 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
-						},
-						{
-							"uri": "https://my.fabnum.fr/sitemap.xml",
-							"method": "GET",
-							"param": "Sec-Fetch-Dest",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
 						}
 					],
-					"count": "4",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-Dest header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
@@ -921,7 +945,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://my.fabnum.fr/api/v1/cloudron/avatar",
+							"uri": "https://my.fabnum.fr/%7B%7Baction%7D%7D",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -935,17 +959,9 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
-						},
-						{
-							"uri": "https://my.fabnum.fr/sitemap.xml",
-							"method": "GET",
-							"param": "Sec-Fetch-Mode",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
 						}
 					],
-					"count": "4",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-Mode header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
@@ -964,31 +980,7 @@
 					"desc": "<p>Specifies the relationship between request initiator's origin and target's origin.</p>",
 					"instances":[ 
 						{
-							"uri": "https://my.fabnum.fr/",
-							"method": "GET",
-							"param": "Sec-Fetch-Site",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://my.fabnum.fr/api/v1/cloudron/avatar",
-							"method": "GET",
-							"param": "Sec-Fetch-Site",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://my.fabnum.fr/robots.txt",
-							"method": "GET",
-							"param": "Sec-Fetch-Site",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://my.fabnum.fr/sitemap.xml",
+							"uri": "https://my.fabnum.fr/%7B%7Baction%7D%7D",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -996,13 +988,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "4",
+					"count": "1",
 					"solution": "<p>Ensure that Sec-Fetch-Site header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "49"
 				},
 				{
 					"pluginid": "90005",
@@ -1023,7 +1015,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://my.fabnum.fr/api/v1/cloudron/avatar",
+							"uri": "https://my.fabnum.fr/%7B%7Baction%7D%7D",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -1037,23 +1029,15 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
-						},
-						{
-							"uri": "https://my.fabnum.fr/sitemap.xml",
-							"method": "GET",
-							"param": "Sec-Fetch-User",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
 						}
 					],
-					"count": "4",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-User header is included in user initiated requests.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10049",
@@ -1136,7 +1120,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10049",
@@ -1163,7 +1147,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "49"
+					"sourceid": "52"
 				}
 			]
 		}

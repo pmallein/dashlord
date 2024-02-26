@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 4 Feb 2024 10:21:55",
+	"@generated": "Mon, 26 Feb 2024 20:16:00",
 	"site":[ 
 		{
 			"@name": "https://ellesfontlaculture.beta.gouv.fr",
@@ -80,9 +80,25 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
+						},
+						{
+							"uri": "https://ellesfontlaculture.beta.gouv.fr/robots.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://ellesfontlaculture.beta.gouv.fr/sitemap.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
 						}
 					],
-					"count": "1",
+					"count": "3",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to enforce Strict-Transport-Security.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>https://caniuse.com/stricttransportsecurity</p><p>https://datatracker.ietf.org/doc/html/rfc6797</p>",
@@ -105,13 +121,13 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2BFJ9ImKHyICnEm5aTSqKxcka50e9FMnC5",
-							"otherinfo": "\uFFFD\\x0011I\uFFFD\\x001f\"\\x0002\uFFFDI\uFFFDi4\uFFFD+\\x0017$k\uFFFD\\x001e\uFFFDS'\\x000b"
+							"evidence": "FfbhHXNmzokQLaKY78mUzLyQL6p0pN50ZEbWmowwR8hiycDdbOawUqL441Bc",
+							"otherinfo": "\\x0015\uFFFD\uFFFD\\x001dsf\u0389\\x0010-\uFFFD\uFFFD\uFFFD\u0254\u033C\uFFFD/\uFFFDt\uFFFD\uFFFDtdF\u059A\uFFFD0G\uFFFDb\uFFFD\uFFFD\uFFFDl\uFFFDR\uFFFD\uFFFD\uFFFDP\\"
 						}
 					],
 					"count": "1",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>\uFFFD\\x0011I\uFFFD\\x001f\"\\x0002\uFFFDI\uFFFDi4\uFFFD+\\x0017$k\uFFFD\\x001e\uFFFDS'\\x000b</p>",
+					"otherinfo": "<p>\\x0015\uFFFD\uFFFD\\x001dsf\u0389\\x0010-\uFFFD\uFFFD\uFFFD\u0254\u033C\uFFFD/\uFFFDt\uFFFD\uFFFDtdF\u059A\uFFFD0G\uFFFDb\uFFFD\uFFFD\uFFFDl\uFFFDR\uFFFD\uFFFD\uFFFDP\\</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
@@ -309,23 +325,15 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
-						},
-						{
-							"uri": "https://ellesfontlaculture.beta.gouv.fr/sitemap.xml",
-							"method": "GET",
-							"param": "Sec-Fetch-Site",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"solution": "<p>Ensure that Sec-Fetch-Site header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -385,7 +393,7 @@
 							"method": "GET",
 							"param": "_ellesfontlaphoto_session",
 							"attack": "",
-							"evidence": "Y2szwsXud9CQvpDIs%2BFJ9ImKHyICnEm5aTSqKxcka50e9FMnC5%2BJpxrUWZFzemungFUywVz2IzG3ogI7p1Z2TddC5dCB3bugxArcs56PQmcH8r6MFsd%2F7nUdH6PaupC0lat618bB3CF9KYPXWkkAg%2FF8z%2Bf4uSy4SiLuw2ld5x0ijYcg%2Bc3%2ByP9oIHpo86YDwYUun1lWpZMlX2c2lj%2FratizXH57ouwmrWHTgbWsJ6%2F3tYiYVGubB0xlH7CQq4D4SXw8fKzPxW5B3WwcpieQoGU9tnSIVrcqBho1aFu5X5w6bhDb4HB656GxL4QKbX9LacfYp7%2Fy3ZfDfsFX6%2FKvvB3U3xpXFKHjSDR17ffWpveFOwtD%2FF1aIlWbmGLDWMgrN52EygJ6Ie71XcjMZ%2BO5cjCGairD4ZgZrzO1FRj2T8jZdkOzalMbqAQRk8GteACzqcpumZp7xm0nxn7Qi6h6SvMEJ4CLrP7vr%2FU8wlT9%2FhKo8rqwsaa0gmJPWSVh--Y59TBnctKYBJPHjy--tvWPoh7heYrqRRs2mn5lng%3D%3D",
+							"evidence": "FfbhHXNmzokQLaKY78mUzLyQL6p0pN50ZEbWmowwR8hiycDdbOawUqL441Bc%2FL0bfZoNetrQYV0%2F99qStfcOpCtLG%2BFuLJKBeFkr6F2tzMPCxhn2ivY%2BEPtZp%2Fuf4UEhqmtpL5y56fFPxZw7DQ9P5JA2fMXqxg%2BbxL6LQXhtk4EMrYOKTKz%2FNPmiBbF45EX8F%2B%2F6KV0LqeMk4bjV2XlKVPFfUV0p9wdckjLF3v%2FSz3KPM1cptGjVd5Tru2ZrMNFtEPHVpF8YHL%2FZ2WoFoF8RvRSzpokL1WvtPJQNmcHZV%2Bm77NsHys5dP8w11XonG0Wp1oNOct9BOTHU3zMsDzCu3R43wcWbiYK3dGfuAM9%2BBivBqeqvgMRI2e62WIydaU%2Fxr8eYygTYjTK%2BQToMPxioiVvixGAX7Mr%2FB1D5gvD3L1fI%2BXlWub4lM6FjsvkdWEiNQfNMqUEQx2KwYZi1ms09GoB%2BMwe%2BHaoK3MpN%2F%2FzOpjLeUbxJPV0sLHpZANW0--cKBekyH7Tgp5P%2Fhu--ex2T4sQ73DQlmQs1mONItQ%3D%3D",
 							"otherinfo": "\ncookie:_ellesfontlaphoto_session"
 						}
 					],

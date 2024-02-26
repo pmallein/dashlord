@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 4 Feb 2024 03:53:14",
+	"@generated": "Mon, 26 Feb 2024 14:52:03",
 	"site":[ 
 		{
 			"@name": "https://lemarche.inclusion.beta.gouv.fr",
@@ -9,121 +9,6 @@
 			"@port": "443",
 			"@ssl": "true",
 			"alerts": [ 
-				{
-					"pluginid": "10062",
-					"alertRef": "10062",
-					"alert": "PII Disclosure",
-					"name": "PII Disclosure",
-					"riskcode": "3",
-					"confidence": "2",
-					"riskdesc": "High (Medium)",
-					"desc": "<p>The response contains Personally Identifiable Information, such as CC number, SSN and similar sensitive data.</p>",
-					"instances":[ 
-						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/prestataires/assoc-atout-services-56/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "509 957 502 00016",
-							"otherinfo": "Credit Card Type detected: Maestro"
-						},
-						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/prestataires/assoc-chaine-56/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "382 365 682 00014",
-							"otherinfo": "Credit Card Type detected: DinersClub"
-						},
-						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/prestataires/ateliers-sinclair-68/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "382 822 716 00025",
-							"otherinfo": "Credit Card Type detected: DinersClub"
-						},
-						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/prestataires/coopagir-39/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "380 067 579 00090",
-							"otherinfo": "Credit Card Type detected: DinersClub"
-						},
-						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/prestataires/prodea-67/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "509 265 674 00028",
-							"otherinfo": "Credit Card Type detected: Maestro"
-						},
-						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/prestataires/zig-zag-69/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "389 669 128 00032",
-							"otherinfo": "Credit Card Type detected: DinersClub"
-						},
-						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/prestataires/assoc-atout-services-56/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "50995750200016",
-							"otherinfo": "Credit Card Type detected: Maestro\nBank Identification Number: 509957\nBrand: MAESTRO\nCategory: \nIssuer: "
-						},
-						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/prestataires/assoc-chaine-56/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "38236568200014",
-							"otherinfo": "Credit Card Type detected: DinersClub\nBank Identification Number: 382365\nBrand: DISCOVER\nCategory: BUSINESS CARD\nIssuer: "
-						},
-						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/prestataires/ateliers-sinclair-68/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "38282271600025",
-							"otherinfo": "Credit Card Type detected: DinersClub\nBank Identification Number: 382822\nBrand: DISCOVER\nCategory: BUSINESS CARD\nIssuer: "
-						},
-						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/prestataires/coopagir-39/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "38006757900090",
-							"otherinfo": "Credit Card Type detected: DinersClub\nBank Identification Number: 380067\nBrand: DISCOVER\nCategory: BUSINESS CARD\nIssuer: "
-						},
-						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/prestataires/prodea-67/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "50926567400028",
-							"otherinfo": "Credit Card Type detected: Maestro\nBank Identification Number: 509265\nBrand: MAESTRO\nCategory: \nIssuer: "
-						},
-						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/prestataires/zig-zag-69/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "38966912800032",
-							"otherinfo": "Credit Card Type detected: DinersClub\nBank Identification Number: 389669\nBrand: DISCOVER\nCategory: BUSINESS CARD\nIssuer: "
-						}
-					],
-					"count": "12",
-					"solution": "<p>Check the response for the potential presence of personally identifiable information (PII), ensure nothing sensitive is leaked by the application.</p>",
-					"otherinfo": "<p>Credit Card Type detected: Maestro</p>",
-					"reference": "",
-					"cweid": "359",
-					"wascid": "13",
-					"sourceid": "1265"
-				},
 				{
 					"pluginid": "10202",
 					"alertRef": "10202",
@@ -139,7 +24,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<form hx-get=\"/calculer-impact-social-achat-inclusif/\" hx-push-url=\"true\" hx-headers='{\"X-CSRFToken\": \"6pWPBsC6kZbIQJB19ARD9snqmGjoLpHFmIMTow9qiC9e0RYRBB9ExgGTzxZ4qdqc\"}' hx-target=\"#calculatorImpact\" hx-swap=\"outerHTML\">",
+							"evidence": "<form hx-get=\"/calculer-impact-social-achat-inclusif/\" hx-push-url=\"true\" hx-headers='{\"X-CSRFToken\": \"EfIT3i2D2F8fIVii4aSlVfuK3CO9ANRc3EKEMs9SFRL10HZqmFXmV8XcT2ylhlWF\"}' hx-target=\"#calculatorImpact\" hx-swap=\"outerHTML\">",
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"id_amount\" ]."
 						},
 						{
@@ -147,7 +32,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<form hx-get=\"/calculer-impact-social-achat-inclusif/\" hx-push-url=\"true\" hx-headers='{\"X-CSRFToken\": \"nk1z4HA9QhP196gPw9xFn9vWNbSqVp90DDRDRL7tOUNxjeDFYaPGLXOp02y6AdSx\"}' hx-target=\"#calculatorImpact\" hx-swap=\"outerHTML\">",
+							"evidence": "<form hx-get=\"/calculer-impact-social-achat-inclusif/\" hx-push-url=\"true\" hx-headers='{\"X-CSRFToken\": \"ofqP7fz11mzKI6NpLXSi4doxiGAdNbWbNEsAQpGgEycw0Sux3sXj46RZ86kpuJ1E\"}' hx-target=\"#calculatorImpact\" hx-swap=\"outerHTML\">",
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"id_amount\" ]."
 						},
 						{
@@ -155,7 +40,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<form hx-get=\"/calibrer-achat-socialement-responsable/\" hx-push-url=\"true\" hx-headers='{\"X-CSRFToken\": \"kQ4uSXQO8Q0RWnviOas4hpR53DsxrpHGA9UyF1n86tYn6vS8gbK5Fdaygu8d6dqd\"}' hx-target=\"#calculatorImpact\" hx-swap=\"outerHTML\">",
+							"evidence": "<form hx-get=\"/calibrer-achat-socialement-responsable/\" hx-push-url=\"true\" hx-headers='{\"X-CSRFToken\": \"6ZGLpiI4Y68vop9HcuWuzjDpY439ZC2rvoIw8sPjBiLhGbQPuZ1vzc6ROuNlGa7U\"}' hx-target=\"#calculatorImpact\" hx-swap=\"outerHTML\">",
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"\" ]."
 						},
 						{
@@ -163,7 +48,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<form hx-get=\"/calibrer-achat-socialement-responsable/\" hx-push-url=\"true\" hx-headers='{\"X-CSRFToken\": \"ZNcC0XgpFfsjXM9SgHu4rkezylTUMOhBf62GN1NJDSqP7UwIIIM5P8x2LczArC08\"}' hx-target=\"#calculatorImpact\" hx-swap=\"outerHTML\">",
+							"evidence": "<form hx-get=\"/calibrer-achat-socialement-responsable/\" hx-push-url=\"true\" hx-headers='{\"X-CSRFToken\": \"vTjOEqV5K4hraz6m76F4sGQYQO7d2hB0UilznA2kngUdslNupBK5szjqGeRpJPGt\"}' hx-target=\"#calculatorImpact\" hx-swap=\"outerHTML\">",
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"\" ]."
 						},
 						{
@@ -183,7 +68,15 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 2: \"id_q\" ]."
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/prestataires/?ca=-100000&employees=1-9&has_client_references=True&has_groups=True&kind=AI&labels=rge&legal_form=SARL_COOP&locations&networks=comite-national-de-liaison-des-regies-de-quartier&presta_type=PREST&sectors=entretien-et-maintenance-de-lespace-urbain-17&territory=ZRR",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/prestataires/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form method=\"GET\"\n                                hx-get=\"/prestataires/semantic/search/\"\n                                hx-target=\"#searchResults\"\n                                hx-indicator=\"#spinner\"\n                                action=\"\"\n                                id=\"text-semantic-search-form\">",
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 3: \"id_city\" \"id_search_query\" ]."
+						},
+						{
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/prestataires/?page=2",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -191,7 +84,7 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"\" ]."
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/prestataires/?ca=-100000&employees=1-9&has_client_references=True&has_groups=True&kind=AI&labels=rge&legal_form=SARL_COOP&locations&networks=comite-national-de-liaison-des-regies-de-quartier&presta_type=PREST&sectors=entretien-et-maintenance-de-lespace-urbain-17&territory=ZRR",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/prestataires/?page=2",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -199,7 +92,15 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 2: \"id_q\" ]."
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/prestataires/?page=1",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/prestataires/?page=2",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form method=\"GET\"\n                                hx-get=\"/prestataires/semantic/search/\"\n                                hx-target=\"#searchResults\"\n                                hx-indicator=\"#spinner\"\n                                action=\"\"\n                                id=\"text-semantic-search-form\">",
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 3: \"id_city\" \"id_search_query\" ]."
+						},
+						{
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/prestataires/?sectors=autre-85&sectors=recyclage-delements-dameublement-dae-et-petits-objets&sectors=recyclage-dequipements-electriques-et-electroniques-deee&sectors=recyclage-papiers-et-fournitures-dentreprises&sectors=recyclage-textiles&sectors=vente-de-vehicules-velos-doccasions",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -207,7 +108,7 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"\" ]."
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/prestataires/?page=1",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/prestataires/?sectors=autre-85&sectors=recyclage-delements-dameublement-dae-et-petits-objets&sectors=recyclage-dequipements-electriques-et-electroniques-deee&sectors=recyclage-papiers-et-fournitures-dentreprises&sectors=recyclage-textiles&sectors=vente-de-vehicules-velos-doccasions",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -215,29 +116,21 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 2: \"id_q\" ]."
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/prestataires/?q=ZAP",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/prestataires/?sectors=autre-85&sectors=recyclage-delements-dameublement-dae-et-petits-objets&sectors=recyclage-dequipements-electriques-et-electroniques-deee&sectors=recyclage-papiers-et-fournitures-dentreprises&sectors=recyclage-textiles&sectors=vente-de-vehicules-velos-doccasions",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<form method=\"GET\"\n                                  action=\"/prestataires/\"\n                                  id=\"filter-search-form\"\n                                  aria-label=\"Rechercher des prestataires de l'insertion et du handicap\"\n                                  role=\"search\">",
-							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"\" ]."
-						},
-						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/prestataires/?q=ZAP",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<form method=\"GET\"\n                                  action=\"/prestataires/\"\n                                  id=\"text-search-form\"\n                                  aria-label=\"Rechercher des prestataires de l'insertion et du handicap\"\n                                  role=\"search\">",
-							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 2: \"id_q\" ]."
+							"evidence": "<form method=\"GET\"\n                                hx-get=\"/prestataires/semantic/search/\"\n                                hx-target=\"#searchResults\"\n                                hx-indicator=\"#spinner\"\n                                action=\"\"\n                                id=\"text-semantic-search-form\">",
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 3: \"id_city\" \"id_search_query\" ]."
 						}
 					],
-					"count": "12",
+					"count": "13",
 					"solution": "<p>Phase: Architecture and Design</p><p>Use a vetted library or framework that does not allow this weakness to occur or provides constructs that make this weakness easier to avoid.</p><p>For example, use anti-CSRF packages such as the OWASP CSRFGuard.</p><p></p><p>Phase: Implementation</p><p>Ensure that your application is free of cross-site scripting issues, because most CSRF defenses can be bypassed using attacker-controlled script.</p><p></p><p>Phase: Architecture and Design</p><p>Generate a unique nonce for each form, place the nonce into the form, and verify the nonce upon receipt of the form. Be sure that the nonce is not predictable (CWE-330).</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Identify especially dangerous operations. When the user performs a dangerous operation, send a separate confirmation request to ensure that the user intended to perform that operation.</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Use the ESAPI Session Management control.</p><p>This control includes a component for CSRF.</p><p></p><p>Do not use the GET method for any request that triggers a state change.</p><p></p><p>Phase: Implementation</p><p>Check the HTTP Referer header to see if the request originated from an expected page. This could break legitimate functionality, because users or proxies may have disabled sending the Referer for privacy reasons.</p>",
 					"otherinfo": "<p>No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"id_amount\" ].</p>",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "86"
+					"sourceid": "71"
 				},
 				{
 					"pluginid": "10038",
@@ -274,14 +167,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/accounts/signup/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://lemarche.inclusion.beta.gouv.fr/besoins/ajouter/",
 							"method": "GET",
 							"param": "",
@@ -290,7 +175,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/calibrer-achat-socialement-responsable/",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/calculer-impact-social-achat-inclusif/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -298,7 +183,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/faq/",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/ressources/bouygues-construction-recherche-dune-entreprise-de-nettoyage/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -314,7 +199,23 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/ressources/siemens-besoin-en-d%C3%A9veloppement-dapplications-it/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://lemarche.inclusion.beta.gouv.fr/robots.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -330,7 +231,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "10",
+					"count": "11",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>https://www.w3.org/TR/CSP/</p><p>https://w3c.github.io/webappsec-csp/</p><p>https://web.dev/articles/csp</p><p>https://caniuse.com/#feat=contentsecuritypolicy</p><p>https://content-security-policy.com/</p>",
@@ -349,7 +250,7 @@
 					"desc": "<p>Web browser data loading may be possible, due to a Cross Origin Resource Sharing (CORS) misconfiguration on the web server</p>",
 					"instances":[ 
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/static/CACHE/css/output.ace0bcd30009.css",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/static/CACHE/css/output.3aa4d75d055f.css",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -365,7 +266,7 @@
 							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/static/CACHE/js/output.904d0eb788c6.js",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/static/CACHE/js/output.bc018033c7c6.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -373,7 +274,7 @@
 							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/static/CACHE/js/output.bc018033c7c6.js",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/static/images/logo-siemens.min.a5511b05926e.jpg",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -389,7 +290,15 @@
 							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/static/js/utils.26747e581d1c.js",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/static/js/utils.9249549a3568.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Access-Control-Allow-Origin: *",
+							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
+						},
+						{
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/static/vendor/alpinejs@3.11.1.min.abb64a8baaae.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -435,14 +344,6 @@
 							"attack": "",
 							"evidence": "Access-Control-Allow-Origin: *",
 							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
-						},
-						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/static/vendor/theme-inclusion/stylesheets/app.c8ccccf5e55c.css",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "Access-Control-Allow-Origin: *",
-							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
 						}
 					],
 					"count": "12",
@@ -451,7 +352,7 @@
 					"reference": "<p>https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.html5_overly_permissive_cors_policy</p>",
 					"cweid": "264",
 					"wascid": "14",
-					"sourceid": "137"
+					"sourceid": "212"
 				},
 				{
 					"pluginid": "90003",
@@ -488,14 +389,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/accounts/signup/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<script type=\"text/javascript\" src=\"https://cdn.jsdelivr.net/npm/tarteaucitronjs@1.11.0/tarteaucitron.min.js\"></script>",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://lemarche.inclusion.beta.gouv.fr/besoins/ajouter/",
 							"method": "GET",
 							"param": "",
@@ -512,7 +405,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/calibrer-achat-socialement-responsable/",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/ressources/bouygues-construction-recherche-dune-entreprise-de-nettoyage/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -521,6 +414,14 @@
 						},
 						{
 							"uri": "https://lemarche.inclusion.beta.gouv.fr/ressources/quest-ce-quun-prestataire-inclusif/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<script type=\"text/javascript\" src=\"https://cdn.jsdelivr.net/npm/tarteaucitronjs@1.11.0/tarteaucitron.min.js\"></script>",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/ressources/siemens-besoin-en-d%C3%A9veloppement-dapplications-it/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -558,7 +459,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity</p>",
 					"cweid": "345",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10017",
@@ -603,22 +504,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/accounts/login/",
-							"method": "GET",
-							"param": "https://cdn.jsdelivr.net/npm/tarteaucitronjs@1.11.0/tarteaucitron.min.js",
-							"attack": "",
-							"evidence": "<script src=\"https://cdn.jsdelivr.net/npm/tarteaucitronjs@1.11.0/tarteaucitron.min.js\" integrity=\"\" crossorigin=\"anonymous\"></script>",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/accounts/login/",
-							"method": "GET",
-							"param": "https://cdn.jsdelivr.net/npm/tarteaucitronjs@1.11.0/tarteaucitron.min.js",
-							"attack": "",
-							"evidence": "<script type=\"text/javascript\" src=\"https://cdn.jsdelivr.net/npm/tarteaucitronjs@1.11.0/tarteaucitron.min.js\"></script>",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://lemarche.inclusion.beta.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "https://cdn.jsdelivr.net/npm/tarteaucitronjs@1.11.0/tarteaucitron.min.js",
@@ -667,7 +552,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "12",
+					"count": "10",
 					"solution": "<p>Ensure JavaScript source files are loaded from only trusted sources, and the sources can't be controlled by end users of the application.</p>",
 					"otherinfo": "",
 					"reference": "",
@@ -700,7 +585,7 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "144"
+					"sourceid": "220"
 				},
 				{
 					"pluginid": "10063",
@@ -737,14 +622,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/accounts/signup/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://lemarche.inclusion.beta.gouv.fr/besoins/ajouter/",
 							"method": "GET",
 							"param": "",
@@ -753,7 +630,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/calibrer-achat-socialement-responsable/",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/calculer-impact-social-achat-inclusif/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -761,7 +638,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/faq/",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/ressources/bouygues-construction-recherche-dune-entreprise-de-nettoyage/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -770,6 +647,14 @@
 						},
 						{
 							"uri": "https://lemarche.inclusion.beta.gouv.fr/ressources/quest-ce-quun-prestataire-inclusif/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/ressources/siemens-besoin-en-d%C3%A9veloppement-dapplications-it/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -810,33 +695,6 @@
 					"sourceid": "1"
 				},
 				{
-					"pluginid": "10035",
-					"alertRef": "10035-1",
-					"alert": "Strict-Transport-Security Header Not Set",
-					"name": "Strict-Transport-Security Header Not Set",
-					"riskcode": "1",
-					"confidence": "3",
-					"riskdesc": "Low (High)",
-					"desc": "<p>HTTP Strict Transport Security (HSTS) is a web security policy mechanism whereby a web server declares that complying user agents (such as a web browser) are to interact with it using only secure HTTPS connections (i.e. HTTP layered over TLS/SSL). HSTS is an IETF standards track protocol and is specified in RFC 6797.</p>",
-					"instances":[ 
-						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/static/images/logo-partners-agence-des-economies-solidaires.min.824b05a6cf7d.jpg",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						}
-					],
-					"count": "1",
-					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to enforce Strict-Transport-Security.</p>",
-					"otherinfo": "",
-					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>https://caniuse.com/stricttransportsecurity</p><p>https://datatracker.ietf.org/doc/html/rfc6797</p>",
-					"cweid": "319",
-					"wascid": "15",
-					"sourceid": "2120"
-				},
-				{
 					"pluginid": "10096",
 					"alertRef": "10096",
 					"alert": "Timestamp Disclosure - Unix",
@@ -851,22 +709,14 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "1707022301",
-							"otherinfo": "1707022301, which evaluates to: 2024-02-04 04:51:41"
-						},
-						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "1707022302",
-							"otherinfo": "1707022302, which evaluates to: 2024-02-04 04:51:42"
+							"evidence": "1708962683",
+							"otherinfo": "1708962683, which evaluates to: 2024-02-26 15:51:23"
 						}
 					],
-					"count": "2",
+					"count": "1",
 					"solution": "<p>Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.</p>",
-					"otherinfo": "<p>1707022301, which evaluates to: 2024-02-04 04:51:41</p>",
-					"reference": "<p>http://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
+					"otherinfo": "<p>1708962683, which evaluates to: 2024-02-26 15:51:23</p>",
+					"reference": "<p>https://cwe.mitre.org/data/definitions/200.html</p>",
 					"cweid": "200",
 					"wascid": "13",
 					"sourceid": "1"
@@ -898,36 +748,44 @@
 							"otherinfo": "userParam=username\nuserValue=ZAP\npasswordParam=password\nreferer=https://lemarche.inclusion.beta.gouv.fr/accounts/login/?next=/prestataires/\ncsrfToken=csrfmiddlewaretoken"
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/accounts/login/?next=/prestataires/openfab-la-petite-manchester-68/favoris/",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/accounts/login/?next=/ressources/investissez-la-strategie-dachat-de-votre-structure/",
 							"method": "POST",
 							"param": "username",
 							"attack": "",
 							"evidence": "password",
-							"otherinfo": "userParam=username\nuserValue=ZAP\npasswordParam=password\nreferer=https://lemarche.inclusion.beta.gouv.fr/accounts/login/?next=/prestataires/openfab-la-petite-manchester-68/favoris/\ncsrfToken=csrfmiddlewaretoken"
+							"otherinfo": "userParam=username\nuserValue=ZAP\npasswordParam=password\nreferer=https://lemarche.inclusion.beta.gouv.fr/accounts/login/?next=/ressources/investissez-la-strategie-dachat-de-votre-structure/\ncsrfToken=csrfmiddlewaretoken"
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/accounts/login/?next=/prestataires/siae-slug-to-replace/favoris/",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/accounts/login/?next=/ressources/optimiser-lachat-de-prestations-dentretien-de-batiments-strategies-et-leviers/",
 							"method": "POST",
 							"param": "username",
 							"attack": "",
 							"evidence": "password",
-							"otherinfo": "userParam=username\nuserValue=ZAP\npasswordParam=password\nreferer=https://lemarche.inclusion.beta.gouv.fr/accounts/login/?next=/prestataires/siae-slug-to-replace/favoris/\ncsrfToken=csrfmiddlewaretoken"
+							"otherinfo": "userParam=username\nuserValue=ZAP\npasswordParam=password\nreferer=https://lemarche.inclusion.beta.gouv.fr/accounts/login/?next=/ressources/optimiser-lachat-de-prestations-dentretien-de-batiments-strategies-et-leviers/\ncsrfToken=csrfmiddlewaretoken"
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/accounts/login/?next=/profil/listes-dachats/favorite-list-slug/prestataires/openfab-la-petite-manchester-68/",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/accounts/login/?next=/ressources/sappuyer-sur-des-reseaux-pour-des-achats-durables-un-guide-pour-acheteurs-publics-et-prives/",
 							"method": "POST",
 							"param": "username",
 							"attack": "",
 							"evidence": "password",
-							"otherinfo": "userParam=username\nuserValue=ZAP\npasswordParam=password\nreferer=https://lemarche.inclusion.beta.gouv.fr/accounts/login/?next=/profil/listes-dachats/favorite-list-slug/prestataires/openfab-la-petite-manchester-68/\ncsrfToken=csrfmiddlewaretoken"
+							"otherinfo": "userParam=username\nuserValue=ZAP\npasswordParam=password\nreferer=https://lemarche.inclusion.beta.gouv.fr/accounts/login/?next=/ressources/sappuyer-sur-des-reseaux-pour-des-achats-durables-un-guide-pour-acheteurs-publics-et-prives/\ncsrfToken=csrfmiddlewaretoken"
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/accounts/login/?next=/profil/listes-dachats/favorite-list-slug/prestataires/siae-slug-to-replace/",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/accounts/login/?next=/ressources/strategies-dachat-responsable-pour-la-restauration-collective/",
 							"method": "POST",
 							"param": "username",
 							"attack": "",
 							"evidence": "password",
-							"otherinfo": "userParam=username\nuserValue=ZAP\npasswordParam=password\nreferer=https://lemarche.inclusion.beta.gouv.fr/accounts/login/?next=/profil/listes-dachats/favorite-list-slug/prestataires/siae-slug-to-replace/\ncsrfToken=csrfmiddlewaretoken"
+							"otherinfo": "userParam=username\nuserValue=ZAP\npasswordParam=password\nreferer=https://lemarche.inclusion.beta.gouv.fr/accounts/login/?next=/ressources/strategies-dachat-responsable-pour-la-restauration-collective/\ncsrfToken=csrfmiddlewaretoken"
+						},
+						{
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/accounts/login/?next=/ressources/strategies-dachat-responsable-pour-les-produits-textiles/",
+							"method": "POST",
+							"param": "username",
+							"attack": "",
+							"evidence": "password",
+							"otherinfo": "userParam=username\nuserValue=ZAP\npasswordParam=password\nreferer=https://lemarche.inclusion.beta.gouv.fr/accounts/login/?next=/ressources/strategies-dachat-responsable-pour-les-produits-textiles/\ncsrfToken=csrfmiddlewaretoken"
 						},
 						{
 							"uri": "https://lemarche.inclusion.beta.gouv.fr/accounts/login/?next=next-params-to-replace",
@@ -938,13 +796,13 @@
 							"otherinfo": "userParam=username\nuserValue=ZAP\npasswordParam=password\nreferer=https://lemarche.inclusion.beta.gouv.fr/accounts/login/?next=next-params-to-replace\ncsrfToken=csrfmiddlewaretoken"
 						}
 					],
-					"count": "7",
+					"count": "8",
 					"solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
 					"otherinfo": "<p>userParam=username</p><p>userValue=ZAP</p><p>passwordParam=password</p><p>referer=https://lemarche.inclusion.beta.gouv.fr/accounts/login/</p><p>csrfToken=csrfmiddlewaretoken</p>",
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/auth-req-id/</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "283"
+					"sourceid": "260"
 				},
 				{
 					"pluginid": "10094",
@@ -961,101 +819,93 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "tQnkhehastTgJ7bamevAVCD3yfeRgB3H",
-							"otherinfo": "\uFFFD\t\uFFFD\uFFFDZ\uFFFD\uFFFD\uFFFD'\uFFFD\u0699\uFFFD\uFFFDT \uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001d\uFFFD"
+							"evidence": "TPDAEJqNEniRIz6FoJMBbyUfybsDqpgP",
+							"otherinfo": "L\uFFFD\uFFFD\\x0010\uFFFD\uFFFD\\x0012x\uFFFD#>\uFFFD\uFFFD\uFFFD\\x0001o%\\x001f\u027B\\x0003\uFFFD\uFFFD\\x000f"
 						},
 						{
 							"uri": "https://lemarche.inclusion.beta.gouv.fr",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "qt0eXeHu8N8Gkix0CbsbyYtDn1QQPYTH",
-							"otherinfo": "\uFFFD\uFFFD\\x001e]\uFFFD\uFFFD\uFFFD\uFFFD\\x0006\uFFFD,t\t\uFFFD\\x001b\u024BC\uFFFDT\\x0010=\uFFFD\uFFFD"
+							"evidence": "8wawakqA3QquTxGmlbEElmCvWSYBmxwo",
+							"otherinfo": "\uFFFD\\x0006\uFFFDjJ\uFFFD\uFFFD\n\uFFFDO\\x0011\uFFFD\uFFFD\uFFFD\\x0004\uFFFD`\uFFFDY&\\x0001\uFFFD\\x001c("
 						},
 						{
 							"uri": "https://lemarche.inclusion.beta.gouv.fr/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "qt0eXeHu8N8Gkix0CbsbyYtDn1QQPYTH",
-							"otherinfo": "\uFFFD\uFFFD\\x001e]\uFFFD\uFFFD\uFFFD\uFFFD\\x0006\uFFFD,t\t\uFFFD\\x001b\u024BC\uFFFDT\\x0010=\uFFFD\uFFFD"
+							"evidence": "zzcVTkhpNmNWsWRisFfba3DC0AUmRIfD",
+							"otherinfo": "\uFFFD7\\x0015NHi6cV\uFFFDdb\uFFFDW\uFFFDkp\uFFFD\uFFFD\\x0005&D\uFFFD\uFFFD"
 						},
 						{
 							"uri": "https://lemarche.inclusion.beta.gouv.fr/accounts/login/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "qt0eXeHu8N8Gkix0CbsbyYtDn1QQPYTH",
-							"otherinfo": "\uFFFD\uFFFD\\x001e]\uFFFD\uFFFD\uFFFD\uFFFD\\x0006\uFFFD,t\t\uFFFD\\x001b\u024BC\uFFFDT\\x0010=\uFFFD\uFFFD"
-						},
-						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/accounts/signup/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "qt0eXeHu8N8Gkix0CbsbyYtDn1QQPYTH",
-							"otherinfo": "\uFFFD\uFFFD\\x001e]\uFFFD\uFFFD\uFFFD\uFFFD\\x0006\uFFFD,t\t\uFFFD\\x001b\u024BC\uFFFDT\\x0010=\uFFFD\uFFFD"
+							"evidence": "zzcVTkhpNmNWsWRisFfba3DC0AUmRIfD",
+							"otherinfo": "\uFFFD7\\x0015NHi6cV\uFFFDdb\uFFFDW\uFFFDkp\uFFFD\uFFFD\\x0005&D\uFFFD\uFFFD"
 						},
 						{
 							"uri": "https://lemarche.inclusion.beta.gouv.fr/besoins/ajouter/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "qt0eXeHu8N8Gkix0CbsbyYtDn1QQPYTH",
-							"otherinfo": "\uFFFD\uFFFD\\x001e]\uFFFD\uFFFD\uFFFD\uFFFD\\x0006\uFFFD,t\t\uFFFD\\x001b\u024BC\uFFFDT\\x0010=\uFFFD\uFFFD"
+							"evidence": "zzcVTkhpNmNWsWRisFfba3DC0AUmRIfD",
+							"otherinfo": "\uFFFD7\\x0015NHi6cV\uFFFDdb\uFFFDW\uFFFDkp\uFFFD\uFFFD\\x0005&D\uFFFD\uFFFD"
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/calibrer-achat-socialement-responsable/",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/calculer-impact-social-achat-inclusif/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "qt0eXeHu8N8Gkix0CbsbyYtDn1QQPYTH",
-							"otherinfo": "\uFFFD\uFFFD\\x001e]\uFFFD\uFFFD\uFFFD\uFFFD\\x0006\uFFFD,t\t\uFFFD\\x001b\u024BC\uFFFDT\\x0010=\uFFFD\uFFFD"
+							"evidence": "zzcVTkhpNmNWsWRisFfba3DC0AUmRIfD",
+							"otherinfo": "\uFFFD7\\x0015NHi6cV\uFFFDdb\uFFFDW\uFFFDkp\uFFFD\uFFFD\\x0005&D\uFFFD\uFFFD"
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/faq/",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/ressources/bouygues-construction-recherche-dune-entreprise-de-nettoyage/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "qt0eXeHu8N8Gkix0CbsbyYtDn1QQPYTH",
-							"otherinfo": "\uFFFD\uFFFD\\x001e]\uFFFD\uFFFD\uFFFD\uFFFD\\x0006\uFFFD,t\t\uFFFD\\x001b\u024BC\uFFFDT\\x0010=\uFFFD\uFFFD"
+							"evidence": "zzcVTkhpNmNWsWRisFfba3DC0AUmRIfD",
+							"otherinfo": "\uFFFD7\\x0015NHi6cV\uFFFDdb\uFFFDW\uFFFDkp\uFFFD\uFFFD\\x0005&D\uFFFD\uFFFD"
 						},
 						{
 							"uri": "https://lemarche.inclusion.beta.gouv.fr/ressources/quest-ce-quun-prestataire-inclusif/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "qt0eXeHu8N8Gkix0CbsbyYtDn1QQPYTH",
-							"otherinfo": "\uFFFD\uFFFD\\x001e]\uFFFD\uFFFD\uFFFD\uFFFD\\x0006\uFFFD,t\t\uFFFD\\x001b\u024BC\uFFFDT\\x0010=\uFFFD\uFFFD"
+							"evidence": "zzcVTkhpNmNWsWRisFfba3DC0AUmRIfD",
+							"otherinfo": "\uFFFD7\\x0015NHi6cV\uFFFDdb\uFFFDW\uFFFDkp\uFFFD\uFFFD\\x0005&D\uFFFD\uFFFD"
+						},
+						{
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/ressources/siemens-besoin-en-d%C3%A9veloppement-dapplications-it/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "zzcVTkhpNmNWsWRisFfba3DC0AUmRIfD",
+							"otherinfo": "\uFFFD7\\x0015NHi6cV\uFFFDdb\uFFFDW\uFFFDkp\uFFFD\uFFFD\\x0005&D\uFFFD\uFFFD"
 						},
 						{
 							"uri": "https://lemarche.inclusion.beta.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "qt0eXeHu8N8Gkix0CbsbyYtDn1QQPYTH",
-							"otherinfo": "\uFFFD\uFFFD\\x001e]\uFFFD\uFFFD\uFFFD\uFFFD\\x0006\uFFFD,t\t\uFFFD\\x001b\u024BC\uFFFDT\\x0010=\uFFFD\uFFFD"
-						},
-						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/sitemap.xml",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "qt0eXeHu8N8Gkix0CbsbyYtDn1QQPYTH",
-							"otherinfo": "\uFFFD\uFFFD\\x001e]\uFFFD\uFFFD\uFFFD\uFFFD\\x0006\uFFFD,t\t\uFFFD\\x001b\u024BC\uFFFDT\\x0010=\uFFFD\uFFFD"
+							"evidence": "zzcVTkhpNmNWsWRisFfba3DC0AUmRIfD",
+							"otherinfo": "\uFFFD7\\x0015NHi6cV\uFFFDdb\uFFFDW\uFFFDkp\uFFFD\uFFFD\\x0005&D\uFFFD\uFFFD"
 						},
 						{
 							"uri": "https://lemarche.inclusion.beta.gouv.fr/valoriser-achats/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "qt0eXeHu8N8Gkix0CbsbyYtDn1QQPYTH",
-							"otherinfo": "\uFFFD\uFFFD\\x001e]\uFFFD\uFFFD\uFFFD\uFFFD\\x0006\uFFFD,t\t\uFFFD\\x001b\u024BC\uFFFDT\\x0010=\uFFFD\uFFFD"
+							"evidence": "zzcVTkhpNmNWsWRisFfba3DC0AUmRIfD",
+							"otherinfo": "\uFFFD7\\x0015NHi6cV\uFFFDdb\uFFFDW\uFFFDkp\uFFFD\uFFFD\\x0005&D\uFFFD\uFFFD"
 						}
 					],
-					"count": "12",
+					"count": "11",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>\uFFFD\t\uFFFD\uFFFDZ\uFFFD\uFFFD\uFFFD'\uFFFD\u0699\uFFFD\uFFFDT \uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001d\uFFFD</p>",
+					"otherinfo": "<p>L\uFFFD\uFFFD\\x0010\uFFFD\uFFFD\\x0012x\uFFFD#>\uFFFD\uFFFD\uFFFD\\x0001o%\\x001f\u027B\\x0003\uFFFD\uFFFD\\x000f</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
@@ -1102,7 +952,7 @@
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "894"
+					"sourceid": "664"
 				},
 				{
 					"pluginid": "10027",
@@ -1124,22 +974,6 @@
 						},
 						{
 							"uri": "https://lemarche.inclusion.beta.gouv.fr",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "query",
-							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script type=\"text/javascript\">\nasync function track(page, action, meta={}) {\n    const data = computeRequestBody(page, action, \", see evidence field for the suspicious comment/snippet."
-						},
-						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "from",
-							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"<script type=\"text/javascript\">\ndocument.addEventListener(\"DOMContentLoaded\", function() {\n    const MODAL_ID = '#login_or_signu\", see evidence field for the suspicious comment/snippet."
-						},
-						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1180,14 +1014,6 @@
 						},
 						{
 							"uri": "https://lemarche.inclusion.beta.gouv.fr",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "user",
-							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected 4 times, the first in the element starting with: \"<!-- allow a user to go to the main content of the page -->\", see evidence field for the suspicious comment/snippet."
-						},
-						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1219,7 +1045,7 @@
 							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected 4 times, the first in the element starting with: \"<!-- allow a user to go to the main content of the page -->\", see evidence field for the suspicious comment/snippet."
 						}
 					],
-					"count": "13",
+					"count": "10",
 					"solution": "<p>Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</p>",
 					"otherinfo": "<p>The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"<script type=\"text/javascript\"></p><p>document.addEventListener(\"DOMContentLoaded\", function() {</p><p>    const MODAL_ID = '#login_or_signu\", see evidence field for the suspicious comment/snippet.</p>",
 					"reference": "",
@@ -1262,22 +1088,6 @@
 							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/accounts/signup/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<a href=\"\" class=\"dropdown-toggle\" id=\"solutionsDropdownMenuButtonMobile\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Solutions</a>",
-							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
-						},
-						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/besoins/ajouter/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<a href=\"\" class=\"dropdown-toggle\" id=\"solutionsDropdownMenuButtonMobile\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Solutions</a>",
-							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
-						},
-						{
 							"uri": "https://lemarche.inclusion.beta.gouv.fr/calculer-impact-social-achat-inclusif/",
 							"method": "GET",
 							"param": "",
@@ -1286,7 +1096,7 @@
 							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/calibrer-achat-socialement-responsable/",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/ressources/bouygues-construction-recherche-dune-entreprise-de-nettoyage/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1294,7 +1104,7 @@
 							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/faq/",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/ressources/minist%C3%A8re-de-lagriculture-besoin-en-prestations-de-cocktails-et-de-buffet/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1303,6 +1113,14 @@
 						},
 						{
 							"uri": "https://lemarche.inclusion.beta.gouv.fr/ressources/quest-ce-quun-prestataire-inclusif/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a href=\"\" class=\"dropdown-toggle\" id=\"solutionsDropdownMenuButtonMobile\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Solutions</a>",
+							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
+						},
+						{
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/ressources/siemens-besoin-en-d%C3%A9veloppement-dapplications-it/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1334,7 +1152,7 @@
 							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
 						}
 					],
-					"count": "12",
+					"count": "11",
 					"solution": "<p>This is an informational alert and so no changes are required.</p>",
 					"otherinfo": "<p>Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application.</p>",
 					"reference": "",
@@ -1367,7 +1185,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "47"
+					"sourceid": "63"
 				},
 				{
 					"pluginid": "10015",
@@ -1404,14 +1222,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/api/",
-							"method": "GET",
-							"param": "cache-control",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://lemarche.inclusion.beta.gouv.fr/besoins/ajouter/",
 							"method": "GET",
 							"param": "cache-control",
@@ -1436,7 +1246,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/faq/",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/ressources/bouygues-construction-recherche-dune-entreprise-de-nettoyage/",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -1444,7 +1254,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/qui-sommes-nous/",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/ressources/minist%C3%A8re-de-lagriculture-besoin-en-prestations-de-cocktails-et-de-buffet/",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -1453,6 +1263,14 @@
 						},
 						{
 							"uri": "https://lemarche.inclusion.beta.gouv.fr/ressources/quest-ce-quun-prestataire-inclusif/",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/ressources/siemens-besoin-en-d%C3%A9veloppement-dapplications-it/",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -1487,7 +1305,7 @@
 					"desc": "<p>Specifies how and where the data would be used. For instance, if the value is audio, then the requested resource must be audio data and not any other type of resource.</p>",
 					"instances":[ 
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -1517,7 +1335,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "39"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -1530,7 +1348,7 @@
 					"desc": "<p>Allows to differentiate between requests for navigating between HTML pages and requests for loading resources like images, audio etc.</p>",
 					"instances":[ 
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -1560,7 +1378,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "39"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -1573,7 +1391,7 @@
 					"desc": "<p>Specifies the relationship between request initiator's origin and target's origin.</p>",
 					"instances":[ 
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -1603,7 +1421,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "39"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -1616,7 +1434,7 @@
 					"desc": "<p>Specifies if a navigation request was initiated by a user.</p>",
 					"instances":[ 
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -1646,7 +1464,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "39"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10112",
@@ -1663,7 +1481,7 @@
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "qt0eXeHu8N8Gkix0CbsbyYtDn1QQPYTH",
+							"evidence": "8wawakqA3QquTxGmlbEElmCvWSYBmxwo",
 							"otherinfo": "\ncookie:csrftoken"
 						},
 						{
@@ -1671,7 +1489,7 @@
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "tQnkhehastTgJ7bamevAVCD3yfeRgB3H",
+							"evidence": "TPDAEJqNEniRIz6FoJMBbyUfybsDqpgP",
 							"otherinfo": "\ncookie:csrftoken"
 						},
 						{
@@ -1679,7 +1497,7 @@
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "qt0eXeHu8N8Gkix0CbsbyYtDn1QQPYTH",
+							"evidence": "zzcVTkhpNmNWsWRisFfba3DC0AUmRIfD",
 							"otherinfo": "\ncookie:csrftoken"
 						},
 						{
@@ -1687,39 +1505,31 @@
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "qt0eXeHu8N8Gkix0CbsbyYtDn1QQPYTH",
+							"evidence": "zzcVTkhpNmNWsWRisFfba3DC0AUmRIfD",
 							"otherinfo": "\ncookie:csrftoken"
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/accounts/signup/",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/calculer-impact-social-achat-inclusif/",
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "qt0eXeHu8N8Gkix0CbsbyYtDn1QQPYTH",
+							"evidence": "zzcVTkhpNmNWsWRisFfba3DC0AUmRIfD",
 							"otherinfo": "\ncookie:csrftoken"
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/besoins/ajouter/",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/ressources/bouygues-construction-recherche-dune-entreprise-de-nettoyage/",
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "qt0eXeHu8N8Gkix0CbsbyYtDn1QQPYTH",
-							"otherinfo": "\ncookie:csrftoken\ncookie:sessionid"
-						},
-						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/calibrer-achat-socialement-responsable/",
-							"method": "GET",
-							"param": "csrftoken",
-							"attack": "",
-							"evidence": "qt0eXeHu8N8Gkix0CbsbyYtDn1QQPYTH",
+							"evidence": "zzcVTkhpNmNWsWRisFfba3DC0AUmRIfD",
 							"otherinfo": "\ncookie:csrftoken"
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/faq/",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/ressources/minist%C3%A8re-de-lagriculture-besoin-en-prestations-de-cocktails-et-de-buffet/",
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "qt0eXeHu8N8Gkix0CbsbyYtDn1QQPYTH",
+							"evidence": "zzcVTkhpNmNWsWRisFfba3DC0AUmRIfD",
 							"otherinfo": "\ncookie:csrftoken"
 						},
 						{
@@ -1727,7 +1537,15 @@
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "qt0eXeHu8N8Gkix0CbsbyYtDn1QQPYTH",
+							"evidence": "zzcVTkhpNmNWsWRisFfba3DC0AUmRIfD",
+							"otherinfo": "\ncookie:csrftoken"
+						},
+						{
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/ressources/siemens-besoin-en-d%C3%A9veloppement-dapplications-it/",
+							"method": "GET",
+							"param": "csrftoken",
+							"attack": "",
+							"evidence": "zzcVTkhpNmNWsWRisFfba3DC0AUmRIfD",
 							"otherinfo": "\ncookie:csrftoken"
 						},
 						{
@@ -1735,7 +1553,7 @@
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "qt0eXeHu8N8Gkix0CbsbyYtDn1QQPYTH",
+							"evidence": "zzcVTkhpNmNWsWRisFfba3DC0AUmRIfD",
 							"otherinfo": "\ncookie:csrftoken"
 						},
 						{
@@ -1743,7 +1561,7 @@
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "qt0eXeHu8N8Gkix0CbsbyYtDn1QQPYTH",
+							"evidence": "WWV1F1s3Irq5ayyJO8Y5p63Acr4PEtAn",
 							"otherinfo": "\ncookie:csrftoken"
 						},
 						{
@@ -1751,7 +1569,7 @@
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "qt0eXeHu8N8Gkix0CbsbyYtDn1QQPYTH",
+							"evidence": "zzcVTkhpNmNWsWRisFfba3DC0AUmRIfD",
 							"otherinfo": "\ncookie:csrftoken"
 						}
 					],
@@ -1761,7 +1579,7 @@
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "55"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10049",
@@ -1790,14 +1608,6 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/accounts/signup/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
-						},
-						{
 							"uri": "https://lemarche.inclusion.beta.gouv.fr/besoins/ajouter/",
 							"method": "GET",
 							"param": "",
@@ -1806,7 +1616,7 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/calibrer-achat-socialement-responsable/",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/calculer-impact-social-achat-inclusif/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1814,7 +1624,7 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/faq/",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/ressources/bouygues-construction-recherche-dune-entreprise-de-nettoyage/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1823,6 +1633,14 @@
 						},
 						{
 							"uri": "https://lemarche.inclusion.beta.gouv.fr/ressources/quest-ce-quun-prestataire-inclusif/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/ressources/siemens-besoin-en-d%C3%A9veloppement-dapplications-it/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1860,7 +1678,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10031",
@@ -1873,157 +1691,141 @@
 					"desc": "<p>This check looks at user-supplied input in query string parameters and POST data to identify where certain HTML attribute values might be controlled. This provides hot-spot detection for XSS (cross-site scripting) that will require further review by a security analyst to determine exploitability.</p>",
 					"instances":[ 
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/accounts/signup/",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/accounts/login/",
 							"method": "POST",
-							"param": "buyer_kind_detail",
+							"param": "password",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://lemarche.inclusion.beta.gouv.fr/accounts/signup/\n\nappears to include user input in: \n\na(n) [option] tag [value] attribute \n\nThe user input found was:\nbuyer_kind_detail=PRIVATE_BIG_CORP\n\nThe user-controlled value was:\nprivate_big_corp"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://lemarche.inclusion.beta.gouv.fr/accounts/login/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\npassword=ZAP\n\nThe user-controlled value was:\nzap"
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/accounts/signup/",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/accounts/login/",
 							"method": "POST",
-							"param": "company_name",
+							"param": "username",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://lemarche.inclusion.beta.gouv.fr/accounts/signup/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\ncompany_name=ZAP\n\nThe user-controlled value was:\nzap"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://lemarche.inclusion.beta.gouv.fr/accounts/login/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nusername=ZAP\n\nThe user-controlled value was:\nzap"
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/accounts/signup/",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/besoins/ajouter/",
 							"method": "POST",
-							"param": "company_name",
+							"param": "general-kind",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://lemarche.inclusion.beta.gouv.fr/accounts/signup/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\ncompany_name=ZAP\n\nThe user-controlled value was:\nzaproxy@example.com"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://lemarche.inclusion.beta.gouv.fr/besoins/ajouter/\n\nappears to include user input in: \n\na(n) [button] tag [id] attribute \n\nThe user input found was:\ngeneral-kind=TENDER\n\nThe user-controlled value was:\ntender-create-general-form-next-step-btn"
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/accounts/signup/",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/besoins/ajouter/",
 							"method": "POST",
-							"param": "email",
+							"param": "general-kind",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://lemarche.inclusion.beta.gouv.fr/accounts/signup/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nemail=zaproxy@example.com\n\nThe user-controlled value was:\nzaproxy@example.com"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://lemarche.inclusion.beta.gouv.fr/besoins/ajouter/\n\nappears to include user input in: \n\na(n) [form] tag [id] attribute \n\nThe user input found was:\ngeneral-kind=TENDER\n\nThe user-controlled value was:\ntender-create-general-form"
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/accounts/signup/",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/besoins/ajouter/",
 							"method": "POST",
-							"param": "first_name",
+							"param": "general-kind",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://lemarche.inclusion.beta.gouv.fr/accounts/signup/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nfirst_name=ZAP\n\nThe user-controlled value was:\nzap"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://lemarche.inclusion.beta.gouv.fr/besoins/ajouter/\n\nappears to include user input in: \n\na(n) [input] tag [name] attribute \n\nThe user input found was:\ngeneral-kind=TENDER\n\nThe user-controlled value was:\ntender_create_multi_step_view-current_step"
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/accounts/signup/",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/besoins/ajouter/",
 							"method": "POST",
-							"param": "first_name",
+							"param": "general-kind",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://lemarche.inclusion.beta.gouv.fr/accounts/signup/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nfirst_name=ZAP\n\nThe user-controlled value was:\nzaproxy@example.com"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://lemarche.inclusion.beta.gouv.fr/besoins/ajouter/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\ngeneral-kind=TENDER\n\nThe user-controlled value was:\ntender"
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/accounts/signup/",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/besoins/ajouter/",
 							"method": "POST",
-							"param": "kind",
+							"param": "general-location",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://lemarche.inclusion.beta.gouv.fr/accounts/signup/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nkind=SIAE\n\nThe user-controlled value was:\nsiae"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://lemarche.inclusion.beta.gouv.fr/besoins/ajouter/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\ngeneral-location=None\n\nThe user-controlled value was:\nnone"
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/accounts/signup/",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/besoins/ajouter/",
 							"method": "POST",
-							"param": "last_name",
+							"param": "general-sectors",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://lemarche.inclusion.beta.gouv.fr/accounts/signup/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nlast_name=ZAP\n\nThe user-controlled value was:\nzap"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://lemarche.inclusion.beta.gouv.fr/besoins/ajouter/\n\nappears to include user input in: \n\na(n) [option] tag [value] attribute \n\nThe user input found was:\ngeneral-sectors=entretien-et-maintenance-de-lespace-urbain-17\n\nThe user-controlled value was:\nentretien-et-maintenance-de-lespace-urbain-17"
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/accounts/signup/",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/besoins/ajouter/",
 							"method": "POST",
-							"param": "last_name",
+							"param": "general-title",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://lemarche.inclusion.beta.gouv.fr/accounts/signup/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nlast_name=ZAP\n\nThe user-controlled value was:\nzaproxy@example.com"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://lemarche.inclusion.beta.gouv.fr/besoins/ajouter/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\ngeneral-title=ZAP\n\nThe user-controlled value was:\nzap"
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/accounts/signup/",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/besoins/ajouter/",
 							"method": "POST",
-							"param": "partner_kind",
+							"param": "tender_create_multi_step_view-current_step",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://lemarche.inclusion.beta.gouv.fr/accounts/signup/\n\nappears to include user input in: \n\na(n) [option] tag [value] attribute \n\nThe user input found was:\npartner_kind=FACILITATEUR\n\nThe user-controlled value was:\nfacilitateur"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://lemarche.inclusion.beta.gouv.fr/besoins/ajouter/\n\nappears to include user input in: \n\na(n) [input] tag [name] attribute \n\nThe user input found was:\ntender_create_multi_step_view-current_step=general\n\nThe user-controlled value was:\ngeneral-is_country_area"
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/accounts/signup/",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/besoins/ajouter/",
 							"method": "POST",
-							"param": "password1",
+							"param": "tender_create_multi_step_view-current_step",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://lemarche.inclusion.beta.gouv.fr/accounts/signup/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\npassword1=ZAP\n\nThe user-controlled value was:\nzap"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://lemarche.inclusion.beta.gouv.fr/besoins/ajouter/\n\nappears to include user input in: \n\na(n) [input] tag [name] attribute \n\nThe user input found was:\ntender_create_multi_step_view-current_step=general\n\nThe user-controlled value was:\ngeneral-kind"
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/accounts/signup/",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/besoins/ajouter/",
 							"method": "POST",
-							"param": "password1",
+							"param": "tender_create_multi_step_view-current_step",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://lemarche.inclusion.beta.gouv.fr/accounts/signup/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\npassword1=ZAP\n\nThe user-controlled value was:\nzaproxy@example.com"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://lemarche.inclusion.beta.gouv.fr/besoins/ajouter/\n\nappears to include user input in: \n\na(n) [input] tag [name] attribute \n\nThe user input found was:\ntender_create_multi_step_view-current_step=general\n\nThe user-controlled value was:\ngeneral-location"
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/accounts/signup/",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/besoins/ajouter/",
 							"method": "POST",
-							"param": "password2",
+							"param": "tender_create_multi_step_view-current_step",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://lemarche.inclusion.beta.gouv.fr/accounts/signup/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\npassword2=ZAP\n\nThe user-controlled value was:\nzap"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://lemarche.inclusion.beta.gouv.fr/besoins/ajouter/\n\nappears to include user input in: \n\na(n) [input] tag [name] attribute \n\nThe user input found was:\ntender_create_multi_step_view-current_step=general\n\nThe user-controlled value was:\ngeneral-title"
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/accounts/signup/",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/besoins/ajouter/",
 							"method": "POST",
-							"param": "password2",
+							"param": "tender_create_multi_step_view-current_step",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://lemarche.inclusion.beta.gouv.fr/accounts/signup/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\npassword2=ZAP\n\nThe user-controlled value was:\nzaproxy@example.com"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://lemarche.inclusion.beta.gouv.fr/besoins/ajouter/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\ntender_create_multi_step_view-current_step=general\n\nThe user-controlled value was:\ngeneral"
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/accounts/signup/",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/besoins/ajouter/",
 							"method": "POST",
-							"param": "phone",
+							"param": "tender_create_multi_step_view-current_step",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://lemarche.inclusion.beta.gouv.fr/accounts/signup/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nphone=9999999999\n\nThe user-controlled value was:\n9999999999"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://lemarche.inclusion.beta.gouv.fr/besoins/ajouter/\n\nappears to include user input in: \n\na(n) [select] tag [name] attribute \n\nThe user input found was:\ntender_create_multi_step_view-current_step=general\n\nThe user-controlled value was:\ngeneral-sectors"
 						},
 						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/accounts/signup/",
+							"uri": "https://lemarche.inclusion.beta.gouv.fr/besoins/ajouter/",
 							"method": "POST",
-							"param": "position",
+							"param": "tender_create_multi_step_view-current_step",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://lemarche.inclusion.beta.gouv.fr/accounts/signup/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nposition=ZAP\n\nThe user-controlled value was:\nzap"
-						},
-						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/accounts/signup/",
-							"method": "POST",
-							"param": "position",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://lemarche.inclusion.beta.gouv.fr/accounts/signup/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nposition=ZAP\n\nThe user-controlled value was:\nzaproxy@example.com"
-						},
-						{
-							"uri": "https://lemarche.inclusion.beta.gouv.fr/accounts/signup/",
-							"method": "POST",
-							"param": "sectors",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://lemarche.inclusion.beta.gouv.fr/accounts/signup/\n\nappears to include user input in: \n\na(n) [option] tag [value] attribute \n\nThe user input found was:\nsectors=entretien-et-maintenance-de-lespace-urbain-17\n\nThe user-controlled value was:\nentretien-et-maintenance-de-lespace-urbain-17"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://lemarche.inclusion.beta.gouv.fr/besoins/ajouter/\n\nappears to include user input in: \n\na(n) [textarea] tag [name] attribute \n\nThe user input found was:\ntender_create_multi_step_view-current_step=general\n\nThe user-controlled value was:\ngeneral-description"
 						}
 					],
-					"count": "18",
+					"count": "16",
 					"solution": "<p>Validate all input and sanitize output it before writing to any HTML attributes.</p>",
-					"otherinfo": "<p>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:</p><p></p><p>https://lemarche.inclusion.beta.gouv.fr/accounts/signup/</p><p></p><p>appears to include user input in: </p><p></p><p>a(n) [option] tag [value] attribute </p><p></p><p>The user input found was:</p><p>buyer_kind_detail=PRIVATE_BIG_CORP</p><p></p><p>The user-controlled value was:</p><p>private_big_corp</p>",
+					"otherinfo": "<p>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:</p><p></p><p>https://lemarche.inclusion.beta.gouv.fr/accounts/login/</p><p></p><p>appears to include user input in: </p><p></p><p>a(n) [input] tag [value] attribute </p><p></p><p>The user input found was:</p><p>password=ZAP</p><p></p><p>The user-controlled value was:</p><p>zap</p>",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html</p>",
 					"cweid": "20",
 					"wascid": "20",
-					"sourceid": "277"
+					"sourceid": "260"
 				}
 			]
 		}

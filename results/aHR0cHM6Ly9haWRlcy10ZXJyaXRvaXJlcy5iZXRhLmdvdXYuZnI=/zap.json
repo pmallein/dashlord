@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Mon, 26 Feb 2024 12:38:12",
+	"@generated": "Sun, 3 Mar 2024 01:23:45",
 	"site":[ 
 		{
 			"@name": "https://aides-territoires.beta.gouv.fr",
@@ -21,14 +21,6 @@
 					"instances":[ 
 						{
 							"uri": "https://aides-territoires.beta.gouv.fr/aides/17dd-pret-secteur-public-vert-psp-vert/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<form id=\"copy-to-clipboard-form\" class=\"fr-grid-row fr-grid-row--center\">",
-							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"currentUrl\" ]."
-						},
-						{
-							"uri": "https://aides-territoires.beta.gouv.fr/aides/2ba6-resorption-de-lhabitat-insalubreresorption-de/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -84,14 +76,6 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"currentUrl\" ]."
 						},
 						{
-							"uri": "https://aides-territoires.beta.gouv.fr/aides/faire-vivre-nos-territoires-ruraux-entre-transitions-et-mutations-reinventons-le-vivre-ensemble-bourbonnais-leader/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<form id=\"copy-to-clipboard-form\" class=\"fr-grid-row fr-grid-row--center\">",
-							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"currentUrl\" ]."
-						},
-						{
 							"uri": "https://aides-territoires.beta.gouv.fr/aides/ffe7-expertise-transition-ecologique-energetique-e/",
 							"method": "GET",
 							"param": "",
@@ -100,7 +84,7 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"currentUrl\" ]."
 						},
 						{
-							"uri": "https://aides-territoires.beta.gouv.fr/aides/proteger-et-restaurer-les-espaces-naturels-4/",
+							"uri": "https://aides-territoires.beta.gouv.fr/aides/mettre-en-recit-la-biodiversite-dans-les-territoires/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -108,7 +92,15 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"currentUrl\" ]."
 						},
 						{
-							"uri": "https://aides-territoires.beta.gouv.fr/aides/reduire-les-pressions-sur-la-biodiversite-de-votre-territoire/",
+							"uri": "https://aides-territoires.beta.gouv.fr/aides/proteger-et-restaurer-les-espaces-naturels-5/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form id=\"copy-to-clipboard-form\" class=\"fr-grid-row fr-grid-row--center\">",
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"currentUrl\" ]."
+						},
+						{
+							"uri": "https://aides-territoires.beta.gouv.fr/aides/recycler-le-foncier-friches/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -116,13 +108,13 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"currentUrl\" ]."
 						}
 					],
-					"count": "12",
+					"count": "11",
 					"solution": "<p>Phase: Architecture and Design</p><p>Use a vetted library or framework that does not allow this weakness to occur or provides constructs that make this weakness easier to avoid.</p><p>For example, use anti-CSRF packages such as the OWASP CSRFGuard.</p><p></p><p>Phase: Implementation</p><p>Ensure that your application is free of cross-site scripting issues, because most CSRF defenses can be bypassed using attacker-controlled script.</p><p></p><p>Phase: Architecture and Design</p><p>Generate a unique nonce for each form, place the nonce into the form, and verify the nonce upon receipt of the form. Be sure that the nonce is not predictable (CWE-330).</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Identify especially dangerous operations. When the user performs a dangerous operation, send a separate confirmation request to ensure that the user intended to perform that operation.</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Use the ESAPI Session Management control.</p><p>This control includes a component for CSRF.</p><p></p><p>Do not use the GET method for any request that triggers a state change.</p><p></p><p>Phase: Implementation</p><p>Check the HTTP Referer header to see if the request originated from an expected page. This could break legitimate functionality, because users or proxies may have disabled sending the Referer for privacy reasons.</p>",
 					"otherinfo": "<p>No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"currentUrl\" ].</p>",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "7466"
+					"sourceid": "7870"
 				},
 				{
 					"pluginid": "10055",
@@ -139,7 +131,7 @@
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
-							"evidence": "default-src 'self' https://in-automate.brevo.com https://stats.beta.gouv.fr; block-all-mixed-content; font-src 'self' https://fonts.gstatic.com/; frame-src https://www.youtube.com https://stats.data.gouv.fr; img-src 'self' data: https://aides-territoires-prod.s3.fr-par.scw.cloud https://aides-territoires-stage.s3.fr-par.scw.cloud https://a.forte.tiles.quaidorsay.fr https://b.forte.tiles.quaidorsay.fr https://c.forte.tiles.quaidorsay.fr; media-src 'self' https://aides-territoires-prod.s3.fr-par.scw.cloud https://aides-territoires-stage.s3.fr-par.scw.cloud; object-src 'none'; script-src 'self' https://www.youtube.com https://sibautomation.com https://stats.beta.gouv.fr/matomo.js 'unsafe-inline' 'sha256-SQjspJzwf5Lh2PhVCPrMErtvHhpDeOJQWIxkDmsACdg=' 'sha256-uXW8SGy+rhLGmLbK2Za4E/P/SCdeGB6J8k84B9Oo7EE=' 'sha256-/RsgQuclj+X9A1HDHvGw+A/d9NiXvTw9a1/kzhUs2rY='; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'",
+							"evidence": "default-src 'self' https://in-automate.brevo.com https://stats.beta.gouv.fr; block-all-mixed-content; font-src 'self' https://fonts.gstatic.com/; frame-src https://www.youtube.com https://stats.data.gouv.fr; img-src 'self' data: https://aides-territoires-prod.s3.fr-par.scw.cloud https://aides-territoires-stage.s3.fr-par.scw.cloud https://a.forte.tiles.quaidorsay.fr https://b.forte.tiles.quaidorsay.fr https://c.forte.tiles.quaidorsay.fr; media-src 'self' https://aides-territoires-prod.s3.fr-par.scw.cloud https://aides-territoires-stage.s3.fr-par.scw.cloud; object-src 'none'; script-src 'self' https://www.youtube.com https://sibautomation.com https://stats.beta.gouv.fr/matomo.js 'unsafe-inline' 'sha256-TcgFrllpkyOgevTEJSzAYlwaz7ajfTIlRL7b8QwFmBM=' 'sha256-uXW8SGy+rhLGmLbK2Za4E/P/SCdeGB6J8k84B9Oo7EE=' 'sha256-/RsgQuclj+X9A1HDHvGw+A/d9NiXvTw9a1/kzhUs2rY='; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'",
 							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nframe-ancestors, form-action\n\nThe directive(s): frame-ancestors, form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything."
 						},
 						{
@@ -165,7 +157,7 @@
 					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "8"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10055",
@@ -182,7 +174,7 @@
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
-							"evidence": "default-src 'self' https://in-automate.brevo.com https://stats.beta.gouv.fr; block-all-mixed-content; font-src 'self' https://fonts.gstatic.com/; frame-src https://www.youtube.com https://stats.data.gouv.fr; img-src 'self' data: https://aides-territoires-prod.s3.fr-par.scw.cloud https://aides-territoires-stage.s3.fr-par.scw.cloud https://a.forte.tiles.quaidorsay.fr https://b.forte.tiles.quaidorsay.fr https://c.forte.tiles.quaidorsay.fr; media-src 'self' https://aides-territoires-prod.s3.fr-par.scw.cloud https://aides-territoires-stage.s3.fr-par.scw.cloud; object-src 'none'; script-src 'self' https://www.youtube.com https://sibautomation.com https://stats.beta.gouv.fr/matomo.js 'unsafe-inline' 'sha256-SQjspJzwf5Lh2PhVCPrMErtvHhpDeOJQWIxkDmsACdg=' 'sha256-uXW8SGy+rhLGmLbK2Za4E/P/SCdeGB6J8k84B9Oo7EE=' 'sha256-/RsgQuclj+X9A1HDHvGw+A/d9NiXvTw9a1/kzhUs2rY='; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'",
+							"evidence": "default-src 'self' https://in-automate.brevo.com https://stats.beta.gouv.fr; block-all-mixed-content; font-src 'self' https://fonts.gstatic.com/; frame-src https://www.youtube.com https://stats.data.gouv.fr; img-src 'self' data: https://aides-territoires-prod.s3.fr-par.scw.cloud https://aides-territoires-stage.s3.fr-par.scw.cloud https://a.forte.tiles.quaidorsay.fr https://b.forte.tiles.quaidorsay.fr https://c.forte.tiles.quaidorsay.fr; media-src 'self' https://aides-territoires-prod.s3.fr-par.scw.cloud https://aides-territoires-stage.s3.fr-par.scw.cloud; object-src 'none'; script-src 'self' https://www.youtube.com https://sibautomation.com https://stats.beta.gouv.fr/matomo.js 'unsafe-inline' 'sha256-TcgFrllpkyOgevTEJSzAYlwaz7ajfTIlRL7b8QwFmBM=' 'sha256-uXW8SGy+rhLGmLbK2Za4E/P/SCdeGB6J8k84B9Oo7EE=' 'sha256-/RsgQuclj+X9A1HDHvGw+A/d9NiXvTw9a1/kzhUs2rY='; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'",
 							"otherinfo": "style-src includes unsafe-inline."
 						},
 						{
@@ -208,7 +200,7 @@
 					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "8"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10020",
@@ -237,7 +229,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://aides-territoires.beta.gouv.fr/cartographie/",
+							"uri": "https://aides-territoires.beta.gouv.fr/blog/",
 							"method": "GET",
 							"param": "x-frame-options",
 							"attack": "",
@@ -336,7 +328,7 @@
 							"otherinfo": "Location header URI length: 57 [https://aides-territoires.beta.gouv.fr/comptes/connexion/].\nPredicted response size: 357.\nResponse Body Length: 474."
 						},
 						{
-							"uri": "https://aides-territoires.beta.gouv.fr/projets/projets-publics/17483-creation-d-039-une-maison-medicale-et-de-services-publics/",
+							"uri": "https://aides-territoires.beta.gouv.fr/projets/projets-publics/17421-0066-renovation-energetique-de-lhotel-de-villle/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -344,7 +336,7 @@
 							"otherinfo": "Location header URI length: 57 [https://aides-territoires.beta.gouv.fr/comptes/connexion/].\nPredicted response size: 357.\nResponse Body Length: 474."
 						},
 						{
-							"uri": "https://aides-territoires.beta.gouv.fr/projets/projets-publics/17485-modernisation-de-l-eclairage-public/",
+							"uri": "https://aides-territoires.beta.gouv.fr/projets/projets-publics/17422-c3a1-groupe-scolaire-jean-mace/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -352,7 +344,47 @@
 							"otherinfo": "Location header URI length: 57 [https://aides-territoires.beta.gouv.fr/comptes/connexion/].\nPredicted response size: 357.\nResponse Body Length: 474."
 						},
 						{
-							"uri": "https://aides-territoires.beta.gouv.fr/projets/projets-publics/17486-rehabilitation-d-039-un-ancien-pressoir-banal-du-xvie-siecle/",
+							"uri": "https://aides-territoires.beta.gouv.fr/projets/projets-publics/17428-fca9-renovation-de-leglise/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "Location header URI length: 57 [https://aides-territoires.beta.gouv.fr/comptes/connexion/].\nPredicted response size: 357.\nResponse Body Length: 474."
+						},
+						{
+							"uri": "https://aides-territoires.beta.gouv.fr/projets/projets-publics/17429-9aec-reparation-de-la-charpente-de-la-salle-des-fe/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "Location header URI length: 57 [https://aides-territoires.beta.gouv.fr/comptes/connexion/].\nPredicted response size: 357.\nResponse Body Length: 474."
+						},
+						{
+							"uri": "https://aides-territoires.beta.gouv.fr/projets/projets-publics/17430-f2a7-travaux-disolation-et-installation-panneaux-p/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "Location header URI length: 57 [https://aides-territoires.beta.gouv.fr/comptes/connexion/].\nPredicted response size: 357.\nResponse Body Length: 474."
+						},
+						{
+							"uri": "https://aides-territoires.beta.gouv.fr/projets/projets-publics/17493-renovation-thermique-ecole/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "Location header URI length: 57 [https://aides-territoires.beta.gouv.fr/comptes/connexion/].\nPredicted response size: 357.\nResponse Body Length: 474."
+						},
+						{
+							"uri": "https://aides-territoires.beta.gouv.fr/projets/projets-publics/17498-installation-d-039-un-toilette-sec-a-lombricompostage-au-sein-d-039-un-parc/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "Location header URI length: 57 [https://aides-territoires.beta.gouv.fr/comptes/connexion/].\nPredicted response size: 357.\nResponse Body Length: 474."
+						},
+						{
+							"uri": "https://aides-territoires.beta.gouv.fr/projets/projets-publics/17536-cloitre-vnf/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -376,13 +408,13 @@
 							"otherinfo": "Location header URI length: 57 [https://aides-territoires.beta.gouv.fr/comptes/connexion/].\nPredicted response size: 357.\nResponse Body Length: 474."
 						}
 					],
-					"count": "6",
+					"count": "11",
 					"solution": "<p>Ensure that no sensitive information is leaked via redirect responses. Redirect responses should have almost no content.</p>",
 					"otherinfo": "<p>Location header URI length: 57 [https://aides-territoires.beta.gouv.fr/comptes/connexion/].</p><p>Predicted response size: 357.</p><p>Response Body Length: 474.</p>",
 					"reference": "",
 					"cweid": "201",
 					"wascid": "13",
-					"sourceid": "5463"
+					"sourceid": "87"
 				},
 				{
 					"pluginid": "10110",
@@ -409,7 +441,7 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "7405"
+					"sourceid": "5109"
 				},
 				{
 					"pluginid": "10063",
@@ -438,7 +470,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://aides-territoires.beta.gouv.fr/aides/",
+							"uri": "https://aides-territoires.beta.gouv.fr/blog/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -516,7 +548,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy</p><p>https://developer.chrome.com/blog/feature-policy/</p><p>https://scotthelme.co.uk/a-new-security-header-feature-policy/</p><p>https://w3c.github.io/webappsec-feature-policy/</p><p>https://www.smashingmagazine.com/2018/12/feature-policy/</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "8"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10096",
@@ -529,37 +561,69 @@
 					"desc": "<p>A timestamp was disclosed by the application/web server - Unix</p>",
 					"instances":[ 
 						{
-							"uri": "https://aides-territoires.beta.gouv.fr/aides/d271-fprnm-fonds-de-prevention-des-risques-naturel/",
+							"uri": "https://aides-territoires.beta.gouv.fr",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "1760183903",
-							"otherinfo": "1760183903, which evaluates to: 2025-10-11 11:58:23"
+							"evidence": "1709039227",
+							"otherinfo": "1709039227, which evaluates to: 2024-02-27 13:07:07"
 						},
 						{
-							"uri": "https://aides-territoires.beta.gouv.fr/aides/d271-fprnm-fonds-de-prevention-des-risques-naturel/",
+							"uri": "https://aides-territoires.beta.gouv.fr/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "1977516449",
-							"otherinfo": "1977516449, which evaluates to: 2032-08-30 22:07:29"
+							"evidence": "1709039227",
+							"otherinfo": "1709039227, which evaluates to: 2024-02-27 13:07:07"
 						},
 						{
-							"uri": "https://aides-territoires.beta.gouv.fr/aides/faire-vivre-nos-territoires-ruraux-entre-transitions-et-mutations-reinventons-le-vivre-ensemble-bourbonnais-leader/",
+							"uri": "https://aides-territoires.beta.gouv.fr/blog/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "1708677988",
-							"otherinfo": "1708677988, which evaluates to: 2024-02-23 08:46:28"
+							"evidence": "1709039227",
+							"otherinfo": "1709039227, which evaluates to: 2024-02-27 13:07:07"
+						},
+						{
+							"uri": "https://aides-territoires.beta.gouv.fr/blog/collectivites-doutre-mer-financez-vos-projets-en-f/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1695113390",
+							"otherinfo": "1695113390, which evaluates to: 2023-09-19 08:49:50"
+						},
+						{
+							"uri": "https://aides-territoires.beta.gouv.fr/blog/life-collectivites-preparez-vous-a-repondre-aux-appels-a-projet-life/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1709039227",
+							"otherinfo": "1709039227, which evaluates to: 2024-02-27 13:07:07"
+						},
+						{
+							"uri": "https://aides-territoires.beta.gouv.fr/portails/ecoquartier/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1709223838",
+							"otherinfo": "1709223838, which evaluates to: 2024-02-29 16:23:58"
+						},
+						{
+							"uri": "https://aides-territoires.beta.gouv.fr/programmes/agrip-promotion-des-produits-agricoles/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1708439216",
+							"otherinfo": "1708439216, which evaluates to: 2024-02-20 14:26:56"
 						}
 					],
-					"count": "3",
+					"count": "7",
 					"solution": "<p>Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.</p>",
-					"otherinfo": "<p>1760183903, which evaluates to: 2025-10-11 11:58:23</p>",
+					"otherinfo": "<p>1709039227, which evaluates to: 2024-02-27 13:07:07</p>",
 					"reference": "<p>https://cwe.mitre.org/data/definitions/200.html</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "7550"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10021",
@@ -572,7 +636,7 @@
 					"desc": "<p>The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</p>",
 					"instances":[ 
 						{
-							"uri": "https://aides-territoires.beta.gouv.fr/build/1880.b75178f2.js",
+							"uri": "https://aides-territoires.beta.gouv.fr/build/1214.fa6cc197.js",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -580,7 +644,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://aides-territoires.beta.gouv.fr/build/7437.92ba225e.js",
+							"uri": "https://aides-territoires.beta.gouv.fr/build/1273.3de6fd8b.css",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -588,7 +652,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://aides-territoires.beta.gouv.fr/build/9332.c99964f4.js",
+							"uri": "https://aides-territoires.beta.gouv.fr/build/141.ae7b2c48.js",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -596,7 +660,15 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://aides-territoires.beta.gouv.fr/build/app.21606d67.js",
+							"uri": "https://aides-territoires.beta.gouv.fr/build/381.075284da.js",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://aides-territoires.beta.gouv.fr/build/9989.4871426b.js",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -605,14 +677,6 @@
 						},
 						{
 							"uri": "https://aides-territoires.beta.gouv.fr/build/app.df970be6.css",
-							"method": "GET",
-							"param": "x-content-type-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
-						},
-						{
-							"uri": "https://aides-territoires.beta.gouv.fr/build/form/entity-checkbox-absolute-type.68a98557.js",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -652,7 +716,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://aides-territoires.beta.gouv.fr/build/import-scss/home.9af10450.css",
+							"uri": "https://aides-territoires.beta.gouv.fr/build/import-scss/home.243bdf9b.css",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -674,7 +738,7 @@
 					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "7396"
+					"sourceid": "4821"
 				},
 				{
 					"pluginid": "10111",
@@ -709,7 +773,7 @@
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/auth-req-id/</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "7430"
+					"sourceid": "7453"
 				},
 				{
 					"pluginid": "10094",
@@ -726,56 +790,72 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "ZkZZw9qBEga1dFpLyCQaZlecYeTDtX42txyriYwyOSg",
-							"otherinfo": "fFY\uFFFD\u0681\\x0012\\x0006\uFFFDtZK\uFFFD$\\x001afW\uFFFDa\uFFFD\u00F5~6\uFFFD\\x001c\uFFFD\uFFFD\uFFFD29("
+							"evidence": "X34Nw4shTp7Q9XN9z1KdUzLKi4VfUdOrr2WEXt4lXm4",
+							"otherinfo": "_~\r\u00CB!N\uFFFD\uFFFD\uFFFDs}\uFFFDR\uFFFDS2\u028B\uFFFD_Q\u04EB\uFFFDe\uFFFD^\uFFFD%^n"
 						},
 						{
 							"uri": "https://aides-territoires.beta.gouv.fr",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "kCTYVo-b7qOCY_C3VVJVn5PbivjCtaLaMZXEb85v_eg",
-							"otherinfo": "\uFFFD$\uFFFDV\uFFFD\uFFFD\uE8C2c\uFFFDURU\uFFFD\uFFFD\u06CA\uFFFD\u00B5\uFFFD\uFFFD1\uFFFD\uFFFDo\uFFFDo\uFFFD\uFFFD"
+							"evidence": "Wr3osScTjf4DXlFtbVvmX7pnbwAb2KA8YSP0vvbrfMc",
+							"otherinfo": "Z\uFFFD\uFFFD'\\x0013\uFFFD\uFFFD\\x0003^Qmm[\uFFFD_\uFFFDgo\\x0000\\x001b\u0620<a#\uFFFD\uFFFD\uFFFD\uFFFD|\uFFFD"
 						},
 						{
 							"uri": "https://aides-territoires.beta.gouv.fr/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "I_NNatWWjTCZaA6NLTY5eDr0IV1uC_yI_qi-FURIG8s",
-							"otherinfo": "#\uFFFDMj\u0556\uFFFD0\uFFFDh\\x000e\uFFFD-69x:\uFFFD!]n\\x000b\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x0015DH\\x001b\uFFFD"
+							"evidence": "Ub2ljVzwvF_F-FEy_iyaZN2nUY0kiQQ-7XOXB2kyF_I",
+							"otherinfo": "Q\uFFFD\uFFFD\uFFFD\\\uFFFD_\uFFFD\uFFFDQ2\uFFFD,\uFFFDd\u0767Q\uFFFD$\uFFFD\\x0004>\uFFFDs\uFFFD\\x0007i2\\x0017\uFFFD"
 						},
 						{
 							"uri": "https://aides-territoires.beta.gouv.fr/aides/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "529D43VrH4CnfdRafjnHVkg53nUYTp7xXz33qQBwQyc",
-							"otherinfo": "\uFFFDoC\uFFFDuk\\x001f\uFFFD\uFFFD}\uFFFDZ~9\uFFFDVH9\uFFFDu\\x0018N\uFFFD\uFFFD_=\uFFFD\uFFFD\\x0000pC'"
+							"evidence": "lZXsOTa8bHsPhrtvBAyv3YnOgtJQsUyowIAZ623adDY",
+							"otherinfo": "\uFFFD\uFFFD\uFFFD96\uFFFDl{\\x000f\uFFFD\uFFFDo\\x0004\\x000c\uFFFD\u0749\u0382\uFFFDP\uFFFDL\uFFFD\uFFFD\uFFFD\\x0019\uFFFDm\uFFFDt6"
+						},
+						{
+							"uri": "https://aides-territoires.beta.gouv.fr/blog/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "p7rIKZUPssUmNV2HO-qvfcQhaEk4g4fGi6gw3-_uRKg",
+							"otherinfo": "\uFFFD\uFFFD\uFFFD)\uFFFD\\x000f\uFFFD\uFFFD&5]\uFFFD;\uFFFD}\uFFFD!hI8\uFFFD\uFFFD\u018B\uFFFD0\uFFFD\uFFFD\uFFFDD\uFFFD"
 						},
 						{
 							"uri": "https://aides-territoires.beta.gouv.fr/cartographie/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "KKTLWV5NpoheSJPb1c-C9OJsz6McsJvvo31eGFgG8Fo",
-							"otherinfo": "(\uFFFD\uFFFDY^M\uFFFD\uFFFD^H\uFFFD\uFFFD\uFFFD\u03C2\uFFFD\uFFFDl\u03E3\\x001c\uFFFD\uFFFD\uFFFD}^\\x0018X\\x0006\uFFFDZ"
+							"evidence": "3FaTxWJp8VknreoLFH-tC2Wm604K_SAIMwC7Us7cf1o",
+							"otherinfo": "\uFFFDV\uFFFD\uFFFDbi\uFFFDY'\uFFFD\uFFFD\\x000b\\x0014\uFFFD\\x000be\uFFFD\uFFFDN\n\uFFFD \\x00083\\x0000\uFFFDR\uFFFD\uFFFDZ"
 						},
 						{
 							"uri": "https://aides-territoires.beta.gouv.fr/comptes/connexion/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "YPYF1wdsYQ6QCxyiadXqxADfJo4_2k-nATtuFggnuBk",
-							"otherinfo": "`\uFFFD\\x0005\uFFFD\\x0007la\\x000e\uFFFD\\x000b\\x001c\uFFFDi\uFFFD\uFFFD\uFFFD\\x0000\uFFFD&\uFFFD?\uFFFDO\uFFFD\\x0001;n\\x0016\\x0008'\uFFFD\\x0019"
+							"evidence": "5zqs5FSelofTDhVYKVCjRUD9Oz084Fj1tAVukBvZI64",
+							"otherinfo": "\uFFFD:\uFFFD\uFFFDT\uFFFD\uFFFD\uFFFD\uFFFD\\x000e\\x0015X)P\uFFFDE@\uFFFD;=<\uFFFDX\uFFFD\uFFFD\\x0005n\uFFFD\\x001b\uFFFD#\uFFFD"
 						},
 						{
 							"uri": "https://aides-territoires.beta.gouv.fr/comptes/inscription/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "ZkAy_1vy1-pGyZ_7S6Be8EWx13zWT8IAcFt9FlN1JAc",
-							"otherinfo": "f@2\uFFFD[\uFFFD\uFFFD\uFFFDF\u025F\uFFFDK\uFFFD^\uFFFDE\uFFFD\uFFFD|\uFFFDO\uFFFD\\x0000p[}\\x0016Su$\\x0007"
+							"evidence": "HnDqB8802ufnMmKLql9HlsmzFDxgbN-ZKmuWy5ImGsY",
+							"otherinfo": "\\x001ep\uFFFD\\x0007\uFFFD4\uFFFD\uFFFD\uFFFD2b\uFFFD\uFFFD_G\uFFFD\u0273\\x0014<`l\u07D9*k\uFFFD\u02D2&\\x001a\uFFFD"
+						},
+						{
+							"uri": "https://aides-territoires.beta.gouv.fr/plateforme-aides-territoires/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "fr/broadcast/3105-Aides-Territoires-la-plateforme-qui-permet-aux-territoires-de-trouver-des-aides-pour-financer-et-accompagner-leurs-projets-locaux",
+							"otherinfo": "~\uFFFD\u06EE\uFFFD\uFFFDq\uFFFD-\uFFFD}t\uFFFD\uFFFD\"u\uFFFD>M\uFFFD\uFFFD\uFFFD\"\uFFFD\uFFFD>\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD^~\uFFFD\uFFFD{\uAB8B\uFFFD^\uFFFDg\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\u05EB\uFFFD+h\uFFFD\uFFFD\uFFFD\uFFFD\u05FE\uFFFD\uFFFD.\uFFFD\uFFFD\uFFFDu\uFFFD>j'^\uFFFD\uFFFDh\uFFFD\uFFFD\uFFFD\uFFFDv\uFFFDq\uFFFD\uFFFDz\u07DAq\uFFFD&\uFFFD\uFFFD'z\uFFFD\uFFFDz\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDl\uFFFDZ\\x001cj\uFFFD"
 						},
 						{
 							"uri": "https://aides-territoires.beta.gouv.fr/portails/",
@@ -798,29 +878,21 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "ICDyas7fu_NMfK-VRCzUw5bIkyIUBIN4bTJLSLi0VtY",
-							"otherinfo": "  \uFFFDj\uFFFD\u07FB\uFFFDL|\uFFFD\uFFFDD,\uFFFD\u00D6\u0213\"\\x0014\\x0004\uFFFDxm2KH\uFFFD\uFFFDV\uFFFD"
+							"evidence": "-0FY3TPfnQlyjTkpyN5OV-P78cCb6bBMdjQjL4D-6tk",
+							"otherinfo": "\uFFFDAX\uFFFD3\u07DD\tr\uFFFD9)\uFFFD\uFFFDNW\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDLv4#/\uFFFD\uFFFD\uFFFD\uFFFD"
 						},
 						{
 							"uri": "https://aides-territoires.beta.gouv.fr/projets/projets-subventionnes/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "ASiMlixCRRwh8EKUdIIqm7Et4ETg-wYkL9IYuDc9pP8",
-							"otherinfo": "\\x0001(\uFFFD\uFFFD,BE\\x001c!\uFFFDB\uFFFDt\uFFFD*\uFFFD\uFFFD-\uFFFDD\uFFFD\uFFFD\\x0006$/\uFFFD\\x0018\uFFFD7=\uFFFD\uFFFD"
-						},
-						{
-							"uri": "https://aides-territoires.beta.gouv.fr/sitemap.xml",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "fr/partenaires/492-Grenoble-alpes-metropole/",
-							"otherinfo": "~\uFFFD\uFFFDj\uFFFD^\uFFFD\uFFFD\uFFFDz\uFFFD\uFFFD\uFFFDo\uFFFD\uFFFD\uFFFD\uFFFDnW\uFFFDjZ^\uFFFD\u97B6\uFFFD)\uFFFDW\uFFFD"
+							"evidence": "qNGpGtvCZXDu3RngSqHpD1D2_tI8PZmM9vUyevepcDQ",
+							"otherinfo": "\uFFFD\u0469\\x001a\uFFFD\uFFFDep\uFFFD\uFFFD\\x0019\uFFFDJ\uFFFD\uFFFD\\x000fP\uFFFD\uFFFD\uFFFD<=\uFFFD\uFFFD\uFFFD\uFFFD2z\uFFFD\uFFFDp4"
 						}
 					],
-					"count": "12",
+					"count": "13",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>fFY\uFFFD\u0681\\x0012\\x0006\uFFFDtZK\uFFFD$\\x001afW\uFFFDa\uFFFD\u00F5~6\uFFFD\\x001c\uFFFD\uFFFD\uFFFD29(</p>",
+					"otherinfo": "<p>_~\r\u00CB!N\uFFFD\uFFFD\uFFFDs}\uFFFDR\uFFFDS2\u028B\uFFFD_Q\u04EB\uFFFDe\uFFFD^\uFFFD%^n</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
@@ -841,7 +913,7 @@
 							"method": "GET",
 							"param": "X-Content-Security-Policy",
 							"attack": "",
-							"evidence": "default-src 'self' https://in-automate.brevo.com https://stats.beta.gouv.fr; block-all-mixed-content; font-src 'self' https://fonts.gstatic.com/; frame-src https://www.youtube.com https://stats.data.gouv.fr; img-src 'self' data: https://aides-territoires-prod.s3.fr-par.scw.cloud https://aides-territoires-stage.s3.fr-par.scw.cloud https://a.forte.tiles.quaidorsay.fr https://b.forte.tiles.quaidorsay.fr https://c.forte.tiles.quaidorsay.fr; media-src 'self' https://aides-territoires-prod.s3.fr-par.scw.cloud https://aides-territoires-stage.s3.fr-par.scw.cloud; object-src 'none'; script-src 'self' https://www.youtube.com https://sibautomation.com https://stats.beta.gouv.fr/matomo.js 'unsafe-inline' 'sha256-SQjspJzwf5Lh2PhVCPrMErtvHhpDeOJQWIxkDmsACdg=' 'sha256-uXW8SGy+rhLGmLbK2Za4E/P/SCdeGB6J8k84B9Oo7EE=' 'sha256-/RsgQuclj+X9A1HDHvGw+A/d9NiXvTw9a1/kzhUs2rY='; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'",
+							"evidence": "default-src 'self' https://in-automate.brevo.com https://stats.beta.gouv.fr; block-all-mixed-content; font-src 'self' https://fonts.gstatic.com/; frame-src https://www.youtube.com https://stats.data.gouv.fr; img-src 'self' data: https://aides-territoires-prod.s3.fr-par.scw.cloud https://aides-territoires-stage.s3.fr-par.scw.cloud https://a.forte.tiles.quaidorsay.fr https://b.forte.tiles.quaidorsay.fr https://c.forte.tiles.quaidorsay.fr; media-src 'self' https://aides-territoires-prod.s3.fr-par.scw.cloud https://aides-territoires-stage.s3.fr-par.scw.cloud; object-src 'none'; script-src 'self' https://www.youtube.com https://sibautomation.com https://stats.beta.gouv.fr/matomo.js 'unsafe-inline' 'sha256-TcgFrllpkyOgevTEJSzAYlwaz7ajfTIlRL7b8QwFmBM=' 'sha256-uXW8SGy+rhLGmLbK2Za4E/P/SCdeGB6J8k84B9Oo7EE=' 'sha256-/RsgQuclj+X9A1HDHvGw+A/d9NiXvTw9a1/kzhUs2rY='; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'",
 							"otherinfo": "The header X-Content-Security-Policy was found on this response. While it is a good sign that CSP is implemented to some degree the policy specified in this header has not been analyzed by ZAP. To ensure full support by modern browsers ensure that the Content-Security-Policy header is defined and attached to responses."
 						},
 						{
@@ -880,7 +952,7 @@
 					"desc": "<p>The request appeared to contain sensitive information leaked in the URL. This can violate PCI and most organizational compliance policies. You can configure the list of strings for this check to add or remove values specific to your environment.</p>",
 					"instances":[ 
 						{
-							"uri": "https://aides-territoires.beta.gouv.fr/aides/?_token=7e5c.I_NNatWWjTCZaA6NLTY5eDr0IV1uC_yI_qi-FURIG8s.Rqx0Xr670l74BDb-eUdwIkOhV2sNf5vOruX4XyIQfaloiR8jmvfPXvEGRw&categorysearch%5B%5D=9&keyword=ZAP&newIntegration&organizationType=commune&searchPerimeter",
+							"uri": "https://aides-territoires.beta.gouv.fr/aides/?_token=25b54ffd2c4100e59f.Ub2ljVzwvF_F-FEy_iyaZN2nUY0kiQQ-7XOXB2kyF_I.YYnW6wq0izWRmWh-nRqtPYrSItJ8w150sjjfZC5KWocr_MG7FZPUHZypMg&categorysearch%5B%5D=9&keyword=ZAP&newIntegration&organizationType=commune&searchPerimeter",
 							"method": "GET",
 							"param": "_token",
 							"attack": "",
@@ -888,21 +960,37 @@
 							"otherinfo": "The URL contains potentially sensitive information. The following string was found via the pattern: token\n_token"
 						},
 						{
-							"uri": "https://aides-territoires.beta.gouv.fr/aides/?_token=7ff2c37.ZkZZw9qBEga1dFpLyCQaZlecYeTDtX42txyriYwyOSg.Axlg97GsTWjUGGI4nFVTPC7JF9KgwRlw51Htw-pqX0otPAuKleBQaN0aEw&categorysearch%5B%5D=9&keyword=ZAP&newIntegration&organizationType=commune&searchPerimeter",
+							"uri": "https://aides-territoires.beta.gouv.fr/aides/?_token=aa56b63bf4ee3ffc60571da8df40c1f0.X34Nw4shTp7Q9XN9z1KdUzLKi4VfUdOrr2WEXt4lXm4.b0p-pd1lefSElEoxrGSqCmW_-NoHG4nh8C7MPZldExslP2n1wkIm3ImkEA&categorysearch%5B%5D=9&keyword=ZAP&newIntegration&organizationType=commune&searchPerimeter",
 							"method": "GET",
 							"param": "_token",
 							"attack": "",
 							"evidence": "_token",
 							"otherinfo": "The URL contains potentially sensitive information. The following string was found via the pattern: token\n_token"
+						},
+						{
+							"uri": "https://aides-territoires.beta.gouv.fr/projets/projets-publics/?action=search-filter&project_public_search%5B_token%5D=3a0e7fbc5bf6a980564302f2cd23.-0FY3TPfnQlyjTkpyN5OV-P78cCb6bBMdjQjL4D-6tk.iyII5GeU6Fwr3ExE-p0UIKqwl5fh0dc0QVBWWs6uuYHIcDmuVZvaTF-6Wg&project_public_search%5BcontractLink%5D=ACV1&project_public_search%5Bname%5D=ZAP&project_public_search%5Bperimeter%5D&project_public_search%5Bstep%5D=considered",
+							"method": "GET",
+							"param": "project_public_search[_token]",
+							"attack": "",
+							"evidence": "project_public_search[_token]",
+							"otherinfo": "The URL contains potentially sensitive information. The following string was found via the pattern: token\nproject_public_search[_token]"
+						},
+						{
+							"uri": "https://aides-territoires.beta.gouv.fr/projets/projets-subventionnes/resultats/?county_select%5B_token%5D=776cf0f39b6fc8d62ed8f1d110beb.3JzhL8P7kmRGTulr8sVHrPuwget6cYj9-fCVdqeW1JY.nsOLG62w_wIjKtpdy7c2wIqC19MAN8eVv8LQPOOmrvSPy5ZXpbe_LC48pA&county_select%5Bcounty%5D=01",
+							"method": "GET",
+							"param": "county_select[_token]",
+							"attack": "",
+							"evidence": "county_select[_token]",
+							"otherinfo": "The URL contains potentially sensitive information. The following string was found via the pattern: token\ncounty_select[_token]"
 						}
 					],
-					"count": "2",
+					"count": "4",
 					"solution": "<p>Do not pass sensitive information in URIs.</p>",
 					"otherinfo": "<p>The URL contains potentially sensitive information. The following string was found via the pattern: token</p><p>_token</p>",
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "7745"
+					"sourceid": "7458"
 				},
 				{
 					"pluginid": "10027",
@@ -921,6 +1009,14 @@
 							"attack": "",
 							"evidence": "query",
 							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"(self.webpackChunk=self.webpackChunk||[]).push([[1273],{31386:()=>{const e=new class{constructor(){this.modules={}}create(e){con\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"uri": "https://aides-territoires.beta.gouv.fr/build/1857.79d74e59.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "select",
+							"otherinfo": "The following pattern was used: \\bSELECT\\b and was detected in the element starting with: \"\"use strict\";(self.webpackChunk=self.webpackChunk||[]).push([[1857],{6599:(e,t,r)=>{r.d(t,{Mx:()=>Z,Qr:()=>le});class n{construc\", see evidence field for the suspicious comment/snippet."
 						},
 						{
 							"uri": "https://aides-territoires.beta.gouv.fr/build/2083.fee0f4da.js",
@@ -947,15 +1043,7 @@
 							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"(self.webpackChunk=self.webpackChunk||[]).push([[4695],{42192:(t,e,i)=>{\"use strict\";i.d(e,{x:()=>r});var s=i(6599),n=i(38205);f\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://aides-territoires.beta.gouv.fr/build/6785.6f6c71d0.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "select",
-							"otherinfo": "The following pattern was used: \\bSELECT\\b and was detected in the element starting with: \"\"use strict\";(self.webpackChunk=self.webpackChunk||[]).push([[6785],{6599:(e,t,r)=>{r.d(t,{Mx:()=>Z,Qr:()=>le});class n{construc\", see evidence field for the suspicious comment/snippet."
-						},
-						{
-							"uri": "https://aides-territoires.beta.gouv.fr/build/app.21606d67.js",
+							"uri": "https://aides-territoires.beta.gouv.fr/build/app.82d2324e.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -963,7 +1051,7 @@
 							"otherinfo": "The following pattern was used: \\bADMIN\\b and was detected in the element starting with: \"(self.webpackChunk=self.webpackChunk||[]).push([[2143],{94180:(t,e,r)=>{var n={\"./custom-autocomplete_controller.js\":20505,\"./he\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://aides-territoires.beta.gouv.fr/build/form/entity-checkbox-absolute-type.68a98557.js",
+							"uri": "https://aides-territoires.beta.gouv.fr/build/form/entity-checkbox-absolute-type.5c293dfd.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -971,23 +1059,23 @@
 							"otherinfo": "The following pattern was used: \\bADMIN\\b and was detected in the element starting with: \"(self.webpackChunk=self.webpackChunk||[]).push([[8921],{26189:(e,t,r)=>{\"use strict\";var n=r(6672),o=r.n(n);const c=JSON.parse('\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://aides-territoires.beta.gouv.fr/build/front/home.16fe1eef.js",
+							"uri": "https://aides-territoires.beta.gouv.fr/build/front/home.fb257346.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "admin",
-							"otherinfo": "The following pattern was used: \\bADMIN\\b and was detected in the element starting with: \"(self.webpackChunk=self.webpackChunk||[]).push([[3881],{26189:(t,e,n)=>{\"use strict\";var r=n(6672),o=n.n(r);const s=JSON.parse('\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bADMIN\\b and was detected in the element starting with: \"(self.webpackChunk=self.webpackChunk||[]).push([[3881],{26189:(t,e,s)=>{\"use strict\";var o=s(6672),n=s.n(o);const a=JSON.parse('\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://aides-territoires.beta.gouv.fr/build/front/project/project.fdffcfdb.js",
+							"uri": "https://aides-territoires.beta.gouv.fr/build/front/project/project.15fcf42f.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "admin",
-							"otherinfo": "The following pattern was used: \\bADMIN\\b and was detected in the element starting with: \"(self.webpackChunk=self.webpackChunk||[]).push([[823],{26189:(t,e,n)=>{\"use strict\";var r=n(6672),o=n.n(r);const a=JSON.parse('{\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bADMIN\\b and was detected in the element starting with: \"(self.webpackChunk=self.webpackChunk||[]).push([[823,8331],{26189:(t,e,r)=>{\"use strict\";var n=r(6672),o=r.n(n);const s=JSON.par\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://aides-territoires.beta.gouv.fr/build/front/user/register.b54dfac7.js",
+							"uri": "https://aides-territoires.beta.gouv.fr/build/front/user/register.9c602396.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1000,7 +1088,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "user",
-							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script src=\"/build/front/user/register.b54dfac7.js\" defer></script>\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script src=\"/build/front/user/register.9c602396.js\" defer></script>\", see evidence field for the suspicious comment/snippet."
 						},
 						{
 							"uri": "https://aides-territoires.beta.gouv.fr/comptes/inscription/",
@@ -1008,7 +1096,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "user",
-							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script src=\"/build/front/user/register.b54dfac7.js\" defer></script>\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script src=\"/build/front/user/register.9c602396.js\" defer></script>\", see evidence field for the suspicious comment/snippet."
 						}
 					],
 					"count": "12",
@@ -1017,7 +1105,7 @@
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "7403"
+					"sourceid": "6069"
 				},
 				{
 					"pluginid": "10109",
@@ -1046,7 +1134,7 @@
 							"otherinfo": "Links have been found with a target of '_self' - this is often used by modern frameworks to force a full page reload."
 						},
 						{
-							"uri": "https://aides-territoires.beta.gouv.fr/cartographie/",
+							"uri": "https://aides-territoires.beta.gouv.fr/blog/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1124,7 +1212,7 @@
 					"reference": "",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "8"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10049",
@@ -1146,6 +1234,14 @@
 						},
 						{
 							"uri": "https://aides-territoires.beta.gouv.fr/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "private",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://aides-territoires.beta.gouv.fr/blog/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1215,14 +1311,6 @@
 							"attack": "",
 							"evidence": "private",
 							"otherinfo": ""
-						},
-						{
-							"uri": "https://aides-territoires.beta.gouv.fr/sitemap.xml",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "private",
-							"otherinfo": ""
 						}
 					],
 					"count": "11",
@@ -1231,7 +1319,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "8"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10038",
@@ -1260,7 +1348,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://aides-territoires.beta.gouv.fr/cartographie/",
+							"uri": "https://aides-territoires.beta.gouv.fr/blog/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1367,7 +1455,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://aides-territoires.beta.gouv.fr/cartographie/",
+							"uri": "https://aides-territoires.beta.gouv.fr/blog/",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -1466,6 +1554,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://aides-territoires.beta.gouv.fr/comptes/aides/publications/",
+							"method": "GET",
+							"param": "Sec-Fetch-Dest",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://aides-territoires.beta.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
@@ -1474,13 +1570,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-Dest header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "8"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -1501,6 +1597,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://aides-territoires.beta.gouv.fr/comptes/aides/publications/",
+							"method": "GET",
+							"param": "Sec-Fetch-Mode",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://aides-territoires.beta.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
@@ -1509,13 +1613,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-Mode header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "8"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -1536,6 +1640,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://aides-territoires.beta.gouv.fr/comptes/aides/publications/",
+							"method": "GET",
+							"param": "Sec-Fetch-Site",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://aides-territoires.beta.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
@@ -1544,13 +1656,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-Site header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "8"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -1571,6 +1683,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://aides-territoires.beta.gouv.fr/comptes/aides/publications/",
+							"method": "GET",
+							"param": "Sec-Fetch-User",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://aides-territoires.beta.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
@@ -1579,13 +1699,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-User header is included in user initiated requests.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "8"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10112",
@@ -1602,7 +1722,7 @@
 							"method": "GET",
 							"param": "PHPSESSID",
 							"attack": "",
-							"evidence": "1a0a1d435a469306956baa93c7e47552",
+							"evidence": "05c6f80f3cc20410bf71df55bb7d8472",
 							"otherinfo": "\ncookie:PHPSESSID"
 						},
 						{
@@ -1610,39 +1730,39 @@
 							"method": "GET",
 							"param": "PHPSESSID",
 							"attack": "",
-							"evidence": "5d3211dc22028a6942b259ba88b332ff",
+							"evidence": "d13d67828c5e91e600420fc018772eec",
 							"otherinfo": "\ncookie:PHPSESSID"
 						},
 						{
-							"uri": "https://aides-territoires.beta.gouv.fr/aides",
+							"uri": "https://aides-territoires.beta.gouv.fr/blog/lancement-de-pvd-des-premiers-resultats-concrets",
 							"method": "GET",
 							"param": "PHPSESSID",
 							"attack": "",
-							"evidence": "5d3211dc22028a6942b259ba88b332ff",
+							"evidence": "05c6f80f3cc20410bf71df55bb7d8472",
 							"otherinfo": "\ncookie:PHPSESSID"
 						},
 						{
-							"uri": "https://aides-territoires.beta.gouv.fr/blog",
+							"uri": "https://aides-territoires.beta.gouv.fr/cartographie",
 							"method": "GET",
 							"param": "PHPSESSID",
 							"attack": "",
-							"evidence": "5d3211dc22028a6942b259ba88b332ff",
+							"evidence": "05c6f80f3cc20410bf71df55bb7d8472",
 							"otherinfo": "\ncookie:PHPSESSID"
 						},
 						{
-							"uri": "https://aides-territoires.beta.gouv.fr/faq",
+							"uri": "https://aides-territoires.beta.gouv.fr/comptes/connexion",
 							"method": "GET",
 							"param": "PHPSESSID",
 							"attack": "",
-							"evidence": "5d3211dc22028a6942b259ba88b332ff",
+							"evidence": "05c6f80f3cc20410bf71df55bb7d8472",
 							"otherinfo": "\ncookie:PHPSESSID"
 						},
 						{
-							"uri": "https://aides-territoires.beta.gouv.fr/partenaires/107-agence-de-leau-adour-garonne",
+							"uri": "https://aides-territoires.beta.gouv.fr/partenaires/27-office-francais-de-la-biodiversite-ofb",
 							"method": "GET",
 							"param": "PHPSESSID",
 							"attack": "",
-							"evidence": "5d3211dc22028a6942b259ba88b332ff",
+							"evidence": "05c6f80f3cc20410bf71df55bb7d8472",
 							"otherinfo": "\ncookie:PHPSESSID"
 						},
 						{
@@ -1650,7 +1770,7 @@
 							"method": "GET",
 							"param": "PHPSESSID",
 							"attack": "",
-							"evidence": "5d3211dc22028a6942b259ba88b332ff",
+							"evidence": "05c6f80f3cc20410bf71df55bb7d8472",
 							"otherinfo": "\ncookie:PHPSESSID"
 						},
 						{
@@ -1658,15 +1778,15 @@
 							"method": "GET",
 							"param": "PHPSESSID",
 							"attack": "",
-							"evidence": "5d3211dc22028a6942b259ba88b332ff",
+							"evidence": "05c6f80f3cc20410bf71df55bb7d8472",
 							"otherinfo": "\ncookie:PHPSESSID"
 						},
 						{
-							"uri": "https://aides-territoires.beta.gouv.fr/stats/",
+							"uri": "https://aides-territoires.beta.gouv.fr/projets/projets-subventionnes",
 							"method": "GET",
 							"param": "PHPSESSID",
 							"attack": "",
-							"evidence": "5d3211dc22028a6942b259ba88b332ff",
+							"evidence": "05c6f80f3cc20410bf71df55bb7d8472",
 							"otherinfo": "\ncookie:PHPSESSID"
 						}
 					],
@@ -1676,7 +1796,7 @@
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "1"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "10031",
@@ -1688,6 +1808,22 @@
 					"riskdesc": "Informational (Low)",
 					"desc": "<p>This check looks at user-supplied input in query string parameters and POST data to identify where certain HTML attribute values might be controlled. This provides hot-spot detection for XSS (cross-site scripting) that will require further review by a security analyst to determine exploitability.</p>",
 					"instances":[ 
+						{
+							"uri": "https://aides-territoires.beta.gouv.fr/aides/?_token=aa56b63bf4ee3ffc60571da8df40c1f0.X34Nw4shTp7Q9XN9z1KdUzLKi4VfUdOrr2WEXt4lXm4.b0p-pd1lefSElEoxrGSqCmW_-NoHG4nh8C7MPZldExslP2n1wkIm3ImkEA&categorysearch%5B%5D=9&keyword=ZAP&newIntegration&organizationType=commune&searchPerimeter",
+							"method": "GET",
+							"param": "keyword",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://aides-territoires.beta.gouv.fr/aides/?_token=aa56b63bf4ee3ffc60571da8df40c1f0.X34Nw4shTp7Q9XN9z1KdUzLKi4VfUdOrr2WEXt4lXm4.b0p-pd1lefSElEoxrGSqCmW_-NoHG4nh8C7MPZldExslP2n1wkIm3ImkEA&categorysearch%5B%5D=9&keyword=ZAP&newIntegration&organizationType=commune&searchPerimeter\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nkeyword=ZAP\n\nThe user-controlled value was:\nzap"
+						},
+						{
+							"uri": "https://aides-territoires.beta.gouv.fr/aides/?_token=aa56b63bf4ee3ffc60571da8df40c1f0.X34Nw4shTp7Q9XN9z1KdUzLKi4VfUdOrr2WEXt4lXm4.b0p-pd1lefSElEoxrGSqCmW_-NoHG4nh8C7MPZldExslP2n1wkIm3ImkEA&categorysearch%5B%5D=9&keyword=ZAP&newIntegration&organizationType=commune&searchPerimeter",
+							"method": "GET",
+							"param": "organizationType",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://aides-territoires.beta.gouv.fr/aides/?_token=aa56b63bf4ee3ffc60571da8df40c1f0.X34Nw4shTp7Q9XN9z1KdUzLKi4VfUdOrr2WEXt4lXm4.b0p-pd1lefSElEoxrGSqCmW_-NoHG4nh8C7MPZldExslP2n1wkIm3ImkEA&categorysearch%5B%5D=9&keyword=ZAP&newIntegration&organizationType=commune&searchPerimeter\n\nappears to include user input in: \n\na(n) [option] tag [value] attribute \n\nThe user input found was:\norganizationType=commune\n\nThe user-controlled value was:\ncommune"
+						},
 						{
 							"uri": "https://aides-territoires.beta.gouv.fr/comptes/inscription/",
 							"method": "POST",
@@ -1801,13 +1937,13 @@
 							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://aides-territoires.beta.gouv.fr/projets-references/\n\nappears to include user input in: \n\na(n) [option] tag [value] attribute \n\nThe user input found was:\nproject_reference_search[organizationType]=commune\n\nThe user-controlled value was:\ncommune"
 						}
 					],
-					"count": "14",
+					"count": "16",
 					"solution": "<p>Validate all input and sanitize output it before writing to any HTML attributes.</p>",
-					"otherinfo": "<p>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:</p><p></p><p>https://aides-territoires.beta.gouv.fr/comptes/inscription/</p><p></p><p>appears to include user input in: </p><p></p><p>a(n) [option] tag [value] attribute </p><p></p><p>The user input found was:</p><p>register[acquisitionChannel]=webinar</p><p></p><p>The user-controlled value was:</p><p>webinar</p>",
+					"otherinfo": "<p>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:</p><p></p><p>https://aides-territoires.beta.gouv.fr/aides/?_token=aa56b63bf4ee3ffc60571da8df40c1f0.X34Nw4shTp7Q9XN9z1KdUzLKi4VfUdOrr2WEXt4lXm4.b0p-pd1lefSElEoxrGSqCmW_-NoHG4nh8C7MPZldExslP2n1wkIm3ImkEA&categorysearch%5B%5D=9&keyword=ZAP&newIntegration&organizationType=commune&searchPerimeter</p><p></p><p>appears to include user input in: </p><p></p><p>a(n) [input] tag [value] attribute </p><p></p><p>The user input found was:</p><p>keyword=ZAP</p><p></p><p>The user-controlled value was:</p><p>zap</p>",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html</p>",
 					"cweid": "20",
 					"wascid": "20",
-					"sourceid": "7444"
+					"sourceid": "7416"
 				}
 			]
 		}

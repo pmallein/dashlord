@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Mon, 26 Feb 2024 20:46:30",
+	"@generated": "Sun, 3 Mar 2024 09:13:04",
 	"site":[ 
 		{
 			"@name": "https://candidat.pole-emploi.fr",
@@ -301,21 +301,21 @@
 							"method": "GET",
 							"param": "Set-Cookie",
 							"attack": "",
-							"evidence": "1838353162",
-							"otherinfo": "1838353162, which evaluates to: 2028-04-03 05:39:22"
+							"evidence": "1771244298",
+							"otherinfo": "1771244298, which evaluates to: 2026-02-16 12:18:18"
 						},
 						{
 							"uri": "https://candidat.pole-emploi.fr/simulation-ressources-formation",
 							"method": "GET",
 							"param": "Set-Cookie",
 							"attack": "",
-							"evidence": "1704135434",
-							"otherinfo": "1704135434, which evaluates to: 2024-01-01 18:57:14"
+							"evidence": "1838353162",
+							"otherinfo": "1838353162, which evaluates to: 2028-04-03 05:39:22"
 						}
 					],
 					"count": "2",
 					"solution": "<p>Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.</p>",
-					"otherinfo": "<p>1838353162, which evaluates to: 2028-04-03 05:39:22</p>",
+					"otherinfo": "<p>1771244298, which evaluates to: 2026-02-16 12:18:18</p>",
 					"reference": "<p>https://cwe.mitre.org/data/definitions/200.html</p>",
 					"cweid": "200",
 					"wascid": "13",
@@ -372,12 +372,12 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "The origin domain used for comparison was: \ncandidat.pole-emploi.fr\nTS01e2de59=0150c672c3daa5545b16da34d6fef14922760494c103c535ae995d3eb104de01f7e47852cf70a01ee7094a79260aa755f5dc5e6dea\n"
+							"otherinfo": "The origin domain used for comparison was: \ncandidat.pole-emploi.fr\nTS01e2de59=0150c672c328773dd2415d6237e5085bfae3477c12df0b8c83cfe02c0232298d8d297e239a7c1d66cbb3ef1548fb2cae838bd09135\n"
 						}
 					],
 					"count": "1",
 					"solution": "<p>Always scope cookies to a FQDN (Fully Qualified Domain Name).</p>",
-					"otherinfo": "<p>The origin domain used for comparison was: </p><p>candidat.pole-emploi.fr</p><p>TS01e2de59=0150c672c3daa5545b16da34d6fef14922760494c103c535ae995d3eb104de01f7e47852cf70a01ee7094a79260aa755f5dc5e6dea</p><p></p>",
+					"otherinfo": "<p>The origin domain used for comparison was: </p><p>candidat.pole-emploi.fr</p><p>TS01e2de59=0150c672c328773dd2415d6237e5085bfae3477c12df0b8c83cfe02c0232298d8d297e239a7c1d66cbb3ef1548fb2cae838bd09135</p><p></p>",
 					"reference": "<p>https://tools.ietf.org/html/rfc6265#section-4.1</p><p>https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes.html</p><p>https://code.google.com/p/browsersec/wiki/Part2#Same-origin_policy_for_cookies</p>",
 					"cweid": "565",
 					"wascid": "15",
@@ -491,7 +491,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/simulation-ressources-formation",
+							"uri": "https://candidat.pole-emploi.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -499,7 +499,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/sitemap.xml",
+							"uri": "https://candidat.pole-emploi.fr/simulation-ressources-formation",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -513,7 +513,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "8"
+					"sourceid": "3"
 				},
 				{
 					"pluginid": "90005",
@@ -534,7 +534,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/simulation-ressources-formation",
+							"uri": "https://candidat.pole-emploi.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -542,7 +542,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/sitemap.xml",
+							"uri": "https://candidat.pole-emploi.fr/simulation-ressources-formation",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -556,7 +556,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "8"
+					"sourceid": "3"
 				},
 				{
 					"pluginid": "90005",
@@ -583,17 +583,9 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/sitemap.xml",
-							"method": "GET",
-							"param": "Sec-Fetch-Site",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"solution": "<p>Ensure that Sec-Fetch-Site header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
@@ -620,7 +612,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/simulation-ressources-formation",
+							"uri": "https://candidat.pole-emploi.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -628,7 +620,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/sitemap.xml",
+							"uri": "https://candidat.pole-emploi.fr/simulation-ressources-formation",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -642,7 +634,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "3"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "10112",
@@ -659,7 +651,7 @@
 							"method": "GET",
 							"param": "BIGipServerPOOL_TAS_SDDC_HTTP",
 							"attack": "",
-							"evidence": "1838353162.20480.0000",
+							"evidence": "1771244298.20480.0000",
 							"otherinfo": "\ncookie:BIGipServerPOOL_TAS_SDDC_HTTP\ncookie:TS01e2de59"
 						},
 						{
@@ -667,7 +659,7 @@
 							"method": "GET",
 							"param": "BIGipServerPOOL_TAS_SDDC_HTTP",
 							"attack": "",
-							"evidence": "1704135434.20480.0000",
+							"evidence": "1838353162.20480.0000",
 							"otherinfo": "\ncookie:BIGipServerPOOL_TAS_SDDC_HTTP\ncookie:TS01e01b1a"
 						}
 					],

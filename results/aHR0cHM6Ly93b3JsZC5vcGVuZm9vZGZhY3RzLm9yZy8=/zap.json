@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Mon, 26 Feb 2024 23:35:06",
+	"@generated": "Sun, 3 Mar 2024 11:34:53",
 	"site":[ 
 		{
 			"@name": "https://world.openfoodfacts.org",
@@ -291,7 +291,7 @@
 					"reference": "<p>https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.html5_overly_permissive_cors_policy</p>",
 					"cweid": "264",
 					"wascid": "14",
-					"sourceid": "180"
+					"sourceid": "178"
 				},
 				{
 					"pluginid": "10020",
@@ -521,7 +521,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity</p>",
 					"cweid": "345",
 					"wascid": "15",
-					"sourceid": "57"
+					"sourceid": "90"
 				},
 				{
 					"pluginid": "10017",
@@ -534,7 +534,7 @@
 					"desc": "<p>The page includes one or more script files from a third-party domain.</p>",
 					"instances":[ 
 						{
-							"uri": "https://world.openfoodfacts.org/code",
+							"uri": "https://world.openfoodfacts.org/allergen",
 							"method": "GET",
 							"param": "https://static.openfoodfacts.org/js/dist/display.js",
 							"attack": "",
@@ -542,7 +542,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://world.openfoodfacts.org/code",
+							"uri": "https://world.openfoodfacts.org/allergen",
 							"method": "GET",
 							"param": "https://static.openfoodfacts.org/js/dist/foundation.js",
 							"attack": "",
@@ -550,7 +550,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://world.openfoodfacts.org/code",
+							"uri": "https://world.openfoodfacts.org/allergen",
 							"method": "GET",
 							"param": "https://static.openfoodfacts.org/js/dist/hc-sticky.js",
 							"attack": "",
@@ -558,7 +558,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://world.openfoodfacts.org/code",
+							"uri": "https://world.openfoodfacts.org/allergen",
 							"method": "GET",
 							"param": "https://static.openfoodfacts.org/js/dist/jquery-ui.js",
 							"attack": "",
@@ -566,7 +566,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://world.openfoodfacts.org/code",
+							"uri": "https://world.openfoodfacts.org/allergen",
 							"method": "GET",
 							"param": "https://static.openfoodfacts.org/js/dist/jquery.cookie.js",
 							"attack": "",
@@ -574,7 +574,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://world.openfoodfacts.org/code",
+							"uri": "https://world.openfoodfacts.org/allergen",
 							"method": "GET",
 							"param": "https://static.openfoodfacts.org/js/dist/jquery.js",
 							"attack": "",
@@ -582,7 +582,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://world.openfoodfacts.org/code",
+							"uri": "https://world.openfoodfacts.org/allergen",
 							"method": "GET",
 							"param": "https://static.openfoodfacts.org/js/dist/modernizr.js",
 							"attack": "",
@@ -590,7 +590,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://world.openfoodfacts.org/code",
+							"uri": "https://world.openfoodfacts.org/allergen",
 							"method": "GET",
 							"param": "https://static.openfoodfacts.org/js/dist/scrollNav.js",
 							"attack": "",
@@ -598,7 +598,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://world.openfoodfacts.org/code",
+							"uri": "https://world.openfoodfacts.org/allergen",
 							"method": "GET",
 							"param": "https://static.openfoodfacts.org/js/dist/select2.min.js",
 							"attack": "",
@@ -606,7 +606,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://world.openfoodfacts.org/code",
+							"uri": "https://world.openfoodfacts.org/allergen",
 							"method": "GET",
 							"param": "https://static.openfoodfacts.org/js/dist/stikelem.js",
 							"attack": "",
@@ -700,7 +700,7 @@
 					"reference": "",
 					"cweid": "829",
 					"wascid": "15",
-					"sourceid": "184"
+					"sourceid": "185"
 				},
 				{
 					"pluginid": "10063",
@@ -820,14 +820,6 @@
 					"desc": "<p>The web/application server is leaking version information via the \"Server\" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.</p>",
 					"instances":[ 
 						{
-							"uri": "https://world.openfoodfacts.org/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "nginx/1.18.0",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://world.openfoodfacts.org/additives",
 							"method": "GET",
 							"param": "",
@@ -837,6 +829,14 @@
 						},
 						{
 							"uri": "https://world.openfoodfacts.org/allergen",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "nginx/1.18.0",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://world.openfoodfacts.org/allergens",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -922,7 +922,7 @@
 					"reference": "<p>https://httpd.apache.org/docs/current/mod/core.html#servertokens</p><p>https://learn.microsoft.com/en-us/previous-versions/msp-n-p/ff648552(v=pandp.10)</p><p>https://www.troyhunt.com/shhh-dont-let-your-response-headers/</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "186"
 				},
 				{
 					"pluginid": "10035",
@@ -1781,6 +1781,14 @@
 							"otherinfo": "The response is stale, and stale responses are not configured to be re-validated or blocked, using the 'must-revalidate', 'proxy-revalidate', 's-maxage', or 'max-age' response 'Cache-Control' directives."
 						},
 						{
+							"uri": "https://world.openfoodfacts.org/amino-acids",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "The response is stale, and stale responses are not configured to be re-validated or blocked, using the 'must-revalidate', 'proxy-revalidate', 's-maxage', or 'max-age' response 'Cache-Control' directives."
+						},
+						{
 							"uri": "https://world.openfoodfacts.org/api",
 							"method": "GET",
 							"param": "",
@@ -1837,7 +1845,7 @@
 							"otherinfo": "The response is stale, and stale responses are not configured to be re-validated or blocked, using the 'must-revalidate', 'proxy-revalidate', 's-maxage', or 'max-age' response 'Cache-Control' directives."
 						}
 					],
-					"count": "11",
+					"count": "12",
 					"solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information.  If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request. </p>",
 					"otherinfo": "<p>The response is stale, and stale responses are not configured to be re-validated or blocked, using the 'must-revalidate', 'proxy-revalidate', 's-maxage', or 'max-age' response 'Cache-Control' directives.</p>",
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",

@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Mon, 26 Feb 2024 23:51:22",
+	"@generated": "Sun, 3 Mar 2024 11:52:01",
 	"site":[ 
 		{
 			"@name": "https://api.gouv.fr",
@@ -256,7 +256,7 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "1608"
+					"sourceid": "1611"
 				},
 				{
 					"pluginid": "10063",
@@ -363,7 +363,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy</p><p>https://developer.chrome.com/blog/feature-policy/</p><p>https://scotthelme.co.uk/a-new-security-header-feature-policy/</p><p>https://w3c.github.io/webappsec-feature-policy/</p><p>https://www.smashingmagazine.com/2018/12/feature-policy/</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10037",
@@ -440,6 +440,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://api.gouv.fr/mentions-legales",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "X-Powered-By: Next.js",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://api.gouv.fr/nouvelle-api",
 							"method": "GET",
 							"param": "",
@@ -464,7 +472,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "11",
+					"count": "12",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to suppress \"X-Powered-By\" headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/01-Information_Gathering/08-Fingerprint_Web_Application_Framework</p><p>https://www.troyhunt.com/2012/02/shhh-dont-let-your-response-headers.html</p>",
@@ -507,7 +515,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://api.gouv.fr/guides",
+							"uri": "https://api.gouv.fr/les-api/api-service-national",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -614,7 +622,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://api.gouv.fr/guides",
+							"uri": "https://api.gouv.fr/les-api/api-service-national",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -756,7 +764,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://api.gouv.fr/guides",
+							"uri": "https://api.gouv.fr/les-api/api-service-national",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -863,14 +871,6 @@
 							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uCD6Bbs\uFFFD\uFFFDc\uFFFD\uFFFD\\x000c\uFFFD1^\uFFFD.\uFFFD\\x001c\u5E65\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD'\u07B2"
 						},
 						{
-							"uri": "https://api.gouv.fr/equipe",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "/_next/static/naY6a7DI8xXvUunxzluaV/_buildManifest",
-							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uCD6Bbs\uFFFD\uFFFDc\uFFFD\uFFFD\\x000c\uFFFD1^\uFFFD.\uFFFD\\x001c\u5E65\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD'\u07B2"
-						},
-						{
 							"uri": "https://api.gouv.fr/guides",
 							"method": "GET",
 							"param": "",
@@ -935,13 +935,13 @@
 							"otherinfo": "~\uFFFD\uFFFDz\u03DA\uFFFD/\uFFFDjwk{\uFFFD^}\uFFFD\u079E\u061E\uFFFD\uFFFDu\uFFFD\uFFFDb"
 						}
 					],
-					"count": "12",
+					"count": "11",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
 					"otherinfo": "<p>\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uCD6Bbs\uFFFD\uFFFDc\uFFFD\uFFFD\\x000c\uFFFD1^\uFFFD.\uFFFD\\x001c\u5E65\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD'\u07B2</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10019",
@@ -1002,14 +1002,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://api.gouv.fr/les-api/sirene/v1/siret/",
-							"method": "GET",
-							"param": "content-type",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://api.gouv.fr/service/",
 							"method": "GET",
 							"param": "content-type",
@@ -1058,13 +1050,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "13",
+					"count": "12",
 					"solution": "<p>Ensure each page is setting the specific and appropriate content-type value for the content being delivered.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p>",
 					"cweid": "345",
 					"wascid": "12",
-					"sourceid": "1490"
+					"sourceid": "1491"
 				},
 				{
 					"pluginid": "10027",
@@ -1323,6 +1315,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://api.gouv.fr/les-api/api-service-national",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "s-maxage=31536000, stale-while-revalidate",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://api.gouv.fr/les-api/api_r2p",
 							"method": "GET",
 							"param": "cache-control",
@@ -1336,14 +1336,6 @@
 							"param": "cache-control",
 							"attack": "",
 							"evidence": "s-maxage=31536000, stale-while-revalidate",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://api.gouv.fr/nouvelle-api",
-							"method": "GET",
-							"param": "cache-control",
-							"attack": "",
-							"evidence": "",
 							"otherinfo": ""
 						},
 						{
@@ -1648,7 +1640,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10049",
@@ -1683,7 +1675,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "41"
+					"sourceid": "52"
 				}
 			]
 		}

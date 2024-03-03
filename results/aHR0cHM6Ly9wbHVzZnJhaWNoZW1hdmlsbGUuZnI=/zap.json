@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Mon, 26 Feb 2024 16:28:14",
+	"@generated": "Sun, 3 Mar 2024 05:09:37",
 	"site":[ 
 		{
 			"@name": "https://plusfraichemaville.fr",
@@ -76,7 +76,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://plusfraichemaville.fr/projet/cour-oasis-berthelot-montrouge",
+							"uri": "https://plusfraichemaville.fr/projet/cascade-aygalades",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -221,7 +221,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options</p>",
 					"cweid": "1021",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10110",
@@ -248,7 +248,7 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "663"
+					"sourceid": "664"
 				},
 				{
 					"pluginid": "10063",
@@ -325,7 +325,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://plusfraichemaville.fr/projet/cour-oasis-berthelot-montrouge",
+							"uri": "https://plusfraichemaville.fr/projet/cascade-aygalades",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -355,7 +355,34 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy</p><p>https://developer.chrome.com/blog/feature-policy/</p><p>https://scotthelme.co.uk/a-new-security-header-feature-policy/</p><p>https://w3c.github.io/webappsec-feature-policy/</p><p>https://www.smashingmagazine.com/2018/12/feature-policy/</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "6"
+				},
+				{
+					"pluginid": "2",
+					"alertRef": "2",
+					"alert": "Private IP Disclosure",
+					"name": "Private IP Disclosure",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Low (Medium)",
+					"desc": "<p>A private IP (such as 10.x.x.x, 172.x.x.x, 192.168.x.x) or an Amazon EC2 private hostname (for example, ip-10-0-56-78) has been found in the HTTP response body. This information might be helpful for further attacks targeting internal systems.</p>",
+					"instances":[ 
+						{
+							"uri": "https://plusfraichemaville.fr/_next/image?q=75&url=%2F_next%2Fstatic%2Fmedia%2Foups.970ff96b.svg&w=640",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "10.253.92.92",
+							"otherinfo": "10.253.92.92\n"
+						}
+					],
+					"count": "1",
+					"solution": "<p>Remove the private IP address from the HTTP response body.  For comments, use JSP/ASP/PHP comment instead of HTML/JavaScript comment which can be seen by client browsers.</p>",
+					"otherinfo": "<p>10.253.92.92</p><p></p>",
+					"reference": "<p>https://tools.ietf.org/html/rfc1918</p>",
+					"cweid": "200",
+					"wascid": "13",
+					"sourceid": "4441"
 				},
 				{
 					"pluginid": "10037",
@@ -424,7 +451,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://plusfraichemaville.fr/projet/cour-oasis-berthelot-montrouge",
+							"uri": "https://plusfraichemaville.fr/projet/cascade-aygalades",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -462,7 +489,7 @@
 					"reference": "<p>https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/01-Information_Gathering/08-Fingerprint_Web_Application_Framework</p><p>https://www.troyhunt.com/2012/02/shhh-dont-let-your-response-headers.html</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10035",
@@ -484,6 +511,14 @@
 						},
 						{
 							"uri": "https://plusfraichemaville.fr/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://plusfraichemaville.fr/_next/static/css/c7ea863d9fc1e5c0.css",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -531,14 +566,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://plusfraichemaville.fr/images/homepage/carrousel3.jpg",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://plusfraichemaville.fr/mon-projet/favoris",
 							"method": "GET",
 							"param": "",
@@ -569,7 +596,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>https://caniuse.com/stricttransportsecurity</p><p>https://datatracker.ietf.org/doc/html/rfc6797</p>",
 					"cweid": "319",
 					"wascid": "15",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10096",
@@ -604,7 +631,7 @@
 					"reference": "<p>https://cwe.mitre.org/data/definitions/200.html</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "663"
+					"sourceid": "664"
 				},
 				{
 					"pluginid": "10021",
@@ -626,6 +653,14 @@
 						},
 						{
 							"uri": "https://plusfraichemaville.fr/",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://plusfraichemaville.fr/_next/static/css/89c525ac1f9c2b21.css",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -681,14 +716,6 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://plusfraichemaville.fr/images/homepage/carrousel3.jpg",
-							"method": "GET",
-							"param": "x-content-type-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
-						},
-						{
 							"uri": "https://plusfraichemaville.fr/mon-projet/favoris",
 							"method": "GET",
 							"param": "x-content-type-options",
@@ -711,7 +738,7 @@
 					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10094",
@@ -788,12 +815,12 @@
 							"otherinfo": "\uFFFDW\uFFFD\uFFFD\uFFFD\\x001e\uFFFD'(\uFFFD\uF722\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD6\uFFFDv)"
 						},
 						{
-							"uri": "https://plusfraichemaville.fr/projet/cour-oasis-berthelot-montrouge",
+							"uri": "https://plusfraichemaville.fr/projet/cascade-aygalades",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2Fcour_oasis_berthelot_montrouge_header_114ed8dfda",
-							"otherinfo": "\uFFFDW(\uFFFD\uFFFD\uFFFDj\u022C\uFFFD\uFFFD\uFFFD\uFFFD\\x0017\uFFFD\uFFFD\uFFFD\uFFFD{k\uFFFD\uFFFD\\x001e\uFFFD\\x0017\uFFFDu\uFFFD\uFFFD\uFFFD^\\x001ew\uFFFD_u"
+							"evidence": "2Fmedium_cascade_aygalades_avant_fca8d4dd98",
+							"otherinfo": "\uFFFDY\uFFFDv+\uFFFD\uFFFD\u01ACq\uFFFD^\uFFFD\uFFFD\uFFFDjV\uFFFDz\uFFFD\u06BD\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD\uFFFD\\x001dw\uFFFD"
 						},
 						{
 							"uri": "https://plusfraichemaville.fr/projet/pen-ar-biez-lannion",
@@ -818,7 +845,7 @@
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10027",
@@ -911,14 +938,6 @@
 							"otherinfo": "The following pattern was used: \\bDEBUG\\b and was detected in the element starting with: \"(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[744],{8802:function(e,n,t){Promise.resolve().then(t.t.bind(t,7690,23)),\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://plusfraichemaville.fr/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "query",
-							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"!function(){var t=\"undefined\"!=typeof globalThis?globalThis:\"undefined\"!=typeof window?window:\"undefined\"!=typeof global?global:\", see evidence field for the suspicious comment/snippet."
-						},
-						{
 							"uri": "https://plusfraichemaville.fr/fiche-solution",
 							"method": "GET",
 							"param": "",
@@ -927,7 +946,7 @@
 							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script>self.__next_f.push([1,\"7:[\\\"$\\\",\\\"div\\\",null,{\\\"className\\\":\\\"fr-container\\\",\\\"children\\\":[[\\\"$\\\",\\\"$L13\\\",null,{\\\"class\", see evidence field for the suspicious comment/snippet."
 						}
 					],
-					"count": "12",
+					"count": "11",
 					"solution": "<p>Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</p>",
 					"otherinfo": "<p>The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script>self.__next_f.push([1,\"4:[[[\\\"$\\\",\\\"link\\\",\\\"0\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/056f0c151d3e3ce4.c\", see evidence field for the suspicious comment/snippet.</p>",
 					"reference": "",
@@ -1002,7 +1021,7 @@
 							"otherinfo": "Links have been found with a target of '_self' - this is often used by modern frameworks to force a full page reload."
 						},
 						{
-							"uri": "https://plusfraichemaville.fr/projet/cour-oasis-berthelot-montrouge",
+							"uri": "https://plusfraichemaville.fr/projet/cascade-aygalades",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1053,14 +1072,6 @@
 					"desc": "<p>The response contents are not storable by caching components such as proxy servers. If the response does not contain sensitive, personal or user-specific information, it may benefit from being stored and cached, to improve performance.</p>",
 					"instances":[ 
 						{
-							"uri": "https://plusfraichemaville.fr/projet",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "no-store",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://plusfraichemaville.fr/sitemap.xml",
 							"method": "GET",
 							"param": "",
@@ -1069,13 +1080,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "1",
 					"solution": "<p>The content may be marked as storable by ensuring that the following conditions are satisfied:</p><p>The request method must be understood by the cache and defined as being cacheable (\"GET\", \"HEAD\", and \"POST\" are currently defined as cacheable)</p><p>The response status code must be understood by the cache (one of the 1XX, 2XX, 3XX, 4XX, or 5XX response classes are generally understood)</p><p>The \"no-store\" cache directive must not appear in the request or response header fields</p><p>For caching by \"shared\" caches such as \"proxy\" caches, the \"private\" response directive must not appear in the response</p><p>For caching by \"shared\" caches such as \"proxy\" caches, the \"Authorization\" header field must not appear in the request, unless the response explicitly allows it (using one of the \"must-revalidate\", \"public\", or \"s-maxage\" Cache-Control response directives)</p><p>In addition to the conditions above, at least one of the following conditions must also be satisfied by the response:</p><p>It must contain an \"Expires\" header field</p><p>It must contain a \"max-age\" response directive</p><p>For \"shared\" caches such as \"proxy\" caches, it must contain a \"s-maxage\" response directive</p><p>It must contain a \"Cache Control Extension\" that allows it to be cached</p><p>It must have a status code that is defined as cacheable by default (200, 203, 204, 206, 300, 301, 404, 405, 410, 414, 501).   </p>",
 					"otherinfo": "",
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "141"
+					"sourceid": "93"
 				},
 				{
 					"pluginid": "10015",
@@ -1236,7 +1247,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -1279,7 +1290,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -1351,6 +1362,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://plusfraichemaville.fr/_next/static/media/84ea75e19bcc9741-s.p.woff2",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=31536000",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://plusfraichemaville.fr/aide-decision",
 							"method": "GET",
 							"param": "",
@@ -1375,13 +1394,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "5",
+					"count": "6",
 					"solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information.  If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request. </p>",
 					"otherinfo": "",
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10049",
@@ -1432,7 +1451,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "137"
+					"sourceid": "141"
 				}
 			]
 		}

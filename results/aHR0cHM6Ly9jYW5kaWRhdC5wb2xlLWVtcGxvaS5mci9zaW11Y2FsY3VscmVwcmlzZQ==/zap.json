@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Mon, 26 Feb 2024 20:47:17",
+	"@generated": "Sun, 3 Mar 2024 09:07:01",
 	"site":[ 
 		{
 			"@name": "https://candidat.pole-emploi.fr",
@@ -301,21 +301,21 @@
 							"method": "GET",
 							"param": "Set-Cookie",
 							"attack": "",
-							"evidence": "1804798730",
-							"otherinfo": "1804798730, which evaluates to: 2027-03-11 20:58:50"
+							"evidence": "1720912650",
+							"otherinfo": "1720912650, which evaluates to: 2024-07-13 23:17:30"
 						},
 						{
 							"uri": "https://candidat.pole-emploi.fr/simucalculreprise",
 							"method": "GET",
 							"param": "Set-Cookie",
 							"attack": "",
-							"evidence": "1754467082",
-							"otherinfo": "1754467082, which evaluates to: 2025-08-06 07:58:02"
+							"evidence": "1687358218",
+							"otherinfo": "1687358218, which evaluates to: 2023-06-21 14:36:58"
 						}
 					],
 					"count": "2",
 					"solution": "<p>Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.</p>",
-					"otherinfo": "<p>1804798730, which evaluates to: 2027-03-11 20:58:50</p>",
+					"otherinfo": "<p>1720912650, which evaluates to: 2024-07-13 23:17:30</p>",
 					"reference": "<p>https://cwe.mitre.org/data/definitions/200.html</p>",
 					"cweid": "200",
 					"wascid": "13",
@@ -399,7 +399,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "The origin domain used for comparison was: \ncandidat.pole-emploi.fr\nTS01e2de59=0150c672c347a71ad3da80b9becd63a6e85a68a9a756eda505f56b2615c81a26d4b0368a9a61b5a9961051ecb14bf6d6e8df022a6d\n"
+							"otherinfo": "The origin domain used for comparison was: \ncandidat.pole-emploi.fr\nTS01e2de59=0150c672c394009391dd3d65bdb8dec4f0422800090c745ea4b4cbab9c862c77cdb830bcd2c8fea92e3ed9b1d102769adacf50414d\n"
 						},
 						{
 							"uri": "https://candidat.pole-emploi.fr/simucalculreprise",
@@ -407,12 +407,12 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "The origin domain used for comparison was: \ncandidat.pole-emploi.fr\nTS012a9142=0150c672c3c2941e39988d59ba55684c2a1208c96f420ab898e7170ae767e2897a1514931bd2c9f8c14c6f5eb47d4be49a2a48ef05\n"
+							"otherinfo": "The origin domain used for comparison was: \ncandidat.pole-emploi.fr\nTS012a9142=0150c672c3e8f1d6f7b10d7ddf59fbfa6d1b8651d74cb9c5c7916d5e68f13ec4082f472ea6e202f77b03f124a25435566becd1d526\n"
 						}
 					],
 					"count": "2",
 					"solution": "<p>Always scope cookies to a FQDN (Fully Qualified Domain Name).</p>",
-					"otherinfo": "<p>The origin domain used for comparison was: </p><p>candidat.pole-emploi.fr</p><p>TS01e2de59=0150c672c347a71ad3da80b9becd63a6e85a68a9a756eda505f56b2615c81a26d4b0368a9a61b5a9961051ecb14bf6d6e8df022a6d</p><p></p>",
+					"otherinfo": "<p>The origin domain used for comparison was: </p><p>candidat.pole-emploi.fr</p><p>TS01e2de59=0150c672c394009391dd3d65bdb8dec4f0422800090c745ea4b4cbab9c862c77cdb830bcd2c8fea92e3ed9b1d102769adacf50414d</p><p></p>",
 					"reference": "<p>https://tools.ietf.org/html/rfc6265#section-4.1</p><p>https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes.html</p><p>https://code.google.com/p/browsersec/wiki/Part2#Same-origin_policy_for_cookies</p>",
 					"cweid": "565",
 					"wascid": "15",
@@ -526,14 +526,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/robots.txt",
-							"method": "GET",
-							"param": "Sec-Fetch-Dest",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://candidat.pole-emploi.fr/simucalculreprise",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
@@ -542,7 +534,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"solution": "<p>Ensure that Sec-Fetch-Dest header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
@@ -569,14 +561,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/robots.txt",
-							"method": "GET",
-							"param": "Sec-Fetch-Mode",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://candidat.pole-emploi.fr/simucalculreprise",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
@@ -585,13 +569,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"solution": "<p>Ensure that Sec-Fetch-Mode header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "8"
+					"sourceid": "3"
 				},
 				{
 					"pluginid": "90005",
@@ -604,7 +588,7 @@
 					"desc": "<p>Specifies the relationship between request initiator's origin and target's origin.</p>",
 					"instances":[ 
 						{
-							"uri": "https://candidat.pole-emploi.fr/robots.txt",
+							"uri": "https://candidat.pole-emploi.fr/",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -626,7 +610,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "9"
+					"sourceid": "3"
 				},
 				{
 					"pluginid": "90005",
@@ -647,14 +631,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://candidat.pole-emploi.fr/robots.txt",
-							"method": "GET",
-							"param": "Sec-Fetch-User",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://candidat.pole-emploi.fr/simucalculreprise",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
@@ -663,7 +639,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"solution": "<p>Ensure that Sec-Fetch-User header is included in user initiated requests.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
@@ -686,7 +662,7 @@
 							"method": "GET",
 							"param": "BIGipServerPOOL_TAS_SDDC_HTTP",
 							"attack": "",
-							"evidence": "1804798730.20480.0000",
+							"evidence": "1720912650.20480.0000",
 							"otherinfo": "\ncookie:BIGipServerPOOL_TAS_SDDC_HTTP\ncookie:TS01e2de59"
 						},
 						{
@@ -694,7 +670,7 @@
 							"method": "GET",
 							"param": "BIGipServerPOOL_TAS_SDDC_HTTP",
 							"attack": "",
-							"evidence": "1754467082.20480.0000",
+							"evidence": "1687358218.20480.0000",
 							"otherinfo": "\ncookie:BIGipServerPOOL_TAS_SDDC_HTTP\ncookie:TS012a9142"
 						}
 					],

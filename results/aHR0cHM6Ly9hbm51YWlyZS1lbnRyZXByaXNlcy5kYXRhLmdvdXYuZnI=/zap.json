@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 3 Mar 2024 01:11:11",
+	"@generated": "Tue, 5 Mar 2024 17:58:26",
 	"site":[ 
 		{
 			"@name": "https://annuaire-entreprises.data.gouv.fr",
@@ -44,6 +44,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://annuaire-entreprises.data.gouv.fr/annonces/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://annuaire-entreprises.data.gouv.fr/departements/",
 							"method": "GET",
 							"param": "",
@@ -92,14 +100,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://annuaire-entreprises.data.gouv.fr/rechercher/carte",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://annuaire-entreprises.data.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "",
@@ -114,7 +114,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>https://www.w3.org/TR/CSP/</p><p>https://w3c.github.io/webappsec-csp/</p><p>https://web.dev/articles/csp</p><p>https://caniuse.com/#feat=contentsecuritypolicy</p><p>https://content-security-policy.com/</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "7"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10020",
@@ -151,6 +151,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://annuaire-entreprises.data.gouv.fr/annonces/",
+							"method": "GET",
+							"param": "x-frame-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://annuaire-entreprises.data.gouv.fr/departements/",
 							"method": "GET",
 							"param": "x-frame-options",
@@ -183,6 +191,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://annuaire-entreprises.data.gouv.fr/justificatif/",
+							"method": "GET",
+							"param": "x-frame-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://annuaire-entreprises.data.gouv.fr/lp/",
 							"method": "GET",
 							"param": "x-frame-options",
@@ -192,6 +208,14 @@
 						},
 						{
 							"uri": "https://annuaire-entreprises.data.gouv.fr/private/",
+							"method": "GET",
+							"param": "x-frame-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://annuaire-entreprises.data.gouv.fr/rechercher/",
 							"method": "GET",
 							"param": "x-frame-options",
 							"attack": "",
@@ -215,7 +239,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "11",
+					"count": "14",
 					"solution": "<p>Modern Web browsers support the Content-Security-Policy and X-Frame-Options HTTP headers. Ensure one of them is set on all web pages returned by your site/app.</p><p>If you expect the page to be framed only by pages on your server (e.g. it's part of a FRAMESET) then you'll want to use SAMEORIGIN, otherwise if you never expect the page to be framed, you should use DENY. Alternatively consider implementing Content Security Policy's \"frame-ancestors\" directive.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options</p>",
@@ -306,7 +330,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://annuaire-entreprises.data.gouv.fr/rechercher/carte",
+							"uri": "https://annuaire-entreprises.data.gouv.fr/rechercher/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -328,7 +352,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity</p>",
 					"cweid": "345",
 					"wascid": "15",
-					"sourceid": "7"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10054",
@@ -355,7 +379,7 @@
 					"reference": "<p>https://tools.ietf.org/html/draft-ietf-httpbis-cookie-same-site</p>",
 					"cweid": "1275",
 					"wascid": "13",
-					"sourceid": "8"
+					"sourceid": "10"
 				},
 				{
 					"pluginid": "10063",
@@ -440,7 +464,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://annuaire-entreprises.data.gouv.fr/rechercher/carte",
+							"uri": "https://annuaire-entreprises.data.gouv.fr/rechercher/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -475,93 +499,136 @@
 					"desc": "<p>Base64 encoded data was disclosed by the application/web server. Note: in the interests of performance not all base64 strings in the response were analyzed individually, the entire response should be looked at by the analyst/security team/developer(s).</p>",
 					"instances":[ 
 						{
+							"uri": "https://annuaire-entreprises.data.gouv.fr",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Zd__1N1-6sf4gdz2S3tyyLkH7wUqunK5gpSkpL06GyWnseczJpkPoqU2jJpyHqtag5Ba6rfZXCqrhP9s_9p1Xek2ySVDg_cxlLGbUY10dwQupS2LnNmRBydK0bbqbl8_5wB5wvsfIQFat7Z8OEE5Qv-gZZGa4G41Qnwi-5U-J-kmBjzSwz6C-rKF53A3pYPOgXU62_AGYekoJNht0lCMVlUGJCOvJ3W3utfSovHD4BLSoxUVkAw5rIyN05WjG8l_",
+							"otherinfo": "e\uFFFD\uFFFD\uFFFD\uFFFD~\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDK{r\u0239\\x0007\uFFFD\\x0005*\uFFFDr\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD:\\x001b%\uFFFD\uFFFD\uFFFD3&\uFFFD\\x000f\uFFFD\uFFFD6\uFFFD\uFFFDr\\x001e\uFFFDZ\uFFFD\uFFFDZ\uFFFD\uFFFD\\*\uFFFD\uFFFD\uFFFDl\uFFFD\uFFFDu]\uFFFD6\uFFFD%C\uFFFD\uFFFD1\uFFFD\uFFFD\uFFFDQ\uFFFDtw\\x0004.\uFFFD-\uFFFD\uFFFD\u0651\\x0007'J\u0476\uFFFDn_?\uFFFD\\x0000y\uFFFD\uFFFD\\x001f!\\x0001Z\uFFFD\uFFFD|8A9B\uFFFD\uFFFDe\uFFFD\uFFFD\uFFFDn5B|\"\uFFFD\uFFFD>'\uFFFD&\\x0006<\uFFFD\uFFFD>\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDp7\uFFFD\uFFFD\u0381u:\uFFFD\uFFFD\\x0006a\uFFFD($\uFFFDm\uFFFDP\uFFFDVU\\x0006$#\uFFFD'u\uFFFD\uFFFD\uFFFD\u04A2\uFFFD\uFFFD\uFFFD\\x0012\u04A3\\x0015\\x0015\uFFFD\\x000c9\uFFFD\uFFFD\uFFFD\u04D5\uFFFD\\x001b\uFFFD"
+						},
+						{
+							"uri": "https://annuaire-entreprises.data.gouv.fr",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Zd__1N1-6sf4gdz2S3tyyLkH7wUqunK5gpSkpL06GyWnseczJpkPoqU2jJpyHqtag5Ba6rfZXCqrhP9s_9p1Xek2ySVDg_cxlLGbUY10dwQupS2LnNmRBydK0bbqbl8_5wB5wvsfIQFat7Z8OEE5Qv-gZZGa4G41Qnwi-5U-J-kmBjzSwz6C-rKF53A3pYPOgXU62_AGYekoJNht0lCMVlUGJCOvJ3W3utfSovHD4BLf2wb5tL99zRcbs7AvcAeU",
+							"otherinfo": "e\uFFFD\uFFFD\uFFFD\uFFFD~\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDK{r\u0239\\x0007\uFFFD\\x0005*\uFFFDr\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD:\\x001b%\uFFFD\uFFFD\uFFFD3&\uFFFD\\x000f\uFFFD\uFFFD6\uFFFD\uFFFDr\\x001e\uFFFDZ\uFFFD\uFFFDZ\uFFFD\uFFFD\\*\uFFFD\uFFFD\uFFFDl\uFFFD\uFFFDu]\uFFFD6\uFFFD%C\uFFFD\uFFFD1\uFFFD\uFFFD\uFFFDQ\uFFFDtw\\x0004.\uFFFD-\uFFFD\uFFFD\u0651\\x0007'J\u0476\uFFFDn_?\uFFFD\\x0000y\uFFFD\uFFFD\\x001f!\\x0001Z\uFFFD\uFFFD|8A9B\uFFFD\uFFFDe\uFFFD\uFFFD\uFFFDn5B|\"\uFFFD\uFFFD>'\uFFFD&\\x0006<\uFFFD\uFFFD>\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDp7\uFFFD\uFFFD\u0381u:\uFFFD\uFFFD\\x0006a\uFFFD($\uFFFDm\uFFFDP\uFFFDVU\\x0006$#\uFFFD'u\uFFFD\uFFFD\uFFFD\u04A2\uFFFD\uFFFD\uFFFD\\x0012\uFFFD\uFFFD\\x0006\uFFFD\uFFFD\uFFFD}\uFFFD\\x0017\\x001b\uFFFD\uFFFD/p\\x0007\uFFFD"
+						},
+						{
 							"uri": "https://annuaire-entreprises.data.gouv.fr/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "Zd__1N1-6sf4gdz2S3tyyHVIa_r4hQL8iWTeCjKb8VqX-REKQM3OJjK5LEScbRmuON_dAobD3pnvkpXMPVL3QJUZ5rd78PeboyZn9HM9eR2dXJWItO8IX0VP0_QOc0yRgE2rZHaq3wW0gcgxI4h7v-bD8QDfS1VMWSnNSxu8CFIlOVQmmRxzFEmfar6Lbeyc-KnHt0P3q4M6H-DArdaru5ZtAiwWfx5iOTsBVnSIs214sPGWkzJvQTU6YsYqMVLI1fHw899c3BDg-hTtSD9DKw",
-							"otherinfo": "e\uFFFD\uFFFD\uFFFD\uFFFD~\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDK{r\uFFFDuHk\uFFFD\uFFFD\uFFFD\\x0002\uFFFD\uFFFDd\uFFFD\n2\uFFFD\uFFFDZ\uFFFD\uFFFD\\x0011\n@\uFFFD\uFFFD&2\uFFFD,D\uFFFDm\\x0019\uFFFD8\uFFFD\uFFFD\\x0002\uFFFD\uFFFD\u0799\uF495\uFFFD=R\uFFFD@\uFFFD\\x0019\uFFFD{\uFFFD\uFFFD\uFFFD\uFFFD&g\uFFFDs=y\\x001d\uFFFD\\\uFFFD\uFFFD\uFFFD\uFFFD\\x0008_EO\uFFFD\uFFFD\\x000esL\uFFFD\uFFFDM\uFFFDdv\uFFFD\uFFFD\\x0005\uFFFD\uFFFD\uFFFD1#\uFFFD{\uFFFD\uFFFD\uFFFD\uFFFD\\x0000\uFFFDKULY)\uFFFDK\\x001b\uFFFD\\x0008R%9T&\uFFFD\\x001cs\\x0014I\uFFFDj\uFFFD\uFFFDm\uFFFD\uFFFD\uFFFD\u01F7C\uFFFD\uFFFD\uFFFD:\\x001f\uFFFD\uFFFD\uFFFD\u05AB\uFFFD\uFFFDm\\x0002,\\x0016\\x001eb9;\\x0001Vt\uFFFD\uFFFDmx\uFFFD\uFFFD2oA5:b\uFFFD*1R\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\\uFFFD\\x0010\uFFFD\uFFFD\\x0014\uFFFDH?C+"
+							"evidence": "Zd__1N1-6sf4gdz2S3tyyLF4WKWQY2eTZhSRBqsDRpD8L3PGYCEkYzFHKL_zuMmMvmtcToFSt0x36r2x6OP7KVuSwVb1ymsLbig34ROtkbLrZGtfYu-sRDGHi9TdGpo3Ok-AWXmiZsWGywEWMwG38cfcffUVFNU7keLqEZpdQlnwyfQMhi-0vbOIRhkggweo6S8ZALFfLhDnri135GauCFZ1WYry6vwtVJRcxXDjXB_Jr_3DUv9IxiK2d72Z8NX-",
+							"otherinfo": "e\uFFFD\uFFFD\uFFFD\uFFFD~\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDK{r\u0231xX\uFFFD\uFFFDcg\uFFFDf\\x0014\uFFFD\\x0006\uFFFD\\x0003F\uFFFD\uFFFD/s\uFFFD`!$c1G(\uFFFD\uFFFD\u024C\uFFFDk\\N\uFFFDR\uFFFDLw\uAF71\uFFFD\uFFFD\uFFFD)[\uFFFD\uFFFDV\uFFFD\uFFFDk\\x000bn(7\uFFFD\\x0013\uFFFD\uFFFD\uFFFD\uFFFDdk_b\uFFFDD1\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD7:O\uFFFDYy\uFFFDf\u0146\uFFFD\\x0001\\x00163\\x0001\uFFFD\uFFFD\uFFFD\uFFFD}\uFFFD\\x0015\\x0014\uFFFD;\uFFFD\uFFFD\uFFFD\\x0011\uFFFD]BY\uFFFD\uFFFD\uFFFD\\x000c\uFFFD/\uFFFD\uFFFD\uFFFD\uFFFDF\\x0019 \uFFFD\\x0007\uFFFD\uFFFD/\\x0019\\x0000\uFFFD_.\\x0010\uFFFD-w\uFFFDf\uFFFD\\x0008VuY\uFFFD\uFFFD\uFFFD\uFFFD-T\uFFFD\\\uFFFDp\uFFFD\\\\x001f\u026F\uFFFD\uFFFDR\uFFFDH\uFFFD\"\uFFFDw\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD"
 						},
 						{
 							"uri": "https://annuaire-entreprises.data.gouv.fr/administration/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "h8OoQF8aZ4_iMU07rK42fq3DN-bq8tYMtAVok2PxNENc0RMSTUnQd8x6AFY1fzxnvViLFV6yEMkrSs1k-bVc7aFNl0fyjvYtAvBNZO2Eil1FY9BfwtD6GrnkHnthq8WG3h2D7BjpDdRD2s_EoWJAeUjMfA7p-6NRRZcFqvcrFO_HQ-WBa5WNiCfxtW1r4ue847JRDUyQl_rg2avpEIyMF8KT-3DLKrn7kgq2OFaZbSex3Et0FXnh9AuNg4kj_dO6lBW70REuQoKU_rNve9OlHw",
-							"otherinfo": "\uFFFD\u00E8@_\\x001ag\uFFFD\uFFFD1M;\uFFFD\uFFFD6~\uFFFD\uFFFD7\uFFFD\uFFFD\uFFFD\uFFFD\\x000c\uFFFD\\x0005h\uFFFDc\uFFFD4C\\\uFFFD\\x0013\\x0012MI\uFFFDw\uFFFDz\\x0000V5<g\uFFFDX\uFFFD\\x0015^\uFFFD\\x0010\uFFFD+J\uFFFDd\uFFFD\uFFFD\\\uFFFDM\uFFFDG\uFFFD\uFFFD-\\x0002\uFFFDMd\uD10A]Ec\uFFFD_\uFFFD\uFFFD\uFFFD\\x001a\uFFFD\uFFFD\\x001e{a\uFFFD\u0146\uFFFD\\x001d\uFFFD\uFFFD\\x0018\uFFFD\r\uFFFDC\uFFFD\uFFFD\u0121b@yH\uFFFD|\\x000e\uFFFD\uFFFD\uFFFDQE\uFFFD\\x0005\uFFFD\uFFFD+\\x0014\uFFFD\uFFFDC\uFFFDk\uFFFD\uFFFD\uFFFD'\uFFFDmk\uFFFD\uFFFD\uFFFDQ\rL\uFFFD\uFFFD\uFFFD\uFFFD\u066B\uFFFD\\x0010\uFFFD\uFFFD\\x0017\u0093\uFFFDp\uFFFD*\uFFFD\uFFFD\uFFFD\n\uFFFD8V\uFFFDm'\uFFFD\uFFFDKt\\x0015y\uFFFD\uFFFD\\x000b\uFFFD\uFFFD\uFFFD#\uFFFD\u04FA\uFFFD\\x0015\uFFFD\uFFFD\\x0011.B\uFFFD\uFFFD\uFFFD\uFFFDo{\u04E5\\x001f"
+							"evidence": "Zd__1N1-6sf4gdz2S3tyyLF4WKWQY2eTZhSRBqsDRpD8L3PGYCEkYzFHKL_zuMmMvmtcToFSt0x36r2x6OP7KVuSwVb1ymsLbig34ROtkbLrZGtfYu-sRDGHi9TdGpo3Ok-AWXmiZsWGywEWMwG38cfcffUVFNU7keLqEZpdQlnwyfQMhi-0vbOIRhkggweo6S8ZALFfLhDnri135GauCFZ1WYry6vwtVJRcxXDjXB_Jr_3DUv9IxiK2d72Z8NX-",
+							"otherinfo": "e\uFFFD\uFFFD\uFFFD\uFFFD~\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDK{r\u0231xX\uFFFD\uFFFDcg\uFFFDf\\x0014\uFFFD\\x0006\uFFFD\\x0003F\uFFFD\uFFFD/s\uFFFD`!$c1G(\uFFFD\uFFFD\u024C\uFFFDk\\N\uFFFDR\uFFFDLw\uAF71\uFFFD\uFFFD\uFFFD)[\uFFFD\uFFFDV\uFFFD\uFFFDk\\x000bn(7\uFFFD\\x0013\uFFFD\uFFFD\uFFFD\uFFFDdk_b\uFFFDD1\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD7:O\uFFFDYy\uFFFDf\u0146\uFFFD\\x0001\\x00163\\x0001\uFFFD\uFFFD\uFFFD\uFFFD}\uFFFD\\x0015\\x0014\uFFFD;\uFFFD\uFFFD\uFFFD\\x0011\uFFFD]BY\uFFFD\uFFFD\uFFFD\\x000c\uFFFD/\uFFFD\uFFFD\uFFFD\uFFFDF\\x0019 \uFFFD\\x0007\uFFFD\uFFFD/\\x0019\\x0000\uFFFD_.\\x0010\uFFFD-w\uFFFDf\uFFFD\\x0008VuY\uFFFD\uFFFD\uFFFD\uFFFD-T\uFFFD\\\uFFFDp\uFFFD\\\\x001f\u026F\uFFFD\uFFFDR\uFFFDH\uFFFD\"\uFFFDw\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD"
 						},
 						{
 							"uri": "https://annuaire-entreprises.data.gouv.fr/departements/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "Zd__1N1-6sf4gdz2S3tyyHVIa_r4hQL8iWTeCjKb8VqX-REKQM3OJjK5LEScbRmuON_dAobD3pnvkpXMPVL3QJUZ5rd78PeboyZn9HM9eR2dXJWItO8IX0VP0_QOc0yRgE2rZHaq3wW0gcgxI4h7v-bD8QDfS1VMWSnNSxu8CFIlOVQmmRxzFEmfar6Lbeyc-KnHt0P3q4M6H-DArdaru5ZtAiwWfx5iOTsBVnSIs214sPGWkzJvQTU6YsYqMVLI1fHw899c3BDg-hTtSD9DKw",
-							"otherinfo": "e\uFFFD\uFFFD\uFFFD\uFFFD~\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDK{r\uFFFDuHk\uFFFD\uFFFD\uFFFD\\x0002\uFFFD\uFFFDd\uFFFD\n2\uFFFD\uFFFDZ\uFFFD\uFFFD\\x0011\n@\uFFFD\uFFFD&2\uFFFD,D\uFFFDm\\x0019\uFFFD8\uFFFD\uFFFD\\x0002\uFFFD\uFFFD\u0799\uF495\uFFFD=R\uFFFD@\uFFFD\\x0019\uFFFD{\uFFFD\uFFFD\uFFFD\uFFFD&g\uFFFDs=y\\x001d\uFFFD\\\uFFFD\uFFFD\uFFFD\uFFFD\\x0008_EO\uFFFD\uFFFD\\x000esL\uFFFD\uFFFDM\uFFFDdv\uFFFD\uFFFD\\x0005\uFFFD\uFFFD\uFFFD1#\uFFFD{\uFFFD\uFFFD\uFFFD\uFFFD\\x0000\uFFFDKULY)\uFFFDK\\x001b\uFFFD\\x0008R%9T&\uFFFD\\x001cs\\x0014I\uFFFDj\uFFFD\uFFFDm\uFFFD\uFFFD\uFFFD\u01F7C\uFFFD\uFFFD\uFFFD:\\x001f\uFFFD\uFFFD\uFFFD\u05AB\uFFFD\uFFFDm\\x0002,\\x0016\\x001eb9;\\x0001Vt\uFFFD\uFFFDmx\uFFFD\uFFFD2oA5:b\uFFFD*1R\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\\uFFFD\\x0010\uFFFD\uFFFD\\x0014\uFFFDH?C+"
+							"evidence": "VTwHz-jk4A_XDE1aZucNN2ZaBJ_e9G0r9vVZi8PT-FV_3NV69jxeGdIR5KSu7tfJi4wC8gFITtb8L_2wzUdZMSOcF9VoVbV2OQ651eBqRyfy1IlQp5q_DxqsGAWGxgntNUOrHC9D0hb7QANWbkKDCENw9bg1c9M_oghC3n9mMNjtH3GjOccf4Pg22s8il7iMsGS0bAW6ghDX_Qhwwg2SbV_kft15qsyE75WnHy3b6UmwbYER205JjEZoXbPZX3KQ",
+							"otherinfo": "U<\\x0007\uFFFD\uFFFD\uFFFD\uFFFD\\x000f\uFFFD\\x000cMZf\uFFFD\r7fZ\\x0004\uFFFD\uFFFD\uFFFDm+\uFFFD\uFFFDY\uFFFD\uFFFD\uFFFD\uFFFDU\uFFFD\uFFFDz\uFFFD<^\\x0019\uFFFD\\x0011\u492E\uFFFD\uFFFD\u024B\uFFFD\\x0002\uFFFD\\x0001HN\uFFFD\uFFFD/\uFFFD\uFFFD\uFFFDGY1#\uFFFD\\x0017\uFFFDhU\uFFFDv9\\x000e\uFFFD\uFFFD\uFFFDjG'\uFFFD\u0509P\uFFFD\uFFFD\uFFFD\\x000f\\x001a\uFFFD\\x0018\\x0005\uFFFD\uFFFD\t\uFFFD5C\uFFFD\\x001c/C\uFFFD\\x0016\uFFFD@\\x0003VnB\uFFFD\\x0008Cp\uFFFD\uFFFD5s\uFFFD?\uFFFD\\x0008B\uFFFDf0\uFFFD\uFFFD\\x001fq\uFFFD9\uFFFD\\x001f\uFFFD\uFFFD6\uFFFD\uFFFD\"\uFFFD\uFFFD\uFFFD\uFFFDd\uFFFDl\\x0005\uFFFD\uFFFD\\x0010\uFFFD\uFFFD\\x0008p\uFFFD\r\uFFFDm_\uFFFD~\uFFFDy\uFFFD\u0304\uF567\\x001f-\uFFFD\uFFFDI\uFFFDm\uFFFD\\x0011\uFFFDNI\uFFFDFh]\uFFFD\uFFFD_r\uFFFD"
 						},
 						{
 							"uri": "https://annuaire-entreprises.data.gouv.fr/entreprise/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "h8OoQF8aZ4_iMU07rK42fq3DN-bq8tYMtAVok2PxNENc0RMSTUnQd8x6AFY1fzxnvViLFV6yEMkrSs1k-bVc7aFNl0fyjvYtAvBNZO2Eil1FY9BfwtD6GrnkHnthq8WG3h2D7BjpDdRD2s_EoWJAeUjMfA7p-6NRRZcFqvcrFO_HQ-WBa5WNiCfxtW1r4ue847JRDUyQl_rg2avpEIyMF8KT-3DLKrn7kgq2OFaZbSex3Et0FXnh9AuNg4kj_dO6lBW70REuQoKU_rNve9OlHw",
-							"otherinfo": "\uFFFD\u00E8@_\\x001ag\uFFFD\uFFFD1M;\uFFFD\uFFFD6~\uFFFD\uFFFD7\uFFFD\uFFFD\uFFFD\uFFFD\\x000c\uFFFD\\x0005h\uFFFDc\uFFFD4C\\\uFFFD\\x0013\\x0012MI\uFFFDw\uFFFDz\\x0000V5<g\uFFFDX\uFFFD\\x0015^\uFFFD\\x0010\uFFFD+J\uFFFDd\uFFFD\uFFFD\\\uFFFDM\uFFFDG\uFFFD\uFFFD-\\x0002\uFFFDMd\uD10A]Ec\uFFFD_\uFFFD\uFFFD\uFFFD\\x001a\uFFFD\uFFFD\\x001e{a\uFFFD\u0146\uFFFD\\x001d\uFFFD\uFFFD\\x0018\uFFFD\r\uFFFDC\uFFFD\uFFFD\u0121b@yH\uFFFD|\\x000e\uFFFD\uFFFD\uFFFDQE\uFFFD\\x0005\uFFFD\uFFFD+\\x0014\uFFFD\uFFFDC\uFFFDk\uFFFD\uFFFD\uFFFD'\uFFFDmk\uFFFD\uFFFD\uFFFDQ\rL\uFFFD\uFFFD\uFFFD\uFFFD\u066B\uFFFD\\x0010\uFFFD\uFFFD\\x0017\u0093\uFFFDp\uFFFD*\uFFFD\uFFFD\uFFFD\n\uFFFD8V\uFFFDm'\uFFFD\uFFFDKt\\x0015y\uFFFD\uFFFD\\x000b\uFFFD\uFFFD\uFFFD#\uFFFD\u04FA\uFFFD\\x0015\uFFFD\uFFFD\\x0011.B\uFFFD\uFFFD\uFFFD\uFFFDo{\u04E5\\x001f"
+							"evidence": "VTwHz-jk4A_XDE1aZucNN2ZaBJ_e9G0r9vVZi8PT-FV_3NV69jxeGdIR5KSu7tfJi4wC8gFITtb8L_2wzUdZMSOcF9VoVbV2OQ651eBqRyfy1IlQp5q_DxqsGAWGxgntNUOrHC9D0hb7QANWbkKDCENw9bg1c9M_oghC3n9mMNjmhSJW3iyvWfVHN3iRy_vFSARp1FZPrLuuqouEerOr9xwIqTTnWtZ65EvvMSRgAZY9gcFNiPHcY1fRCSqaNbq0",
+							"otherinfo": "U<\\x0007\uFFFD\uFFFD\uFFFD\uFFFD\\x000f\uFFFD\\x000cMZf\uFFFD\r7fZ\\x0004\uFFFD\uFFFD\uFFFDm+\uFFFD\uFFFDY\uFFFD\uFFFD\uFFFD\uFFFDU\uFFFD\uFFFDz\uFFFD<^\\x0019\uFFFD\\x0011\u492E\uFFFD\uFFFD\u024B\uFFFD\\x0002\uFFFD\\x0001HN\uFFFD\uFFFD/\uFFFD\uFFFD\uFFFDGY1#\uFFFD\\x0017\uFFFDhU\uFFFDv9\\x000e\uFFFD\uFFFD\uFFFDjG'\uFFFD\u0509P\uFFFD\uFFFD\uFFFD\\x000f\\x001a\uFFFD\\x0018\\x0005\uFFFD\uFFFD\t\uFFFD5C\uFFFD\\x001c/C\uFFFD\\x0016\uFFFD@\\x0003VnB\uFFFD\\x0008Cp\uFFFD\uFFFD5s\uFFFD?\uFFFD\\x0008B\uFFFDf0\uFFFD\uFFFD\"V\uFFFD,\uFFFDY\uFFFDG7x\uFFFD\uFFFD\uFFFD\uFFFDH\\x0004i\uFFFDVO\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDz\uFFFD\uFFFD\uFFFD\\x001c\\x0008\uFFFD4\uFFFDZ\uFFFDz\uFFFDK\uFFFD1$`\\x0001\uFFFD=\uFFFD\uFFFDM\uFFFD\uFFFD\uFFFDcW\uFFFD\t*\uFFFD5\uFFFD\uFFFD"
 						},
 						{
 							"uri": "https://annuaire-entreprises.data.gouv.fr/etablissement/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "D8MQPOf6DXb1vgHfNhxZ2_tIWyKtzRttFdZYf1FOlxFHtKJvVtiRpYLIDDSwx438EwaCNGtcXfnnqm2FDUcGRk0G3INQPmoVTB5utyuJVKW__0DvsajSjOtmSFIqn9cLBXkeKT8tXRBuzWBvAn1PkMHtTrcY8oMkidWvHKX-9ymTrOb9pdIDr1OJTx578zrM60BrsXrZceRYObZvb15OR9iCMdjEYRSDoQJYxZW1h0PVZ5gDOsJ17n4gzFCY5TAQAmEa2Rb0AknW3hKdpBoP7w",
-							"otherinfo": "\\x000f\uFFFD\\x0010<\uFFFD\uFFFD\rv\uFFFD\uFFFD\\x0001\uFFFD6\\x001cY\uFFFD\uFFFDH[\"\uFFFD\uFFFD\\x001bm\\x0015\uFFFDXQN\uFFFD\\x0011G\uFFFD\uFFFDoV\u0611\uFFFD\uFFFD\uFFFD\\x000c4\uFFFD\u01CD\uFFFD\\x0013\\x0006\uFFFD4k\\]\uFFFD\uFFFDm\uFFFD\rG\\x0006FM\\x0006\u0703P>j\\x0015L\\x001en\uFFFD+\uFFFDT\uFFFD\uFFFD\uFFFD@\uFC68\u048C\uFFFDfHR*\uFFFD\uFFFD\\x000b\\x0005y\\x001e)?-]\\x0010n\uFFFD`o\\x0002}O\uFFFD\uFFFD\uFFFDN\uFFFD\\x0018\uFFFD$\uFFFD\u056F\\x001c\uFFFD\uFFFD\uFFFD)\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x0003\uFFFDS\uFFFDO\\x001e{\uFFFD:\uFFFD\uFFFD@k\uFFFDz\uFFFDq\uFFFDX9\uFFFDoo^NG\u06021\uFFFD\uFFFDa\\x0014\uFFFD\uFFFD\\x0002X\u0155\uFFFD\uFFFDC\uFFFDg\uFFFD\\x0003:\uFFFDu\uFFFD~ \uFFFDP\uFFFD\uFFFD0\\x0010\\x0002a\\x001a\uFFFD\\x0016\uFFFD\\x0002I\uFFFD\uFFFD\\x0012\uFFFD\uFFFD\\x001a\\x000f\uFFFD"
+							"evidence": "VTwHz-jk4A_XDE1aZucNN2ZaBJ_e9G0r9vVZi8PT-FV_3NV69jxeGdIR5KSu7tfJi4wC8gFITtb8L_2wzUdZMSOcF9VoVbV2OQ651eBqRyfy1IlQp5q_DxqsGAWGxgntNUOrHC9D0hb7QANWbkKDCENw9bg1c9M_oghC3n9mMNjtH3GjOccf4Pg22s8il7iMsGS0bAW6ghDX_Qhwwg2SbV_kft15qsyE75WnHy3b6UmwbYER205JjEZoXbPZX3KQ",
+							"otherinfo": "U<\\x0007\uFFFD\uFFFD\uFFFD\uFFFD\\x000f\uFFFD\\x000cMZf\uFFFD\r7fZ\\x0004\uFFFD\uFFFD\uFFFDm+\uFFFD\uFFFDY\uFFFD\uFFFD\uFFFD\uFFFDU\uFFFD\uFFFDz\uFFFD<^\\x0019\uFFFD\\x0011\u492E\uFFFD\uFFFD\u024B\uFFFD\\x0002\uFFFD\\x0001HN\uFFFD\uFFFD/\uFFFD\uFFFD\uFFFDGY1#\uFFFD\\x0017\uFFFDhU\uFFFDv9\\x000e\uFFFD\uFFFD\uFFFDjG'\uFFFD\u0509P\uFFFD\uFFFD\uFFFD\\x000f\\x001a\uFFFD\\x0018\\x0005\uFFFD\uFFFD\t\uFFFD5C\uFFFD\\x001c/C\uFFFD\\x0016\uFFFD@\\x0003VnB\uFFFD\\x0008Cp\uFFFD\uFFFD5s\uFFFD?\uFFFD\\x0008B\uFFFDf0\uFFFD\uFFFD\\x001fq\uFFFD9\uFFFD\\x001f\uFFFD\uFFFD6\uFFFD\uFFFD\"\uFFFD\uFFFD\uFFFD\uFFFDd\uFFFDl\\x0005\uFFFD\uFFFD\\x0010\uFFFD\uFFFD\\x0008p\uFFFD\r\uFFFDm_\uFFFD~\uFFFDy\uFFFD\u0304\uF567\\x001f-\uFFFD\uFFFDI\uFFFDm\uFFFD\\x0011\uFFFDNI\uFFFDFh]\uFFFD\uFFFD_r\uFFFD"
 						},
 						{
 							"uri": "https://annuaire-entreprises.data.gouv.fr/faq/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "Zd__1N1-6sf4gdz2S3tyyHVIa_r4hQL8iWTeCjKb8VrtL6sgrbtYEhV2L-aJiVQm7yBrwehkywC4JMrxBbEf2016hQZgsoSQLHxsprK0VZLcMEAnoO6QG1f1cKfkajAZ9KLl4mQZ0mLHgDz2MsWJQFf9xHuwVrzWpbu03p_OMd7abvJpZWqoQCP7abM9srtIh5DVe37HWjpOPNdoREnig_Tyda5SekJm8EgJqY6-meMN2H__shg8hnZf_B4fNuSJ3F3ZsN_ROQA8pTTq2YbXkA",
-							"otherinfo": "e\uFFFD\uFFFD\uFFFD\uFFFD~\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDK{r\uFFFDuHk\uFFFD\uFFFD\uFFFD\\x0002\uFFFD\uFFFDd\uFFFD\n2\uFFFD\uFFFDZ\uFFFD/\uFFFD \uFFFD\uFFFDX\\x0012\\x0015v/\u6249T&\uFFFD k\uFFFD\uFFFDd\uFFFD\\x0000\uFFFD$\uFFFD\uFFFD\\x0005\uFFFD\\x001f\uFFFDMz\uFFFD\\x0006`\uFFFD\uFFFD\uFFFD,|l\uFFFD\uFFFD\uFFFDU\uFFFD\uFFFD0@'\uFFFD\uFFFD\\x001bW\uFFFDp\uFFFD\uFFFDj0\\x0019\uFFFD\uFFFD\uFFFD\uFFFDd\\x0019\uFFFDb\u01C0<\uFFFD2\u0149@W\uFFFD\uFFFD{\uFFFDV\uFFFD\u05A5\uFFFD\uFFFD\u079F\uFFFD1\uFFFD\uFFFDn\uFFFDiej\uFFFD@#\uFFFDi\uFFFD=\uFFFD\uFFFDH\uFFFD\uFFFD\uFFFD{~\uFFFDZ:N<\uFFFDhDI\uFFFD\uFFFD\uFFFDu\uFFFDRzBf\uFFFDH\t\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\r\uFFFD\uFFFD\uFFFD\\x0018<\uFFFDv_\uFFFD\\x001e\\x001f6\uFFFD\uFFFD]\u0670\uFFFD\uFFFD9\\x0000<\uFFFD4\uFFFD\u0646\u05D0"
+							"evidence": "h8OoQF8aZ4_iMU07rK42flJ5yGwtrTGVY7HavEtKV5WBKAmzU-uI0mYohUPOB7Nky1RhvkGgml-PEPaswsIHW7YiZ25Uvu_Uq8cceCN3uT6Dt9f-aK3JptTjKM0511-9_9N33ZWIpp2w4m6CxO831rbOQEz9szGaa93VBKHOfpZ0tIyJ_r7aVcs5b85_VU5peFDOE0I3n9xcF3WiBYF2iQLHENhygKd_xkXwR8HMeryDCtWDEmfn0mP8hgPVP2MU",
+							"otherinfo": "\uFFFD\u00E8@_\\x001ag\uFFFD\uFFFD1M;\uFFFD\uFFFD6~Ry\uFFFDl-\uFFFD1\uFFFDc\uFFFD\u06BCKJW\uFFFD\uFFFD(\t\uFFFDS\uFFFD\uFFFDf(\uFFFDC\uFFFD\\x0007\uFFFDd\uFFFDTa\uFFFDA\uFFFD\uFFFD_\uFFFD\\x0010\uFFFD\uFFFD\uFFFD\uFFFD\\x0007[\uFFFD\"gnT\uFFFD\uFFFD\u052B\uFFFD\\x001cx#w\uFFFD>\uFFFD\uFFFD\uFFFD\uFFFDh\uFFFD\u0266\uFFFD\uFFFD(\uFFFD9\uFFFD_\uFFFD\uFFFD\uFFFDw\u0755\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDn\uFFFD\uFFFD\uFFFD7\u05B6\uFFFD@L\uFFFD\uFFFD1\uFFFDk\uFFFD\uFFFD\\x0004\uFFFD\uFFFD~\uFFFDt\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDU\uFFFD9o\uFFFDUNixP\uFFFD\\x0013B7\uFFFD\uFFFD\\\\x0017u\uFFFD\\x0005\uFFFDv\uFFFD\\x0002\uFFFD\\x0010\uFFFDr\uFFFD\uFFFD\uFFFDE\uFFFDG\uFFFD\uFFFDz\uFFFD\uFFFD\n\u0543\\x0012g\uFFFD\uFFFDc\uFFFD\uFFFD\\x0003\uFFFD?c\\x0014"
 						},
 						{
 							"uri": "https://annuaire-entreprises.data.gouv.fr/lp/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "h8OoQF8aZ4_iMU07rK42fq3DN-bq8tYMtAVok2PxNENc0RMSTUnQd8x6AFY1fzxnvViLFV6yEMkrSs1k-bVc7aFNl0fyjvYtAvBNZO2Eil1FY9BfwtD6GrnkHnthq8WG3h2D7BjpDdRD2s_EoWJAeUjMfA7p-6NRRZcFqvcrFO_HQ-WBa5WNiCfxtW1r4ue847JRDUyQl_rg2avpEIyMF8KT-3DLKrn7kgq2OFaZbSex3Et0FXnh9AuNg4kj_dO6lBW70REuQoKU_rNve9OlHw",
-							"otherinfo": "\uFFFD\u00E8@_\\x001ag\uFFFD\uFFFD1M;\uFFFD\uFFFD6~\uFFFD\uFFFD7\uFFFD\uFFFD\uFFFD\uFFFD\\x000c\uFFFD\\x0005h\uFFFDc\uFFFD4C\\\uFFFD\\x0013\\x0012MI\uFFFDw\uFFFDz\\x0000V5<g\uFFFDX\uFFFD\\x0015^\uFFFD\\x0010\uFFFD+J\uFFFDd\uFFFD\uFFFD\\\uFFFDM\uFFFDG\uFFFD\uFFFD-\\x0002\uFFFDMd\uD10A]Ec\uFFFD_\uFFFD\uFFFD\uFFFD\\x001a\uFFFD\uFFFD\\x001e{a\uFFFD\u0146\uFFFD\\x001d\uFFFD\uFFFD\\x0018\uFFFD\r\uFFFDC\uFFFD\uFFFD\u0121b@yH\uFFFD|\\x000e\uFFFD\uFFFD\uFFFDQE\uFFFD\\x0005\uFFFD\uFFFD+\\x0014\uFFFD\uFFFDC\uFFFDk\uFFFD\uFFFD\uFFFD'\uFFFDmk\uFFFD\uFFFD\uFFFDQ\rL\uFFFD\uFFFD\uFFFD\uFFFD\u066B\uFFFD\\x0010\uFFFD\uFFFD\\x0017\u0093\uFFFDp\uFFFD*\uFFFD\uFFFD\uFFFD\n\uFFFD8V\uFFFDm'\uFFFD\uFFFDKt\\x0015y\uFFFD\uFFFD\\x000b\uFFFD\uFFFD\uFFFD#\uFFFD\u04FA\uFFFD\\x0015\uFFFD\uFFFD\\x0011.B\uFFFD\uFFFD\uFFFD\uFFFDo{\u04E5\\x001f"
+							"evidence": "VTwHz-jk4A_XDE1aZucNN2ZaBJ_e9G0r9vVZi8PT-FV_3NV69jxeGdIR5KSu7tfJi4wC8gFITtb8L_2wzUdZMSOcF9VoVbV2OQ651eBqRyfy1IlQp5q_DxqsGAWGxgntNUOrHC9D0hb7QANWbkKDCENw9bg1c9M_oghC3n9mMNjtH3GjOccf4Pg22s8il7iMsGS0bAW6ghDX_Qhwwg2SbV_kft15qsyE75WnHy3b6UmwbYER205JjEZoXbPZX3KQ",
+							"otherinfo": "U<\\x0007\uFFFD\uFFFD\uFFFD\uFFFD\\x000f\uFFFD\\x000cMZf\uFFFD\r7fZ\\x0004\uFFFD\uFFFD\uFFFDm+\uFFFD\uFFFDY\uFFFD\uFFFD\uFFFD\uFFFDU\uFFFD\uFFFDz\uFFFD<^\\x0019\uFFFD\\x0011\u492E\uFFFD\uFFFD\u024B\uFFFD\\x0002\uFFFD\\x0001HN\uFFFD\uFFFD/\uFFFD\uFFFD\uFFFDGY1#\uFFFD\\x0017\uFFFDhU\uFFFDv9\\x000e\uFFFD\uFFFD\uFFFDjG'\uFFFD\u0509P\uFFFD\uFFFD\uFFFD\\x000f\\x001a\uFFFD\\x0018\\x0005\uFFFD\uFFFD\t\uFFFD5C\uFFFD\\x001c/C\uFFFD\\x0016\uFFFD@\\x0003VnB\uFFFD\\x0008Cp\uFFFD\uFFFD5s\uFFFD?\uFFFD\\x0008B\uFFFDf0\uFFFD\uFFFD\\x001fq\uFFFD9\uFFFD\\x001f\uFFFD\uFFFD6\uFFFD\uFFFD\"\uFFFD\uFFFD\uFFFD\uFFFDd\uFFFDl\\x0005\uFFFD\uFFFD\\x0010\uFFFD\uFFFD\\x0008p\uFFFD\r\uFFFDm_\uFFFD~\uFFFDy\uFFFD\u0304\uF567\\x001f-\uFFFD\uFFFDI\uFFFDm\uFFFD\\x0011\uFFFDNI\uFFFDFh]\uFFFD\uFFFD_r\uFFFD"
 						},
 						{
 							"uri": "https://annuaire-entreprises.data.gouv.fr/private/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "h8OoQF8aZ4_iMU07rK42fq3DN-bq8tYMtAVok2PxNENc0RMSTUnQd8x6AFY1fzxnvViLFV6yEMkrSs1k-bVc7aFNl0fyjvYtAvBNZO2Eil1FY9BfwtD6GrnkHnthq8WG3h2D7BjpDdRD2s_EoWJAeUjMfA7p-6NRRZcFqvcrFO_HQ-WBa5WNiCfxtW1r4ue847JRDUyQl_rg2avpEIyMF8KT-3DLKrn7kgq2OFaZbSex3Et0FXnh9AuNg4kj_dO6lBW70REuQoKU_rNve9OlHw",
-							"otherinfo": "\uFFFD\u00E8@_\\x001ag\uFFFD\uFFFD1M;\uFFFD\uFFFD6~\uFFFD\uFFFD7\uFFFD\uFFFD\uFFFD\uFFFD\\x000c\uFFFD\\x0005h\uFFFDc\uFFFD4C\\\uFFFD\\x0013\\x0012MI\uFFFDw\uFFFDz\\x0000V5<g\uFFFDX\uFFFD\\x0015^\uFFFD\\x0010\uFFFD+J\uFFFDd\uFFFD\uFFFD\\\uFFFDM\uFFFDG\uFFFD\uFFFD-\\x0002\uFFFDMd\uD10A]Ec\uFFFD_\uFFFD\uFFFD\uFFFD\\x001a\uFFFD\uFFFD\\x001e{a\uFFFD\u0146\uFFFD\\x001d\uFFFD\uFFFD\\x0018\uFFFD\r\uFFFDC\uFFFD\uFFFD\u0121b@yH\uFFFD|\\x000e\uFFFD\uFFFD\uFFFDQE\uFFFD\\x0005\uFFFD\uFFFD+\\x0014\uFFFD\uFFFDC\uFFFDk\uFFFD\uFFFD\uFFFD'\uFFFDmk\uFFFD\uFFFD\uFFFDQ\rL\uFFFD\uFFFD\uFFFD\uFFFD\u066B\uFFFD\\x0010\uFFFD\uFFFD\\x0017\u0093\uFFFDp\uFFFD*\uFFFD\uFFFD\uFFFD\n\uFFFD8V\uFFFDm'\uFFFD\uFFFDKt\\x0015y\uFFFD\uFFFD\\x000b\uFFFD\uFFFD\uFFFD#\uFFFD\u04FA\uFFFD\\x0015\uFFFD\uFFFD\\x0011.B\uFFFD\uFFFD\uFFFD\uFFFDo{\u04E5\\x001f"
+							"evidence": "h8OoQF8aZ4_iMU07rK42flJ5yGwtrTGVY7HavEtKV5WBKAmzU-uI0mYohUPOB7Nky1RhvkGgml-PEPaswsIHW7YiZ25Uvu_Uq8cceCN3uT6Dt9f-aK3JptTjKM0511-9_9N33ZWIpp2w4m6CxO831rbOQEz9szGaa93VBKHOfpZ0tIyJ_r7aVcs5b85_VU5peFDOE0I3n9xcF3WiBYF2iQLHENhygKd_xkXwR8HMeryDCtWDEmfn0mP8hgPVP2MU",
+							"otherinfo": "\uFFFD\u00E8@_\\x001ag\uFFFD\uFFFD1M;\uFFFD\uFFFD6~Ry\uFFFDl-\uFFFD1\uFFFDc\uFFFD\u06BCKJW\uFFFD\uFFFD(\t\uFFFDS\uFFFD\uFFFDf(\uFFFDC\uFFFD\\x0007\uFFFDd\uFFFDTa\uFFFDA\uFFFD\uFFFD_\uFFFD\\x0010\uFFFD\uFFFD\uFFFD\uFFFD\\x0007[\uFFFD\"gnT\uFFFD\uFFFD\u052B\uFFFD\\x001cx#w\uFFFD>\uFFFD\uFFFD\uFFFD\uFFFDh\uFFFD\u0266\uFFFD\uFFFD(\uFFFD9\uFFFD_\uFFFD\uFFFD\uFFFDw\u0755\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDn\uFFFD\uFFFD\uFFFD7\u05B6\uFFFD@L\uFFFD\uFFFD1\uFFFDk\uFFFD\uFFFD\\x0004\uFFFD\uFFFD~\uFFFDt\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDU\uFFFD9o\uFFFDUNixP\uFFFD\\x0013B7\uFFFD\uFFFD\\\\x0017u\uFFFD\\x0005\uFFFDv\uFFFD\\x0002\uFFFD\\x0010\uFFFDr\uFFFD\uFFFD\uFFFDE\uFFFDG\uFFFD\uFFFDz\uFFFD\uFFFD\n\u0543\\x0012g\uFFFD\uFFFDc\uFFFD\uFFFD\\x0003\uFFFD?c\\x0014"
 						},
 						{
-							"uri": "https://annuaire-entreprises.data.gouv.fr/rechercher/carte",
+							"uri": "https://annuaire-entreprises.data.gouv.fr/rechercher/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "Zd__1N1-6sf4gdz2S3tyyLF4WKWQY2eTZhSRBqsDRpAXidDOCxJlCYr5KaHJFXQb3pE-I9xNjm1zQV_keQ7IW_7zoJjBsOYWPZwQ7CU9dU76CkckTeOrjKPpbrvKUpQGBcEFpZR_KTLJuyZ_ZZyTT0KCQ0vFjV3hQ3Ey70ynrP9ezdxjbTm8SkvAkxazluxU2hiWRbbWxpyd6QzKMsXJShUbskvmHzFvGHWNub8GNb9S8NMjSsHiW-4AruvoTSq35QL9jqc-dPbE2AalEn6FvA",
-							"otherinfo": "e\uFFFD\uFFFD\uFFFD\uFFFD~\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDK{r\u0231xX\uFFFD\uFFFDcg\uFFFDf\\x0014\uFFFD\\x0006\uFFFD\\x0003F\uFFFD\\x0017\uFFFD\uFFFD\uFFFD\\x000b\\x0012e\t\uFFFD\uFFFD)\uFFFD\uFFFD\\x0015t\\x001b\u0791>#\uFFFDM\uFFFDmsA_\uFFFDy\\x000e\uFFFD[\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x0016=\uFFFD\\x0010\uFFFD%=uN\uFFFD\nG$M\u3ACC\uFFFD\uFFFDn\uFFFD\uFFFDR\uFFFD\\x0006\\x0005\uFFFD\\x0005\uFFFD\uFFFD)2\u027B&e\uFFFD\uFFFDOB\uFFFDCK\u014D]\uFFFDCq2\uFFFDL\uFFFD\uFFFD\uFFFD^\uFFFD\uFFFDcm9\uFFFDJK\uFFFD\uFFFD\\x0016\uFFFD\uFFFD\uFFFDT\uFFFD\\x0018\uFFFDE\uFFFD\uFFFD\u019C\uFFFD\uFFFD\\x000c\uFFFD2\uFFFD\uFFFDJ\\x0015\\x001b\uFFFDK\uFFFD\\x001f1o\\x0018u\uFFFD\uFFFD\uFFFD\\x00065\uFFFDR\uFFFD\uFFFD#J\uFFFD\uFFFD[\uFFFD\\x0000\uFFFD\uFFFD\uFFFDM*\uFFFD\uFFFD\\x0002\uFFFD\uFFFD\uFFFD>t\uFFFD\uFFFD\uFFFD\\x0006\uFFFD\\x0012~\uFFFD\uFFFD"
+							"evidence": "h8OoQF8aZ4_iMU07rK42flJ5yGwtrTGVY7HavEtKV5WBKAmzU-uI0mYohUPOB7Nky1RhvkGgml-PEPaswsIHW7YiZ25Uvu_Uq8cceCN3uT6Dt9f-aK3JptTjKM0511-9_9N33ZWIpp2w4m6CxO831rbOQEz9szGaa93VBKHOfpZ0tIyJ_r7aVcs5b85_VU5peFDOE0I3n9xcF3WiBYF2iQLHENhygKd_xkXwR8HMeryDCtWDEmfn0mP8hgPVP2MU",
+							"otherinfo": "\uFFFD\u00E8@_\\x001ag\uFFFD\uFFFD1M;\uFFFD\uFFFD6~Ry\uFFFDl-\uFFFD1\uFFFDc\uFFFD\u06BCKJW\uFFFD\uFFFD(\t\uFFFDS\uFFFD\uFFFDf(\uFFFDC\uFFFD\\x0007\uFFFDd\uFFFDTa\uFFFDA\uFFFD\uFFFD_\uFFFD\\x0010\uFFFD\uFFFD\uFFFD\uFFFD\\x0007[\uFFFD\"gnT\uFFFD\uFFFD\u052B\uFFFD\\x001cx#w\uFFFD>\uFFFD\uFFFD\uFFFD\uFFFDh\uFFFD\u0266\uFFFD\uFFFD(\uFFFD9\uFFFD_\uFFFD\uFFFD\uFFFDw\u0755\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDn\uFFFD\uFFFD\uFFFD7\u05B6\uFFFD@L\uFFFD\uFFFD1\uFFFDk\uFFFD\uFFFD\\x0004\uFFFD\uFFFD~\uFFFDt\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDU\uFFFD9o\uFFFDUNixP\uFFFD\\x0013B7\uFFFD\uFFFD\\\\x0017u\uFFFD\\x0005\uFFFDv\uFFFD\\x0002\uFFFD\\x0010\uFFFDr\uFFFD\uFFFD\uFFFDE\uFFFDG\uFFFD\uFFFDz\uFFFD\uFFFD\n\u0543\\x0012g\uFFFD\uFFFDc\uFFFD\uFFFD\\x0003\uFFFD?c\\x0014"
 						},
 						{
 							"uri": "https://annuaire-entreprises.data.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "D8MQPOf6DXb1vgHfNhxZ2_tIWyKtzRttFdZYf1FOlxFHtKJvVtiRpYLIDDSwx438EwaCNGtcXfnnqm2FDUcGRk0G3INQPmoVTB5utyuJVKW__0DvsajSjOtmSFIqn9cLBXkeKT8tXRBuzWBvAn1PkMHtTrcY8oMkidWvHKX-9ymTrOb9pdIDr1OJTx578zrM60BrsXrZceRYObZvb15OR9iCMdjEYRSDoQJYxZW1h0PVZ5gDOsJ17n4gzFCY5TAQAmEa2Rb0AknW3hKdpBoP7w",
-							"otherinfo": "\\x000f\uFFFD\\x0010<\uFFFD\uFFFD\rv\uFFFD\uFFFD\\x0001\uFFFD6\\x001cY\uFFFD\uFFFDH[\"\uFFFD\uFFFD\\x001bm\\x0015\uFFFDXQN\uFFFD\\x0011G\uFFFD\uFFFDoV\u0611\uFFFD\uFFFD\uFFFD\\x000c4\uFFFD\u01CD\uFFFD\\x0013\\x0006\uFFFD4k\\]\uFFFD\uFFFDm\uFFFD\rG\\x0006FM\\x0006\u0703P>j\\x0015L\\x001en\uFFFD+\uFFFDT\uFFFD\uFFFD\uFFFD@\uFC68\u048C\uFFFDfHR*\uFFFD\uFFFD\\x000b\\x0005y\\x001e)?-]\\x0010n\uFFFD`o\\x0002}O\uFFFD\uFFFD\uFFFDN\uFFFD\\x0018\uFFFD$\uFFFD\u056F\\x001c\uFFFD\uFFFD\uFFFD)\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x0003\uFFFDS\uFFFDO\\x001e{\uFFFD:\uFFFD\uFFFD@k\uFFFDz\uFFFDq\uFFFDX9\uFFFDoo^NG\u06021\uFFFD\uFFFDa\\x0014\uFFFD\uFFFD\\x0002X\u0155\uFFFD\uFFFDC\uFFFDg\uFFFD\\x0003:\uFFFDu\uFFFD~ \uFFFDP\uFFFD\uFFFD0\\x0010\\x0002a\\x001a\uFFFD\\x0016\uFFFD\\x0002I\uFFFD\uFFFD\\x0012\uFFFD\uFFFD\\x001a\\x000f\uFFFD"
+							"evidence": "HgkwZ48m7mmAcEswQzM80Hwg2Yex_ZncJ2lFZ_M4GTRYLACU_KdLUnT8hh2YRCcDPe3oQIdiSikSyqPsK5lZAKB1X3g2fe--y1exQ08aUIRxdu2h0DTsfsi8xge3YuMQtcRJPI799YCksiHdZQEbSLceR5ubptoURPn_-0XWGAl-7cFogMUJ2Jwi0bcpI8LlGEWepXnVo_hW-HV9g3T-sQp-rCizmUoqOOYlnzUZcjZ31QL52cfsUTrhSnvNqilN",
+							"otherinfo": "\\x001e\t0g\uFFFD&\uFFFDi\uFFFDpK0C3<\uFFFD| \u0647\uFFFD\uFFFD\uFFFD\uFFFD'iEg\uFFFD8\\x00194X,\\x0000\uFFFD\uFFFD\uFFFDKRt\uFFFD\uFFFD\\x001d\uFFFDD'\\x0003=\uFFFD\uFFFD@\uFFFDbJ)\\x0012\u02A3\uFFFD+\uFFFDY\\x0000\uFFFDu_x6}\uFFFD\uFFFDW\uFFFDCO\\x001aP\uFFFDqv\uFFFD\uFFFD4\uFFFD~\u023C\uFFFD\\x0007\uFFFDb\uFFFD\\x0010\uFFFD\uFFFDI<\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD!\uFFFDe\\x0001\\x001bH\uFFFD\\x001eG\uFFFD\uFFFD\uFFFD\uFFFD\\x0014D\uFFFD\uFFFD\uFFFDE\uFFFD\\x0018\t~\uFFFD\uFFFDh\uFFFD\uFFFD\t\u061C\"\u0477)#\uFFFD\uFFFD\\x0018E\uFFFD\uFFFDy\u0563\uFFFDV\uFFFDu}\uFFFDt\uFFFD\uFFFD\n~\uFFFD(\uFFFD\uFFFDJ*8\uFFFD%\uFFFD5\\x0019r6w\uFFFD\\x0002\uFFFD\uFFFD\uFFFD\uFFFDQ:\uFFFDJ{\u036A)M"
 						}
 					],
-					"count": "10",
+					"count": "12",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>e\uFFFD\uFFFD\uFFFD\uFFFD~\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDK{r\uFFFDuHk\uFFFD\uFFFD\uFFFD\\x0002\uFFFD\uFFFDd\uFFFD</p><p>2\uFFFD\uFFFDZ\uFFFD\uFFFD\\x0011</p><p>@\uFFFD\uFFFD&2\uFFFD,D\uFFFDm\\x0019\uFFFD8\uFFFD\uFFFD\\x0002\uFFFD\uFFFD\u0799\uF495\uFFFD=R\uFFFD@\uFFFD\\x0019\uFFFD{\uFFFD\uFFFD\uFFFD\uFFFD&g\uFFFDs=y\\x001d\uFFFD\\\uFFFD\uFFFD\uFFFD\uFFFD\\x0008_EO\uFFFD\uFFFD\\x000esL\uFFFD\uFFFDM\uFFFDdv\uFFFD\uFFFD\\x0005\uFFFD\uFFFD\uFFFD1#\uFFFD{\uFFFD\uFFFD\uFFFD\uFFFD\\x0000\uFFFDKULY)\uFFFDK\\x001b\uFFFD\\x0008R%9T&\uFFFD\\x001cs\\x0014I\uFFFDj\uFFFD\uFFFDm\uFFFD\uFFFD\uFFFD\u01F7C\uFFFD\uFFFD\uFFFD:\\x001f\uFFFD\uFFFD\uFFFD\u05AB\uFFFD\uFFFDm\\x0002,\\x0016\\x001eb9;\\x0001Vt\uFFFD\uFFFDmx\uFFFD\uFFFD2oA5:b\uFFFD*1R\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\\uFFFD\\x0010\uFFFD\uFFFD\\x0014\uFFFDH?C+</p>",
+					"otherinfo": "<p>e\uFFFD\uFFFD\uFFFD\uFFFD~\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDK{r\u0239\\x0007\uFFFD\\x0005*\uFFFDr\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD:\\x001b%\uFFFD\uFFFD\uFFFD3&\uFFFD\\x000f\uFFFD\uFFFD6\uFFFD\uFFFDr\\x001e\uFFFDZ\uFFFD\uFFFDZ\uFFFD\uFFFD\\*\uFFFD\uFFFD\uFFFDl\uFFFD\uFFFDu]\uFFFD6\uFFFD%C\uFFFD\uFFFD1\uFFFD\uFFFD\uFFFDQ\uFFFDtw\\x0004.\uFFFD-\uFFFD\uFFFD\u0651\\x0007'J\u0476\uFFFDn_?\uFFFD\\x0000y\uFFFD\uFFFD\\x001f!\\x0001Z\uFFFD\uFFFD|8A9B\uFFFD\uFFFDe\uFFFD\uFFFD\uFFFDn5B|\"\uFFFD\uFFFD>'\uFFFD&\\x0006<\uFFFD\uFFFD>\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDp7\uFFFD\uFFFD\u0381u:\uFFFD\uFFFD\\x0006a\uFFFD($\uFFFDm\uFFFDP\uFFFDVU\\x0006$#\uFFFD'u\uFFFD\uFFFD\uFFFD\u04A2\uFFFD\uFFFD\uFFFD\\x0012\u04A3\\x0015\\x0015\uFFFD\\x000c9\uFFFD\uFFFD\uFFFD\u04D5\uFFFD\\x001b\uFFFD</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "35"
+					"sourceid": "6"
+				},
+				{
+					"pluginid": "10019",
+					"alertRef": "10019-1",
+					"alert": "Content-Type Header Missing",
+					"name": "Content-Type Header Missing",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
+					"desc": "<p>The Content-Type header was either missing or empty.</p>",
+					"instances":[ 
+						{
+							"uri": "https://annuaire-entreprises.data.gouv.fr/api/",
+							"method": "GET",
+							"param": "content-type",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						}
+					],
+					"count": "1",
+					"solution": "<p>Ensure each page is setting the specific and appropriate content-type value for the content being delivered.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p>",
+					"cweid": "345",
+					"wascid": "12",
+					"sourceid": "56"
 				},
 				{
 					"pluginid": "10109",
@@ -598,6 +665,14 @@
 							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
 						},
 						{
+							"uri": "https://annuaire-entreprises.data.gouv.fr/annonces/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<noscript><div class=\"challengejs-container\"><div class=\"container\"><div class=\"challengejs-body\"><div class=\"challengejs-card\"><img src=\"/.well-known/baleen/challengejs/assets/logo.svg\"><div class=\"challengejs-message-1\">Le JavaScript n'est pas activ\u00E9 sur votre navigateur.</div><div class=\"separator\"></div><div class=\"challengejs-message-2\">Le JavaScript n'est pas activ\u00E9 sur votre navigateur. Pour vous permettre de naviguer correctement sur notre site, il est n\u00E9cessaire qu'il soit activ\u00E9.</div><div class=\"challengejs-message-3\"><div class=\"how\"><span>Comment activer le JavaScript ?</span></div><div class=\"drop\"><div class=\"how-to chrome\"><div>Chrome</div><a href=\"https://support.google.com/chrome\">https://support.google.com/chrome</a></div><div class=\"how-to firefox\"><div>Mozilla Firefox</div><a href=\"https://support.mozilla.org/fr/home\">https://support.mozilla.org/fr/home</a></div><div class=\"how-to safari\"><div>Safari</div><a href=\"https://www.apple.com/support/safari/\">https://www.apple.com/support/safari/</a></div><div class=\"how-to opera\"><div>Opera</div><a href=\"https://support.google.com/adsense/answer/12654?hl=fr\">https://support.google.com/adsense/answer/12654?hl=fr</a></div><div class=\"how-to explorer\"><div>Internet Explorer</div><a href=\"https://support.microsoft.com/product/internet-explorer\">https://support.microsoft.com/product/internet-explorer</a></div></div></div></div></div></div></div></noscript>",
+							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
+						},
+						{
 							"uri": "https://annuaire-entreprises.data.gouv.fr/departements/",
 							"method": "GET",
 							"param": "",
@@ -630,14 +705,6 @@
 							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
 						},
 						{
-							"uri": "https://annuaire-entreprises.data.gouv.fr/justificatif-immatriculation-pdf/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<noscript><div class=\"challengejs-container\"><div class=\"container\"><div class=\"challengejs-body\"><div class=\"challengejs-card\"><img src=\"/.well-known/baleen/challengejs/assets/logo.svg\"><div class=\"challengejs-message-1\">Le JavaScript n'est pas activ\u00E9 sur votre navigateur.</div><div class=\"separator\"></div><div class=\"challengejs-message-2\">Le JavaScript n'est pas activ\u00E9 sur votre navigateur. Pour vous permettre de naviguer correctement sur notre site, il est n\u00E9cessaire qu'il soit activ\u00E9.</div><div class=\"challengejs-message-3\"><div class=\"how\"><span>Comment activer le JavaScript ?</span></div><div class=\"drop\"><div class=\"how-to chrome\"><div>Chrome</div><a href=\"https://support.google.com/chrome\">https://support.google.com/chrome</a></div><div class=\"how-to firefox\"><div>Mozilla Firefox</div><a href=\"https://support.mozilla.org/fr/home\">https://support.mozilla.org/fr/home</a></div><div class=\"how-to safari\"><div>Safari</div><a href=\"https://www.apple.com/support/safari/\">https://www.apple.com/support/safari/</a></div><div class=\"how-to opera\"><div>Opera</div><a href=\"https://support.google.com/adsense/answer/12654?hl=fr\">https://support.google.com/adsense/answer/12654?hl=fr</a></div><div class=\"how-to explorer\"><div>Internet Explorer</div><a href=\"https://support.microsoft.com/product/internet-explorer\">https://support.microsoft.com/product/internet-explorer</a></div></div></div></div></div></div></div></noscript>",
-							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
-						},
-						{
 							"uri": "https://annuaire-entreprises.data.gouv.fr/lp/",
 							"method": "GET",
 							"param": "",
@@ -654,7 +721,7 @@
 							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
 						},
 						{
-							"uri": "https://annuaire-entreprises.data.gouv.fr/rechercher/carte",
+							"uri": "https://annuaire-entreprises.data.gouv.fr/rechercher/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -676,7 +743,7 @@
 					"reference": "",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "7"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10015",
@@ -783,7 +850,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control</p><p>https://grayduck.mn/2021/09/13/cache-control-recommendations/</p>",
 					"cweid": "525",
 					"wascid": "13",
-					"sourceid": "7"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10050",
@@ -818,7 +885,7 @@
 					"reference": "<p>https://tools.ietf.org/html/rfc7234</p><p>https://tools.ietf.org/html/rfc7231</p><p>https://www.rfc-editor.org/rfc/rfc9110.html</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "57"
+					"sourceid": "56"
 				},
 				{
 					"pluginid": "90005",
@@ -925,6 +992,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://annuaire-entreprises.data.gouv.fr/robots.txt",
+							"method": "GET",
+							"param": "Sec-Fetch-Site",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://annuaire-entreprises.data.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
@@ -933,13 +1008,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-Site header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "7"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -982,7 +1057,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "7"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10112",
@@ -999,49 +1074,68 @@
 							"method": "GET",
 							"param": "annuaire-entreprises-session-infra-01-lvl1",
 							"attack": "",
-							"evidence": "website-remote",
-							"otherinfo": "\ncookie:annuaire-entreprises-session-infra-01-lvl1\ncookie:annuaire-entreprises-session-infra-01-lvl2"
+							"evidence": "website-localhost",
+							"otherinfo": "\ncookie:annuaire-entreprises-session-infra-01-lvl1"
 						},
 						{
 							"uri": "https://annuaire-entreprises.data.gouv.fr/api",
 							"method": "GET",
 							"param": "annuaire-entreprises-session-infra-01-lvl1",
 							"attack": "",
-							"evidence": "website-remote",
+							"evidence": "website-localhost",
 							"otherinfo": "\ncookie:annuaire-entreprises-session-infra-01-lvl1"
 						},
 						{
-							"uri": "https://annuaire-entreprises.data.gouv.fr/api",
-							"method": "GET",
-							"param": "annuaire-entreprises-session-infra-01-lvl2",
-							"attack": "",
-							"evidence": "35653e41270dbd2c",
-							"otherinfo": "\ncookie:annuaire-entreprises-session-infra-01-lvl2"
-						},
-						{
-							"uri": "https://annuaire-entreprises.data.gouv.fr/labels-certificats",
+							"uri": "https://annuaire-entreprises.data.gouv.fr/donnees-financieres",
 							"method": "GET",
 							"param": "annuaire-entreprises-session-infra-01-lvl1",
 							"attack": "",
-							"evidence": "website-remote",
+							"evidence": "website-localhost",
 							"otherinfo": "\ncookie:annuaire-entreprises-session-infra-01-lvl1"
-						},
-						{
-							"uri": "https://annuaire-entreprises.data.gouv.fr/labels-certificats",
-							"method": "GET",
-							"param": "annuaire-entreprises-session-infra-01-lvl2",
-							"attack": "",
-							"evidence": "35653e41270dbd2c",
-							"otherinfo": "\ncookie:annuaire-entreprises-session-infra-01-lvl2"
 						}
 					],
-					"count": "5",
+					"count": "3",
 					"solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
-					"otherinfo": "<p></p><p>cookie:annuaire-entreprises-session-infra-01-lvl1</p><p>cookie:annuaire-entreprises-session-infra-01-lvl2</p>",
+					"otherinfo": "<p></p><p>cookie:annuaire-entreprises-session-infra-01-lvl1</p>",
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "8"
+					"sourceid": "10"
+				},
+				{
+					"pluginid": "10049",
+					"alertRef": "10049",
+					"alert": "Storable and Cacheable Content",
+					"name": "Storable and Cacheable Content",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
+					"desc": "<p>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users.  If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
+					"instances":[ 
+						{
+							"uri": "https://annuaire-entreprises.data.gouv.fr/.well-known/baleen/challengejs/assets/logo.svg",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
+							"uri": "https://annuaire-entreprises.data.gouv.fr/.well-known/baleen/challengejs/assets/style.css",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						}
+					],
+					"count": "2",
+					"solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information.  If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request. </p>",
+					"otherinfo": "<p>In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.</p>",
+					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
+					"cweid": "524",
+					"wascid": "13",
+					"sourceid": "40"
 				},
 				{
 					"pluginid": "10049",
@@ -1071,14 +1165,6 @@
 						},
 						{
 							"uri": "https://annuaire-entreprises.data.gouv.fr/administration/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "no-cache",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://annuaire-entreprises.data.gouv.fr/departements/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1118,14 +1204,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://annuaire-entreprises.data.gouv.fr/private/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "no-cache",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://annuaire-entreprises.data.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "",
@@ -1142,7 +1220,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "11",
+					"count": "9",
 					"solution": "",
 					"otherinfo": "",
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",

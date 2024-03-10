@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 3 Mar 2024 02:26:04",
+	"@generated": "Sun, 10 Mar 2024 02:26:48",
 	"site":[ 
 		{
 			"@name": "https://competencevalidee.pole-emploi.fr",
@@ -245,6 +245,33 @@
 					"cweid": "345",
 					"wascid": "15",
 					"sourceid": "1"
+				},
+				{
+					"pluginid": "10003",
+					"alertRef": "10003",
+					"alert": "Vulnerable JS Library",
+					"name": "Vulnerable JS Library",
+					"riskcode": "2",
+					"confidence": "2",
+					"riskdesc": "Medium (Medium)",
+					"desc": "<p>The identified library ua-parser-js, version 1.0.2 is vulnerable.</p>",
+					"instances":[ 
+						{
+							"uri": "https://competencevalidee.pole-emploi.fr/static/js/2.842fb5d4.chunk.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "q.VERSION=\"1.0.2\",q.BROWSER=F([f,h,\"major\"]),q.CPU=",
+							"otherinfo": "CVE-2022-25927\n"
+						}
+					],
+					"count": "1",
+					"solution": "<p>Please upgrade to the latest version of ua-parser-js.</p>",
+					"otherinfo": "<p>CVE-2022-25927</p><p></p>",
+					"reference": "<p>https://github.com/advisories/GHSA-fhg7-m89q-25r3</p><p>https://nvd.nist.gov/vuln/detail/CVE-2022-25927</p><p>https://github.com/faisalman/ua-parser-js/commit/a6140a17dd0300a35cfc9cff999545f267889411</p><p>https://github.com/faisalman/ua-parser-js</p><p>https://github.com/faisalman/ua-parser-js/security/advisories/GHSA-fhg7-m89q-25r3</p><p>https://security.snyk.io/vuln/SNYK-JS-UAPARSERJS-3244450</p><p></p>",
+					"cweid": "829",
+					"wascid": "-1",
+					"sourceid": "32"
 				},
 				{
 					"pluginid": "10010",
@@ -807,12 +834,12 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "The origin domain used for comparison was: \ncompetencevalidee.pole-emploi.fr\nTS016fc3b0=0150c672c38ad79edbb7299d289a08f7e207e3fe166b7657f8231d6278f55749686fb1a1a4f4c8eff7f77618e0e0d1fe59f9863a92\n"
+							"otherinfo": "The origin domain used for comparison was: \ncompetencevalidee.pole-emploi.fr\nTS016fc3b0=0150c672c34c0df1d04fdd22546a1c9a78e2739c8d1109d81330e12dd394fc105c7b8ab81b1dd3bb6f26e5dbb808083d0d819c87ab\n"
 						}
 					],
 					"count": "1",
 					"solution": "<p>Always scope cookies to a FQDN (Fully Qualified Domain Name).</p>",
-					"otherinfo": "<p>The origin domain used for comparison was: </p><p>competencevalidee.pole-emploi.fr</p><p>TS016fc3b0=0150c672c38ad79edbb7299d289a08f7e207e3fe166b7657f8231d6278f55749686fb1a1a4f4c8eff7f77618e0e0d1fe59f9863a92</p><p></p>",
+					"otherinfo": "<p>The origin domain used for comparison was: </p><p>competencevalidee.pole-emploi.fr</p><p>TS016fc3b0=0150c672c34c0df1d04fdd22546a1c9a78e2739c8d1109d81330e12dd394fc105c7b8ab81b1dd3bb6f26e5dbb808083d0d819c87ab</p><p></p>",
 					"reference": "<p>https://tools.ietf.org/html/rfc6265#section-4.1</p><p>https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes.html</p><p>https://code.google.com/p/browsersec/wiki/Part2#Same-origin_policy_for_cookies</p>",
 					"cweid": "565",
 					"wascid": "15",
@@ -929,17 +956,9 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
-						},
-						{
-							"uri": "https://competencevalidee.pole-emploi.fr/sitemap.xml",
-							"method": "GET",
-							"param": "Sec-Fetch-Dest",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"solution": "<p>Ensure that Sec-Fetch-Dest header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
@@ -972,17 +991,9 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
-						},
-						{
-							"uri": "https://competencevalidee.pole-emploi.fr/sitemap.xml",
-							"method": "GET",
-							"param": "Sec-Fetch-Mode",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"solution": "<p>Ensure that Sec-Fetch-Mode header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
@@ -1015,23 +1026,15 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
-						},
-						{
-							"uri": "https://competencevalidee.pole-emploi.fr/sitemap.xml",
-							"method": "GET",
-							"param": "Sec-Fetch-Site",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"solution": "<p>Ensure that Sec-Fetch-Site header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -1058,17 +1061,9 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
-						},
-						{
-							"uri": "https://competencevalidee.pole-emploi.fr/sitemap.xml",
-							"method": "GET",
-							"param": "Sec-Fetch-User",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"solution": "<p>Ensure that Sec-Fetch-User header is included in user initiated requests.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",

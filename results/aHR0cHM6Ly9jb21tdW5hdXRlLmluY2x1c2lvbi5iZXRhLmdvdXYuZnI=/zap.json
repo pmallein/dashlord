@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 3 Mar 2024 02:28:15",
+	"@generated": "Sun, 10 Mar 2024 02:27:39",
 	"site":[ 
 		{
 			"@name": "https://communaute.inclusion.beta.gouv.fr",
@@ -52,7 +52,7 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 2: \"q\" ]."
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/documentation/",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/news/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -60,7 +60,7 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"q\" ]."
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/documentation/",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/news/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -68,7 +68,7 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 2: \"q\" ]."
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/members/seekers/",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/static/javascripts/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -76,7 +76,7 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"q\" ]."
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/members/seekers/",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/static/javascripts/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -84,7 +84,7 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 2: \"q\" ]."
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/surveys/dsp/create/",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/static/machina/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -92,7 +92,23 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"q\" ]."
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/surveys/dsp/create/",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/static/machina/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form class=\"mb-3 mb-xl-0 me-xl-2\" action=\"/search/\" name=\"header_search_form\">",
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 2: \"q\" ]."
+						},
+						{
+							"uri": "https://communaute.inclusion.beta.gouv.fr/static/stylesheets/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form class=\"mb-3 mb-xl-0 me-xl-2\" action=\"/search/\" name=\"header_search_form\">",
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"q\" ]."
+						},
+						{
+							"uri": "https://communaute.inclusion.beta.gouv.fr/static/stylesheets/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -100,13 +116,13 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 2: \"q\" ]."
 						}
 					],
-					"count": "10",
+					"count": "12",
 					"solution": "<p>Phase: Architecture and Design</p><p>Use a vetted library or framework that does not allow this weakness to occur or provides constructs that make this weakness easier to avoid.</p><p>For example, use anti-CSRF packages such as the OWASP CSRFGuard.</p><p></p><p>Phase: Implementation</p><p>Ensure that your application is free of cross-site scripting issues, because most CSRF defenses can be bypassed using attacker-controlled script.</p><p></p><p>Phase: Architecture and Design</p><p>Generate a unique nonce for each form, place the nonce into the form, and verify the nonce upon receipt of the form. Be sure that the nonce is not predictable (CWE-330).</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Identify especially dangerous operations. When the user performs a dangerous operation, send a separate confirmation request to ensure that the user intended to perform that operation.</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Use the ESAPI Session Management control.</p><p>This control includes a component for CSRF.</p><p></p><p>Do not use the GET method for any request that triggers a state change.</p><p></p><p>Phase: Implementation</p><p>Check the HTTP Referer header to see if the request originated from an expected page. This could break legitimate functionality, because users or proxies may have disabled sending the Referer for privacy reasons.</p>",
 					"otherinfo": "<p>No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"q\" ].</p>",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10055",
@@ -123,7 +139,7 @@
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
-							"evidence": "font-src 'self' https://fonts.gstatic.com/ data:; frame-src 'self' https://tally.so; script-src 'self' https://cdn.jsdelivr.net/npm/chart.js@4.0.1 https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js https://browser.sentry-cdn.com https://js.sentry-cdn.com https://tally.so https://matomo.inclusion.beta.gouv.fr/ 'nonce-US9bmt06hm9OvQ7E6Eb+rg=='; default-src 'self'; style-src-elem 'self' https://fonts.googleapis.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; connect-src 'self' *.sentry.io https://matomo.inclusion.beta.gouv.fr/; img-src 'self' data: cellar-c2.services.clever-cloud.com https://matomo.inclusion.beta.gouv.fr/; script-src-elem 'self' https://cdn.jsdelivr.net/npm/chart.js@4.0.1 https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js https://browser.sentry-cdn.com https://js.sentry-cdn.com https://tally.so https://matomo.inclusion.beta.gouv.fr/ 'nonce-US9bmt06hm9OvQ7E6Eb+rg=='",
+							"evidence": "font-src 'self' https://fonts.gstatic.com/ data:; frame-src 'self' https://tally.so; script-src 'self' https://cdn.jsdelivr.net/npm/chart.js@4.0.1 https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js https://browser.sentry-cdn.com https://js.sentry-cdn.com https://tally.so https://matomo.inclusion.beta.gouv.fr/ 'nonce-kZapVytTVUzBP1UdWTAfAQ=='; default-src 'self'; style-src-elem 'self' https://fonts.googleapis.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; connect-src 'self' *.sentry.io https://matomo.inclusion.beta.gouv.fr/; img-src 'self' data: cellar-c2.services.clever-cloud.com https://matomo.inclusion.beta.gouv.fr/; script-src-elem 'self' https://cdn.jsdelivr.net/npm/chart.js@4.0.1 https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js https://browser.sentry-cdn.com https://js.sentry-cdn.com https://tally.so https://matomo.inclusion.beta.gouv.fr/ 'nonce-kZapVytTVUzBP1UdWTAfAQ=='",
 							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nframe-ancestors, form-action\n\nThe directive(s): frame-ancestors, form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything."
 						},
 						{
@@ -131,7 +147,7 @@
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
-							"evidence": "font-src 'self' https://fonts.gstatic.com/ data:; frame-src 'self' https://tally.so; script-src 'self' https://cdn.jsdelivr.net/npm/chart.js@4.0.1 https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js https://browser.sentry-cdn.com https://js.sentry-cdn.com https://tally.so https://matomo.inclusion.beta.gouv.fr/ 'nonce-hzFJNXsx+7XoW13z6qWaXQ=='; default-src 'self'; style-src-elem 'self' https://fonts.googleapis.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; connect-src 'self' *.sentry.io https://matomo.inclusion.beta.gouv.fr/; img-src 'self' data: cellar-c2.services.clever-cloud.com https://matomo.inclusion.beta.gouv.fr/; script-src-elem 'self' https://cdn.jsdelivr.net/npm/chart.js@4.0.1 https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js https://browser.sentry-cdn.com https://js.sentry-cdn.com https://tally.so https://matomo.inclusion.beta.gouv.fr/ 'nonce-hzFJNXsx+7XoW13z6qWaXQ=='",
+							"evidence": "font-src 'self' https://fonts.gstatic.com/ data:; frame-src 'self' https://tally.so; script-src 'self' https://cdn.jsdelivr.net/npm/chart.js@4.0.1 https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js https://browser.sentry-cdn.com https://js.sentry-cdn.com https://tally.so https://matomo.inclusion.beta.gouv.fr/ 'nonce-rgdwtNrJLoU1OFJOXBc6RQ=='; default-src 'self'; style-src-elem 'self' https://fonts.googleapis.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; connect-src 'self' *.sentry.io https://matomo.inclusion.beta.gouv.fr/; img-src 'self' data: cellar-c2.services.clever-cloud.com https://matomo.inclusion.beta.gouv.fr/; script-src-elem 'self' https://cdn.jsdelivr.net/npm/chart.js@4.0.1 https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js https://browser.sentry-cdn.com https://js.sentry-cdn.com https://tally.so https://matomo.inclusion.beta.gouv.fr/ 'nonce-rgdwtNrJLoU1OFJOXBc6RQ=='",
 							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nframe-ancestors, form-action\n\nThe directive(s): frame-ancestors, form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything."
 						},
 						{
@@ -139,15 +155,7 @@
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
-							"evidence": "font-src 'self' https://fonts.gstatic.com/ data:; frame-src 'self' https://tally.so; script-src 'self' https://cdn.jsdelivr.net/npm/chart.js@4.0.1 https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js https://browser.sentry-cdn.com https://js.sentry-cdn.com https://tally.so https://matomo.inclusion.beta.gouv.fr/ 'nonce-6nKxMQfsMohk51vBUsqNJA=='; default-src 'self'; style-src-elem 'self' https://fonts.googleapis.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; connect-src 'self' *.sentry.io https://matomo.inclusion.beta.gouv.fr/; img-src 'self' data: cellar-c2.services.clever-cloud.com https://matomo.inclusion.beta.gouv.fr/; script-src-elem 'self' https://cdn.jsdelivr.net/npm/chart.js@4.0.1 https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js https://browser.sentry-cdn.com https://js.sentry-cdn.com https://tally.so https://matomo.inclusion.beta.gouv.fr/ 'nonce-6nKxMQfsMohk51vBUsqNJA=='",
-							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nframe-ancestors, form-action\n\nThe directive(s): frame-ancestors, form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything."
-						},
-						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/documentation/",
-							"method": "GET",
-							"param": "Content-Security-Policy",
-							"attack": "",
-							"evidence": "font-src 'self' https://fonts.gstatic.com/ data:; frame-src 'self' https://tally.so; script-src 'self' https://cdn.jsdelivr.net/npm/chart.js@4.0.1 https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js https://browser.sentry-cdn.com https://js.sentry-cdn.com https://tally.so https://matomo.inclusion.beta.gouv.fr/ 'nonce-HHKspyWbvgtLcO5NslHgBA=='; default-src 'self'; style-src-elem 'self' https://fonts.googleapis.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; connect-src 'self' *.sentry.io https://matomo.inclusion.beta.gouv.fr/; img-src 'self' data: cellar-c2.services.clever-cloud.com https://matomo.inclusion.beta.gouv.fr/; script-src-elem 'self' https://cdn.jsdelivr.net/npm/chart.js@4.0.1 https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js https://browser.sentry-cdn.com https://js.sentry-cdn.com https://tally.so https://matomo.inclusion.beta.gouv.fr/ 'nonce-HHKspyWbvgtLcO5NslHgBA=='",
+							"evidence": "font-src 'self' https://fonts.gstatic.com/ data:; frame-src 'self' https://tally.so; script-src 'self' https://cdn.jsdelivr.net/npm/chart.js@4.0.1 https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js https://browser.sentry-cdn.com https://js.sentry-cdn.com https://tally.so https://matomo.inclusion.beta.gouv.fr/ 'nonce-7X8o3bOAe/ny2ZehqHXF3Q=='; default-src 'self'; style-src-elem 'self' https://fonts.googleapis.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; connect-src 'self' *.sentry.io https://matomo.inclusion.beta.gouv.fr/; img-src 'self' data: cellar-c2.services.clever-cloud.com https://matomo.inclusion.beta.gouv.fr/; script-src-elem 'self' https://cdn.jsdelivr.net/npm/chart.js@4.0.1 https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js https://browser.sentry-cdn.com https://js.sentry-cdn.com https://tally.so https://matomo.inclusion.beta.gouv.fr/ 'nonce-7X8o3bOAe/ny2ZehqHXF3Q=='",
 							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nframe-ancestors, form-action\n\nThe directive(s): frame-ancestors, form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything."
 						},
 						{
@@ -159,11 +167,19 @@
 							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nframe-ancestors, form-action\n\nThe directive(s): frame-ancestors, form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything."
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/members/seekers/",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/news/",
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
-							"evidence": "font-src 'self' https://fonts.gstatic.com/ data:; frame-src 'self' https://tally.so; script-src 'self' https://cdn.jsdelivr.net/npm/chart.js@4.0.1 https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js https://browser.sentry-cdn.com https://js.sentry-cdn.com https://tally.so https://matomo.inclusion.beta.gouv.fr/ 'nonce-0YvU/1q06Jg6qzEYi+RXXA=='; default-src 'self'; style-src-elem 'self' https://fonts.googleapis.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; connect-src 'self' *.sentry.io https://matomo.inclusion.beta.gouv.fr/; img-src 'self' data: cellar-c2.services.clever-cloud.com https://matomo.inclusion.beta.gouv.fr/; script-src-elem 'self' https://cdn.jsdelivr.net/npm/chart.js@4.0.1 https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js https://browser.sentry-cdn.com https://js.sentry-cdn.com https://tally.so https://matomo.inclusion.beta.gouv.fr/ 'nonce-0YvU/1q06Jg6qzEYi+RXXA=='",
+							"evidence": "font-src 'self' https://fonts.gstatic.com/ data:; frame-src 'self' https://tally.so; script-src 'self' https://cdn.jsdelivr.net/npm/chart.js@4.0.1 https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js https://browser.sentry-cdn.com https://js.sentry-cdn.com https://tally.so https://matomo.inclusion.beta.gouv.fr/ 'nonce-0adCCzNVW/OD3yZFgumHyw=='; default-src 'self'; style-src-elem 'self' https://fonts.googleapis.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; connect-src 'self' *.sentry.io https://matomo.inclusion.beta.gouv.fr/; img-src 'self' data: cellar-c2.services.clever-cloud.com https://matomo.inclusion.beta.gouv.fr/; script-src-elem 'self' https://cdn.jsdelivr.net/npm/chart.js@4.0.1 https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js https://browser.sentry-cdn.com https://js.sentry-cdn.com https://tally.so https://matomo.inclusion.beta.gouv.fr/ 'nonce-0adCCzNVW/OD3yZFgumHyw=='",
+							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nframe-ancestors, form-action\n\nThe directive(s): frame-ancestors, form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything."
+						},
+						{
+							"uri": "https://communaute.inclusion.beta.gouv.fr/static/javascripts/",
+							"method": "GET",
+							"param": "Content-Security-Policy",
+							"attack": "",
+							"evidence": "font-src 'self' https://fonts.gstatic.com/ data:; frame-src 'self' https://tally.so; script-src 'self' https://cdn.jsdelivr.net/npm/chart.js@4.0.1 https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js https://browser.sentry-cdn.com https://js.sentry-cdn.com https://tally.so https://matomo.inclusion.beta.gouv.fr/ 'nonce-G/yvbPnWywr3lsDgf+6Crw=='; default-src 'self'; style-src-elem 'self' https://fonts.googleapis.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; connect-src 'self' *.sentry.io https://matomo.inclusion.beta.gouv.fr/; img-src 'self' data: cellar-c2.services.clever-cloud.com https://matomo.inclusion.beta.gouv.fr/; script-src-elem 'self' https://cdn.jsdelivr.net/npm/chart.js@4.0.1 https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js https://browser.sentry-cdn.com https://js.sentry-cdn.com https://tally.so https://matomo.inclusion.beta.gouv.fr/ 'nonce-G/yvbPnWywr3lsDgf+6Crw=='",
 							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nframe-ancestors, form-action\n\nThe directive(s): frame-ancestors, form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything."
 						}
 					],
@@ -190,7 +206,7 @@
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
-							"evidence": "font-src 'self' https://fonts.gstatic.com/ data:; frame-src 'self' https://tally.so; script-src 'self' https://cdn.jsdelivr.net/npm/chart.js@4.0.1 https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js https://browser.sentry-cdn.com https://js.sentry-cdn.com https://tally.so https://matomo.inclusion.beta.gouv.fr/ 'nonce-US9bmt06hm9OvQ7E6Eb+rg=='; default-src 'self'; style-src-elem 'self' https://fonts.googleapis.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; connect-src 'self' *.sentry.io https://matomo.inclusion.beta.gouv.fr/; img-src 'self' data: cellar-c2.services.clever-cloud.com https://matomo.inclusion.beta.gouv.fr/; script-src-elem 'self' https://cdn.jsdelivr.net/npm/chart.js@4.0.1 https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js https://browser.sentry-cdn.com https://js.sentry-cdn.com https://tally.so https://matomo.inclusion.beta.gouv.fr/ 'nonce-US9bmt06hm9OvQ7E6Eb+rg=='",
+							"evidence": "font-src 'self' https://fonts.gstatic.com/ data:; frame-src 'self' https://tally.so; script-src 'self' https://cdn.jsdelivr.net/npm/chart.js@4.0.1 https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js https://browser.sentry-cdn.com https://js.sentry-cdn.com https://tally.so https://matomo.inclusion.beta.gouv.fr/ 'nonce-kZapVytTVUzBP1UdWTAfAQ=='; default-src 'self'; style-src-elem 'self' https://fonts.googleapis.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; connect-src 'self' *.sentry.io https://matomo.inclusion.beta.gouv.fr/; img-src 'self' data: cellar-c2.services.clever-cloud.com https://matomo.inclusion.beta.gouv.fr/; script-src-elem 'self' https://cdn.jsdelivr.net/npm/chart.js@4.0.1 https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js https://browser.sentry-cdn.com https://js.sentry-cdn.com https://tally.so https://matomo.inclusion.beta.gouv.fr/ 'nonce-kZapVytTVUzBP1UdWTAfAQ=='",
 							"otherinfo": "style-src includes unsafe-inline."
 						},
 						{
@@ -198,7 +214,7 @@
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
-							"evidence": "font-src 'self' https://fonts.gstatic.com/ data:; frame-src 'self' https://tally.so; script-src 'self' https://cdn.jsdelivr.net/npm/chart.js@4.0.1 https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js https://browser.sentry-cdn.com https://js.sentry-cdn.com https://tally.so https://matomo.inclusion.beta.gouv.fr/ 'nonce-hzFJNXsx+7XoW13z6qWaXQ=='; default-src 'self'; style-src-elem 'self' https://fonts.googleapis.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; connect-src 'self' *.sentry.io https://matomo.inclusion.beta.gouv.fr/; img-src 'self' data: cellar-c2.services.clever-cloud.com https://matomo.inclusion.beta.gouv.fr/; script-src-elem 'self' https://cdn.jsdelivr.net/npm/chart.js@4.0.1 https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js https://browser.sentry-cdn.com https://js.sentry-cdn.com https://tally.so https://matomo.inclusion.beta.gouv.fr/ 'nonce-hzFJNXsx+7XoW13z6qWaXQ=='",
+							"evidence": "font-src 'self' https://fonts.gstatic.com/ data:; frame-src 'self' https://tally.so; script-src 'self' https://cdn.jsdelivr.net/npm/chart.js@4.0.1 https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js https://browser.sentry-cdn.com https://js.sentry-cdn.com https://tally.so https://matomo.inclusion.beta.gouv.fr/ 'nonce-rgdwtNrJLoU1OFJOXBc6RQ=='; default-src 'self'; style-src-elem 'self' https://fonts.googleapis.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; connect-src 'self' *.sentry.io https://matomo.inclusion.beta.gouv.fr/; img-src 'self' data: cellar-c2.services.clever-cloud.com https://matomo.inclusion.beta.gouv.fr/; script-src-elem 'self' https://cdn.jsdelivr.net/npm/chart.js@4.0.1 https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js https://browser.sentry-cdn.com https://js.sentry-cdn.com https://tally.so https://matomo.inclusion.beta.gouv.fr/ 'nonce-rgdwtNrJLoU1OFJOXBc6RQ=='",
 							"otherinfo": "style-src includes unsafe-inline."
 						},
 						{
@@ -206,15 +222,7 @@
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
-							"evidence": "font-src 'self' https://fonts.gstatic.com/ data:; frame-src 'self' https://tally.so; script-src 'self' https://cdn.jsdelivr.net/npm/chart.js@4.0.1 https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js https://browser.sentry-cdn.com https://js.sentry-cdn.com https://tally.so https://matomo.inclusion.beta.gouv.fr/ 'nonce-6nKxMQfsMohk51vBUsqNJA=='; default-src 'self'; style-src-elem 'self' https://fonts.googleapis.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; connect-src 'self' *.sentry.io https://matomo.inclusion.beta.gouv.fr/; img-src 'self' data: cellar-c2.services.clever-cloud.com https://matomo.inclusion.beta.gouv.fr/; script-src-elem 'self' https://cdn.jsdelivr.net/npm/chart.js@4.0.1 https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js https://browser.sentry-cdn.com https://js.sentry-cdn.com https://tally.so https://matomo.inclusion.beta.gouv.fr/ 'nonce-6nKxMQfsMohk51vBUsqNJA=='",
-							"otherinfo": "style-src includes unsafe-inline."
-						},
-						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/documentation/",
-							"method": "GET",
-							"param": "Content-Security-Policy",
-							"attack": "",
-							"evidence": "font-src 'self' https://fonts.gstatic.com/ data:; frame-src 'self' https://tally.so; script-src 'self' https://cdn.jsdelivr.net/npm/chart.js@4.0.1 https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js https://browser.sentry-cdn.com https://js.sentry-cdn.com https://tally.so https://matomo.inclusion.beta.gouv.fr/ 'nonce-HHKspyWbvgtLcO5NslHgBA=='; default-src 'self'; style-src-elem 'self' https://fonts.googleapis.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; connect-src 'self' *.sentry.io https://matomo.inclusion.beta.gouv.fr/; img-src 'self' data: cellar-c2.services.clever-cloud.com https://matomo.inclusion.beta.gouv.fr/; script-src-elem 'self' https://cdn.jsdelivr.net/npm/chart.js@4.0.1 https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js https://browser.sentry-cdn.com https://js.sentry-cdn.com https://tally.so https://matomo.inclusion.beta.gouv.fr/ 'nonce-HHKspyWbvgtLcO5NslHgBA=='",
+							"evidence": "font-src 'self' https://fonts.gstatic.com/ data:; frame-src 'self' https://tally.so; script-src 'self' https://cdn.jsdelivr.net/npm/chart.js@4.0.1 https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js https://browser.sentry-cdn.com https://js.sentry-cdn.com https://tally.so https://matomo.inclusion.beta.gouv.fr/ 'nonce-7X8o3bOAe/ny2ZehqHXF3Q=='; default-src 'self'; style-src-elem 'self' https://fonts.googleapis.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; connect-src 'self' *.sentry.io https://matomo.inclusion.beta.gouv.fr/; img-src 'self' data: cellar-c2.services.clever-cloud.com https://matomo.inclusion.beta.gouv.fr/; script-src-elem 'self' https://cdn.jsdelivr.net/npm/chart.js@4.0.1 https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js https://browser.sentry-cdn.com https://js.sentry-cdn.com https://tally.so https://matomo.inclusion.beta.gouv.fr/ 'nonce-7X8o3bOAe/ny2ZehqHXF3Q=='",
 							"otherinfo": "style-src includes unsafe-inline."
 						},
 						{
@@ -226,11 +234,19 @@
 							"otherinfo": "style-src includes unsafe-inline."
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/members/seekers/",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/news/",
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
-							"evidence": "font-src 'self' https://fonts.gstatic.com/ data:; frame-src 'self' https://tally.so; script-src 'self' https://cdn.jsdelivr.net/npm/chart.js@4.0.1 https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js https://browser.sentry-cdn.com https://js.sentry-cdn.com https://tally.so https://matomo.inclusion.beta.gouv.fr/ 'nonce-0YvU/1q06Jg6qzEYi+RXXA=='; default-src 'self'; style-src-elem 'self' https://fonts.googleapis.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; connect-src 'self' *.sentry.io https://matomo.inclusion.beta.gouv.fr/; img-src 'self' data: cellar-c2.services.clever-cloud.com https://matomo.inclusion.beta.gouv.fr/; script-src-elem 'self' https://cdn.jsdelivr.net/npm/chart.js@4.0.1 https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js https://browser.sentry-cdn.com https://js.sentry-cdn.com https://tally.so https://matomo.inclusion.beta.gouv.fr/ 'nonce-0YvU/1q06Jg6qzEYi+RXXA=='",
+							"evidence": "font-src 'self' https://fonts.gstatic.com/ data:; frame-src 'self' https://tally.so; script-src 'self' https://cdn.jsdelivr.net/npm/chart.js@4.0.1 https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js https://browser.sentry-cdn.com https://js.sentry-cdn.com https://tally.so https://matomo.inclusion.beta.gouv.fr/ 'nonce-0adCCzNVW/OD3yZFgumHyw=='; default-src 'self'; style-src-elem 'self' https://fonts.googleapis.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; connect-src 'self' *.sentry.io https://matomo.inclusion.beta.gouv.fr/; img-src 'self' data: cellar-c2.services.clever-cloud.com https://matomo.inclusion.beta.gouv.fr/; script-src-elem 'self' https://cdn.jsdelivr.net/npm/chart.js@4.0.1 https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js https://browser.sentry-cdn.com https://js.sentry-cdn.com https://tally.so https://matomo.inclusion.beta.gouv.fr/ 'nonce-0adCCzNVW/OD3yZFgumHyw=='",
+							"otherinfo": "style-src includes unsafe-inline."
+						},
+						{
+							"uri": "https://communaute.inclusion.beta.gouv.fr/static/javascripts/",
+							"method": "GET",
+							"param": "Content-Security-Policy",
+							"attack": "",
+							"evidence": "font-src 'self' https://fonts.gstatic.com/ data:; frame-src 'self' https://tally.so; script-src 'self' https://cdn.jsdelivr.net/npm/chart.js@4.0.1 https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js https://browser.sentry-cdn.com https://js.sentry-cdn.com https://tally.so https://matomo.inclusion.beta.gouv.fr/ 'nonce-G/yvbPnWywr3lsDgf+6Crw=='; default-src 'self'; style-src-elem 'self' https://fonts.googleapis.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; connect-src 'self' *.sentry.io https://matomo.inclusion.beta.gouv.fr/; img-src 'self' data: cellar-c2.services.clever-cloud.com https://matomo.inclusion.beta.gouv.fr/; script-src-elem 'self' https://cdn.jsdelivr.net/npm/chart.js@4.0.1 https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js https://browser.sentry-cdn.com https://js.sentry-cdn.com https://tally.so https://matomo.inclusion.beta.gouv.fr/ 'nonce-G/yvbPnWywr3lsDgf+6Crw=='",
 							"otherinfo": "style-src includes unsafe-inline."
 						}
 					],
@@ -293,7 +309,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/espace-d%C3%A9changes-113/topic/create/",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/news/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -301,7 +317,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/members/seekers/",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/static/javascripts/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -309,7 +325,15 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/search/",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/static/machina/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<script src=\"https://js.sentry-cdn.com/315adbc1472b4c5f875aa426db1fe8f2.min.js\" crossorigin=\"anonymous\"></script>",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://communaute.inclusion.beta.gouv.fr/static/stylesheets/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -333,13 +357,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "10",
+					"count": "11",
 					"solution": "<p>Provide a valid integrity attribute to the tag.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity</p>",
 					"cweid": "345",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10010",
@@ -376,31 +400,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/cdi-inclusion-tout-ce-que-vous-devez-savoir-123/topic/conditions-de-d%C3%A9part-%C3%A0-la-retraite-1639/",
-							"method": "GET",
-							"param": "csrftoken",
-							"attack": "",
-							"evidence": "Set-Cookie: csrftoken",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/espace-d%C3%A9changes-113/topic/create/",
-							"method": "GET",
-							"param": "csrftoken",
-							"attack": "",
-							"evidence": "Set-Cookie: csrftoken",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/espace-d%C3%A9changes-113/topic/dossier-da-redaction-1640/",
-							"method": "GET",
-							"param": "csrftoken",
-							"attack": "",
-							"evidence": "Set-Cookie: csrftoken",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/la-pmspm-p%C3%A9riode-de-mise-en-situation-en-milieu-professionnel-124/topic/immersion-sans-inscription-%C3%A0-france-travail-1638/",
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
@@ -424,7 +424,23 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/search/",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/static/javascripts/",
+							"method": "GET",
+							"param": "csrftoken",
+							"attack": "",
+							"evidence": "Set-Cookie: csrftoken",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://communaute.inclusion.beta.gouv.fr/static/machina/",
+							"method": "GET",
+							"param": "csrftoken",
+							"attack": "",
+							"evidence": "Set-Cookie: csrftoken",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://communaute.inclusion.beta.gouv.fr/static/stylesheets/",
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
@@ -433,6 +449,14 @@
 						},
 						{
 							"uri": "https://communaute.inclusion.beta.gouv.fr/surveys/dsp/create/",
+							"method": "GET",
+							"param": "csrftoken",
+							"attack": "",
+							"evidence": "Set-Cookie: csrftoken",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://communaute.inclusion.beta.gouv.fr/topics/",
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
@@ -499,7 +523,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/espace-d%C3%A9changes-113/topic/create/",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/news/",
 							"method": "GET",
 							"param": "https://js.sentry-cdn.com/315adbc1472b4c5f875aa426db1fe8f2.min.js",
 							"attack": "",
@@ -507,7 +531,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/members/seekers/",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/static/javascripts/",
 							"method": "GET",
 							"param": "https://js.sentry-cdn.com/315adbc1472b4c5f875aa426db1fe8f2.min.js",
 							"attack": "",
@@ -515,7 +539,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/search/",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/static/machina/",
 							"method": "GET",
 							"param": "https://js.sentry-cdn.com/315adbc1472b4c5f875aa426db1fe8f2.min.js",
 							"attack": "",
@@ -523,7 +547,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/surveys/dsp/create/",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/static/stylesheets/",
 							"method": "GET",
 							"param": "https://js.sentry-cdn.com/315adbc1472b4c5f875aa426db1fe8f2.min.js",
 							"attack": "",
@@ -531,11 +555,11 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/surveys/dsp/create/",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/topics/",
 							"method": "GET",
-							"param": "https://tally.so/widgets/embed.js",
+							"param": "https://js.sentry-cdn.com/315adbc1472b4c5f875aa426db1fe8f2.min.js",
 							"attack": "",
-							"evidence": "<script async src=\"https://tally.so/widgets/embed.js\"></script>",
+							"evidence": "<script src=\"https://js.sentry-cdn.com/315adbc1472b4c5f875aa426db1fe8f2.min.js\" crossorigin=\"anonymous\"></script>",
 							"otherinfo": ""
 						}
 					],
@@ -580,7 +604,7 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "1066"
+					"sourceid": "1106"
 				},
 				{
 					"pluginid": "10063",
@@ -655,7 +679,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy</p><p>https://developer.chrome.com/blog/feature-policy/</p><p>https://scotthelme.co.uk/a-new-security-header-feature-policy/</p><p>https://w3c.github.io/webappsec-feature-policy/</p><p>https://www.smashingmagazine.com/2018/12/feature-policy/</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1065"
+					"sourceid": "1105"
 				},
 				{
 					"pluginid": "10035",
@@ -669,6 +693,14 @@
 					"instances":[ 
 						{
 							"uri": "https://communaute.inclusion.beta.gouv.fr/static/CACHE/css/output.dc287bcd3f96.css",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://communaute.inclusion.beta.gouv.fr/static/images/hp-illustration-01.edaf11cb1c04.svg",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -740,14 +772,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/static/vendor/theme-inclusion/images/logo-plateforme-inclusion.db50d6602465.svg",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://communaute.inclusion.beta.gouv.fr/static/vendor/theme-inclusion/images/logo-republique-francaise.59077999cf0e.svg",
 							"method": "GET",
 							"param": "",
@@ -770,7 +794,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>https://caniuse.com/stricttransportsecurity</p><p>https://datatracker.ietf.org/doc/html/rfc6797</p>",
 					"cweid": "319",
 					"wascid": "15",
-					"sourceid": "1058"
+					"sourceid": "1098"
 				},
 				{
 					"pluginid": "10096",
@@ -787,81 +811,89 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "1709436434",
-							"otherinfo": "1709436434, which evaluates to: 2024-03-03 03:27:14"
+							"evidence": "1710041196",
+							"otherinfo": "1710041196, which evaluates to: 2024-03-10 03:26:36"
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/centre-daide-faq-81/",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/members/profile/06182138-4fdd-402c-a5d8-392ccbf96702/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "1709436444",
-							"otherinfo": "1709436444, which evaluates to: 2024-03-03 03:27:24"
+							"evidence": "1710041200",
+							"otherinfo": "1710041200, which evaluates to: 2024-03-10 03:26:40"
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/suggestions-d%C3%A9volution-73/",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/members/profile/25c2421d-6817-4586-bce1-ebfeac9f7b3d/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "1709436437",
-							"otherinfo": "1709436437, which evaluates to: 2024-03-03 03:27:17"
+							"evidence": "1710041200",
+							"otherinfo": "1710041200, which evaluates to: 2024-03-10 03:26:40"
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/members/profile/0a1e0d8a-0840-4bca-8814-1dc5271787cc/",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/members/profile/3dcb0783-bae9-4997-96c8-3d6ad5702daa/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "1709436433",
-							"otherinfo": "1709436433, which evaluates to: 2024-03-03 03:27:13"
+							"evidence": "1710041200",
+							"otherinfo": "1710041200, which evaluates to: 2024-03-10 03:26:40"
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/members/profile/8b58ec06-ed8d-4d71-b013-2c5ddb4eb8fd/",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/members/profile/5007cb40-e3b9-4bba-9583-a58494daf205/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "1709436433",
-							"otherinfo": "1709436433, which evaluates to: 2024-03-03 03:27:13"
+							"evidence": "1710041200",
+							"otherinfo": "1710041200, which evaluates to: 2024-03-10 03:26:40"
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/members/profile/964bf70b-510b-48a7-a198-3d11e77053c6/",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/members/profile/7a6c4090-6a75-4c09-b73d-bd06fd347802/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "1709436433",
-							"otherinfo": "1709436433, which evaluates to: 2024-03-03 03:27:13"
+							"evidence": "1710041200",
+							"otherinfo": "1710041200, which evaluates to: 2024-03-10 03:26:40"
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/members/profile/b29b4510-c0e8-4760-ac11-726b3fee38f0/",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/members/profile/bd99417d-40dd-47c3-b392-f1b90d524588/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "1709436433",
-							"otherinfo": "1709436433, which evaluates to: 2024-03-03 03:27:13"
+							"evidence": "1710041200",
+							"otherinfo": "1710041200, which evaluates to: 2024-03-10 03:26:40"
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/members/profile/cb565d20-0c48-409c-a54f-65ca2900d745/",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/members/profile/c82764e1-f23d-4886-ad63-251a3b9595ad/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "1709436434",
-							"otherinfo": "1709436434, which evaluates to: 2024-03-03 03:27:14"
+							"evidence": "1710041200",
+							"otherinfo": "1710041200, which evaluates to: 2024-03-10 03:26:40"
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/members/profile/cd9f54bf-2cec-47a5-921d-d9b40a61aa0e/",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/members/profile/e1ec6003-a283-4041-ad87-e5c9e7585622/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "1709436433",
-							"otherinfo": "1709436433, which evaluates to: 2024-03-03 03:27:13"
+							"evidence": "1710041200",
+							"otherinfo": "1710041200, which evaluates to: 2024-03-10 03:26:40"
+						},
+						{
+							"uri": "https://communaute.inclusion.beta.gouv.fr/members/profile/f519e981-a929-439d-a29b-de9982ca9f89/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1710041200",
+							"otherinfo": "1710041200, which evaluates to: 2024-03-10 03:26:40"
 						}
 					],
-					"count": "9",
+					"count": "10",
 					"solution": "<p>Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.</p>",
-					"otherinfo": "<p>1709436434, which evaluates to: 2024-03-03 03:27:14</p>",
+					"otherinfo": "<p>1710041196, which evaluates to: 2024-03-10 03:26:36</p>",
 					"reference": "<p>https://cwe.mitre.org/data/definitions/200.html</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "1131"
+					"sourceid": "1119"
 				},
 				{
 					"pluginid": "10021",
@@ -954,14 +986,6 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/static/vendor/theme-inclusion/images/logo-plateforme-inclusion.db50d6602465.svg",
-							"method": "GET",
-							"param": "x-content-type-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
-						},
-						{
 							"uri": "https://communaute.inclusion.beta.gouv.fr/static/vendor/theme-inclusion/images/logo-republique-francaise.59077999cf0e.svg",
 							"method": "GET",
 							"param": "x-content-type-options",
@@ -978,13 +1002,13 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						}
 					],
-					"count": "13",
+					"count": "12",
 					"solution": "<p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p>",
 					"otherinfo": "<p>This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.</p><p>At \"High\" threshold this scan rule will not alert on client or server error responses.</p>",
 					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1058"
+					"sourceid": "1098"
 				},
 				{
 					"pluginid": "10094",
@@ -1001,105 +1025,105 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "JbIfErVtSXiXo4mMkZx0FiddD7JcIJ4j",
-							"otherinfo": "%\uFFFD\\x001f\\x0012\uFFFDmIx\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDt\\x0016']\\x000f\uFFFD\\ \uFFFD#"
+							"evidence": "tEZLl68HP0eSK0AyXxNFxGAnNR512ndR",
+							"otherinfo": "\uFFFDFK\uFFFD\uFFFD\\x0007?G\uFFFD+@2_\\x0013E\uFFFD`'5\\x001eu\uFFFDwQ"
 						},
 						{
 							"uri": "https://communaute.inclusion.beta.gouv.fr",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "KRsbihplpsVxA2Cy4PwLUspHWHmwiiNL",
-							"otherinfo": ")\\x001b\\x001b\uFFFD\\x001ae\uFFFD\uFFFDq\\x0003`\uFFFD\uFFFD\uFFFD\\x000bR\uFFFDGXy\uFFFD\uFFFD#K"
+							"evidence": "vezCvA5PaqM1WQRQqJ3FUWTsCzf2L3tz",
+							"otherinfo": "\uFFFD\uFFFD\u00BC\\x000eOj\uFFFD5Y\\x0004P\uFFFD\uFFFD\uFFFDQd\uFFFD\\x000b7\uFFFD/{s"
 						},
 						{
 							"uri": "https://communaute.inclusion.beta.gouv.fr/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "KRsbihplpsVxA2Cy4PwLUspHWHmwiiNL",
-							"otherinfo": ")\\x001b\\x001b\uFFFD\\x001ae\uFFFD\uFFFDq\\x0003`\uFFFD\uFFFD\uFFFD\\x000bR\uFFFDGXy\uFFFD\uFFFD#K"
+							"evidence": "tEZLl68HP0eSK0AyXxNFxGAnNR512ndR",
+							"otherinfo": "\uFFFDFK\uFFFD\uFFFD\\x0007?G\uFFFD+@2_\\x0013E\uFFFD`'5\\x001eu\uFFFDwQ"
 						},
 						{
 							"uri": "https://communaute.inclusion.beta.gouv.fr/documentation/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "KRsbihplpsVxA2Cy4PwLUspHWHmwiiNL",
-							"otherinfo": ")\\x001b\\x001b\uFFFD\\x001ae\uFFFD\uFFFDq\\x0003`\uFFFD\uFFFD\uFFFD\\x000bR\uFFFDGXy\uFFFD\uFFFD#K"
-						},
-						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/cdi-inclusion-tout-ce-que-vous-devez-savoir-123/topic/conditions-de-d%C3%A9part-%C3%A0-la-retraite-1639/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "KRsbihplpsVxA2Cy4PwLUspHWHmwiiNL",
-							"otherinfo": ")\\x001b\\x001b\uFFFD\\x001ae\uFFFD\uFFFDq\\x0003`\uFFFD\uFFFD\uFFFD\\x000bR\uFFFDGXy\uFFFD\uFFFD#K"
+							"evidence": "tEZLl68HP0eSK0AyXxNFxGAnNR512ndR",
+							"otherinfo": "\uFFFDFK\uFFFD\uFFFD\\x0007?G\uFFFD+@2_\\x0013E\uFFFD`'5\\x001eu\uFFFDwQ"
 						},
 						{
 							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/espace-d%C3%A9changes-113/topic/create/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "KRsbihplpsVxA2Cy4PwLUspHWHmwiiNL",
-							"otherinfo": ")\\x001b\\x001b\uFFFD\\x001ae\uFFFD\uFFFDq\\x0003`\uFFFD\uFFFD\uFFFD\\x000bR\uFFFDGXy\uFFFD\uFFFD#K"
-						},
-						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/espace-d%C3%A9changes-113/topic/dossier-da-redaction-1640/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "KRsbihplpsVxA2Cy4PwLUspHWHmwiiNL",
-							"otherinfo": ")\\x001b\\x001b\uFFFD\\x001ae\uFFFD\uFFFDq\\x0003`\uFFFD\uFFFD\uFFFD\\x000bR\uFFFDGXy\uFFFD\uFFFD#K"
+							"evidence": "tEZLl68HP0eSK0AyXxNFxGAnNR512ndR",
+							"otherinfo": "\uFFFDFK\uFFFD\uFFFD\\x0007?G\uFFFD+@2_\\x0013E\uFFFD`'5\\x001eu\uFFFDwQ"
 						},
 						{
 							"uri": "https://communaute.inclusion.beta.gouv.fr/members/seekers/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "KRsbihplpsVxA2Cy4PwLUspHWHmwiiNL",
-							"otherinfo": ")\\x001b\\x001b\uFFFD\\x001ae\uFFFD\uFFFDq\\x0003`\uFFFD\uFFFD\uFFFD\\x000bR\uFFFDGXy\uFFFD\uFFFD#K"
+							"evidence": "tEZLl68HP0eSK0AyXxNFxGAnNR512ndR",
+							"otherinfo": "\uFFFDFK\uFFFD\uFFFD\\x0007?G\uFFFD+@2_\\x0013E\uFFFD`'5\\x001eu\uFFFDwQ"
 						},
 						{
 							"uri": "https://communaute.inclusion.beta.gouv.fr/news/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "KRsbihplpsVxA2Cy4PwLUspHWHmwiiNL",
-							"otherinfo": ")\\x001b\\x001b\uFFFD\\x001ae\uFFFD\uFFFDq\\x0003`\uFFFD\uFFFD\uFFFD\\x000bR\uFFFDGXy\uFFFD\uFFFD#K"
+							"evidence": "tEZLl68HP0eSK0AyXxNFxGAnNR512ndR",
+							"otherinfo": "\uFFFDFK\uFFFD\uFFFD\\x0007?G\uFFFD+@2_\\x0013E\uFFFD`'5\\x001eu\uFFFDwQ"
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/search/",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/static/javascripts/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "KRsbihplpsVxA2Cy4PwLUspHWHmwiiNL",
-							"otherinfo": ")\\x001b\\x001b\uFFFD\\x001ae\uFFFD\uFFFDq\\x0003`\uFFFD\uFFFD\uFFFD\\x000bR\uFFFDGXy\uFFFD\uFFFD#K"
+							"evidence": "tEZLl68HP0eSK0AyXxNFxGAnNR512ndR",
+							"otherinfo": "\uFFFDFK\uFFFD\uFFFD\\x0007?G\uFFFD+@2_\\x0013E\uFFFD`'5\\x001eu\uFFFDwQ"
+						},
+						{
+							"uri": "https://communaute.inclusion.beta.gouv.fr/static/machina/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "tEZLl68HP0eSK0AyXxNFxGAnNR512ndR",
+							"otherinfo": "\uFFFDFK\uFFFD\uFFFD\\x0007?G\uFFFD+@2_\\x0013E\uFFFD`'5\\x001eu\uFFFDwQ"
+						},
+						{
+							"uri": "https://communaute.inclusion.beta.gouv.fr/static/stylesheets/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "tEZLl68HP0eSK0AyXxNFxGAnNR512ndR",
+							"otherinfo": "\uFFFDFK\uFFFD\uFFFD\\x0007?G\uFFFD+@2_\\x0013E\uFFFD`'5\\x001eu\uFFFDwQ"
 						},
 						{
 							"uri": "https://communaute.inclusion.beta.gouv.fr/surveys/dsp/create/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "KRsbihplpsVxA2Cy4PwLUspHWHmwiiNL",
-							"otherinfo": ")\\x001b\\x001b\uFFFD\\x001ae\uFFFD\uFFFDq\\x0003`\uFFFD\uFFFD\uFFFD\\x000bR\uFFFDGXy\uFFFD\uFFFD#K"
+							"evidence": "tEZLl68HP0eSK0AyXxNFxGAnNR512ndR",
+							"otherinfo": "\uFFFDFK\uFFFD\uFFFD\\x0007?G\uFFFD+@2_\\x0013E\uFFFD`'5\\x001eu\uFFFDwQ"
 						},
 						{
 							"uri": "https://communaute.inclusion.beta.gouv.fr/topics/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "KRsbihplpsVxA2Cy4PwLUspHWHmwiiNL",
-							"otherinfo": ")\\x001b\\x001b\uFFFD\\x001ae\uFFFD\uFFFDq\\x0003`\uFFFD\uFFFD\uFFFD\\x000bR\uFFFDGXy\uFFFD\uFFFD#K"
+							"evidence": "tEZLl68HP0eSK0AyXxNFxGAnNR512ndR",
+							"otherinfo": "\uFFFDFK\uFFFD\uFFFD\\x0007?G\uFFFD+@2_\\x0013E\uFFFD`'5\\x001eu\uFFFDwQ"
 						}
 					],
 					"count": "12",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>%\uFFFD\\x001f\\x0012\uFFFDmIx\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDt\\x0016']\\x000f\uFFFD\\ \uFFFD#</p>",
+					"otherinfo": "<p>\uFFFDFK\uFFFD\uFFFD\\x0007?G\uFFFD+@2_\\x0013E\uFFFD`'5\\x001eu\uFFFDwQ</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10024",
@@ -1112,7 +1136,7 @@
 					"desc": "<p>The request appeared to contain sensitive information leaked in the URL. This can violate PCI and most organizational compliance policies. You can configure the list of strings for this check to add or remove values specific to your environment.</p>",
 					"instances":[ 
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/cdi-inclusion-tout-ce-que-vous-devez-savoir-123/topic/conditions-de-d%C3%A9part-%C3%A0-la-retraite-1639/?content=Zaproxy+alias+impedit+expedita+quisquam+pariatur+exercitationem.+Nemo+rerum+eveniet+dolores+rem+quia+dignissimos.&csrfmiddlewaretoken=Jq3A4umji0dOl66hmGw9Kcrgu5XMysBhj7lBcBBuxiYbLYyFglSKuuGNgC98GAeS&username=foo-bar%40example.com",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/cdi-inclusion-tout-ce-que-vous-devez-savoir-123/topic/cdi-inclusion-1664/?content=Zaproxy+alias+impedit+expedita+quisquam+pariatur+exercitationem.+Nemo+rerum+eveniet+dolores+rem+quia+dignissimos.&csrfmiddlewaretoken=f1XtnBRegahSOs83Rgqu8sy6AFUmBLDAyvM4yxPLV0lAoiyrED3ZvYYjdmPdtYGh&username=foo-bar%40example.com",
 							"method": "GET",
 							"param": "csrfmiddlewaretoken",
 							"attack": "",
@@ -1120,7 +1144,7 @@
 							"otherinfo": "The URL contains potentially sensitive information. The following string was found via the pattern: token\ncsrfmiddlewaretoken"
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/cdi-inclusion-tout-ce-que-vous-devez-savoir-123/topic/conditions-de-d%C3%A9part-%C3%A0-la-retraite-1639/?content=Zaproxy+alias+impedit+expedita+quisquam+pariatur+exercitationem.+Nemo+rerum+eveniet+dolores+rem+quia+dignissimos.&csrfmiddlewaretoken=Jq3A4umji0dOl66hmGw9Kcrgu5XMysBhj7lBcBBuxiYbLYyFglSKuuGNgC98GAeS&username=foo-bar%40example.com",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/cdi-inclusion-tout-ce-que-vous-devez-savoir-123/topic/cdi-inclusion-1664/?content=Zaproxy+alias+impedit+expedita+quisquam+pariatur+exercitationem.+Nemo+rerum+eveniet+dolores+rem+quia+dignissimos.&csrfmiddlewaretoken=f1XtnBRegahSOs83Rgqu8sy6AFUmBLDAyvM4yxPLV0lAoiyrED3ZvYYjdmPdtYGh&username=foo-bar%40example.com",
 							"method": "GET",
 							"param": "username",
 							"attack": "",
@@ -1128,7 +1152,7 @@
 							"otherinfo": "The URL contains email address(es)."
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/cdi-inclusion-tout-ce-que-vous-devez-savoir-123/topic/conditions-de-d%C3%A9part-%C3%A0-la-retraite-1639/?content=Zaproxy+alias+impedit+expedita+quisquam+pariatur+exercitationem.+Nemo+rerum+eveniet+dolores+rem+quia+dignissimos.&csrfmiddlewaretoken=Jq3A4umji0dOl66hmGw9Kcrgu5XMysBhj7lBcBBuxiYbLYyFglSKuuGNgC98GAeS&username=foo-bar%40example.com",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/cdi-inclusion-tout-ce-que-vous-devez-savoir-123/topic/cdi-inclusion-1664/?content=Zaproxy+alias+impedit+expedita+quisquam+pariatur+exercitationem.+Nemo+rerum+eveniet+dolores+rem+quia+dignissimos.&csrfmiddlewaretoken=f1XtnBRegahSOs83Rgqu8sy6AFUmBLDAyvM4yxPLV0lAoiyrED3ZvYYjdmPdtYGh&username=foo-bar%40example.com",
 							"method": "GET",
 							"param": "username",
 							"attack": "",
@@ -1136,7 +1160,7 @@
 							"otherinfo": "The URL contains potentially sensitive information. The following string was found via the pattern: user\nusername"
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/espace-d%C3%A9changes-113/topic/demande-embauche-1637/?content=Zaproxy+alias+impedit+expedita+quisquam+pariatur+exercitationem.+Nemo+rerum+eveniet+dolores+rem+quia+dignissimos.&csrfmiddlewaretoken=s3Kn9Su9i43RRdsny804n7XLCCJCzglN2K2ohZJkxmOeh5ULsNmF7pcio9VYHoYo&username=foo-bar%40example.com",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/espace-d%C3%A9changes-113/topic/conseiller-insertion-professionnelle-1665/?content=Zaproxy+alias+impedit+expedita+quisquam+pariatur+exercitationem.+Nemo+rerum+eveniet+dolores+rem+quia+dignissimos.&csrfmiddlewaretoken=Jw3Ltaxji3tHofz2OaW5sxWN98Ns77Uo20SmE6vQXTxpY5ZqBxzAP3m0MPIjZkX5&username=foo-bar%40example.com",
 							"method": "GET",
 							"param": "csrfmiddlewaretoken",
 							"attack": "",
@@ -1144,7 +1168,7 @@
 							"otherinfo": "The URL contains potentially sensitive information. The following string was found via the pattern: token\ncsrfmiddlewaretoken"
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/espace-d%C3%A9changes-113/topic/demande-embauche-1637/?content=Zaproxy+alias+impedit+expedita+quisquam+pariatur+exercitationem.+Nemo+rerum+eveniet+dolores+rem+quia+dignissimos.&csrfmiddlewaretoken=s3Kn9Su9i43RRdsny804n7XLCCJCzglN2K2ohZJkxmOeh5ULsNmF7pcio9VYHoYo&username=foo-bar%40example.com",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/espace-d%C3%A9changes-113/topic/conseiller-insertion-professionnelle-1665/?content=Zaproxy+alias+impedit+expedita+quisquam+pariatur+exercitationem.+Nemo+rerum+eveniet+dolores+rem+quia+dignissimos.&csrfmiddlewaretoken=Jw3Ltaxji3tHofz2OaW5sxWN98Ns77Uo20SmE6vQXTxpY5ZqBxzAP3m0MPIjZkX5&username=foo-bar%40example.com",
 							"method": "GET",
 							"param": "username",
 							"attack": "",
@@ -1152,7 +1176,7 @@
 							"otherinfo": "The URL contains email address(es)."
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/espace-d%C3%A9changes-113/topic/demande-embauche-1637/?content=Zaproxy+alias+impedit+expedita+quisquam+pariatur+exercitationem.+Nemo+rerum+eveniet+dolores+rem+quia+dignissimos.&csrfmiddlewaretoken=s3Kn9Su9i43RRdsny804n7XLCCJCzglN2K2ohZJkxmOeh5ULsNmF7pcio9VYHoYo&username=foo-bar%40example.com",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/espace-d%C3%A9changes-113/topic/conseiller-insertion-professionnelle-1665/?content=Zaproxy+alias+impedit+expedita+quisquam+pariatur+exercitationem.+Nemo+rerum+eveniet+dolores+rem+quia+dignissimos.&csrfmiddlewaretoken=Jw3Ltaxji3tHofz2OaW5sxWN98Ns77Uo20SmE6vQXTxpY5ZqBxzAP3m0MPIjZkX5&username=foo-bar%40example.com",
 							"method": "GET",
 							"param": "username",
 							"attack": "",
@@ -1160,7 +1184,7 @@
 							"otherinfo": "The URL contains potentially sensitive information. The following string was found via the pattern: user\nusername"
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/espace-d%C3%A9changes-113/topic/dossier-da-redaction-1640/?content=Zaproxy+alias+impedit+expedita+quisquam+pariatur+exercitationem.+Nemo+rerum+eveniet+dolores+rem+quia+dignissimos.&csrfmiddlewaretoken=2XkxgyYroNOCZ4G41R5MBmpHP4ImnsShCECyoFdCD5zZpW8sVwrnlEEeBBUIvAvS&username=foo-bar%40example.com",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/les-d%C3%A9rogations-au-d%C3%A9lai-de-carence-dun-parcours-iae-140/topic/comment-effectuer-une-d%C3%A9rogation-1663/?content=Zaproxy+alias+impedit+expedita+quisquam+pariatur+exercitationem.+Nemo+rerum+eveniet+dolores+rem+quia+dignissimos.&csrfmiddlewaretoken=mw8joZHBxSk9qp7CPJdnlp9edgqRBejEF0XUzVF8cIoR0fx0C6QSIVzrQXlItrml&username=foo-bar%40example.com",
 							"method": "GET",
 							"param": "csrfmiddlewaretoken",
 							"attack": "",
@@ -1168,7 +1192,7 @@
 							"otherinfo": "The URL contains potentially sensitive information. The following string was found via the pattern: token\ncsrfmiddlewaretoken"
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/espace-d%C3%A9changes-113/topic/dossier-da-redaction-1640/?content=Zaproxy+alias+impedit+expedita+quisquam+pariatur+exercitationem.+Nemo+rerum+eveniet+dolores+rem+quia+dignissimos.&csrfmiddlewaretoken=2XkxgyYroNOCZ4G41R5MBmpHP4ImnsShCECyoFdCD5zZpW8sVwrnlEEeBBUIvAvS&username=foo-bar%40example.com",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/les-d%C3%A9rogations-au-d%C3%A9lai-de-carence-dun-parcours-iae-140/topic/comment-effectuer-une-d%C3%A9rogation-1663/?content=Zaproxy+alias+impedit+expedita+quisquam+pariatur+exercitationem.+Nemo+rerum+eveniet+dolores+rem+quia+dignissimos.&csrfmiddlewaretoken=mw8joZHBxSk9qp7CPJdnlp9edgqRBejEF0XUzVF8cIoR0fx0C6QSIVzrQXlItrml&username=foo-bar%40example.com",
 							"method": "GET",
 							"param": "username",
 							"attack": "",
@@ -1176,7 +1200,7 @@
 							"otherinfo": "The URL contains email address(es)."
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/espace-d%C3%A9changes-113/topic/dossier-da-redaction-1640/?content=Zaproxy+alias+impedit+expedita+quisquam+pariatur+exercitationem.+Nemo+rerum+eveniet+dolores+rem+quia+dignissimos.&csrfmiddlewaretoken=2XkxgyYroNOCZ4G41R5MBmpHP4ImnsShCECyoFdCD5zZpW8sVwrnlEEeBBUIvAvS&username=foo-bar%40example.com",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/les-d%C3%A9rogations-au-d%C3%A9lai-de-carence-dun-parcours-iae-140/topic/comment-effectuer-une-d%C3%A9rogation-1663/?content=Zaproxy+alias+impedit+expedita+quisquam+pariatur+exercitationem.+Nemo+rerum+eveniet+dolores+rem+quia+dignissimos.&csrfmiddlewaretoken=mw8joZHBxSk9qp7CPJdnlp9edgqRBejEF0XUzVF8cIoR0fx0C6QSIVzrQXlItrml&username=foo-bar%40example.com",
 							"method": "GET",
 							"param": "username",
 							"attack": "",
@@ -1184,7 +1208,7 @@
 							"otherinfo": "The URL contains potentially sensitive information. The following string was found via the pattern: user\nusername"
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/la-pmspm-p%C3%A9riode-de-mise-en-situation-en-milieu-professionnel-124/topic/immersion-sans-inscription-%C3%A0-france-travail-1638/?content=Zaproxy+alias+impedit+expedita+quisquam+pariatur+exercitationem.+Nemo+rerum+eveniet+dolores+rem+quia+dignissimos.&csrfmiddlewaretoken=TwJi9uNKTRDlSXGzptjrJ1f4lcXJvPUDtd1jhB2V89oIiP8Xj8F2tjuB7J95DXxe&username=foo-bar%40example.com",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/topics/?content=Zaproxy+alias+impedit+expedita+quisquam+pariatur+exercitationem.+Nemo+rerum+eveniet+dolores+rem+quia+dignissimos.&csrfmiddlewaretoken=ZDB2suGgjL2sgZgpfg4C9VDL1mWG0RNPi7qDDqENYB6aQPGN2DH7wr3YE3RxS4Qw&username=foo-bar%40example.com",
 							"method": "GET",
 							"param": "csrfmiddlewaretoken",
 							"attack": "",
@@ -1192,7 +1216,7 @@
 							"otherinfo": "The URL contains potentially sensitive information. The following string was found via the pattern: token\ncsrfmiddlewaretoken"
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/la-pmspm-p%C3%A9riode-de-mise-en-situation-en-milieu-professionnel-124/topic/immersion-sans-inscription-%C3%A0-france-travail-1638/?content=Zaproxy+alias+impedit+expedita+quisquam+pariatur+exercitationem.+Nemo+rerum+eveniet+dolores+rem+quia+dignissimos.&csrfmiddlewaretoken=TwJi9uNKTRDlSXGzptjrJ1f4lcXJvPUDtd1jhB2V89oIiP8Xj8F2tjuB7J95DXxe&username=foo-bar%40example.com",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/topics/?content=Zaproxy+alias+impedit+expedita+quisquam+pariatur+exercitationem.+Nemo+rerum+eveniet+dolores+rem+quia+dignissimos.&csrfmiddlewaretoken=ZDB2suGgjL2sgZgpfg4C9VDL1mWG0RNPi7qDDqENYB6aQPGN2DH7wr3YE3RxS4Qw&username=foo-bar%40example.com",
 							"method": "GET",
 							"param": "username",
 							"attack": "",
@@ -1200,7 +1224,7 @@
 							"otherinfo": "The URL contains email address(es)."
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/la-pmspm-p%C3%A9riode-de-mise-en-situation-en-milieu-professionnel-124/topic/immersion-sans-inscription-%C3%A0-france-travail-1638/?content=Zaproxy+alias+impedit+expedita+quisquam+pariatur+exercitationem.+Nemo+rerum+eveniet+dolores+rem+quia+dignissimos.&csrfmiddlewaretoken=TwJi9uNKTRDlSXGzptjrJ1f4lcXJvPUDtd1jhB2V89oIiP8Xj8F2tjuB7J95DXxe&username=foo-bar%40example.com",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/topics/?content=Zaproxy+alias+impedit+expedita+quisquam+pariatur+exercitationem.+Nemo+rerum+eveniet+dolores+rem+quia+dignissimos.&csrfmiddlewaretoken=ZDB2suGgjL2sgZgpfg4C9VDL1mWG0RNPi7qDDqENYB6aQPGN2DH7wr3YE3RxS4Qw&username=foo-bar%40example.com",
 							"method": "GET",
 							"param": "username",
 							"attack": "",
@@ -1214,7 +1238,7 @@
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "1260"
+					"sourceid": "1324"
 				},
 				{
 					"pluginid": "10027",
@@ -1232,7 +1256,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "user",
-							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script nonce=\"hzFJNXsx+7XoW13z6qWaXQ==\">\n                // Tarteaucitron's language is set according to the browser configurat\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script nonce=\"kZapVytTVUzBP1UdWTAfAQ==\">\n                // Tarteaucitron's language is set according to the browser configurat\", see evidence field for the suspicious comment/snippet."
 						},
 						{
 							"uri": "https://communaute.inclusion.beta.gouv.fr",
@@ -1240,7 +1264,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "user",
-							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script nonce=\"US9bmt06hm9OvQ7E6Eb+rg==\">\n                // Tarteaucitron's language is set according to the browser configurat\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script nonce=\"rgdwtNrJLoU1OFJOXBc6RQ==\">\n                // Tarteaucitron's language is set according to the browser configurat\", see evidence field for the suspicious comment/snippet."
 						},
 						{
 							"uri": "https://communaute.inclusion.beta.gouv.fr/",
@@ -1248,7 +1272,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "user",
-							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script nonce=\"6nKxMQfsMohk51vBUsqNJA==\">\n                // Tarteaucitron's language is set according to the browser configurat\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script nonce=\"7X8o3bOAe/ny2ZehqHXF3Q==\">\n                // Tarteaucitron's language is set according to the browser configurat\", see evidence field for the suspicious comment/snippet."
 						},
 						{
 							"uri": "https://communaute.inclusion.beta.gouv.fr/documentation/",
@@ -1256,39 +1280,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "user",
-							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script nonce=\"HHKspyWbvgtLcO5NslHgBA==\">\n                // Tarteaucitron's language is set according to the browser configurat\", see evidence field for the suspicious comment/snippet."
-						},
-						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/cdi-inclusion-tout-ce-que-vous-devez-savoir-123/topic/conditions-de-d%C3%A9part-%C3%A0-la-retraite-1639/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "user",
-							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script nonce=\"6U09rMURtJZBBIO6GyoKYw==\">\n                // Tarteaucitron's language is set according to the browser configurat\", see evidence field for the suspicious comment/snippet."
-						},
-						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/espace-d%C3%A9changes-113/topic/demande-embauche-1637/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "user",
-							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script nonce=\"YiVSgiNuklAX+uxZ1KZnKg==\">\n                // Tarteaucitron's language is set according to the browser configurat\", see evidence field for the suspicious comment/snippet."
-						},
-						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/espace-d%C3%A9changes-113/topic/dossier-da-redaction-1640/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "user",
-							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script nonce=\"/pXf8FCm4ChJawohF8qlnA==\">\n                // Tarteaucitron's language is set according to the browser configurat\", see evidence field for the suspicious comment/snippet."
-						},
-						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/la-pmspm-p%C3%A9riode-de-mise-en-situation-en-milieu-professionnel-124/topic/immersion-sans-inscription-%C3%A0-france-travail-1638/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "user",
-							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script nonce=\"7RYyVmSlpe2oyqK+wv9nQg==\">\n                // Tarteaucitron's language is set according to the browser configurat\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script nonce=\"7yArtpzM4CpVOnhEtoL+4w==\">\n                // Tarteaucitron's language is set according to the browser configurat\", see evidence field for the suspicious comment/snippet."
 						},
 						{
 							"uri": "https://communaute.inclusion.beta.gouv.fr/members/seekers/",
@@ -1296,7 +1288,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "user",
-							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script nonce=\"0YvU/1q06Jg6qzEYi+RXXA==\">\n                // Tarteaucitron's language is set according to the browser configurat\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script nonce=\"I2GvQvrNx9tI8iK82kbO/g==\">\n                // Tarteaucitron's language is set according to the browser configurat\", see evidence field for the suspicious comment/snippet."
 						},
 						{
 							"uri": "https://communaute.inclusion.beta.gouv.fr/news/",
@@ -1304,7 +1296,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "user",
-							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script nonce=\"y4kgfU/fG+ZFAICJi5wvAA==\">\n                // Tarteaucitron's language is set according to the browser configurat\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script nonce=\"0adCCzNVW/OD3yZFgumHyw==\">\n                // Tarteaucitron's language is set according to the browser configurat\", see evidence field for the suspicious comment/snippet."
 						},
 						{
 							"uri": "https://communaute.inclusion.beta.gouv.fr/search/",
@@ -1312,7 +1304,31 @@
 							"param": "",
 							"attack": "",
 							"evidence": "user",
-							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script nonce=\"DLWka8HrlnqSBGgOjfaWGg==\">\n                // Tarteaucitron's language is set according to the browser configurat\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script nonce=\"7GUnfr0HOmuxxDPjLg94HA==\">\n                // Tarteaucitron's language is set according to the browser configurat\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"uri": "https://communaute.inclusion.beta.gouv.fr/static/javascripts/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "user",
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script nonce=\"G/yvbPnWywr3lsDgf+6Crw==\">\n                // Tarteaucitron's language is set according to the browser configurat\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"uri": "https://communaute.inclusion.beta.gouv.fr/static/machina/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "user",
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script nonce=\"k+mq3mGv+2GD6cZ833BMUA==\">\n                // Tarteaucitron's language is set according to the browser configurat\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"uri": "https://communaute.inclusion.beta.gouv.fr/static/stylesheets/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "user",
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script nonce=\"/djtLVeSlQKa3ZzIKLH2hg==\">\n                // Tarteaucitron's language is set according to the browser configurat\", see evidence field for the suspicious comment/snippet."
 						},
 						{
 							"uri": "https://communaute.inclusion.beta.gouv.fr/surveys/dsp/create/",
@@ -1320,16 +1336,24 @@
 							"param": "",
 							"attack": "",
 							"evidence": "user",
-							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script nonce=\"8P8nnESWfA+qf63ovhRQMQ==\">\n                // Tarteaucitron's language is set according to the browser configurat\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script nonce=\"WG0A7Z60hxDiW78vH2S/DA==\">\n                // Tarteaucitron's language is set according to the browser configurat\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"uri": "https://communaute.inclusion.beta.gouv.fr/topics/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "user",
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script nonce=\"1x95Mi2GdtvkGCzrqHVAEQ==\">\n                // Tarteaucitron's language is set according to the browser configurat\", see evidence field for the suspicious comment/snippet."
 						}
 					],
 					"count": "12",
 					"solution": "<p>Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</p>",
-					"otherinfo": "<p>The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script nonce=\"hzFJNXsx+7XoW13z6qWaXQ==\"></p><p>                // Tarteaucitron's language is set according to the browser configurat\", see evidence field for the suspicious comment/snippet.</p>",
+					"otherinfo": "<p>The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script nonce=\"kZapVytTVUzBP1UdWTAfAQ==\"></p><p>                // Tarteaucitron's language is set according to the browser configurat\", see evidence field for the suspicious comment/snippet.</p>",
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10109",
@@ -1366,31 +1390,7 @@
 							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/cdi-inclusion-tout-ce-que-vous-devez-savoir-123/topic/conditions-de-d%C3%A9part-%C3%A0-la-retraite-1639/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<noscript>\n            <div class=\"alert alert-danger\" role=\"status\">\n                Javascript doit \u00EAtre activ\u00E9 pour pouvoir assurer l'affichage correct de la page (recherche g\u00E9ographique par exemple).\n            </div>\n        </noscript>",
-							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
-						},
-						{
 							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/espace-d%C3%A9changes-113/topic/create/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<noscript>\n            <div class=\"alert alert-danger\" role=\"status\">\n                Javascript doit \u00EAtre activ\u00E9 pour pouvoir assurer l'affichage correct de la page (recherche g\u00E9ographique par exemple).\n            </div>\n        </noscript>",
-							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
-						},
-						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/espace-d%C3%A9changes-113/topic/dossier-da-redaction-1640/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<noscript>\n            <div class=\"alert alert-danger\" role=\"status\">\n                Javascript doit \u00EAtre activ\u00E9 pour pouvoir assurer l'affichage correct de la page (recherche g\u00E9ographique par exemple).\n            </div>\n        </noscript>",
-							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
-						},
-						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/la-pmspm-p%C3%A9riode-de-mise-en-situation-en-milieu-professionnel-124/topic/immersion-sans-inscription-%C3%A0-france-travail-1638/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1414,7 +1414,23 @@
 							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/search/",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/static/javascripts/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<noscript>\n            <div class=\"alert alert-danger\" role=\"status\">\n                Javascript doit \u00EAtre activ\u00E9 pour pouvoir assurer l'affichage correct de la page (recherche g\u00E9ographique par exemple).\n            </div>\n        </noscript>",
+							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
+						},
+						{
+							"uri": "https://communaute.inclusion.beta.gouv.fr/static/machina/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<noscript>\n            <div class=\"alert alert-danger\" role=\"status\">\n                Javascript doit \u00EAtre activ\u00E9 pour pouvoir assurer l'affichage correct de la page (recherche g\u00E9ographique par exemple).\n            </div>\n        </noscript>",
+							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
+						},
+						{
+							"uri": "https://communaute.inclusion.beta.gouv.fr/static/stylesheets/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1428,6 +1444,14 @@
 							"attack": "",
 							"evidence": "<noscript>\n            <div class=\"alert alert-danger\" role=\"status\">\n                Javascript doit \u00EAtre activ\u00E9 pour pouvoir assurer l'affichage correct de la page (recherche g\u00E9ographique par exemple).\n            </div>\n        </noscript>",
 							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
+						},
+						{
+							"uri": "https://communaute.inclusion.beta.gouv.fr/topics/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a hx-get=\"/forum/espace-d%C3%A9changes-113/topic/conseiller-insertion-professionnelle-1665/showmore/topic\"\n                                               id=\"showmoretopic-button1665\"\n                                               hx-target=\"#showmoretopicsarea1665\"\n                                               hx-swap=\"outerHTML\"\n                                               class=\"btn btn-link p-0 mh-auto matomo-event\"\n                                               data-matomo-category=\"engagement\"\n                                               data-matomo-action=\"showmore\"\n                                               data-matomo-option=\"topic\">+ voir la suite</a>",
+							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
 						}
 					],
 					"count": "11",
@@ -1463,7 +1487,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "94"
+					"sourceid": "59"
 				},
 				{
 					"pluginid": "10015",
@@ -1500,14 +1524,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/cdi-inclusion-tout-ce-que-vous-devez-savoir-123/topic/conditions-de-d%C3%A9part-%C3%A0-la-retraite-1639/",
-							"method": "GET",
-							"param": "cache-control",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/espace-d%C3%A9changes-113/topic/create/",
 							"method": "GET",
 							"param": "cache-control",
@@ -1516,7 +1532,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/espace-d%C3%A9changes-113/topic/dossier-da-redaction-1640/",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/les-d%C3%A9rogations-au-d%C3%A9lai-de-carence-dun-parcours-iae-140/topic/comment-effectuer-une-d%C3%A9rogation-1663/",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -1562,6 +1578,14 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
+						},
+						{
+							"uri": "https://communaute.inclusion.beta.gouv.fr/topics/",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
 						}
 					],
 					"count": "11",
@@ -1583,15 +1607,7 @@
 					"desc": "<p>Specifies how and where the data would be used. For instance, if the value is audio, then the requested resource must be audio data and not any other type of resource.</p>",
 					"instances":[ 
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr",
-							"method": "GET",
-							"param": "Sec-Fetch-Dest",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/inclusion_connect/authorize",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -1600,6 +1616,14 @@
 						},
 						{
 							"uri": "https://communaute.inclusion.beta.gouv.fr/robots.txt",
+							"method": "GET",
+							"param": "Sec-Fetch-Dest",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://communaute.inclusion.beta.gouv.fr/static/javascripts/",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -1613,7 +1637,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "59"
 				},
 				{
 					"pluginid": "90005",
@@ -1626,15 +1650,7 @@
 					"desc": "<p>Allows to differentiate between requests for navigating between HTML pages and requests for loading resources like images, audio etc.</p>",
 					"instances":[ 
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr",
-							"method": "GET",
-							"param": "Sec-Fetch-Mode",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/inclusion_connect/authorize",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -1643,6 +1659,14 @@
 						},
 						{
 							"uri": "https://communaute.inclusion.beta.gouv.fr/robots.txt",
+							"method": "GET",
+							"param": "Sec-Fetch-Mode",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://communaute.inclusion.beta.gouv.fr/static/javascripts/",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -1656,7 +1680,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "59"
 				},
 				{
 					"pluginid": "90005",
@@ -1669,15 +1693,7 @@
 					"desc": "<p>Specifies the relationship between request initiator's origin and target's origin.</p>",
 					"instances":[ 
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr",
-							"method": "GET",
-							"param": "Sec-Fetch-Site",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/inclusion_connect/authorize",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -1686,6 +1702,14 @@
 						},
 						{
 							"uri": "https://communaute.inclusion.beta.gouv.fr/robots.txt",
+							"method": "GET",
+							"param": "Sec-Fetch-Site",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://communaute.inclusion.beta.gouv.fr/static/javascripts/",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -1699,7 +1723,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "59"
 				},
 				{
 					"pluginid": "90005",
@@ -1712,15 +1736,7 @@
 					"desc": "<p>Specifies if a navigation request was initiated by a user.</p>",
 					"instances":[ 
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr",
-							"method": "GET",
-							"param": "Sec-Fetch-User",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/inclusion_connect/authorize",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -1734,6 +1750,14 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
+						},
+						{
+							"uri": "https://communaute.inclusion.beta.gouv.fr/static/javascripts/",
+							"method": "GET",
+							"param": "Sec-Fetch-User",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
 						}
 					],
 					"count": "3",
@@ -1742,7 +1766,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "59"
 				},
 				{
 					"pluginid": "10112",
@@ -1759,7 +1783,7 @@
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "JbIfErVtSXiXo4mMkZx0FiddD7JcIJ4j",
+							"evidence": "tEZLl68HP0eSK0AyXxNFxGAnNR512ndR",
 							"otherinfo": "\ncookie:csrftoken\ncookie:sessionid"
 						},
 						{
@@ -1767,7 +1791,7 @@
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "KRsbihplpsVxA2Cy4PwLUspHWHmwiiNL",
+							"evidence": "vezCvA5PaqM1WQRQqJ3FUWTsCzf2L3tz",
 							"otherinfo": "\ncookie:csrftoken\ncookie:sessionid"
 						},
 						{
@@ -1775,7 +1799,7 @@
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "KRsbihplpsVxA2Cy4PwLUspHWHmwiiNL",
+							"evidence": "tEZLl68HP0eSK0AyXxNFxGAnNR512ndR",
 							"otherinfo": "\ncookie:csrftoken"
 						},
 						{
@@ -1783,23 +1807,7 @@
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "KRsbihplpsVxA2Cy4PwLUspHWHmwiiNL",
-							"otherinfo": "\ncookie:csrftoken"
-						},
-						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/espace-d%C3%A9changes-113/topic/create/",
-							"method": "GET",
-							"param": "csrftoken",
-							"attack": "",
-							"evidence": "KRsbihplpsVxA2Cy4PwLUspHWHmwiiNL",
-							"otherinfo": "\ncookie:csrftoken"
-						},
-						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/espace-d%C3%A9changes-113/topic/dossier-da-redaction-1640/",
-							"method": "GET",
-							"param": "csrftoken",
-							"attack": "",
-							"evidence": "KRsbihplpsVxA2Cy4PwLUspHWHmwiiNL",
+							"evidence": "tEZLl68HP0eSK0AyXxNFxGAnNR512ndR",
 							"otherinfo": "\ncookie:csrftoken"
 						},
 						{
@@ -1807,23 +1815,47 @@
 							"method": "GET",
 							"param": "sessionid",
 							"attack": "",
-							"evidence": "n4mn1f4nsxnficzojerb6teckjg59xx1",
+							"evidence": "oqcld8pxnnonv2s9b25p33gzsmjw7oxf",
 							"otherinfo": "\ncookie:sessionid"
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/members/seekers/",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/news/",
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "KRsbihplpsVxA2Cy4PwLUspHWHmwiiNL",
+							"evidence": "tEZLl68HP0eSK0AyXxNFxGAnNR512ndR",
 							"otherinfo": "\ncookie:csrftoken"
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/search/",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/robots.txt",
+							"method": "GET",
+							"param": "sessionid",
+							"attack": "",
+							"evidence": "oqcld8pxnnonv2s9b25p33gzsmjw7oxf",
+							"otherinfo": "\ncookie:sessionid"
+						},
+						{
+							"uri": "https://communaute.inclusion.beta.gouv.fr/static/javascripts/",
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "KRsbihplpsVxA2Cy4PwLUspHWHmwiiNL",
+							"evidence": "tEZLl68HP0eSK0AyXxNFxGAnNR512ndR",
+							"otherinfo": "\ncookie:csrftoken"
+						},
+						{
+							"uri": "https://communaute.inclusion.beta.gouv.fr/static/machina/",
+							"method": "GET",
+							"param": "csrftoken",
+							"attack": "",
+							"evidence": "tEZLl68HP0eSK0AyXxNFxGAnNR512ndR",
+							"otherinfo": "\ncookie:csrftoken"
+						},
+						{
+							"uri": "https://communaute.inclusion.beta.gouv.fr/static/stylesheets/",
+							"method": "GET",
+							"param": "csrftoken",
+							"attack": "",
+							"evidence": "tEZLl68HP0eSK0AyXxNFxGAnNR512ndR",
 							"otherinfo": "\ncookie:csrftoken"
 						},
 						{
@@ -1831,24 +1863,16 @@
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "KRsbihplpsVxA2Cy4PwLUspHWHmwiiNL",
+							"evidence": "tEZLl68HP0eSK0AyXxNFxGAnNR512ndR",
 							"otherinfo": "\ncookie:csrftoken"
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/documentation",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/topics/",
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "KRsbihplpsVxA2Cy4PwLUspHWHmwiiNL",
+							"evidence": "tEZLl68HP0eSK0AyXxNFxGAnNR512ndR",
 							"otherinfo": "\ncookie:csrftoken"
-						},
-						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/members/seekers",
-							"method": "GET",
-							"param": "sessionid",
-							"attack": "",
-							"evidence": "n4mn1f4nsxnficzojerb6teckjg59xx1",
-							"otherinfo": "\ncookie:sessionid"
 						}
 					],
 					"count": "12",
@@ -1857,7 +1881,7 @@
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10049",
@@ -1894,30 +1918,6 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/espace-d%C3%A9changes-113/topic/create/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
-						},
-						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/espace-d%C3%A9changes-113/topic/dossier-da-redaction-1640/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
-						},
-						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/members/seekers/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
-						},
-						{
 							"uri": "https://communaute.inclusion.beta.gouv.fr/news/",
 							"method": "GET",
 							"param": "",
@@ -1934,7 +1934,23 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"uri": "https://communaute.inclusion.beta.gouv.fr/search/",
+							"uri": "https://communaute.inclusion.beta.gouv.fr/static/javascripts/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
+							"uri": "https://communaute.inclusion.beta.gouv.fr/static/machina/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
+							"uri": "https://communaute.inclusion.beta.gouv.fr/static/stylesheets/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1943,6 +1959,14 @@
 						},
 						{
 							"uri": "https://communaute.inclusion.beta.gouv.fr/surveys/dsp/create/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
+							"uri": "https://communaute.inclusion.beta.gouv.fr/topics/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1982,7 +2006,7 @@
 							"param": "q",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://communaute.inclusion.beta.gouv.fr/search/?m=all&q\n\nappears to include user input in: \n\na(n) [meta] tag [content] attribute \n\nThe user input found was:\nq=\n\nThe user-controlled value was:\n{\"inlinescriptnonce\":\"rst6bnbsxezgzjupevzfgq==\"}"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://communaute.inclusion.beta.gouv.fr/search/?m=all&q\n\nappears to include user input in: \n\na(n) [meta] tag [content] attribute \n\nThe user input found was:\nq=\n\nThe user-controlled value was:\n{\"inlinescriptnonce\":\"vy2cu8jipvih0tcnwynnza==\"}"
 						},
 						{
 							"uri": "https://communaute.inclusion.beta.gouv.fr/search/?q",
@@ -1990,7 +2014,7 @@
 							"param": "q",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://communaute.inclusion.beta.gouv.fr/search/?q\n\nappears to include user input in: \n\na(n) [meta] tag [content] attribute \n\nThe user input found was:\nq=\n\nThe user-controlled value was:\n{\"inlinescriptnonce\":\"8pssdkm8dueq151+42q/4q==\"}"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://communaute.inclusion.beta.gouv.fr/search/?q\n\nappears to include user input in: \n\na(n) [meta] tag [content] attribute \n\nThe user input found was:\nq=\n\nThe user-controlled value was:\n{\"inlinescriptnonce\":\"dhpdfpcox2gd2mbz5poovw==\"}"
 						},
 						{
 							"uri": "https://communaute.inclusion.beta.gouv.fr/forum/espace-d%C3%A9changes-113/topic/create/",
@@ -2023,7 +2047,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html</p>",
 					"cweid": "20",
 					"wascid": "20",
-					"sourceid": "1190"
+					"sourceid": "1310"
 				}
 			]
 		}

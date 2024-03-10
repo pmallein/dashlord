@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 3 Mar 2024 11:49:53",
+	"@generated": "Sun, 10 Mar 2024 12:26:11",
 	"site":[ 
 		{
 			"@name": "https://urbanvitaliz.fr",
@@ -50,23 +50,15 @@
 							"attack": "",
 							"evidence": "<form method=\"GET\">",
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"check-cat1\" \"check-cat2\" \"check-cat3\" \"query\" \"searching\" ]."
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/ressource/?searching=on",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<form method=\"GET\">",
-							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"check-cat1\" \"check-cat2\" \"check-cat3\" \"query\" \"searching\" ]."
 						}
 					],
-					"count": "5",
+					"count": "4",
 					"solution": "<p>Phase: Architecture and Design</p><p>Use a vetted library or framework that does not allow this weakness to occur or provides constructs that make this weakness easier to avoid.</p><p>For example, use anti-CSRF packages such as the OWASP CSRFGuard.</p><p></p><p>Phase: Implementation</p><p>Ensure that your application is free of cross-site scripting issues, because most CSRF defenses can be bypassed using attacker-controlled script.</p><p></p><p>Phase: Architecture and Design</p><p>Generate a unique nonce for each form, place the nonce into the form, and verify the nonce upon receipt of the form. Be sure that the nonce is not predictable (CWE-330).</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Identify especially dangerous operations. When the user performs a dangerous operation, send a separate confirmation request to ensure that the user intended to perform that operation.</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Use the ESAPI Session Management control.</p><p>This control includes a component for CSRF.</p><p></p><p>Do not use the GET method for any request that triggers a state change.</p><p></p><p>Phase: Implementation</p><p>Check the HTTP Referer header to see if the request originated from an expected page. This could break legitimate functionality, because users or proxies may have disabled sending the Referer for privacy reasons.</p>",
 					"otherinfo": "<p>No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"\" ].</p>",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "69"
+					"sourceid": "93"
 				},
 				{
 					"pluginid": "10038",
@@ -127,7 +119,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://urbanvitaliz.fr/mentions-legales",
+							"uri": "https://urbanvitaliz.fr/methodologie",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -135,7 +127,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://urbanvitaliz.fr/methodologie",
+							"uri": "https://urbanvitaliz.fr/nous-suivre",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -173,7 +165,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>https://www.w3.org/TR/CSP/</p><p>https://w3c.github.io/webappsec-csp/</p><p>https://web.dev/articles/csp</p><p>https://caniuse.com/#feat=contentsecuritypolicy</p><p>https://content-security-policy.com/</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90003",
@@ -186,75 +178,35 @@
 					"desc": "<p>The integrity attribute is missing on a script or link tag served by an external server. The integrity tag prevents an attacker who have gained access to this server from injecting a malicious content. </p>",
 					"instances":[ 
 						{
-							"uri": "https://urbanvitaliz.fr",
+							"uri": "https://urbanvitaliz.fr/accounts/signup/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script src=\"https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.classList%2Cdefault%2CqueueMicrotask%2CArray.prototype.forEach%2CElement.prototype.closest\"></script>",
+							"evidence": "<script src=\"https://www.google.com/recaptcha/api.js?hl=fr\"></script>",
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://urbanvitaliz.fr/",
+							"uri": "https://urbanvitaliz.fr/contact/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script src=\"https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.classList%2Cdefault%2CqueueMicrotask%2CArray.prototype.forEach%2CElement.prototype.closest\"></script>",
+							"evidence": "<script src=\"https://www.google.com/recaptcha/api.js?hl=fr\"></script>",
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://urbanvitaliz.fr/accounts/login/",
+							"uri": "https://urbanvitaliz.fr/contact/?next=/&subject=Prise%20de%20contact",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script src=\"https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.classList%2Cdefault%2CqueueMicrotask%2CArray.prototype.forEach%2CElement.prototype.closest\"></script>",
+							"evidence": "<script src=\"https://www.google.com/recaptcha/api.js?hl=fr\"></script>",
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://urbanvitaliz.fr/acteurs-locaux",
+							"uri": "https://urbanvitaliz.fr/contact/?subject=Demande%20d%E2%80%99acc%C3%A8s%20%C3%A0%20UrbanVitaliz%20en%20tant%20que%20conseiller%C2%B7e",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script src=\"https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.classList%2Cdefault%2CqueueMicrotask%2CArray.prototype.forEach%2CElement.prototype.closest\"></script>",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/confidentialite",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<script src=\"https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.classList%2Cdefault%2CqueueMicrotask%2CArray.prototype.forEach%2CElement.prototype.closest\"></script>",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/cookies/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<script src=\"https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.classList%2Cdefault%2CqueueMicrotask%2CArray.prototype.forEach%2CElement.prototype.closest\"></script>",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/mentions-legales",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<script src=\"https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.classList%2Cdefault%2CqueueMicrotask%2CArray.prototype.forEach%2CElement.prototype.closest\"></script>",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/methodologie",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<script src=\"https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.classList%2Cdefault%2CqueueMicrotask%2CArray.prototype.forEach%2CElement.prototype.closest\"></script>",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/onboarding/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<script src=\"https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.classList%2Cdefault%2CqueueMicrotask%2CArray.prototype.forEach%2CElement.prototype.closest\"></script>",
+							"evidence": "<script src=\"https://www.google.com/recaptcha/api.js?hl=fr\"></script>",
 							"otherinfo": ""
 						},
 						{
@@ -266,11 +218,51 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://urbanvitaliz.fr/qui-sommes-nous",
+							"uri": "https://urbanvitaliz.fr/stats",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script src=\"https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.classList%2Cdefault%2CqueueMicrotask%2CArray.prototype.forEach%2CElement.prototype.closest\"></script>",
+							"evidence": "<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'\n          rel='stylesheet' />",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://urbanvitaliz.fr/stats",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://urbanvitaliz.fr/accounts/signup/",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "<script src=\"https://www.google.com/recaptcha/api.js?hl=fr\"></script>",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://urbanvitaliz.fr/contact/",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "<script src=\"https://www.google.com/recaptcha/api.js?hl=fr\"></script>",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://urbanvitaliz.fr/contact/?next=/&subject=Prise%20de%20contact",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "<script src=\"https://www.google.com/recaptcha/api.js?hl=fr\"></script>",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://urbanvitaliz.fr/contact/?subject=Demande%20d%E2%80%99acc%C3%A8s%20%C3%A0%20UrbanVitaliz%20en%20tant%20que%20conseiller%C2%B7e",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "<script src=\"https://www.google.com/recaptcha/api.js?hl=fr\"></script>",
 							"otherinfo": ""
 						}
 					],
@@ -280,7 +272,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity</p>",
 					"cweid": "345",
 					"wascid": "15",
-					"sourceid": "6"
+					"sourceid": "245"
 				},
 				{
 					"pluginid": "10010",
@@ -301,14 +293,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://urbanvitaliz.fr/accounts/password/reset/",
-							"method": "GET",
-							"param": "csrftoken",
-							"attack": "",
-							"evidence": "set-cookie: csrftoken",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://urbanvitaliz.fr/contact/",
 							"method": "GET",
 							"param": "csrftoken",
@@ -317,7 +301,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://urbanvitaliz.fr/cookies/",
+							"uri": "https://urbanvitaliz.fr/contact/?next=/&subject=Prise%20de%20contact",
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
@@ -325,7 +309,15 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://urbanvitaliz.fr/login/",
+							"uri": "https://urbanvitaliz.fr/contact/?subject=Demande%20d%E2%80%99acc%C3%A8s%20%C3%A0%20UrbanVitaliz%20en%20tant%20que%20conseiller%C2%B7e",
+							"method": "GET",
+							"param": "csrftoken",
+							"attack": "",
+							"evidence": "set-cookie: csrftoken",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://urbanvitaliz.fr/cookies/",
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
@@ -395,7 +387,7 @@
 					"reference": "<p>https://owasp.org/www-community/HttpOnly</p>",
 					"cweid": "1004",
 					"wascid": "13",
-					"sourceid": "77"
+					"sourceid": "101"
 				},
 				{
 					"pluginid": "10011",
@@ -462,7 +454,7 @@
 					"reference": "<p>https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes.html</p>",
 					"cweid": "614",
 					"wascid": "13",
-					"sourceid": "192"
+					"sourceid": "221"
 				},
 				{
 					"pluginid": "10054",
@@ -555,7 +547,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://urbanvitaliz.fr/accounts/signup/",
+							"uri": "https://urbanvitaliz.fr/contact/",
 							"method": "POST",
 							"param": "csrftoken",
 							"attack": "",
@@ -563,7 +555,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://urbanvitaliz.fr/contact/",
+							"uri": "https://urbanvitaliz.fr/contact/?subject=Demande%20d%E2%80%99acc%C3%A8s%20%C3%A0%20UrbanVitaliz%20en%20tant%20que%20conseiller%C2%B7e",
 							"method": "POST",
 							"param": "csrftoken",
 							"attack": "",
@@ -577,7 +569,7 @@
 					"reference": "<p>https://tools.ietf.org/html/draft-ietf-httpbis-cookie-same-site</p>",
 					"cweid": "1275",
 					"wascid": "13",
-					"sourceid": "77"
+					"sourceid": "101"
 				},
 				{
 					"pluginid": "10017",
@@ -590,75 +582,35 @@
 					"desc": "<p>The page includes one or more script files from a third-party domain.</p>",
 					"instances":[ 
 						{
-							"uri": "https://urbanvitaliz.fr",
+							"uri": "https://urbanvitaliz.fr/accounts/signup/",
 							"method": "GET",
-							"param": "https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.classList%2Cdefault%2CqueueMicrotask%2CArray.prototype.forEach%2CElement.prototype.closest",
+							"param": "https://www.google.com/recaptcha/api.js?hl=fr",
 							"attack": "",
-							"evidence": "<script src=\"https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.classList%2Cdefault%2CqueueMicrotask%2CArray.prototype.forEach%2CElement.prototype.closest\"></script>",
+							"evidence": "<script src=\"https://www.google.com/recaptcha/api.js?hl=fr\"></script>",
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://urbanvitaliz.fr/",
+							"uri": "https://urbanvitaliz.fr/contact/",
 							"method": "GET",
-							"param": "https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.classList%2Cdefault%2CqueueMicrotask%2CArray.prototype.forEach%2CElement.prototype.closest",
+							"param": "https://www.google.com/recaptcha/api.js?hl=fr",
 							"attack": "",
-							"evidence": "<script src=\"https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.classList%2Cdefault%2CqueueMicrotask%2CArray.prototype.forEach%2CElement.prototype.closest\"></script>",
+							"evidence": "<script src=\"https://www.google.com/recaptcha/api.js?hl=fr\"></script>",
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://urbanvitaliz.fr/accounts/login/",
+							"uri": "https://urbanvitaliz.fr/contact/?next=/&subject=Prise%20de%20contact",
 							"method": "GET",
-							"param": "https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.classList%2Cdefault%2CqueueMicrotask%2CArray.prototype.forEach%2CElement.prototype.closest",
+							"param": "https://www.google.com/recaptcha/api.js?hl=fr",
 							"attack": "",
-							"evidence": "<script src=\"https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.classList%2Cdefault%2CqueueMicrotask%2CArray.prototype.forEach%2CElement.prototype.closest\"></script>",
+							"evidence": "<script src=\"https://www.google.com/recaptcha/api.js?hl=fr\"></script>",
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://urbanvitaliz.fr/acteurs-locaux",
+							"uri": "https://urbanvitaliz.fr/contact/?subject=Demande%20d%E2%80%99acc%C3%A8s%20%C3%A0%20UrbanVitaliz%20en%20tant%20que%20conseiller%C2%B7e",
 							"method": "GET",
-							"param": "https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.classList%2Cdefault%2CqueueMicrotask%2CArray.prototype.forEach%2CElement.prototype.closest",
+							"param": "https://www.google.com/recaptcha/api.js?hl=fr",
 							"attack": "",
-							"evidence": "<script src=\"https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.classList%2Cdefault%2CqueueMicrotask%2CArray.prototype.forEach%2CElement.prototype.closest\"></script>",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/confidentialite",
-							"method": "GET",
-							"param": "https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.classList%2Cdefault%2CqueueMicrotask%2CArray.prototype.forEach%2CElement.prototype.closest",
-							"attack": "",
-							"evidence": "<script src=\"https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.classList%2Cdefault%2CqueueMicrotask%2CArray.prototype.forEach%2CElement.prototype.closest\"></script>",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/cookies/",
-							"method": "GET",
-							"param": "https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.classList%2Cdefault%2CqueueMicrotask%2CArray.prototype.forEach%2CElement.prototype.closest",
-							"attack": "",
-							"evidence": "<script src=\"https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.classList%2Cdefault%2CqueueMicrotask%2CArray.prototype.forEach%2CElement.prototype.closest\"></script>",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/mentions-legales",
-							"method": "GET",
-							"param": "https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.classList%2Cdefault%2CqueueMicrotask%2CArray.prototype.forEach%2CElement.prototype.closest",
-							"attack": "",
-							"evidence": "<script src=\"https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.classList%2Cdefault%2CqueueMicrotask%2CArray.prototype.forEach%2CElement.prototype.closest\"></script>",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/methodologie",
-							"method": "GET",
-							"param": "https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.classList%2Cdefault%2CqueueMicrotask%2CArray.prototype.forEach%2CElement.prototype.closest",
-							"attack": "",
-							"evidence": "<script src=\"https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.classList%2Cdefault%2CqueueMicrotask%2CArray.prototype.forEach%2CElement.prototype.closest\"></script>",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/onboarding/",
-							"method": "GET",
-							"param": "https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.classList%2Cdefault%2CqueueMicrotask%2CArray.prototype.forEach%2CElement.prototype.closest",
-							"attack": "",
-							"evidence": "<script src=\"https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.classList%2Cdefault%2CqueueMicrotask%2CArray.prototype.forEach%2CElement.prototype.closest\"></script>",
+							"evidence": "<script src=\"https://www.google.com/recaptcha/api.js?hl=fr\"></script>",
 							"otherinfo": ""
 						},
 						{
@@ -670,21 +622,53 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://urbanvitaliz.fr/qui-sommes-nous",
+							"uri": "https://urbanvitaliz.fr/stats",
 							"method": "GET",
-							"param": "https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.classList%2Cdefault%2CqueueMicrotask%2CArray.prototype.forEach%2CElement.prototype.closest",
+							"param": "https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js",
 							"attack": "",
-							"evidence": "<script src=\"https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.classList%2Cdefault%2CqueueMicrotask%2CArray.prototype.forEach%2CElement.prototype.closest\"></script>",
+							"evidence": "<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://urbanvitaliz.fr/accounts/signup/",
+							"method": "POST",
+							"param": "https://www.google.com/recaptcha/api.js?hl=fr",
+							"attack": "",
+							"evidence": "<script src=\"https://www.google.com/recaptcha/api.js?hl=fr\"></script>",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://urbanvitaliz.fr/contact/",
+							"method": "POST",
+							"param": "https://www.google.com/recaptcha/api.js?hl=fr",
+							"attack": "",
+							"evidence": "<script src=\"https://www.google.com/recaptcha/api.js?hl=fr\"></script>",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://urbanvitaliz.fr/contact/?next=/&subject=Prise%20de%20contact",
+							"method": "POST",
+							"param": "https://www.google.com/recaptcha/api.js?hl=fr",
+							"attack": "",
+							"evidence": "<script src=\"https://www.google.com/recaptcha/api.js?hl=fr\"></script>",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://urbanvitaliz.fr/contact/?subject=Demande%20d%E2%80%99acc%C3%A8s%20%C3%A0%20UrbanVitaliz%20en%20tant%20que%20conseiller%C2%B7e",
+							"method": "POST",
+							"param": "https://www.google.com/recaptcha/api.js?hl=fr",
+							"attack": "",
+							"evidence": "<script src=\"https://www.google.com/recaptcha/api.js?hl=fr\"></script>",
 							"otherinfo": ""
 						}
 					],
-					"count": "11",
+					"count": "10",
 					"solution": "<p>Ensure JavaScript source files are loaded from only trusted sources, and the sources can't be controlled by end users of the application.</p>",
 					"otherinfo": "",
 					"reference": "",
 					"cweid": "829",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "245"
 				},
 				{
 					"pluginid": "10110",
@@ -711,7 +695,7 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "166"
+					"sourceid": "169"
 				},
 				{
 					"pluginid": "10063",
@@ -756,6 +740,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://urbanvitaliz.fr/conditions-generales-utilisation",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://urbanvitaliz.fr/confidentialite",
 							"method": "GET",
 							"param": "",
@@ -765,14 +757,6 @@
 						},
 						{
 							"uri": "https://urbanvitaliz.fr/cookies/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/mentions-legales",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -847,7 +831,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://urbanvitaliz.fr/static/app-be0c6189.js",
+							"uri": "https://urbanvitaliz.fr/static/app-5bdaddbd.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -895,14 +879,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://urbanvitaliz.fr/static/home/css/home/home.css",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://urbanvitaliz.fr/static/main-1f699096.css",
 							"method": "GET",
 							"param": "",
@@ -911,7 +887,15 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://urbanvitaliz.fr/static/module.esm-df9f47fe.js",
+							"uri": "https://urbanvitaliz.fr/static/module.esm-feb18927.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://urbanvitaliz.fr/static/urbanvitaliz.fr/home/css/home/home-urbanvitaliz.css",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -933,7 +917,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>https://caniuse.com/stricttransportsecurity</p><p>https://datatracker.ietf.org/doc/html/rfc6797</p>",
 					"cweid": "319",
 					"wascid": "15",
-					"sourceid": "66"
+					"sourceid": "65"
 				},
 				{
 					"pluginid": "10096",
@@ -1104,7 +1088,7 @@
 					"reference": "<p>https://cwe.mitre.org/data/definitions/200.html</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "118"
+					"sourceid": "123"
 				},
 				{
 					"pluginid": "10021",
@@ -1133,7 +1117,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://urbanvitaliz.fr/static/app-be0c6189.js",
+							"uri": "https://urbanvitaliz.fr/static/app-5bdaddbd.js",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -1181,14 +1165,6 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://urbanvitaliz.fr/static/home/css/home/home.css",
-							"method": "GET",
-							"param": "x-content-type-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
-						},
-						{
 							"uri": "https://urbanvitaliz.fr/static/main-1f699096.css",
 							"method": "GET",
 							"param": "x-content-type-options",
@@ -1197,7 +1173,15 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://urbanvitaliz.fr/static/module.esm-df9f47fe.js",
+							"uri": "https://urbanvitaliz.fr/static/module.esm-feb18927.js",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://urbanvitaliz.fr/static/urbanvitaliz.fr/home/css/home/home-urbanvitaliz.css",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -1219,7 +1203,7 @@
 					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "66"
+					"sourceid": "65"
 				},
 				{
 					"pluginid": "10111",
@@ -1245,80 +1229,16 @@
 							"param": "login",
 							"attack": "",
 							"evidence": "password",
-							"otherinfo": "userParam=login\nuserValue=foo-bar@example.com\npasswordParam=password\nreferer=https://urbanvitaliz.fr/accounts/login/?next=/ressource/151/bookmark/create/\ncsrfToken=csrfmiddlewaretoken"
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/accounts/login/",
-							"method": "POST",
-							"param": "login",
-							"attack": "",
-							"evidence": "password",
-							"otherinfo": "userParam=login\nuserValue=foo-bar@example.com\npasswordParam=password\nreferer=https://urbanvitaliz.fr/accounts/login/?next=/ressource/28/bookmark/create/\ncsrfToken=csrfmiddlewaretoken"
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/accounts/login/",
-							"method": "POST",
-							"param": "login",
-							"attack": "",
-							"evidence": "password",
-							"otherinfo": "userParam=login\nuserValue=foo-bar@example.com\npasswordParam=password\nreferer=https://urbanvitaliz.fr/accounts/login/?next=/ressource/29/bookmark/create/\ncsrfToken=csrfmiddlewaretoken"
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/accounts/login/",
-							"method": "POST",
-							"param": "login",
-							"attack": "",
-							"evidence": "password",
-							"otherinfo": "userParam=login\nuserValue=foo-bar@example.com\npasswordParam=password\nreferer=https://urbanvitaliz.fr/accounts/login/?next=/ressource/292/bookmark/create/\ncsrfToken=csrfmiddlewaretoken"
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/accounts/login/",
-							"method": "POST",
-							"param": "login",
-							"attack": "",
-							"evidence": "password",
-							"otherinfo": "userParam=login\nuserValue=foo-bar@example.com\npasswordParam=password\nreferer=https://urbanvitaliz.fr/accounts/login/?next=/ressource/406/bookmark/create/\ncsrfToken=csrfmiddlewaretoken"
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/accounts/login/",
-							"method": "POST",
-							"param": "login",
-							"attack": "",
-							"evidence": "password",
-							"otherinfo": "userParam=login\nuserValue=foo-bar@example.com\npasswordParam=password\nreferer=https://urbanvitaliz.fr/accounts/login/?next=/ressource/444/bookmark/create/\ncsrfToken=csrfmiddlewaretoken"
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/accounts/login/",
-							"method": "POST",
-							"param": "login",
-							"attack": "",
-							"evidence": "password",
-							"otherinfo": "userParam=login\nuserValue=foo-bar@example.com\npasswordParam=password\nreferer=https://urbanvitaliz.fr/accounts/login/?next=/ressource/446/bookmark/create/\ncsrfToken=csrfmiddlewaretoken"
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/accounts/login/",
-							"method": "POST",
-							"param": "login",
-							"attack": "",
-							"evidence": "password",
-							"otherinfo": "userParam=login\nuserValue=foo-bar@example.com\npasswordParam=password\nreferer=https://urbanvitaliz.fr/accounts/login/?next=/ressource/59/bookmark/create/\ncsrfToken=csrfmiddlewaretoken"
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/accounts/login/",
-							"method": "POST",
-							"param": "login",
-							"attack": "",
-							"evidence": "password",
 							"otherinfo": "userParam=login\nuserValue=foo-bar@example.com\npasswordParam=password\nreferer=https://urbanvitaliz.fr/accounts/login/?next=/ressource/64/bookmark/create/\ncsrfToken=csrfmiddlewaretoken"
 						}
 					],
-					"count": "10",
+					"count": "2",
 					"solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
 					"otherinfo": "<p>userParam=login</p><p>userValue=foo-bar@example.com</p><p>passwordParam=password</p><p>referer=https://urbanvitaliz.fr/accounts/login/</p><p>csrfToken=csrfmiddlewaretoken</p>",
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/auth-req-id/</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "221"
+					"sourceid": "249"
 				},
 				{
 					"pluginid": "10094",
@@ -1351,11 +1271,19 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "paigdduBp9RHOqXxS6M3F4R8GUQ1v1OwhCtZOYs4s2c4BkwT0eI68BlvDbfkew99",
-							"otherinfo": "\uFFFD\uFFFD\uFFFDu\u06C1\uFFFD\uFFFDG:\uFFFD\uFFFDK\uFFFD7\\x0017\uFFFD|\\x0019D5\uFFFDS\uFFFD\uFFFD+Y9\uFFFD8\uFFFDg8\\x0006L\\x0013\uFFFD\uFFFD:\uFFFD\\x0019o\r\uFFFD\uFFFD{\\x000f}"
+							"evidence": "1Ly7OFNeEPPU2pzjwgbw0HNdFtOvaQOQ",
+							"otherinfo": "\u053C\uFFFD8S^\\x0010\uFFFD\uFFFD\u069C\uFFFD\uFFFD\\x0006\uFFFD\uFFFDs]\\x0016\u04EFi\\x0003\uFFFD"
 						},
 						{
 							"uri": "https://urbanvitaliz.fr/acteurs-locaux",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor",
+							"otherinfo": "\uFFFD\\x0016\uFFFD\uFFFDz\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x0008d4o\uFFFD2\uFFFDF\uFFFD>:\uFFFDgTPK\uFFFD3\uFFFD\uFFFD\uFFFD\uB2CBc||ZZ\uFFFDT\uFFFDY\uFFFD\uFFFD\uFFFD\uFFFDV\uFFFD"
+						},
+						{
+							"uri": "https://urbanvitaliz.fr/conditions-generales-utilisation",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1375,8 +1303,8 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "HOcwKivxVcl3TP2QQ3lvu5bkzbQxoZdXteM5wzDrCeu0EEU5LNurUfdqKVIk6Ua6",
-							"otherinfo": "\\x001c\uFFFD0*+\uFFFDU\uFFFDwL\uFFFD\uFFFDCyo\uFFFD\uFFFD\uFFFD\u03741\uFFFD\uFFFDW\uFFFD\uFFFD9\uFFFD0\uFFFD\t\uFFFD\\x0010E9,\u06EBQ\uFFFDj)R$\uFFFDF\uFFFD"
+							"evidence": "0Ztyu22FzVpGZDQ1XVC7wPzi7wcwHJ33",
+							"otherinfo": "\u045Br\uFFFDm\uFFFD\uFFFDZFd45]P\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x00070\\x001c\uFFFD\uFFFD"
 						},
 						{
 							"uri": "https://urbanvitaliz.fr/mentions-legales",
@@ -1395,20 +1323,12 @@
 							"otherinfo": "\uFFFD\\x0016\uFFFD\uFFFDz\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x0008d4o\uFFFD2\uFFFDF\uFFFD>:\uFFFDgTPK\uFFFD3\uFFFD\uFFFD\uFFFD\uB2CBc||ZZ\uFFFDT\uFFFDY\uFFFD\uFFFD\uFFFD\uFFFDV\uFFFD"
 						},
 						{
-							"uri": "https://urbanvitaliz.fr/nous-suivre",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor",
-							"otherinfo": "\uFFFD\\x0016\uFFFD\uFFFDz\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x0008d4o\uFFFD2\uFFFDF\uFFFD>:\uFFFDgTPK\uFFFD3\uFFFD\uFFFD\uFFFD\uB2CBc||ZZ\uFFFDT\uFFFDY\uFFFD\uFFFD\uFFFD\uFFFDV\uFFFD"
-						},
-						{
 							"uri": "https://urbanvitaliz.fr/onboarding/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "z5e22lFuHP28SpwAU3B4538kKBmdMlSSkeod2CnzHBsbx8gQYVtUixJ8EWGyhTkN",
-							"otherinfo": "\u03D7\uFFFD\uFFFDQn\\x001c\uFFFD\uFFFDJ\uFFFD\\x0000Spx\uFFFD$(\\x0019\uFFFD2T\uFFFD\uFFFD\uFFFD\\x001d\uFFFD)\uFFFD\\x001c\\x001b\\x001b\uFFFD\uFFFD\\x0010a[T\uFFFD\\x0012|\\x0011a\uFFFD\uFFFD9\r"
+							"evidence": "jdmIo5uPZYQH9hkEziY8aMyGYxIRLSNu",
+							"otherinfo": "\uFFFD\u0648\uFFFD\uFFFD\uFFFDe\uFFFD\\x0007\uFFFD\\x0019\\x0004\uFFFD&<h\u0306c\\x0012\\x0011-#n"
 						},
 						{
 							"uri": "https://urbanvitaliz.fr/qui-sommes-nous",
@@ -1425,7 +1345,7 @@
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10027",
@@ -1433,18 +1353,10 @@
 					"alert": "Information Disclosure - Suspicious Comments",
 					"name": "Information Disclosure - Suspicious Comments",
 					"riskcode": "0",
-					"confidence": "1",
-					"riskdesc": "Informational (Low)",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
 					"desc": "<p>The response appears to contain suspicious comments which may help an attacker. Note: Matches made within script blocks or files are against the entire content not only comments.</p>",
 					"instances":[ 
-						{
-							"uri": "https://urbanvitaliz.fr/static/gravatar-1eac2d52.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "from",
-							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"import{g as $}from\"./_commonjsHelpers-de833af9.js\";var T={exports:{}},_={exports:{}};(function(){var h=\"ABCDEFGHIJKLMNOPQRSTUVWX\", see evidence field for the suspicious comment/snippet."
-						},
 						{
 							"uri": "https://urbanvitaliz.fr",
 							"method": "GET",
@@ -1478,6 +1390,14 @@
 							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<!-- User -->\", see evidence field for the suspicious comment/snippet."
 						},
 						{
+							"uri": "https://urbanvitaliz.fr/conditions-generales-utilisation",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "User",
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<!-- User -->\", see evidence field for the suspicious comment/snippet."
+						},
+						{
 							"uri": "https://urbanvitaliz.fr/confidentialite",
 							"method": "GET",
 							"param": "",
@@ -1510,6 +1430,14 @@
 							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<!-- User -->\", see evidence field for the suspicious comment/snippet."
 						},
 						{
+							"uri": "https://urbanvitaliz.fr/nous-suivre",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "User",
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<!-- User -->\", see evidence field for the suspicious comment/snippet."
+						},
+						{
 							"uri": "https://urbanvitaliz.fr/onboarding/",
 							"method": "GET",
 							"param": "",
@@ -1526,13 +1454,13 @@
 							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<!-- User -->\", see evidence field for the suspicious comment/snippet."
 						}
 					],
-					"count": "11",
+					"count": "12",
 					"solution": "<p>Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</p>",
-					"otherinfo": "<p>The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"import{g as $}from\"./_commonjsHelpers-de833af9.js\";var T={exports:{}},_={exports:{}};(function(){var h=\"ABCDEFGHIJKLMNOPQRSTUVWX\", see evidence field for the suspicious comment/snippet.</p>",
+					"otherinfo": "<p>The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<!-- User -->\", see evidence field for the suspicious comment/snippet.</p>",
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "118"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90033",
@@ -1575,7 +1503,7 @@
 					"reference": "<p>https://tools.ietf.org/html/rfc6265#section-4.1</p><p>https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes.html</p><p>https://code.google.com/p/browsersec/wiki/Part2#Same-origin_policy_for_cookies</p>",
 					"cweid": "565",
 					"wascid": "15",
-					"sourceid": "194"
+					"sourceid": "225"
 				},
 				{
 					"pluginid": "10109",
@@ -1690,7 +1618,7 @@
 					"reference": "",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "1264"
+					"sourceid": "1277"
 				},
 				{
 					"pluginid": "10015",
@@ -1751,7 +1679,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://urbanvitaliz.fr/mentions-legales",
+							"uri": "https://urbanvitaliz.fr/methodologie",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -1759,7 +1687,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://urbanvitaliz.fr/methodologie",
+							"uri": "https://urbanvitaliz.fr/nous-suivre",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -1797,7 +1725,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control</p><p>https://grayduck.mn/2021/09/13/cache-control-recommendations/</p>",
 					"cweid": "525",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -1810,7 +1738,7 @@
 					"desc": "<p>Specifies how and where the data would be used. For instance, if the value is audio, then the requested resource must be audio data and not any other type of resource.</p>",
 					"instances":[ 
 						{
-							"uri": "https://urbanvitaliz.fr",
+							"uri": "https://urbanvitaliz.fr/confidentialite",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -1818,7 +1746,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://urbanvitaliz.fr/confidentialite",
+							"uri": "https://urbanvitaliz.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -1840,7 +1768,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "67"
 				},
 				{
 					"pluginid": "90005",
@@ -1853,7 +1781,7 @@
 					"desc": "<p>Allows to differentiate between requests for navigating between HTML pages and requests for loading resources like images, audio etc.</p>",
 					"instances":[ 
 						{
-							"uri": "https://urbanvitaliz.fr",
+							"uri": "https://urbanvitaliz.fr/confidentialite",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -1861,7 +1789,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://urbanvitaliz.fr/confidentialite",
+							"uri": "https://urbanvitaliz.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -1883,7 +1811,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "67"
 				},
 				{
 					"pluginid": "90005",
@@ -1896,7 +1824,7 @@
 					"desc": "<p>Specifies the relationship between request initiator's origin and target's origin.</p>",
 					"instances":[ 
 						{
-							"uri": "https://urbanvitaliz.fr",
+							"uri": "https://urbanvitaliz.fr/confidentialite",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -1904,7 +1832,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://urbanvitaliz.fr/confidentialite",
+							"uri": "https://urbanvitaliz.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -1926,7 +1854,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "67"
 				},
 				{
 					"pluginid": "90005",
@@ -1939,7 +1867,7 @@
 					"desc": "<p>Specifies if a navigation request was initiated by a user.</p>",
 					"instances":[ 
 						{
-							"uri": "https://urbanvitaliz.fr",
+							"uri": "https://urbanvitaliz.fr/confidentialite",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -1947,7 +1875,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://urbanvitaliz.fr/confidentialite",
+							"uri": "https://urbanvitaliz.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -1969,7 +1897,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "67"
 				},
 				{
 					"pluginid": "10112",
@@ -1986,7 +1914,7 @@
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "paigdduBp9RHOqXxS6M3F4R8GUQ1v1OwhCtZOYs4s2c4BkwT0eI68BlvDbfkew99",
+							"evidence": "1Ly7OFNeEPPU2pzjwgbw0HNdFtOvaQOQ",
 							"otherinfo": "\ncookie:csrftoken"
 						},
 						{
@@ -1994,7 +1922,7 @@
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "paigdduBp9RHOqXxS6M3F4R8GUQ1v1OwhCtZOYs4s2c4BkwT0eI68BlvDbfkew99",
+							"evidence": "1Ly7OFNeEPPU2pzjwgbw0HNdFtOvaQOQ",
 							"otherinfo": "\ncookie:csrftoken"
 						},
 						{
@@ -2002,7 +1930,7 @@
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "HOcwKivxVcl3TP2QQ3lvu5bkzbQxoZdXteM5wzDrCeu0EEU5LNurUfdqKVIk6Ua6",
+							"evidence": "0Ztyu22FzVpGZDQ1XVC7wPzi7wcwHJ33",
 							"otherinfo": "\ncookie:csrftoken"
 						},
 						{
@@ -2010,65 +1938,33 @@
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "z5e22lFuHP28SpwAU3B4538kKBmdMlSSkeod2CnzHBsbx8gQYVtUixJ8EWGyhTkN",
+							"evidence": "jdmIo5uPZYQH9hkEziY8aMyGYxIRLSNu",
 							"otherinfo": "\ncookie:csrftoken"
 						},
 						{
-							"uri": "https://urbanvitaliz.fr/%5C%22https:",
+							"uri": "https://urbanvitaliz.fr/static/home/img/actors",
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "paigdduBp9RHOqXxS6M3F4R8GUQ1v1OwhCtZOYs4s2c4BkwT0eI68BlvDbfkew99",
+							"evidence": "1Ly7OFNeEPPU2pzjwgbw0HNdFtOvaQOQ",
 							"otherinfo": "\ncookie:csrftoken"
 						},
 						{
-							"uri": "https://urbanvitaliz.fr/friches@beta.gouv.fr",
+							"uri": "https://urbanvitaliz.fr/static/home/img/pdf",
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "paigdduBp9RHOqXxS6M3F4R8GUQ1v1OwhCtZOYs4s2c4BkwT0eI68BlvDbfkew99",
-							"otherinfo": "\ncookie:csrftoken"
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/static/home/img/actors/item-1.png",
-							"method": "GET",
-							"param": "csrftoken",
-							"attack": "",
-							"evidence": "paigdduBp9RHOqXxS6M3F4R8GUQ1v1OwhCtZOYs4s2c4BkwT0eI68BlvDbfkew99",
-							"otherinfo": "\ncookie:csrftoken"
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/static/home/img/actors/item-6.png",
-							"method": "GET",
-							"param": "csrftoken",
-							"attack": "",
-							"evidence": "paigdduBp9RHOqXxS6M3F4R8GUQ1v1OwhCtZOYs4s2c4BkwT0eI68BlvDbfkew99",
-							"otherinfo": "\ncookie:csrftoken"
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/static/home/img/actors/progress.png",
-							"method": "GET",
-							"param": "csrftoken",
-							"attack": "",
-							"evidence": "paigdduBp9RHOqXxS6M3F4R8GUQ1v1OwhCtZOYs4s2c4BkwT0eI68BlvDbfkew99",
-							"otherinfo": "\ncookie:csrftoken"
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/static/main-1f699096.css",
-							"method": "GET",
-							"param": "csrftoken",
-							"attack": "",
-							"evidence": "z5e22lFuHP28SpwAU3B4538kKBmdMlSSkeod2CnzHBsbx8gQYVtUixJ8EWGyhTkN",
+							"evidence": "1Ly7OFNeEPPU2pzjwgbw0HNdFtOvaQOQ",
 							"otherinfo": "\ncookie:csrftoken"
 						}
 					],
-					"count": "10",
+					"count": "6",
 					"solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
 					"otherinfo": "<p></p><p>cookie:csrftoken</p>",
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "77"
+					"sourceid": "101"
 				},
 				{
 					"pluginid": "10049",
@@ -2175,7 +2071,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10031",
@@ -2362,15 +2258,63 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/contact/\n\nappears to include user input in: \n\na(n) [textarea] tag [value] attribute \n\nThe user input found was:\nname=ZAP\n\nThe user-controlled value was:\nzaproxy alias impedit expedita quisquam pariatur exercitationem. nemo rerum eveniet dolores rem quia dignissimos."
+						},
+						{
+							"uri": "https://urbanvitaliz.fr/contact/?next=/&subject=Prise%20de%20contact",
+							"method": "POST",
+							"param": "content",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/contact/?next=/&subject=Prise%20de%20contact\n\nappears to include user input in: \n\na(n) [textarea] tag [value] attribute \n\nThe user input found was:\ncontent=Zaproxy alias impedit expedita quisquam pariatur exercitationem. Nemo rerum eveniet dolores rem quia dignissimos.\n\nThe user-controlled value was:\nzaproxy alias impedit expedita quisquam pariatur exercitationem. nemo rerum eveniet dolores rem quia dignissimos."
+						},
+						{
+							"uri": "https://urbanvitaliz.fr/contact/?next=/&subject=Prise%20de%20contact",
+							"method": "POST",
+							"param": "name",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/contact/?next=/&subject=Prise%20de%20contact\n\nappears to include user input in: \n\na(n) [textarea] tag [value] attribute \n\nThe user input found was:\nname=ZAP\n\nThe user-controlled value was:\nzaproxy alias impedit expedita quisquam pariatur exercitationem. nemo rerum eveniet dolores rem quia dignissimos."
+						},
+						{
+							"uri": "https://urbanvitaliz.fr/contact/?next=/&subject=Prise%20de%20contact",
+							"method": "POST",
+							"param": "subject",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/contact/?next=/&subject=Prise%20de%20contact\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nsubject=Prise de contact\n\nThe user-controlled value was:\nprise de contact"
+						},
+						{
+							"uri": "https://urbanvitaliz.fr/contact/?subject=Demande%20d%E2%80%99acc%C3%A8s%20%C3%A0%20UrbanVitaliz%20en%20tant%20que%20conseiller%C2%B7e",
+							"method": "POST",
+							"param": "content",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/contact/?subject=Demande%20d%E2%80%99acc%C3%A8s%20%C3%A0%20UrbanVitaliz%20en%20tant%20que%20conseiller%C2%B7e\n\nappears to include user input in: \n\na(n) [textarea] tag [value] attribute \n\nThe user input found was:\ncontent=Zaproxy alias impedit expedita quisquam pariatur exercitationem. Nemo rerum eveniet dolores rem quia dignissimos.\n\nThe user-controlled value was:\nzaproxy alias impedit expedita quisquam pariatur exercitationem. nemo rerum eveniet dolores rem quia dignissimos."
+						},
+						{
+							"uri": "https://urbanvitaliz.fr/contact/?subject=Demande%20d%E2%80%99acc%C3%A8s%20%C3%A0%20UrbanVitaliz%20en%20tant%20que%20conseiller%C2%B7e",
+							"method": "POST",
+							"param": "name",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/contact/?subject=Demande%20d%E2%80%99acc%C3%A8s%20%C3%A0%20UrbanVitaliz%20en%20tant%20que%20conseiller%C2%B7e\n\nappears to include user input in: \n\na(n) [textarea] tag [value] attribute \n\nThe user input found was:\nname=ZAP\n\nThe user-controlled value was:\nzaproxy alias impedit expedita quisquam pariatur exercitationem. nemo rerum eveniet dolores rem quia dignissimos."
+						},
+						{
+							"uri": "https://urbanvitaliz.fr/contact/?subject=Demande%20d%E2%80%99acc%C3%A8s%20%C3%A0%20UrbanVitaliz%20en%20tant%20que%20conseiller%C2%B7e",
+							"method": "POST",
+							"param": "subject",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/contact/?subject=Demande%20d%E2%80%99acc%C3%A8s%20%C3%A0%20UrbanVitaliz%20en%20tant%20que%20conseiller%C2%B7e\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nsubject=Demande d\u2019acc\u00E8s \u00E0 UrbanVitaliz en tant que conseiller\u00B7e\n\nThe user-controlled value was:\ndemande d\u2019acc\u00E8s \u00E0 urbanvitaliz en tant que conseiller\u00B7e"
 						}
 					],
-					"count": "22",
+					"count": "28",
 					"solution": "<p>Validate all input and sanitize output it before writing to any HTML attributes.</p>",
 					"otherinfo": "<p>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:</p><p></p><p>https://urbanvitaliz.fr/contact/?next=/&subject=Prise%20de%20contact</p><p></p><p>appears to include user input in: </p><p></p><p>a(n) [input] tag [value] attribute </p><p></p><p>The user input found was:</p><p>subject=Prise de contact</p><p></p><p>The user-controlled value was:</p><p>prise de contact</p>",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html</p>",
 					"cweid": "20",
 					"wascid": "20",
-					"sourceid": "245"
+					"sourceid": "223"
 				}
 			]
 		}

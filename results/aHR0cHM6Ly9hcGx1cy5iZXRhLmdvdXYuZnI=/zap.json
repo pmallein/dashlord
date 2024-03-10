@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 3 Mar 2024 01:25:13",
+	"@generated": "Sun, 10 Mar 2024 01:26:00",
 	"site":[ 
 		{
 			"@name": "https://aplus.beta.gouv.fr",
@@ -87,6 +87,22 @@
 					"desc": "<p>A cookie has been set without the secure flag, which means that the cookie can be accessed via unencrypted connections.</p>",
 					"instances":[ 
 						{
+							"uri": "https://aplus.beta.gouv.fr/aide",
+							"method": "GET",
+							"param": "PLAY_FLASH",
+							"attack": "",
+							"evidence": "Set-Cookie: PLAY_FLASH",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://aplus.beta.gouv.fr/cgu",
+							"method": "GET",
+							"param": "PLAY_FLASH",
+							"attack": "",
+							"evidence": "Set-Cookie: PLAY_FLASH",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://aplus.beta.gouv.fr/login",
 							"method": "POST",
 							"param": "PLAY_FLASH",
@@ -95,13 +111,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "1",
+					"count": "3",
 					"solution": "<p>Whenever a cookie contains sensitive information or is a session token, then it should always be passed using an encrypted channel. Ensure that the secure flag is set for cookies containing such sensitive information.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes.html</p>",
 					"cweid": "614",
 					"wascid": "13",
-					"sourceid": "75"
+					"sourceid": "77"
 				},
 				{
 					"pluginid": "10063",
@@ -225,16 +241,16 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "eyJkYXRhIjp7ImNzcmZUb2tlbiI6IjQ4ZmMyMDg1MWYxMjJkMDhhODRlMGI0MWYzNjliZTFjYTIxNmE3MmQtMTcwOTQyOTEwNzQ5My01NDhmNDMzNTg1MGM1OTJiZTRjMmVjNzMifSwiZXhwIjoxNzEyMDIxMTA3LCJuYmYiOjE3MDk0MjkxMDcsImlhdCI6MTcwOTQyOTEwN30",
-							"otherinfo": "{\"data\":{\"csrfToken\":\"48fc20851f122d08a84e0b41f369be1ca216a72d-1709429107493-548f4335850c592be4c2ec73\"},\"exp\":1712021107,\"nbf\":1709429107,\"iat\":1709429107}"
+							"evidence": "eyJkYXRhIjp7ImNzcmZUb2tlbiI6IjFiOGRiMThiNmYzNmM4ZjBjNjc5ODA0OTU4YTRiNzYzZjk3MzZkODYtMTcxMDAzMzk1NDY3NS0xMmVkY2IyMTdkODczOTIxNGZiNTk0NDMifSwiZXhwIjoxNzEyNjI1OTU0LCJuYmYiOjE3MTAwMzM5NTQsImlhdCI6MTcxMDAzMzk1NH0",
+							"otherinfo": "{\"data\":{\"csrfToken\":\"1b8db18b6f36c8f0c679804958a4b763f9736d86-1710033954675-12edcb217d8739214fb59443\"},\"exp\":1712625954,\"nbf\":1710033954,\"iat\":1710033954}"
 						},
 						{
 							"uri": "https://aplus.beta.gouv.fr",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "eyJkYXRhIjp7ImNzcmZUb2tlbiI6IjY4ZWVkZGE2ZmQyZGMwYTU0M2E2MzI1Mzg0MzlhNGNhZmUwZTViZDYtMTcwOTQyOTEwNzY5OS1hZjQxMjM5Y2FmMzg4OWUxNjg2MGY2ZmQifSwiZXhwIjoxNzEyMDIxMTA3LCJuYmYiOjE3MDk0MjkxMDcsImlhdCI6MTcwOTQyOTEwN30",
-							"otherinfo": "{\"data\":{\"csrfToken\":\"68eedda6fd2dc0a543a632538439a4cafe0e5bd6-1709429107699-af41239caf3889e16860f6fd\"},\"exp\":1712021107,\"nbf\":1709429107,\"iat\":1709429107}"
+							"evidence": "eyJkYXRhIjp7ImNzcmZUb2tlbiI6ImU1ZDE0N2Y4NDBjNDJiZGNmODc2MjQ0MjE4MmQ4OTI3MjhjOGE2MWMtMTcxMDAzMzk1NDMzNC1mMTgyYTk3MWNkMzc5NzFkZGJmMjMxM2EifSwiZXhwIjoxNzEyNjI1OTU0LCJuYmYiOjE3MTAwMzM5NTQsImlhdCI6MTcxMDAzMzk1NH0",
+							"otherinfo": "{\"data\":{\"csrfToken\":\"e5d147f840c42bdcf8762442182d892728c8a61c-1710033954334-f182a971cd37971ddbf2313a\"},\"exp\":1712625954,\"nbf\":1710033954,\"iat\":1710033954}"
 						},
 						{
 							"uri": "https://aplus.beta.gouv.fr/",
@@ -243,6 +259,14 @@
 							"attack": "",
 							"evidence": "/assets/images/home/cf2f205f4433b43d68faaed7c05ade80-Aplus-qu-est-ce-que-cest-mobile",
 							"otherinfo": "\uFFFD\uFFFD,z\uFFFD?\uFFFDf\uFFFDz\uFFFD\uFFFDg\uFFFDq\uFFFD\uFFFD\uFFFDN_\uFFFD\uFFFDo\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDi\uFFFD{sNZu\uFFFD4\uFFFD\ne\uFFFD\u03EA\uFFFD\u7B37\uFFFD\\x001e\uFFFD\uFFFD\uFFFD\uFFFD\u01EC\uFFFD\uFFFDn)^"
+						},
+						{
+							"uri": "https://aplus.beta.gouv.fr/aide",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "eyJkYXRhIjp7ImNzcmZUb2tlbiI6IjFiOGRiMThiNmYzNmM4ZjBjNjc5ODA0OTU4YTRiNzYzZjk3MzZkODYtMTcxMDAzMzk1NDY3NS0xMmVkY2IyMTdkODczOTIxNGZiNTk0NDMifSwiZXhwIjoxNzEyNjI1OTU1LCJuYmYiOjE3MTAwMzM5NTUsImlhdCI6MTcxMDAzMzk1NX0",
+							"otherinfo": "{\"data\":{\"csrfToken\":\"1b8db18b6f36c8f0c679804958a4b763f9736d86-1710033954675-12edcb217d8739214fb59443\"},\"exp\":1712625955,\"nbf\":1710033955,\"iat\":1710033955}"
 						},
 						{
 							"uri": "https://aplus.beta.gouv.fr/assets/generated-js/dsfr/4b79d41ff9eab77b2b31e6dc5ba0d396-dsfr.nomodule.min.js",
@@ -259,6 +283,14 @@
 							"attack": "",
 							"evidence": "2H9v2H7V5H4v4h16V5h-3v2h-2V5zm5",
 							"otherinfo": "\uFFFDo\uFFFD~\uFFFD\uFFFD~/\uFFFD\\x001dzW\uFFFD~\uFFFD\uFFFD\uFFFD\uFFFDey\uFFFDn"
+						},
+						{
+							"uri": "https://aplus.beta.gouv.fr/cgu",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "eyJkYXRhIjp7ImNzcmZUb2tlbiI6IjFiOGRiMThiNmYzNmM4ZjBjNjc5ODA0OTU4YTRiNzYzZjk3MzZkODYtMTcxMDAzMzk1NDY3NS0xMmVkY2IyMTdkODczOTIxNGZiNTk0NDMifSwiZXhwIjoxNzEyNjI1OTU1LCJuYmYiOjE3MTAwMzM5NTUsImlhdCI6MTcxMDAzMzk1NX0",
+							"otherinfo": "{\"data\":{\"csrfToken\":\"1b8db18b6f36c8f0c679804958a4b763f9736d86-1710033954675-12edcb217d8739214fb59443\"},\"exp\":1712625955,\"nbf\":1710033955,\"iat\":1710033955}"
 						},
 						{
 							"uri": "https://aplus.beta.gouv.fr/login",
@@ -281,17 +313,25 @@
 							"method": "POST",
 							"param": "",
 							"attack": "",
-							"evidence": "eyJkYXRhIjp7ImVycm9yIjoiQXVjdW4gY29tcHRlIGFjdGlmIG7igJllc3QgYXNzb2Npw6kgw6AgY2V0dGUgYWRyZXNzZSBlLW1haWwuXG5NZXJjaSBkZSB2w6lyaWZpZXIgcXXigJlpbCBz4oCZYWdpdCBiaWVuIGRlIHZvdHJlIGFkcmVzc2UgcHJvZmVzc2lvbm5lbGxlIGV0IG5vbWluYXRpdmUuIiwiZW1haWwtdmFsdWUiOiJ6YXByb3h5QGV4YW1wbGUuY29tIn0sIm5iZiI6MTcwOTQyOTEwOCwiaWF0IjoxNzA5NDI5MTA4fQ",
-							"otherinfo": "{\"data\":{\"error\":\"Aucun compte actif n\u2019est associ\u00E9 \u00E0 cette adresse e-mail.\\nMerci de v\u00E9rifier qu\u2019il s\u2019agit bien de votre adresse professionnelle et nominative.\",\"email-value\":\"zaproxy@example.com\"},\"nbf\":1709429108,\"iat\":1709429108}"
+							"evidence": "eyJkYXRhIjp7ImVycm9yIjoiQXVjdW4gY29tcHRlIGFjdGlmIG7igJllc3QgYXNzb2Npw6kgw6AgY2V0dGUgYWRyZXNzZSBlLW1haWwuXG5NZXJjaSBkZSB2w6lyaWZpZXIgcXXigJlpbCBz4oCZYWdpdCBiaWVuIGRlIHZvdHJlIGFkcmVzc2UgcHJvZmVzc2lvbm5lbGxlIGV0IG5vbWluYXRpdmUuIiwiZW1haWwtdmFsdWUiOiJ6YXByb3h5QGV4YW1wbGUuY29tIn0sIm5iZiI6MTcxMDAzMzk1NSwiaWF0IjoxNzEwMDMzOTU1fQ",
+							"otherinfo": "{\"data\":{\"error\":\"Aucun compte actif n\u2019est associ\u00E9 \u00E0 cette adresse e-mail.\\nMerci de v\u00E9rifier qu\u2019il s\u2019agit bien de votre adresse professionnelle et nominative.\",\"email-value\":\"zaproxy@example.com\"},\"nbf\":1710033955,\"iat\":1710033955}"
+						},
+						{
+							"uri": "https://aplus.beta.gouv.fr/login",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "eyJkYXRhIjp7ImVycm9yIjoiQXVjdW4gY29tcHRlIGFjdGlmIG7igJllc3QgYXNzb2Npw6kgw6AgY2V0dGUgYWRyZXNzZSBlLW1haWwuXG5NZXJjaSBkZSB2w6lyaWZpZXIgcXXigJlpbCBz4oCZYWdpdCBiaWVuIGRlIHZvdHJlIGFkcmVzc2UgcHJvZmVzc2lvbm5lbGxlIGV0IG5vbWluYXRpdmUuIiwiZW1haWwtdmFsdWUiOiJ6YXByb3h5QGV4YW1wbGUuY29tIn0sIm5iZiI6MTcxMDAzMzk1NiwiaWF0IjoxNzEwMDMzOTU2fQ",
+							"otherinfo": "{\"data\":{\"error\":\"Aucun compte actif n\u2019est associ\u00E9 \u00E0 cette adresse e-mail.\\nMerci de v\u00E9rifier qu\u2019il s\u2019agit bien de votre adresse professionnelle et nominative.\",\"email-value\":\"zaproxy@example.com\"},\"nbf\":1710033956,\"iat\":1710033956}"
 						}
 					],
-					"count": "8",
+					"count": "11",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>{\"data\":{\"csrfToken\":\"48fc20851f122d08a84e0b41f369be1ca216a72d-1709429107493-548f4335850c592be4c2ec73\"},\"exp\":1712021107,\"nbf\":1709429107,\"iat\":1709429107}</p>",
+					"otherinfo": "<p>{\"data\":{\"csrfToken\":\"1b8db18b6f36c8f0c679804958a4b763f9736d86-1710033954675-12edcb217d8739214fb59443\"},\"exp\":1712625954,\"nbf\":1710033954,\"iat\":1710033954}</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10027",
@@ -334,7 +374,7 @@
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "78"
+					"sourceid": "84"
 				},
 				{
 					"pluginid": "10109",
@@ -377,7 +417,7 @@
 					"reference": "",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10015",
@@ -449,15 +489,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://aplus.beta.gouv.fr/",
-							"method": "GET",
-							"param": "Sec-Fetch-Dest",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://aplus.beta.gouv.fr/sitemap.xml",
+							"uri": "https://aplus.beta.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -465,13 +497,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"solution": "<p>Ensure that Sec-Fetch-Dest header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -492,15 +524,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://aplus.beta.gouv.fr/",
-							"method": "GET",
-							"param": "Sec-Fetch-Mode",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://aplus.beta.gouv.fr/sitemap.xml",
+							"uri": "https://aplus.beta.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -508,7 +532,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"solution": "<p>Ensure that Sec-Fetch-Mode header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
@@ -535,15 +559,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://aplus.beta.gouv.fr/",
-							"method": "GET",
-							"param": "Sec-Fetch-Site",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://aplus.beta.gouv.fr/sitemap.xml",
+							"uri": "https://aplus.beta.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -551,13 +567,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"solution": "<p>Ensure that Sec-Fetch-Site header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -578,15 +594,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://aplus.beta.gouv.fr/",
-							"method": "GET",
-							"param": "Sec-Fetch-User",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://aplus.beta.gouv.fr/sitemap.xml",
+							"uri": "https://aplus.beta.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -594,7 +602,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"solution": "<p>Ensure that Sec-Fetch-User header is included in user initiated requests.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
@@ -617,7 +625,7 @@
 							"method": "GET",
 							"param": "PLAY_SESSION",
 							"attack": "",
-							"evidence": "eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImNzcmZUb2tlbiI6IjQ4ZmMyMDg1MWYxMjJkMDhhODRlMGI0MWYzNjliZTFjYTIxNmE3MmQtMTcwOTQyOTEwNzQ5My01NDhmNDMzNTg1MGM1OTJiZTRjMmVjNzMifSwiZXhwIjoxNzEyMDIxMTA3LCJuYmYiOjE3MDk0MjkxMDcsImlhdCI6MTcwOTQyOTEwN30.HM99o3uMFIhh--wGli34lH5lRSm-eavrowxlK5RoeZo",
+							"evidence": "eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImNzcmZUb2tlbiI6IjFiOGRiMThiNmYzNmM4ZjBjNjc5ODA0OTU4YTRiNzYzZjk3MzZkODYtMTcxMDAzMzk1NDY3NS0xMmVkY2IyMTdkODczOTIxNGZiNTk0NDMifSwiZXhwIjoxNzEyNjI1OTU0LCJuYmYiOjE3MTAwMzM5NTQsImlhdCI6MTcxMDAzMzk1NH0.0LJLrJaXlvcU8YNRGG1fCF2KOT-6APilC_zsBNOVcYU",
 							"otherinfo": "\ncookie:PLAY_SESSION"
 						},
 						{
@@ -625,25 +633,33 @@
 							"method": "GET",
 							"param": "PLAY_SESSION",
 							"attack": "",
-							"evidence": "eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImNzcmZUb2tlbiI6IjY4ZWVkZGE2ZmQyZGMwYTU0M2E2MzI1Mzg0MzlhNGNhZmUwZTViZDYtMTcwOTQyOTEwNzY5OS1hZjQxMjM5Y2FmMzg4OWUxNjg2MGY2ZmQifSwiZXhwIjoxNzEyMDIxMTA3LCJuYmYiOjE3MDk0MjkxMDcsImlhdCI6MTcwOTQyOTEwN30.d-c88rvZUocx7ZSjdGLR2FloPDv-Z5V-e5cvWB0-dD4",
+							"evidence": "eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImNzcmZUb2tlbiI6ImU1ZDE0N2Y4NDBjNDJiZGNmODc2MjQ0MjE4MmQ4OTI3MjhjOGE2MWMtMTcxMDAzMzk1NDMzNC1mMTgyYTk3MWNkMzc5NzFkZGJmMjMxM2EifSwiZXhwIjoxNzEyNjI1OTU0LCJuYmYiOjE3MTAwMzM5NTQsImlhdCI6MTcxMDAzMzk1NH0.v4R726C4p3QDhUwEay-MOBxM4lqW7f5iUBUQ1zt05mw",
 							"otherinfo": "\ncookie:PLAY_SESSION"
 						},
 						{
-							"uri": "https://aplus.beta.gouv.fr/assets/generated-js/utility",
+							"uri": "https://aplus.beta.gouv.fr/assets/generated-js/27b644604665a9c5ea67eb8b142d88dd-index.js",
 							"method": "GET",
 							"param": "PLAY_SESSION",
 							"attack": "",
-							"evidence": "eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImNzcmZUb2tlbiI6IjY4ZWVkZGE2ZmQyZGMwYTU0M2E2MzI1Mzg0MzlhNGNhZmUwZTViZDYtMTcwOTQyOTEwNzY5OS1hZjQxMjM5Y2FmMzg4OWUxNjg2MGY2ZmQifSwiZXhwIjoxNzEyMDIxMTA3LCJuYmYiOjE3MDk0MjkxMDcsImlhdCI6MTcwOTQyOTEwN30.d-c88rvZUocx7ZSjdGLR2FloPDv-Z5V-e5cvWB0-dD4",
+							"evidence": "eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImNzcmZUb2tlbiI6IjFiOGRiMThiNmYzNmM4ZjBjNjc5ODA0OTU4YTRiNzYzZjk3MzZkODYtMTcxMDAzMzk1NDY3NS0xMmVkY2IyMTdkODczOTIxNGZiNTk0NDMifSwiZXhwIjoxNzEyNjI1OTU0LCJuYmYiOjE3MTAwMzM5NTQsImlhdCI6MTcxMDAzMzk1NH0.0LJLrJaXlvcU8YNRGG1fCF2KOT-6APilC_zsBNOVcYU",
+							"otherinfo": "\ncookie:PLAY_SESSION"
+						},
+						{
+							"uri": "https://aplus.beta.gouv.fr/assets/generated-js/dsfr/6d903d884a63bcca5c1bd031707f933f-dsfr.min.css",
+							"method": "GET",
+							"param": "PLAY_SESSION",
+							"attack": "",
+							"evidence": "eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImNzcmZUb2tlbiI6IjFiOGRiMThiNmYzNmM4ZjBjNjc5ODA0OTU4YTRiNzYzZjk3MzZkODYtMTcxMDAzMzk1NDY3NS0xMmVkY2IyMTdkODczOTIxNGZiNTk0NDMifSwiZXhwIjoxNzEyNjI1OTU0LCJuYmYiOjE3MTAwMzM5NTQsImlhdCI6MTcxMDAzMzk1NH0.0LJLrJaXlvcU8YNRGG1fCF2KOT-6APilC_zsBNOVcYU",
 							"otherinfo": "\ncookie:PLAY_SESSION"
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
 					"otherinfo": "<p></p><p>cookie:PLAY_SESSION</p>",
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10049",

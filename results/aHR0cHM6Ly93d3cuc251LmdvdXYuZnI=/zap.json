@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 3 Mar 2024 06:22:53",
+	"@generated": "Sun, 10 Mar 2024 06:22:54",
 	"site":[ 
 		{
 			"@name": "https://www.snu.gouv.fr",
@@ -9,33 +9,6 @@
 			"@port": "443",
 			"@ssl": "true",
 			"alerts": [ 
-				{
-					"pluginid": "10202",
-					"alertRef": "10202",
-					"alert": "Absence of Anti-CSRF Tokens",
-					"name": "Absence of Anti-CSRF Tokens",
-					"riskcode": "2",
-					"confidence": "1",
-					"riskdesc": "Medium (Low)",
-					"desc": "<p>No Anti-CSRF tokens were found in a HTML submission form.</p><p>A cross-site request forgery is an attack that involves forcing a victim to send an HTTP request to a target destination without their knowledge or intent in order to perform an action as the victim. The underlying cause is application functionality using predictable URL/form actions in a repeatable way. The nature of the attack is that CSRF exploits the trust that a web site has for a user. By contrast, cross-site scripting (XSS) exploits the trust that a user has for a web site. Like XSS, CSRF attacks are not necessarily cross-site, but they can be. Cross-site request forgery is also known as CSRF, XSRF, one-click attack, session riding, confused deputy, and sea surf.</p><p></p><p>CSRF attacks are effective in a number of situations, including:</p><p>    * The victim has an active session on the target site.</p><p>    * The victim is authenticated via HTTP auth on the target site.</p><p>    * The victim is on the same local network as the target site.</p><p></p><p>CSRF has primarily been used to perform an action against a target site using the victim's privileges, but recent techniques have been discovered to disclose information by gaining access to the response. The risk of information disclosure is dramatically increased when the target site is vulnerable to XSS, because XSS can be used as a platform for CSRF, allowing the attack to operate within the bounds of the same-origin policy.</p>",
-					"instances":[ 
-						{
-							"uri": "https://www.snu.gouv.fr/mentions-legales/djepva-depcom@jeunesse-sports.gouv.fr",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<form action=\"https://www.snu.gouv.fr/\" method=\"get\">",
-							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"s\" ]."
-						}
-					],
-					"count": "1",
-					"solution": "<p>Phase: Architecture and Design</p><p>Use a vetted library or framework that does not allow this weakness to occur or provides constructs that make this weakness easier to avoid.</p><p>For example, use anti-CSRF packages such as the OWASP CSRFGuard.</p><p></p><p>Phase: Implementation</p><p>Ensure that your application is free of cross-site scripting issues, because most CSRF defenses can be bypassed using attacker-controlled script.</p><p></p><p>Phase: Architecture and Design</p><p>Generate a unique nonce for each form, place the nonce into the form, and verify the nonce upon receipt of the form. Be sure that the nonce is not predictable (CWE-330).</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Identify especially dangerous operations. When the user performs a dangerous operation, send a separate confirmation request to ensure that the user intended to perform that operation.</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Use the ESAPI Session Management control.</p><p>This control includes a component for CSRF.</p><p></p><p>Do not use the GET method for any request that triggers a state change.</p><p></p><p>Phase: Implementation</p><p>Check the HTTP Referer header to see if the request originated from an expected page. This could break legitimate functionality, because users or proxies may have disabled sending the Referer for privacy reasons.</p>",
-					"otherinfo": "<p>No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"s\" ].</p>",
-					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
-					"cweid": "352",
-					"wascid": "9",
-					"sourceid": "2019"
-				},
 				{
 					"pluginid": "10038",
 					"alertRef": "10038-1",
@@ -285,7 +258,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.snu.gouv.fr/phase-2-mission-interet-general/",
+							"uri": "https://www.snu.gouv.fr/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -293,7 +266,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.snu.gouv.fr/phase-2-mission-interet-general/",
+							"uri": "https://www.snu.gouv.fr/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -301,7 +274,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.snu.gouv.fr/phase-2-mission-interet-general/",
+							"uri": "https://www.snu.gouv.fr/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -309,7 +282,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.snu.gouv.fr/temoignages/",
+							"uri": "https://www.snu.gouv.fr/phase-2-mission-interet-general/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -317,7 +290,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.snu.gouv.fr/temoignages/",
+							"uri": "https://www.snu.gouv.fr/phase-2-mission-interet-general/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -325,7 +298,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.snu.gouv.fr/temoignages/",
+							"uri": "https://www.snu.gouv.fr/phase-2-mission-interet-general/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -486,7 +459,7 @@
 					"reference": "<p>https://owasp.org/www-community/HttpOnly</p>",
 					"cweid": "1004",
 					"wascid": "13",
-					"sourceid": "390"
+					"sourceid": "360"
 				},
 				{
 					"pluginid": "10011",
@@ -633,7 +606,7 @@
 					"reference": "<p>https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes.html</p>",
 					"cweid": "614",
 					"wascid": "13",
-					"sourceid": "390"
+					"sourceid": "360"
 				},
 				{
 					"pluginid": "10054",
@@ -780,7 +753,7 @@
 					"reference": "<p>https://tools.ietf.org/html/draft-ietf-httpbis-cookie-same-site</p>",
 					"cweid": "1275",
 					"wascid": "13",
-					"sourceid": "390"
+					"sourceid": "360"
 				},
 				{
 					"pluginid": "10017",
@@ -809,6 +782,22 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://www.snu.gouv.fr/",
+							"method": "GET",
+							"param": "https://plausible.io/js/script.js",
+							"attack": "",
+							"evidence": "<script defer data-domain=\"snu.gouv.fr\" src=\"https://plausible.io/js/script.js\"></script>",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://www.snu.gouv.fr/",
+							"method": "GET",
+							"param": "https://tarteaucitron.io/load.js?locale=fr&iswordpress=true&domain=www.snu.gouv.fr&uuid=116fc2aaf9a8e635ee3bd10f2d6999d8b768651a",
+							"attack": "",
+							"evidence": "<script type=\"text/javascript\" src=\"https://tarteaucitron.io/load.js?locale=fr&iswordpress=true&domain=www.snu.gouv.fr&uuid=116fc2aaf9a8e635ee3bd10f2d6999d8b768651a\"></script>",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://www.snu.gouv.fr/blog/",
 							"method": "GET",
 							"param": "https://plausible.io/js/script.js",
@@ -834,6 +823,22 @@
 						},
 						{
 							"uri": "https://www.snu.gouv.fr/mode-demploi-pour-les-responsables-de-structure-comment-proposer-des-missions-dinteret-general/",
+							"method": "GET",
+							"param": "https://tarteaucitron.io/load.js?locale=fr&iswordpress=true&domain=www.snu.gouv.fr&uuid=116fc2aaf9a8e635ee3bd10f2d6999d8b768651a",
+							"attack": "",
+							"evidence": "<script type=\"text/javascript\" src=\"https://tarteaucitron.io/load.js?locale=fr&iswordpress=true&domain=www.snu.gouv.fr&uuid=116fc2aaf9a8e635ee3bd10f2d6999d8b768651a\"></script>",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://www.snu.gouv.fr/phase-1-sejour-cohesion/",
+							"method": "GET",
+							"param": "https://plausible.io/js/script.js",
+							"attack": "",
+							"evidence": "<script defer data-domain=\"snu.gouv.fr\" src=\"https://plausible.io/js/script.js\"></script>",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://www.snu.gouv.fr/phase-1-sejour-cohesion/",
 							"method": "GET",
 							"param": "https://tarteaucitron.io/load.js?locale=fr&iswordpress=true&domain=www.snu.gouv.fr&uuid=116fc2aaf9a8e635ee3bd10f2d6999d8b768651a",
 							"attack": "",
@@ -873,7 +878,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "10",
+					"count": "14",
 					"solution": "<p>Ensure JavaScript source files are loaded from only trusted sources, and the sources can't be controlled by end users of the application.</p>",
 					"otherinfo": "",
 					"reference": "",
@@ -922,34 +927,7 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "772"
-				},
-				{
-					"pluginid": "110009",
-					"alertRef": "110009",
-					"alert": "Full Path Disclosure",
-					"name": "Full Path Disclosure",
-					"riskcode": "1",
-					"confidence": "1",
-					"riskdesc": "Low (Low)",
-					"desc": "<p>The full path of files which might be sensitive has been exposed to the client.</p>",
-					"instances":[ 
-						{
-							"uri": "https://www.snu.gouv.fr/mentions-legales/djepva-depcom@jeunesse-sports.gouv.fr",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "/library/",
-							"otherinfo": ""
-						}
-					],
-					"count": "1",
-					"solution": "<p>Disable directory browsing in your web server. Refer to the web server documentation.</p>",
-					"otherinfo": "",
-					"reference": "<p>https://owasp.org/www-community/attacks/Full_Path_Disclosure</p>",
-					"cweid": "209",
-					"wascid": "13",
-					"sourceid": "2019"
+					"sourceid": "899"
 				},
 				{
 					"pluginid": "10063",
@@ -1056,7 +1034,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy</p><p>https://developer.chrome.com/blog/feature-policy/</p><p>https://scotthelme.co.uk/a-new-security-header-feature-policy/</p><p>https://w3c.github.io/webappsec-feature-policy/</p><p>https://www.smashingmagazine.com/2018/12/feature-policy/</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10040",
@@ -1083,7 +1061,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Transport_Layer_Protection_Cheat_Sheet.html</p>",
 					"cweid": "311",
 					"wascid": "4",
-					"sourceid": "1666"
+					"sourceid": "1747"
 				},
 				{
 					"pluginid": "10035",
@@ -1190,7 +1168,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>https://caniuse.com/stricttransportsecurity</p><p>https://datatracker.ietf.org/doc/html/rfc6797</p>",
 					"cweid": "319",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10096",
@@ -1227,6 +1205,30 @@
 							"otherinfo": "1704792035, which evaluates to: 2024-01-09 09:20:35"
 						},
 						{
+							"uri": "https://www.snu.gouv.fr/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1658933009",
+							"otherinfo": "1658933009, which evaluates to: 2022-07-27 14:43:29"
+						},
+						{
+							"uri": "https://www.snu.gouv.fr/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1658933334",
+							"otherinfo": "1658933334, which evaluates to: 2022-07-27 14:48:54"
+						},
+						{
+							"uri": "https://www.snu.gouv.fr/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1704792035",
+							"otherinfo": "1704792035, which evaluates to: 2024-01-09 09:20:35"
+						},
+						{
 							"uri": "https://www.snu.gouv.fr/phase-2-mission-interet-general/",
 							"method": "GET",
 							"param": "",
@@ -1249,23 +1251,15 @@
 							"attack": "",
 							"evidence": "1704792035",
 							"otherinfo": "1704792035, which evaluates to: 2024-01-09 09:20:35"
-						},
-						{
-							"uri": "https://www.snu.gouv.fr/temoignages/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "1704792035",
-							"otherinfo": "1704792035, which evaluates to: 2024-01-09 09:20:35"
 						}
 					],
-					"count": "7",
+					"count": "9",
 					"solution": "<p>Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.</p>",
 					"otherinfo": "<p>1658933009, which evaluates to: 2022-07-27 14:43:29</p>",
 					"reference": "<p>https://cwe.mitre.org/data/definitions/200.html</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10021",
@@ -1372,7 +1366,7 @@
 					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10094",
@@ -1479,7 +1473,7 @@
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90011",
@@ -1594,7 +1588,7 @@
 					"reference": "<p>https://code.google.com/p/browsersec/wiki/Part2#Character_set_handling_and_detection</p>",
 					"cweid": "436",
 					"wascid": "15",
-					"sourceid": "796"
+					"sourceid": "551"
 				},
 				{
 					"pluginid": "10029",
@@ -1612,7 +1606,7 @@
 							"param": "p",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "An attacker may be able to poison cookie values through URL parameters.  Try injecting a semicolon to see if you can add cookie values (e.g. name=controlledValue;name=anotherValue;).\n\nThis was identified at:\n\nhttps://www.snu.gouv.fr/?p=147\n\nUser-input was found in the following cookie:\nhandl_url=https://www.snu.gouv.fr/?p=147; expires=Tue, 02-Apr-2024 06:21:59 GMT; Max-Age=2592000; path=/; domain=.snu.gouv.fr\n\nThe user input was:\np=147"
+							"otherinfo": "An attacker may be able to poison cookie values through URL parameters.  Try injecting a semicolon to see if you can add cookie values (e.g. name=controlledValue;name=anotherValue;).\n\nThis was identified at:\n\nhttps://www.snu.gouv.fr/?p=147\n\nUser-input was found in the following cookie:\nhandl_url=https://www.snu.gouv.fr/?p=147; expires=Tue, 09-Apr-2024 06:21:57 GMT; Max-Age=2592000; path=/; domain=.snu.gouv.fr\n\nThe user input was:\np=147"
 						},
 						{
 							"uri": "https://www.snu.gouv.fr/?p=152",
@@ -1620,7 +1614,7 @@
 							"param": "p",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "An attacker may be able to poison cookie values through URL parameters.  Try injecting a semicolon to see if you can add cookie values (e.g. name=controlledValue;name=anotherValue;).\n\nThis was identified at:\n\nhttps://www.snu.gouv.fr/?p=152\n\nUser-input was found in the following cookie:\nhandl_url=https://www.snu.gouv.fr/?p=152; expires=Tue, 02-Apr-2024 06:21:59 GMT; Max-Age=2592000; path=/; domain=.snu.gouv.fr\n\nThe user input was:\np=152"
+							"otherinfo": "An attacker may be able to poison cookie values through URL parameters.  Try injecting a semicolon to see if you can add cookie values (e.g. name=controlledValue;name=anotherValue;).\n\nThis was identified at:\n\nhttps://www.snu.gouv.fr/?p=152\n\nUser-input was found in the following cookie:\nhandl_url=https://www.snu.gouv.fr/?p=152; expires=Tue, 09-Apr-2024 06:21:57 GMT; Max-Age=2592000; path=/; domain=.snu.gouv.fr\n\nThe user input was:\np=152"
 						},
 						{
 							"uri": "https://www.snu.gouv.fr/?p=161",
@@ -1628,7 +1622,7 @@
 							"param": "p",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "An attacker may be able to poison cookie values through URL parameters.  Try injecting a semicolon to see if you can add cookie values (e.g. name=controlledValue;name=anotherValue;).\n\nThis was identified at:\n\nhttps://www.snu.gouv.fr/?p=161\n\nUser-input was found in the following cookie:\nhandl_url=https://www.snu.gouv.fr/?p=161; expires=Tue, 02-Apr-2024 06:21:59 GMT; Max-Age=2592000; path=/; domain=.snu.gouv.fr\n\nThe user input was:\np=161"
+							"otherinfo": "An attacker may be able to poison cookie values through URL parameters.  Try injecting a semicolon to see if you can add cookie values (e.g. name=controlledValue;name=anotherValue;).\n\nThis was identified at:\n\nhttps://www.snu.gouv.fr/?p=161\n\nUser-input was found in the following cookie:\nhandl_url=https://www.snu.gouv.fr/?p=161; expires=Tue, 09-Apr-2024 06:21:58 GMT; Max-Age=2592000; path=/; domain=.snu.gouv.fr\n\nThe user input was:\np=161"
 						},
 						{
 							"uri": "https://www.snu.gouv.fr/?p=169",
@@ -1636,7 +1630,7 @@
 							"param": "p",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "An attacker may be able to poison cookie values through URL parameters.  Try injecting a semicolon to see if you can add cookie values (e.g. name=controlledValue;name=anotherValue;).\n\nThis was identified at:\n\nhttps://www.snu.gouv.fr/?p=169\n\nUser-input was found in the following cookie:\nhandl_url=https://www.snu.gouv.fr/?p=169; expires=Tue, 02-Apr-2024 06:21:58 GMT; Max-Age=2592000; path=/; domain=.snu.gouv.fr\n\nThe user input was:\np=169"
+							"otherinfo": "An attacker may be able to poison cookie values through URL parameters.  Try injecting a semicolon to see if you can add cookie values (e.g. name=controlledValue;name=anotherValue;).\n\nThis was identified at:\n\nhttps://www.snu.gouv.fr/?p=169\n\nUser-input was found in the following cookie:\nhandl_url=https://www.snu.gouv.fr/?p=169; expires=Tue, 09-Apr-2024 06:21:57 GMT; Max-Age=2592000; path=/; domain=.snu.gouv.fr\n\nThe user input was:\np=169"
 						},
 						{
 							"uri": "https://www.snu.gouv.fr/wp-json/oembed/1.0/embed?format=xml&url=https%3A%2F%2Fwww.snu.gouv.fr%2Fblog%2F",
@@ -1644,7 +1638,7 @@
 							"param": "url",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "An attacker may be able to poison cookie values through URL parameters.  Try injecting a semicolon to see if you can add cookie values (e.g. name=controlledValue;name=anotherValue;).\n\nThis was identified at:\n\nhttps://www.snu.gouv.fr/wp-json/oembed/1.0/embed?format=xml&url=https%3A%2F%2Fwww.snu.gouv.fr%2Fblog%2F\n\nUser-input was found in the following cookie:\nhandl_ref=https://www.snu.gouv.fr/blog/; expires=Tue, 02-Apr-2024 06:21:59 GMT; Max-Age=2592000; path=/; domain=.snu.gouv.fr\n\nThe user input was:\nurl=https://www.snu.gouv.fr/blog/"
+							"otherinfo": "An attacker may be able to poison cookie values through URL parameters.  Try injecting a semicolon to see if you can add cookie values (e.g. name=controlledValue;name=anotherValue;).\n\nThis was identified at:\n\nhttps://www.snu.gouv.fr/wp-json/oembed/1.0/embed?format=xml&url=https%3A%2F%2Fwww.snu.gouv.fr%2Fblog%2F\n\nUser-input was found in the following cookie:\nhandl_ref=https://www.snu.gouv.fr/blog/; expires=Tue, 09-Apr-2024 06:21:57 GMT; Max-Age=2592000; path=/; domain=.snu.gouv.fr\n\nThe user input was:\nurl=https://www.snu.gouv.fr/blog/"
 						},
 						{
 							"uri": "https://www.snu.gouv.fr/wp-json/oembed/1.0/embed?format=xml&url=https%3A%2F%2Fwww.snu.gouv.fr%2Fphase-1-sejour-cohesion%2F",
@@ -1652,7 +1646,7 @@
 							"param": "url",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "An attacker may be able to poison cookie values through URL parameters.  Try injecting a semicolon to see if you can add cookie values (e.g. name=controlledValue;name=anotherValue;).\n\nThis was identified at:\n\nhttps://www.snu.gouv.fr/wp-json/oembed/1.0/embed?format=xml&url=https%3A%2F%2Fwww.snu.gouv.fr%2Fphase-1-sejour-cohesion%2F\n\nUser-input was found in the following cookie:\nhandl_ref=https://www.snu.gouv.fr/phase-1-sejour-cohesion/; expires=Tue, 02-Apr-2024 06:21:59 GMT; Max-Age=2592000; path=/; domain=.snu.gouv.fr\n\nThe user input was:\nurl=https://www.snu.gouv.fr/phase-1-sejour-cohesion/"
+							"otherinfo": "An attacker may be able to poison cookie values through URL parameters.  Try injecting a semicolon to see if you can add cookie values (e.g. name=controlledValue;name=anotherValue;).\n\nThis was identified at:\n\nhttps://www.snu.gouv.fr/wp-json/oembed/1.0/embed?format=xml&url=https%3A%2F%2Fwww.snu.gouv.fr%2Fphase-1-sejour-cohesion%2F\n\nUser-input was found in the following cookie:\nhandl_ref=https://www.snu.gouv.fr/phase-1-sejour-cohesion/; expires=Tue, 09-Apr-2024 06:21:57 GMT; Max-Age=2592000; path=/; domain=.snu.gouv.fr\n\nThe user input was:\nurl=https://www.snu.gouv.fr/phase-1-sejour-cohesion/"
 						},
 						{
 							"uri": "https://www.snu.gouv.fr/wp-json/oembed/1.0/embed?format=xml&url=https%3A%2F%2Fwww.snu.gouv.fr%2Fphase-2-mission-interet-general%2F",
@@ -1660,7 +1654,7 @@
 							"param": "url",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "An attacker may be able to poison cookie values through URL parameters.  Try injecting a semicolon to see if you can add cookie values (e.g. name=controlledValue;name=anotherValue;).\n\nThis was identified at:\n\nhttps://www.snu.gouv.fr/wp-json/oembed/1.0/embed?format=xml&url=https%3A%2F%2Fwww.snu.gouv.fr%2Fphase-2-mission-interet-general%2F\n\nUser-input was found in the following cookie:\nhandl_ref=https://www.snu.gouv.fr/phase-2-mission-interet-general/; expires=Tue, 02-Apr-2024 06:21:59 GMT; Max-Age=2592000; path=/; domain=.snu.gouv.fr\n\nThe user input was:\nurl=https://www.snu.gouv.fr/phase-2-mission-interet-general/"
+							"otherinfo": "An attacker may be able to poison cookie values through URL parameters.  Try injecting a semicolon to see if you can add cookie values (e.g. name=controlledValue;name=anotherValue;).\n\nThis was identified at:\n\nhttps://www.snu.gouv.fr/wp-json/oembed/1.0/embed?format=xml&url=https%3A%2F%2Fwww.snu.gouv.fr%2Fphase-2-mission-interet-general%2F\n\nUser-input was found in the following cookie:\nhandl_ref=https://www.snu.gouv.fr/phase-2-mission-interet-general/; expires=Tue, 09-Apr-2024 06:21:57 GMT; Max-Age=2592000; path=/; domain=.snu.gouv.fr\n\nThe user input was:\nurl=https://www.snu.gouv.fr/phase-2-mission-interet-general/"
 						},
 						{
 							"uri": "https://www.snu.gouv.fr/wp-json/oembed/1.0/embed?format=xml&url=https%3A%2F%2Fwww.snu.gouv.fr%2Ftemoignages%2F",
@@ -1668,7 +1662,7 @@
 							"param": "url",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "An attacker may be able to poison cookie values through URL parameters.  Try injecting a semicolon to see if you can add cookie values (e.g. name=controlledValue;name=anotherValue;).\n\nThis was identified at:\n\nhttps://www.snu.gouv.fr/wp-json/oembed/1.0/embed?format=xml&url=https%3A%2F%2Fwww.snu.gouv.fr%2Ftemoignages%2F\n\nUser-input was found in the following cookie:\nhandl_ref=https://www.snu.gouv.fr/temoignages/; expires=Tue, 02-Apr-2024 06:21:59 GMT; Max-Age=2592000; path=/; domain=.snu.gouv.fr\n\nThe user input was:\nurl=https://www.snu.gouv.fr/temoignages/"
+							"otherinfo": "An attacker may be able to poison cookie values through URL parameters.  Try injecting a semicolon to see if you can add cookie values (e.g. name=controlledValue;name=anotherValue;).\n\nThis was identified at:\n\nhttps://www.snu.gouv.fr/wp-json/oembed/1.0/embed?format=xml&url=https%3A%2F%2Fwww.snu.gouv.fr%2Ftemoignages%2F\n\nUser-input was found in the following cookie:\nhandl_ref=https://www.snu.gouv.fr/temoignages/; expires=Tue, 09-Apr-2024 06:21:58 GMT; Max-Age=2592000; path=/; domain=.snu.gouv.fr\n\nThe user input was:\nurl=https://www.snu.gouv.fr/temoignages/"
 						},
 						{
 							"uri": "https://www.snu.gouv.fr/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.snu.gouv.fr%2Fblog%2F",
@@ -1676,7 +1670,7 @@
 							"param": "url",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "An attacker may be able to poison cookie values through URL parameters.  Try injecting a semicolon to see if you can add cookie values (e.g. name=controlledValue;name=anotherValue;).\n\nThis was identified at:\n\nhttps://www.snu.gouv.fr/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.snu.gouv.fr%2Fblog%2F\n\nUser-input was found in the following cookie:\nhandl_ref=https://www.snu.gouv.fr/blog/; expires=Tue, 02-Apr-2024 06:21:58 GMT; Max-Age=2592000; path=/; domain=.snu.gouv.fr\n\nThe user input was:\nurl=https://www.snu.gouv.fr/blog/"
+							"otherinfo": "An attacker may be able to poison cookie values through URL parameters.  Try injecting a semicolon to see if you can add cookie values (e.g. name=controlledValue;name=anotherValue;).\n\nThis was identified at:\n\nhttps://www.snu.gouv.fr/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.snu.gouv.fr%2Fblog%2F\n\nUser-input was found in the following cookie:\nhandl_ref=https://www.snu.gouv.fr/blog/; expires=Tue, 09-Apr-2024 06:21:57 GMT; Max-Age=2592000; path=/; domain=.snu.gouv.fr\n\nThe user input was:\nurl=https://www.snu.gouv.fr/blog/"
 						},
 						{
 							"uri": "https://www.snu.gouv.fr/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.snu.gouv.fr%2Fphase-1-sejour-cohesion%2F",
@@ -1684,7 +1678,7 @@
 							"param": "url",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "An attacker may be able to poison cookie values through URL parameters.  Try injecting a semicolon to see if you can add cookie values (e.g. name=controlledValue;name=anotherValue;).\n\nThis was identified at:\n\nhttps://www.snu.gouv.fr/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.snu.gouv.fr%2Fphase-1-sejour-cohesion%2F\n\nUser-input was found in the following cookie:\nhandl_ref=https://www.snu.gouv.fr/phase-1-sejour-cohesion/; expires=Tue, 02-Apr-2024 06:21:59 GMT; Max-Age=2592000; path=/; domain=.snu.gouv.fr\n\nThe user input was:\nurl=https://www.snu.gouv.fr/phase-1-sejour-cohesion/"
+							"otherinfo": "An attacker may be able to poison cookie values through URL parameters.  Try injecting a semicolon to see if you can add cookie values (e.g. name=controlledValue;name=anotherValue;).\n\nThis was identified at:\n\nhttps://www.snu.gouv.fr/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.snu.gouv.fr%2Fphase-1-sejour-cohesion%2F\n\nUser-input was found in the following cookie:\nhandl_ref=https://www.snu.gouv.fr/phase-1-sejour-cohesion/; expires=Tue, 09-Apr-2024 06:21:57 GMT; Max-Age=2592000; path=/; domain=.snu.gouv.fr\n\nThe user input was:\nurl=https://www.snu.gouv.fr/phase-1-sejour-cohesion/"
 						},
 						{
 							"uri": "https://www.snu.gouv.fr/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.snu.gouv.fr%2Fphase-2-mission-interet-general%2F",
@@ -1692,7 +1686,7 @@
 							"param": "url",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "An attacker may be able to poison cookie values through URL parameters.  Try injecting a semicolon to see if you can add cookie values (e.g. name=controlledValue;name=anotherValue;).\n\nThis was identified at:\n\nhttps://www.snu.gouv.fr/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.snu.gouv.fr%2Fphase-2-mission-interet-general%2F\n\nUser-input was found in the following cookie:\nhandl_ref=https://www.snu.gouv.fr/phase-2-mission-interet-general/; expires=Tue, 02-Apr-2024 06:21:59 GMT; Max-Age=2592000; path=/; domain=.snu.gouv.fr\n\nThe user input was:\nurl=https://www.snu.gouv.fr/phase-2-mission-interet-general/"
+							"otherinfo": "An attacker may be able to poison cookie values through URL parameters.  Try injecting a semicolon to see if you can add cookie values (e.g. name=controlledValue;name=anotherValue;).\n\nThis was identified at:\n\nhttps://www.snu.gouv.fr/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.snu.gouv.fr%2Fphase-2-mission-interet-general%2F\n\nUser-input was found in the following cookie:\nhandl_ref=https://www.snu.gouv.fr/phase-2-mission-interet-general/; expires=Tue, 09-Apr-2024 06:21:57 GMT; Max-Age=2592000; path=/; domain=.snu.gouv.fr\n\nThe user input was:\nurl=https://www.snu.gouv.fr/phase-2-mission-interet-general/"
 						},
 						{
 							"uri": "https://www.snu.gouv.fr/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.snu.gouv.fr%2Ftemoignages%2F",
@@ -1700,16 +1694,16 @@
 							"param": "url",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "An attacker may be able to poison cookie values through URL parameters.  Try injecting a semicolon to see if you can add cookie values (e.g. name=controlledValue;name=anotherValue;).\n\nThis was identified at:\n\nhttps://www.snu.gouv.fr/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.snu.gouv.fr%2Ftemoignages%2F\n\nUser-input was found in the following cookie:\nhandl_ref=https://www.snu.gouv.fr/temoignages/; expires=Tue, 02-Apr-2024 06:21:59 GMT; Max-Age=2592000; path=/; domain=.snu.gouv.fr\n\nThe user input was:\nurl=https://www.snu.gouv.fr/temoignages/"
+							"otherinfo": "An attacker may be able to poison cookie values through URL parameters.  Try injecting a semicolon to see if you can add cookie values (e.g. name=controlledValue;name=anotherValue;).\n\nThis was identified at:\n\nhttps://www.snu.gouv.fr/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.snu.gouv.fr%2Ftemoignages%2F\n\nUser-input was found in the following cookie:\nhandl_ref=https://www.snu.gouv.fr/temoignages/; expires=Tue, 09-Apr-2024 06:21:58 GMT; Max-Age=2592000; path=/; domain=.snu.gouv.fr\n\nThe user input was:\nurl=https://www.snu.gouv.fr/temoignages/"
 						}
 					],
 					"count": "12",
 					"solution": "<p>Do not allow user input to control cookie names and values. If some query string parameters must be set in cookie values, be sure to filter out semicolon's that can serve as name/value pair delimiters.</p>",
-					"otherinfo": "<p>An attacker may be able to poison cookie values through URL parameters.  Try injecting a semicolon to see if you can add cookie values (e.g. name=controlledValue;name=anotherValue;).</p><p></p><p>This was identified at:</p><p></p><p>https://www.snu.gouv.fr/?p=147</p><p></p><p>User-input was found in the following cookie:</p><p>handl_url=https://www.snu.gouv.fr/?p=147; expires=Tue, 02-Apr-2024 06:21:59 GMT; Max-Age=2592000; path=/; domain=.snu.gouv.fr</p><p></p><p>The user input was:</p><p>p=147</p>",
+					"otherinfo": "<p>An attacker may be able to poison cookie values through URL parameters.  Try injecting a semicolon to see if you can add cookie values (e.g. name=controlledValue;name=anotherValue;).</p><p></p><p>This was identified at:</p><p></p><p>https://www.snu.gouv.fr/?p=147</p><p></p><p>User-input was found in the following cookie:</p><p>handl_url=https://www.snu.gouv.fr/?p=147; expires=Tue, 09-Apr-2024 06:21:57 GMT; Max-Age=2592000; path=/; domain=.snu.gouv.fr</p><p></p><p>The user input was:</p><p>p=147</p>",
 					"reference": "<p>https://en.wikipedia.org/wiki/HTTP_cookie</p><p>https://cwe.mitre.org/data/definitions/565.html</p>",
 					"cweid": "565",
 					"wascid": "20",
-					"sourceid": "1219"
+					"sourceid": "1141"
 				},
 				{
 					"pluginid": "10027",
@@ -1746,7 +1740,7 @@
 							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected 2 times, the first in the element starting with: \"<script>\r\n    tarteaucitron.services.adformsnu = {\r\n        \"key\": \"adformsnu\",\r\n        \"type\": \"ads\",\r\n        \"name\": \"Adform\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://www.snu.gouv.fr/phase-2-mission-interet-general/",
+							"uri": "https://www.snu.gouv.fr/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1754,7 +1748,7 @@
 							"otherinfo": "The following pattern was used: \\bADMIN\\b and was detected in the element starting with: \"<script type=\"text/javascript\" id=\"uncode-init-js-extra\">\n/* <![CDATA[ */\nvar SiteParameters = {\"days\":\"jours\",\"hours\":\"heures\",\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://www.snu.gouv.fr/phase-2-mission-interet-general/",
+							"uri": "https://www.snu.gouv.fr/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1762,7 +1756,7 @@
 							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://www.snu.gouv.fr/phase-2-mission-interet-general/",
+							"uri": "https://www.snu.gouv.fr/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1770,7 +1764,7 @@
 							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected 2 times, the first in the element starting with: \"<script>\r\n    tarteaucitron.services.adformsnu = {\r\n        \"key\": \"adformsnu\",\r\n        \"type\": \"ads\",\r\n        \"name\": \"Adform\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://www.snu.gouv.fr/temoignages/",
+							"uri": "https://www.snu.gouv.fr/phase-2-mission-interet-general/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1778,7 +1772,7 @@
 							"otherinfo": "The following pattern was used: \\bADMIN\\b and was detected in the element starting with: \"<script type=\"text/javascript\" id=\"uncode-init-js-extra\">\n/* <![CDATA[ */\nvar SiteParameters = {\"days\":\"jours\",\"hours\":\"heures\",\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://www.snu.gouv.fr/temoignages/",
+							"uri": "https://www.snu.gouv.fr/phase-2-mission-interet-general/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1786,7 +1780,7 @@
 							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://www.snu.gouv.fr/temoignages/",
+							"uri": "https://www.snu.gouv.fr/phase-2-mission-interet-general/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1818,15 +1812,15 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "The origin domain used for comparison was: \nwww.snu.gouv.fr\nutm_source=deleted\nutm_medium=deleted\nutm_term=deleted\nutm_content=deleted\nutm_campaign=deleted\ngclid=deleted\nhandl_original_ref=https%3A%2F%2Fwww.snu.gouv.fr\nhandl_landing_page=https%3A%2F%2Fwww.snu.gouv.fr%2Fbase-de-connaissance%2Fa-qui-sadresse-le-snu\nhandl_ip=172.183.154.117%2C%20172.70.100.136\nhandl_ref=https%3A%2F%2Fwww.snu.gouv.fr\nhandl_url=https%3A%2F%2Fwww.snu.gouv.fr%2Fbase-de-connaissance%2Fa-qui-sadresse-le-snu\nemail=deleted\nusername=deleted\n"
+							"otherinfo": "The origin domain used for comparison was: \nwww.snu.gouv.fr\nutm_source=deleted\nutm_medium=deleted\nutm_term=deleted\nutm_content=deleted\nutm_campaign=deleted\ngclid=deleted\nhandl_original_ref=https%3A%2F%2Fwww.snu.gouv.fr\nhandl_landing_page=https%3A%2F%2Fwww.snu.gouv.fr%2Fbase-de-connaissance%2Fa-qui-sadresse-le-snu\nhandl_ip=172.183.130.206%2C%20172.69.59.91\nhandl_ref=https%3A%2F%2Fwww.snu.gouv.fr\nhandl_url=https%3A%2F%2Fwww.snu.gouv.fr%2Fbase-de-connaissance%2Fa-qui-sadresse-le-snu\nemail=deleted\nusername=deleted\n"
 						},
 						{
-							"uri": "https://www.snu.gouv.fr/base-de-connaissance/je-cherche-une-mission-mig",
+							"uri": "https://www.snu.gouv.fr/base-de-connaissance/je-renseigne-mes-preferences-de-missions-depuis-mon-espace-volontaire",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "The origin domain used for comparison was: \nwww.snu.gouv.fr\nutm_source=deleted\nutm_medium=deleted\nutm_term=deleted\nutm_content=deleted\nutm_campaign=deleted\ngclid=deleted\nhandl_original_ref=https%3A%2F%2Fwww.snu.gouv.fr\nhandl_landing_page=https%3A%2F%2Fwww.snu.gouv.fr%2Fbase-de-connaissance%2Fa-qui-sadresse-le-snu\nhandl_ip=172.183.154.117%2C%20172.70.179.71\nhandl_ref=https%3A%2F%2Fwww.snu.gouv.fr%2Fphase-2-mission-interet-general%2F\nhandl_url=https%3A%2F%2Fwww.snu.gouv.fr%2Fbase-de-connaissance%2Fje-cherche-une-mission-mig\nemail=deleted\nusername=deleted\n"
+							"otherinfo": "The origin domain used for comparison was: \nwww.snu.gouv.fr\nutm_source=deleted\nutm_medium=deleted\nutm_term=deleted\nutm_content=deleted\nutm_campaign=deleted\ngclid=deleted\nhandl_original_ref=https%3A%2F%2Fwww.snu.gouv.fr\nhandl_landing_page=https%3A%2F%2Fwww.snu.gouv.fr%2Frobots.txt\nhandl_ip=172.183.130.206%2C%20108.162.216.242\nhandl_ref=https%3A%2F%2Fwww.snu.gouv.fr%2Fphase-2-mission-interet-general%2F\nhandl_url=https%3A%2F%2Fwww.snu.gouv.fr%2Fbase-de-connaissance%2Fje-renseigne-mes-preferences-de-missions-depuis-mon-espace-volontaire\nemail=deleted\nusername=deleted\n"
 						},
 						{
 							"uri": "https://www.snu.gouv.fr/comments/feed/",
@@ -1834,7 +1828,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "The origin domain used for comparison was: \nwww.snu.gouv.fr\nutm_source=deleted\nutm_medium=deleted\nutm_term=deleted\nutm_content=deleted\nutm_campaign=deleted\ngclid=deleted\nhandl_original_ref=https%3A%2F%2Fwww.snu.gouv.fr\nhandl_landing_page=https%3A%2F%2Fwww.snu.gouv.fr%2Fbase-de-connaissance%2Fa-qui-sadresse-le-snu\nhandl_ip=172.183.154.117%2C%20172.69.59.134\nhandl_ref=https%3A%2F%2Fwww.snu.gouv.fr\nhandl_url=https%3A%2F%2Fwww.snu.gouv.fr%2Fcomments%2Ffeed%2F\nemail=deleted\nusername=deleted\n"
+							"otherinfo": "The origin domain used for comparison was: \nwww.snu.gouv.fr\nutm_source=deleted\nutm_medium=deleted\nutm_term=deleted\nutm_content=deleted\nutm_campaign=deleted\ngclid=deleted\nhandl_original_ref=https%3A%2F%2Fwww.snu.gouv.fr\nhandl_landing_page=https%3A%2F%2Fwww.snu.gouv.fr%2Frobots.txt\nhandl_ip=172.183.130.206%2C%20172.70.100.156\nhandl_ref=https%3A%2F%2Fwww.snu.gouv.fr\nhandl_url=https%3A%2F%2Fwww.snu.gouv.fr%2Fcomments%2Ffeed%2F\nemail=deleted\nusername=deleted\n"
 						},
 						{
 							"uri": "https://www.snu.gouv.fr/feed/",
@@ -1842,7 +1836,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "The origin domain used for comparison was: \nwww.snu.gouv.fr\nutm_source=deleted\nutm_medium=deleted\nutm_term=deleted\nutm_content=deleted\nutm_campaign=deleted\ngclid=deleted\nhandl_original_ref=https%3A%2F%2Fwww.snu.gouv.fr\nhandl_landing_page=https%3A%2F%2Fwww.snu.gouv.fr%2Fbase-de-connaissance%2Fa-qui-sadresse-le-snu\nhandl_ip=172.183.154.117%2C%20108.162.216.234\nhandl_ref=https%3A%2F%2Fwww.snu.gouv.fr\nhandl_url=https%3A%2F%2Fwww.snu.gouv.fr%2Ffeed%2F\nemail=deleted\nusername=deleted\n"
+							"otherinfo": "The origin domain used for comparison was: \nwww.snu.gouv.fr\nutm_source=deleted\nutm_medium=deleted\nutm_term=deleted\nutm_content=deleted\nutm_campaign=deleted\ngclid=deleted\nhandl_original_ref=https%3A%2F%2Fwww.snu.gouv.fr\nhandl_landing_page=https%3A%2F%2Fwww.snu.gouv.fr%2Frobots.txt\nhandl_ip=172.183.130.206%2C%20172.70.126.20\nhandl_ref=https%3A%2F%2Fwww.snu.gouv.fr\nhandl_url=https%3A%2F%2Fwww.snu.gouv.fr%2Ffeed%2F\nemail=deleted\nusername=deleted\n"
 						},
 						{
 							"uri": "https://www.snu.gouv.fr/robots.txt",
@@ -1850,7 +1844,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "The origin domain used for comparison was: \nwww.snu.gouv.fr\nutm_source=deleted\nutm_medium=deleted\nutm_term=deleted\nutm_content=deleted\nutm_campaign=deleted\ngclid=deleted\nhandl_original_ref=deleted\nhandl_landing_page=https%3A%2F%2Fwww.snu.gouv.fr%2Frobots.txt\nhandl_ip=172.183.154.117%2C%20172.70.178.138\nhandl_ref=deleted\nhandl_url=https%3A%2F%2Fwww.snu.gouv.fr%2Frobots.txt\nemail=deleted\nusername=deleted\n"
+							"otherinfo": "The origin domain used for comparison was: \nwww.snu.gouv.fr\nutm_source=deleted\nutm_medium=deleted\nutm_term=deleted\nutm_content=deleted\nutm_campaign=deleted\ngclid=deleted\nhandl_original_ref=deleted\nhandl_landing_page=https%3A%2F%2Fwww.snu.gouv.fr%2Frobots.txt\nhandl_ip=172.183.130.206%2C%20172.69.58.38\nhandl_ref=deleted\nhandl_url=https%3A%2F%2Fwww.snu.gouv.fr%2Frobots.txt\nemail=deleted\nusername=deleted\n"
 						},
 						{
 							"uri": "https://www.snu.gouv.fr/sitemap.xml",
@@ -1858,7 +1852,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "The origin domain used for comparison was: \nwww.snu.gouv.fr\nutm_source=deleted\nutm_medium=deleted\nutm_term=deleted\nutm_content=deleted\nutm_campaign=deleted\ngclid=deleted\nhandl_original_ref=deleted\nhandl_landing_page=https%3A%2F%2Fwww.snu.gouv.fr%2Fsitemap.xml\nhandl_ip=172.183.154.117%2C%20172.70.126.159\nhandl_ref=deleted\nhandl_url=https%3A%2F%2Fwww.snu.gouv.fr%2Fsitemap.xml\nemail=deleted\nusername=deleted\n"
+							"otherinfo": "The origin domain used for comparison was: \nwww.snu.gouv.fr\nutm_source=deleted\nutm_medium=deleted\nutm_term=deleted\nutm_content=deleted\nutm_campaign=deleted\ngclid=deleted\nhandl_original_ref=deleted\nhandl_landing_page=https%3A%2F%2Fwww.snu.gouv.fr%2Fsitemap.xml\nhandl_ip=172.183.130.206%2C%20172.70.178.69\nhandl_ref=deleted\nhandl_url=https%3A%2F%2Fwww.snu.gouv.fr%2Fsitemap.xml\nemail=deleted\nusername=deleted\n"
 						},
 						{
 							"uri": "https://www.snu.gouv.fr/wp-json/",
@@ -1866,7 +1860,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "The origin domain used for comparison was: \nwww.snu.gouv.fr\nutm_source=deleted\nutm_medium=deleted\nutm_term=deleted\nutm_content=deleted\nutm_campaign=deleted\ngclid=deleted\nhandl_original_ref=https%3A%2F%2Fwww.snu.gouv.fr\nhandl_landing_page=https%3A%2F%2Fwww.snu.gouv.fr%2Fbase-de-connaissance%2Fa-qui-sadresse-le-snu\nhandl_ip=172.183.154.117%2C%20172.69.59.17\nhandl_ref=https%3A%2F%2Fwww.snu.gouv.fr\nhandl_url=https%3A%2F%2Fwww.snu.gouv.fr%2Fwp-json%2F\nemail=deleted\nusername=deleted\n"
+							"otherinfo": "The origin domain used for comparison was: \nwww.snu.gouv.fr\nutm_source=deleted\nutm_medium=deleted\nutm_term=deleted\nutm_content=deleted\nutm_campaign=deleted\ngclid=deleted\nhandl_original_ref=https%3A%2F%2Fwww.snu.gouv.fr\nhandl_landing_page=https%3A%2F%2Fwww.snu.gouv.fr%2Frobots.txt\nhandl_ip=172.183.130.206%2C%20172.69.6.190\nhandl_ref=https%3A%2F%2Fwww.snu.gouv.fr\nhandl_url=https%3A%2F%2Fwww.snu.gouv.fr%2Fwp-json%2F\nemail=deleted\nusername=deleted\n"
 						},
 						{
 							"uri": "https://www.snu.gouv.fr/wp-json/oembed/1.0/embed?format=xml&url=https%3A%2F%2Fwww.snu.gouv.fr%2F",
@@ -1874,7 +1868,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "The origin domain used for comparison was: \nwww.snu.gouv.fr\nutm_source=deleted\nutm_medium=deleted\nutm_term=deleted\nutm_content=deleted\nutm_campaign=deleted\ngclid=deleted\nhandl_original_ref=https%3A%2F%2Fwww.snu.gouv.fr\nhandl_landing_page=https%3A%2F%2Fwww.snu.gouv.fr%2Fxmlrpc.php\nhandl_ip=172.183.154.117%2C%20172.69.6.177\nhandl_ref=https%3A%2F%2Fwww.snu.gouv.fr\nhandl_url=https%3A%2F%2Fwww.snu.gouv.fr%2Fwp-json%2Foembed%2F1.0%2Fembed%3Fformat%3Dxml%26url%3Dhttps%253A%252F%252Fwww.snu.gouv.fr%252F\nemail=deleted\nusername=deleted\n"
+							"otherinfo": "The origin domain used for comparison was: \nwww.snu.gouv.fr\nutm_source=deleted\nutm_medium=deleted\nutm_term=deleted\nutm_content=deleted\nutm_campaign=deleted\ngclid=deleted\nhandl_original_ref=https%3A%2F%2Fwww.snu.gouv.fr\nhandl_landing_page=https%3A%2F%2Fwww.snu.gouv.fr%2Fxmlrpc.php\nhandl_ip=172.183.130.206%2C%20172.71.254.201\nhandl_ref=https%3A%2F%2Fwww.snu.gouv.fr\nhandl_url=https%3A%2F%2Fwww.snu.gouv.fr%2Fwp-json%2Foembed%2F1.0%2Fembed%3Fformat%3Dxml%26url%3Dhttps%253A%252F%252Fwww.snu.gouv.fr%252F\nemail=deleted\nusername=deleted\n"
 						},
 						{
 							"uri": "https://www.snu.gouv.fr/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.snu.gouv.fr%2F",
@@ -1882,7 +1876,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "The origin domain used for comparison was: \nwww.snu.gouv.fr\nutm_source=deleted\nutm_medium=deleted\nutm_term=deleted\nutm_content=deleted\nutm_campaign=deleted\ngclid=deleted\nhandl_original_ref=https%3A%2F%2Fwww.snu.gouv.fr\nhandl_landing_page=https%3A%2F%2Fwww.snu.gouv.fr%2Fbase-de-connaissance%2Fa-qui-sadresse-le-snu\nhandl_ip=172.183.154.117%2C%20172.70.126.192\nhandl_ref=https%3A%2F%2Fwww.snu.gouv.fr\nhandl_url=https%3A%2F%2Fwww.snu.gouv.fr%2Fwp-json%2Foembed%2F1.0%2Fembed%3Furl%3Dhttps%253A%252F%252Fwww.snu.gouv.fr%252F\nemail=deleted\nusername=deleted\n"
+							"otherinfo": "The origin domain used for comparison was: \nwww.snu.gouv.fr\nutm_source=deleted\nutm_medium=deleted\nutm_term=deleted\nutm_content=deleted\nutm_campaign=deleted\ngclid=deleted\nhandl_original_ref=https%3A%2F%2Fwww.snu.gouv.fr\nhandl_landing_page=https%3A%2F%2Fwww.snu.gouv.fr%2Fxmlrpc.php\nhandl_ip=172.183.130.206%2C%20172.70.100.181\nhandl_ref=https%3A%2F%2Fwww.snu.gouv.fr\nhandl_url=https%3A%2F%2Fwww.snu.gouv.fr%2Fwp-json%2Foembed%2F1.0%2Fembed%3Furl%3Dhttps%253A%252F%252Fwww.snu.gouv.fr%252F\nemail=deleted\nusername=deleted\n"
 						},
 						{
 							"uri": "https://www.snu.gouv.fr/wp-json/wp/v2/pages/16",
@@ -1890,7 +1884,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "The origin domain used for comparison was: \nwww.snu.gouv.fr\nutm_source=deleted\nutm_medium=deleted\nutm_term=deleted\nutm_content=deleted\nutm_campaign=deleted\ngclid=deleted\nhandl_original_ref=https%3A%2F%2Fwww.snu.gouv.fr\nhandl_landing_page=https%3A%2F%2Fwww.snu.gouv.fr%2Fbase-de-connaissance%2Fa-qui-sadresse-le-snu\nhandl_ip=172.183.154.117%2C%20172.70.127.137\nhandl_ref=https%3A%2F%2Fwww.snu.gouv.fr\nhandl_url=https%3A%2F%2Fwww.snu.gouv.fr%2Fwp-json%2Fwp%2Fv2%2Fpages%2F16\nemail=deleted\nusername=deleted\n"
+							"otherinfo": "The origin domain used for comparison was: \nwww.snu.gouv.fr\nutm_source=deleted\nutm_medium=deleted\nutm_term=deleted\nutm_content=deleted\nutm_campaign=deleted\ngclid=deleted\nhandl_original_ref=https%3A%2F%2Fwww.snu.gouv.fr\nhandl_landing_page=https%3A%2F%2Fwww.snu.gouv.fr%2Frobots.txt\nhandl_ip=172.183.130.206%2C%20172.71.254.234\nhandl_ref=https%3A%2F%2Fwww.snu.gouv.fr\nhandl_url=https%3A%2F%2Fwww.snu.gouv.fr%2Fwp-json%2Fwp%2Fv2%2Fpages%2F16\nemail=deleted\nusername=deleted\n"
 						},
 						{
 							"uri": "https://www.snu.gouv.fr/xmlrpc.php",
@@ -1898,7 +1892,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "The origin domain used for comparison was: \nwww.snu.gouv.fr\nutm_source=deleted\nutm_medium=deleted\nutm_term=deleted\nutm_content=deleted\nutm_campaign=deleted\ngclid=deleted\nhandl_original_ref=https%3A%2F%2Fwww.snu.gouv.fr\nhandl_landing_page=https%3A%2F%2Fwww.snu.gouv.fr%2Fxmlrpc.php\nhandl_ip=172.183.154.117%2C%20172.70.179.76\nhandl_ref=https%3A%2F%2Fwww.snu.gouv.fr\nhandl_url=https%3A%2F%2Fwww.snu.gouv.fr%2Fxmlrpc.php\nemail=deleted\nusername=deleted\n"
+							"otherinfo": "The origin domain used for comparison was: \nwww.snu.gouv.fr\nutm_source=deleted\nutm_medium=deleted\nutm_term=deleted\nutm_content=deleted\nutm_campaign=deleted\ngclid=deleted\nhandl_original_ref=https%3A%2F%2Fwww.snu.gouv.fr\nhandl_landing_page=https%3A%2F%2Fwww.snu.gouv.fr%2Fxmlrpc.php\nhandl_ip=172.183.130.206%2C%20172.71.254.92\nhandl_ref=https%3A%2F%2Fwww.snu.gouv.fr\nhandl_url=https%3A%2F%2Fwww.snu.gouv.fr%2Fxmlrpc.php\nemail=deleted\nusername=deleted\n"
 						},
 						{
 							"uri": "https://www.snu.gouv.fr/xmlrpc.php?rsd",
@@ -1906,16 +1900,16 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "The origin domain used for comparison was: \nwww.snu.gouv.fr\nutm_source=deleted\nutm_medium=deleted\nutm_term=deleted\nutm_content=deleted\nutm_campaign=deleted\ngclid=deleted\nhandl_original_ref=https%3A%2F%2Fwww.snu.gouv.fr\nhandl_landing_page=https%3A%2F%2Fwww.snu.gouv.fr%2Fxmlrpc.php%3Frsd\nhandl_ip=172.183.154.117%2C%20172.70.126.165\nhandl_ref=https%3A%2F%2Fwww.snu.gouv.fr\nhandl_url=https%3A%2F%2Fwww.snu.gouv.fr%2Fxmlrpc.php%3Frsd\nemail=deleted\nusername=deleted\n"
+							"otherinfo": "The origin domain used for comparison was: \nwww.snu.gouv.fr\nutm_source=deleted\nutm_medium=deleted\nutm_term=deleted\nutm_content=deleted\nutm_campaign=deleted\ngclid=deleted\nhandl_original_ref=https%3A%2F%2Fwww.snu.gouv.fr\nhandl_landing_page=https%3A%2F%2Fwww.snu.gouv.fr%2Fxmlrpc.php%3Frsd\nhandl_ip=172.183.130.206%2C%20172.70.127.114\nhandl_ref=https%3A%2F%2Fwww.snu.gouv.fr\nhandl_url=https%3A%2F%2Fwww.snu.gouv.fr%2Fxmlrpc.php%3Frsd\nemail=deleted\nusername=deleted\n"
 						}
 					],
 					"count": "12",
 					"solution": "<p>Always scope cookies to a FQDN (Fully Qualified Domain Name).</p>",
-					"otherinfo": "<p>The origin domain used for comparison was: </p><p>www.snu.gouv.fr</p><p>utm_source=deleted</p><p>utm_medium=deleted</p><p>utm_term=deleted</p><p>utm_content=deleted</p><p>utm_campaign=deleted</p><p>gclid=deleted</p><p>handl_original_ref=https%3A%2F%2Fwww.snu.gouv.fr</p><p>handl_landing_page=https%3A%2F%2Fwww.snu.gouv.fr%2Fbase-de-connaissance%2Fa-qui-sadresse-le-snu</p><p>handl_ip=172.183.154.117%2C%20172.70.100.136</p><p>handl_ref=https%3A%2F%2Fwww.snu.gouv.fr</p><p>handl_url=https%3A%2F%2Fwww.snu.gouv.fr%2Fbase-de-connaissance%2Fa-qui-sadresse-le-snu</p><p>email=deleted</p><p>username=deleted</p><p></p>",
+					"otherinfo": "<p>The origin domain used for comparison was: </p><p>www.snu.gouv.fr</p><p>utm_source=deleted</p><p>utm_medium=deleted</p><p>utm_term=deleted</p><p>utm_content=deleted</p><p>utm_campaign=deleted</p><p>gclid=deleted</p><p>handl_original_ref=https%3A%2F%2Fwww.snu.gouv.fr</p><p>handl_landing_page=https%3A%2F%2Fwww.snu.gouv.fr%2Fbase-de-connaissance%2Fa-qui-sadresse-le-snu</p><p>handl_ip=172.183.130.206%2C%20172.69.59.91</p><p>handl_ref=https%3A%2F%2Fwww.snu.gouv.fr</p><p>handl_url=https%3A%2F%2Fwww.snu.gouv.fr%2Fbase-de-connaissance%2Fa-qui-sadresse-le-snu</p><p>email=deleted</p><p>username=deleted</p><p></p>",
 					"reference": "<p>https://tools.ietf.org/html/rfc6265#section-4.1</p><p>https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes.html</p><p>https://code.google.com/p/browsersec/wiki/Part2#Same-origin_policy_for_cookies</p>",
 					"cweid": "565",
 					"wascid": "15",
-					"sourceid": "390"
+					"sourceid": "360"
 				},
 				{
 					"pluginid": "10109",
@@ -2146,15 +2140,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "Age: 98",
-							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
-						},
-						{
-							"uri": "https://www.snu.gouv.fr/wp-content/cache/min/1/wp-content/plugins/handl-utm-grabber/js/js.cookie.js?ver=1704792035",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "Age: 98",
+							"evidence": "Age: 40786",
 							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
@@ -2162,47 +2148,31 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "Age: 149304",
+							"evidence": "Age: 151",
 							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
-							"uri": "https://www.snu.gouv.fr/wp-content/themes/uncode/library/js/ai-uncode.min.js",
+							"uri": "https://www.snu.gouv.fr/wp-content/uploads/2022/07/283383589_149798494258517_2681274110692096206_n-1.jpg.webp",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "Age: 99",
+							"evidence": "Age: 114",
 							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
-							"uri": "https://www.snu.gouv.fr/wp-content/themes/uncode/library/js/app.min.js",
+							"uri": "https://www.snu.gouv.fr/wp-content/uploads/2022/07/Republique-francaise.svg",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "Age: 213160",
+							"evidence": "Age: 115",
 							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
-							"uri": "https://www.snu.gouv.fr/wp-content/themes/uncode/library/js/init.min.js",
+							"uri": "https://www.snu.gouv.fr/wp-content/uploads/2022/09/parent.svg",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "Age: 2112038",
-							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
-						},
-						{
-							"uri": "https://www.snu.gouv.fr/wp-content/themes/uncode/library/js/plugins.min.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "Age: 117",
-							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
-						},
-						{
-							"uri": "https://www.snu.gouv.fr/wp-content/uploads/2022/07/Group.svg",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "Age: 1606162",
+							"evidence": "Age: 70899",
 							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
@@ -2210,7 +2180,31 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "Age: 42768",
+							"evidence": "Age: 70896",
+							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
+						},
+						{
+							"uri": "https://www.snu.gouv.fr/wp-content/uploads/2023/03/SNU_LOGO_RVB_VDEF-1-1536x1536.png.webp",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Age: 40777",
+							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
+						},
+						{
+							"uri": "https://www.snu.gouv.fr/wp-content/uploads/2023/03/SNU_LOGO_RVB_VDEF-1.png.webp",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Age: 93",
+							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
+						},
+						{
+							"uri": "https://www.snu.gouv.fr/wp-content/uploads/2023/06/e2061484-472a-4106-9d4a-4cae23e15fe7.jpg",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Age: 10863",
 							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
@@ -2218,7 +2212,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "Age: 2109393",
+							"evidence": "Age: 70897",
 							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
 						},
 						{
@@ -2228,23 +2222,15 @@
 							"attack": "",
 							"evidence": "Age: 152",
 							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
-						},
-						{
-							"uri": "https://www.snu.gouv.fr/wp-includes/js/mediaelement/mediaelement-migrate.min.js?ver=6.4.3",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "Age: 2391078",
-							"otherinfo": "The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use."
 						}
 					],
-					"count": "12",
+					"count": "11",
 					"solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information.  If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request.</p>",
 					"otherinfo": "<p>The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use.</p>",
 					"reference": "<p>https://tools.ietf.org/html/rfc7234</p><p>https://tools.ietf.org/html/rfc7231</p><p>https://www.rfc-editor.org/rfc/rfc9110.html</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "589"
+					"sourceid": "558"
 				},
 				{
 					"pluginid": "90005",
@@ -2265,7 +2251,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.snu.gouv.fr/phase-2-mission-interet-general/",
+							"uri": "https://www.snu.gouv.fr/",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -2273,7 +2259,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.snu.gouv.fr/temoignages/",
+							"uri": "https://www.snu.gouv.fr/phase-2-mission-interet-general/",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -2308,7 +2294,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.snu.gouv.fr/phase-2-mission-interet-general/",
+							"uri": "https://www.snu.gouv.fr/",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -2316,7 +2302,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.snu.gouv.fr/temoignages/",
+							"uri": "https://www.snu.gouv.fr/phase-2-mission-interet-general/",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -2330,7 +2316,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -2351,7 +2337,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.snu.gouv.fr/phase-2-mission-interet-general/",
+							"uri": "https://www.snu.gouv.fr/",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -2359,7 +2345,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.snu.gouv.fr/temoignages/",
+							"uri": "https://www.snu.gouv.fr/phase-2-mission-interet-general/",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -2373,7 +2359,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -2394,7 +2380,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.snu.gouv.fr/phase-2-mission-interet-general/",
+							"uri": "https://www.snu.gouv.fr/",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -2402,7 +2388,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.snu.gouv.fr/temoignages/",
+							"uri": "https://www.snu.gouv.fr/phase-2-mission-interet-general/",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -2453,60 +2439,60 @@
 							"otherinfo": "\ncookie:handl_url\ncookie:handl_ip\ncookie:handl_landing_page"
 						},
 						{
-							"uri": "https://www.snu.gouv.fr/wp-content/uploads/2022/07/292036650_3272612576328166_6284377953910449824_n-300x300.jpg.webp",
-							"method": "GET",
-							"param": "handl_original_ref",
-							"attack": "",
-							"evidence": "https%3A%2F%2Fwww.snu.gouv.fr",
-							"otherinfo": "\ncookie:handl_original_ref"
-						},
-						{
-							"uri": "https://www.snu.gouv.fr/wp-content/uploads/2022/07/292036650_3272612576328166_6284377953910449824_n.jpg.webp",
-							"method": "GET",
-							"param": "handl_original_ref",
-							"attack": "",
-							"evidence": "https%3A%2F%2Fwww.snu.gouv.fr",
-							"otherinfo": "\ncookie:handl_original_ref"
-						},
-						{
-							"uri": "https://www.snu.gouv.fr/wp-content/uploads/2022/10/DSCF8771-350x197.jpg.webp",
+							"uri": "https://www.snu.gouv.fr/wp-content/uploads/2022/07/Group-1.svg",
 							"method": "GET",
 							"param": "handl_landing_page",
 							"attack": "",
-							"evidence": "https%3A%2F%2Fwww.snu.gouv.fr%2Fbase-de-connaissance%2Fa-qui-sadresse-le-snu",
+							"evidence": "https%3A%2F%2Fwww.snu.gouv.fr%2Frobots.txt",
 							"otherinfo": "\ncookie:handl_landing_page"
 						},
 						{
-							"uri": "https://www.snu.gouv.fr/wp-content/uploads/2022/10/DSCF8771-350x197.jpg.webp",
-							"method": "GET",
-							"param": "handl_original_ref",
-							"attack": "",
-							"evidence": "https%3A%2F%2Fwww.snu.gouv.fr",
-							"otherinfo": "\ncookie:handl_original_ref"
-						},
-						{
-							"uri": "https://www.snu.gouv.fr/wp-content/uploads/2023/06/IMG20230603111949-scaled-uai-2560x1440.jpg",
+							"uri": "https://www.snu.gouv.fr/wp-content/uploads/2022/10/Frame-1658-1-768x688.png",
 							"method": "GET",
 							"param": "handl_landing_page",
 							"attack": "",
-							"evidence": "https%3A%2F%2Fwww.snu.gouv.fr%2Fbase-de-connaissance%2Fa-qui-sadresse-le-snu",
+							"evidence": "https%3A%2F%2Fwww.snu.gouv.fr%2Frobots.txt",
 							"otherinfo": "\ncookie:handl_landing_page"
 						},
 						{
-							"uri": "https://www.snu.gouv.fr/wp-content/uploads/2023/06/IMG20230603111949-scaled-uai-2560x1440.jpg",
+							"uri": "https://www.snu.gouv.fr/wp-content/uploads/2022/11/DSCF0444-uai-880x495.jpg",
 							"method": "GET",
-							"param": "handl_original_ref",
+							"param": "handl_landing_page",
 							"attack": "",
-							"evidence": "https%3A%2F%2Fwww.snu.gouv.fr",
-							"otherinfo": "\ncookie:handl_original_ref"
+							"evidence": "https%3A%2F%2Fwww.snu.gouv.fr%2Frobots.txt",
+							"otherinfo": "\ncookie:handl_landing_page"
 						},
 						{
-							"uri": "https://www.snu.gouv.fr/wp-json/wp/v2/pages/169",
+							"uri": "https://www.snu.gouv.fr/wp-content/uploads/2022/11/Vector-11-1024x732.png",
 							"method": "GET",
-							"param": "handl_ip",
+							"param": "handl_landing_page",
 							"attack": "",
-							"evidence": "172.183.154.117%2C%20172.70.100.136",
-							"otherinfo": "\ncookie:handl_ip"
+							"evidence": "https%3A%2F%2Fwww.snu.gouv.fr%2Frobots.txt",
+							"otherinfo": "\ncookie:handl_landing_page"
+						},
+						{
+							"uri": "https://www.snu.gouv.fr/wp-content/uploads/2022/11/Vector-11-768x549.png",
+							"method": "GET",
+							"param": "handl_landing_page",
+							"attack": "",
+							"evidence": "https%3A%2F%2Fwww.snu.gouv.fr%2Frobots.txt",
+							"otherinfo": "\ncookie:handl_landing_page"
+						},
+						{
+							"uri": "https://www.snu.gouv.fr/wp-content/uploads/2022/11/Vector-8-350x283.png",
+							"method": "GET",
+							"param": "handl_landing_page",
+							"attack": "",
+							"evidence": "https%3A%2F%2Fwww.snu.gouv.fr%2Frobots.txt",
+							"otherinfo": "\ncookie:handl_landing_page"
+						},
+						{
+							"uri": "https://www.snu.gouv.fr/wp-content/uploads/2022/11/Vector-8.png",
+							"method": "GET",
+							"param": "handl_landing_page",
+							"attack": "",
+							"evidence": "https%3A%2F%2Fwww.snu.gouv.fr%2Frobots.txt",
+							"otherinfo": "\ncookie:handl_landing_page"
 						}
 					],
 					"count": "10",
@@ -2515,7 +2501,7 @@
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "390"
+					"sourceid": "360"
 				},
 				{
 					"pluginid": "10049",

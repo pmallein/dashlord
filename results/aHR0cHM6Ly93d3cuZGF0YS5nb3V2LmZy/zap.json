@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 3 Mar 2024 06:10:44",
+	"@generated": "Sun, 10 Mar 2024 06:07:53",
 	"site":[ 
 		{
 			"@name": "https://www.data.gouv.fr",
@@ -322,22 +322,6 @@
 							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
 						},
 						{
-							"uri": "https://www.data.gouv.fr/fr/reuses.csv",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "access-control-allow-origin: *",
-							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
-						},
-						{
-							"uri": "https://www.data.gouv.fr/organizations.csv",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "access-control-allow-origin: *",
-							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
-						},
-						{
 							"uri": "https://www.data.gouv.fr/resources.csv",
 							"method": "GET",
 							"param": "",
@@ -354,13 +338,13 @@
 							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
 						}
 					],
-					"count": "13",
+					"count": "11",
 					"solution": "<p>Ensure that sensitive data is not available in an unauthenticated manner (using IP address white-listing, for instance).</p><p>Configure the \"Access-Control-Allow-Origin\" HTTP header to a more restrictive set of domains, or remove all CORS headers entirely, to allow the web browser to enforce the Same Origin Policy (SOP) in a more restrictive manner.</p>",
 					"otherinfo": "<p>The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing.</p>",
 					"reference": "<p>https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.html5_overly_permissive_cors_policy</p>",
 					"cweid": "264",
 					"wascid": "14",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10099",
@@ -395,7 +379,7 @@
 					"reference": "<p>https://www.wsj.com/articles/BL-CIOB-2999</p>",
 					"cweid": "540",
 					"wascid": "13",
-					"sourceid": "2584"
+					"sourceid": "2790"
 				},
 				{
 					"pluginid": "90003",
@@ -526,7 +510,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity</p>",
 					"cweid": "345",
 					"wascid": "15",
-					"sourceid": "168"
+					"sourceid": "163"
 				},
 				{
 					"pluginid": "10044",
@@ -544,7 +528,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "Location header URI length: 126 [https://static.data.gouv.fr/resources/catalogue-des-donnees-de-data-gouv-fr/20240303-054703/export-dataset-20240303-054703.csv].\nPredicted response size: 426.\nResponse Body Length: 439."
+							"otherinfo": "Location header URI length: 126 [https://static.data.gouv.fr/resources/catalogue-des-donnees-de-data-gouv-fr/20240310-054653/export-dataset-20240310-054653.csv].\nPredicted response size: 426.\nResponse Body Length: 439."
 						},
 						{
 							"uri": "https://www.data.gouv.fr/en/organizations.csv",
@@ -552,7 +536,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "Location header URI length: 131 [https://static.data.gouv.fr/resources/catalogue-des-donnees-de-data-gouv-fr/20240303-055616/export-organization-20240303-055616.csv].\nPredicted response size: 431.\nResponse Body Length: 449."
+							"otherinfo": "Location header URI length: 131 [https://static.data.gouv.fr/resources/catalogue-des-donnees-de-data-gouv-fr/20240310-055531/export-organization-20240310-055531.csv].\nPredicted response size: 431.\nResponse Body Length: 449."
 						},
 						{
 							"uri": "https://www.data.gouv.fr/en/resources.csv",
@@ -560,7 +544,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "Location header URI length: 127 [https://static.data.gouv.fr/resources/catalogue-des-donnees-de-data-gouv-fr/20240303-055235/export-resource-20240303-055235.csv].\nPredicted response size: 427.\nResponse Body Length: 441."
+							"otherinfo": "Location header URI length: 127 [https://static.data.gouv.fr/resources/catalogue-des-donnees-de-data-gouv-fr/20240310-055206/export-resource-20240310-055206.csv].\nPredicted response size: 427.\nResponse Body Length: 441."
 						},
 						{
 							"uri": "https://www.data.gouv.fr/en/reuses.csv",
@@ -568,7 +552,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "Location header URI length: 124 [https://static.data.gouv.fr/resources/catalogue-des-donnees-de-data-gouv-fr/20240303-055724/export-reuse-20240303-055724.csv].\nPredicted response size: 424.\nResponse Body Length: 435."
+							"otherinfo": "Location header URI length: 124 [https://static.data.gouv.fr/resources/catalogue-des-donnees-de-data-gouv-fr/20240310-055637/export-reuse-20240310-055637.csv].\nPredicted response size: 424.\nResponse Body Length: 435."
 						},
 						{
 							"uri": "https://www.data.gouv.fr/es/datasets.csv",
@@ -576,7 +560,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "Location header URI length: 126 [https://static.data.gouv.fr/resources/catalogue-des-donnees-de-data-gouv-fr/20240303-054703/export-dataset-20240303-054703.csv].\nPredicted response size: 426.\nResponse Body Length: 439."
+							"otherinfo": "Location header URI length: 126 [https://static.data.gouv.fr/resources/catalogue-des-donnees-de-data-gouv-fr/20240310-054653/export-dataset-20240310-054653.csv].\nPredicted response size: 426.\nResponse Body Length: 439."
 						},
 						{
 							"uri": "https://www.data.gouv.fr/es/organizations.csv",
@@ -584,7 +568,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "Location header URI length: 131 [https://static.data.gouv.fr/resources/catalogue-des-donnees-de-data-gouv-fr/20240303-055616/export-organization-20240303-055616.csv].\nPredicted response size: 431.\nResponse Body Length: 449."
+							"otherinfo": "Location header URI length: 131 [https://static.data.gouv.fr/resources/catalogue-des-donnees-de-data-gouv-fr/20240310-055531/export-organization-20240310-055531.csv].\nPredicted response size: 431.\nResponse Body Length: 449."
 						},
 						{
 							"uri": "https://www.data.gouv.fr/es/resources.csv",
@@ -592,7 +576,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "Location header URI length: 127 [https://static.data.gouv.fr/resources/catalogue-des-donnees-de-data-gouv-fr/20240303-055235/export-resource-20240303-055235.csv].\nPredicted response size: 427.\nResponse Body Length: 441."
+							"otherinfo": "Location header URI length: 127 [https://static.data.gouv.fr/resources/catalogue-des-donnees-de-data-gouv-fr/20240310-055206/export-resource-20240310-055206.csv].\nPredicted response size: 427.\nResponse Body Length: 441."
 						},
 						{
 							"uri": "https://www.data.gouv.fr/es/reuses.csv",
@@ -600,7 +584,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "Location header URI length: 124 [https://static.data.gouv.fr/resources/catalogue-des-donnees-de-data-gouv-fr/20240303-055724/export-reuse-20240303-055724.csv].\nPredicted response size: 424.\nResponse Body Length: 435."
+							"otherinfo": "Location header URI length: 124 [https://static.data.gouv.fr/resources/catalogue-des-donnees-de-data-gouv-fr/20240310-055637/export-reuse-20240310-055637.csv].\nPredicted response size: 424.\nResponse Body Length: 435."
 						},
 						{
 							"uri": "https://www.data.gouv.fr/fr/datasets.csv",
@@ -608,7 +592,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "Location header URI length: 126 [https://static.data.gouv.fr/resources/catalogue-des-donnees-de-data-gouv-fr/20240303-054703/export-dataset-20240303-054703.csv].\nPredicted response size: 426.\nResponse Body Length: 439."
+							"otherinfo": "Location header URI length: 126 [https://static.data.gouv.fr/resources/catalogue-des-donnees-de-data-gouv-fr/20240310-054653/export-dataset-20240310-054653.csv].\nPredicted response size: 426.\nResponse Body Length: 439."
 						},
 						{
 							"uri": "https://www.data.gouv.fr/fr/organizations.csv",
@@ -616,7 +600,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "Location header URI length: 131 [https://static.data.gouv.fr/resources/catalogue-des-donnees-de-data-gouv-fr/20240303-055616/export-organization-20240303-055616.csv].\nPredicted response size: 431.\nResponse Body Length: 449."
+							"otherinfo": "Location header URI length: 131 [https://static.data.gouv.fr/resources/catalogue-des-donnees-de-data-gouv-fr/20240310-055531/export-organization-20240310-055531.csv].\nPredicted response size: 431.\nResponse Body Length: 449."
 						},
 						{
 							"uri": "https://www.data.gouv.fr/fr/resources.csv",
@@ -624,7 +608,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "Location header URI length: 127 [https://static.data.gouv.fr/resources/catalogue-des-donnees-de-data-gouv-fr/20240303-055235/export-resource-20240303-055235.csv].\nPredicted response size: 427.\nResponse Body Length: 441."
+							"otherinfo": "Location header URI length: 127 [https://static.data.gouv.fr/resources/catalogue-des-donnees-de-data-gouv-fr/20240310-055206/export-resource-20240310-055206.csv].\nPredicted response size: 427.\nResponse Body Length: 441."
 						},
 						{
 							"uri": "https://www.data.gouv.fr/fr/reuses.csv",
@@ -632,16 +616,16 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "Location header URI length: 124 [https://static.data.gouv.fr/resources/catalogue-des-donnees-de-data-gouv-fr/20240303-055724/export-reuse-20240303-055724.csv].\nPredicted response size: 424.\nResponse Body Length: 435."
+							"otherinfo": "Location header URI length: 124 [https://static.data.gouv.fr/resources/catalogue-des-donnees-de-data-gouv-fr/20240310-055637/export-reuse-20240310-055637.csv].\nPredicted response size: 424.\nResponse Body Length: 435."
 						}
 					],
 					"count": "12",
 					"solution": "<p>Ensure that no sensitive information is leaked via redirect responses. Redirect responses should have almost no content.</p>",
-					"otherinfo": "<p>Location header URI length: 126 [https://static.data.gouv.fr/resources/catalogue-des-donnees-de-data-gouv-fr/20240303-054703/export-dataset-20240303-054703.csv].</p><p>Predicted response size: 426.</p><p>Response Body Length: 439.</p>",
+					"otherinfo": "<p>Location header URI length: 126 [https://static.data.gouv.fr/resources/catalogue-des-donnees-de-data-gouv-fr/20240310-054653/export-dataset-20240310-054653.csv].</p><p>Predicted response size: 426.</p><p>Response Body Length: 439.</p>",
 					"reference": "",
 					"cweid": "201",
 					"wascid": "13",
-					"sourceid": "112"
+					"sourceid": "55"
 				},
 				{
 					"pluginid": "10017",
@@ -654,7 +638,7 @@
 					"desc": "<p>The page includes one or more script files from a third-party domain.</p>",
 					"instances":[ 
 						{
-							"uri": "https://www.data.gouv.fr/en/tabular/preview/",
+							"uri": "https://www.data.gouv.fr",
 							"method": "GET",
 							"param": "https://static.data.gouv.fr/_themes/gouvfr/js/_commonjsHelpers-legacy.3.5.3.js",
 							"attack": "",
@@ -662,7 +646,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.data.gouv.fr/en/tabular/preview/",
+							"uri": "https://www.data.gouv.fr",
 							"method": "GET",
 							"param": "https://static.data.gouv.fr/_themes/gouvfr/js/es-module-shims.3.5.3.js",
 							"attack": "",
@@ -670,7 +654,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.data.gouv.fr/en/tabular/preview/",
+							"uri": "https://www.data.gouv.fr",
 							"method": "GET",
 							"param": "https://static.data.gouv.fr/_themes/gouvfr/js/index-legacy.3.5.3.js",
 							"attack": "",
@@ -678,7 +662,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.data.gouv.fr/en/tabular/preview/",
+							"uri": "https://www.data.gouv.fr",
 							"method": "GET",
 							"param": "https://static.data.gouv.fr/_themes/gouvfr/js/index.3.5.3.js",
 							"attack": "",
@@ -686,7 +670,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.data.gouv.fr/en/tabular/preview/",
+							"uri": "https://www.data.gouv.fr",
 							"method": "GET",
 							"param": "https://static.data.gouv.fr/_themes/gouvfr/js/polyfills-legacy.3.5.3.js",
 							"attack": "",
@@ -694,7 +678,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.data.gouv.fr/en/tabular/preview/",
+							"uri": "https://www.data.gouv.fr",
 							"method": "GET",
 							"param": "https://static.data.gouv.fr/_themes/gouvfr/js/s.min.js?_=3.5.3",
 							"attack": "",
@@ -702,7 +686,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.data.gouv.fr/en/tabular/preview/",
+							"uri": "https://www.data.gouv.fr",
 							"method": "GET",
 							"param": "https://static.data.gouv.fr/_themes/gouvfr/js/vue-content-loader.es-legacy.3.5.3.js",
 							"attack": "",
@@ -710,7 +694,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.data.gouv.fr/en/tabular/preview/",
+							"uri": "https://www.data.gouv.fr",
 							"method": "GET",
 							"param": "https://static.data.gouv.fr/_themes/gouvfr/js/vue-content-loader.es.3.5.3.js",
 							"attack": "",
@@ -718,7 +702,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.data.gouv.fr/en/tabular/preview/",
+							"uri": "https://www.data.gouv.fr",
 							"method": "GET",
 							"param": "https://static.data.gouv.fr/_themes/gouvfr/js/vue.esm-browser.prod-legacy.3.5.3.js",
 							"attack": "",
@@ -726,7 +710,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.data.gouv.fr/en/tabular/preview/",
+							"uri": "https://www.data.gouv.fr",
 							"method": "GET",
 							"param": "https://static.data.gouv.fr/_themes/gouvfr/js/vue.esm-browser.prod.3.5.3.js",
 							"attack": "",
@@ -734,7 +718,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.data.gouv.fr/tabular/preview/",
+							"uri": "https://www.data.gouv.fr/fr/",
 							"method": "GET",
 							"param": "https://static.data.gouv.fr/_themes/gouvfr/js/_commonjsHelpers-legacy.3.5.3.js",
 							"attack": "",
@@ -742,7 +726,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.data.gouv.fr/tabular/preview/",
+							"uri": "https://www.data.gouv.fr/fr/",
 							"method": "GET",
 							"param": "https://static.data.gouv.fr/_themes/gouvfr/js/es-module-shims.3.5.3.js",
 							"attack": "",
@@ -750,7 +734,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.data.gouv.fr/tabular/preview/",
+							"uri": "https://www.data.gouv.fr/fr/",
 							"method": "GET",
 							"param": "https://static.data.gouv.fr/_themes/gouvfr/js/index-legacy.3.5.3.js",
 							"attack": "",
@@ -758,7 +742,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.data.gouv.fr/tabular/preview/",
+							"uri": "https://www.data.gouv.fr/fr/",
 							"method": "GET",
 							"param": "https://static.data.gouv.fr/_themes/gouvfr/js/index.3.5.3.js",
 							"attack": "",
@@ -766,7 +750,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.data.gouv.fr/tabular/preview/",
+							"uri": "https://www.data.gouv.fr/fr/",
 							"method": "GET",
 							"param": "https://static.data.gouv.fr/_themes/gouvfr/js/polyfills-legacy.3.5.3.js",
 							"attack": "",
@@ -774,7 +758,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.data.gouv.fr/tabular/preview/",
+							"uri": "https://www.data.gouv.fr/fr/",
 							"method": "GET",
 							"param": "https://static.data.gouv.fr/_themes/gouvfr/js/s.min.js?_=3.5.3",
 							"attack": "",
@@ -782,7 +766,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.data.gouv.fr/tabular/preview/",
+							"uri": "https://www.data.gouv.fr/fr/",
 							"method": "GET",
 							"param": "https://static.data.gouv.fr/_themes/gouvfr/js/vue-content-loader.es-legacy.3.5.3.js",
 							"attack": "",
@@ -790,7 +774,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.data.gouv.fr/tabular/preview/",
+							"uri": "https://www.data.gouv.fr/fr/",
 							"method": "GET",
 							"param": "https://static.data.gouv.fr/_themes/gouvfr/js/vue-content-loader.es.3.5.3.js",
 							"attack": "",
@@ -798,7 +782,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.data.gouv.fr/tabular/preview/",
+							"uri": "https://www.data.gouv.fr/fr/",
 							"method": "GET",
 							"param": "https://static.data.gouv.fr/_themes/gouvfr/js/vue.esm-browser.prod-legacy.3.5.3.js",
 							"attack": "",
@@ -806,7 +790,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.data.gouv.fr/tabular/preview/",
+							"uri": "https://www.data.gouv.fr/fr/",
 							"method": "GET",
 							"param": "https://static.data.gouv.fr/_themes/gouvfr/js/vue.esm-browser.prod.3.5.3.js",
 							"attack": "",
@@ -820,7 +804,7 @@
 					"reference": "",
 					"cweid": "829",
 					"wascid": "15",
-					"sourceid": "161"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "110009",
@@ -863,7 +847,7 @@
 					"reference": "<p>https://owasp.org/www-community/attacks/Full_Path_Disclosure</p>",
 					"cweid": "209",
 					"wascid": "13",
-					"sourceid": "2379"
+					"sourceid": "2597"
 				},
 				{
 					"pluginid": "10063",
@@ -877,6 +861,14 @@
 					"instances":[ 
 						{
 							"uri": "https://www.data.gouv.fr",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://www.data.gouv.fr/en/datasets/r/09f013c5-9531-444b-ab6c-7a0e88efd77d",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -901,14 +893,6 @@
 						},
 						{
 							"uri": "https://www.data.gouv.fr/en/tabular/preview/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://www.data.gouv.fr/es/datasets/r/0ab442c5-57d1-4139-92c2-19672336401c",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1005,7 +989,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Transport_Layer_Protection_Cheat_Sheet.html</p>",
 					"cweid": "311",
 					"wascid": "4",
-					"sourceid": "533"
+					"sourceid": "497"
 				},
 				{
 					"pluginid": "10035",
@@ -1019,6 +1003,14 @@
 					"instances":[ 
 						{
 							"uri": "https://www.data.gouv.fr/en/datasets.csv",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://www.data.gouv.fr/en/organizations.csv",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1043,14 +1035,6 @@
 						},
 						{
 							"uri": "https://www.data.gouv.fr/es/datasets.csv",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://www.data.gouv.fr/es/organizations.csv",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1120,7 +1104,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>https://caniuse.com/stricttransportsecurity</p><p>https://datatracker.ietf.org/doc/html/rfc6797</p>",
 					"cweid": "319",
 					"wascid": "15",
-					"sourceid": "112"
+					"sourceid": "55"
 				},
 				{
 					"pluginid": "10096",
@@ -1145,8 +1129,8 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "1767128400",
-							"otherinfo": "1767128400, which evaluates to: 2025-12-30 21:00:00"
+							"evidence": "1776266274",
+							"otherinfo": "1776266274, which evaluates to: 2026-04-15 15:17:54"
 						},
 						{
 							"uri": "https://www.data.gouv.fr/fr/datasets/bureaux-de-vote-et-adresses-de-leurs-electeurs/",
@@ -1179,34 +1163,7 @@
 					"reference": "<p>https://cwe.mitre.org/data/definitions/200.html</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "1114"
-				},
-				{
-					"pluginid": "10111",
-					"alertRef": "10111",
-					"alert": "Authentication Request Identified",
-					"name": "Authentication Request Identified",
-					"riskcode": "0",
-					"confidence": "3",
-					"riskdesc": "Informational (High)",
-					"desc": "<p>The given request has been identified as an authentication request. The 'Other Info' field contains a set of key=value lines which identify any relevant fields. If the request is in a context which has an Authentication Method set to \"Auto-Detect\" then this rule will change the authentication to match the request identified.</p>",
-					"instances":[ 
-						{
-							"uri": "https://www.data.gouv.fr/fr/login",
-							"method": "POST",
-							"param": "email",
-							"attack": "",
-							"evidence": "password",
-							"otherinfo": "userParam=email\nuserValue=zaproxy@example.com\npasswordParam=password\nreferer=https://www.data.gouv.fr/fr/login?next=%2Ffr%2F\ncsrfToken=csrf_token"
-						}
-					],
-					"count": "1",
-					"solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
-					"otherinfo": "<p>userParam=email</p><p>userValue=zaproxy@example.com</p><p>passwordParam=password</p><p>referer=https://www.data.gouv.fr/fr/login?next=%2Ffr%2F</p><p>csrfToken=csrf_token</p>",
-					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/auth-req-id/</p>",
-					"cweid": "-1",
-					"wascid": "-1",
-					"sourceid": "2737"
+					"sourceid": "1090"
 				},
 				{
 					"pluginid": "10094",
@@ -1223,101 +1180,101 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "eyJjc3JmX3Rva2VuIjoiNzAzNzNiYTkxMTM5NjBkNzVkMWZiN2E3MTFkNzFkOGMwMmFhNTAyNiJ9",
-							"otherinfo": "{\"csrf_token\":\"70373ba9113960d75d1fb7a711d71d8c02aa5026\"}"
+							"evidence": "eyJjc3JmX3Rva2VuIjoiOTllYjg2NDBmZDA2N2E0OWIzM2UwYjRmNTJhYmRlZWQ3ZGIzMTkzOSJ9",
+							"otherinfo": "{\"csrf_token\":\"99eb8640fd067a49b33e0b4f52abdeed7db31939\"}"
 						},
 						{
 							"uri": "https://www.data.gouv.fr/datasets.csv",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "eyJfZnJlc2giOmZhbHNlLCJjc3JmX3Rva2VuIjoiN2Q2YmEzZjAxMzVhODE1YWE1YTFjY2E5ZmQwNTE5ZTMyODJmYjlhZiJ9",
-							"otherinfo": "{\"_fresh\":false,\"csrf_token\":\"7d6ba3f0135a815aa5a1cca9fd0519e3282fb9af\"}"
+							"evidence": "eyJfZnJlc2giOmZhbHNlLCJjc3JmX3Rva2VuIjoiNmViYWY3MjNkMGQ3NDg2NDk1OWZkOWM2YzU2ZWY2NDQ3M2Y2MGI3YSJ9",
+							"otherinfo": "{\"_fresh\":false,\"csrf_token\":\"6ebaf723d0d74864959fd9c6c56ef64473f60b7a\"}"
 						},
 						{
-							"uri": "https://www.data.gouv.fr/en/datasets.csv",
+							"uri": "https://www.data.gouv.fr/en/resources.csv",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "eyJfZnJlc2giOmZhbHNlLCJjc3JmX3Rva2VuIjoiN2Q2YmEzZjAxMzVhODE1YWE1YTFjY2E5ZmQwNTE5ZTMyODJmYjlhZiJ9",
-							"otherinfo": "{\"_fresh\":false,\"csrf_token\":\"7d6ba3f0135a815aa5a1cca9fd0519e3282fb9af\"}"
-						},
-						{
-							"uri": "https://www.data.gouv.fr/en/datasets/r/0ab442c5-57d1-4139-92c2-19672336401c",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "IjdkNmJhM2YwMTM1YTgxNWFhNWExY2NhOWZkMDUxOWUzMjgyZmI5YWYi",
-							"otherinfo": "\"7d6ba3f0135a815aa5a1cca9fd0519e3282fb9af\""
-						},
-						{
-							"uri": "https://www.data.gouv.fr/en/datasets/r/7161c9f2-3d91-4caf-afa2-cfe535807f04",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "IjdkNmJhM2YwMTM1YTgxNWFhNWExY2NhOWZkMDUxOWUzMjgyZmI5YWYi",
-							"otherinfo": "\"7d6ba3f0135a815aa5a1cca9fd0519e3282fb9af\""
+							"evidence": "eyJfZnJlc2giOmZhbHNlLCJjc3JmX3Rva2VuIjoiNmViYWY3MjNkMGQ3NDg2NDk1OWZkOWM2YzU2ZWY2NDQ3M2Y2MGI3YSJ9",
+							"otherinfo": "{\"_fresh\":false,\"csrf_token\":\"6ebaf723d0d74864959fd9c6c56ef64473f60b7a\"}"
 						},
 						{
 							"uri": "https://www.data.gouv.fr/en/tabular/preview/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "IjdkNmJhM2YwMTM1YTgxNWFhNWExY2NhOWZkMDUxOWUzMjgyZmI5YWYi",
-							"otherinfo": "\"7d6ba3f0135a815aa5a1cca9fd0519e3282fb9af\""
+							"evidence": "IjZlYmFmNzIzZDBkNzQ4NjQ5NTlmZDljNmM1NmVmNjQ0NzNmNjBiN2Ei",
+							"otherinfo": "\"6ebaf723d0d74864959fd9c6c56ef64473f60b7a\""
 						},
 						{
-							"uri": "https://www.data.gouv.fr/es/datasets/r/7161c9f2-3d91-4caf-afa2-cfe535807f04",
+							"uri": "https://www.data.gouv.fr/es/datasets.csv",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "IjdkNmJhM2YwMTM1YTgxNWFhNWExY2NhOWZkMDUxOWUzMjgyZmI5YWYi",
-							"otherinfo": "\"7d6ba3f0135a815aa5a1cca9fd0519e3282fb9af\""
+							"evidence": "eyJfZnJlc2giOmZhbHNlLCJjc3JmX3Rva2VuIjoiNmViYWY3MjNkMGQ3NDg2NDk1OWZkOWM2YzU2ZWY2NDQ3M2Y2MGI3YSJ9",
+							"otherinfo": "{\"_fresh\":false,\"csrf_token\":\"6ebaf723d0d74864959fd9c6c56ef64473f60b7a\"}"
+						},
+						{
+							"uri": "https://www.data.gouv.fr/es/resources.csv",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "eyJfZnJlc2giOmZhbHNlLCJjc3JmX3Rva2VuIjoiNmViYWY3MjNkMGQ3NDg2NDk1OWZkOWM2YzU2ZWY2NDQ3M2Y2MGI3YSJ9",
+							"otherinfo": "{\"_fresh\":false,\"csrf_token\":\"6ebaf723d0d74864959fd9c6c56ef64473f60b7a\"}"
 						},
 						{
 							"uri": "https://www.data.gouv.fr/es/tabular/preview/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "IjdkNmJhM2YwMTM1YTgxNWFhNWExY2NhOWZkMDUxOWUzMjgyZmI5YWYi",
-							"otherinfo": "\"7d6ba3f0135a815aa5a1cca9fd0519e3282fb9af\""
+							"evidence": "IjZlYmFmNzIzZDBkNzQ4NjQ5NTlmZDljNmM1NmVmNjQ0NzNmNjBiN2Ei",
+							"otherinfo": "\"6ebaf723d0d74864959fd9c6c56ef64473f60b7a\""
 						},
 						{
 							"uri": "https://www.data.gouv.fr/fr/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "eyJjc3JmX3Rva2VuIjoiN2Q2YmEzZjAxMzVhODE1YWE1YTFjY2E5ZmQwNTE5ZTMyODJmYjlhZiJ9",
-							"otherinfo": "{\"csrf_token\":\"7d6ba3f0135a815aa5a1cca9fd0519e3282fb9af\"}"
+							"evidence": "eyJjc3JmX3Rva2VuIjoiNmViYWY3MjNkMGQ3NDg2NDk1OWZkOWM2YzU2ZWY2NDQ3M2Y2MGI3YSJ9",
+							"otherinfo": "{\"csrf_token\":\"6ebaf723d0d74864959fd9c6c56ef64473f60b7a\"}"
 						},
 						{
-							"uri": "https://www.data.gouv.fr/fr/datasets/r/7161c9f2-3d91-4caf-afa2-cfe535807f04",
+							"uri": "https://www.data.gouv.fr/fr/datasets.csv",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "IjdkNmJhM2YwMTM1YTgxNWFhNWExY2NhOWZkMDUxOWUzMjgyZmI5YWYi",
-							"otherinfo": "\"7d6ba3f0135a815aa5a1cca9fd0519e3282fb9af\""
+							"evidence": "eyJfZnJlc2giOmZhbHNlLCJjc3JmX3Rva2VuIjoiNmViYWY3MjNkMGQ3NDg2NDk1OWZkOWM2YzU2ZWY2NDQ3M2Y2MGI3YSJ9",
+							"otherinfo": "{\"_fresh\":false,\"csrf_token\":\"6ebaf723d0d74864959fd9c6c56ef64473f60b7a\"}"
 						},
 						{
 							"uri": "https://www.data.gouv.fr/fr/tabular/preview/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "IjdkNmJhM2YwMTM1YTgxNWFhNWExY2NhOWZkMDUxOWUzMjgyZmI5YWYi",
-							"otherinfo": "\"7d6ba3f0135a815aa5a1cca9fd0519e3282fb9af\""
+							"evidence": "IjZlYmFmNzIzZDBkNzQ4NjQ5NTlmZDljNmM1NmVmNjQ0NzNmNjBiN2Ei",
+							"otherinfo": "\"6ebaf723d0d74864959fd9c6c56ef64473f60b7a\""
+						},
+						{
+							"uri": "https://www.data.gouv.fr/resources.csv",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "eyJfZnJlc2giOmZhbHNlLCJjc3JmX3Rva2VuIjoiNmViYWY3MjNkMGQ3NDg2NDk1OWZkOWM2YzU2ZWY2NDQ3M2Y2MGI3YSJ9",
+							"otherinfo": "{\"_fresh\":false,\"csrf_token\":\"6ebaf723d0d74864959fd9c6c56ef64473f60b7a\"}"
 						},
 						{
 							"uri": "https://www.data.gouv.fr/tabular/preview/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "IjdkNmJhM2YwMTM1YTgxNWFhNWExY2NhOWZkMDUxOWUzMjgyZmI5YWYi",
-							"otherinfo": "\"7d6ba3f0135a815aa5a1cca9fd0519e3282fb9af\""
+							"evidence": "IjZlYmFmNzIzZDBkNzQ4NjQ5NTlmZDljNmM1NmVmNjQ0NzNmNjBiN2Ei",
+							"otherinfo": "\"6ebaf723d0d74864959fd9c6c56ef64473f60b7a\""
 						}
 					],
 					"count": "12",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>{\"csrf_token\":\"70373ba9113960d75d1fb7a711d71d8c02aa5026\"}</p>",
+					"otherinfo": "<p>{\"csrf_token\":\"99eb8640fd067a49b33e0b4f52abdeed7db31939\"}</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
@@ -1457,6 +1414,14 @@
 							"otherinfo": "Links have been found with a target of '_self' - this is often used by modern frameworks to force a full page reload."
 						},
 						{
+							"uri": "https://www.data.gouv.fr/en/datasets/r/09f013c5-9531-444b-ab6c-7a0e88efd77d",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a\n                                class=\"fr-nav__link\"\n                                href=\"/en/datasets/\"\n                                aria-current=\"page\" \n                                target=\"_self\"\n                            >\n                                Data\n                            </a>",
+							"otherinfo": "Links have been found with a target of '_self' - this is often used by modern frameworks to force a full page reload."
+						},
+						{
 							"uri": "https://www.data.gouv.fr/en/datasets/r/0ab442c5-57d1-4139-92c2-19672336401c",
 							"method": "GET",
 							"param": "",
@@ -1478,14 +1443,6 @@
 							"param": "",
 							"attack": "",
 							"evidence": "<a\n                                class=\"fr-nav__link\"\n                                href=\"/fr/datasets/\"\n                                \n                                target=\"_self\"\n                            >\n                                Donn\u00E9es\n                            </a>",
-							"otherinfo": "Links have been found with a target of '_self' - this is often used by modern frameworks to force a full page reload."
-						},
-						{
-							"uri": "https://www.data.gouv.fr/es/datasets/r/0ab442c5-57d1-4139-92c2-19672336401c",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<a\n                                class=\"fr-nav__link\"\n                                href=\"/es/datasets/\"\n                                aria-current=\"page\" \n                                target=\"_self\"\n                            >\n                                Datos\n                            </a>",
 							"otherinfo": "Links have been found with a target of '_self' - this is often used by modern frameworks to force a full page reload."
 						},
 						{
@@ -1572,6 +1529,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://www.data.gouv.fr/en/tags.csv",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "public",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://www.data.gouv.fr/fr/",
 							"method": "GET",
 							"param": "cache-control",
@@ -1581,22 +1546,6 @@
 						},
 						{
 							"uri": "https://www.data.gouv.fr/fr/datasets/",
-							"method": "GET",
-							"param": "cache-control",
-							"attack": "",
-							"evidence": "public",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://www.data.gouv.fr/fr/datasets/donnees-changement-climatique-sim-quotidienne/",
-							"method": "GET",
-							"param": "cache-control",
-							"attack": "",
-							"evidence": "public",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://www.data.gouv.fr/fr/datasets/informations-sur-les-stations-metadonnees/",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -1628,7 +1577,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.data.gouv.fr/fr/posts/suivi-des-sorties-janvier-2024/",
+							"uri": "https://www.data.gouv.fr/fr/posts/hackathon-donnees-ouvertes-meteo-france-venez-valoriser-les-donnees-publiques-meteorologiques/",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -1652,7 +1601,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.data.gouv.fr/robots.txt",
+							"uri": "https://www.data.gouv.fr/fr/tags.csv",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -1660,7 +1609,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "12",
+					"count": "11",
 					"solution": "<p>For secure content, ensure the cache-control HTTP header is set with \"no-cache, no-store, must-revalidate\". If an asset should be cached consider setting the directives \"public, max-age, immutable\".</p>",
 					"otherinfo": "",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control</p><p>https://grayduck.mn/2021/09/13/cache-control-recommendations/</p>",
@@ -1687,7 +1636,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.data.gouv.fr/fr/",
+							"uri": "https://www.data.gouv.fr/en/datasets.csv",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -1709,7 +1658,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "7"
 				},
 				{
 					"pluginid": "90005",
@@ -1730,7 +1679,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.data.gouv.fr/fr/",
+							"uri": "https://www.data.gouv.fr/en/datasets.csv",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -1752,7 +1701,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "7"
 				},
 				{
 					"pluginid": "90005",
@@ -1773,7 +1722,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.data.gouv.fr/fr/",
+							"uri": "https://www.data.gouv.fr/en/datasets.csv",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -1795,7 +1744,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "7"
 				},
 				{
 					"pluginid": "90005",
@@ -1816,7 +1765,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.data.gouv.fr/fr/",
+							"uri": "https://www.data.gouv.fr/en/datasets.csv",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -1838,7 +1787,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "7"
 				},
 				{
 					"pluginid": "10112",
@@ -1855,49 +1804,65 @@
 							"method": "GET",
 							"param": "session",
 							"attack": "",
-							"evidence": "d2~eyJfZnJlc2giOmZhbHNlLCJjc3JmX3Rva2VuIjoiN2Q2YmEzZjAxMzVhODE1YWE1YTFjY2E5ZmQwNTE5ZTMyODJmYjlhZiJ9.ZeQUIA.HW6w7D3FdPtRPLuT1wD8bDmj5r0",
+							"evidence": "d3~eyJfZnJlc2giOmZhbHNlLCJjc3JmX3Rva2VuIjoiNmViYWY3MjNkMGQ3NDg2NDk1OWZkOWM2YzU2ZWY2NDQ3M2Y2MGI3YSJ9.Ze1N9g.cNg1ZI_K2JQ2fssOq1r4F11eFpk",
 							"otherinfo": "\ncookie:session"
 						},
 						{
-							"uri": "https://www.data.gouv.fr/en/datasets.csv",
+							"uri": "https://www.data.gouv.fr/en/resources.csv",
 							"method": "GET",
 							"param": "session",
 							"attack": "",
-							"evidence": "d2~eyJfZnJlc2giOmZhbHNlLCJjc3JmX3Rva2VuIjoiN2Q2YmEzZjAxMzVhODE1YWE1YTFjY2E5ZmQwNTE5ZTMyODJmYjlhZiJ9.ZeQUIA.HW6w7D3FdPtRPLuT1wD8bDmj5r0",
+							"evidence": "d3~eyJfZnJlc2giOmZhbHNlLCJjc3JmX3Rva2VuIjoiNmViYWY3MjNkMGQ3NDg2NDk1OWZkOWM2YzU2ZWY2NDQ3M2Y2MGI3YSJ9.Ze1N9g.cNg1ZI_K2JQ2fssOq1r4F11eFpk",
 							"otherinfo": "\ncookie:session"
 						},
 						{
-							"uri": "https://www.data.gouv.fr/en",
+							"uri": "https://www.data.gouv.fr/es/datasets.csv",
 							"method": "GET",
 							"param": "session",
 							"attack": "",
-							"evidence": "d2~eyJjc3JmX3Rva2VuIjoiN2Q2YmEzZjAxMzVhODE1YWE1YTFjY2E5ZmQwNTE5ZTMyODJmYjlhZiJ9.ZeQUIA.dMBBEmg5oY80t9ouJlpdf8ReORE",
+							"evidence": "d3~eyJfZnJlc2giOmZhbHNlLCJjc3JmX3Rva2VuIjoiNmViYWY3MjNkMGQ3NDg2NDk1OWZkOWM2YzU2ZWY2NDQ3M2Y2MGI3YSJ9.Ze1N9g.cNg1ZI_K2JQ2fssOq1r4F11eFpk",
 							"otherinfo": "\ncookie:session"
 						},
 						{
-							"uri": "https://www.data.gouv.fr/fr/pages/about",
+							"uri": "https://www.data.gouv.fr/es/resources.csv",
 							"method": "GET",
 							"param": "session",
 							"attack": "",
-							"evidence": "d2~eyJfZnJlc2giOmZhbHNlLCJjc3JmX3Rva2VuIjoiN2Q2YmEzZjAxMzVhODE1YWE1YTFjY2E5ZmQwNTE5ZTMyODJmYjlhZiJ9.ZeQUIA.HW6w7D3FdPtRPLuT1wD8bDmj5r0",
+							"evidence": "d3~eyJfZnJlc2giOmZhbHNlLCJjc3JmX3Rva2VuIjoiNmViYWY3MjNkMGQ3NDg2NDk1OWZkOWM2YzU2ZWY2NDQ3M2Y2MGI3YSJ9.Ze1N9g.cNg1ZI_K2JQ2fssOq1r4F11eFpk",
 							"otherinfo": "\ncookie:session"
 						},
 						{
-							"uri": "https://www.data.gouv.fr/fr/register?next=%2Ffr%2F",
+							"uri": "https://www.data.gouv.fr/fr/datasets.csv",
 							"method": "GET",
 							"param": "session",
 							"attack": "",
-							"evidence": "d2~eyJfZnJlc2giOmZhbHNlLCJjc3JmX3Rva2VuIjoiN2Q2YmEzZjAxMzVhODE1YWE1YTFjY2E5ZmQwNTE5ZTMyODJmYjlhZiJ9.ZeQUIA.HW6w7D3FdPtRPLuT1wD8bDmj5r0",
+							"evidence": "d3~eyJfZnJlc2giOmZhbHNlLCJjc3JmX3Rva2VuIjoiNmViYWY3MjNkMGQ3NDg2NDk1OWZkOWM2YzU2ZWY2NDQ3M2Y2MGI3YSJ9.Ze1N9g.cNg1ZI_K2JQ2fssOq1r4F11eFpk",
+							"otherinfo": "\ncookie:session"
+						},
+						{
+							"uri": "https://www.data.gouv.fr/resources.csv",
+							"method": "GET",
+							"param": "session",
+							"attack": "",
+							"evidence": "d3~eyJfZnJlc2giOmZhbHNlLCJjc3JmX3Rva2VuIjoiNmViYWY3MjNkMGQ3NDg2NDk1OWZkOWM2YzU2ZWY2NDQ3M2Y2MGI3YSJ9.Ze1N9g.cNg1ZI_K2JQ2fssOq1r4F11eFpk",
+							"otherinfo": "\ncookie:session"
+						},
+						{
+							"uri": "https://www.data.gouv.fr/fr/",
+							"method": "GET",
+							"param": "session",
+							"attack": "",
+							"evidence": "d3~eyJjc3JmX3Rva2VuIjoiNmViYWY3MjNkMGQ3NDg2NDk1OWZkOWM2YzU2ZWY2NDQ3M2Y2MGI3YSJ9.Ze1N9g.FluZphrlIoFeRlgW1PmgEyn5RLU",
 							"otherinfo": "\ncookie:session"
 						}
 					],
-					"count": "5",
+					"count": "7",
 					"solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
 					"otherinfo": "<p></p><p>cookie:session</p>",
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "111"
+					"sourceid": "59"
 				},
 				{
 					"pluginid": "10049",
@@ -1934,6 +1899,22 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
+							"uri": "https://www.data.gouv.fr/en/resources.csv",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
+							"uri": "https://www.data.gouv.fr/en/reuses.csv",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
 							"uri": "https://www.data.gouv.fr/es/datasets.csv",
 							"method": "GET",
 							"param": "",
@@ -1943,14 +1924,6 @@
 						},
 						{
 							"uri": "https://www.data.gouv.fr/es/resources.csv",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
-						},
-						{
-							"uri": "https://www.data.gouv.fr/fr/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1998,13 +1971,13 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						}
 					],
-					"count": "11",
+					"count": "12",
 					"solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information.  If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request. </p>",
 					"otherinfo": "<p>In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.</p>",
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "6"
+					"sourceid": "7"
 				},
 				{
 					"pluginid": "10031",
@@ -2271,15 +2244,255 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://www.data.gouv.fr/fr/login?next=%2Ffr%2F\n\nappears to include user input in: \n\na(n) [meta] tag [content] attribute \n\nThe user input found was:\nnext=/fr/\n\nThe user-controlled value was:\n/fr/reuses/"
+						},
+						{
+							"uri": "https://www.data.gouv.fr/fr/register?next=%2Ffr%2F",
+							"method": "GET",
+							"param": "next",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://www.data.gouv.fr/fr/register?next=%2Ffr%2F\n\nappears to include user input in: \n\na(n) [a] tag [href] attribute \n\nThe user input found was:\nnext=/fr/\n\nThe user-controlled value was:\n/fr/"
+						},
+						{
+							"uri": "https://www.data.gouv.fr/fr/register?next=%2Ffr%2F",
+							"method": "GET",
+							"param": "next",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://www.data.gouv.fr/fr/register?next=%2Ffr%2F\n\nappears to include user input in: \n\na(n) [a] tag [href] attribute \n\nThe user input found was:\nnext=/fr/\n\nThe user-controlled value was:\n/fr/datasets/"
+						},
+						{
+							"uri": "https://www.data.gouv.fr/fr/register?next=%2Ffr%2F",
+							"method": "GET",
+							"param": "next",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://www.data.gouv.fr/fr/register?next=%2Ffr%2F\n\nappears to include user input in: \n\na(n) [a] tag [href] attribute \n\nThe user input found was:\nnext=/fr/\n\nThe user-controlled value was:\n/fr/datasets/recent.atom"
+						},
+						{
+							"uri": "https://www.data.gouv.fr/fr/register?next=%2Ffr%2F",
+							"method": "GET",
+							"param": "next",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://www.data.gouv.fr/fr/register?next=%2Ffr%2F\n\nappears to include user input in: \n\na(n) [a] tag [href] attribute \n\nThe user input found was:\nnext=/fr/\n\nThe user-controlled value was:\n/fr/login?next=%2ffr%2fregister"
+						},
+						{
+							"uri": "https://www.data.gouv.fr/fr/register?next=%2Ffr%2F",
+							"method": "GET",
+							"param": "next",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://www.data.gouv.fr/fr/register?next=%2Ffr%2F\n\nappears to include user input in: \n\na(n) [a] tag [href] attribute \n\nThe user input found was:\nnext=/fr/\n\nThe user-controlled value was:\n/fr/organizations/"
+						},
+						{
+							"uri": "https://www.data.gouv.fr/fr/register?next=%2Ffr%2F",
+							"method": "GET",
+							"param": "next",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://www.data.gouv.fr/fr/register?next=%2Ffr%2F\n\nappears to include user input in: \n\na(n) [a] tag [href] attribute \n\nThe user input found was:\nnext=/fr/\n\nThe user-controlled value was:\n/fr/pages/about/a-propos_data-gouv"
+						},
+						{
+							"uri": "https://www.data.gouv.fr/fr/register?next=%2Ffr%2F",
+							"method": "GET",
+							"param": "next",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://www.data.gouv.fr/fr/register?next=%2Ffr%2F\n\nappears to include user input in: \n\na(n) [a] tag [href] attribute \n\nThe user input found was:\nnext=/fr/\n\nThe user-controlled value was:\n/fr/pages/legal/accessibility"
+						},
+						{
+							"uri": "https://www.data.gouv.fr/fr/register?next=%2Ffr%2F",
+							"method": "GET",
+							"param": "next",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://www.data.gouv.fr/fr/register?next=%2Ffr%2F\n\nappears to include user input in: \n\na(n) [a] tag [href] attribute \n\nThe user input found was:\nnext=/fr/\n\nThe user-controlled value was:\n/fr/pages/legal/licences"
+						},
+						{
+							"uri": "https://www.data.gouv.fr/fr/register?next=%2Ffr%2F",
+							"method": "GET",
+							"param": "next",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://www.data.gouv.fr/fr/register?next=%2Ffr%2F\n\nappears to include user input in: \n\na(n) [a] tag [href] attribute \n\nThe user input found was:\nnext=/fr/\n\nThe user-controlled value was:\n/fr/pages/nouveautes"
+						},
+						{
+							"uri": "https://www.data.gouv.fr/fr/register?next=%2Ffr%2F",
+							"method": "GET",
+							"param": "next",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://www.data.gouv.fr/fr/register?next=%2Ffr%2F\n\nappears to include user input in: \n\na(n) [a] tag [href] attribute \n\nThe user input found was:\nnext=/fr/\n\nThe user-controlled value was:\n/fr/pages/odu/home"
+						},
+						{
+							"uri": "https://www.data.gouv.fr/fr/register?next=%2Ffr%2F",
+							"method": "GET",
+							"param": "next",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://www.data.gouv.fr/fr/register?next=%2Ffr%2F\n\nappears to include user input in: \n\na(n) [a] tag [href] attribute \n\nThe user input found was:\nnext=/fr/\n\nThe user-controlled value was:\n/fr/pages/onboarding/producteurs"
+						},
+						{
+							"uri": "https://www.data.gouv.fr/fr/register?next=%2Ffr%2F",
+							"method": "GET",
+							"param": "next",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://www.data.gouv.fr/fr/register?next=%2Ffr%2F\n\nappears to include user input in: \n\na(n) [a] tag [href] attribute \n\nThe user input found was:\nnext=/fr/\n\nThe user-controlled value was:\n/fr/pages/onboarding/reutilisateurs"
+						},
+						{
+							"uri": "https://www.data.gouv.fr/fr/register?next=%2Ffr%2F",
+							"method": "GET",
+							"param": "next",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://www.data.gouv.fr/fr/register?next=%2Ffr%2F\n\nappears to include user input in: \n\na(n) [a] tag [href] attribute \n\nThe user input found was:\nnext=/fr/\n\nThe user-controlled value was:\n/fr/pages/spd/reference"
+						},
+						{
+							"uri": "https://www.data.gouv.fr/fr/register?next=%2Ffr%2F",
+							"method": "GET",
+							"param": "next",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://www.data.gouv.fr/fr/register?next=%2Ffr%2F\n\nappears to include user input in: \n\na(n) [a] tag [href] attribute \n\nThe user input found was:\nnext=/fr/\n\nThe user-controlled value was:\n/fr/pages/thematiques-a-la-une"
+						},
+						{
+							"uri": "https://www.data.gouv.fr/fr/register?next=%2Ffr%2F",
+							"method": "GET",
+							"param": "next",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://www.data.gouv.fr/fr/register?next=%2Ffr%2F\n\nappears to include user input in: \n\na(n) [a] tag [href] attribute \n\nThe user input found was:\nnext=/fr/\n\nThe user-controlled value was:\n/fr/pages/webinaires"
+						},
+						{
+							"uri": "https://www.data.gouv.fr/fr/register?next=%2Ffr%2F",
+							"method": "GET",
+							"param": "next",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://www.data.gouv.fr/fr/register?next=%2Ffr%2F\n\nappears to include user input in: \n\na(n) [a] tag [href] attribute \n\nThe user input found was:\nnext=/fr/\n\nThe user-controlled value was:\n/fr/posts/"
+						},
+						{
+							"uri": "https://www.data.gouv.fr/fr/register?next=%2Ffr%2F",
+							"method": "GET",
+							"param": "next",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://www.data.gouv.fr/fr/register?next=%2Ffr%2F\n\nappears to include user input in: \n\na(n) [a] tag [href] attribute \n\nThe user input found was:\nnext=/fr/\n\nThe user-controlled value was:\n/fr/register?next=%2ffr%2fregister"
+						},
+						{
+							"uri": "https://www.data.gouv.fr/fr/register?next=%2Ffr%2F",
+							"method": "GET",
+							"param": "next",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://www.data.gouv.fr/fr/register?next=%2Ffr%2F\n\nappears to include user input in: \n\na(n) [a] tag [href] attribute \n\nThe user input found was:\nnext=/fr/\n\nThe user-controlled value was:\n/fr/reuses/"
+						},
+						{
+							"uri": "https://www.data.gouv.fr/fr/register?next=%2Ffr%2F",
+							"method": "GET",
+							"param": "next",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://www.data.gouv.fr/fr/register?next=%2Ffr%2F\n\nappears to include user input in: \n\na(n) [a] tag [href] attribute \n\nThe user input found was:\nnext=/fr/\n\nThe user-controlled value was:\n/fr/suivi/"
+						},
+						{
+							"uri": "https://www.data.gouv.fr/fr/register?next=%2Ffr%2F",
+							"method": "GET",
+							"param": "next",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://www.data.gouv.fr/fr/register?next=%2Ffr%2F\n\nappears to include user input in: \n\na(n) [a] tag [href] attribute \n\nThe user input found was:\nnext=/fr/\n\nThe user-controlled value was:\n/fr/terms/"
+						},
+						{
+							"uri": "https://www.data.gouv.fr/fr/register?next=%2Ffr%2F",
+							"method": "GET",
+							"param": "next",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://www.data.gouv.fr/fr/register?next=%2Ffr%2F\n\nappears to include user input in: \n\na(n) [form] tag [action] attribute \n\nThe user input found was:\nnext=/fr/\n\nThe user-controlled value was:\n/fr/mcp/login"
+						},
+						{
+							"uri": "https://www.data.gouv.fr/fr/register?next=%2Ffr%2F",
+							"method": "GET",
+							"param": "next",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://www.data.gouv.fr/fr/register?next=%2Ffr%2F\n\nappears to include user input in: \n\na(n) [form] tag [action] attribute \n\nThe user input found was:\nnext=/fr/\n\nThe user-controlled value was:\n/fr/register"
+						},
+						{
+							"uri": "https://www.data.gouv.fr/fr/register?next=%2Ffr%2F",
+							"method": "GET",
+							"param": "next",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://www.data.gouv.fr/fr/register?next=%2Ffr%2F\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nnext=/fr/\n\nThe user-controlled value was:\n/fr/"
+						},
+						{
+							"uri": "https://www.data.gouv.fr/fr/register?next=%2Ffr%2F",
+							"method": "GET",
+							"param": "next",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://www.data.gouv.fr/fr/register?next=%2Ffr%2F\n\nappears to include user input in: \n\na(n) [link] tag [href] attribute \n\nThe user input found was:\nnext=/fr/\n\nThe user-controlled value was:\n/fr/datasets/recent.atom"
+						},
+						{
+							"uri": "https://www.data.gouv.fr/fr/register?next=%2Ffr%2F",
+							"method": "GET",
+							"param": "next",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://www.data.gouv.fr/fr/register?next=%2Ffr%2F\n\nappears to include user input in: \n\na(n) [link] tag [href] attribute \n\nThe user input found was:\nnext=/fr/\n\nThe user-controlled value was:\n/fr/reuses/recent.atom"
+						},
+						{
+							"uri": "https://www.data.gouv.fr/fr/register?next=%2Ffr%2F",
+							"method": "GET",
+							"param": "next",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://www.data.gouv.fr/fr/register?next=%2Ffr%2F\n\nappears to include user input in: \n\na(n) [meta] tag [content] attribute \n\nThe user input found was:\nnext=/fr/\n\nThe user-controlled value was:\n/fr/admin/"
+						},
+						{
+							"uri": "https://www.data.gouv.fr/fr/register?next=%2Ffr%2F",
+							"method": "GET",
+							"param": "next",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://www.data.gouv.fr/fr/register?next=%2Ffr%2F\n\nappears to include user input in: \n\na(n) [meta] tag [content] attribute \n\nThe user input found was:\nnext=/fr/\n\nThe user-controlled value was:\n/fr/datasets/"
+						},
+						{
+							"uri": "https://www.data.gouv.fr/fr/register?next=%2Ffr%2F",
+							"method": "GET",
+							"param": "next",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://www.data.gouv.fr/fr/register?next=%2Ffr%2F\n\nappears to include user input in: \n\na(n) [meta] tag [content] attribute \n\nThe user input found was:\nnext=/fr/\n\nThe user-controlled value was:\n/fr/login"
+						},
+						{
+							"uri": "https://www.data.gouv.fr/fr/register?next=%2Ffr%2F",
+							"method": "GET",
+							"param": "next",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://www.data.gouv.fr/fr/register?next=%2Ffr%2F\n\nappears to include user input in: \n\na(n) [meta] tag [content] attribute \n\nThe user input found was:\nnext=/fr/\n\nThe user-controlled value was:\n/fr/organizations/"
+						},
+						{
+							"uri": "https://www.data.gouv.fr/fr/register?next=%2Ffr%2F",
+							"method": "GET",
+							"param": "next",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://www.data.gouv.fr/fr/register?next=%2Ffr%2F\n\nappears to include user input in: \n\na(n) [meta] tag [content] attribute \n\nThe user input found was:\nnext=/fr/\n\nThe user-controlled value was:\n/fr/reuses/"
 						}
 					],
-					"count": "32",
+					"count": "62",
 					"solution": "<p>Validate all input and sanitize output it before writing to any HTML attributes.</p>",
 					"otherinfo": "<p>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:</p><p></p><p>https://www.data.gouv.fr/fr/login?next=%2Ffr%2F</p><p></p><p>appears to include user input in: </p><p></p><p>a(n) [a] tag [href] attribute </p><p></p><p>The user input found was:</p><p>next=/fr/</p><p></p><p>The user-controlled value was:</p><p>/fr/</p>",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html</p>",
 					"cweid": "20",
 					"wascid": "20",
-					"sourceid": "266"
+					"sourceid": "272"
 				}
 			]
 		}

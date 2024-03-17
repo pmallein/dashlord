@@ -127,12 +127,18 @@ td {
 	</h2>
 
 	<h3>
-		Generated on Sun, 10 Mar 2024 12:40:56
+		Generated on Sun, 17 Mar 2024 12:28:24
 	</h3>
 
 	<h3>
 		ZAP Version: 2.14.0
 	</h3>
+
+	<h4>
+		ZAP is supported by the <a
+			href="https://crashoverride.com/open-source">Crash Override Open
+			Source Fellowship</a>
+	</h4>
 
 	
 		<h3 class="left-header">Summary of Alerts</h3>
@@ -156,7 +162,7 @@ td {
 					<div>Medium</div>
 				</td>
 				<td align="center">
-					<div>2</div>
+					<div>3</div>
 				</td>
 			</tr>
 			<tr>
@@ -208,9 +214,14 @@ td {
 				<td align="center">1</td>
 			</tr>
 			<tr>
+				<td><a href="#90003">Sub Resource Integrity Attribute Missing</a></td>
+				<td align="center" class="risk-2">Medium</td>
+				<td align="center">1</td>
+			</tr>
+			<tr>
 				<td><a href="#10063">Permissions Policy Header Not Set</a></td>
 				<td align="center" class="risk-1">Low</td>
-				<td align="center">12</td>
+				<td align="center">11</td>
 			</tr>
 			<tr>
 				<td><a href="#10035">Strict-Transport-Security Header Not Set</a></td>
@@ -235,7 +246,7 @@ td {
 			<tr>
 				<td><a href="#10027">Information Disclosure - Suspicious Comments</a></td>
 				<td align="center" class="risk-0">Informational</td>
-				<td align="center">14</td>
+				<td align="center">11</td>
 			</tr>
 			<tr>
 				<td><a href="#10109">Modern Web Application</a></td>
@@ -537,6 +548,90 @@ td {
 		
 			<table class="results">
 				<tr height="24">
+					<th width="20%" class="risk-2"><a
+						id="90003"></a>
+						<div>Medium</div></th>
+					<th class="risk-2">Sub Resource Integrity Attribute Missing</th>
+				</tr>
+				<tr>
+					<td width="20%">Description</td>
+					<td width="80%">
+							<div>The integrity attribute is missing on a script or link tag served by an external server. The integrity tag prevents an attacker who have gained access to this server from injecting a malicious content. </div>
+							
+						</td>
+				</tr>
+				<TR vAlign="top">
+					<TD colspan="2"></TD>
+				</TR>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://declare-douane.beta.gouv.fr/_next/static/chunks/framework-9b80b781ed7dc150.js">https://declare-douane.beta.gouv.fr/_next/static/chunks/framework-9b80b781ed7dc150.js</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">&lt;script src=&quot;&#39;),L=d(&#39;&lt;script type=&quot;module&quot; src=&quot;&#39;),M=d(&#39;&quot; async=&quot;&quot;&gt;&lt;/script&gt;</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%"></td>
+					</tr>
+				
+				<tr>
+					<td width="20%">Instances</td>
+					<td width="80%">1</td>
+				</tr>
+				<tr>
+					<td width="20%">Solution</td>
+					<td width="80%">
+							<div>Provide a valid integrity attribute to the tag.</div>
+							
+						</td>
+				</tr>
+				<tr>
+					<td width="20%">Reference</td>
+					<td width="80%">
+							<a href="https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity">https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity</a>
+							
+						</td>
+				</tr>
+				<tr>
+					<td width="20%">CWE Id</td>
+					<td width="80%"><a
+						href="https://cwe.mitre.org/data/definitions/345.html">345</a></td>
+				</tr>
+				<tr>
+					<td width="20%">WASC Id</td>
+					<td width="80%">15</td>
+				</tr>
+				<tr>
+					<td width="20%">Plugin Id</td>
+					<td width="80%"><a
+						href="https://www.zaproxy.org/docs/alerts/90003/">90003</a></td>
+				</tr>
+			</table>
+			<div class="spacer"></div>
+		
+			<table class="results">
+				<tr height="24">
 					<th width="20%" class="risk-1"><a
 						id="10063"></a>
 						<div>Low</div></th>
@@ -742,37 +837,6 @@ td {
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://declare-douane.beta.gouv.fr/_next/static/chunks/main-c761a6d79d895139.js">https://declare-douane.beta.gouv.fr/_next/static/chunks/main-c761a6d79d895139.js</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%"></td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
 						<td width="80%"><a href="https://declare-douane.beta.gouv.fr/_next/static/chunks/pages/_error-82b79221b9ed784b.js">https://declare-douane.beta.gouv.fr/_next/static/chunks/pages/_error-82b79221b9ed784b.js</a></td>
 					</tr>
 					<tr>
@@ -927,7 +991,7 @@ td {
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">12</td>
+					<td width="80%">11</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>
@@ -1515,7 +1579,7 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://declare-douane.beta.gouv.fr/_next/static/chunks/polyfills-78c92fac7aa8fdd8.js">https://declare-douane.beta.gouv.fr/_next/static/chunks/polyfills-78c92fac7aa8fdd8.js</a></td>
+						<td width="80%"><a href="https://declare-douane.beta.gouv.fr/_next/static/chunks/webpack-c30818cd23c8ba0d.js">https://declare-douane.beta.gouv.fr/_next/static/chunks/webpack-c30818cd23c8ba0d.js</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -2226,6 +2290,68 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
+						<td width="80%"><a href="https://declare-douane.beta.gouv.fr/_next/static/chunks/framework-9b80b781ed7dc150.js">https://declare-douane.beta.gouv.fr/_next/static/chunks/framework-9b80b781ed7dc150.js</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">bug</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">The following pattern was used: \bBUG\b and was detected 2 times, the first in the element starting with: &quot; */var r=n(67294);function a(e){for(var t=&quot;https://reactjs.org/docs/error-decoder.html?invariant=&quot;+e,n=1;n&lt;arguments.length;n++)&quot;, see evidence field for the suspicious comment/snippet.</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://declare-douane.beta.gouv.fr/_next/static/chunks/framework-9b80b781ed7dc150.js">https://declare-douane.beta.gouv.fr/_next/static/chunks/framework-9b80b781ed7dc150.js</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">GET</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">select</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">The following pattern was used: \bSELECT\b and was detected in the element starting with: &quot; */var r,a,l,o,u,i,s=n(67294),c=n(63840);function f(e){for(var t=&quot;https://reactjs.org/docs/error-decoder.html?invariant=&quot;+e,n=1;&quot;, see evidence field for the suspicious comment/snippet.</td>
+					</tr>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
 						<td width="80%"><a href="https://declare-douane.beta.gouv.fr/_next/static/chunks/main-c761a6d79d895139.js">https://declare-douane.beta.gouv.fr/_next/static/chunks/main-c761a6d79d895139.js</a></td>
 					</tr>
 					<tr>
@@ -2252,161 +2378,6 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 						<td width="20%"
 							class="indent2">Other Info</td>
 						<td width="80%">The following pattern was used: \bQUERY\b and was detected in the element starting with: &quot;(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[179],{40037:function(){&quot;trimStart&quot;in String.prototype||(String.prototyp&quot;, see evidence field for the suspicious comment/snippet.</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://declare-douane.beta.gouv.fr/_next/static/chunks/pages/_app-745997c13336fde9.js">https://declare-douane.beta.gouv.fr/_next/static/chunks/pages/_app-745997c13336fde9.js</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">from</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">The following pattern was used: \bFROM\b and was detected 2 times, the first in the element starting with: &quot; * The buffer module from node.js, for the browser.&quot;, see evidence field for the suspicious comment/snippet.</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://declare-douane.beta.gouv.fr/_next/static/chunks/pages/_app-745997c13336fde9.js">https://declare-douane.beta.gouv.fr/_next/static/chunks/pages/_app-745997c13336fde9.js</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">select</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">The following pattern was used: \bSELECT\b and was detected in the element starting with: &quot;`));let e=d.props,t=&quot;function&quot;==typeof(null==e?void 0:e.className)?(...t)=&gt;(0,l.A)(null==e?void 0:e.className(...t),c.className)&quot;, see evidence field for the suspicious comment/snippet.</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://declare-douane.beta.gouv.fr/_next/static/chunks/pages/_app-745997c13336fde9.js">https://declare-douane.beta.gouv.fr/_next/static/chunks/pages/_app-745997c13336fde9.js</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">todo</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">The following pattern was used: \bTODO\b and was detected in the element starting with: &quot;*/!function(){&quot;use strict&quot;;var n={}.hasOwnProperty;function a(){for(var e=[],t=0;t&lt;arguments.length;t++){var r=arguments[t];if(r&quot;, see evidence field for the suspicious comment/snippet.</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://declare-douane.beta.gouv.fr/_next/static/chunks/pages/_app-745997c13336fde9.js">https://declare-douane.beta.gouv.fr/_next/static/chunks/pages/_app-745997c13336fde9.js</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">user</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">The following pattern was used: \bUSER\b and was detected in the element starting with: &quot;(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[2888],{15011:function(e,t,r){&quot;use strict&quot;;var n=r(67294);let a=(0,n.cre&quot;, see evidence field for the suspicious comment/snippet.</td>
-					</tr>
-				
-					<tr>
-						<td width="20%"
-							class="indent1">URL</td>
-						<td width="80%"><a href="https://declare-douane.beta.gouv.fr/_next/static/chunks/pages/index-87e56de5f092a061.js">https://declare-douane.beta.gouv.fr/_next/static/chunks/pages/index-87e56de5f092a061.js</a></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Method</td>
-						<td width="80%">GET</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Parameter</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Attack</td>
-						<td width="80%"></td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Evidence</td>
-						<td width="80%">user</td>
-					</tr>
-					<tr>
-						<td width="20%"
-							class="indent2">Other Info</td>
-						<td width="80%">The following pattern was used: \bUSER\b and was detected in the element starting with: &quot;(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[5405],{48312:function(e,s,t){(window.__NEXT_P=window.__NEXT_P||[]).push&quot;, see evidence field for the suspicious comment/snippet.</td>
 					</tr>
 				
 					<tr>
@@ -2504,7 +2475,7 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 				
 				<tr>
 					<td width="20%">Instances</td>
-					<td width="80%">14</td>
+					<td width="80%">11</td>
 				</tr>
 				<tr>
 					<td width="20%">Solution</td>

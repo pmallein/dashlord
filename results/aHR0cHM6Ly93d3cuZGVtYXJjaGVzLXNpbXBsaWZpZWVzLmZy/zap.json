@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 10 Mar 2024 06:16:04",
+	"@generated": "Sun, 17 Mar 2024 06:25:25",
 	"site":[ 
 		{
 			"@name": "https://www.demarches-simplifiees.fr",
@@ -50,7 +50,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "131"
+					"sourceid": "89"
 				},
 				{
 					"pluginid": "10055",
@@ -211,14 +211,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.demarches-simplifiees.fr/commencer/demande-d-inscription-a-demarches-simplifiees/dossier_vide",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://www.demarches-simplifiees.fr/commencer/NOM_DE_LA_DEMARCHE.",
 							"method": "GET",
 							"param": "",
@@ -259,40 +251,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "7",
+					"count": "6",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>https://www.w3.org/TR/CSP/</p><p>https://w3c.github.io/webappsec-csp/</p><p>https://web.dev/articles/csp</p><p>https://caniuse.com/#feat=contentsecuritypolicy</p><p>https://content-security-policy.com/</p>",
 					"cweid": "693",
 					"wascid": "15",
 					"sourceid": "11"
-				},
-				{
-					"pluginid": "90022",
-					"alertRef": "90022",
-					"alert": "Application Error Disclosure",
-					"name": "Application Error Disclosure",
-					"riskcode": "1",
-					"confidence": "2",
-					"riskdesc": "Low (Medium)",
-					"desc": "<p>This page contains an error/warning message that may disclose sensitive information like the location of the file that produced the unhandled exception. This information can be used to launch further attacks against the web application. The alert could be a false positive if the error message is found inside a documentation page.</p>",
-					"instances":[ 
-						{
-							"uri": "https://www.demarches-simplifiees.fr/commencer/demande-d-inscription-a-demarches-simplifiees/dossier_vide",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "HTTP/1.1 500 Internal Server Error",
-							"otherinfo": ""
-						}
-					],
-					"count": "1",
-					"solution": "<p>Review the source code of this page. Implement custom error pages. Consider implementing a mechanism to provide a unique error reference/identifier to the client (browser) while logging the details on the server side and not exposing them to the user.</p>",
-					"otherinfo": "",
-					"reference": "",
-					"cweid": "200",
-					"wascid": "13",
-					"sourceid": "157"
 				},
 				{
 					"pluginid": "10055",
@@ -362,7 +327,7 @@
 					"reference": "<p>https://owasp.org/www-community/HttpOnly</p>",
 					"cweid": "1004",
 					"wascid": "13",
-					"sourceid": "103"
+					"sourceid": "92"
 				},
 				{
 					"pluginid": "10011",
@@ -407,22 +372,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.demarches-simplifiees.fr/administration",
-							"method": "GET",
-							"param": "_csrf_token",
-							"attack": "",
-							"evidence": "set-cookie: _csrf_token",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://www.demarches-simplifiees.fr/administration",
-							"method": "GET",
-							"param": "_DS_session",
-							"attack": "",
-							"evidence": "set-cookie: _DS_session",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://www.demarches-simplifiees.fr/agent_connect",
 							"method": "GET",
 							"param": "_csrf_token",
@@ -439,7 +388,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.demarches-simplifiees.fr/mentions-legales",
+							"uri": "https://www.demarches-simplifiees.fr/contact",
 							"method": "GET",
 							"param": "_csrf_token",
 							"attack": "",
@@ -447,7 +396,23 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.demarches-simplifiees.fr/mentions-legales",
+							"uri": "https://www.demarches-simplifiees.fr/contact",
+							"method": "GET",
+							"param": "_DS_session",
+							"attack": "",
+							"evidence": "set-cookie: _DS_session",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://www.demarches-simplifiees.fr/users/sign_in",
+							"method": "GET",
+							"param": "_csrf_token",
+							"attack": "",
+							"evidence": "set-cookie: _csrf_token",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://www.demarches-simplifiees.fr/users/sign_in",
 							"method": "GET",
 							"param": "_DS_session",
 							"attack": "",
@@ -496,7 +461,7 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "61"
+					"sourceid": "62"
 				},
 				{
 					"pluginid": "110009",
@@ -555,7 +520,7 @@
 					"reference": "<p>https://owasp.org/www-community/attacks/Full_Path_Disclosure</p>",
 					"cweid": "209",
 					"wascid": "13",
-					"sourceid": "156"
+					"sourceid": "163"
 				},
 				{
 					"pluginid": "10063",
@@ -577,14 +542,6 @@
 						},
 						{
 							"uri": "https://www.demarches-simplifiees.fr/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://www.demarches-simplifiees.fr/administration",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -640,7 +597,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.demarches-simplifiees.fr/vite/assets/application-legacy-CAKH2HAl.js",
+							"uri": "https://www.demarches-simplifiees.fr/users/sign_in",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -648,7 +605,15 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.demarches-simplifiees.fr/vite/assets/application-M_eSKweR.js",
+							"uri": "https://www.demarches-simplifiees.fr/vite/assets/application-gqi8nXU0.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://www.demarches-simplifiees.fr/vite/assets/application-legacy-S6SGm_DN.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -675,7 +640,7 @@
 					"desc": "<p>A timestamp was disclosed by the application/web server - Unix</p>",
 					"instances":[ 
 						{
-							"uri": "https://www.demarches-simplifiees.fr/vite/assets/stimulus-loader-HuRrmlwC.js",
+							"uri": "https://www.demarches-simplifiees.fr/vite/assets/stimulus-loader-aJLlOEtR.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -683,7 +648,7 @@
 							"otherinfo": "1416354905, which evaluates to: 2014-11-18 23:55:05"
 						},
 						{
-							"uri": "https://www.demarches-simplifiees.fr/vite/assets/stimulus-loader-HuRrmlwC.js",
+							"uri": "https://www.demarches-simplifiees.fr/vite/assets/stimulus-loader-aJLlOEtR.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -691,7 +656,7 @@
 							"otherinfo": "1444681467, which evaluates to: 2015-10-12 20:24:27"
 						},
 						{
-							"uri": "https://www.demarches-simplifiees.fr/vite/assets/stimulus-loader-HuRrmlwC.js",
+							"uri": "https://www.demarches-simplifiees.fr/vite/assets/stimulus-loader-aJLlOEtR.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -699,7 +664,7 @@
 							"otherinfo": "1473231341, which evaluates to: 2016-09-07 06:55:41"
 						},
 						{
-							"uri": "https://www.demarches-simplifiees.fr/vite/assets/stimulus-loader-HuRrmlwC.js",
+							"uri": "https://www.demarches-simplifiees.fr/vite/assets/stimulus-loader-aJLlOEtR.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -707,7 +672,7 @@
 							"otherinfo": "1502002290, which evaluates to: 2017-08-06 06:51:30"
 						},
 						{
-							"uri": "https://www.demarches-simplifiees.fr/vite/assets/stimulus-loader-HuRrmlwC.js",
+							"uri": "https://www.demarches-simplifiees.fr/vite/assets/stimulus-loader-aJLlOEtR.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -715,7 +680,7 @@
 							"otherinfo": "1530992060, which evaluates to: 2018-07-07 19:34:20"
 						},
 						{
-							"uri": "https://www.demarches-simplifiees.fr/vite/assets/stimulus-loader-HuRrmlwC.js",
+							"uri": "https://www.demarches-simplifiees.fr/vite/assets/stimulus-loader-aJLlOEtR.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -723,7 +688,7 @@
 							"otherinfo": "1560198380, which evaluates to: 2019-06-10 20:26:20"
 						},
 						{
-							"uri": "https://www.demarches-simplifiees.fr/vite/assets/stimulus-loader-HuRrmlwC.js",
+							"uri": "https://www.demarches-simplifiees.fr/vite/assets/stimulus-loader-aJLlOEtR.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -731,7 +696,7 @@
 							"otherinfo": "1700485571, which evaluates to: 2023-11-20 13:06:11"
 						},
 						{
-							"uri": "https://www.demarches-simplifiees.fr/vite/assets/stimulus-loader-HuRrmlwC.js",
+							"uri": "https://www.demarches-simplifiees.fr/vite/assets/stimulus-loader-aJLlOEtR.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -739,7 +704,7 @@
 							"otherinfo": "1732584193, which evaluates to: 2024-11-26 01:23:13"
 						},
 						{
-							"uri": "https://www.demarches-simplifiees.fr/vite/assets/stimulus-loader-HuRrmlwC.js",
+							"uri": "https://www.demarches-simplifiees.fr/vite/assets/stimulus-loader-aJLlOEtR.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -747,7 +712,7 @@
 							"otherinfo": "1732584194, which evaluates to: 2024-11-26 01:23:14"
 						},
 						{
-							"uri": "https://www.demarches-simplifiees.fr/vite/assets/stimulus-loader-HuRrmlwC.js",
+							"uri": "https://www.demarches-simplifiees.fr/vite/assets/stimulus-loader-aJLlOEtR.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -755,7 +720,7 @@
 							"otherinfo": "1735328473, which evaluates to: 2024-12-27 19:41:13"
 						},
 						{
-							"uri": "https://www.demarches-simplifiees.fr/vite/assets/stimulus-loader-HuRrmlwC.js",
+							"uri": "https://www.demarches-simplifiees.fr/vite/assets/stimulus-loader-aJLlOEtR.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -763,7 +728,7 @@
 							"otherinfo": "1770035416, which evaluates to: 2026-02-02 12:30:16"
 						},
 						{
-							"uri": "https://www.demarches-simplifiees.fr/vite/assets/stimulus-loader-HuRrmlwC.js",
+							"uri": "https://www.demarches-simplifiees.fr/vite/assets/stimulus-loader-aJLlOEtR.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -771,7 +736,7 @@
 							"otherinfo": "1804603682, which evaluates to: 2027-03-09 14:48:02"
 						},
 						{
-							"uri": "https://www.demarches-simplifiees.fr/vite/assets/stimulus-loader-HuRrmlwC.js",
+							"uri": "https://www.demarches-simplifiees.fr/vite/assets/stimulus-loader-aJLlOEtR.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -779,7 +744,7 @@
 							"otherinfo": "1839030562, which evaluates to: 2028-04-11 01:49:22"
 						},
 						{
-							"uri": "https://www.demarches-simplifiees.fr/vite/assets/stimulus-loader-HuRrmlwC.js",
+							"uri": "https://www.demarches-simplifiees.fr/vite/assets/stimulus-loader-aJLlOEtR.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -787,7 +752,7 @@
 							"otherinfo": "1873313359, which evaluates to: 2029-05-12 20:49:19"
 						},
 						{
-							"uri": "https://www.demarches-simplifiees.fr/vite/assets/stimulus-loader-HuRrmlwC.js",
+							"uri": "https://www.demarches-simplifiees.fr/vite/assets/stimulus-loader-aJLlOEtR.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -795,7 +760,7 @@
 							"otherinfo": "1894986606, which evaluates to: 2030-01-18 17:10:06"
 						},
 						{
-							"uri": "https://www.demarches-simplifiees.fr/vite/assets/stimulus-loader-HuRrmlwC.js",
+							"uri": "https://www.demarches-simplifiees.fr/vite/assets/stimulus-loader-aJLlOEtR.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -803,7 +768,7 @@
 							"otherinfo": "1926607734, which evaluates to: 2031-01-19 16:48:54"
 						},
 						{
-							"uri": "https://www.demarches-simplifiees.fr/vite/assets/stimulus-loader-HuRrmlwC.js",
+							"uri": "https://www.demarches-simplifiees.fr/vite/assets/stimulus-loader-aJLlOEtR.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -811,7 +776,7 @@
 							"otherinfo": "1958414417, which evaluates to: 2032-01-22 20:00:17"
 						},
 						{
-							"uri": "https://www.demarches-simplifiees.fr/vite/assets/stimulus-loader-HuRrmlwC.js",
+							"uri": "https://www.demarches-simplifiees.fr/vite/assets/stimulus-loader-aJLlOEtR.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -819,7 +784,7 @@
 							"otherinfo": "1990404162, which evaluates to: 2033-01-27 02:02:42"
 						},
 						{
-							"uri": "https://www.demarches-simplifiees.fr/vite/assets/stimulus-loader-HuRrmlwC.js",
+							"uri": "https://www.demarches-simplifiees.fr/vite/assets/stimulus-loader-aJLlOEtR.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -833,7 +798,7 @@
 					"reference": "<p>https://cwe.mitre.org/data/definitions/200.html</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "112"
+					"sourceid": "94"
 				},
 				{
 					"pluginid": "10021",
@@ -886,6 +851,14 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
+							"uri": "https://www.demarches-simplifiees.fr/assets/landing/roles/usagers-7ddcf73c11bdd45c8811750fb3582b52739eef5e571268553afab7dac0893383.svg",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
 							"uri": "https://www.demarches-simplifiees.fr/assets/Marianne-Regular-8e657d64ad967481d7fd3290e2ea23162340fae54ca839ad88b949f9d8602f32.woff2",
 							"method": "GET",
 							"param": "x-content-type-options",
@@ -918,7 +891,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://www.demarches-simplifiees.fr/vite/assets/application-legacy-CAKH2HAl.js",
+							"uri": "https://www.demarches-simplifiees.fr/vite/assets/application-gqi8nXU0.js",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -926,15 +899,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://www.demarches-simplifiees.fr/vite/assets/application-M_eSKweR.js",
-							"method": "GET",
-							"param": "x-content-type-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
-						},
-						{
-							"uri": "https://www.demarches-simplifiees.fr/vite/assets/polyfills-legacy-nItMskIr.js",
+							"uri": "https://www.demarches-simplifiees.fr/vite/assets/application-legacy-S6SGm_DN.js",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -948,7 +913,7 @@
 					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "54"
+					"sourceid": "50"
 				},
 				{
 					"pluginid": "10111",
@@ -982,16 +947,24 @@
 							"param": "user[email]",
 							"attack": "",
 							"evidence": "user[password]",
+							"otherinfo": "userParam=user[email]\nuserValue=foo-bar@example.com\npasswordParam=user[password]\nreferer=https://www.demarches-simplifiees.fr/users/sign_in"
+						},
+						{
+							"uri": "https://www.demarches-simplifiees.fr/users/sign_in",
+							"method": "POST",
+							"param": "user[email]",
+							"attack": "",
+							"evidence": "user[password]",
 							"otherinfo": "userParam=user[email]\nuserValue=foo-bar@example.com\npasswordParam=user[password]\nreferer=https://www.demarches-simplifiees.fr/users/sign_in\ncsrfToken=authenticity_token"
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
 					"otherinfo": "<p>userParam=user[email]</p><p>userValue=foo-bar@example.com</p><p>passwordParam=user[password]</p><p>referer=https://www.demarches-simplifiees.fr/users/sign_up</p><p>csrfToken=authenticity_token</p>",
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/auth-req-id/</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "174"
+					"sourceid": "177"
 				},
 				{
 					"pluginid": "10094",
@@ -1008,32 +981,24 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "/vite/assets/application-legacy-CAKH2HAl",
-							"otherinfo": "\uFFFD\uFFFD\uFFFD{\uFFFD\uFFFD\uFFFD\uFFFDl\uFFFD\uFFFDi\uFFFD'\\x001a\uFFFD*'\uFFFDW\uFFFDi\u033E\\x0008\\x0002\uFFFD\uFFFDp%"
+							"evidence": "/vite/assets/application-legacy-S6SGm_DN",
+							"otherinfo": "\uFFFD\uFFFD\uFFFD{\uFFFD\uFFFD\uFFFD\uFFFDl\uFFFD\uFFFDi\uFFFD'\\x001a\uFFFD*'\uFFFDW\uFFFDi\u033EK\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD"
 						},
 						{
 							"uri": "https://www.demarches-simplifiees.fr/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "/vite/assets/application-legacy-CAKH2HAl",
-							"otherinfo": "\uFFFD\uFFFD\uFFFD{\uFFFD\uFFFD\uFFFD\uFFFDl\uFFFD\uFFFDi\uFFFD'\\x001a\uFFFD*'\uFFFDW\uFFFDi\u033E\\x0008\\x0002\uFFFD\uFFFDp%"
-						},
-						{
-							"uri": "https://www.demarches-simplifiees.fr/administration",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "/vite/assets/application-legacy-CAKH2HAl",
-							"otherinfo": "\uFFFD\uFFFD\uFFFD{\uFFFD\uFFFD\uFFFD\uFFFDl\uFFFD\uFFFDi\uFFFD'\\x001a\uFFFD*'\uFFFDW\uFFFDi\u033E\\x0008\\x0002\uFFFD\uFFFDp%"
+							"evidence": "/vite/assets/application-legacy-S6SGm_DN",
+							"otherinfo": "\uFFFD\uFFFD\uFFFD{\uFFFD\uFFFD\uFFFD\uFFFDl\uFFFD\uFFFDi\uFFFD'\\x001a\uFFFD*'\uFFFDW\uFFFDi\u033EK\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD"
 						},
 						{
 							"uri": "https://www.demarches-simplifiees.fr/agent_connect",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "/vite/assets/application-legacy-CAKH2HAl",
-							"otherinfo": "\uFFFD\uFFFD\uFFFD{\uFFFD\uFFFD\uFFFD\uFFFDl\uFFFD\uFFFDi\uFFFD'\\x001a\uFFFD*'\uFFFDW\uFFFDi\u033E\\x0008\\x0002\uFFFD\uFFFDp%"
+							"evidence": "/vite/assets/application-legacy-S6SGm_DN",
+							"otherinfo": "\uFFFD\uFFFD\uFFFD{\uFFFD\uFFFD\uFFFD\uFFFDl\uFFFD\uFFFDi\uFFFD'\\x001a\uFFFD*'\uFFFDW\uFFFDi\u033EK\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD"
 						},
 						{
 							"uri": "https://www.demarches-simplifiees.fr/assets/application-4e92af156700eba7fbb9ed895eae901de4da55e46487d202e77461ebe525970f.css",
@@ -1044,61 +1009,69 @@
 							"otherinfo": "\uFFFDM\uFFFD\u05CB\uFFFD\uFFFD/\uFFFD9\uFFFD\uFFFD\uFFFDu\uFFFD\uFFFD\uFFFD\\x001f\uFFFD\uFFFD\uFFFDm>\uFFFD\uFFFD\uFFFD\u05C5y\\x001f\uFFFD"
 						},
 						{
+							"uri": "https://www.demarches-simplifiees.fr/assets/landing/hero/dematerialiser-19cbb6f65e811f80da1781fc2b2f8b8a79624e28fe662647da1983f98f01b31b.svg",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "7h112m-108-26v32m-7-33h120m0-33H360m115",
+							"otherinfo": "\uFFFD\\x001du\uFFFDo\uFFFD\uFFFD\u03F6\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDxu\uFFFDI\uFFFD\uFFFD}\uFFFD\u07ED&\uFFFD^"
+						},
+						{
 							"uri": "https://www.demarches-simplifiees.fr/contact",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "/vite/assets/application-legacy-CAKH2HAl",
-							"otherinfo": "\uFFFD\uFFFD\uFFFD{\uFFFD\uFFFD\uFFFD\uFFFDl\uFFFD\uFFFDi\uFFFD'\\x001a\uFFFD*'\uFFFDW\uFFFDi\u033E\\x0008\\x0002\uFFFD\uFFFDp%"
+							"evidence": "/vite/assets/application-legacy-S6SGm_DN",
+							"otherinfo": "\uFFFD\uFFFD\uFFFD{\uFFFD\uFFFD\uFFFD\uFFFDl\uFFFD\uFFFDi\uFFFD'\\x001a\uFFFD*'\uFFFDW\uFFFDi\u033EK\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD"
+						},
+						{
+							"uri": "https://www.demarches-simplifiees.fr/declaration-accessibilite",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "/vite/assets/application-legacy-S6SGm_DN",
+							"otherinfo": "\uFFFD\uFFFD\uFFFD{\uFFFD\uFFFD\uFFFD\uFFFDl\uFFFD\uFFFDi\uFFFD'\\x001a\uFFFD*'\uFFFDW\uFFFDi\u033EK\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD"
 						},
 						{
 							"uri": "https://www.demarches-simplifiees.fr/mentions-legales",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "/vite/assets/application-legacy-CAKH2HAl",
-							"otherinfo": "\uFFFD\uFFFD\uFFFD{\uFFFD\uFFFD\uFFFD\uFFFDl\uFFFD\uFFFDi\uFFFD'\\x001a\uFFFD*'\uFFFDW\uFFFDi\u033E\\x0008\\x0002\uFFFD\uFFFDp%"
-						},
-						{
-							"uri": "https://www.demarches-simplifiees.fr/stats",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "/vite/assets/application-legacy-CAKH2HAl",
-							"otherinfo": "\uFFFD\uFFFD\uFFFD{\uFFFD\uFFFD\uFFFD\uFFFDl\uFFFD\uFFFDi\uFFFD'\\x001a\uFFFD*'\uFFFDW\uFFFDi\u033E\\x0008\\x0002\uFFFD\uFFFDp%"
+							"evidence": "/vite/assets/application-legacy-S6SGm_DN",
+							"otherinfo": "\uFFFD\uFFFD\uFFFD{\uFFFD\uFFFD\uFFFD\uFFFDl\uFFFD\uFFFDi\uFFFD'\\x001a\uFFFD*'\uFFFDW\uFFFDi\u033EK\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD"
 						},
 						{
 							"uri": "https://www.demarches-simplifiees.fr/suivi",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "/vite/assets/application-legacy-CAKH2HAl",
-							"otherinfo": "\uFFFD\uFFFD\uFFFD{\uFFFD\uFFFD\uFFFD\uFFFDl\uFFFD\uFFFDi\uFFFD'\\x001a\uFFFD*'\uFFFDW\uFFFDi\u033E\\x0008\\x0002\uFFFD\uFFFDp%"
+							"evidence": "/vite/assets/application-legacy-S6SGm_DN",
+							"otherinfo": "\uFFFD\uFFFD\uFFFD{\uFFFD\uFFFD\uFFFD\uFFFDl\uFFFD\uFFFDi\uFFFD'\\x001a\uFFFD*'\uFFFDW\uFFFDi\u033EK\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD"
 						},
 						{
 							"uri": "https://www.demarches-simplifiees.fr/users/sign_in",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "/vite/assets/application-legacy-CAKH2HAl",
-							"otherinfo": "\uFFFD\uFFFD\uFFFD{\uFFFD\uFFFD\uFFFD\uFFFDl\uFFFD\uFFFDi\uFFFD'\\x001a\uFFFD*'\uFFFDW\uFFFDi\u033E\\x0008\\x0002\uFFFD\uFFFDp%"
+							"evidence": "/vite/assets/application-legacy-S6SGm_DN",
+							"otherinfo": "\uFFFD\uFFFD\uFFFD{\uFFFD\uFFFD\uFFFD\uFFFDl\uFFFD\uFFFDi\uFFFD'\\x001a\uFFFD*'\uFFFDW\uFFFDi\u033EK\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD"
 						},
 						{
-							"uri": "https://www.demarches-simplifiees.fr/vite/assets/application-legacy-CAKH2HAl.js",
+							"uri": "https://www.demarches-simplifiees.fr/vite/assets/application-legacy-S6SGm_DN.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "/stimulus-loader-legacy-K9ueli_6",
-							"otherinfo": "\uFFFD\uFFFDb\uFFFD\uFFFDn\uFFFD\uFFFDhi\u05EB\uFFFDW\uFFFDi\u033E+\u06DE\uFFFD/\uFFFD"
+							"evidence": "/stimulus-loader-legacy-X0Pz72tQ",
+							"otherinfo": "\uFFFD\uFFFDb\uFFFD\uFFFDn\uFFFD\uFFFDhi\u05EB\uFFFDW\uFFFDi\u033E_C\uFFFD\uFFFDkP"
 						}
 					],
 					"count": "11",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>\uFFFD\uFFFD\uFFFD{\uFFFD\uFFFD\uFFFD\uFFFDl\uFFFD\uFFFDi\uFFFD'\\x001a\uFFFD*'\uFFFDW\uFFFDi\u033E\\x0008\\x0002\uFFFD\uFFFDp%</p>",
+					"otherinfo": "<p>\uFFFD\uFFFD\uFFFD{\uFFFD\uFFFD\uFFFD\uFFFDl\uFFFD\uFFFDi\uFFFD'\\x001a\uFFFD*'\uFFFDW\uFFFDi\u033EK\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "12"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10027",
@@ -1127,14 +1100,6 @@
 							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script>\n//<![CDATA[\nwindow.gon={};gon.autosave={\"debounce_delay\":1000,\"status_visible_duration\":6000};gon.autocomplete={\"api_ge\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://www.demarches-simplifiees.fr/administration",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "user",
-							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script>\n//<![CDATA[\nwindow.gon={};gon.autosave={\"debounce_delay\":1000,\"status_visible_duration\":6000};gon.autocomplete={\"api_ge\", see evidence field for the suspicious comment/snippet."
-						},
-						{
 							"uri": "https://www.demarches-simplifiees.fr/agent_connect",
 							"method": "GET",
 							"param": "",
@@ -1151,6 +1116,14 @@
 							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script>\n//<![CDATA[\nwindow.gon={};gon.autosave={\"debounce_delay\":1000,\"status_visible_duration\":6000};gon.autocomplete={\"api_ge\", see evidence field for the suspicious comment/snippet."
 						},
 						{
+							"uri": "https://www.demarches-simplifiees.fr/declaration-accessibilite",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "user",
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script>\n//<![CDATA[\nwindow.gon={};gon.autosave={\"debounce_delay\":1000,\"status_visible_duration\":6000};gon.autocomplete={\"api_ge\", see evidence field for the suspicious comment/snippet."
+						},
+						{
 							"uri": "https://www.demarches-simplifiees.fr/mentions-legales",
 							"method": "GET",
 							"param": "",
@@ -1159,15 +1132,31 @@
 							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script>\n//<![CDATA[\nwindow.gon={};gon.autosave={\"debounce_delay\":1000,\"status_visible_duration\":6000};gon.autocomplete={\"api_ge\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://www.demarches-simplifiees.fr/vite/assets/application-legacy-CAKH2HAl.js",
+							"uri": "https://www.demarches-simplifiees.fr/stats",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "query",
-							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"!function(){function e(t,n,s,r){return e=\"undefined\"!=typeof Reflect&&Reflect.set?Reflect.set:function(e,t,n,s){var r,o=i(e,t);i\", see evidence field for the suspicious comment/snippet."
+							"evidence": "user",
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script>\n//<![CDATA[\nwindow.gon={};gon.autosave={\"debounce_delay\":1000,\"status_visible_duration\":6000};gon.autocomplete={\"api_ge\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://www.demarches-simplifiees.fr/vite/assets/application-M_eSKweR.js",
+							"uri": "https://www.demarches-simplifiees.fr/suivi",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "user",
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script>\n//<![CDATA[\nwindow.gon={};gon.autosave={\"debounce_delay\":1000,\"status_visible_duration\":6000};gon.autocomplete={\"api_ge\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"uri": "https://www.demarches-simplifiees.fr/users/sign_in",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "user",
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<script>\n//<![CDATA[\nwindow.gon={};gon.autosave={\"debounce_delay\":1000,\"status_visible_duration\":6000};gon.autocomplete={\"api_ge\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"uri": "https://www.demarches-simplifiees.fr/vite/assets/application-gqi8nXU0.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1175,28 +1164,12 @@
 							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"import{_ as fi}from\"./index-4d6ONuun.js\";import{c as Ke,g as Gr}from\"./_commonjsHelpers-4gQjN7DL.js\";import{P as $e,e as Br,F as\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://www.demarches-simplifiees.fr/vite/assets/polyfills-legacy-nItMskIr.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "FROM",
-							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected 2 times, the first in the element starting with: \"  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\", see evidence field for the suspicious comment/snippet."
-						},
-						{
-							"uri": "https://www.demarches-simplifiees.fr/vite/assets/polyfills-legacy-nItMskIr.js",
+							"uri": "https://www.demarches-simplifiees.fr/vite/assets/application-legacy-S6SGm_DN.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "query",
-							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"  */!function(t){function e(){return l.createDocumentFragment()}function r(t){return l.createElement(t)}function n(t,e){if(!t)th\", see evidence field for the suspicious comment/snippet."
-						},
-						{
-							"uri": "https://www.demarches-simplifiees.fr/vite/assets/polyfills-legacy-nItMskIr.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "select",
-							"otherinfo": "The following pattern was used: \\bSELECT\\b and was detected 2 times, the first in the element starting with: \"function(){var t=\"undefined\"==typeof HTMLTemplateElement,e=!(document.createDocumentFragment().cloneNode()instanceof DocumentFra\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"!function(){function e(t,n,s,r){return e=\"undefined\"!=typeof Reflect&&Reflect.set?Reflect.set:function(e,t,n,s){var r,o=i(e,t);i\", see evidence field for the suspicious comment/snippet."
 						}
 					],
 					"count": "11",
@@ -1240,7 +1213,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "12"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10015",
@@ -1269,7 +1242,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.demarches-simplifiees.fr/administration",
+							"uri": "https://www.demarches-simplifiees.fr/agent_connect",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -1277,7 +1250,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.demarches-simplifiees.fr/agent_connect",
+							"uri": "https://www.demarches-simplifiees.fr/carte",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -1309,14 +1282,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.demarches-simplifiees.fr/robots.txt",
-							"method": "GET",
-							"param": "cache-control",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://www.demarches-simplifiees.fr/stats",
 							"method": "GET",
 							"param": "cache-control",
@@ -1341,7 +1306,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "11",
+					"count": "10",
 					"solution": "<p>For secure content, ensure the cache-control HTTP header is set with \"no-cache, no-store, must-revalidate\". If an asset should be cached consider setting the directives \"public, max-age, immutable\".</p>",
 					"otherinfo": "",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control</p><p>https://grayduck.mn/2021/09/13/cache-control-recommendations/</p>",
@@ -1536,15 +1501,7 @@
 							"method": "GET",
 							"param": "_DS_session",
 							"attack": "",
-							"evidence": "9rwAJlFlpsyWXZgCEVKidDW6M8YGnAsnXQ68hvL6xsveVIVbtdeg4AMICPs0oYxSbZueCMPyLNl%2BAkVAy%2FcxNdFj%2FBenzoIvbwx3jlFA3a45eXFW6%2Fx%2B0Z8ii0N9nP4yAlDOjlHESXehppMayIgmaQ%2BE97NwaGR1ykbpnYXIHN32UlwQrcvS3mlX92kexpCcUV1b7w%2BZ6hKlHWrOPpOFoKV0tGpuUAt6hbLmySDEoICX51yfyr3SVbKu%2Feu67WAXqWJ1PYDYU9%2FRx60MD2M9skvVxA%3D%3D--npHB8MDvMNPp7olt--TsJoG5smr12bgUm2LxZh7Q%3D%3D",
-							"otherinfo": "\ncookie:_DS_session\ncookie:_csrf_token"
-						},
-						{
-							"uri": "https://www.demarches-simplifiees.fr",
-							"method": "GET",
-							"param": "_DS_session",
-							"attack": "",
-							"evidence": "sozwn%2F4ivVRVD8M38bG%2BNJthMcsJ7v9hcvhlno9NLg3HmWy5bw4iDx89bWjgSHlVhiaKc8cunkQWbOhNHtxuBnCjjo%2FubVhn8W8TueJCww8rEF2UjyQzBgQHS6zIly4hC7UkzaH%2B5hZwKgQ%2BdTaJwDuMyOfb312cp9EqOhaiqbt0nbhwN1vQIbLAOQEOEt28XTHUfzfAtdRLbpI3QUivhhv3ToU5pg92WA7Jd%2B%2BKtq0FLz729scAuTY9NmbzHATH%2BwhMe5n%2FyfUxB27EDN7Hf3JS4g%3D%3D--4DeLG635zqjAnGxI--6ijnnzZLRB499npU3%2BbFog%3D%3D",
+							"evidence": "TYWzzQfd8IIuygWgvNJ9FAnBHA0%2BNKmh0P1FrVxngBF3U%2BHmjMDRwpfuX583egERDn4bWAYoWz8dxcM3YfNswIDkM0CSXEQZUNXEFO34nwhmUm8jCMcq85YJG4UnAVP7fRaXf9eCBETQQ4kORxXPueV%2B89PJ5iNwDB9300GV0xLHA6yvSDDTgJ0Ul%2FOgPbGojqDHecnguNdGkfTtZv%2B%2FR0ApxCtedHPvE6xx5uzM1SvwTzlpEjmDNyQTitR8ygVmIxGvvSsAEw2T6mPvMxgJJn7%2BWg%3D%3D--bOO0lM78S0KP1TlB--CySPkFZVT3AcI8JeGD%2FNOg%3D%3D",
 							"otherinfo": "\ncookie:_DS_session\ncookie:_csrf_token"
 						},
 						{
@@ -1552,49 +1509,41 @@
 							"method": "GET",
 							"param": "_DS_session",
 							"attack": "",
-							"evidence": "mDPfFurj9g%2Bsj%2FdblxRYj0AMvjAO8v2U5%2FpCOCSB8wB6artJZOq8ZckDgpSwXjbmZFllXfmrnCp36U6BWdAc7ujIUTxXTlmsUdNOZfFachhg2RoYCaamuOzQ66RDcZPF4jws6OElAS7vYeHyVVCv1eFc0EkXVvmKEfERNx5jGOV9R3FUfeCX48Ugsu%2Bv4LrwGCfcVl5%2F%2FsgQvWGz3DBYqPRTQcVLWw01RlQUpO%2BleCff1TCTqmjd0mP9HNxQikObIcz1PB6h6PnaJVdwgoVYsbousQ%3D%3D--JPFQN0HJ87Cmwcm8--B0Q2EyhafER6Z4xr2jDS6A%3D%3D",
+							"evidence": "TrZ8nDIWS2kE%2FmtTWk5xQHAQOLvXtYOF9QM650aZZ%2FhuyczZ53oZcb3iQYoRW3eEezZTyc6aJqlb7WKBJXOXJGkmwpqFPCnjxmV0TTCCtaxD%2BX3encE5WVtNz2Qw7fTujpIAVyTLIVVc6HuaZfdIc9vYFtqPcs3vbJvdXOvatVQ6snMHvpS6JSd%2BPaFXUN2JSmx2JU4Yk821bXcg0CKfGrPE6FZmj90mnfrIECQ5kNo3yrqvWE5wg6rphb2lAFLjESE4OmGMH3JrWe8al0%2F0kifiTA%3D%3D--yRkysbAr1%2B0fQVVQ--zWxhG1W2%2FNqSFHJ5kugU4w%3D%3D",
 							"otherinfo": "\ncookie:_DS_session\ncookie:_csrf_token"
 						},
 						{
-							"uri": "https://www.demarches-simplifiees.fr/assets/application-4e92af156700eba7fbb9ed895eae901de4da55e46487d202e77461ebe525970f.css",
+							"uri": "https://www.demarches-simplifiees.fr/assets/Spectral-Regular-958694e3dd507d80daad1c521d500d4cf4173d0e59353cbe61afd6ba1c187228.ttf",
 							"method": "GET",
 							"param": "_csrf_token",
 							"attack": "",
-							"evidence": "eyJfcmFpbHMiOnsibWVzc2FnZSI6IklrZGpVRWx3Ym5obU9FNVBNR0oxU2s1YVdtNWpNREJ6VjNOcllsZDJTM1JNY0Rka00yeHNhVGhIYUdzaSIsImV4cCI6IjIwMjUtMDMtMTBUMDY6MTU6NTQuNzAyWiIsInB1ciI6ImNvb2tpZS5fY3NyZl90b2tlbiJ9fQ%3D%3D--44210c483005212288fc077b8327d550ccd4c894",
+							"evidence": "eyJfcmFpbHMiOnsibWVzc2FnZSI6IklsRjZWMlpTYW5oalVIWTFXVWhzUzJjNVkzbFphbEZtZVVvNVJERlhhM0ZxUkdGb1RGaHVVek00T1UwaSIsImV4cCI6IjIwMjUtMDMtMTdUMDY6MjU6MTcuMjMxWiIsInB1ciI6ImNvb2tpZS5fY3NyZl90b2tlbiJ9fQ%3D%3D--3cd39a6922f890052f06b3458f617335137f5d36",
 							"otherinfo": "\ncookie:_csrf_token"
 						},
 						{
-							"uri": "https://www.demarches-simplifiees.fr/assets/application-4e92af156700eba7fbb9ed895eae901de4da55e46487d202e77461ebe525970f.css",
+							"uri": "https://www.demarches-simplifiees.fr/assets/Spectral-Regular-958694e3dd507d80daad1c521d500d4cf4173d0e59353cbe61afd6ba1c187228.ttf",
 							"method": "GET",
 							"param": "_DS_session",
 							"attack": "",
-							"evidence": "sozwn%2F4ivVRVD8M38bG%2BNJthMcsJ7v9hcvhlno9NLg3HmWy5bw4iDx89bWjgSHlVhiaKc8cunkQWbOhNHtxuBnCjjo%2FubVhn8W8TueJCww8rEF2UjyQzBgQHS6zIly4hC7UkzaH%2B5hZwKgQ%2BdTaJwDuMyOfb312cp9EqOhaiqbt0nbhwN1vQIbLAOQEOEt28XTHUfzfAtdRLbpI3QUivhhv3ToU5pg92WA7Jd%2B%2BKtq0FLz729scAuTY9NmbzHATH%2BwhMe5n%2FyfUxB27EDN7Hf3JS4g%3D%3D--4DeLG635zqjAnGxI--6ijnnzZLRB499npU3%2BbFog%3D%3D",
+							"evidence": "TYWzzQfd8IIuygWgvNJ9FAnBHA0%2BNKmh0P1FrVxngBF3U%2BHmjMDRwpfuX583egERDn4bWAYoWz8dxcM3YfNswIDkM0CSXEQZUNXEFO34nwhmUm8jCMcq85YJG4UnAVP7fRaXf9eCBETQQ4kORxXPueV%2B89PJ5iNwDB9300GV0xLHA6yvSDDTgJ0Ul%2FOgPbGojqDHecnguNdGkfTtZv%2B%2FR0ApxCtedHPvE6xx5uzM1SvwTzlpEjmDNyQTitR8ygVmIxGvvSsAEw2T6mPvMxgJJn7%2BWg%3D%3D--bOO0lM78S0KP1TlB--CySPkFZVT3AcI8JeGD%2FNOg%3D%3D",
 							"otherinfo": "\ncookie:_DS_session"
 						},
 						{
-							"uri": "https://www.demarches-simplifiees.fr/assets/Spectral-Regular-958694e3dd507d80daad1c521d500d4cf4173d0e59353cbe61afd6ba1c187228.ttf",
-							"method": "GET",
-							"param": "_csrf_token",
-							"attack": "",
-							"evidence": "eyJfcmFpbHMiOnsibWVzc2FnZSI6IklrZGpVRWx3Ym5obU9FNVBNR0oxU2s1YVdtNWpNREJ6VjNOcllsZDJTM1JNY0Rka00yeHNhVGhIYUdzaSIsImV4cCI6IjIwMjUtMDMtMTBUMDY6MTU6NTQuNzAyWiIsInB1ciI6ImNvb2tpZS5fY3NyZl90b2tlbiJ9fQ%3D%3D--44210c483005212288fc077b8327d550ccd4c894",
-							"otherinfo": "\ncookie:_csrf_token"
-						},
-						{
-							"uri": "https://www.demarches-simplifiees.fr/assets/Spectral-Regular-958694e3dd507d80daad1c521d500d4cf4173d0e59353cbe61afd6ba1c187228.ttf",
+							"uri": "https://www.demarches-simplifiees.fr/vite/assets/polyfills-legacy-nItMskIr.js",
 							"method": "GET",
 							"param": "_DS_session",
 							"attack": "",
-							"evidence": "sozwn%2F4ivVRVD8M38bG%2BNJthMcsJ7v9hcvhlno9NLg3HmWy5bw4iDx89bWjgSHlVhiaKc8cunkQWbOhNHtxuBnCjjo%2FubVhn8W8TueJCww8rEF2UjyQzBgQHS6zIly4hC7UkzaH%2B5hZwKgQ%2BdTaJwDuMyOfb312cp9EqOhaiqbt0nbhwN1vQIbLAOQEOEt28XTHUfzfAtdRLbpI3QUivhhv3ToU5pg92WA7Jd%2B%2BKtq0FLz729scAuTY9NmbzHATH%2BwhMe5n%2FyfUxB27EDN7Hf3JS4g%3D%3D--4DeLG635zqjAnGxI--6ijnnzZLRB499npU3%2BbFog%3D%3D",
+							"evidence": "TYWzzQfd8IIuygWgvNJ9FAnBHA0%2BNKmh0P1FrVxngBF3U%2BHmjMDRwpfuX583egERDn4bWAYoWz8dxcM3YfNswIDkM0CSXEQZUNXEFO34nwhmUm8jCMcq85YJG4UnAVP7fRaXf9eCBETQQ4kORxXPueV%2B89PJ5iNwDB9300GV0xLHA6yvSDDTgJ0Ul%2FOgPbGojqDHecnguNdGkfTtZv%2B%2FR0ApxCtedHPvE6xx5uzM1SvwTzlpEjmDNyQTitR8ygVmIxGvvSsAEw2T6mPvMxgJJn7%2BWg%3D%3D--bOO0lM78S0KP1TlB--CySPkFZVT3AcI8JeGD%2FNOg%3D%3D",
 							"otherinfo": "\ncookie:_DS_session"
 						}
 					],
-					"count": "7",
+					"count": "5",
 					"solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
 					"otherinfo": "<p></p><p>cookie:_DS_session</p><p>cookie:_csrf_token</p>",
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "1"
+					"sourceid": "12"
 				},
 				{
 					"pluginid": "10049",
@@ -1647,22 +1596,6 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"uri": "https://www.demarches-simplifiees.fr/save_locale?locale=en",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
-						},
-						{
-							"uri": "https://www.demarches-simplifiees.fr/save_locale?locale=fr",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
-						},
-						{
 							"uri": "https://www.demarches-simplifiees.fr/sitemap.xml",
 							"method": "GET",
 							"param": "",
@@ -1677,6 +1610,22 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
+							"uri": "https://www.demarches-simplifiees.fr/vite/assets/application-gqi8nXU0.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=315360000",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://www.demarches-simplifiees.fr/vite/assets/application-legacy-S6SGm_DN.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=315360000",
+							"otherinfo": ""
 						}
 					],
 					"count": "9",
@@ -1685,7 +1634,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "54"
+					"sourceid": "50"
 				},
 				{
 					"pluginid": "10031",
@@ -1728,7 +1677,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html</p>",
 					"cweid": "20",
 					"wascid": "20",
-					"sourceid": "175"
+					"sourceid": "106"
 				}
 			]
 		}

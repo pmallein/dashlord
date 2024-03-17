@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 10 Mar 2024 02:26:48",
+	"@generated": "Sun, 17 Mar 2024 02:23:12",
 	"site":[ 
 		{
 			"@name": "https://competencevalidee.pole-emploi.fr",
@@ -781,7 +781,7 @@
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "8"
+					"sourceid": "7"
 				},
 				{
 					"pluginid": "10027",
@@ -834,12 +834,12 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "The origin domain used for comparison was: \ncompetencevalidee.pole-emploi.fr\nTS016fc3b0=0150c672c34c0df1d04fdd22546a1c9a78e2739c8d1109d81330e12dd394fc105c7b8ab81b1dd3bb6f26e5dbb808083d0d819c87ab\n"
+							"otherinfo": "The origin domain used for comparison was: \ncompetencevalidee.pole-emploi.fr\nTS016fc3b0=0150c672c353e6faa040c233fa98e917aac75cb7a8c3afa71535a2ce44ca51aeb2febbde945ff56a0af98db9161057bb2494b3e8c9\n"
 						}
 					],
 					"count": "1",
 					"solution": "<p>Always scope cookies to a FQDN (Fully Qualified Domain Name).</p>",
-					"otherinfo": "<p>The origin domain used for comparison was: </p><p>competencevalidee.pole-emploi.fr</p><p>TS016fc3b0=0150c672c34c0df1d04fdd22546a1c9a78e2739c8d1109d81330e12dd394fc105c7b8ab81b1dd3bb6f26e5dbb808083d0d819c87ab</p><p></p>",
+					"otherinfo": "<p>The origin domain used for comparison was: </p><p>competencevalidee.pole-emploi.fr</p><p>TS016fc3b0=0150c672c353e6faa040c233fa98e917aac75cb7a8c3afa71535a2ce44ca51aeb2febbde945ff56a0af98db9161057bb2494b3e8c9</p><p></p>",
 					"reference": "<p>https://tools.ietf.org/html/rfc6265#section-4.1</p><p>https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes.html</p><p>https://code.google.com/p/browsersec/wiki/Part2#Same-origin_policy_for_cookies</p>",
 					"cweid": "565",
 					"wascid": "15",
@@ -950,6 +950,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://competencevalidee.pole-emploi.fr/favicon/favicon.ico",
+							"method": "GET",
+							"param": "Sec-Fetch-Dest",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://competencevalidee.pole-emploi.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
@@ -958,7 +966,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-Dest header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
@@ -985,6 +993,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://competencevalidee.pole-emploi.fr/favicon/favicon.ico",
+							"method": "GET",
+							"param": "Sec-Fetch-Mode",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://competencevalidee.pole-emploi.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
@@ -993,7 +1009,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-Mode header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
@@ -1020,6 +1036,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://competencevalidee.pole-emploi.fr/favicon/favicon.ico",
+							"method": "GET",
+							"param": "Sec-Fetch-Site",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://competencevalidee.pole-emploi.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
@@ -1028,13 +1052,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-Site header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -1055,6 +1079,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://competencevalidee.pole-emploi.fr/favicon/favicon.ico",
+							"method": "GET",
+							"param": "Sec-Fetch-User",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://competencevalidee.pole-emploi.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
@@ -1063,7 +1095,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-User header is included in user initiated requests.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
@@ -1197,7 +1229,7 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"uri": "https://competencevalidee.pole-emploi.fr/static/js/main.80fe80c1.chunk.js",
+							"uri": "https://competencevalidee.pole-emploi.fr/static/css/main.e18dfd32.chunk.css",
 							"method": "GET",
 							"param": "",
 							"attack": "",

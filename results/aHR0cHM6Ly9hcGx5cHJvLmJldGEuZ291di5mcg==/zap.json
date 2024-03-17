@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 10 Mar 2024 11:33:04",
+	"@generated": "Sun, 17 Mar 2024 11:30:04",
 	"site":[ 
 		{
 			"@name": "https://aplypro.beta.gouv.fr",
@@ -28,7 +28,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://aplypro.beta.gouv.fr/login",
+							"uri": "https://aplypro.beta.gouv.fr/maintenance",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -63,7 +63,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://aplypro.beta.gouv.fr/",
+							"uri": "https://aplypro.beta.gouv.fr/accessibility",
 							"method": "GET",
 							"param": "_aplypro_session",
 							"attack": "",
@@ -71,39 +71,15 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://aplypro.beta.gouv.fr/legal",
+							"uri": "https://aplypro.beta.gouv.fr/maintenance",
 							"method": "GET",
-							"param": "_aplypro_session",
-							"attack": "",
-							"evidence": "set-cookie: _aplypro_session",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://aplypro.beta.gouv.fr/login",
-							"method": "GET",
-							"param": "_aplypro_session",
-							"attack": "",
-							"evidence": "set-cookie: _aplypro_session",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://aplypro.beta.gouv.fr/users/auth/fim",
-							"method": "POST",
-							"param": "_aplypro_session",
-							"attack": "",
-							"evidence": "set-cookie: _aplypro_session",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://aplypro.beta.gouv.fr/users/auth/masa",
-							"method": "POST",
 							"param": "_aplypro_session",
 							"attack": "",
 							"evidence": "set-cookie: _aplypro_session",
 							"otherinfo": ""
 						}
 					],
-					"count": "6",
+					"count": "3",
 					"solution": "<p>Whenever a cookie contains sensitive information or is a session token, then it should always be passed using an encrypted channel. Ensure that the secure flag is set for cookies containing such sensitive information.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes.html</p>",
@@ -136,7 +112,7 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "44"
+					"sourceid": "39"
 				},
 				{
 					"pluginid": "10063",
@@ -229,7 +205,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://aplypro.beta.gouv.fr/login",
+							"uri": "https://aplypro.beta.gouv.fr/maintenance",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -256,7 +232,7 @@
 					"desc": "<p>The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</p>",
 					"instances":[ 
 						{
-							"uri": "https://aplypro.beta.gouv.fr/assets/90px-Bloc_Marianne-3d44ad5c768e23ce20b5c75fb30dc361636b28f5c51946db6492f7637dbe2ff7.png",
+							"uri": "https://aplypro.beta.gouv.fr/assets/application-66ce7505c61e3e4910ff16e7c220e1fbfb39251cd82e4bab8d325b3aae987cf9.js",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -264,7 +240,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://aplypro.beta.gouv.fr/assets/application-66ce7505c61e3e4910ff16e7c220e1fbfb39251cd82e4bab8d325b3aae987cf9.js",
+							"uri": "https://aplypro.beta.gouv.fr/assets/application-a1b9225ad56e1b584ef3518635d8eed296a245eb3458afdbb5cf080c5ac0461b.css",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -296,6 +272,14 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
+							"uri": "https://aplypro.beta.gouv.fr/assets/dsfr.min-f992b45e5939c1a33e196ebc6a905a09d963d3dbe76551c12224a249a90a3954.css",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
 							"uri": "https://aplypro.beta.gouv.fr/assets/dsfr.module.min-d9d68f7bbb91db7d326936821d66698a4b7389230694648fe655aa9c6c3a6585.js",
 							"method": "GET",
 							"param": "x-content-type-options",
@@ -305,14 +289,6 @@
 						},
 						{
 							"uri": "https://aplypro.beta.gouv.fr/assets/dsfr.nomodule.min-8d58c5010e1e36751766486cc8e3bc8b5b4b45cbe22aae23084c76dc49b989ff.js",
-							"method": "GET",
-							"param": "x-content-type-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
-						},
-						{
-							"uri": "https://aplypro.beta.gouv.fr/assets/favicon/favicon-ac3f5ac40d55bc86a12960f79dc3c51110fd7e924ab3e6b5934579f0732b2e55.ico",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -358,7 +334,7 @@
 					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "43"
+					"sourceid": "28"
 				},
 				{
 					"pluginid": "10094",
@@ -375,16 +351,16 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "ZQ1pARiSNWf6lMYe6FbAeuiRjqcaQ2y",
-							"otherinfo": "e\ri\\x0001\\x0018\uFFFD5g\uFFFD\uFFFD\uFFFD\\x001e\uFFFDV\uFFFDz\u844E\uFFFD\\x001aCl"
+							"evidence": "2FLOrWFvg9HSE1id5VsWGmDKMR7wodYcjjsTAmHKXIZNJwHh4sk1UWS9X7biwxXI0YW6DuvU3XxJdi0dBPutUqufNkayUyO",
+							"otherinfo": "\uFFFDR\u03ADao\uFFFD\uFFFD\uFFFD\\x0013X\uFFFD\uFFFD[\\x0016\\x001a`\uFFFD1\\x001e\uFFFD\uFFFD\\x001c\uFFFD;\\x0013\\x0002a\uFFFD\\\uFFFDM'\\x0001\uFFFD\uFFFD\uFFFD5Qd\uFFFD_\uFFFD\uFFFD\uFFFD\\x0015\uFFFD\u0445\uFFFD\\x000e\uFFFD\uFFFD\uFFFD|Iv-\\x001d\\x0004\uFFFD\uFFFDR\uFFFD\uFFFD6F\uFFFDS#"
 						},
 						{
-							"uri": "https://aplypro.beta.gouv.fr/",
+							"uri": "https://aplypro.beta.gouv.fr/accessibility",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2FmgcZtCjGSQAak0A4vwU4YdhxFMUfSlcuqOnwY",
-							"otherinfo": "\uFFFDY\uFFFDq\uFFFDB\uFFFDd\uFFFD\\x0001\uFFFD4\\x0003\uFFFD\uFFFDS\uFFFD\\x001d\uFFFD\\x0011LQ\uFFFD\uFFFDr\uA39F\\x0006"
+							"evidence": "2FODfc1qIFUwNaHpuXFvZlVVGkKA52S3UcJcefMb5x38ccYvxuyjcBcmbn0wmpF",
+							"otherinfo": "\uFFFDS\uFFFD}\uFFFDj U05\uFFFD\uFFFDqofUU\\x001aB\uFFFD\uFFFDd\uFFFDQ\uFFFD\\y\uFFFD\\x001b\uFFFD\\x001d\uFFFDq\uFFFD/\uFFFD\uFFFDp\\x0017&n}0\uFFFD\uFFFD"
 						},
 						{
 							"uri": "https://aplypro.beta.gouv.fr/assets/dsfr.min-f992b45e5939c1a33e196ebc6a905a09d963d3dbe76551c12224a249a90a3954.css",
@@ -403,88 +379,21 @@
 							"otherinfo": "r\uFFFD\uFFFD\\x0016)\u069D\u021A\uFFFD\uFFFD\uFFFD\uFFFD?\uFFFD\uFFFDr~)e\uFFFD\u01EB\uFFFD'\\x001e\uFFFD+,\uFFFD\uFFFD?\uFFFD^"
 						},
 						{
-							"uri": "https://aplypro.beta.gouv.fr/legal",
+							"uri": "https://aplypro.beta.gouv.fr/maintenance",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2FT6TTEbWwSbGTIlF1ckvlS3aILAx9gKQm",
-							"otherinfo": "\uFFFDT\uFFFDM1\\x001b[\\x0004\uFFFD\\x00192%\\x0017W$\uFFFDT\uFFFDh\uFFFD\uFFFD\uFFFD\uFFFD\nB"
-						},
-						{
-							"uri": "https://aplypro.beta.gouv.fr/login",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "xnV1Tm1Tb2xNPfWYDqu5nAr1RO7Q1ckKbYzeiuG5",
-							"otherinfo": "\uFFFDuuNmSolM=\uFFFD\uFFFD\\x000e\uFFFD\uFFFD\uFFFD\n\uFFFDD\uFFFD\uFFFD\uFFFD\uFFFD\nm\uFFFD\u078A\uFFFD"
-						},
-						{
-							"uri": "https://aplypro.beta.gouv.fr/users/auth/fim",
-							"method": "POST",
-							"param": "",
-							"attack": "",
-							"evidence": "2BcWyg9jtYs26nhm2XTR5uRj22mPPXMphxCpkkraPlMJKP28SvrP4h",
-							"otherinfo": "\uFFFD\\x0017\\x0016\uFFFD\\x000fc\uFFFD\uFFFD6\uFFFDxf\uFFFDt\uFFFD\uFFFD\uFFFDc\uFFFDi\uFFFD=s)\uFFFD\\x0010\uFFFD\uFFFDJ\uFFFD>S\t(\uFFFD\uFFFDJ\uFFFD\uFFFD\uFFFD"
-						},
-						{
-							"uri": "https://aplypro.beta.gouv.fr/users/auth/fim",
-							"method": "POST",
-							"param": "",
-							"attack": "",
-							"evidence": "2FBGvNQf0RFYPCGdCX8d1iUpz7lqaEqQdiJKkCp6lNovzR3by85B91KB7B",
-							"otherinfo": "\uFFFDPF\uFFFD\uFFFD\\x001f\uFFFD\\x0011X<!\uFFFD\t\\x001d\uFFFD%)\u03F9jhJ\uFFFDv\"J\uFFFD*z\uFFFD\uFFFD/\uFFFD\\x001d\uFFFD\uFFFD\uFFFDA\uFFFDR\uFFFD\uFFFD"
-						},
-						{
-							"uri": "https://aplypro.beta.gouv.fr/users/auth/masa",
-							"method": "POST",
-							"param": "",
-							"attack": "",
-							"evidence": "2BTML3TpeRSc7mVIAz6EZHbv46UpWxUoJoCI0YdGjZyUUuTwPioRYwyF5i3SC2jhPm0yCIKGZeiazcQ8EBh28J1pgZYG47bkqsV4d5xhnhY",
-							"otherinfo": "\uFFFD\\x0014\uFFFD/t\uFFFDy\\x0014\uFFFD\uFFFDeH\\x0003>\uFFFDdv\uFFFD\uFFFD)[\\x0015(&\uFFFD\uFFFD\u0447F\uFFFD\uFFFD\uFFFDR\uFFFD\uFFFD>*\\x0011c\\x000c\uFFFD\uFFFD-\uFFFD\\x000bh\uFFFD>m2\\x0008\uFFFD\uFFFDe\uFFFD\uFFFD\uFFFD<\\x0010\\x0018v\uFFFDi\uFFFD\uFFFD\\x0006\uFFFD\uFFFD\uFFFDxw\uFFFDa\uFFFD\\x0016"
+							"evidence": "2FK10RIISaWLSl9a8y5dic8jKVj3NbZBqp2LqKUKLhJnqFP8ZntJHCkWi0",
+							"otherinfo": "\uFFFDR\uFFFD\uFFFD\\x0012\\x0008I\uFFFD\uFFFDJ_Z\uFFFD.]\uFFFD\uFFFD#)X\uFFFD5\uFFFDA\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\n.\\x0012g\uFFFDS\uFFFDf{I\\x001c)\\x0016\uFFFD"
 						}
 					],
-					"count": "9",
+					"count": "5",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>e\ri\\x0001\\x0018\uFFFD5g\uFFFD\uFFFD\uFFFD\\x001e\uFFFDV\uFFFDz\u844E\uFFFD\\x001aCl</p>",
+					"otherinfo": "<p>\uFFFDR\u03ADao\uFFFD\uFFFD\uFFFD\\x0013X\uFFFD\uFFFD[\\x0016\\x001a`\uFFFD1\\x001e\uFFFD\uFFFD\\x001c\uFFFD;\\x0013\\x0002a\uFFFD\\\uFFFDM'\\x0001\uFFFD\uFFFD\uFFFD5Qd\uFFFD_\uFFFD\uFFFD\uFFFD\\x0015\uFFFD\u0445\uFFFD\\x000e\uFFFD\uFFFD\uFFFD|Iv-\\x001d\\x0004\uFFFD\uFFFDR\uFFFD\uFFFD6F\uFFFDS#</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
 					"sourceid": "1"
-				},
-				{
-					"pluginid": "10019",
-					"alertRef": "10019-1",
-					"alert": "Content-Type Header Missing",
-					"name": "Content-Type Header Missing",
-					"riskcode": "0",
-					"confidence": "2",
-					"riskdesc": "Informational (Medium)",
-					"desc": "<p>The Content-Type header was either missing or empty.</p>",
-					"instances":[ 
-						{
-							"uri": "https://aplypro.beta.gouv.fr/users/auth/fim",
-							"method": "POST",
-							"param": "content-type",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://aplypro.beta.gouv.fr/users/auth/masa",
-							"method": "POST",
-							"param": "content-type",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						}
-					],
-					"count": "2",
-					"solution": "<p>Ensure each page is setting the specific and appropriate content-type value for the content being delivered.</p>",
-					"otherinfo": "",
-					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p>",
-					"cweid": "345",
-					"wascid": "12",
-					"sourceid": "46"
 				},
 				{
 					"pluginid": "10027",
@@ -591,7 +500,7 @@
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "34"
+					"sourceid": "31"
 				},
 				{
 					"pluginid": "10109",
@@ -608,15 +517,15 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<a class=\"fr-footer__bottom-link\" href=\"#\">Accessibilit\u00E9 : partiellement conforme</a>",
+							"evidence": "<a class=\"fr-footer__bottom-link\" href=\"#\">Gestion des cookies</a>",
 							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
 						},
 						{
-							"uri": "https://aplypro.beta.gouv.fr/login",
+							"uri": "https://aplypro.beta.gouv.fr/maintenance",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<a class=\"fr-footer__bottom-link\" href=\"#\">Accessibilit\u00E9 : partiellement conforme</a>",
+							"evidence": "<a class=\"fr-footer__bottom-link\" href=\"#\">Gestion des cookies</a>",
 							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
 						}
 					],
@@ -663,6 +572,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://aplypro.beta.gouv.fr/accessibility",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "302",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://aplypro.beta.gouv.fr/legal",
 							"method": "GET",
 							"param": "",
@@ -671,7 +588,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://aplypro.beta.gouv.fr/login",
+							"uri": "https://aplypro.beta.gouv.fr/maintenance",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -679,7 +596,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "5",
+					"count": "6",
 					"solution": "<p>The content may be marked as storable by ensuring that the following conditions are satisfied:</p><p>The request method must be understood by the cache and defined as being cacheable (\"GET\", \"HEAD\", and \"POST\" are currently defined as cacheable)</p><p>The response status code must be understood by the cache (one of the 1XX, 2XX, 3XX, 4XX, or 5XX response classes are generally understood)</p><p>The \"no-store\" cache directive must not appear in the request or response header fields</p><p>For caching by \"shared\" caches such as \"proxy\" caches, the \"private\" response directive must not appear in the response</p><p>For caching by \"shared\" caches such as \"proxy\" caches, the \"Authorization\" header field must not appear in the request, unless the response explicitly allows it (using one of the \"must-revalidate\", \"public\", or \"s-maxage\" Cache-Control response directives)</p><p>In addition to the conditions above, at least one of the following conditions must also be satisfied by the response:</p><p>It must contain an \"Expires\" header field</p><p>It must contain a \"max-age\" response directive</p><p>For \"shared\" caches such as \"proxy\" caches, it must contain a \"s-maxage\" response directive</p><p>It must contain a \"Cache Control Extension\" that allows it to be cached</p><p>It must have a status code that is defined as cacheable by default (200, 203, 204, 206, 300, 301, 404, 405, 410, 414, 501).   </p>",
 					"otherinfo": "",
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
@@ -706,15 +623,23 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://aplypro.beta.gouv.fr/login",
+							"uri": "https://aplypro.beta.gouv.fr/maintenance",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
 							"evidence": "max-age=0, private, must-revalidate",
 							"otherinfo": ""
+						},
+						{
+							"uri": "https://aplypro.beta.gouv.fr/robots.txt",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>For secure content, ensure the cache-control HTTP header is set with \"no-cache, no-store, must-revalidate\". If an asset should be cached consider setting the directives \"public, max-age, immutable\".</p>",
 					"otherinfo": "",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control</p><p>https://grayduck.mn/2021/09/13/cache-control-recommendations/</p>",
@@ -741,6 +666,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://aplypro.beta.gouv.fr/legal",
+							"method": "GET",
+							"param": "Sec-Fetch-Dest",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://aplypro.beta.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
@@ -757,7 +690,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"solution": "<p>Ensure that Sec-Fetch-Dest header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
@@ -784,6 +717,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://aplypro.beta.gouv.fr/legal",
+							"method": "GET",
+							"param": "Sec-Fetch-Mode",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://aplypro.beta.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
@@ -800,7 +741,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"solution": "<p>Ensure that Sec-Fetch-Mode header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
@@ -827,6 +768,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://aplypro.beta.gouv.fr/legal",
+							"method": "GET",
+							"param": "Sec-Fetch-Site",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://aplypro.beta.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
@@ -843,7 +792,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"solution": "<p>Ensure that Sec-Fetch-Site header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
@@ -870,6 +819,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://aplypro.beta.gouv.fr/legal",
+							"method": "GET",
+							"param": "Sec-Fetch-User",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://aplypro.beta.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
@@ -886,7 +843,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"solution": "<p>Ensure that Sec-Fetch-User header is included in user initiated requests.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
@@ -905,69 +862,37 @@
 					"desc": "<p>The given response has been identified as containing a session management token. The 'Other Info' field contains a set of header tokens that can be used in the Header Based Session Management Method. If the request is in a context which has a Session Management Method set to \"Auto-Detect\" then this rule will change the session management to use the tokens identified.</p>",
 					"instances":[ 
 						{
-							"uri": "https://aplypro.beta.gouv.fr",
+							"uri": "https://aplypro.beta.gouv.fr/accessibility",
 							"method": "GET",
 							"param": "_aplypro_session",
 							"attack": "",
-							"evidence": "ZQ1pARiSNWf6lMYe6FbAeuiRjqcaQ2y%2FQVPMmRi2u4DfnQ2SZqJl0mvX24xvE8utgyAN5RHq8P0LG1%2BsZ1AhLPdiQflZ9H8c3JvDyynchlRakQGkIKIbwYGzG2CPOAWg2xG0ilg28hRi0T99uKSXEJlKME9PidUTpq0%2FWYEV6joppQeihZKfzmZ1e%2BBiIJLJzKC5esQa84XNNlR%2F0pyEhNZAXTh6icIm1qzgAUX1S6J7rkNPN%2BuQwMCisKGa21mbvA3%2FDYWVW441pN4YUA9axp%2Fe%2BSaqzPIb--bNXs3ppwWRkeQWZl--nIMnn1Ckhf5egvQr5u34pg%3D%3D",
+							"evidence": "IMTjSQh%2BkVpHMBsqtc5wzz%2FDSxN5Nsam%2FeMFR1Oq%2BXWhovcs5FG%2FNaKig2jAKqBO8DZpNYCYo5tdh%2FODfc1qIFUwNaHpuXFvZlVVGkKA52S3UcJcefMb5x38ccYvxuyjcBcmbn0wmpF%2FeDHB9Msit9qArIV5FDqYGp11sMRbsCRpG57m2N8hxEnfjQ236UDxejCSpWz0%2BlpcPK3mCEMbaZzvpvDq%2BrlgBHC5lVgxIxW6VPbzhjlWKCISzEhknzunczwWNgFFGDEMoRs5eTL56UVn0G8HwDj0%2BPXK7rpud2gB%2BNlSuyh69j7qugNDlIP2AlW5c3nBS%2BjjNQ%2FkQlcs8ZUEhBEtoM9XfJUFzb9%2FsT8FM8CCfR4Dg7d7MQ9MExzQx7lHd0IHFZw5PLDIdaCje5iNUkGDSt5AuDP9RBJXksGvjlK%2F%2BmUpyaon62o5PX2w5bGO1jbuMV8Ia9MeC2%2FRjBFAns6NWMW0ScNUqFh5OILy4D8AicXYyOp1UItp6MMNGgnH%2FL8SZnkOAYWLll2GCEH3Jps%3D--lnGDKyoMVobzM1tb--3R6ihyFfu897fVZgJfpjjw%3D%3D",
 							"otherinfo": "\ncookie:_aplypro_session"
 						},
 						{
-							"uri": "https://aplypro.beta.gouv.fr/",
+							"uri": "https://aplypro.beta.gouv.fr/assets/application-a1b9225ad56e1b584ef3518635d8eed296a245eb3458afdbb5cf080c5ac0461b.css",
 							"method": "GET",
 							"param": "_aplypro_session",
 							"attack": "",
-							"evidence": "uYPULN31SiVP1Rkk9cxpTyRq4WM%2FsI%2BT3VxV33lzeu3BvoIbKN1efJa%2FmgcZtCjGSQAak0A4vwU4YdhxFMUfSlcuqOnwY%2F6Rw5AbZ9hR1WclIdbOy%2BbX2BL7fPPFzKIML8NWt2Whwb2TLP64cHCAlX%2BfTg41nIoj3V4%2BzF%2FjcDkK%2F5cQ4%2BI4Z%2FADRjPZRbs3mwb7WeWoQqmHppp7gGG0nvJOr81JWpGSOuH5quvy%2FdXReFlLCuHmtPkk%2FwkXdzNAL53I3rHfeACeRaZk7sl%2FkSzf7xmpLQBN--a8fmBmiTD0LRwuKN--yRBSiwVboAFEyjlsv9h9yQ%3D%3D",
+							"evidence": "7R4SEtJ9cN2YDkonQHorSunwvC6%2FK10RIISaWLSl9a8y5dic8jKVj3NbZBqp2LqKUKLhJnqFP8ZntJHCkWi0%2BPqQpZ5OpZAT%2F20mWmyHojxXQq1i%2BaJXNAWMIvV%2BsjrUUtnL4KxxRqNOFbLqZ6vs7R3sWD4RytF24AgrfR84Ktiv9mZ04UNOE30BBhVsBjeSK%2BnnAGHrhBzh7gyIri2hS%2FVOg7LanLziRlv0xqL3zV85OWak78ENp7mTdYrZLseW8XzT6rJtL2q24yNBBwxdZVr%2BM64nO2VB--yGq4WBlV%2BMjq1gB1--BL6fUcs%2BOIqI5WundfMIpQ%3D%3D",
 							"otherinfo": "\ncookie:_aplypro_session"
 						},
 						{
-							"uri": "https://aplypro.beta.gouv.fr/legal",
+							"uri": "https://aplypro.beta.gouv.fr/assets/controllers/index-2db729dddcc5b979110e98de4b6720f83f91a123172e87281d5a58410fc43806.js",
 							"method": "GET",
 							"param": "_aplypro_session",
 							"attack": "",
-							"evidence": "Do%2Bu%2F%2FT6TTEbWwSbGTIlF1ckvlS3aILAx9gKQm%2BHoRP%2BExH4HdBHUpie0AD%2BausF1YIUEaQU0fGvrL1SirRVYCCsZumnFxYwxo%2FoifrP0oF%2BA2mHDPXUasqHi8z5Yjy6eljd5v9XRmcWzDsRg8o6%2FSos85%2FXw5DBDQoPR5xqGygO8eFYJVjvlRfdw4wEZP6tah%2BuLkz9gDpTaeDyvTPgUESBLxWitrt9VU3zr0GTISikj21qJ9UWi9OT%2BnrlJb7910y%2BhC4zGqpEdJbv0Oe1s0SLX7QY2zQyFen%2FQYmalT73MBLjFWWzACzA6YoVm7E3tbxzk3ncUw0qS7WnSvh8Q%2BUuuEvRMUxewT0KgD%2B66ku351%2BcOWggyYm7wI8QW1sT%2BBSFqtuJ1%2BdYlozr3agj1tZI2e1H5t0TVHOnekYZ8qY3bbLvN96%2BnutGYVzYRcoHDNTvZWWlGhcs2LuF7KsROnSS4LdMVAC5rtv4%2BS5GFJa6VJ7WhbT51rhc88jjScI1lnUQ7hdOVRQ%3D--qIee6CR5li1TkNB9--M9rin2DZl5h70MQNvjBjzg%3D%3D",
-							"otherinfo": "\ncookie:_aplypro_session"
-						},
-						{
-							"uri": "https://aplypro.beta.gouv.fr/login",
-							"method": "GET",
-							"param": "_aplypro_session",
-							"attack": "",
-							"evidence": "xnV1Tm1Tb2xNPfWYDqu5nAr1RO7Q1ckKbYzeiuG5%2FxKpWZBd8GXAv5jiXcIwyJR3YnnH%2B%2FU0E0ZjqiRNkZtSCdoRaA7FouoXRILVrGjXyoIcBUUjspoqeZcuvGf%2FqzjoHweYGRQuIbCD%2FLC%2BxrBiKKr2P1xb8q1igH98nLd5Dunr%2BYkqF7h0Zu9na1cuMOzDy3e1LHceGyn8UwDdkZGOHfIOkay0emW1HvmdgwPMIHmDLKz%2F818Ru37JgmhJTO9q6Qrjo1HOvJw0Wk4igcptQp6NF8SQ%2F%2FQf--JU%2BW%2BUUliyOISpzX--xLVc6oEG9%2BzChBJAuCROmQ%3D%3D",
-							"otherinfo": "\ncookie:_aplypro_session"
-						},
-						{
-							"uri": "https://aplypro.beta.gouv.fr/assets/application-b62dc7b39bd308d1234470a6246cac4cecf63bcb3cdfb2f2eb7bf49d65567ea8.css",
-							"method": "GET",
-							"param": "_aplypro_session",
-							"attack": "",
-							"evidence": "xnV1Tm1Tb2xNPfWYDqu5nAr1RO7Q1ckKbYzeiuG5%2FxKpWZBd8GXAv5jiXcIwyJR3YnnH%2B%2FU0E0ZjqiRNkZtSCdoRaA7FouoXRILVrGjXyoIcBUUjspoqeZcuvGf%2FqzjoHweYGRQuIbCD%2FLC%2BxrBiKKr2P1xb8q1igH98nLd5Dunr%2BYkqF7h0Zu9na1cuMOzDy3e1LHceGyn8UwDdkZGOHfIOkay0emW1HvmdgwPMIHmDLKz%2F818Ru37JgmhJTO9q6Qrjo1HOvJw0Wk4igcptQp6NF8SQ%2F%2FQf--JU%2BW%2BUUliyOISpzX--xLVc6oEG9%2BzChBJAuCROmQ%3D%3D",
-							"otherinfo": "\ncookie:_aplypro_session"
-						},
-						{
-							"uri": "https://aplypro.beta.gouv.fr/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js",
-							"method": "GET",
-							"param": "_aplypro_session",
-							"attack": "",
-							"evidence": "Do%2Bu%2F%2FT6TTEbWwSbGTIlF1ckvlS3aILAx9gKQm%2BHoRP%2BExH4HdBHUpie0AD%2BausF1YIUEaQU0fGvrL1SirRVYCCsZumnFxYwxo%2FoifrP0oF%2BA2mHDPXUasqHi8z5Yjy6eljd5v9XRmcWzDsRg8o6%2FSos85%2FXw5DBDQoPR5xqGygO8eFYJVjvlRfdw4wEZP6tah%2BuLkz9gDpTaeDyvTPgUESBLxWitrt9VU3zr0GTISikj21qJ9UWi9OT%2BnrlJb7910y%2BhC4zGqpEdJbv0Oe1s0SLX7QY2zQyFen%2FQYmalT73MBLjFWWzACzA6YoVm7E3tbxzk3ncUw0qS7WnSvh8Q%2BUuuEvRMUxewT0KgD%2B66ku351%2BcOWggyYm7wI8QW1sT%2BBSFqtuJ1%2BdYlozr3agj1tZI2e1H5t0TVHOnekYZ8qY3bbLvN96%2BnutGYVzYRcoHDNTvZWWlGhcs2LuF7KsROnSS4LdMVAC5rtv4%2BS5GFJa6VJ7WhbT51rhc88jjScI1lnUQ7hdOVRQ%3D--qIee6CR5li1TkNB9--M9rin2DZl5h70MQNvjBjzg%3D%3D",
-							"otherinfo": "\ncookie:_aplypro_session"
-						},
-						{
-							"uri": "https://aplypro.beta.gouv.fr/users/auth",
-							"method": "GET",
-							"param": "_aplypro_session",
-							"attack": "",
-							"evidence": "uYPULN31SiVP1Rkk9cxpTyRq4WM%2FsI%2BT3VxV33lzeu3BvoIbKN1efJa%2FmgcZtCjGSQAak0A4vwU4YdhxFMUfSlcuqOnwY%2F6Rw5AbZ9hR1WclIdbOy%2BbX2BL7fPPFzKIML8NWt2Whwb2TLP64cHCAlX%2BfTg41nIoj3V4%2BzF%2FjcDkK%2F5cQ4%2BI4Z%2FADRjPZRbs3mwb7WeWoQqmHppp7gGG0nvJOr81JWpGSOuH5quvy%2FdXReFlLCuHmtPkk%2FwkXdzNAL53I3rHfeACeRaZk7sl%2FkSzf7xmpLQBN--a8fmBmiTD0LRwuKN--yRBSiwVboAFEyjlsv9h9yQ%3D%3D",
+							"evidence": "IMTjSQh%2BkVpHMBsqtc5wzz%2FDSxN5Nsam%2FeMFR1Oq%2BXWhovcs5FG%2FNaKig2jAKqBO8DZpNYCYo5tdh%2FODfc1qIFUwNaHpuXFvZlVVGkKA52S3UcJcefMb5x38ccYvxuyjcBcmbn0wmpF%2FeDHB9Msit9qArIV5FDqYGp11sMRbsCRpG57m2N8hxEnfjQ236UDxejCSpWz0%2BlpcPK3mCEMbaZzvpvDq%2BrlgBHC5lVgxIxW6VPbzhjlWKCISzEhknzunczwWNgFFGDEMoRs5eTL56UVn0G8HwDj0%2BPXK7rpud2gB%2BNlSuyh69j7qugNDlIP2AlW5c3nBS%2BjjNQ%2FkQlcs8ZUEhBEtoM9XfJUFzb9%2FsT8FM8CCfR4Dg7d7MQ9MExzQx7lHd0IHFZw5PLDIdaCje5iNUkGDSt5AuDP9RBJXksGvjlK%2F%2BmUpyaon62o5PX2w5bGO1jbuMV8Ia9MeC2%2FRjBFAns6NWMW0ScNUqFh5OILy4D8AicXYyOp1UItp6MMNGgnH%2FL8SZnkOAYWLll2GCEH3Jps%3D--lnGDKyoMVobzM1tb--3R6ihyFfu897fVZgJfpjjw%3D%3D",
 							"otherinfo": "\ncookie:_aplypro_session"
 						}
 					],
-					"count": "7",
+					"count": "3",
 					"solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
 					"otherinfo": "<p></p><p>cookie:_aplypro_session</p>",
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "1"
+					"sourceid": "27"
 				},
 				{
 					"pluginid": "10049",
@@ -1004,14 +929,6 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"uri": "https://aplypro.beta.gouv.fr/assets/controllers/index-2db729dddcc5b979110e98de4b6720f83f91a123172e87281d5a58410fc43806.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
-						},
-						{
 							"uri": "https://aplypro.beta.gouv.fr/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js",
 							"method": "GET",
 							"param": "",
@@ -1036,13 +953,13 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						}
 					],
-					"count": "7",
+					"count": "6",
 					"solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information.  If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request. </p>",
 					"otherinfo": "<p>In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.</p>",
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "31"
+					"sourceid": "28"
 				}
 			]
 		}

@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 10 Mar 2024 13:10:40",
+	"@generated": "Sun, 17 Mar 2024 12:53:17",
 	"site":[ 
 		{
 			"@name": "https://api.app.eva.beta.gouv.fr",
@@ -224,6 +224,22 @@
 					"desc": "<p>HTTP Strict Transport Security (HSTS) is a web security policy mechanism whereby a web server declares that complying user agents (such as a web browser) are to interact with it using only secure HTTPS connections (i.e. HTTP layered over TLS/SSL). HSTS is an IETF standards track protocol and is specified in RFC 6797.</p>",
 					"instances":[ 
 						{
+							"uri": "https://api.app.eva.beta.gouv.fr",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://api.app.eva.beta.gouv.fr/robots.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://api.app.eva.beta.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "",
@@ -232,7 +248,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "1",
+					"count": "3",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to enforce Strict-Transport-Security.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>https://caniuse.com/stricttransportsecurity</p><p>https://datatracker.ietf.org/doc/html/rfc6797</p>",
@@ -255,13 +271,13 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "BJXRLAPGQNz73Qsg14p8u89tvyyqdD7V3WwQLltMLFMMtOFL7WTOY4MxIXvnjQ7tSCr7mDBSeJzT5R1ByoTIwVjlA27uEs4Yjd",
-							"otherinfo": "\\x0004\uFFFD\uFFFD,\\x0003\uFFFD@\uFFFD\uFFFD\uFFFD\\x000b \u05CA|\uFFFD\uFFFDm\uFFFD,\uFFFDt>\uFFFD\uFFFDl\\x0010.[L,S\\x000c\uFFFD\uFFFDK\uFFFDd\uFFFDc\uFFFD1!{\uFFFD\\x000e\uFFFDH*\uFFFD\uFFFD0Rx\uFFFD\uFFFD\uFFFD\\x001dA\u0284\uFFFD\uFFFDX\uFFFD\\x0003n\uFFFD\\x0012\uFFFD\\x0018\uFFFD"
+							"evidence": "2B3omvB6yieomF0o3l1RJaUYkwy07wzBjKpDyLLlvOX8poaY818LmD",
+							"otherinfo": "\uFFFD\\x001d\uFFFD\uFFFDz\uFFFD'\uFFFD\uFFFD](\uFFFD]Q%\uFFFD\\x0018\uFFFD\\x000c\uFFFD\uFFFD\\x000c\uFFFD\uFFFD\uFFFDC\u0232\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD_\\x000b\uFFFD"
 						}
 					],
 					"count": "1",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>\\x0004\uFFFD\uFFFD,\\x0003\uFFFD@\uFFFD\uFFFD\uFFFD\\x000b \u05CA|\uFFFD\uFFFDm\uFFFD,\uFFFDt>\uFFFD\uFFFDl\\x0010.[L,S\\x000c\uFFFD\uFFFDK\uFFFDd\uFFFDc\uFFFD1!{\uFFFD\\x000e\uFFFDH*\uFFFD\uFFFD0Rx\uFFFD\uFFFD\uFFFD\\x001dA\u0284\uFFFD\uFFFDX\uFFFD\\x0003n\uFFFD\\x0012\uFFFD\\x0018\uFFFD</p>",
+					"otherinfo": "<p>\uFFFD\\x001d\uFFFD\uFFFDz\uFFFD'\uFFFD\uFFFD](\uFFFD]Q%\uFFFD\\x0018\uFFFD\\x000c\uFFFD\uFFFD\\x000c\uFFFD\uFFFD\uFFFDC\u0232\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD_\\x000b\uFFFD</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
@@ -416,7 +432,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "8"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -459,7 +475,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "8"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -502,7 +518,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "8"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -545,7 +561,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "8"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10112",
@@ -562,7 +578,7 @@
 							"method": "GET",
 							"param": "_session_id",
 							"attack": "",
-							"evidence": "BJXRLAPGQNz73Qsg14p8u89tvyyqdD7V3WwQLltMLFMMtOFL7WTOY4MxIXvnjQ7tSCr7mDBSeJzT5R1ByoTIwVjlA27uEs4Yjd%2Ff8lv7%2FS4ekKyACgLDO%2B8gCa6qflrgVA7al9wrWkzJqsc9BS%2BRyB55vtGgVDIe1PXkZIjzMd2GFaSfkdDgEsKhKh9Qnx4K2bbIL6ymCr%2F1zQJY4fYAaT3TPGDb5Hx4HS4CCzssiEwJRxprLNo834eYjtFs12nefNdsjsWs4y0xRFAwkAf47jQrmA%3D%3D--FB2yX8Nj2fplVQy7--uWb7fqTRzRVGZRywt0LcVQ%3D%3D",
+							"evidence": "7f0L%2B3omvB6yieomF0o3l1RJaUYkwy07wzBjKpDyLLlvOX8poaY818LmD%2FoRFHN0%2BReJrIRGgFsw6sN9MCAOydEgMJeYJbEhqPGusOd%2F1MjnZcCHIZKQ7qrYA9itArsuCfgfP5SRUTlLwEzwrQNiNq3l5gMWfxcwuapXYLs2IxlN2NbqZH%2BB4FJTnh4LbQgIcHeleA2C%2F5ERjILHsJWdUaWXIY9xe4gB04l0onuULRwXxGp%2B63%2BG8VyEIqStA8gyqWwqOGgaCM7x0hgPYXJQ8xVPQw%3D%3D--yCNGzlrqknvYXaBX--pkd8AQ0xcct2uPaCg69g%2Fw%3D%3D",
 							"otherinfo": "\ncookie:_session_id"
 						}
 					],
@@ -615,7 +631,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "8"
+					"sourceid": "6"
 				}
 			]
 		}

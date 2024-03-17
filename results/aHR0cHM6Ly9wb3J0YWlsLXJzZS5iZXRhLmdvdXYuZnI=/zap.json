@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 10 Mar 2024 03:18:55",
+	"@generated": "Sun, 17 Mar 2024 03:19:03",
 	"site":[ 
 		{
 			"@name": "https://portail-rse.beta.gouv.fr",
@@ -34,7 +34,7 @@
 					"reference": "",
 					"cweid": "359",
 					"wascid": "13",
-					"sourceid": "146"
+					"sourceid": "124"
 				},
 				{
 					"pluginid": "10038",
@@ -141,7 +141,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>https://www.w3.org/TR/CSP/</p><p>https://w3c.github.io/webappsec-csp/</p><p>https://web.dev/articles/csp</p><p>https://caniuse.com/#feat=contentsecuritypolicy</p><p>https://content-security-policy.com/</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10098",
@@ -155,22 +155,6 @@
 					"instances":[ 
 						{
 							"uri": "https://portail-rse.beta.gouv.fr/static/css/styles.css",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "Access-Control-Allow-Origin: *",
-							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
-						},
-						{
-							"uri": "https://portail-rse.beta.gouv.fr/static/dsfr/dsfr/dsfr.min.css",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "Access-Control-Allow-Origin: *",
-							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
-						},
-						{
-							"uri": "https://portail-rse.beta.gouv.fr/static/dsfr/dsfr/dsfr.module.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -218,6 +202,14 @@
 							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
 						},
 						{
+							"uri": "https://portail-rse.beta.gouv.fr/static/img/conditions.png",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Access-Control-Allow-Origin: *",
+							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
+						},
+						{
 							"uri": "https://portail-rse.beta.gouv.fr/static/img/dashboard.png",
 							"method": "GET",
 							"param": "",
@@ -250,7 +242,7 @@
 							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
 						},
 						{
-							"uri": "https://portail-rse.beta.gouv.fr/static/svelte/assets/main-faa84c2c.js",
+							"uri": "https://portail-rse.beta.gouv.fr/static/svelte/assets/main-af82b1a6.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -258,7 +250,7 @@
 							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
 						}
 					],
-					"count": "13",
+					"count": "12",
 					"solution": "<p>Ensure that sensitive data is not available in an unauthenticated manner (using IP address white-listing, for instance).</p><p>Configure the \"Access-Control-Allow-Origin\" HTTP header to a more restrictive set of domains, or remove all CORS headers entirely, to allow the web browser to enforce the Same Origin Policy (SOP) in a more restrictive manner.</p>",
 					"otherinfo": "<p>The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing.</p>",
 					"reference": "<p>https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.html5_overly_permissive_cors_policy</p>",
@@ -291,7 +283,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity</p>",
 					"cweid": "345",
 					"wascid": "15",
-					"sourceid": "59"
+					"sourceid": "51"
 				},
 				{
 					"pluginid": "10010",
@@ -376,7 +368,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://portail-rse.beta.gouv.fr/contact",
+							"uri": "https://portail-rse.beta.gouv.fr/connexion?next=/stats",
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
@@ -384,7 +376,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://portail-rse.beta.gouv.fr/creation",
+							"uri": "https://portail-rse.beta.gouv.fr/contact",
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
@@ -406,7 +398,7 @@
 					"reference": "<p>https://owasp.org/www-community/HttpOnly</p>",
 					"cweid": "1004",
 					"wascid": "13",
-					"sourceid": "53"
+					"sourceid": "56"
 				},
 				{
 					"pluginid": "10011",
@@ -491,7 +483,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://portail-rse.beta.gouv.fr/contact",
+							"uri": "https://portail-rse.beta.gouv.fr/connexion?next=/stats",
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
@@ -499,7 +491,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://portail-rse.beta.gouv.fr/creation",
+							"uri": "https://portail-rse.beta.gouv.fr/contact",
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
@@ -521,7 +513,7 @@
 					"reference": "<p>https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes.html</p>",
 					"cweid": "614",
 					"wascid": "13",
-					"sourceid": "53"
+					"sourceid": "56"
 				},
 				{
 					"pluginid": "10017",
@@ -548,7 +540,7 @@
 					"reference": "",
 					"cweid": "829",
 					"wascid": "15",
-					"sourceid": "59"
+					"sourceid": "51"
 				},
 				{
 					"pluginid": "10063",
@@ -762,23 +754,15 @@
 							"attack": "",
 							"evidence": "password",
 							"otherinfo": "userParam=username\nuserValue=ZAP\npasswordParam=password\nreferer=https://portail-rse.beta.gouv.fr/connexion?next=/stats\ncsrfToken=csrfmiddlewaretoken"
-						},
-						{
-							"uri": "https://portail-rse.beta.gouv.fr/creation",
-							"method": "POST",
-							"param": "email",
-							"attack": "",
-							"evidence": "password1",
-							"otherinfo": "userParam=email\nuserValue=zaproxy@example.com\npasswordParam=password1\nreferer=https://portail-rse.beta.gouv.fr/creation\ncsrfToken=csrfmiddlewaretoken"
 						}
 					],
-					"count": "13",
+					"count": "12",
 					"solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
 					"otherinfo": "<p>userParam=username</p><p>userValue=ZAP</p><p>passwordParam=password</p><p>referer=https://portail-rse.beta.gouv.fr/connexion</p><p>csrfToken=csrfmiddlewaretoken</p>",
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/auth-req-id/</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "226"
+					"sourceid": "211"
 				},
 				{
 					"pluginid": "10094",
@@ -795,88 +779,88 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "O7NUR3QrymAlUCnIog2towqLBikEVuPd",
-							"otherinfo": ";\uFFFDTGt+\uFFFD`%P)\u0222\r\uFFFD\uFFFD\n\uFFFD\\x0006)\\x0004V\uFFFD\uFFFD"
+							"evidence": "rLWxgsCkUSDkwtVCTn0GoB9ru9nQNC5p",
+							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDQ \uFFFD\uFFFD\uFFFDBN}\\x0006\uFFFD\\x001fk\uFFFD\uFFFD\uFFFD4.i"
 						},
 						{
 							"uri": "https://portail-rse.beta.gouv.fr/connexion?next=/cgu",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "O7NUR3QrymAlUCnIog2towqLBikEVuPd",
-							"otherinfo": ";\uFFFDTGt+\uFFFD`%P)\u0222\r\uFFFD\uFFFD\n\uFFFD\\x0006)\\x0004V\uFFFD\uFFFD"
-						},
-						{
-							"uri": "https://portail-rse.beta.gouv.fr/connexion?next=/connexion",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "O7NUR3QrymAlUCnIog2towqLBikEVuPd",
-							"otherinfo": ";\uFFFDTGt+\uFFFD`%P)\u0222\r\uFFFD\uFFFD\n\uFFFD\\x0006)\\x0004V\uFFFD\uFFFD"
+							"evidence": "KHt604u7skS9Fe0VZzXthi1vwSREwQWD",
+							"otherinfo": "({z\u04CB\uFFFD\uFFFDD\uFFFD\\x0015\uFFFD\\x0015g5\uFFFD-o\uFFFD$D\uFFFD\\x0005\uFFFD"
 						},
 						{
 							"uri": "https://portail-rse.beta.gouv.fr/connexion?next=/contact",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "O7NUR3QrymAlUCnIog2towqLBikEVuPd",
-							"otherinfo": ";\uFFFDTGt+\uFFFD`%P)\u0222\r\uFFFD\uFFFD\n\uFFFD\\x0006)\\x0004V\uFFFD\uFFFD"
+							"evidence": "KHt604u7skS9Fe0VZzXthi1vwSREwQWD",
+							"otherinfo": "({z\u04CB\uFFFD\uFFFDD\uFFFD\\x0015\uFFFD\\x0015g5\uFFFD-o\uFFFD$D\uFFFD\\x0005\uFFFD"
 						},
 						{
 							"uri": "https://portail-rse.beta.gouv.fr/connexion?next=/csrd",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "O7NUR3QrymAlUCnIog2towqLBikEVuPd",
-							"otherinfo": ";\uFFFDTGt+\uFFFD`%P)\u0222\r\uFFFD\uFFFD\n\uFFFD\\x0006)\\x0004V\uFFFD\uFFFD"
+							"evidence": "KHt604u7skS9Fe0VZzXthi1vwSREwQWD",
+							"otherinfo": "({z\u04CB\uFFFD\uFFFDD\uFFFD\\x0015\uFFFD\\x0015g5\uFFFD-o\uFFFD$D\uFFFD\\x0005\uFFFD"
 						},
 						{
 							"uri": "https://portail-rse.beta.gouv.fr/connexion?next=/mentions-legales",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "O7NUR3QrymAlUCnIog2towqLBikEVuPd",
-							"otherinfo": ";\uFFFDTGt+\uFFFD`%P)\u0222\r\uFFFD\uFFFD\n\uFFFD\\x0006)\\x0004V\uFFFD\uFFFD"
+							"evidence": "KHt604u7skS9Fe0VZzXthi1vwSREwQWD",
+							"otherinfo": "({z\u04CB\uFFFD\uFFFDD\uFFFD\\x0015\uFFFD\\x0015g5\uFFFD-o\uFFFD$D\uFFFD\\x0005\uFFFD"
 						},
 						{
 							"uri": "https://portail-rse.beta.gouv.fr/connexion?next=/politique-confidentialite",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "O7NUR3QrymAlUCnIog2towqLBikEVuPd",
-							"otherinfo": ";\uFFFDTGt+\uFFFD`%P)\u0222\r\uFFFD\uFFFD\n\uFFFD\\x0006)\\x0004V\uFFFD\uFFFD"
+							"evidence": "KHt604u7skS9Fe0VZzXthi1vwSREwQWD",
+							"otherinfo": "({z\u04CB\uFFFD\uFFFDD\uFFFD\\x0015\uFFFD\\x0015g5\uFFFD-o\uFFFD$D\uFFFD\\x0005\uFFFD"
 						},
 						{
 							"uri": "https://portail-rse.beta.gouv.fr/connexion?next=/reglementations",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "O7NUR3QrymAlUCnIog2towqLBikEVuPd",
-							"otherinfo": ";\uFFFDTGt+\uFFFD`%P)\u0222\r\uFFFD\uFFFD\n\uFFFD\\x0006)\\x0004V\uFFFD\uFFFD"
+							"evidence": "KHt604u7skS9Fe0VZzXthi1vwSREwQWD",
+							"otherinfo": "({z\u04CB\uFFFD\uFFFDD\uFFFD\\x0015\uFFFD\\x0015g5\uFFFD-o\uFFFD$D\uFFFD\\x0005\uFFFD"
 						},
 						{
 							"uri": "https://portail-rse.beta.gouv.fr/connexion?next=/sitemap.xml",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "O7NUR3QrymAlUCnIog2towqLBikEVuPd",
-							"otherinfo": ";\uFFFDTGt+\uFFFD`%P)\u0222\r\uFFFD\uFFFD\n\uFFFD\\x0006)\\x0004V\uFFFD\uFFFD"
+							"evidence": "KHt604u7skS9Fe0VZzXthi1vwSREwQWD",
+							"otherinfo": "({z\u04CB\uFFFD\uFFFDD\uFFFD\\x0015\uFFFD\\x0015g5\uFFFD-o\uFFFD$D\uFFFD\\x0005\uFFFD"
+						},
+						{
+							"uri": "https://portail-rse.beta.gouv.fr/connexion?next=/stats",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "KHt604u7skS9Fe0VZzXthi1vwSREwQWD",
+							"otherinfo": "({z\u04CB\uFFFD\uFFFDD\uFFFD\\x0015\uFFFD\\x0015g5\uFFFD-o\uFFFD$D\uFFFD\\x0005\uFFFD"
 						},
 						{
 							"uri": "https://portail-rse.beta.gouv.fr/contact",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "psKALeuceSjNLaLlS1QMmbR49dKJBv8v",
-							"otherinfo": "\uFFFD\u0080-\uFFFDy(\uFFFD-\uFFFD\uFFFDKT\\x000c\uFFFD\uFFFDx\uFFFD\u0489\\x0006\uFFFD/"
+							"evidence": "Y60fClJNV1hBLUd8sIus7LyxGMc4XhRQ",
+							"otherinfo": "c\uFFFD\\x001f\nRMWXA-G|\uFFFD\uFFFD\uFFFD\uCF31\\x0018\uFFFD8^\\x0014P"
 						},
 						{
 							"uri": "https://portail-rse.beta.gouv.fr/simulation",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "O7NUR3QrymAlUCnIog2towqLBikEVuPd",
-							"otherinfo": ";\uFFFDTGt+\uFFFD`%P)\u0222\r\uFFFD\uFFFD\n\uFFFD\\x0006)\\x0004V\uFFFD\uFFFD"
+							"evidence": "KHt604u7skS9Fe0VZzXthi1vwSREwQWD",
+							"otherinfo": "({z\u04CB\uFFFD\uFFFDD\uFFFD\\x0015\uFFFD\\x0015g5\uFFFD-o\uFFFD$D\uFFFD\\x0005\uFFFD"
 						},
 						{
 							"uri": "https://portail-rse.beta.gouv.fr/static/dsfr/dsfr/dsfr.min.css",
@@ -885,15 +869,23 @@
 							"attack": "",
 							"evidence": "2H9v2H7V5H4v4h16V5h-3v2h-2V5zm5",
 							"otherinfo": "\uFFFDo\uFFFD~\uFFFD\uFFFD~/\uFFFD\\x001dzW\uFFFD~\uFFFD\uFFFD\uFFFD\uFFFDey\uFFFDn"
+						},
+						{
+							"uri": "https://portail-rse.beta.gouv.fr/static/dsfr/dsfr/dsfr.nomodule.min.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "com/Financial-Times/polyfill-service/issues/317",
+							"otherinfo": "r\uFFFD\uFFFD\\x0016)\u069D\u021A\uFFFD\uFFFD\uFFFD\uFFFD?\uFFFD\uFFFDr~)e\uFFFD\u01EB\uFFFD'\\x001e\uFFFD+,\uFFFD\uFFFD?\uFFFD^"
 						}
 					],
-					"count": "12",
+					"count": "13",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>;\uFFFDTGt+\uFFFD`%P)\u0222\r\uFFFD\uFFFD</p><p>\uFFFD\\x0006)\\x0004V\uFFFD\uFFFD</p>",
+					"otherinfo": "<p>\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDQ \uFFFD\uFFFD\uFFFDBN}\\x0006\uFFFD\\x001fk\uFFFD\uFFFD\uFFFD4.i</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "53"
+					"sourceid": "56"
 				},
 				{
 					"pluginid": "10024",
@@ -920,7 +912,7 @@
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "183"
+					"sourceid": "179"
 				},
 				{
 					"pluginid": "10027",
@@ -981,12 +973,12 @@
 							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"!function(){\"use strict\";var t=function(){this.modules={}},e={isActive:{configurable:!0},isLegacy:{configurable:!0}};t.prototype\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://portail-rse.beta.gouv.fr/static/svelte/assets/main-faa84c2c.js",
+							"uri": "https://portail-rse.beta.gouv.fr/static/svelte/assets/main-af82b1a6.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "from",
-							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"var Fe=Object.defineProperty;var Ce=(t,e,n)=>e in t?Fe(t,e,{enumerable:!0,configurable:!0,writable:!0,value:n}):t[e]=n;var ne=(t\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"var Ce=Object.defineProperty;var Se=(t,e,n)=>e in t?Ce(t,e,{enumerable:!0,configurable:!0,writable:!0,value:n}):t[e]=n;var ne=(t\", see evidence field for the suspicious comment/snippet."
 						}
 					],
 					"count": "7",
@@ -995,7 +987,7 @@
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "99"
+					"sourceid": "185"
 				},
 				{
 					"pluginid": "10109",
@@ -1102,7 +1094,7 @@
 					"reference": "",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10049",
@@ -1115,14 +1107,6 @@
 					"desc": "<p>The response contents are not storable by caching components such as proxy servers. If the response does not contain sensitive, personal or user-specific information, it may benefit from being stored and cached, to improve performance.</p>",
 					"instances":[ 
 						{
-							"uri": "https://portail-rse.beta.gouv.fr/connexion?next=/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "no-store",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://portail-rse.beta.gouv.fr/csrd",
 							"method": "GET",
 							"param": "",
@@ -1131,13 +1115,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "1",
 					"solution": "<p>The content may be marked as storable by ensuring that the following conditions are satisfied:</p><p>The request method must be understood by the cache and defined as being cacheable (\"GET\", \"HEAD\", and \"POST\" are currently defined as cacheable)</p><p>The response status code must be understood by the cache (one of the 1XX, 2XX, 3XX, 4XX, or 5XX response classes are generally understood)</p><p>The \"no-store\" cache directive must not appear in the request or response header fields</p><p>For caching by \"shared\" caches such as \"proxy\" caches, the \"private\" response directive must not appear in the response</p><p>For caching by \"shared\" caches such as \"proxy\" caches, the \"Authorization\" header field must not appear in the request, unless the response explicitly allows it (using one of the \"must-revalidate\", \"public\", or \"s-maxage\" Cache-Control response directives)</p><p>In addition to the conditions above, at least one of the following conditions must also be satisfied by the response:</p><p>It must contain an \"Expires\" header field</p><p>It must contain a \"max-age\" response directive</p><p>For \"shared\" caches such as \"proxy\" caches, it must contain a \"s-maxage\" response directive</p><p>It must contain a \"Cache Control Extension\" that allows it to be cached</p><p>It must have a status code that is defined as cacheable by default (200, 203, 204, 206, 300, 301, 404, 405, 410, 414, 501).   </p>",
 					"otherinfo": "",
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "53"
+					"sourceid": "45"
 				},
 				{
 					"pluginid": "10015",
@@ -1151,14 +1135,6 @@
 					"instances":[ 
 						{
 							"uri": "https://portail-rse.beta.gouv.fr",
-							"method": "GET",
-							"param": "cache-control",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://portail-rse.beta.gouv.fr/",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -1182,30 +1158,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://portail-rse.beta.gouv.fr/creation",
-							"method": "GET",
-							"param": "cache-control",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://portail-rse.beta.gouv.fr/mentions-legales",
-							"method": "GET",
-							"param": "cache-control",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://portail-rse.beta.gouv.fr/mot-de-passe-oublie",
-							"method": "GET",
-							"param": "cache-control",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://portail-rse.beta.gouv.fr/politique-confidentialite",
 							"method": "GET",
 							"param": "cache-control",
@@ -1215,6 +1167,30 @@
 						},
 						{
 							"uri": "https://portail-rse.beta.gouv.fr/reglementations",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://portail-rse.beta.gouv.fr/reglementations/bdese",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://portail-rse.beta.gouv.fr/reglementations/index-egalite-professionnelle",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://portail-rse.beta.gouv.fr/reglementations/rapport-durabilite-csrd",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -1238,13 +1214,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "11",
+					"count": "10",
 					"solution": "<p>For secure content, ensure the cache-control HTTP header is set with \"no-cache, no-store, must-revalidate\". If an asset should be cached consider setting the directives \"public, max-age, immutable\".</p>",
 					"otherinfo": "",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control</p><p>https://grayduck.mn/2021/09/13/cache-control-recommendations/</p>",
 					"cweid": "525",
 					"wascid": "13",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -1273,7 +1249,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://portail-rse.beta.gouv.fr/sitemap.xml",
+							"uri": "https://portail-rse.beta.gouv.fr/mentions-legales",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -1316,7 +1292,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://portail-rse.beta.gouv.fr/sitemap.xml",
+							"uri": "https://portail-rse.beta.gouv.fr/mentions-legales",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -1359,7 +1335,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://portail-rse.beta.gouv.fr/sitemap.xml",
+							"uri": "https://portail-rse.beta.gouv.fr/mentions-legales",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -1402,7 +1378,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://portail-rse.beta.gouv.fr/sitemap.xml",
+							"uri": "https://portail-rse.beta.gouv.fr/mentions-legales",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -1433,7 +1409,7 @@
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "O7NUR3QrymAlUCnIog2towqLBikEVuPd",
+							"evidence": "rLWxgsCkUSDkwtVCTn0GoB9ru9nQNC5p",
 							"otherinfo": "\ncookie:csrftoken"
 						},
 						{
@@ -1441,7 +1417,7 @@
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "psKALeuceSjNLaLlS1QMmbR49dKJBv8v",
+							"evidence": "Y60fClJNV1hBLUd8sIus7LyxGMc4XhRQ",
 							"otherinfo": "\ncookie:csrftoken"
 						},
 						{
@@ -1449,25 +1425,33 @@
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "O7NUR3QrymAlUCnIog2towqLBikEVuPd",
+							"evidence": "KHt604u7skS9Fe0VZzXthi1vwSREwQWD",
 							"otherinfo": "\ncookie:csrftoken"
 						},
 						{
-							"uri": "https://portail-rse.beta.gouv.fr/simulation",
+							"uri": "https://portail-rse.beta.gouv.fr/connexion?next=/creation",
+							"method": "GET",
+							"param": "csrftoken",
+							"attack": "",
+							"evidence": "KHt604u7skS9Fe0VZzXthi1vwSREwQWD",
+							"otherinfo": "\ncookie:csrftoken"
+						},
+						{
+							"uri": "https://portail-rse.beta.gouv.fr/connexion",
 							"method": "POST",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "O7NUR3QrymAlUCnIog2towqLBikEVuPd",
+							"evidence": "KHt604u7skS9Fe0VZzXthi1vwSREwQWD",
 							"otherinfo": "\ncookie:csrftoken"
 						}
 					],
-					"count": "4",
+					"count": "5",
 					"solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
 					"otherinfo": "<p></p><p>cookie:csrftoken</p>",
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "53"
+					"sourceid": "56"
 				},
 				{
 					"pluginid": "10049",
@@ -1544,15 +1528,23 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"uri": "https://portail-rse.beta.gouv.fr/static/dsfr/favicon/apple-touch-icon.png",
+							"uri": "https://portail-rse.beta.gouv.fr/static/css/styles.css",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "max-age=60",
 							"otherinfo": ""
+						},
+						{
+							"uri": "https://portail-rse.beta.gouv.fr/stats",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						}
 					],
-					"count": "9",
+					"count": "10",
 					"solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information.  If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request. </p>",
 					"otherinfo": "<p>In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.</p>",
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
@@ -1681,7 +1673,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html</p>",
 					"cweid": "20",
 					"wascid": "20",
-					"sourceid": "119"
+					"sourceid": "120"
 				}
 			]
 		}

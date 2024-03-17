@@ -54,7 +54,7 @@
 <h1>Scan Report<br><small>Nmap 7.92</small>
 </h1>
 <pre style="white-space:pre-wrap; word-wrap:break-word;">nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln contrat.apprentissage.beta.gouv.fr</pre>
-<p class="lead">Sun Mar 10 02:11:50 2024 – Sun Mar 10 02:12:37 2024<br>1 hosts scanned.
+<p class="lead">Sun Mar 17 02:10:48 2024 – Sun Mar 17 02:11:21 2024<br>1 hosts scanned.
               1 hosts up.
               0 hosts down.
             </p>
@@ -76,9 +76,9 @@
 </tr></thead>
 <tbody><tr>
 <td><span class="label label-success">up</span></td>
-<td>185.31.40.11</td>
+<td>51.77.159.162</td>
 <td>contrat.apprentissage.beta.gouv.fr</td>
-<td>2</td>
+<td>3</td>
 <td>0</td>
 </tr></tbody>
 </table></div>
@@ -91,12 +91,12 @@
             });
           </script><h2 id="onlinehosts" class="target">Online Hosts</h2>
 <div class="panel panel-default">
-<div class="panel-heading clickable" data-toggle="collapse" data-target="#185-31-40-11"><h3 class="panel-title">185.31.40.11 - contrat.apprentissage.beta.gouv.fr</h3></div>
-<div class="panel-body collapse in" id="185-31-40-11">
+<div class="panel-heading clickable" data-toggle="collapse" data-target="#51-77-159-162"><h3 class="panel-title">51.77.159.162 - contrat.apprentissage.beta.gouv.fr</h3></div>
+<div class="panel-body collapse in" id="51-77-159-162">
 <h4>Hostnames</h4>
 <ul>
 <li>contrat.apprentissage.beta.gouv.fr (user)</li>
-<li>http1.paris1.alwaysdata.com (PTR)</li>
+<li>vps-410da725.vps.ovh.net (PTR)</li>
 </ul>
 <h4>Ports</h4>
 <div class="table-responsive"><table class="table table-bordered">
@@ -111,83 +111,35 @@
 </tr></thead>
 <tbody>
 <tr class="success">
+<td title="Port">22</td>
+<td title="Protocol">tcp</td>
+<td title="State / Reason">open<br>syn-ack</td>
+<td title="Service">ssh</td>
+<td title="Product">OpenSSH</td>
+<td title="Version">8.9p1 Ubuntu 3ubuntu0.6</td>
+<td title="Extra Info">Ubuntu Linux; protocol 2.0</td>
+</tr>
+<tr><td colspan="7"><a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version=cpe:/a:openbsd:openssh:8.9p1">cpe:/a:openbsd:openssh:8.9p1</a></td></tr>
+<tr class="success">
 <td title="Port">80</td>
 <td title="Protocol">tcp</td>
 <td title="State / Reason">open<br>syn-ack</td>
 <td title="Service">http</td>
-<td title="Product">Apache</td>
+<td title="Product">nginx</td>
 <td title="Version"></td>
-<td title="Extra Info"></td>
+<td title="Extra Info">reverse proxy</td>
 </tr>
-<tr><td colspan="7">
-<a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version="></a><h5>http-server-header</h5>
-<pre style="white-space:pre-wrap; word-wrap:break-word;">Apache</pre>
-<h5>fingerprint-strings</h5>
-<pre style="white-space:pre-wrap; word-wrap:break-word;">
-  DNSStatusRequestTCP, DNSVersionBindReqTCP, Help, RPCCheck, RTSPRequest, SSLSessionReq, X11Probe: 
-    HTTP/1.1 400 Bad Request
-    Connection: close
-    Content-Length: 11
-    content-type: text/plain; charset=utf-8
-    Request
-  FourOhFourRequest: 
-    HTTP/1.1 404 Not Found
-    Connection: close
-    via: 1.0 alproxy
-    date: Sun, 10 Mar 2024 02:12:13 GMT
-    &lt;html&gt;&lt;body&gt;&lt;h1&gt;Site not found&lt;/h1&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Request ID: 682c25cd-65e579ef&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-  GetRequest: 
-    HTTP/1.1 404 Not Found
-    Connection: close
-    via: 1.0 alproxy
-    date: Sun, 10 Mar 2024 02:12:12 GMT
-    &lt;html&gt;&lt;body&gt;&lt;h1&gt;Site not found&lt;/h1&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Request ID: 17493d7f-1e91c2e1&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-  HTTPOptions: 
-    HTTP/1.1 404 Not Found
-    Connection: close
-    via: 1.0 alproxy
-    date: Sun, 10 Mar 2024 02:12:12 GMT
-    &lt;html&gt;&lt;body&gt;&lt;h1&gt;Site not found&lt;/h1&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Request ID: bd3ea863-410c2f5d&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</pre>
-</td></tr>
+<tr><td colspan="7"><a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version=cpe:/a:igor_sysoev:nginx">cpe:/a:igor_sysoev:nginx</a></td></tr>
 <tr class="success">
 <td title="Port">443</td>
 <td title="Protocol">tcp</td>
 <td title="State / Reason">open<br>syn-ack</td>
-<td title="Service">https</td>
-<td title="Product">Apache</td>
+<td title="Service">http</td>
+<td title="Product">nginx</td>
 <td title="Version"></td>
-<td title="Extra Info"></td>
+<td title="Extra Info">reverse proxy</td>
 </tr>
-<tr><td colspan="7">
-<a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version="></a><h5>http-server-header</h5>
-<pre style="white-space:pre-wrap; word-wrap:break-word;">Apache</pre>
-<h5>fingerprint-strings</h5>
-<pre style="white-space:pre-wrap; word-wrap:break-word;">
-  DNSStatusRequestTCP, DNSVersionBindReqTCP, Help, RPCCheck, RTSPRequest, SSLSessionReq, tor-versions: 
-    HTTP/1.1 400 Bad Request
-    Connection: close
-    Content-Length: 11
-    content-type: text/plain; charset=utf-8
-    Request
-  FourOhFourRequest: 
-    HTTP/1.1 404 Not Found
-    Connection: close
-    via: 1.0 alproxy
-    date: Sun, 10 Mar 2024 02:12:19 GMT
-    &lt;html&gt;&lt;body&gt;&lt;h1&gt;Site not found&lt;/h1&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Request ID: 75d16652-7bcc4d2b&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-  GetRequest: 
-    HTTP/1.1 404 Not Found
-    Connection: close
-    via: 1.0 alproxy
-    date: Sun, 10 Mar 2024 02:12:18 GMT
-    &lt;html&gt;&lt;body&gt;&lt;h1&gt;Site not found&lt;/h1&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Request ID: f8065aeb-5202bb66&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
-  HTTPOptions: 
-    HTTP/1.1 404 Not Found
-    Connection: close
-    via: 1.0 alproxy
-    date: Sun, 10 Mar 2024 02:12:19 GMT
-    &lt;html&gt;&lt;body&gt;&lt;h1&gt;Site not found&lt;/h1&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Request ID: 7f143af6-9f0f5bfa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</pre>
-</td></tr>
+<tr><td colspan="7"><a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version=cpe:/a:igor_sysoev:nginx">cpe:/a:igor_sysoev:nginx</a></td></tr>
 </tbody>
 </table></div>
 </div>
@@ -206,24 +158,34 @@
 </tr></thead>
 <tbody>
 <tr>
-<td>185.31.40.11 - contrat.apprentissage.beta.gouv.fr</td>
+<td>51.77.159.162 - contrat.apprentissage.beta.gouv.fr</td>
+<td>22</td>
+<td>tcp</td>
+<td>ssh</td>
+<td>OpenSSH</td>
+<td>8.9p1 Ubuntu 3ubuntu0.6</td>
+<td>cpe:/a:openbsd:openssh:8.9p1</td>
+<td>Ubuntu Linux; protocol 2.0</td>
+</tr>
+<tr>
+<td>51.77.159.162 - contrat.apprentissage.beta.gouv.fr</td>
 <td>80</td>
 <td>tcp</td>
 <td>http</td>
-<td>Apache</td>
+<td>nginx</td>
 <td></td>
-<td></td>
-<td></td>
+<td>cpe:/a:igor_sysoev:nginx</td>
+<td>reverse proxy</td>
 </tr>
 <tr>
-<td>185.31.40.11 - contrat.apprentissage.beta.gouv.fr</td>
+<td>51.77.159.162 - contrat.apprentissage.beta.gouv.fr</td>
 <td>443</td>
 <td>tcp</td>
-<td>https</td>
-<td>Apache</td>
+<td>http</td>
+<td>nginx</td>
 <td></td>
-<td></td>
-<td></td>
+<td>cpe:/a:igor_sysoev:nginx</td>
+<td>reverse proxy</td>
 </tr>
 </tbody>
 </table></div>

@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 17 Mar 2024 02:07:53",
+	"@generated": "Sun, 24 Mar 2024 02:16:05",
 	"site":[ 
 		{
 			"@name": "https://contrat.apprentissage.beta.gouv.fr",
@@ -28,7 +28,7 @@
 							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nstyle-src, font-src, form-action\n\nThe directive(s): form-action are among the directives that do not fallback to default-src, missing/excluding them is the same as allowing anything."
 						},
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/mentions-legales",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/cerfa",
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
@@ -42,7 +42,7 @@
 					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10055",
@@ -63,7 +63,7 @@
 							"otherinfo": "script-src includes unsafe-inline."
 						},
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/mentions-legales",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/cerfa",
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
@@ -77,7 +77,7 @@
 					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10055",
@@ -98,7 +98,7 @@
 							"otherinfo": "style-src includes unsafe-inline."
 						},
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/mentions-legales",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/cerfa",
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
@@ -112,34 +112,7 @@
 					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1"
-				},
-				{
-					"pluginid": "10098",
-					"alertRef": "10098",
-					"alert": "Cross-Domain Misconfiguration",
-					"name": "Cross-Domain Misconfiguration",
-					"riskcode": "2",
-					"confidence": "2",
-					"riskdesc": "Medium (Medium)",
-					"desc": "<p>Web browser data loading may be possible, due to a Cross Origin Resource Sharing (CORS) misconfiguration on the web server</p>",
-					"instances":[ 
-						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/js/script.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "access-control-allow-origin: *",
-							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
-						}
-					],
-					"count": "1",
-					"solution": "<p>Ensure that sensitive data is not available in an unauthenticated manner (using IP address white-listing, for instance).</p><p>Configure the \"Access-Control-Allow-Origin\" HTTP header to a more restrictive set of domains, or remove all CORS headers entirely, to allow the web browser to enforce the Same Origin Policy (SOP) in a more restrictive manner.</p>",
-					"otherinfo": "<p>The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing.</p>",
-					"reference": "<p>https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.html5_overly_permissive_cors_policy</p>",
-					"cweid": "264",
-					"wascid": "14",
-					"sourceid": "76"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10055",
@@ -160,7 +133,7 @@
 							"otherinfo": "Warnings:\nDuplicate scheme https:\n"
 						},
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/mentions-legales",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/cerfa",
 							"method": "GET",
 							"param": "Content-Security-Policy",
 							"attack": "",
@@ -174,7 +147,7 @@
 					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10110",
@@ -187,7 +160,7 @@
 					"desc": "<p>A dangerous JS function seems to be in use that would leave the site vulnerable.</p>",
 					"instances":[ 
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/3399-70147ddc3f931a8b.js",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/3399-1e6ccd8fb8202592.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -201,7 +174,7 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "45"
+					"sourceid": "86"
 				},
 				{
 					"pluginid": "10063",
@@ -222,7 +195,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/1363-15e9e5d9fba2c428.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -230,7 +203,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/main-app-ed9207fd97c5d60e.js",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/4109-a166443729b4abb4.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -238,7 +211,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/webpack-bcb9df214d621c64.js",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/4770-b0c2c83aa83edd80.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -246,7 +219,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/accessibilite",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/624-beb147849fa43bc1.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -254,7 +227,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/auth/connexion",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/6871-d4f513dd94f5f571.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -262,7 +235,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/auth/mot-de-passe-oublie",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/app/(marketing)/layout-9b068b03a3629417.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -270,7 +243,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/cgu",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/main-app-994ba1eee0effd79.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -278,7 +251,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/donnees-personnelles",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/webpack-7b7246a603beecfa.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -286,7 +259,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/mentions-legales",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/cerfa",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -321,7 +294,7 @@
 					"desc": "<p>A timestamp was disclosed by the application/web server - Unix</p>",
 					"instances":[ 
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/3399-70147ddc3f931a8b.js",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/3399-1e6ccd8fb8202592.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -329,7 +302,7 @@
 							"otherinfo": "1540483477, which evaluates to: 2018-10-25 16:04:37"
 						},
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/3493-c82027d226011881.js",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/4770-b0c2c83aa83edd80.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -343,7 +316,7 @@
 					"reference": "<p>https://cwe.mitre.org/data/definitions/200.html</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "45"
+					"sourceid": "86"
 				},
 				{
 					"pluginid": "10094",
@@ -356,7 +329,7 @@
 					"desc": "<p>Base64 encoded data was disclosed by the application/web server. Note: in the interests of performance not all base64 strings in the response were analyzed individually, the entire response should be looked at by the analyst/security team/developer(s).</p>",
 					"instances":[ 
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/app/layout-8091e1377d2014a0.js",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/app/(marketing)/layout-9b068b03a3629417.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -364,12 +337,12 @@
 							"otherinfo": "\uFFFDPNG\r\n\\x001a\n\\x0000\\x0000\\x0000\rIHDR\\x0000\\x0000\\x0000\\x0008\\x0000\\x0000\\x0000\\x0008\\x0008\\x0002\\x0000\\x0000\\x0000Km)\uFFFD\\x0000\\x0000\\x0000\uFFFDIDATx\uFFFDc\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\u0430\uFFFD\uFFFD\uFFFD_\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\u032C\\x0007\\x000c 0\uFFFD\uFFFDw\u07A7O\u07C0\uFFFD\uFFFD\uFFFD\\x0001\uFFFD\uFFFDv\uFFFD\uFFFD\\x0000\\x0002\uFFFD%%k@\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\u03DCy\\x0008\\x0014.+[\uFFFD\u05B6\uFFFD\u00C7\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDg\uFFFDa\\x000cg\uFFFD\uFFFD\u06F6\uFFFD\u008F\\x001f\uFFFD!\\x0012\uFFFD\uFFFD\uFFFD\u01CF\uFFFD\\x0016V\\x000c\uFFFD\uFFFD;7n<w\uFFFD\uFFFD\uFFFD@\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD{^O\uFFFD\\x000e2*\"b\uFFFD\\x0005\uFFFD_\uFFFD\uFFFD\\x0008\uFFFD\uFFFD\u01CFg)\uFFFD\uFFFD\\x0018\\x0018\\x001e\uFFFD\uFFFD0\u0738\uFFFD\uFFFD?\\x0018\uFFFD\uFFFD\uFFFD\\x000f\uFFFD\uFFFDt\uFFFD\uFFFDC\\x0006\\x0006\\x0000\uFFFD\\x0016\uFFFD-o\uFFFD\uFFFD0\\x0000\\x0000\\x0000\\x0000IEND\uFFFDB`\uFFFD"
 						},
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/app/template-6aa5350d7025fe66.js",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/app/(marketing)/page-106352d613268556.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "so/mission-apprentissage/Documentation-dbb1eddc954441eaa0ba7f5c6404bdc0",
-							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\"\uFFFD\uFFFD\uFFFD\uFFFD\u079E\u062C\uFFFD\uFFFD\\x001e\uFFFD:\\x001c\uFFFDg\uFFFD\uFFFD\uFFFDb\uFFFD\uFFFDm\uFFFD^u\uFFFD=\uFFFD8\uFFFD\uFFFD\u0476\uFFFD\uFFFD:\uFFFDN\\x001bu\uFFFD"
+							"evidence": "iVBORw0KGgoAAAANSUhEUgAAAAgAAAADCAYAAACuyE5IAAAAUUlEQVR42jWLOw7AIAxDuf/5WNs1A6gqiETkpzQMHSw/6dllLbrcnZh59N5n9lTVISJkZndBpNfdQkUDcUeOI8XJ4VEAnprQ8gV7M6T408ysfualXICu4h1/AAAAAElFTkSuQmCC",
+							"otherinfo": "\uFFFDPNG\r\n\\x001a\n\\x0000\\x0000\\x0000\rIHDR\\x0000\\x0000\\x0000\\x0008\\x0000\\x0000\\x0000\\x0003\\x0008\\x0006\\x0000\\x0000\\x0000\uFFFD\uFFFDNH\\x0000\\x0000\\x0000QIDATx\uFFFD5\uFFFD;\\x000e\uFFFD \\x000cC\uFFFD\uFFFD\uFFFDX\uFFFD5\\x0003\uFFFD*\uFFFDD\uFFFD4\\x000c\\x001d,?\uFFFD\uFFFDe-\uFFFD\u071D\uFFFDy\uFFFD\uFFFDg\uFFFDT\uFFFD!\"dfwA\uFFFD\uFFFD\uFFFDBE\\x0003qG\uFFFD#\uFFFD\uFFFD\uFFFDQ\\x0000\uFFFD\uFFFD\uFFFD\uFFFD\\x0005{3\uFFFD\uFFFD\uFFFD\u032C~\uFFFD\\\uFFFD\uFFFD\uFFFD\\x001d\\x0000\\x0000\\x0000\\x0000IEND\uFFFDB`\uFFFD"
 						},
 						{
 							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/css/35f13a3f8431b680.css",
@@ -380,37 +353,21 @@
 							"otherinfo": "\uFFFDPNG\r\n\\x001a\n\\x0000\\x0000\\x0000\rIHDR\\x0000\\x0000\\x0000\\x0001\\x0000\\x0000\\x0000\uFFFD\\x0008\\x0006\\x0000\\x0000\\x0000\\x0013\uFFFD\uFFFD\\x0000\\x0000\\x0000vIDAT(\u03CD\uFFFDA\\x000e\uFFFD \\x0008\\x0004\\x0017\uFFFD\uFFFD\\x000f\uFFFD\\x001b\uFFFD\uFFFDV\\x0002Y\uFFFD\uFFFD&\uFFFD\\x0003\uFFFD\uFFFD\\x0000\\x001e\\x0005\uFFFD\\x0014\uFFFD\uFFFD\uFFFDc\uFFFD]D8\uFFFD\uFFFDn\uFFFD+\\x0006\uBB1A\uFFFDxe\uFFFD\uFFFD}\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x0011\uFFFD\"\"\\x0013hE\nk\uFFFD\t\uFFFDF\uFFFDE&\uFFFD`\\x0012R\t\uFFFD\uFFFD\\x0012\uFFFDPc\uFFFD.\u0168p\\Z\uFFFDfe\uFFFD\u06B8x%\uFFFD;\uFFFD\uFFFDK\uFFFD\uFFFD\\x001f6>j\uFFFDU7\\x0003\uFFFD\uFFFDo\\x0000\\x0000\\x0000\\x0000IEND\uFFFDB`\uFFFD"
 						},
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/css/8b4c1851be0195b6.css",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/css/40553b2c8585673d.css",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "2H9v2H7V5H4v4h16V5h-3v2h-2V5zm5",
 							"otherinfo": "\uFFFDo\uFFFD~\uFFFD\uFFFD~/\uFFFD\\x001dzW\uFFFD~\uFFFD\uFFFD\uFFFD\uFFFDey\uFFFDn"
-						},
-						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/modifier-mot-de-passe",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "fr-header-quick-access-item--Seconnecter-0",
-							"otherinfo": "~\uFFFD\uFFFDy\uFFFD^\uFFFD\uAB89\uFFFD>i\uFFFD\\x001e\uFFFD\u03E2\uFFFD\uFFFD\uFFFD'\uFFFD\uFFFDy\uFFFDr\u05EB\uFFFD"
-						},
-						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/robots.txt",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "fr-header-quick-access-item--Seconnecter-0",
-							"otherinfo": "~\uFFFD\uFFFDy\uFFFD^\uFFFD\uAB89\uFFFD>i\uFFFD\\x001e\uFFFD\u03E2\uFFFD\uFFFD\uFFFD'\uFFFD\uFFFDy\uFFFDr\u05EB\uFFFD"
 						}
 					],
-					"count": "6",
+					"count": "4",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
 					"otherinfo": "<p>\uFFFDPNG</p><p>\\x001a</p><p>\\x0000\\x0000\\x0000\rIHDR\\x0000\\x0000\\x0000\\x0008\\x0000\\x0000\\x0000\\x0008\\x0008\\x0002\\x0000\\x0000\\x0000Km)\uFFFD\\x0000\\x0000\\x0000\uFFFDIDATx\uFFFDc\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\u0430\uFFFD\uFFFD\uFFFD_\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\u032C\\x0007\\x000c 0\uFFFD\uFFFDw\u07A7O\u07C0\uFFFD\uFFFD\uFFFD\\x0001\uFFFD\uFFFDv\uFFFD\uFFFD\\x0000\\x0002\uFFFD%%k@\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\u03DCy\\x0008\\x0014.+[\uFFFD\u05B6\uFFFD\u00C7\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDg\uFFFDa\\x000cg\uFFFD\uFFFD\u06F6\uFFFD\u008F\\x001f\uFFFD!\\x0012\uFFFD\uFFFD\uFFFD\u01CF\uFFFD\\x0016V\\x000c\uFFFD\uFFFD;7n<w\uFFFD\uFFFD\uFFFD@\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD{^O\uFFFD\\x000e2*\"b\uFFFD\\x0005\uFFFD_\uFFFD\uFFFD\\x0008\uFFFD\uFFFD\u01CFg)\uFFFD\uFFFD\\x0018\\x0018\\x001e\uFFFD\uFFFD0\u0738\uFFFD\uFFFD?\\x0018\uFFFD\uFFFD\uFFFD\\x000f\uFFFD\uFFFDt\uFFFD\uFFFDC\\x0006\\x0006\\x0000\uFFFD\\x0016\uFFFD-o\uFFFD\uFFFD0\\x0000\\x0000\\x0000\\x0000IEND\uFFFDB`\uFFFD</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "84"
+					"sourceid": "77"
 				},
 				{
 					"pluginid": "10027",
@@ -423,15 +380,7 @@
 					"desc": "<p>The response appears to contain suspicious comments which may help an attacker. Note: Matches made within script blocks or files are against the entire content not only comments.</p>",
 					"instances":[ 
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/2052-f9346e641e036593.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "admin",
-							"otherinfo": "The following pattern was used: \\bADMIN\\b and was detected in the element starting with: \"\"use strict\";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[2052],{12690:function(C,e,l){l.d(e,{Z:function(){return Z}\", see evidence field for the suspicious comment/snippet."
-						},
-						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/3399-70147ddc3f931a8b.js",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/3399-1e6ccd8fb8202592.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -439,7 +388,7 @@
 							"otherinfo": "The following pattern was used: \\bBUG\\b and was detected in the element starting with: \" */var n=r(40457),a=r(58078),i={stream:!0},o=new Map;function x(e){var t=r(e);return\"function\"!=typeof t.then||\"fulfilled\"===t.s\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/3399-70147ddc3f931a8b.js",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/3399-1e6ccd8fb8202592.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -447,7 +396,7 @@
 							"otherinfo": "The following pattern was used: \\bDB\\b and was detected in the element starting with: \"Reason: ${e}`)})}_process(e){this._numProcessing++,e.then(e=>(this._numProcessing--,e),e=>(this._numProcessing--,e))}_sendEnvelo\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/3399-70147ddc3f931a8b.js",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/3399-1e6ccd8fb8202592.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -455,7 +404,7 @@
 							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[3399],{98525:function(e,t,r){\"use strict\";r.d(t,{J:function(){return n}\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/3399-70147ddc3f931a8b.js",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/3399-1e6ccd8fb8202592.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -463,7 +412,7 @@
 							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected 2 times, the first in the element starting with: \"Error:`,t)}}function instrumentCls(){onCLS(e=>{triggerHandlers(\"cls\",{metric:e}),a=e})}function instrumentFid(){onFID(e=>{trigge\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/3399-70147ddc3f931a8b.js",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/3399-1e6ccd8fb8202592.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -471,15 +420,23 @@
 							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected 2 times, the first in the element starting with: \"`):console.warn(\"Tracing extension 'startTransaction' is missing. You should 'init' the SDK before calling 'startTransaction'\")}\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/3493-c82027d226011881.js",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/3979-2a8958308b1cf2d1.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "from",
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[3979],{7581:function(e,t,r){\"use strict\";r.d(t,{qX:function(){return c}\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/4770-b0c2c83aa83edd80.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "select",
-							"otherinfo": "The following pattern was used: \\bSELECT\\b and was detected in the element starting with: \"\"use strict\";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[3493],{70668:function(e,t,n){n.d(t,{Z:function(){return cr\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bSELECT\\b and was detected in the element starting with: \"\"use strict\";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[4770],{70668:function(e,t,n){n.d(t,{Z:function(){return cr\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/618f8807-7f00d94c1379564a.js",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/618f8807-bab9c62f5c759a07.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -487,28 +444,12 @@
 							"otherinfo": "The following pattern was used: \\bDB\\b and was detected in the element starting with: \" */var i,o=a(58078),s=a(93323),y={usingClientEntryPoint:!1,Events:null,Dispatcher:{current:null}};function t(n){for(var l=\"https\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/6728-3a8e6a0c75d6deac.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "Query",
-							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[6728],{75626:function(e,t,i){\"use strict\";i.d(t,{aG:function(){return h\", see evidence field for the suspicious comment/snippet."
-						},
-						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/app/layout-8091e1377d2014a0.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "user",
-							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[3185],{2776:function(e,t,r){\"use strict\";r.r(t),r.d(t,{DsfrProvider:fun\", see evidence field for the suspicious comment/snippet."
-						},
-						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/app/template-6aa5350d7025fe66.js",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/app/(marketing)/page-106352d613268556.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "admin",
-							"otherinfo": "The following pattern was used: \\bADMIN\\b and was detected in the element starting with: \"(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[5489],{16358:function(e,t,n){Promise.resolve().then(n.bind(n,71510))},3\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bADMIN\\b and was detected in the element starting with: \"(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[405],{18473:function(e,t,i){\"use strict\";i.d(t,{z:function(){return d}}\", see evidence field for the suspicious comment/snippet."
 						},
 						{
 							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js",
@@ -519,13 +460,13 @@
 							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"!function(){var t=\"undefined\"!=typeof globalThis?globalThis:\"undefined\"!=typeof window?window:\"undefined\"!=typeof global?global:\", see evidence field for the suspicious comment/snippet."
 						}
 					],
-					"count": "12",
+					"count": "10",
 					"solution": "<p>Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</p>",
-					"otherinfo": "<p>The following pattern was used: \\bADMIN\\b and was detected in the element starting with: \"\"use strict\";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[2052],{12690:function(C,e,l){l.d(e,{Z:function(){return Z}\", see evidence field for the suspicious comment/snippet.</p>",
+					"otherinfo": "<p>The following pattern was used: \\bBUG\\b and was detected in the element starting with: \" */var n=r(40457),a=r(58078),i={stream:!0},o=new Map;function x(e){var t=r(e);return\"function\"!=typeof t.then||\"fulfilled\"===t.s\", see evidence field for the suspicious comment/snippet.</p>",
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "91"
+					"sourceid": "86"
 				},
 				{
 					"pluginid": "10109",
@@ -538,35 +479,59 @@
 					"desc": "<p>The application appears to be a modern web application. If you need to explore it automatically then the Ajax Spider may well be more effective than the standard one.</p>",
 					"instances":[ 
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/%2F_next%2Fstatic%2Fmedia%2Fform.92c7ce1f.png&w=640&q=75",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script src=\"/_next/static/chunks/618f8807-7f00d94c1379564a.js\" async=\"\" crossorigin=\"\"></script>",
+							"evidence": "<script src=\"/_next/static/chunks/618f8807-bab9c62f5c759a07.js\" async=\"\"></script>",
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/%2F_next%2Fstatic%2Fmedia%2Fform.92c7ce1f.png&w=828&q=75",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script src=\"/_next/static/chunks/618f8807-7f00d94c1379564a.js\" async=\"\" crossorigin=\"\"></script>",
+							"evidence": "<script src=\"/_next/static/chunks/618f8807-bab9c62f5c759a07.js\" async=\"\"></script>",
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/accessibilite",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/%2F_next%2Fstatic%2Fmedia%2Fmoney.5b3b2e0e.png&w=256&q=75",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script src=\"/_next/static/chunks/618f8807-7f00d94c1379564a.js\" async=\"\" crossorigin=\"\"></script>",
+							"evidence": "<script src=\"/_next/static/chunks/618f8807-bab9c62f5c759a07.js\" async=\"\"></script>",
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/auth/connexion",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/%2F_next%2Fstatic%2Fmedia%2Fmoney.5b3b2e0e.png&w=96&q=75",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script src=\"/_next/static/chunks/618f8807-7f00d94c1379564a.js\" async=\"\" crossorigin=\"\"></script>",
+							"evidence": "<script src=\"/_next/static/chunks/618f8807-bab9c62f5c759a07.js\" async=\"\"></script>",
+							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
+						},
+						{
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/%2F_next%2Fstatic%2Fmedia%2Fnotebook.78a9d328.png&w=256&q=75",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<script src=\"/_next/static/chunks/618f8807-bab9c62f5c759a07.js\" async=\"\"></script>",
+							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
+						},
+						{
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/%2F_next%2Fstatic%2Fmedia%2Fnotebook.78a9d328.png&w=96&q=75",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<script src=\"/_next/static/chunks/618f8807-bab9c62f5c759a07.js\" async=\"\"></script>",
+							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
+						},
+						{
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/%2F_next%2Fstatic%2Fmedia%2Fstorage.164c2041.png&w=96&q=75",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<script src=\"/_next/static/chunks/618f8807-bab9c62f5c759a07.js\" async=\"\"></script>",
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
@@ -574,7 +539,15 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script src=\"/_next/static/chunks/618f8807-7f00d94c1379564a.js\" async=\"\" crossorigin=\"\"></script>",
+							"evidence": "<script src=\"/_next/static/chunks/618f8807-bab9c62f5c759a07.js\" async=\"\" crossorigin=\"\"></script>",
+							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
+						},
+						{
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/cerfa",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<script src=\"/_next/static/chunks/618f8807-bab9c62f5c759a07.js\" async=\"\" crossorigin=\"\"></script>",
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
@@ -582,15 +555,7 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script src=\"/_next/static/chunks/618f8807-7f00d94c1379564a.js\" async=\"\" crossorigin=\"\"></script>",
-							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
-						},
-						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/donnees-personnelles",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<script src=\"/_next/static/chunks/618f8807-7f00d94c1379564a.js\" async=\"\" crossorigin=\"\"></script>",
+							"evidence": "<script src=\"/_next/static/chunks/618f8807-bab9c62f5c759a07.js\" async=\"\" crossorigin=\"\"></script>",
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
@@ -598,25 +563,52 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script src=\"/_next/static/chunks/618f8807-7f00d94c1379564a.js\" async=\"\" crossorigin=\"\"></script>",
+							"evidence": "<script src=\"/_next/static/chunks/618f8807-bab9c62f5c759a07.js\" async=\"\" crossorigin=\"\"></script>",
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/politique-confidentialite",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script src=\"/_next/static/chunks/618f8807-7f00d94c1379564a.js\" async=\"\" crossorigin=\"\"></script>",
+							"evidence": "<script src=\"/_next/static/chunks/618f8807-bab9c62f5c759a07.js\" async=\"\"></script>",
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						}
 					],
-					"count": "9",
+					"count": "12",
 					"solution": "<p>This is an informational alert and so no changes are required.</p>",
 					"otherinfo": "<p>No links have been found while there are scripts, which is an indication that this is a modern web application.</p>",
 					"reference": "",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "6"
+					"sourceid": "99"
+				},
+				{
+					"pluginid": "10049",
+					"alertRef": "10049",
+					"alert": "Non-Storable Content",
+					"name": "Non-Storable Content",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
+					"desc": "<p>The response contents are not storable by caching components such as proxy servers. If the response does not contain sensitive, personal or user-specific information, it may benefit from being stored and cached, to improve performance.</p>",
+					"instances":[ 
+						{
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/robots.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "no-store",
+							"otherinfo": ""
+						}
+					],
+					"count": "1",
+					"solution": "<p>The content may be marked as storable by ensuring that the following conditions are satisfied:</p><p>The request method must be understood by the cache and defined as being cacheable (\"GET\", \"HEAD\", and \"POST\" are currently defined as cacheable)</p><p>The response status code must be understood by the cache (one of the 1XX, 2XX, 3XX, 4XX, or 5XX response classes are generally understood)</p><p>The \"no-store\" cache directive must not appear in the request or response header fields</p><p>For caching by \"shared\" caches such as \"proxy\" caches, the \"private\" response directive must not appear in the response</p><p>For caching by \"shared\" caches such as \"proxy\" caches, the \"Authorization\" header field must not appear in the request, unless the response explicitly allows it (using one of the \"must-revalidate\", \"public\", or \"s-maxage\" Cache-Control response directives)</p><p>In addition to the conditions above, at least one of the following conditions must also be satisfied by the response:</p><p>It must contain an \"Expires\" header field</p><p>It must contain a \"max-age\" response directive</p><p>For \"shared\" caches such as \"proxy\" caches, it must contain a \"s-maxage\" response directive</p><p>It must contain a \"Cache Control Extension\" that allows it to be cached</p><p>It must have a status code that is defined as cacheable by default (200, 203, 204, 206, 300, 301, 404, 405, 410, 414, 501).   </p>",
+					"otherinfo": "",
+					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
+					"cweid": "524",
+					"wascid": "13",
+					"sourceid": "51"
 				},
 				{
 					"pluginid": "10015",
@@ -633,15 +625,7 @@
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
-							"evidence": "s-maxage=3600, stale-while-revalidate",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/",
-							"method": "GET",
-							"param": "cache-control",
-							"attack": "",
-							"evidence": "s-maxage=3600, stale-while-revalidate",
+							"evidence": "s-maxage=31536000, stale-while-revalidate",
 							"otherinfo": ""
 						},
 						{
@@ -662,6 +646,14 @@
 						},
 						{
 							"uri": "https://contrat.apprentissage.beta.gouv.fr/auth/mot-de-passe-oublie",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "s-maxage=31536000, stale-while-revalidate",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/cerfa",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -728,7 +720,7 @@
 					"desc": "<p>Specifies how and where the data would be used. For instance, if the value is audio, then the requested resource must be audio data and not any other type of resource.</p>",
 					"instances":[ 
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/main-app-ed9207fd97c5d60e.js",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/cerfa",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -736,15 +728,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/webpack-bcb9df214d621c64.js",
-							"method": "GET",
-							"param": "Sec-Fetch-Dest",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/apple-touch-icon.png",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -760,13 +744,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "4",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-Dest header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "19"
+					"sourceid": "49"
 				},
 				{
 					"pluginid": "90005",
@@ -779,7 +763,7 @@
 					"desc": "<p>Allows to differentiate between requests for navigating between HTML pages and requests for loading resources like images, audio etc.</p>",
 					"instances":[ 
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/main-app-ed9207fd97c5d60e.js",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/cerfa",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -787,15 +771,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/webpack-bcb9df214d621c64.js",
-							"method": "GET",
-							"param": "Sec-Fetch-Mode",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/apple-touch-icon.png",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -811,13 +787,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "4",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-Mode header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "19"
+					"sourceid": "49"
 				},
 				{
 					"pluginid": "90005",
@@ -830,7 +806,7 @@
 					"desc": "<p>Specifies the relationship between request initiator's origin and target's origin.</p>",
 					"instances":[ 
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/main-app-ed9207fd97c5d60e.js",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/cerfa",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -838,15 +814,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/webpack-bcb9df214d621c64.js",
-							"method": "GET",
-							"param": "Sec-Fetch-Site",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/apple-touch-icon.png",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -862,13 +830,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "4",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-Site header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "19"
+					"sourceid": "49"
 				},
 				{
 					"pluginid": "90005",
@@ -881,7 +849,7 @@
 					"desc": "<p>Specifies if a navigation request was initiated by a user.</p>",
 					"instances":[ 
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/main-app-ed9207fd97c5d60e.js",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/cerfa",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -889,15 +857,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/webpack-bcb9df214d621c64.js",
-							"method": "GET",
-							"param": "Sec-Fetch-User",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/apple-touch-icon.png",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -913,13 +873,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "4",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-User header is included in user initiated requests.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "19"
+					"sourceid": "49"
 				},
 				{
 					"pluginid": "10049",
@@ -936,19 +896,11 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "s-maxage=3600",
+							"evidence": "s-maxage=31536000",
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "s-maxage=3600",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/main-app-ed9207fd97c5d60e.js",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/webpack-7b7246a603beecfa.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -956,7 +908,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/chunks/webpack-bcb9df214d621c64.js",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/media/apple-touch-icon.1db30588.png",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -964,23 +916,39 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/accessibilite",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/media/favicon.8c087985.ico",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "s-maxage=31536000",
+							"evidence": "max-age=31536000",
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/donnees-personnelles",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/media/favicon.f453a8cf.svg",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "s-maxage=31536000",
+							"evidence": "max-age=31536000",
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/mentions-legales",
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/media/Marianne-Medium.452138fa.woff2",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=31536000",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/_next/static/media/Marianne-Regular.119b3a3e.woff2",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=31536000",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://contrat.apprentissage.beta.gouv.fr/cerfa",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -988,13 +956,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "7",
+					"count": "8",
 					"solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information.  If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request. </p>",
 					"otherinfo": "",
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10049",
@@ -1015,22 +983,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/favicon.ico",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "max-age=0",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://contrat.apprentissage.beta.gouv.fr/favicon.svg",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "max-age=0",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://contrat.apprentissage.beta.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "",
@@ -1039,13 +991,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "4",
+					"count": "2",
 					"solution": "",
 					"otherinfo": "",
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "21"
+					"sourceid": "66"
 				}
 			]
 		}

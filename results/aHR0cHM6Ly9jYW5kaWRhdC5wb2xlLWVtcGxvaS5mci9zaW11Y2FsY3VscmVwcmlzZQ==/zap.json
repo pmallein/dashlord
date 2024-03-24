@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 17 Mar 2024 09:36:19",
+	"@generated": "Sun, 24 Mar 2024 09:32:40",
 	"site":[ 
 		{
 			"@name": "https://candidat.pole-emploi.fr",
@@ -399,7 +399,7 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "The origin domain used for comparison was: \ncandidat.pole-emploi.fr\nTS01e2de59=0150c672c38e47eb6d537979842d89accb1e211142d559c907898aca4e396a79307f829ff99d2ef3c22a2c627b977b3f140980df64\n"
+							"otherinfo": "The origin domain used for comparison was: \ncandidat.pole-emploi.fr\nTS01e2de59=0150c672c3f43e095771ed499012a177a67318c448bd63cc625ee6a96578be175506387ba1091771155166d72fc6c3312a3609e95e\n"
 						},
 						{
 							"uri": "https://candidat.pole-emploi.fr/simucalculreprise",
@@ -407,12 +407,12 @@
 							"param": "",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "The origin domain used for comparison was: \ncandidat.pole-emploi.fr\nTS012a9142=0150c672c3b3dfcb8aa33b76c32912da1f06805aeb4d25cb422e15c35670705e9d93870fa72590624638197fd5c85ac7f5865c32ff\n"
+							"otherinfo": "The origin domain used for comparison was: \ncandidat.pole-emploi.fr\nTS012a9142=0150c672c318bd130539991aae9086d1531655d9d0659fbf291c748f3fdd665ba02397d18f2581e24fc24837e8b395cb0d49740fb5\n"
 						}
 					],
 					"count": "2",
 					"solution": "<p>Always scope cookies to a FQDN (Fully Qualified Domain Name).</p>",
-					"otherinfo": "<p>The origin domain used for comparison was: </p><p>candidat.pole-emploi.fr</p><p>TS01e2de59=0150c672c38e47eb6d537979842d89accb1e211142d559c907898aca4e396a79307f829ff99d2ef3c22a2c627b977b3f140980df64</p><p></p>",
+					"otherinfo": "<p>The origin domain used for comparison was: </p><p>candidat.pole-emploi.fr</p><p>TS01e2de59=0150c672c3f43e095771ed499012a177a67318c448bd63cc625ee6a96578be175506387ba1091771155166d72fc6c3312a3609e95e</p><p></p>",
 					"reference": "<p>https://tools.ietf.org/html/rfc6265#section-4.1</p><p>https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes.html</p><p>https://code.google.com/p/browsersec/wiki/Part2#Same-origin_policy_for_cookies</p>",
 					"cweid": "565",
 					"wascid": "15",
@@ -540,17 +540,9 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/sitemap.xml",
-							"method": "GET",
-							"param": "Sec-Fetch-Dest",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
 						}
 					],
-					"count": "4",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-Dest header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
@@ -591,17 +583,9 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/sitemap.xml",
-							"method": "GET",
-							"param": "Sec-Fetch-Mode",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
 						}
 					],
-					"count": "4",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-Mode header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
@@ -642,17 +626,9 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/sitemap.xml",
-							"method": "GET",
-							"param": "Sec-Fetch-Site",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
 						}
 					],
-					"count": "4",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-Site header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
@@ -693,17 +669,9 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
-						},
-						{
-							"uri": "https://candidat.pole-emploi.fr/sitemap.xml",
-							"method": "GET",
-							"param": "Sec-Fetch-User",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
 						}
 					],
-					"count": "4",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-User header is included in user initiated requests.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
@@ -728,9 +696,17 @@
 							"attack": "",
 							"evidence": "1720912650.20480.0000",
 							"otherinfo": "\ncookie:BIGipServerPOOL_TAS_SDDC_HTTP\ncookie:TS01e2de59"
+						},
+						{
+							"uri": "https://candidat.pole-emploi.fr/simucalculreprise",
+							"method": "GET",
+							"param": "BIGipServerPOOL_TAS_SDDC_HTTP",
+							"attack": "",
+							"evidence": "1687358218.20480.0000",
+							"otherinfo": "\ncookie:BIGipServerPOOL_TAS_SDDC_HTTP\ncookie:TS012a9142"
 						}
 					],
-					"count": "1",
+					"count": "2",
 					"solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
 					"otherinfo": "<p></p><p>cookie:BIGipServerPOOL_TAS_SDDC_HTTP</p><p>cookie:TS01e2de59</p>",
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id</p>",

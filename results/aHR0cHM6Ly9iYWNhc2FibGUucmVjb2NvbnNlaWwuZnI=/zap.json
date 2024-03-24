@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 17 Mar 2024 12:31:43",
+	"@generated": "Sun, 24 Mar 2024 12:24:08",
 	"site":[ 
 		{
 			"@name": "https://bacasable.recoconseil.fr",
@@ -66,7 +66,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "57"
+					"sourceid": "65"
 				},
 				{
 					"pluginid": "10038",
@@ -256,7 +256,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity</p>",
 					"cweid": "345",
 					"wascid": "15",
-					"sourceid": "166"
+					"sourceid": "155"
 				},
 				{
 					"pluginid": "10010",
@@ -278,6 +278,14 @@
 						},
 						{
 							"uri": "https://bacasable.recoconseil.fr/accounts/password/reset/",
+							"method": "GET",
+							"param": "csrftoken",
+							"attack": "",
+							"evidence": "set-cookie: csrftoken",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://bacasable.recoconseil.fr/accounts/signup/",
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
@@ -355,14 +363,6 @@
 							"attack": "",
 							"evidence": "set-cookie: cookie_consent",
 							"otherinfo": ""
-						},
-						{
-							"uri": "https://bacasable.recoconseil.fr/cookies/decline/tracking_media/",
-							"method": "POST",
-							"param": "cookie_consent",
-							"attack": "",
-							"evidence": "set-cookie: cookie_consent",
-							"otherinfo": ""
 						}
 					],
 					"count": "12",
@@ -371,7 +371,7 @@
 					"reference": "<p>https://owasp.org/www-community/HttpOnly</p>",
 					"cweid": "1004",
 					"wascid": "13",
-					"sourceid": "65"
+					"sourceid": "60"
 				},
 				{
 					"pluginid": "10011",
@@ -438,7 +438,7 @@
 					"reference": "<p>https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes.html</p>",
 					"cweid": "614",
 					"wascid": "13",
-					"sourceid": "140"
+					"sourceid": "163"
 				},
 				{
 					"pluginid": "10054",
@@ -515,14 +515,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://bacasable.recoconseil.fr/accounts/login/",
-							"method": "POST",
-							"param": "csrftoken",
-							"attack": "",
-							"evidence": "set-cookie: csrftoken",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://bacasable.recoconseil.fr/accounts/signup/",
 							"method": "POST",
 							"param": "csrftoken",
@@ -532,6 +524,14 @@
 						},
 						{
 							"uri": "https://bacasable.recoconseil.fr/contact/",
+							"method": "POST",
+							"param": "csrftoken",
+							"attack": "",
+							"evidence": "set-cookie: csrftoken",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://bacasable.recoconseil.fr/contact/?next=/&subject=Prise%20de%20contact",
 							"method": "POST",
 							"param": "csrftoken",
 							"attack": "",
@@ -553,7 +553,7 @@
 					"reference": "<p>https://tools.ietf.org/html/draft-ietf-httpbis-cookie-same-site</p>",
 					"cweid": "1275",
 					"wascid": "13",
-					"sourceid": "65"
+					"sourceid": "60"
 				},
 				{
 					"pluginid": "10017",
@@ -636,7 +636,7 @@
 					"reference": "",
 					"cweid": "829",
 					"wascid": "15",
-					"sourceid": "166"
+					"sourceid": "155"
 				},
 				{
 					"pluginid": "10110",
@@ -663,7 +663,7 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "111"
+					"sourceid": "118"
 				},
 				{
 					"pluginid": "10063",
@@ -740,7 +740,15 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://bacasable.recoconseil.fr/static/app-5bdaddbd.js",
+							"uri": "https://bacasable.recoconseil.fr/static/app-be0c6189.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://bacasable.recoconseil.fr/static/axios-a342f982.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -756,7 +764,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://bacasable.recoconseil.fr/static/module.esm-feb18927.js",
+							"uri": "https://bacasable.recoconseil.fr/static/module.esm-df9f47fe.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -764,13 +772,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "11",
+					"count": "12",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Permissions-Policy header.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy</p><p>https://developer.chrome.com/blog/feature-policy/</p><p>https://scotthelme.co.uk/a-new-security-header-feature-policy/</p><p>https://w3c.github.io/webappsec-feature-policy/</p><p>https://www.smashingmagazine.com/2018/12/feature-policy/</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "7"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10035",
@@ -799,7 +807,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://bacasable.recoconseil.fr/static/app-5bdaddbd.js",
+							"uri": "https://bacasable.recoconseil.fr/static/app-be0c6189.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -855,7 +863,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://bacasable.recoconseil.fr/static/main-1f699096.css",
+							"uri": "https://bacasable.recoconseil.fr/static/img/favicons/favicon-16x16.png",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -863,7 +871,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://bacasable.recoconseil.fr/static/module.esm-feb18927.js",
+							"uri": "https://bacasable.recoconseil.fr/static/img/favicons/favicon-32x32.png",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -885,7 +893,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>https://caniuse.com/stricttransportsecurity</p><p>https://datatracker.ietf.org/doc/html/rfc6797</p>",
 					"cweid": "319",
 					"wascid": "15",
-					"sourceid": "9"
+					"sourceid": "53"
 				},
 				{
 					"pluginid": "10096",
@@ -1056,7 +1064,7 @@
 					"reference": "<p>https://cwe.mitre.org/data/definitions/200.html</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "83"
+					"sourceid": "82"
 				},
 				{
 					"pluginid": "10021",
@@ -1085,7 +1093,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://bacasable.recoconseil.fr/static/app-5bdaddbd.js",
+							"uri": "https://bacasable.recoconseil.fr/static/app-be0c6189.js",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -1141,7 +1149,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://bacasable.recoconseil.fr/static/main-1f699096.css",
+							"uri": "https://bacasable.recoconseil.fr/static/img/favicons/favicon-16x16.png",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -1149,7 +1157,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://bacasable.recoconseil.fr/static/module.esm-feb18927.js",
+							"uri": "https://bacasable.recoconseil.fr/static/img/favicons/favicon-32x32.png",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -1171,7 +1179,7 @@
 					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "9"
+					"sourceid": "53"
 				},
 				{
 					"pluginid": "10111",
@@ -1197,6 +1205,14 @@
 							"param": "login",
 							"attack": "",
 							"evidence": "password",
+							"otherinfo": "userParam=login\nuserValue=foo-bar@example.com\npasswordParam=password\nreferer=https://bacasable.recoconseil.fr/accounts/login/?next=/ressource/149/bookmark/create/\ncsrfToken=csrfmiddlewaretoken"
+						},
+						{
+							"uri": "https://bacasable.recoconseil.fr/accounts/login/",
+							"method": "POST",
+							"param": "login",
+							"attack": "",
+							"evidence": "password",
 							"otherinfo": "userParam=login\nuserValue=foo-bar@example.com\npasswordParam=password\nreferer=https://bacasable.recoconseil.fr/accounts/login/?next=/ressource/151/bookmark/create/\ncsrfToken=csrfmiddlewaretoken"
 						},
 						{
@@ -1205,7 +1221,23 @@
 							"param": "login",
 							"attack": "",
 							"evidence": "password",
+							"otherinfo": "userParam=login\nuserValue=foo-bar@example.com\npasswordParam=password\nreferer=https://bacasable.recoconseil.fr/accounts/login/?next=/ressource/179/bookmark/create/\ncsrfToken=csrfmiddlewaretoken"
+						},
+						{
+							"uri": "https://bacasable.recoconseil.fr/accounts/login/",
+							"method": "POST",
+							"param": "login",
+							"attack": "",
+							"evidence": "password",
 							"otherinfo": "userParam=login\nuserValue=foo-bar@example.com\npasswordParam=password\nreferer=https://bacasable.recoconseil.fr/accounts/login/?next=/ressource/28/bookmark/create/\ncsrfToken=csrfmiddlewaretoken"
+						},
+						{
+							"uri": "https://bacasable.recoconseil.fr/accounts/login/",
+							"method": "POST",
+							"param": "login",
+							"attack": "",
+							"evidence": "password",
+							"otherinfo": "userParam=login\nuserValue=foo-bar@example.com\npasswordParam=password\nreferer=https://bacasable.recoconseil.fr/accounts/login/?next=/ressource/29/bookmark/create/\ncsrfToken=csrfmiddlewaretoken"
 						},
 						{
 							"uri": "https://bacasable.recoconseil.fr/accounts/login/",
@@ -1256,13 +1288,13 @@
 							"otherinfo": "userParam=login\nuserValue=foo-bar@example.com\npasswordParam=password\nreferer=https://bacasable.recoconseil.fr/accounts/login/?next=/ressource/64/bookmark/create/\ncsrfToken=csrfmiddlewaretoken"
 						}
 					],
-					"count": "9",
+					"count": "12",
 					"solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
 					"otherinfo": "<p>userParam=login</p><p>userValue=foo-bar@example.com</p><p>passwordParam=password</p><p>referer=https://bacasable.recoconseil.fr/accounts/login/</p><p>csrfToken=csrfmiddlewaretoken</p>",
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/auth-req-id/</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "173"
+					"sourceid": "170"
 				},
 				{
 					"pluginid": "10094",
@@ -1279,64 +1311,64 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor",
-							"otherinfo": "\uFFFD\\x0016\uFFFD\uFFFDz\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x0008d4o\uFFFD2\uFFFDF\uFFFD>:\uFFFDgTPK\uFFFD3\uFFFD\uFFFD\uFFFD\uB2CBc||ZZ\uFFFDT\uFFFDY\uFFFD\uFFFD\uFFFD\uFFFDV\uFFFD"
+							"evidence": "sha384-l+UQ7KbPIcq6l4DoWCwMvaOJ0pdJ+oTVGD6GyROFzSriOH1F1f6dl90fOgcigkMX",
+							"otherinfo": "\uFFFD\\x0016\uFFFD\uFFFD\uFFFDD;)\uFFFD\uFFFDr\uFFFD\uFFFD\uFFFD:\\x0016\\x000b\\x0003/h\uFFFDt\uFFFD\uFFFD~\uFFFD5F\\x000f\uFFFD\uFFFDD\uFFFDsJ\uFFFD\uFFFD\\x001fQu\uFFFDe\uFFFDG\u0381\u0220\uFFFD\uFFFD"
 						},
 						{
 							"uri": "https://bacasable.recoconseil.fr/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor",
-							"otherinfo": "\uFFFD\\x0016\uFFFD\uFFFDz\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x0008d4o\uFFFD2\uFFFDF\uFFFD>:\uFFFDgTPK\uFFFD3\uFFFD\uFFFD\uFFFD\uB2CBc||ZZ\uFFFDT\uFFFDY\uFFFD\uFFFD\uFFFD\uFFFDV\uFFFD"
+							"evidence": "sha384-l+UQ7KbPIcq6l4DoWCwMvaOJ0pdJ+oTVGD6GyROFzSriOH1F1f6dl90fOgcigkMX",
+							"otherinfo": "\uFFFD\\x0016\uFFFD\uFFFD\uFFFDD;)\uFFFD\uFFFDr\uFFFD\uFFFD\uFFFD:\\x0016\\x000b\\x0003/h\uFFFDt\uFFFD\uFFFD~\uFFFD5F\\x000f\uFFFD\uFFFDD\uFFFDsJ\uFFFD\uFFFD\\x001fQu\uFFFDe\uFFFDG\u0381\u0220\uFFFD\uFFFD"
 						},
 						{
 							"uri": "https://bacasable.recoconseil.fr/accounts/login/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "QWInWnpfy4VROyWRDim4KGPiIcmKeNeB",
-							"otherinfo": "Ab'Zz_\u02C5Q;%\uFFFD\\x000e)\uFFFD(c\uFFFD!\u024Ax\u05C1"
+							"evidence": "SwV8q6obOvFkvuZ2kQjjJURfLeMbbw9e",
+							"otherinfo": "K\\x0005|\uFFFD\uFFFD\\x001b:\uFFFDd\uFFFD\uFFFDv\uFFFD\\x0008\uFFFD%D_-\uFFFD\\x001bo\\x000f^"
 						},
 						{
 							"uri": "https://bacasable.recoconseil.fr/confidentialite",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor",
-							"otherinfo": "\uFFFD\\x0016\uFFFD\uFFFDz\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x0008d4o\uFFFD2\uFFFDF\uFFFD>:\uFFFDgTPK\uFFFD3\uFFFD\uFFFD\uFFFD\uB2CBc||ZZ\uFFFDT\uFFFDY\uFFFD\uFFFD\uFFFD\uFFFDV\uFFFD"
+							"evidence": "sha384-l+UQ7KbPIcq6l4DoWCwMvaOJ0pdJ+oTVGD6GyROFzSriOH1F1f6dl90fOgcigkMX",
+							"otherinfo": "\uFFFD\\x0016\uFFFD\uFFFD\uFFFDD;)\uFFFD\uFFFDr\uFFFD\uFFFD\uFFFD:\\x0016\\x000b\\x0003/h\uFFFDt\uFFFD\uFFFD~\uFFFD5F\\x000f\uFFFD\uFFFDD\uFFFDsJ\uFFFD\uFFFD\\x001fQu\uFFFDe\uFFFDG\u0381\u0220\uFFFD\uFFFD"
 						},
 						{
 							"uri": "https://bacasable.recoconseil.fr/contact/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "QWInWnpfy4VROyWRDim4KGPiIcmKeNeB",
-							"otherinfo": "Ab'Zz_\u02C5Q;%\uFFFD\\x000e)\uFFFD(c\uFFFD!\u024Ax\u05C1"
+							"evidence": "EErXm0OfI8fe6oIHE9LbcPWpVvUiO5s7",
+							"otherinfo": "\\x0010J\u05DBC\uFFFD#\uFFFD\uFFFD\uFFFD\\x0007\\x0013\uFFFD\uFFFDp\uFFFD\uFFFDV\uFFFD\";\uFFFD;"
 						},
 						{
 							"uri": "https://bacasable.recoconseil.fr/cookies/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "QWInWnpfy4VROyWRDim4KGPiIcmKeNeB",
-							"otherinfo": "Ab'Zz_\u02C5Q;%\uFFFD\\x000e)\uFFFD(c\uFFFD!\u024Ax\u05C1"
-						},
-						{
-							"uri": "https://bacasable.recoconseil.fr/methodologie",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor",
-							"otherinfo": "\uFFFD\\x0016\uFFFD\uFFFDz\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x0008d4o\uFFFD2\uFFFDF\uFFFD>:\uFFFDgTPK\uFFFD3\uFFFD\uFFFD\uFFFD\uB2CBc||ZZ\uFFFDT\uFFFDY\uFFFD\uFFFD\uFFFD\uFFFDV\uFFFD"
+							"evidence": "avbv1EtzRoDgaA5znGIZbQogyrzaGxsp",
+							"otherinfo": "j\uFFFD\uFFFD\uFFFDKsF\uFFFD\uFFFDh\\x000es\uFFFDb\\x0019m\n \u02BC\uFFFD\\x001b\\x001b)"
 						},
 						{
 							"uri": "https://bacasable.recoconseil.fr/onboarding/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "QWInWnpfy4VROyWRDim4KGPiIcmKeNeB",
-							"otherinfo": "Ab'Zz_\u02C5Q;%\uFFFD\\x000e)\uFFFD(c\uFFFD!\u024Ax\u05C1"
+							"evidence": "EErXm0OfI8fe6oIHE9LbcPWpVvUiO5s7",
+							"otherinfo": "\\x0010J\u05DBC\uFFFD#\uFFFD\uFFFD\uFFFD\\x0007\\x0013\uFFFD\uFFFDp\uFFFD\uFFFDV\uFFFD\";\uFFFD;"
+						},
+						{
+							"uri": "https://bacasable.recoconseil.fr/static/ajv.schema.forms-c149b525.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "/definitions/nonNegativeIntegerDefault0",
+							"otherinfo": "\uFFFD\u05DF\uFFFDx\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDz'5\uFFFD\\x001a\uFFFD+\uFFFD\"{^\uFFFD\uFFFD\uFFFDy\uFFFD\uFFFD\uFFFD\uFFFD"
 						},
 						{
 							"uri": "https://bacasable.recoconseil.fr/static/gravatar-1eac2d52.js",
@@ -1355,29 +1387,21 @@
 							"otherinfo": "\uFFFDo\uFFFD~\uFFFD\uFFFD~/\uFFFD\\x001dzW\uFFFD~\uFFFD\uFFFD\uFFFD\uFFFDey\uFFFDn"
 						},
 						{
-							"uri": "https://bacasable.recoconseil.fr/static/home/js/dsfr/dsfr.module.min.js",
+							"uri": "https://bacasable.recoconseil.fr/static/main-b0d1e885.css",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "net/wiki/spaces/DB/pages/222789846/En-t+te+-+Header",
-							"otherinfo": "\uFFFD\uFFFD\uFFFD)\"\uFFFD\uFFFDZq\uFFFD?\\x000c\\x001f\uFFFDj\\x0007\uFFFD\uFFFDm\uFFFD\uFFFD\uFFFD|\uFFFD\u011F\uFFFD~\uFFFD\uFFFD\uFFFDw\uFFFDu\uFFFD"
-						},
-						{
-							"uri": "https://bacasable.recoconseil.fr/static/home/js/dsfr/dsfr.nomodule.min.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "net/wiki/spaces/DB/pages/222789846/En-t+te+-+Header",
-							"otherinfo": "\uFFFD\uFFFD\uFFFD)\"\uFFFD\uFFFDZq\uFFFD?\\x000c\\x001f\uFFFDj\\x0007\uFFFD\uFFFDm\uFFFD\uFFFD\uFFFD|\uFFFD\u011F\uFFFD~\uFFFD\uFFFD\uFFFDw\uFFFDu\uFFFD"
+							"evidence": "/static/Marianne-Light-7b92c55f",
+							"otherinfo": "\uFFFD\uFFFDZ\uFFFD'?1\uFFFD\uFFFDjy\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\u07FBo\u075C\uFFFD"
 						}
 					],
-					"count": "12",
+					"count": "11",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>\uFFFD\\x0016\uFFFD\uFFFDz\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x0008d4o\uFFFD2\uFFFDF\uFFFD>:\uFFFDgTPK\uFFFD3\uFFFD\uFFFD\uFFFD\uB2CBc||ZZ\uFFFDT\uFFFDY\uFFFD\uFFFD\uFFFD\uFFFDV\uFFFD</p>",
+					"otherinfo": "<p>\uFFFD\\x0016\uFFFD\uFFFD\uFFFDD;)\uFFFD\uFFFDr\uFFFD\uFFFD\uFFFD:\\x0016\\x000b\\x0003/h\uFFFDt\uFFFD\uFFFD~\uFFFD5F\\x000f\uFFFD\uFFFDD\uFFFDsJ\uFFFD\uFFFD\\x001fQu\uFFFDe\uFFFDG\u0381\u0220\uFFFD\uFFFD</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "7"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10027",
@@ -1390,20 +1414,44 @@
 					"desc": "<p>The response appears to contain suspicious comments which may help an attacker. Note: Matches made within script blocks or files are against the entire content not only comments.</p>",
 					"instances":[ 
 						{
-							"uri": "https://bacasable.recoconseil.fr/static/app-5bdaddbd.js",
+							"uri": "https://bacasable.recoconseil.fr/static/app-be0c6189.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "from",
-							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"import{m as a}from\"./module.esm-feb18927.js\";a.store(\"app\",{isLoading:!1,notification:{isOpen:!1,message:\"\"}});const o=a.store(\"\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"import{m as a}from\"./module.esm-df9f47fe.js\";a.store(\"app\",{isLoading:!1,notification:{isOpen:!1,message:\"\"}});const o=a.store(\"\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://bacasable.recoconseil.fr/static/consent-97ed26a4.js",
+							"uri": "https://bacasable.recoconseil.fr/static/axios-a342f982.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "from",
-							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"import{m as n}from\"./module.esm-feb18927.js\";import{a as t}from\"./axios-c24e582b.js\";n.data(\"Consent\",a);function a(){return{use\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"`):\" \"+fe(o[0]):\"as no adapter specified\";throw new m(\"There is no suitable adapter to dispatch the request \"+i,\"ERR_NOT_SUPPORT\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"uri": "https://bacasable.recoconseil.fr/static/axios-a342f982.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "user",
+							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected 2 times, the first in the element starting with: \"function me(e,t){return function(){return e.apply(t,arguments)}}const{toString:je}=Object.prototype,{getPrototypeOf:Z}=Object,H=\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"uri": "https://bacasable.recoconseil.fr/static/bootstrap.esm-8b8dda88.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "from",
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"import{p as fe,e as pe,a as Ee,b as me,d as ge,f as Qe,g as Xe,h as Je,i as Ze,j as ts,k as es,l as ss,m as ns,n as is,o as os,q\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"uri": "https://bacasable.recoconseil.fr/static/bootstrap.esm-8b8dda88.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "select",
+							"otherinfo": "The following pattern was used: \\bSELECT\\b and was detected in the element starting with: \"  */const v=new Map,pt={set(s,t,e){v.has(s)||v.set(s,new Map);const n=v.get(s);if(!n.has(t)&&n.size!==0){console.error(`Bootstra\", see evidence field for the suspicious comment/snippet."
 						},
 						{
 							"uri": "https://bacasable.recoconseil.fr/static/gravatar-1eac2d52.js",
@@ -1414,20 +1462,20 @@
 							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"import{g as $}from\"./_commonjsHelpers-de833af9.js\";var T={exports:{}},_={exports:{}};(function(){var h=\"ABCDEFGHIJKLMNOPQRSTUVWX\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://bacasable.recoconseil.fr/static/module.esm-feb18927.js",
+							"uri": "https://bacasable.recoconseil.fr/static/module.esm-df9f47fe.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "from",
-							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"var Ce=!1,Me=!1,N=[],Te=-1;function kn(e){zn(e)}function zn(e){N.includes(e)||N.push(e),Hn()}function Ct(e){let t=N.indexOf(e);t\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"var Ce=!1,Me=!1,L=[],Te=-1;function kn(e){zn(e)}function zn(e){L.includes(e)||L.push(e),Hn()}function Ct(e){let t=L.indexOf(e);t\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://bacasable.recoconseil.fr/static/module.esm-feb18927.js",
+							"uri": "https://bacasable.recoconseil.fr/static/module.esm-df9f47fe.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
 							"evidence": "SELECT",
-							"otherinfo": "The following pattern was used: \\bSELECT\\b and was detected in the element starting with: \"`:\"\"}`,t),setTimeout(()=>{throw e},0)}var le=!0;function Jt(e){let t=le;le=!1;let n=e();return le=t,n}function L(e,t,n={}){let r\", see evidence field for the suspicious comment/snippet."
+							"otherinfo": "The following pattern was used: \\bSELECT\\b and was detected in the element starting with: \"`:\"\"}`,t),setTimeout(()=>{throw e},0)}var le=!0;function Jt(e){let t=le;le=!1;let n=e();return le=t,n}function N(e,t,n={}){let r\", see evidence field for the suspicious comment/snippet."
 						},
 						{
 							"uri": "https://bacasable.recoconseil.fr",
@@ -1478,13 +1526,13 @@
 							"otherinfo": "The following pattern was used: \\bUSER\\b and was detected in the element starting with: \"<!-- User -->\", see evidence field for the suspicious comment/snippet."
 						}
 					],
-					"count": "11",
+					"count": "14",
 					"solution": "<p>Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</p>",
-					"otherinfo": "<p>The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"import{m as a}from\"./module.esm-feb18927.js\";a.store(\"app\",{isLoading:!1,notification:{isOpen:!1,message:\"\"}});const o=a.store(\"\", see evidence field for the suspicious comment/snippet.</p>",
+					"otherinfo": "<p>The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"import{m as a}from\"./module.esm-df9f47fe.js\";a.store(\"app\",{isLoading:!1,notification:{isOpen:!1,message:\"\"}});const o=a.store(\"\", see evidence field for the suspicious comment/snippet.</p>",
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "84"
+					"sourceid": "79"
 				},
 				{
 					"pluginid": "90033",
@@ -1527,7 +1575,7 @@
 					"reference": "<p>https://tools.ietf.org/html/rfc6265#section-4.1</p><p>https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes.html</p><p>https://code.google.com/p/browsersec/wiki/Part2#Same-origin_policy_for_cookies</p>",
 					"cweid": "565",
 					"wascid": "15",
-					"sourceid": "142"
+					"sourceid": "158"
 				},
 				{
 					"pluginid": "10109",
@@ -1642,7 +1690,7 @@
 					"reference": "",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "1173"
+					"sourceid": "1171"
 				},
 				{
 					"pluginid": "10015",
@@ -1784,15 +1832,23 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
+						},
+						{
+							"uri": "https://bacasable.recoconseil.fr/static/user-4cfab65f.css",
+							"method": "GET",
+							"param": "Sec-Fetch-Dest",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"solution": "<p>Ensure that Sec-Fetch-Dest header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "7"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -1827,15 +1883,23 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
+						},
+						{
+							"uri": "https://bacasable.recoconseil.fr/static/user-4cfab65f.css",
+							"method": "GET",
+							"param": "Sec-Fetch-Mode",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"solution": "<p>Ensure that Sec-Fetch-Mode header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "7"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -1870,15 +1934,23 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
+						},
+						{
+							"uri": "https://bacasable.recoconseil.fr/static/user-4cfab65f.css",
+							"method": "GET",
+							"param": "Sec-Fetch-Site",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"solution": "<p>Ensure that Sec-Fetch-Site header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "7"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -1913,15 +1985,23 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
+						},
+						{
+							"uri": "https://bacasable.recoconseil.fr/static/user-4cfab65f.css",
+							"method": "GET",
+							"param": "Sec-Fetch-User",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"solution": "<p>Ensure that Sec-Fetch-User header is included in user initiated requests.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "7"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10112",
@@ -1938,7 +2018,7 @@
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "QWInWnpfy4VROyWRDim4KGPiIcmKeNeB",
+							"evidence": "SwV8q6obOvFkvuZ2kQjjJURfLeMbbw9e",
 							"otherinfo": "\ncookie:csrftoken"
 						},
 						{
@@ -1946,7 +2026,7 @@
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "QWInWnpfy4VROyWRDim4KGPiIcmKeNeB",
+							"evidence": "avbv1EtzRoDgaA5znGIZbQogyrzaGxsp",
 							"otherinfo": "\ncookie:csrftoken"
 						},
 						{
@@ -1954,57 +2034,49 @@
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "QWInWnpfy4VROyWRDim4KGPiIcmKeNeB",
+							"evidence": "EErXm0OfI8fe6oIHE9LbcPWpVvUiO5s7",
 							"otherinfo": "\ncookie:csrftoken"
 						},
 						{
-							"uri": "https://bacasable.recoconseil.fr/ressource",
+							"uri": "https://bacasable.recoconseil.fr/contact/?next=/&subject=Prise%20de%20contact",
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "QWInWnpfy4VROyWRDim4KGPiIcmKeNeB",
+							"evidence": "EErXm0OfI8fe6oIHE9LbcPWpVvUiO5s7",
 							"otherinfo": "\ncookie:csrftoken"
 						},
 						{
-							"uri": "https://bacasable.recoconseil.fr/static/home/img/home/logo_epf.png",
+							"uri": "https://bacasable.recoconseil.fr/static/css/markdownx.css",
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "QWInWnpfy4VROyWRDim4KGPiIcmKeNeB",
+							"evidence": "SwV8q6obOvFkvuZ2kQjjJURfLeMbbw9e",
 							"otherinfo": "\ncookie:csrftoken"
 						},
 						{
-							"uri": "https://bacasable.recoconseil.fr/static/home/img/home/logo_france_relance.png",
-							"method": "GET",
+							"uri": "https://bacasable.recoconseil.fr/accounts/password/reset/",
+							"method": "POST",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "QWInWnpfy4VROyWRDim4KGPiIcmKeNeB",
+							"evidence": "EErXm0OfI8fe6oIHE9LbcPWpVvUiO5s7",
 							"otherinfo": "\ncookie:csrftoken"
 						},
 						{
-							"uri": "https://bacasable.recoconseil.fr/static/urbanvitaliz.fr/home/img/home/anct.png",
-							"method": "GET",
+							"uri": "https://bacasable.recoconseil.fr/onboarding/",
+							"method": "POST",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "QWInWnpfy4VROyWRDim4KGPiIcmKeNeB",
-							"otherinfo": "\ncookie:csrftoken"
-						},
-						{
-							"uri": "https://bacasable.recoconseil.fr/static/urbanvitaliz.fr/home/img/home/mte.svg",
-							"method": "GET",
-							"param": "csrftoken",
-							"attack": "",
-							"evidence": "QWInWnpfy4VROyWRDim4KGPiIcmKeNeB",
+							"evidence": "EErXm0OfI8fe6oIHE9LbcPWpVvUiO5s7",
 							"otherinfo": "\ncookie:csrftoken"
 						}
 					],
-					"count": "8",
+					"count": "7",
 					"solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
 					"otherinfo": "<p></p><p>cookie:csrftoken</p>",
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "65"
+					"sourceid": "60"
 				},
 				{
 					"pluginid": "10049",
@@ -2057,14 +2129,6 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"uri": "https://bacasable.recoconseil.fr/onboarding/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
-						},
-						{
 							"uri": "https://bacasable.recoconseil.fr/robots.txt",
 							"method": "GET",
 							"param": "",
@@ -2081,7 +2145,7 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"uri": "https://bacasable.recoconseil.fr/static/app-5bdaddbd.js",
+							"uri": "https://bacasable.recoconseil.fr/static/_commonjsHelpers-de833af9.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2089,7 +2153,15 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"uri": "https://bacasable.recoconseil.fr/static/gravatar-1eac2d52.js",
+							"uri": "https://bacasable.recoconseil.fr/static/app-be0c6189.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
+							"uri": "https://bacasable.recoconseil.fr/static/css/base.css",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -2111,7 +2183,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "7"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10031",
@@ -2130,14 +2202,6 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://bacasable.recoconseil.fr/contact/?next=/&subject=Prise%20de%20contact\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nsubject=Prise de contact\n\nThe user-controlled value was:\nprise de contact"
-						},
-						{
-							"uri": "https://bacasable.recoconseil.fr/accounts/login/",
-							"method": "POST",
-							"param": "login",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://bacasable.recoconseil.fr/accounts/login/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nlogin=foo-bar@example.com\n\nThe user-controlled value was:\nfoo-bar@example.com"
 						},
 						{
 							"uri": "https://bacasable.recoconseil.fr/onboarding/",
@@ -2276,13 +2340,13 @@
 							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://bacasable.recoconseil.fr/onboarding/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nresponse_1=ZAP\n\nThe user-controlled value was:\nzaproxy@example.com"
 						}
 					],
-					"count": "19",
+					"count": "18",
 					"solution": "<p>Validate all input and sanitize output it before writing to any HTML attributes.</p>",
 					"otherinfo": "<p>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:</p><p></p><p>https://bacasable.recoconseil.fr/contact/?next=/&subject=Prise%20de%20contact</p><p></p><p>appears to include user input in: </p><p></p><p>a(n) [input] tag [value] attribute </p><p></p><p>The user input found was:</p><p>subject=Prise de contact</p><p></p><p>The user-controlled value was:</p><p>prise de contact</p>",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html</p>",
 					"cweid": "20",
 					"wascid": "20",
-					"sourceid": "169"
+					"sourceid": "176"
 				}
 			]
 		}

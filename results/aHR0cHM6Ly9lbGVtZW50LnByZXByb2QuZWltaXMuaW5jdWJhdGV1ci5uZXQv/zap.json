@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 17 Mar 2024 11:51:07",
+	"@generated": "Sun, 24 Mar 2024 11:42:31",
 	"site":[ 
 		{
 			"@name": "https://element.preprod.eimis.incubateur.net",
@@ -34,7 +34,7 @@
 					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10055",
@@ -74,6 +74,14 @@
 					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
 					"instances":[ 
 						{
+							"uri": "https://element.preprod.eimis.incubateur.net/robots.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://element.preprod.eimis.incubateur.net/sitemap.xml",
 							"method": "GET",
 							"param": "",
@@ -82,7 +90,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "1",
+					"count": "2",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>https://www.w3.org/TR/CSP/</p><p>https://w3c.github.io/webappsec-csp/</p><p>https://web.dev/articles/csp</p><p>https://caniuse.com/#feat=contentsecuritypolicy</p><p>https://content-security-policy.com/</p>",
@@ -204,7 +212,7 @@
 					"reference": "<p>https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/08-Testing_for_Error_Handling/</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "47"
+					"sourceid": "48"
 				},
 				{
 					"pluginid": "10063",
@@ -325,7 +333,7 @@
 					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10094",
@@ -478,7 +486,7 @@
 					"reference": "",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10015",
@@ -534,14 +542,6 @@
 					"desc": "<p>Specifies how and where the data would be used. For instance, if the value is audio, then the requested resource must be audio data and not any other type of resource.</p>",
 					"instances":[ 
 						{
-							"uri": "https://element.preprod.eimis.incubateur.net/robots.txt",
-							"method": "GET",
-							"param": "Sec-Fetch-Dest",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://element.preprod.eimis.incubateur.net/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
@@ -550,7 +550,15 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://element.preprod.eimis.incubateur.net/vector-icons/apple-touch-icon-57.e9e9abf.png",
+							"uri": "https://element.preprod.eimis.incubateur.net/vector-icons/apple-touch-icon-144.fcef975.png",
+							"method": "GET",
+							"param": "Sec-Fetch-Dest",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://element.preprod.eimis.incubateur.net/vector-icons/apple-touch-icon-60.482f59b.png",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -577,14 +585,6 @@
 					"desc": "<p>Allows to differentiate between requests for navigating between HTML pages and requests for loading resources like images, audio etc.</p>",
 					"instances":[ 
 						{
-							"uri": "https://element.preprod.eimis.incubateur.net/robots.txt",
-							"method": "GET",
-							"param": "Sec-Fetch-Mode",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://element.preprod.eimis.incubateur.net/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
@@ -593,7 +593,15 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://element.preprod.eimis.incubateur.net/vector-icons/apple-touch-icon-57.e9e9abf.png",
+							"uri": "https://element.preprod.eimis.incubateur.net/vector-icons/apple-touch-icon-144.fcef975.png",
+							"method": "GET",
+							"param": "Sec-Fetch-Mode",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://element.preprod.eimis.incubateur.net/vector-icons/apple-touch-icon-60.482f59b.png",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -620,14 +628,6 @@
 					"desc": "<p>Specifies the relationship between request initiator's origin and target's origin.</p>",
 					"instances":[ 
 						{
-							"uri": "https://element.preprod.eimis.incubateur.net/robots.txt",
-							"method": "GET",
-							"param": "Sec-Fetch-Site",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://element.preprod.eimis.incubateur.net/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
@@ -636,7 +636,15 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://element.preprod.eimis.incubateur.net/vector-icons/apple-touch-icon-57.e9e9abf.png",
+							"uri": "https://element.preprod.eimis.incubateur.net/vector-icons/apple-touch-icon-144.fcef975.png",
+							"method": "GET",
+							"param": "Sec-Fetch-Site",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://element.preprod.eimis.incubateur.net/vector-icons/apple-touch-icon-60.482f59b.png",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -663,14 +671,6 @@
 					"desc": "<p>Specifies if a navigation request was initiated by a user.</p>",
 					"instances":[ 
 						{
-							"uri": "https://element.preprod.eimis.incubateur.net/robots.txt",
-							"method": "GET",
-							"param": "Sec-Fetch-User",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://element.preprod.eimis.incubateur.net/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
@@ -679,7 +679,15 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://element.preprod.eimis.incubateur.net/vector-icons/apple-touch-icon-57.e9e9abf.png",
+							"uri": "https://element.preprod.eimis.incubateur.net/vector-icons/apple-touch-icon-144.fcef975.png",
+							"method": "GET",
+							"param": "Sec-Fetch-User",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://element.preprod.eimis.incubateur.net/vector-icons/apple-touch-icon-60.482f59b.png",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -792,7 +800,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "47"
+					"sourceid": "48"
 				},
 				{
 					"pluginid": "10049",

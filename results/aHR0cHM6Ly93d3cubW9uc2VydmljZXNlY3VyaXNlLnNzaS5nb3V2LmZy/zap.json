@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 17 Mar 2024 09:47:52",
+	"@generated": "Sun, 24 Mar 2024 09:44:55",
 	"site":[ 
 		{
 			"@name": "https://www.monservicesecurise.ssi.gouv.fr",
@@ -58,7 +58,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "140"
+					"sourceid": "142"
 				},
 				{
 					"pluginid": "10055",
@@ -165,7 +165,7 @@
 					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10003",
@@ -192,7 +192,7 @@
 					"reference": "<p>https://github.com/axios/axios/issues/6022</p><p>https://security.snyk.io/vuln/SNYK-JS-AXIOS-6032459</p><p>https://github.com/axios/axios/pull/6028</p><p>https://github.com/axios/axios/issues/6006</p><p>https://github.com/axios/axios/commit/96ee232bd3ee4de2e657333d4d2191cd389e14d0</p><p>https://nvd.nist.gov/vuln/detail/CVE-2023-45857</p><p>https://github.com/advisories/GHSA-wf5p-g6vw-rhxx</p><p>https://github.com/axios/axios/releases/tag/v1.6.0</p><p></p>",
 					"cweid": "829",
 					"wascid": "-1",
-					"sourceid": "110"
+					"sourceid": "111"
 				},
 				{
 					"pluginid": "10054",
@@ -237,22 +237,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.monservicesecurise.ssi.gouv.fr/cgu",
-							"method": "GET",
-							"param": "sc-sticky-session",
-							"attack": "",
-							"evidence": "Set-Cookie: sc-sticky-session",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://www.monservicesecurise.ssi.gouv.fr/confidentialite",
-							"method": "GET",
-							"param": "sc-sticky-session",
-							"attack": "",
-							"evidence": "Set-Cookie: sc-sticky-session",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://www.monservicesecurise.ssi.gouv.fr/inscription",
 							"method": "GET",
 							"param": "sc-sticky-session",
@@ -285,6 +269,30 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://www.monservicesecurise.ssi.gouv.fr/statique/assets/images/favicons/favicon.ico",
+							"method": "GET",
+							"param": "sc-sticky-session",
+							"attack": "",
+							"evidence": "Set-Cookie: sc-sticky-session",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://www.monservicesecurise.ssi.gouv.fr/statique/assets/styles/fonts.css",
+							"method": "GET",
+							"param": "sc-sticky-session",
+							"attack": "",
+							"evidence": "Set-Cookie: sc-sticky-session",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://www.monservicesecurise.ssi.gouv.fr/statique/assets/styles/palette.css",
+							"method": "GET",
+							"param": "sc-sticky-session",
+							"attack": "",
+							"evidence": "Set-Cookie: sc-sticky-session",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://www.monservicesecurise.ssi.gouv.fr/statistiques",
 							"method": "GET",
 							"param": "sc-sticky-session",
@@ -293,13 +301,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "11",
+					"count": "12",
 					"solution": "<p>Ensure that the SameSite attribute is set to either 'lax' or ideally 'strict' for all cookies.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://tools.ietf.org/html/draft-ietf-httpbis-cookie-same-site</p>",
 					"cweid": "1275",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10110",
@@ -326,7 +334,7 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "118"
+					"sourceid": "119"
 				},
 				{
 					"pluginid": "10063",
@@ -371,14 +379,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.monservicesecurise.ssi.gouv.fr/cgu",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://www.monservicesecurise.ssi.gouv.fr/confidentialite",
 							"method": "GET",
 							"param": "",
@@ -419,6 +419,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://www.monservicesecurise.ssi.gouv.fr/statique/home.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://www.monservicesecurise.ssi.gouv.fr/statistiques",
 							"method": "GET",
 							"param": "",
@@ -433,7 +441,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy</p><p>https://developer.chrome.com/blog/feature-policy/</p><p>https://scotthelme.co.uk/a-new-security-header-feature-policy/</p><p>https://w3c.github.io/webappsec-feature-policy/</p><p>https://www.smashingmagazine.com/2018/12/feature-policy/</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10096",
@@ -460,7 +468,7 @@
 					"reference": "<p>https://cwe.mitre.org/data/definitions/200.html</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "129"
+					"sourceid": "124"
 				},
 				{
 					"pluginid": "10094",
@@ -477,16 +485,16 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "eyJfY3NyZlNlY3JldCI6IkpGQWllV0ZwMDdlZXBRPT0iLCJtYWludGVuYW50IjoyODUxMTE0N30=",
-							"otherinfo": "{\"_csrfSecret\":\"JFAieWFp07eepQ==\",\"maintenant\":28511147}"
+							"evidence": "eyJfY3NyZlNlY3JldCI6IjZxcTVpNThsazlhSVh3PT0iLCJtYWludGVuYW50IjoyODUyMTIyNH0=",
+							"otherinfo": "{\"_csrfSecret\":\"6qq5i58lk9aIXw==\",\"maintenant\":28521224}"
 						},
 						{
 							"uri": "https://www.monservicesecurise.ssi.gouv.fr",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "eyJfY3NyZlNlY3JldCI6Ik91MWVnTGw1aVZTSklnPT0iLCJtYWludGVuYW50IjoyODUxMTE0N30=",
-							"otherinfo": "{\"_csrfSecret\":\"Ou1egLl5iVSJIg==\",\"maintenant\":28511147}"
+							"evidence": "eyJfY3NyZlNlY3JldCI6IlV6eG1ic2lxeGFHdW9RPT0iLCJtYWludGVuYW50IjoyODUyMTIyNH0=",
+							"otherinfo": "{\"_csrfSecret\":\"UzxmbsiqxaGuoQ==\",\"maintenant\":28521224}"
 						},
 						{
 							"uri": "https://www.monservicesecurise.ssi.gouv.fr/",
@@ -506,22 +514,6 @@
 						},
 						{
 							"uri": "https://www.monservicesecurise.ssi.gouv.fr/aPropos",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "E+JYnbf2X8fdxH6DVvivbqlyWmD6j8yvN8qKtVVEvmEKUXHYMzHv10u854e+bMjrPYvLKJ5TON3J/lX0HKwjU/IgKZI/ypKi/b2+6XTX8I4=",
-							"otherinfo": "\\x0013\uFFFDX\uFFFD\uFFFD\uFFFD_\uFFFD\uFFFD\uFFFD~\uFFFDV\uFFFD\uFFFDn\uFFFDrZ`\uFFFD\uFFFD\u032F7\u028A\uFFFDUD\uFFFDa\nQq\uFFFD31\uFFFD\uFFFDK\uFFFD\u71FEl\uFFFD\uFFFD=\uFFFD\uFFFD(\uFFFDS8\uFFFD\uFFFD\uFFFDU\uFFFD\\x001c\uFFFD#S\uFFFD )\uFFFD?\u0292\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDt\uFFFD\uFFFD\uFFFD"
-						},
-						{
-							"uri": "https://www.monservicesecurise.ssi.gouv.fr/cgu",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "E+JYnbf2X8fdxH6DVvivbqlyWmD6j8yvN8qKtVVEvmEKUXHYMzHv10u854e+bMjrPYvLKJ5TON3J/lX0HKwjU/IgKZI/ypKi/b2+6XTX8I4=",
-							"otherinfo": "\\x0013\uFFFDX\uFFFD\uFFFD\uFFFD_\uFFFD\uFFFD\uFFFD~\uFFFDV\uFFFD\uFFFDn\uFFFDrZ`\uFFFD\uFFFD\u032F7\u028A\uFFFDUD\uFFFDa\nQq\uFFFD31\uFFFD\uFFFDK\uFFFD\u71FEl\uFFFD\uFFFD=\uFFFD\uFFFD(\uFFFDS8\uFFFD\uFFFD\uFFFDU\uFFFD\\x001c\uFFFD#S\uFFFD )\uFFFD?\u0292\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDt\uFFFD\uFFFD\uFFFD"
-						},
-						{
-							"uri": "https://www.monservicesecurise.ssi.gouv.fr/inscription",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -553,6 +545,22 @@
 							"otherinfo": "\\x0013\uFFFDX\uFFFD\uFFFD\uFFFD_\uFFFD\uFFFD\uFFFD~\uFFFDV\uFFFD\uFFFDn\uFFFDrZ`\uFFFD\uFFFD\u032F7\u028A\uFFFDUD\uFFFDa\nQq\uFFFD31\uFFFD\uFFFDK\uFFFD\u71FEl\uFFFD\uFFFD=\uFFFD\uFFFD(\uFFFDS8\uFFFD\uFFFD\uFFFDU\uFFFD\\x001c\uFFFD#S\uFFFD )\uFFFD?\u0292\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDt\uFFFD\uFFFD\uFFFD"
 						},
 						{
+							"uri": "https://www.monservicesecurise.ssi.gouv.fr/statique/assets/images/favicons/favicon.ico",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "E+JYnbf2X8fdxH6DVvivbqlyWmD6j8yvN8qKtVVEvmEKUXHYMzHv10u854e+bMjrPYvLKJ5TON3J/lX0HKwjU/IgKZI/ypKi/b2+6XTX8I4=",
+							"otherinfo": "\\x0013\uFFFDX\uFFFD\uFFFD\uFFFD_\uFFFD\uFFFD\uFFFD~\uFFFDV\uFFFD\uFFFDn\uFFFDrZ`\uFFFD\uFFFD\u032F7\u028A\uFFFDUD\uFFFDa\nQq\uFFFD31\uFFFD\uFFFDK\uFFFD\u71FEl\uFFFD\uFFFD=\uFFFD\uFFFD(\uFFFDS8\uFFFD\uFFFD\uFFFDU\uFFFD\\x001c\uFFFD#S\uFFFD )\uFFFD?\u0292\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDt\uFFFD\uFFFD\uFFFD"
+						},
+						{
+							"uri": "https://www.monservicesecurise.ssi.gouv.fr/statique/assets/styles/fonts.css",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "E+JYnbf2X8fdxH6DVvivbqlyWmD6j8yvN8qKtVVEvmEKUXHYMzHv10u854e+bMjrPYvLKJ5TON3J/lX0HKwjU/IgKZI/ypKi/b2+6XTX8I4=",
+							"otherinfo": "\\x0013\uFFFDX\uFFFD\uFFFD\uFFFD_\uFFFD\uFFFD\uFFFD~\uFFFDV\uFFFD\uFFFDn\uFFFDrZ`\uFFFD\uFFFD\u032F7\u028A\uFFFDUD\uFFFDa\nQq\uFFFD31\uFFFD\uFFFDK\uFFFD\u71FEl\uFFFD\uFFFD=\uFFFD\uFFFD(\uFFFDS8\uFFFD\uFFFD\uFFFDU\uFFFD\\x001c\uFFFD#S\uFFFD )\uFFFD?\u0292\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDt\uFFFD\uFFFD\uFFFD"
+						},
+						{
 							"uri": "https://www.monservicesecurise.ssi.gouv.fr/statique/assets/styles/palette.css",
 							"method": "GET",
 							"param": "",
@@ -571,11 +579,11 @@
 					],
 					"count": "12",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>{\"_csrfSecret\":\"JFAieWFp07eepQ==\",\"maintenant\":28511147}</p>",
+					"otherinfo": "<p>{\"_csrfSecret\":\"6qq5i58lk9aIXw==\",\"maintenant\":28521224}</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10024",
@@ -717,7 +725,7 @@
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "110"
+					"sourceid": "111"
 				},
 				{
 					"pluginid": "10015",
@@ -794,7 +802,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.monservicesecurise.ssi.gouv.fr/mentionsLegales",
+							"uri": "https://www.monservicesecurise.ssi.gouv.fr/inscription?cguAcceptees=on&departementEntitePublique&email=zaproxy%40example.com&infolettreAcceptee=on&nom=ZAP&nomEntitePublique&posteAutre=ZAP&posteAutrePresent=on&posteDPO=on&posteDSI=on&posteRSSI=on&prenom=ZAP&telephone=9999999999",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -802,7 +810,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://www.monservicesecurise.ssi.gouv.fr/reinitialisationMotDePasse",
+							"uri": "https://www.monservicesecurise.ssi.gouv.fr/mentionsLegales",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -824,7 +832,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control</p><p>https://grayduck.mn/2021/09/13/cache-control-recommendations/</p>",
 					"cweid": "525",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -867,7 +875,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -910,7 +918,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -953,7 +961,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -996,7 +1004,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10112",
@@ -1013,7 +1021,7 @@
 							"method": "GET",
 							"param": "token.sig",
 							"attack": "",
-							"evidence": "9bXIHT4cfSmcSkp18MwXecya9lw",
+							"evidence": "91pBbypHe1lGdEShxD9y6-ne1lw",
 							"otherinfo": "\ncookie:token.sig\ncookie:token\ncookie:sc-sticky-session"
 						},
 						{
@@ -1021,7 +1029,7 @@
 							"method": "GET",
 							"param": "token.sig",
 							"attack": "",
-							"evidence": "NX8OSW0ZZhmGyZzl543fa8038XA",
+							"evidence": "pMhpfsNT3IgNgcD2wLKce_1sIjY",
 							"otherinfo": "\ncookie:token.sig\ncookie:token\ncookie:sc-sticky-session"
 						},
 						{
@@ -1042,22 +1050,6 @@
 						},
 						{
 							"uri": "https://www.monservicesecurise.ssi.gouv.fr/aPropos",
-							"method": "GET",
-							"param": "sc-sticky-session",
-							"attack": "",
-							"evidence": "E+JYnbf2X8fdxH6DVvivbqlyWmD6j8yvN8qKtVVEvmEKUXHYMzHv10u854e+bMjrPYvLKJ5TON3J/lX0HKwjU/IgKZI/ypKi/b2+6XTX8I4=",
-							"otherinfo": "\ncookie:sc-sticky-session"
-						},
-						{
-							"uri": "https://www.monservicesecurise.ssi.gouv.fr/cgu",
-							"method": "GET",
-							"param": "sc-sticky-session",
-							"attack": "",
-							"evidence": "E+JYnbf2X8fdxH6DVvivbqlyWmD6j8yvN8qKtVVEvmEKUXHYMzHv10u854e+bMjrPYvLKJ5TON3J/lX0HKwjU/IgKZI/ypKi/b2+6XTX8I4=",
-							"otherinfo": "\ncookie:sc-sticky-session"
-						},
-						{
-							"uri": "https://www.monservicesecurise.ssi.gouv.fr/confidentialite",
 							"method": "GET",
 							"param": "sc-sticky-session",
 							"attack": "",
@@ -1097,6 +1089,30 @@
 							"otherinfo": "\ncookie:sc-sticky-session"
 						},
 						{
+							"uri": "https://www.monservicesecurise.ssi.gouv.fr/statique/assets/images/favicons/favicon.ico",
+							"method": "GET",
+							"param": "sc-sticky-session",
+							"attack": "",
+							"evidence": "E+JYnbf2X8fdxH6DVvivbqlyWmD6j8yvN8qKtVVEvmEKUXHYMzHv10u854e+bMjrPYvLKJ5TON3J/lX0HKwjU/IgKZI/ypKi/b2+6XTX8I4=",
+							"otherinfo": "\ncookie:sc-sticky-session"
+						},
+						{
+							"uri": "https://www.monservicesecurise.ssi.gouv.fr/statique/assets/styles/fonts.css",
+							"method": "GET",
+							"param": "sc-sticky-session",
+							"attack": "",
+							"evidence": "E+JYnbf2X8fdxH6DVvivbqlyWmD6j8yvN8qKtVVEvmEKUXHYMzHv10u854e+bMjrPYvLKJ5TON3J/lX0HKwjU/IgKZI/ypKi/b2+6XTX8I4=",
+							"otherinfo": "\ncookie:sc-sticky-session"
+						},
+						{
+							"uri": "https://www.monservicesecurise.ssi.gouv.fr/statique/assets/styles/palette.css",
+							"method": "GET",
+							"param": "sc-sticky-session",
+							"attack": "",
+							"evidence": "E+JYnbf2X8fdxH6DVvivbqlyWmD6j8yvN8qKtVVEvmEKUXHYMzHv10u854e+bMjrPYvLKJ5TON3J/lX0HKwjU/IgKZI/ypKi/b2+6XTX8I4=",
+							"otherinfo": "\ncookie:sc-sticky-session"
+						},
+						{
 							"uri": "https://www.monservicesecurise.ssi.gouv.fr/statistiques",
 							"method": "GET",
 							"param": "sc-sticky-session",
@@ -1105,7 +1121,7 @@
 							"otherinfo": "\ncookie:sc-sticky-session"
 						}
 					],
-					"count": "12",
+					"count": "13",
 					"solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
 					"otherinfo": "<p></p><p>cookie:token.sig</p><p>cookie:token</p><p>cookie:sc-sticky-session</p>",
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id</p>",
@@ -1156,22 +1172,6 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"uri": "https://www.monservicesecurise.ssi.gouv.fr/cgu",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
-						},
-						{
-							"uri": "https://www.monservicesecurise.ssi.gouv.fr/inscription",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
-						},
-						{
 							"uri": "https://www.monservicesecurise.ssi.gouv.fr/mentionsLegales",
 							"method": "GET",
 							"param": "",
@@ -1196,6 +1196,22 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
+							"uri": "https://www.monservicesecurise.ssi.gouv.fr/statique/assets/images/favicons/favicon.ico",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=3600",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://www.monservicesecurise.ssi.gouv.fr/statique/assets/styles/fonts.css",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=3600",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://www.monservicesecurise.ssi.gouv.fr/statique/assets/styles/palette.css",
 							"method": "GET",
 							"param": "",
@@ -1218,7 +1234,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "6"
+					"sourceid": "1"
 				}
 			]
 		}

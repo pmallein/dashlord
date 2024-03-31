@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 24 Mar 2024 04:01:34",
+	"@generated": "Sun, 31 Mar 2024 04:09:37",
 	"site":[ 
 		{
 			"@name": "https://mediature.incubateur.net",
@@ -34,23 +34,15 @@
 							"attack": "",
 							"evidence": "default-src 'self';base-uri 'self';font-src 'self' https: data: https://client.crisp.chat/static/;form-action 'self';frame-ancestors 'self';img-src 'self' data: https://*.crisp.chat/;object-src 'none';script-src 'self' 'unsafe-inline' https://client.crisp.chat/;script-src-attr 'none';connect-src 'self' https://api-adresse.data.gouv.fr/ wss://client.relay.crisp.chat/ https://client.crisp.chat/static/ https://storage.crisp.chat/users/upload/ https://sentry.incubateur.net/;style-src 'self' https: 'unsafe-inline' https://client.crisp.chat/;upgrade-insecure-requests",
 							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nstyle-src, font-src"
-						},
-						{
-							"uri": "https://mediature.incubateur.net/sitemap.xml",
-							"method": "GET",
-							"param": "Content-Security-Policy",
-							"attack": "",
-							"evidence": "default-src 'self';base-uri 'self';font-src 'self' https: data: https://client.crisp.chat/static/;form-action 'self';frame-ancestors 'self';img-src 'self' data: https://*.crisp.chat/;object-src 'none';script-src 'self' 'unsafe-inline' https://client.crisp.chat/;script-src-attr 'none';connect-src 'self' https://api-adresse.data.gouv.fr/ wss://client.relay.crisp.chat/ https://client.crisp.chat/static/ https://storage.crisp.chat/users/upload/ https://sentry.incubateur.net/;style-src 'self' https: 'unsafe-inline' https://client.crisp.chat/;upgrade-insecure-requests",
-							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nstyle-src, font-src"
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is properly configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "<p>The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: </p><p>style-src, font-src</p>",
 					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10055",
@@ -163,7 +155,7 @@
 					"reference": "<p>https://github.com/advisories/GHSA-c59h-r6p8-q9wc</p><p></p>",
 					"cweid": "829",
 					"wascid": "-1",
-					"sourceid": "62"
+					"sourceid": "65"
 				},
 				{
 					"pluginid": "10110",
@@ -198,7 +190,7 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "58"
+					"sourceid": "62"
 				},
 				{
 					"pluginid": "10063",
@@ -227,7 +219,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://mediature.incubateur.net/_next/static/chunks/2704-3ded4755db9ea9b9.js",
+							"uri": "https://mediature.incubateur.net/_next/static/chunks/7194-fa3aee34bb5b0099.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -235,7 +227,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://mediature.incubateur.net/_next/static/chunks/7194-fa3aee34bb5b0099.js",
+							"uri": "https://mediature.incubateur.net/_next/static/chunks/8811-fe8b67fcb70b26c4.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -305,7 +297,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy</p><p>https://developer.chrome.com/blog/feature-policy/</p><p>https://scotthelme.co.uk/a-new-security-header-feature-policy/</p><p>https://w3c.github.io/webappsec-feature-policy/</p><p>https://www.smashingmagazine.com/2018/12/feature-policy/</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10035",
@@ -439,7 +431,7 @@
 					"reference": "<p>https://cwe.mitre.org/data/definitions/200.html</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "55"
+					"sourceid": "53"
 				},
 				{
 					"pluginid": "10094",
@@ -498,7 +490,7 @@
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "64"
+					"sourceid": "67"
 				},
 				{
 					"pluginid": "10019",
@@ -545,14 +537,6 @@
 					"riskdesc": "Informational (Low)",
 					"desc": "<p>The response appears to contain suspicious comments which may help an attacker. Note: Matches made within script blocks or files are against the entire content not only comments.</p>",
 					"instances":[ 
-						{
-							"uri": "https://mediature.incubateur.net/.well-known",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "query",
-							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{}},\"page\":\"/404\",\"query\":{},\"buildId\":\"v0.0.0-20231204\", see evidence field for the suspicious comment/snippet."
-						},
 						{
 							"uri": "https://mediature.incubateur.net/_next/static/chunks/2704-3ded4755db9ea9b9.js",
 							"method": "GET",
@@ -608,14 +592,6 @@
 							"attack": "",
 							"evidence": "select",
 							"otherinfo": "The following pattern was used: \\bSELECT\\b and was detected in the element starting with: \" */function y(e,t){let r=g(e,t);return r}[\"a\",\"abbr\",\"address\",\"area\",\"article\",\"aside\",\"audio\",\"b\",\"base\",\"bdi\",\"bdo\",\"big\",\"bl\", see evidence field for the suspicious comment/snippet."
-						},
-						{
-							"uri": "https://mediature.incubateur.net/_next/static/chunks/8559-eb65ea406e17c6f7.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "query",
-							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"\"use strict\";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[8559],{18559:function(e,r,t){t.d(r,{p7:function(){return G\", see evidence field for the suspicious comment/snippet."
 						},
 						{
 							"uri": "https://mediature.incubateur.net/_next/static/chunks/main-app-bc45ef5c2e2b30d6.js",
@@ -682,6 +658,14 @@
 							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"!function(){var t=\"undefined\"!=typeof globalThis?globalThis:\"undefined\"!=typeof window?window:\"undefined\"!=typeof global?global:\", see evidence field for the suspicious comment/snippet."
 						},
 						{
+							"uri": "https://mediature.incubateur.net/_next/static/v0.0.0-20231204122140-da64e61925e3/_buildManifest.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "administrator",
+							"otherinfo": "The following pattern was used: \\bADMINISTRATOR\\b and was detected in the element starting with: \"self.__BUILD_MANIFEST={__rewrites:{beforeFiles:[],afterFiles:[{source:\"/:nextInternalLocale(fr)/tableau-de-bord/collectivite/:au\", see evidence field for the suspicious comment/snippet."
+						},
+						{
 							"uri": "https://mediature.incubateur.net/sitemap.xml",
 							"method": "GET",
 							"param": "",
@@ -690,13 +674,13 @@
 							"otherinfo": "The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{}},\"page\":\"/404\",\"query\":{},\"buildId\":\"v0.0.0-20231204\", see evidence field for the suspicious comment/snippet."
 						}
 					],
-					"count": "18",
+					"count": "17",
 					"solution": "<p>Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</p>",
-					"otherinfo": "<p>The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"<script id=\"__NEXT_DATA__\" type=\"application/json\">{\"props\":{\"pageProps\":{}},\"page\":\"/404\",\"query\":{},\"buildId\":\"v0.0.0-20231204\", see evidence field for the suspicious comment/snippet.</p>",
+					"otherinfo": "<p>The following pattern was used: \\bQUERY\\b and was detected in the element starting with: \"\"use strict\";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[2704],{52704:function(t,a,r){r.d(a,{d:function(){return h}\", see evidence field for the suspicious comment/snippet.</p>",
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "64"
+					"sourceid": "60"
 				},
 				{
 					"pluginid": "10109",
@@ -747,7 +731,7 @@
 					"reference": "",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10049",
@@ -809,7 +793,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control</p><p>https://grayduck.mn/2021/09/13/cache-control-recommendations/</p>",
 					"cweid": "525",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -822,7 +806,7 @@
 					"desc": "<p>Specifies how and where the data would be used. For instance, if the value is audio, then the requested resource must be audio data and not any other type of resource.</p>",
 					"instances":[ 
 						{
-							"uri": "https://mediature.incubateur.net/_next/static/css/8c589b579ac1ecba.css",
+							"uri": "https://mediature.incubateur.net",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -852,7 +836,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "34"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -865,7 +849,7 @@
 					"desc": "<p>Allows to differentiate between requests for navigating between HTML pages and requests for loading resources like images, audio etc.</p>",
 					"instances":[ 
 						{
-							"uri": "https://mediature.incubateur.net/_next/static/css/8c589b579ac1ecba.css",
+							"uri": "https://mediature.incubateur.net",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -895,7 +879,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "34"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -908,7 +892,7 @@
 					"desc": "<p>Specifies the relationship between request initiator's origin and target's origin.</p>",
 					"instances":[ 
 						{
-							"uri": "https://mediature.incubateur.net/_next/static/css/8c589b579ac1ecba.css",
+							"uri": "https://mediature.incubateur.net",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -938,7 +922,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "34"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -951,7 +935,7 @@
 					"desc": "<p>Specifies if a navigation request was initiated by a user.</p>",
 					"instances":[ 
 						{
-							"uri": "https://mediature.incubateur.net/_next/static/css/8c589b579ac1ecba.css",
+							"uri": "https://mediature.incubateur.net",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -981,7 +965,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "34"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10049",
@@ -1080,7 +1064,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "6"
 				}
 			]
 		}

@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 24 Mar 2024 08:48:28",
+	"@generated": "Sun, 31 Mar 2024 09:15:26",
 	"site":[ 
 		{
 			"@name": "https://mon-suivi-justice.beta.gouv.fr",
@@ -68,7 +68,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://mon-suivi-justice.beta.gouv.fr/ma_reinsertion_aisne",
+							"uri": "https://mon-suivi-justice.beta.gouv.fr/ma_reinsertion_corse_du_sud",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -114,7 +114,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>https://www.w3.org/TR/CSP/</p><p>https://w3c.github.io/webappsec-csp/</p><p>https://web.dev/articles/csp</p><p>https://caniuse.com/#feat=contentsecuritypolicy</p><p>https://content-security-policy.com/</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "8"
+					"sourceid": "7"
 				},
 				{
 					"pluginid": "10110",
@@ -127,7 +127,7 @@
 					"desc": "<p>A dangerous JS function seems to be in use that would leave the site vulnerable.</p>",
 					"instances":[ 
 						{
-							"uri": "https://mon-suivi-justice.beta.gouv.fr/packs/js/application-1f39d8f64b24c38cb048.js",
+							"uri": "https://mon-suivi-justice.beta.gouv.fr/packs/js/application-236ee800cceaddc1fc2e.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -141,7 +141,7 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "27"
+					"sourceid": "76"
 				},
 				{
 					"pluginid": "10063",
@@ -202,6 +202,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://mon-suivi-justice.beta.gouv.fr/ma_reinsertion_corse_du_sud",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://mon-suivi-justice.beta.gouv.fr/ma_reinsertion_haute_corse",
 							"method": "GET",
 							"param": "",
@@ -211,14 +219,6 @@
 						},
 						{
 							"uri": "https://mon-suivi-justice.beta.gouv.fr/mentions_legales",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://mon-suivi-justice.beta.gouv.fr/packs/js/application-1f39d8f64b24c38cb048.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -285,14 +285,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://mon-suivi-justice.beta.gouv.fr/declaration_accessibilite",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://mon-suivi-justice.beta.gouv.fr/investir_ma_reinsertion",
 							"method": "GET",
 							"param": "",
@@ -301,7 +293,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://mon-suivi-justice.beta.gouv.fr/mentions_legales",
+							"uri": "https://mon-suivi-justice.beta.gouv.fr/packs/media/images/home_picto_investir-97240414.svg",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -309,7 +301,15 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://mon-suivi-justice.beta.gouv.fr/packs/js/application-1f39d8f64b24c38cb048.js",
+							"uri": "https://mon-suivi-justice.beta.gouv.fr/packs/media/images/home_picto_preparer-adb9663e.svg",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://mon-suivi-justice.beta.gouv.fr/packs/media/images/logo_msj-a63af486.svg",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -341,14 +341,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://mon-suivi-justice.beta.gouv.fr/sitemap.xml",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://mon-suivi-justice.beta.gouv.fr/stats",
 							"method": "GET",
 							"param": "",
@@ -357,13 +349,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "12",
+					"count": "11",
 					"solution": "<p>Ensure that only one component in your stack: code, web server, application server, load balancer, etc. is configured to set or add a HTTP Strict-Transport-Security (HSTS) header.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc6797#section-8.1</p>",
 					"cweid": "319",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "7"
 				},
 				{
 					"pluginid": "10021",
@@ -376,7 +368,7 @@
 					"desc": "<p>The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</p>",
 					"instances":[ 
 						{
-							"uri": "https://mon-suivi-justice.beta.gouv.fr/packs/css/application-29670ed9.css",
+							"uri": "https://mon-suivi-justice.beta.gouv.fr/packs/css/application-cdef1219.css",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -384,7 +376,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://mon-suivi-justice.beta.gouv.fr/packs/js/application-1f39d8f64b24c38cb048.js",
+							"uri": "https://mon-suivi-justice.beta.gouv.fr/packs/js/application-236ee800cceaddc1fc2e.js",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -478,7 +470,7 @@
 					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "83"
+					"sourceid": "80"
 				},
 				{
 					"pluginid": "10094",
@@ -495,105 +487,105 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "qhHXn20Zix65rw4v8VCcfQhGdlqZNSi1hb6ibNhXMmYBOppU4JOJ1lZ43YqAEekM4yvCSFNXLWxpaMgRj5xlDq",
-							"otherinfo": "\uFFFD\\x0011\u05DFm\\x0019\uFFFD\\x001e\uFFFD\uFFFD\\x000e/\uFFFDP\uFFFD}\\x0008FvZ\uFFFD5(\uFFFD\uFFFD\uFFFD\uFFFDl\uFFFDW2f\\x0001:\uFFFDT\uFFFD\uFFFD\uFFFD\uFFFDVx\u074A\uFFFD\\x0011\uFFFD\\x000c\uFFFD+\uFFFDHSW-lih\uFFFD\\x0011\uFFFD\uFFFDe\\x000e"
+							"evidence": "vAbjL8B156keT1RwBu0dx2VNE5UdfHbjbNmXsUQw116oF03O3oqGiG6V5lnqy2",
+							"otherinfo": "\uFFFD\\x0006\uFFFD/\uFFFDu\uFFFD\\x001eOTp\\x0006\uFFFD\\x001d\uFFFDeM\\x0013\uFFFD\\x001d|v\uFFFDl\u0657\uFFFDD0\uFFFD^\uFFFD\\x0017M\uFFFD\u078A\uFFFD\uFFFDn\uFFFD\uFFFDY\uFFFD\uFFFD"
 						},
 						{
 							"uri": "https://mon-suivi-justice.beta.gouv.fr",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "hjwXErTA5ltNAs4Oc3hGRaeoGgK1rFTqH7OgjEk2YNgJmenjd3tbwANr98gBk1uN",
-							"otherinfo": "\uFFFD<\\x0017\\x0012\uFFFD\uFFFD\uFFFD[M\\x0002\uFFFD\\x000esxFE\uFFFD\uFFFD\\x001a\\x0002\uFFFD\uFFFDT\uFFFD\\x001f\uFFFD\uFFFD\uFFFDI6`\uFFFD\t\uFFFD\uFFFD\uFFFDw{[\uFFFD\\x0003k\uFFFD\uFFFD\\x0001\uFFFD[\uFFFD"
+							"evidence": "2FQDa8gRqKxqDqBSTmhJ5fyRLmehGZnTj5FT4xTQwsmyYTjZqpAKX0Zo9utOo4rMF4NTVLD4shgwQsogZTp1BHAItZ",
+							"otherinfo": "\uFFFDT\\x0003k\uFFFD\\x0011\uFFFD\uFFFDj\\x000e\uFFFDRNhI\uFFFD\uFFFD\uFFFD.g\uFFFD\\x0019\uFFFD\u04CF\uFFFDS\uFFFD\\x0014\uFFFD\uFFFD\u0272a8\u066A\uFFFD\n_Fh\uFFFD\uFFFDN\uFFFD\uFFFD\uFFFD\\x0017\uFFFDST\uFFFD\uFFFD\uFFFD\\x00180B\uFFFD e:u\\x0004p\\x0008\uFFFD"
 						},
 						{
 							"uri": "https://mon-suivi-justice.beta.gouv.fr/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2FS18ulOxtCAUlmlfQe0jmy6A8Hx96De8eg4AeMH",
-							"otherinfo": "\uFFFDT\uFFFD\uFFFD\uFFFDN\uFFFD\u0400RY\uFFFD}\\x0007\uFFFD\uFFFDl\uFFFD\\x0003\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD8\\x0001\uFFFD\\x0007"
+							"evidence": "KZRAyKJ3LapQXj3XKWhZLHzI7RfntVi",
+							"otherinfo": ")\uFFFD@\u0222w-\uFFFDP^=\uFFFD)hY,|\uFFFD\uFFFD\\x0017\uFFFDX"
 						},
 						{
 							"uri": "https://mon-suivi-justice.beta.gouv.fr/comprendre_ma_peine",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2FsR8xOTuzWokeyYgn3y0ELy5R83kns",
-							"otherinfo": "\uFFFD[\\x0011\uFFFD\\x0013\uFFFD\uFFFD5\uFFFD\uFFFD\uC602}\uFFFD\uFFFDB\uFFFD\uFFFD\\x001f7\uFFFD{"
+							"evidence": "2FeBHPO0bq4KnylJbfb1h0dexiccDRkhtOtOS0lusjNJCgMeAbn3WKD54DqNdz2L",
+							"otherinfo": "\uFFFDW\uFFFD\\x001c\uFFFDn\uFFFD\n\uFFFD)Im\uFFFD\uFFFD\uFFFDG^\uFFFD'\\x001c\r\\x0019!\uFFFD\uFFFDNKIn\uFFFD3I\n\\x0003\\x001e\\x0001\uFFFD\uFFFDX\uFFFD\uFFFD\uFFFD:\uFFFDw=\uFFFD"
 						},
 						{
 							"uri": "https://mon-suivi-justice.beta.gouv.fr/declaration_accessibilite",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2BNeGEPP3OwfzCO3p3v1hBNTomkZPGCE75tIC8goywPRiA7QwVXFCuKmUp8MCkE",
-							"otherinfo": "\uFFFD\\x0013^\\x0018C\uFFFD\uFFFD\uFFFD\\x001f\uFFFD#\uFFFD\uFFFD{\uFFFD\uFFFD\\x0013S\uFFFDi\\x0019<`\uFFFD\uFFFDH\\x000b\uFFFD(\uFFFD\\x0003\u0448\\x000e\uFFFD\uFFFDU\uFFFD\n\uFFFDR\uFFFD\\x000c\nA"
+							"evidence": "WuCY8vKLbcsKLcSfLgf3b2vc7u8l1zvlNYaz8B0WCRUF7fiwZiIgRBBNSOV",
+							"otherinfo": "Z\uFFFD\uFFFD\uFFFD\uFFFDm\uFFFD\n-\u011F.\\x0007\uFFFDok\uFFFD\uFFFD\uFFFD%\uFFFD;\uFFFD5\uFFFD\uFFFD\uFFFD\\x001d\\x0016\t\\x0015\\x0005\uFFFD\uFFFD\uFFFDf\" D\\x0010MH\uFFFD"
 						},
 						{
 							"uri": "https://mon-suivi-justice.beta.gouv.fr/donnees_personnelles",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2FthlqK9DrNVFGz2HhUK2s7613pD8ZmkZWf5VS",
-							"otherinfo": "\uFFFD[a\uFFFD\uFFFD\uFFFD\\x000e\uFFFDU\\x0014l\uFFFD\\x001e\\x0015\n\uFFFD\uFFFD\uFFFD\uFFFDzC\uFFFDeg\uFFFDU"
+							"evidence": "2BbPSTNlZMaVpA8e7R4tYfNVAmCfd1RYLFRh5Z",
+							"otherinfo": "\uFFFD\\x0016\uFFFDI3ed\u0195\uFFFD\\x000f\\x001e\uFFFD\\x001e-a\uFFFDU\\x0002`\uFFFDwTX,Ta\uFFFD"
 						},
 						{
 							"uri": "https://mon-suivi-justice.beta.gouv.fr/investir_ma_reinsertion",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2F5qLbVGbUPcB7NjEuTh7mioF5bo8mLlvJzqbuenop",
-							"otherinfo": "\uFFFD^j-\uFFFDFmC\uFFFD\\x0007\uFFFDc\\x0012\uFFFD\uFFFD\uFFFDh\uFFFD\\x0017\uFFFD\uFFFD\uFFFDb\u5F1C\uFFFDn\u79E2"
+							"evidence": "2BKAmuQ1RVCs0afA6TvzoJUmynT1bmjpupGuXe4qEWzc",
+							"otherinfo": "\uFFFD\\x0012\uFFFD\uFFFD\uFFFD5EP\uFFFD\u0467\uFFFD\uFFFD;\uFFFD&\uFFFDt\uFFFDnh\u9E91\uFFFD]\uFFFD*\\x0011l\uFFFD"
 						},
 						{
 							"uri": "https://mon-suivi-justice.beta.gouv.fr/ma_reinsertion_haute_corse",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2BWd1i7S14Tqa962ytK1kuonYDTF2Ec0wKNnfj",
-							"otherinfo": "\uFFFD\\x0015\uFFFD\uFFFD.\uFFFD\u05C4\uFFFDk\u07B6\uFFFD\u04B5\uFFFD\uFFFD'`4\uFFFD\uFFFDG4\uFFFD\uFFFDg~"
+							"evidence": "2BwPc1iGUtMuup7Mmkn4WmT89tL7cLD",
+							"otherinfo": "\uFFFD\\x001c\\x000fsX\uFFFDR\uFFFD.\uFFFD\uFFFD\u031AI\uFFFDZd\uFFFD\uFFFD\uFFFD\uFFFDp\uFFFD"
 						},
 						{
 							"uri": "https://mon-suivi-justice.beta.gouv.fr/mentions_legales",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2FUGcauNLp2WKuufSrmCdDVXndX7DLSr9N",
-							"otherinfo": "\uFFFDU\\x0006q\uFFFD\uFFFD.\uFFFD\uFFFD*\uFFFDJ\uFFFD\uFFFDt5W\uFFFD\uFFFD\uFFFD\\x000c\uFFFD\uFFFD\uFFFD"
+							"evidence": "onElsCo88vK3W3XvqRROXrPOHPmEkgPvqeVdYQHCDgT1EZOZ9qdiwizRzKdwdBu2Nkt8KK9QfzBSrbq0xsYNtO5Qaq784B0tensQrOUTUw7dfP6xTNOtIIMcmSch63RpstR3",
+							"otherinfo": "\uFFFDq%\uFFFD*<\uFFFD\uFFFD[u\uFFFD\\x0014N^\uFFFD\uFFFD\\x001c\uFFFD\uFFFD\uFFFD\\x0003\uFFFD\uFFFD]a\\x0001\uFFFD\\x000e\\x0004\uFFFD\\x0011\uFFFD\uFFFD\uFFFD\uFFFDb\uFFFD,\uFFFD\u0327pt\\x001b\uFFFD6K|(\uFFFDP0R\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\r\uFFFD\uFFFDPj\uFFFD\uFFFD\uFFFD\\x001d-z{\\x0010\uFFFD\uFFFD\\x0013S\\x000e\uFFFD|\uFFFD\uFFFDL\u04ED \uFFFD\\x001c\uFFFD'!\uFFFDti\uFFFD\uFFFDw"
 						},
 						{
-							"uri": "https://mon-suivi-justice.beta.gouv.fr/packs/js/application-1f39d8f64b24c38cb048.js",
+							"uri": "https://mon-suivi-justice.beta.gouv.fr/packs/css/application-cdef1219.css",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "media/images/TJ_bayonne-9d86be46",
-							"otherinfo": "\uFFFD\uFFFDbk\uFFFD\uFFFDj\\x0007\uFFFD\uFFFD2m\uFFFD\uFFFD\uFFFDw\uFFFD\uFFFD\uFFFD:m\uFFFD:"
+							"evidence": "/packs/media/fonts/Marianne-Light-d3bbed24",
+							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDy\u061A\uFFFD\uFFFD'\uFFFD\uFFFD\uFFFDj\uFFFD\uFFFD\uFFFDw\uFFFD.(!\uFFFD\uFFFDwm\uFFFD\uFFFD\uFFFD"
 						},
 						{
 							"uri": "https://mon-suivi-justice.beta.gouv.fr/preparer_ma_convocation",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2FE6y02D4Ytofu0o3IIKEeGwm31BgItdBbTB83nIAeytKhsCsPyiAYHaeW5KN4hoi9K8CXzhCGd8clzfEwwRZkQXivFS",
-							"otherinfo": "\uFFFDQ:\uFFFDM\uFFFD\uFFFDh~\uFFFD(\u0702\n\\x0011\u1C1B}A\uFFFD\uFFFD]\\x0005\uFFFD\uFFFD\uFFFDy\uFFFD\\x0001\uFFFD*\\x001b\\x0002\uFFFD\uFFFD\uFFFD\\x0001\uFFFD\uFFFDynJ7\uFFFDh\uFFFD\u04BC\t|\uFFFD\\x0008g|r\\\uFFFD\\x0013\\x000c\\x0011fD\\x0017\uFFFD\uFFFDR"
+							"evidence": "pFiOZWPPtA1MJcfVoGkziPvNaDKHHdWugbqJZDZUPbVg",
+							"otherinfo": "\uFFFDX\uFFFDec\u03F4\rL%\uFFFD\u0560i3\uFFFD\uFFFD\uFFFDh2\uFFFD\\x001d\u056E\uFFFD\uFFFD\uFFFDd6T=\uFFFD`"
 						},
 						{
 							"uri": "https://mon-suivi-justice.beta.gouv.fr/qui_sommes_nous",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2BRXAtZj0ulEwSEnlvqMzlsy9zKYCxb1YIlU",
-							"otherinfo": "\uFFFD\\x0014W\\x0002\uFFFDc\uFFFD\uFFFDD\uFFFD!'\uFFFD\uFFFD\uFFFD\uFFFD[2\uFFFD2\uFFFD\\x000b\\x0016\uFFFD`\uFFFDT"
+							"evidence": "0c7gZRhXgIfgwq90j1HEhLLPUr1NmibD3bf8BVJiMmqS",
+							"otherinfo": "\uFFFD\uFFFD\uFFFDe\\x0018W\uFFFD\uFFFD\uFFFD\u00AFt\uFFFDQ\u0104\uFFFD\uFFFDR\uFFFDM\uFFFD&\uFFFD\u0777\uFFFD\\x0005Rb2j\uFFFD"
 						}
 					],
 					"count": "12",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>\uFFFD\\x0011\u05DFm\\x0019\uFFFD\\x001e\uFFFD\uFFFD\\x000e/\uFFFDP\uFFFD}\\x0008FvZ\uFFFD5(\uFFFD\uFFFD\uFFFD\uFFFDl\uFFFDW2f\\x0001:\uFFFDT\uFFFD\uFFFD\uFFFD\uFFFDVx\u074A\uFFFD\\x0011\uFFFD\\x000c\uFFFD+\uFFFDHSW-lih\uFFFD\\x0011\uFFFD\uFFFDe\\x000e</p>",
+					"otherinfo": "<p>\uFFFD\\x0006\uFFFD/\uFFFDu\uFFFD\\x001eOTp\\x0006\uFFFD\\x001d\uFFFDeM\\x0013\uFFFD\\x001d|v\uFFFDl\u0657\uFFFDD0\uFFFD^\uFFFD\\x0017M\uFFFD\u078A\uFFFD\uFFFDn\uFFFD\uFFFDY\uFFFD\uFFFD</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "8"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10027",
@@ -606,7 +598,7 @@
 					"desc": "<p>The response appears to contain suspicious comments which may help an attacker. Note: Matches made within script blocks or files are against the entire content not only comments.</p>",
 					"instances":[ 
 						{
-							"uri": "https://mon-suivi-justice.beta.gouv.fr/packs/js/application-1f39d8f64b24c38cb048.js",
+							"uri": "https://mon-suivi-justice.beta.gouv.fr/packs/js/application-236ee800cceaddc1fc2e.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -620,7 +612,7 @@
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "27"
+					"sourceid": "76"
 				},
 				{
 					"pluginid": "10109",
@@ -633,99 +625,99 @@
 					"desc": "<p>The application appears to be a modern web application. If you need to explore it automatically then the Ajax Spider may well be more effective than the standard one.</p>",
 					"instances":[ 
 						{
-							"uri": "https://mon-suivi-justice.beta.gouv.fr/centrevaldeloire-fr.cidff.info",
+							"uri": "https://mon-suivi-justice.beta.gouv.fr/comprendre-ma-peine",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script src=\"/packs/js/application-1f39d8f64b24c38cb048.js\" data-turbo-track=\"reload\"></script>",
+							"evidence": "<script src=\"/packs/js/application-236ee800cceaddc1fc2e.js\" data-turbo-track=\"reload\"></script>",
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
-							"uri": "https://mon-suivi-justice.beta.gouv.fr/dpds-cas-argenton-sur-creuse@indre.fr",
+							"uri": "https://mon-suivi-justice.beta.gouv.fr/le-suivi-socio-judiciaire",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script src=\"/packs/js/application-1f39d8f64b24c38cb048.js\" data-turbo-track=\"reload\"></script>",
+							"evidence": "<script src=\"/packs/js/application-236ee800cceaddc1fc2e.js\" data-turbo-track=\"reload\"></script>",
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
-							"uri": "https://mon-suivi-justice.beta.gouv.fr/dpds-cas-chateauroux@indre.fr",
+							"uri": "https://mon-suivi-justice.beta.gouv.fr/page-daccueil",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script src=\"/packs/js/application-1f39d8f64b24c38cb048.js\" data-turbo-track=\"reload\"></script>",
+							"evidence": "<script src=\"/packs/js/application-236ee800cceaddc1fc2e.js\" data-turbo-track=\"reload\"></script>",
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
-							"uri": "https://mon-suivi-justice.beta.gouv.fr/dpds-cas-lachatre-ardentes@indre.fr",
+							"uri": "https://mon-suivi-justice.beta.gouv.fr/preparer-mon-rendez-vous",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script src=\"/packs/js/application-1f39d8f64b24c38cb048.js\" data-turbo-track=\"reload\"></script>",
+							"evidence": "<script src=\"/packs/js/application-236ee800cceaddc1fc2e.js\" data-turbo-track=\"reload\"></script>",
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
-							"uri": "https://mon-suivi-justice.beta.gouv.fr/espace",
+							"uri": "https://mon-suivi-justice.beta.gouv.fr/preparer-sap-angers",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script src=\"/packs/js/application-1f39d8f64b24c38cb048.js\" data-turbo-track=\"reload\"></script>",
+							"evidence": "<script src=\"/packs/js/application-236ee800cceaddc1fc2e.js\" data-turbo-track=\"reload\"></script>",
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
-							"uri": "https://mon-suivi-justice.beta.gouv.fr/mesdroitssociaux.gouv.fr%20",
+							"uri": "https://mon-suivi-justice.beta.gouv.fr/preparer-sap-chartres",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script src=\"/packs/js/application-1f39d8f64b24c38cb048.js\" data-turbo-track=\"reload\"></script>",
+							"evidence": "<script src=\"/packs/js/application-236ee800cceaddc1fc2e.js\" data-turbo-track=\"reload\"></script>",
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
-							"uri": "https://mon-suivi-justice.beta.gouv.fr/Permanences%20-%20Conseil%20D%C3%A9partemental%20de%20l'Acc%C3%A8s%20au%20Droit%20des%20Alpes-Maritimes%20(cdad06.fr)",
+							"uri": "https://mon-suivi-justice.beta.gouv.fr/preparer-sap-nanterre",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script src=\"/packs/js/application-1f39d8f64b24c38cb048.js\" data-turbo-track=\"reload\"></script>",
+							"evidence": "<script src=\"/packs/js/application-236ee800cceaddc1fc2e.js\" data-turbo-track=\"reload\"></script>",
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
-							"uri": "https://mon-suivi-justice.beta.gouv.fr/service",
+							"uri": "https://mon-suivi-justice.beta.gouv.fr/preparer-sap-paris",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script src=\"/packs/js/application-1f39d8f64b24c38cb048.js\" data-turbo-track=\"reload\"></script>",
+							"evidence": "<script src=\"/packs/js/application-236ee800cceaddc1fc2e.js\" data-turbo-track=\"reload\"></script>",
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
-							"uri": "https://mon-suivi-justice.beta.gouv.fr/travail-emploi.gouv.fr",
+							"uri": "https://mon-suivi-justice.beta.gouv.fr/preparer-spip-28",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script src=\"/packs/js/application-1f39d8f64b24c38cb048.js\" data-turbo-track=\"reload\"></script>",
+							"evidence": "<script src=\"/packs/js/application-236ee800cceaddc1fc2e.js\" data-turbo-track=\"reload\"></script>",
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
-							"uri": "https://mon-suivi-justice.beta.gouv.fr/www.actionlogement.fr",
+							"uri": "https://mon-suivi-justice.beta.gouv.fr/preparer-spip-49",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script src=\"/packs/js/application-1f39d8f64b24c38cb048.js\" data-turbo-track=\"reload\"></script>",
+							"evidence": "<script src=\"/packs/js/application-236ee800cceaddc1fc2e.js\" data-turbo-track=\"reload\"></script>",
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
-							"uri": "https://mon-suivi-justice.beta.gouv.fr/www.demande-logement-social.gouv.fr",
+							"uri": "https://mon-suivi-justice.beta.gouv.fr/preparer-spip-75",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script src=\"/packs/js/application-1f39d8f64b24c38cb048.js\" data-turbo-track=\"reload\"></script>",
+							"evidence": "<script src=\"/packs/js/application-236ee800cceaddc1fc2e.js\" data-turbo-track=\"reload\"></script>",
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						},
 						{
-							"uri": "https://mon-suivi-justice.beta.gouv.fr/www.visale.fr",
+							"uri": "https://mon-suivi-justice.beta.gouv.fr/preparer-spip-92",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "<script src=\"/packs/js/application-1f39d8f64b24c38cb048.js\" data-turbo-track=\"reload\"></script>",
+							"evidence": "<script src=\"/packs/js/application-236ee800cceaddc1fc2e.js\" data-turbo-track=\"reload\"></script>",
 							"otherinfo": "No links have been found while there are scripts, which is an indication that this is a modern web application."
 						}
 					],
@@ -735,7 +727,7 @@
 					"reference": "",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "164"
+					"sourceid": "426"
 				},
 				{
 					"pluginid": "10049",
@@ -772,14 +764,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://mon-suivi-justice.beta.gouv.fr/declaration_accessibilite",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "private",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://mon-suivi-justice.beta.gouv.fr/investir_ma_reinsertion",
 							"method": "GET",
 							"param": "",
@@ -804,14 +788,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://mon-suivi-justice.beta.gouv.fr/sitemap.xml",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "401",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://mon-suivi-justice.beta.gouv.fr/stats",
 							"method": "GET",
 							"param": "",
@@ -820,7 +796,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "9",
+					"count": "7",
 					"solution": "<p>The content may be marked as storable by ensuring that the following conditions are satisfied:</p><p>The request method must be understood by the cache and defined as being cacheable (\"GET\", \"HEAD\", and \"POST\" are currently defined as cacheable)</p><p>The response status code must be understood by the cache (one of the 1XX, 2XX, 3XX, 4XX, or 5XX response classes are generally understood)</p><p>The \"no-store\" cache directive must not appear in the request or response header fields</p><p>For caching by \"shared\" caches such as \"proxy\" caches, the \"private\" response directive must not appear in the response</p><p>For caching by \"shared\" caches such as \"proxy\" caches, the \"Authorization\" header field must not appear in the request, unless the response explicitly allows it (using one of the \"must-revalidate\", \"public\", or \"s-maxage\" Cache-Control response directives)</p><p>In addition to the conditions above, at least one of the following conditions must also be satisfied by the response:</p><p>It must contain an \"Expires\" header field</p><p>It must contain a \"max-age\" response directive</p><p>For \"shared\" caches such as \"proxy\" caches, it must contain a \"s-maxage\" response directive</p><p>It must contain a \"Cache Control Extension\" that allows it to be cached</p><p>It must have a status code that is defined as cacheable by default (200, 203, 204, 206, 300, 301, 404, 405, 410, 414, 501).   </p>",
 					"otherinfo": "",
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
@@ -887,14 +863,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://mon-suivi-justice.beta.gouv.fr/ma_reinsertion_haute_corse",
-							"method": "GET",
-							"param": "cache-control",
-							"attack": "",
-							"evidence": "max-age=0, private, must-revalidate",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://mon-suivi-justice.beta.gouv.fr/mentions_legales",
 							"method": "GET",
 							"param": "cache-control",
@@ -925,6 +893,14 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
+						},
+						{
+							"uri": "https://mon-suivi-justice.beta.gouv.fr/sitemap.xml",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "max-age=0, private, must-revalidate",
+							"otherinfo": ""
 						}
 					],
 					"count": "11",
@@ -933,7 +909,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control</p><p>https://grayduck.mn/2021/09/13/cache-control-recommendations/</p>",
 					"cweid": "525",
 					"wascid": "13",
-					"sourceid": "8"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -960,17 +936,9 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
-						},
-						{
-							"uri": "https://mon-suivi-justice.beta.gouv.fr/sitemap.xml",
-							"method": "GET",
-							"param": "Sec-Fetch-Dest",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"solution": "<p>Ensure that Sec-Fetch-Dest header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
@@ -1003,17 +971,9 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
-						},
-						{
-							"uri": "https://mon-suivi-justice.beta.gouv.fr/sitemap.xml",
-							"method": "GET",
-							"param": "Sec-Fetch-Mode",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"solution": "<p>Ensure that Sec-Fetch-Mode header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
@@ -1046,17 +1006,9 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
-						},
-						{
-							"uri": "https://mon-suivi-justice.beta.gouv.fr/sitemap.xml",
-							"method": "GET",
-							"param": "Sec-Fetch-Site",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"solution": "<p>Ensure that Sec-Fetch-Site header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
@@ -1089,17 +1041,9 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
-						},
-						{
-							"uri": "https://mon-suivi-justice.beta.gouv.fr/sitemap.xml",
-							"method": "GET",
-							"param": "Sec-Fetch-User",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"solution": "<p>Ensure that Sec-Fetch-User header is included in user initiated requests.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
@@ -1122,7 +1066,15 @@
 							"method": "GET",
 							"param": "_mon_suivi_justice_public_session",
 							"attack": "",
-							"evidence": "qhHXn20Zix65rw4v8VCcfQhGdlqZNSi1hb6ibNhXMmYBOppU4JOJ1lZ43YqAEekM4yvCSFNXLWxpaMgRj5xlDq%2FBnLyeks2UnVbExWafetWXbit2Ad7JnexJgJ%2BWJuXrsyOlo7w4vS4qwFOiAmaff6cgONmZsEqdLOsKWvLqXsUCBT3ob6A3DZJDkUGHRu%2Fzzg8vQouY11ER8f2%2FUBDnsWVt8w00G3bkB57d9swacsMuv7k7Lav95RQz15Pl0vCpTfrtJX5P9FhQO%2Fte9ac6UWvUJjel76PZmn89sdeLcswR4m2EJI%2FF0EE%3D--SdYG%2FsTh0%2B2IRV5V--UZ1ls1BhKj3OPZMJ0yjgrg%3D%3D",
+							"evidence": "THglea%2F6tHKEMVJ92qyxmhHW01GwpnJPCDcM8QMirJQlRKqvfE58uJrE9TzK5cn2sDhMecUsohnONI%2FQDa8gRqKxqDqBSTmhJ5fyRLmehGZnTj5FT4xTQwsmyYTjZqpAKX0Zo9utOo4rMF4NTVLD4shgwQsogZTp1BHAItZ%2FvJxopJIwPlBCiCeuIlBKUhPvk8Srr3NtOczPEZhNczOZNlv7T%2BxmwrwHa7DSt%2FXMw98NLE%2FpObXSuqraFbF497hKSi9yEUsqcnSqkb5ob5IokT3KOFCEFzpNTtWjlvgG6%2FDOO%2FymLtXuy%2Fo%3D--IjD25voWu2%2Br2iGC--Q3OErMB3P4ru1aBjY74g6g%3D%3D",
+							"otherinfo": "\ncookie:_mon_suivi_justice_public_session"
+						},
+						{
+							"uri": "https://mon-suivi-justice.beta.gouv.fr",
+							"method": "GET",
+							"param": "_mon_suivi_justice_public_session",
+							"attack": "",
+							"evidence": "vAbjL8B156keT1RwBu0dx2VNE5UdfHbjbNmXsUQw116oF03O3oqGiG6V5lnqy2%2B2yPyVa2Acff5LlV%2FEmWLf2Ma1pbdfEVzecUqMq5gVCD6FinlBlVbH9HRySXnqCca7hZ7qLw4rw5AT1FmBZuZzSGZRAM2Q%2BacACcs%2BkuGjln2HUJsSXxAiT1qdA4sn%2BB2Zydgf1aCH2KWtZp48%2Fbo9NvisX7w7p%2Fe7cGAUfs2UQmaiMbr0Ppa8TvXY6GXum8ChItTMeVAaQD3uYHEGvz1Spdi%2FJkCUvqnaDrHjDhmeF5utKDnMgI9zs%2Fc%3D--kiU2P6u%2BUFPUVOHN--LwenbfekHapMtYGJU5V4dA%3D%3D",
 							"otherinfo": "\ncookie:_mon_suivi_justice_public_session"
 						},
 						{
@@ -1130,7 +1082,7 @@
 							"method": "GET",
 							"param": "_mon_suivi_justice_public_session",
 							"attack": "",
-							"evidence": "96kSRiZhNdmPAM4dsuUnWa1ZY0u%2FGAX2%2B8C2UKgw50zYexfX22H397mQmZ35zmTM%2B5x%2BpAwlzMihJrinMZxwQMzxPq1r9a87tSNYPOMXuJizItCfP5GBykL2W4BuBca8FdonSuYohyb72LA%2FS18ulOxtCAUlmlfQe0jmy6A8Hx96De8eg4AeMH%2FigqoVG2QkHRDUuH8rDpAlBnnlNw8CHESUJRdV%2F5Mfnkj6WQ1Td2j3%2FCap8nCXTp%2FEClH%2FWJXYihdaly8CMZ2rwPmeUZTWC8c21JlodxDy%2Bn5ecE59rK2x0yWztLOAFSU%3D--OmacEFKzY8CFCtmA--GQUwDNGl%2BeNBDS8tmAICFQ%3D%3D",
+							"evidence": "KZRAyKJ3LapQXj3XKWhZLHzI7RfntVi%2F5tMl5qMmWhFmA0TsO%2BNJV9tjA3YHLBKk91LoUa4MQOxj47bDn6aM8DpNgdGX9gnbA9N7DsV%2Bv1nq0wixkz3yCBKg9%2BaFyt8Wy3dyBBCyzBbtrqgikPF67%2BFkJ2cJJm%2BbJlej9LO9ucy5Xra%2FEm2Ju%2BRgfFaJIX2RmA7PpKgBmch6%2Bq3RjVwv0%2FvH%2FjO9aCPUGv3uSdu6ZFFJeixpxdvKIdT%2BY12dig21mY3fe1XlpVH%2Bnz19vabvHV4cdFICyH5LIEjuznG1ps%2Bxs7orl0zC3kY%3D--X4JdB5hi33vnv7Ys--gsxyn0kvunwxRAQCAEY5qw%3D%3D",
 							"otherinfo": "\ncookie:_mon_suivi_justice_public_session"
 						},
 						{
@@ -1138,7 +1090,7 @@
 							"method": "GET",
 							"param": "_mon_suivi_justice_public_session",
 							"attack": "",
-							"evidence": "2Rqe6plMcJe87eTeazt6ejSfjrf1W9u8gcV7YeYeduFuOYA9kbd7fmExp%2FsR8xOTuzWokeyYgn3y0ELy5R83kns%2FM1QriuAti91Zwr%2F7%2FJJSPV%2FIkDGhJ2ODDJtqOGd2mSB3Y3m4tv8OR7%2BSs%2BZKG%2BKXX2%2FH7NwZO1MTGmUNwg8CYp7UnBWjFgSWYNzgDYSfdI1lBeDHveSSPUf5CF1oACtuG8bRaPTQ1%2FqhZd6Y%2B1%2Bh7d%2F6k%2BfJa20Qkpc7guhAdVx7iIVZ4knO%2B6ypul6pm8k5RKDe5GdWUH%2F6nibwpwp0s91SZs3bCQk%3D--%2BRWAyvCHlVovq5%2FB--PKWEx8w7AHHD4rxEY%2FXlDg%3D%3D",
+							"evidence": "f3e1MG%2FeBHPO0bq4KnylJbfb1h0dexiccDRkhtOtOS0lusjNJCgMeAbn3WKD54DqNdz2L%2FEMOpOYAl%2F%2FWAu7QBqAXGisUmMGt%2FmyDJq1UP%2BaII9jMU97eHAYpqF0QFOUyWuLPIXNRBqDsWB4YzABbKJDWDMs83Vcif%2Ff8Rq0koWoZ0bjE25qUgi4dSFHjZ%2Bqd6nkFQFKz0hArMnju7FfKNYFuaB4eZ6fqZ91DNvMGI%2BCJl8fbHYqz8BaEEDnx38PMcbYIAGeyEszbJX8emOoKMfoCBK2JiYaSzkU2699E3vRVQ6NEj%2B0sOY%3D--2z2Y5ZTIxXP0ONsV--YUgGOY88w0aR5lVejrCj0Q%3D%3D",
 							"otherinfo": "\ncookie:_mon_suivi_justice_public_session"
 						},
 						{
@@ -1146,7 +1098,7 @@
 							"method": "GET",
 							"param": "_mon_suivi_justice_public_session",
 							"attack": "",
-							"evidence": "pS%2BHO4SdLx%2Fs218txvbRL4q%2BNeGEPP3OwfzCO3p3v1hBNTomkZPGCE75tIC8goywPRiA7QwVXFCuKmUp8MCkE%2BL6kJ4zKug9DFMt9W8mNiwxY3ZYlJ%2BAGMTEWx%2BHRm90FRIjDd4QmjenZbHLq%2B1j1t0KTtYX1WBsUCLBShW%2F8MN0s9ZkhbZGZOujOUxhLqpD%2FyETMuRaaygO609UnOPKil1zfi6EQBuCDk76zQNSKoM2i0yAwMLk7DYYAQr2SmlEwZkeniZzrBAc0a8dLD1ZrB1JsdGhIt%2BPWfd7251k9bEXGNpEOPmvnf4%3D--pDbq5AuMdps%2FZ3J3--N4mPK1bLRJXipR92%2BWuumg%3D%3D",
+							"evidence": "WuCY8vKLbcsKLcSfLgf3b2vc7u8l1zvlNYaz8B0WCRUF7fiwZiIgRBBNSOV%2FFa2OCK0TwvFhsG6X6IZzQoL2c3agtU8q35d1IYLiY6rSJMAoBRaVFJSlHTvrYyDZROmpMHXMExHrRCa%2BEpw1QZK5l0WanPdlr5xIqM9VXFsM6uCWu50RDQZ712i8ec73EBFABBexf0YeN9UAUYDfPWobiXvi7SlbXEciYY3GoDrEAkWJ4ZDxD3goGirRgJI2uFaNQH7dTwmTf3OxqFHaFjrSB%2Brv77OR4TVZpH6aHhhuMPfMhL6hSiM20gE%3D--HLAxGozMyFRemEZV--Mx3vcgc1cyafmJZmiQCK%2BQ%3D%3D",
 							"otherinfo": "\ncookie:_mon_suivi_justice_public_session"
 						},
 						{
@@ -1154,7 +1106,7 @@
 							"method": "GET",
 							"param": "_mon_suivi_justice_public_session",
 							"attack": "",
-							"evidence": "Cj97epMQLynQThb4doZdbspjtym3GvWUm41HlX7FSIllcA9MnnJQ1cq7sTVhZ6g5tghh5trHzr22U0gggcnYKOz9g%2FErJ4cHcXV9AZw0n4O1hsWSVuP%2Bhuo7V3BGzrobS3j%2F5qLbVGbUPcB7NjEuTh7mioF5bo8mLlvJzqbuenop%2B0XIHF%2FsU%2FzuxPSx14O3BfwYKIeBfRZPuPQIx0acnVgoN89SO%2BDg%2BGfBOQLxOe2H%2BfonXY5exUdhZapw2b%2F1tfdme8mZFnCfiTxQT37rjIDdgAP6rYhKjfv4p1nqG3x8xNBL9UZUGMc%3D--yqgTmsy2llH9DaFb--DkNVI0MY69D2RnE65eEeYw%3D%3D",
+							"evidence": "eYhfvzDj0Fk2pHnNvRxaL1hW9kO5Mocvganz2WaIfrPvDQLdn5GvO%2FP4w7I5CnPXV%2ByyBjLULvTnfa96%2BwFMgdm5F%2BsYIKxm9X4vFHQhDLj5WPJDm%2B0e1NkmqtCMzl0KfsoliB%2FtXeb9UAHZXMPmjw7oo%2FQgVXayRzrXSU602gkLFtT%2BKAmuQ1RVCs0afA6TvzoJUmynT1bmjpupGuXe4qEWzc%2B77DcRQ8fZJmCDt%2BiMNcucYobE4HVRvlEMIf%2BW4Lq9zKxv7p2UcUhmCSax3FvQRy%2BQVLL3%2Bpqz3UJa9WWRRXjnq559nLg%3D--Pu%2BF%2FNl5qTDq8LTQ--XKNWpq%2BRUSpCkYybDhkeJg%3D%3D",
 							"otherinfo": "\ncookie:_mon_suivi_justice_public_session"
 						},
 						{
@@ -1162,7 +1114,15 @@
 							"method": "GET",
 							"param": "_mon_suivi_justice_public_session",
 							"attack": "",
-							"evidence": "XwsbUrKbD%2F%2F221Dm%2Bc9IlA%2BHCgYA%2FUGcauNLp2WKuufSrmCdDVXndX7DLSr9N%2FUWCWGxIYMBcWrzU7ybHPNJyQmDPIp3taH8q55mc5synF2jowWyPeP9S1gp6sBy9BVowSIalMArjtBbpX9olaC4R6YS01j0JQfzMrLQHXiDzZ1zpbEF9I1Zm3IKWbnI43lxVAAcgboHAf6%2B%2BkulGddHBIH6jTiQSJ5yatEveFUAnEgxWfZz4h1CUHbpfLZ9KwOf2moJzjSSmxtnCn%2Fafm6V4FwLU96j0Zmtglm%2BD9nl0nE%2B8zd%2BR1osWPw%3D--yI%2Bw6uomHEj3%2FPsA--3U9ijuIOR%2BqfOSJxuMfUOg%3D%3D",
+							"evidence": "onElsCo88vK3W3XvqRROXrPOHPmEkgPvqeVdYQHCDgT1EZOZ9qdiwizRzKdwdBu2Nkt8KK9QfzBSrbq0xsYNtO5Qaq784B0tensQrOUTUw7dfP6xTNOtIIMcmSch63RpstR3%2FGeEDNUEe7X%2BSlDopDoN8fF7Az%2Bf1TgM299Rvmh9chzjNXNgF0%2BBHk5SS16unqOpCtlqAVdVkLizR5GTytQC5nf8ARtcf2m2BmWL4VE%2F31P57yEcrO2YQ0g4Fuc9nb9yzRVU87Borv6en33dFKCSo7%2B3pfaYgpl%2BjTJ0TV0lZDfKJJ9XH1s%3D--%2FRUp2pi0zIf7shpk--2GY0iS%2B0vRmcMuj0C9eK8Q%3D%3D",
+							"otherinfo": "\ncookie:_mon_suivi_justice_public_session"
+						},
+						{
+							"uri": "https://mon-suivi-justice.beta.gouv.fr/preparer_ma_convocation",
+							"method": "GET",
+							"param": "_mon_suivi_justice_public_session",
+							"attack": "",
+							"evidence": "pFiOZWPPtA1MJcfVoGkziPvNaDKHHdWugbqJZDZUPbVg%2FLg6n260pyRNodgyDjdptZNO462Hw0jzrPqshP%2F7YnFKDcA5bEVq4rDKuPWbWWAikTKERoc%2Ff6bul8UrRXIy7Zse%2FS3eAxksbBd%2F11c3k9v1rACFHVfIoqnSttma3UW65GbdaFaxx59dG023YkgqNlULZwrVl%2B%2BAB1f7qjZmvn6Ix7Rta1vjG07%2BhD%2B93LPTg5%2FpbIxffjL8hdXRvKcs38JkGDCH%2F6BRehNrqd6oj3eOJ1EFDUAo2udZzuVHGLwUSKbypheBT3c%3D--Nn9b1vjiFh0VqIaX--vd5e%2FhlUQDTZZK1TJm%2BuMQ%3D%3D",
 							"otherinfo": "\ncookie:_mon_suivi_justice_public_session"
 						},
 						{
@@ -1170,25 +1130,25 @@
 							"method": "GET",
 							"param": "_mon_suivi_justice_public_session",
 							"attack": "",
-							"evidence": "sgYKPqnDXAfCAsejG0LSYd6tjhW%2FZzZvG1FSyEd7st6yyjebrD%2BRXAtZj0ulEwSEnlvqMzlsy9zKYCxb1YIlU%2Br41RopMZdoRrGmkPZaSrB1Z7DCFi%2B8xSaRD6%2FP47bUCRLMkpSSNQ%2FTxKIOslijbJWEUX2T7VQhEfNkDMGIhzRrqXClXMWzniFsAGU1%2B7nVmqqvTcFO0JVzNae%2BT56L2LaB6Lff0E2kmCO%2FtGsnz%2BxOhsV3itpG9TtHxWM8anosmdVpej4KWzha%2FPEm5OdgW2LPfjZ14BV7jAMQT%2FxwIzHt4o5T%2Fsj5J9E%3D--QEcHRKUT0V8s%2FSEs--zsScI6wFnKUezho5IYtISw%3D%3D",
+							"evidence": "0c7gZRhXgIfgwq90j1HEhLLPUr1NmibD3bf8BVJiMmqS%2FrnsbZe9eXtO0a3prl0Wj5DgASaJY8%2B3%2BRbGYhkMrBK6LODEAR63MF1DWFFrEr0Dt09%2FAdntPnTBbsjSakq18WyLyEUR7f8TypxeHH969QZ%2FN43DPfkuYWUnjqvva63keShy3GdsskHTM0UbdjE0GC%2BcKXOvE88ZlcqIVTP7OfX%2BXGHq8xkWc79pGjTFoXsd%2FlaUwAGJzkgjCB96r2Xzy%2BterkSuI0pVfBhrSzvSbi1FUO%2FAFraK4IFdpwyh%2BY44Fr%2FQQ26UJSE%3D--862oajmbveSYGvYJ--M64mdxX2fH5LLtBIgLqZhA%3D%3D",
 							"otherinfo": "\ncookie:_mon_suivi_justice_public_session"
 						},
 						{
-							"uri": "https://mon-suivi-justice.beta.gouv.fr/packs/css",
+							"uri": "https://mon-suivi-justice.beta.gouv.fr/packs/media/images/favicon-7358ba85.ico",
 							"method": "GET",
 							"param": "_mon_suivi_justice_public_session",
 							"attack": "",
-							"evidence": "qhHXn20Zix65rw4v8VCcfQhGdlqZNSi1hb6ibNhXMmYBOppU4JOJ1lZ43YqAEekM4yvCSFNXLWxpaMgRj5xlDq%2FBnLyeks2UnVbExWafetWXbit2Ad7JnexJgJ%2BWJuXrsyOlo7w4vS4qwFOiAmaff6cgONmZsEqdLOsKWvLqXsUCBT3ob6A3DZJDkUGHRu%2Fzzg8vQouY11ER8f2%2FUBDnsWVt8w00G3bkB57d9swacsMuv7k7Lav95RQz15Pl0vCpTfrtJX5P9FhQO%2Fte9ac6UWvUJjel76PZmn89sdeLcswR4m2EJI%2FF0EE%3D--SdYG%2FsTh0%2B2IRV5V--UZ1ls1BhKj3OPZMJ0yjgrg%3D%3D",
+							"evidence": "WuCY8vKLbcsKLcSfLgf3b2vc7u8l1zvlNYaz8B0WCRUF7fiwZiIgRBBNSOV%2FFa2OCK0TwvFhsG6X6IZzQoL2c3agtU8q35d1IYLiY6rSJMAoBRaVFJSlHTvrYyDZROmpMHXMExHrRCa%2BEpw1QZK5l0WanPdlr5xIqM9VXFsM6uCWu50RDQZ712i8ec73EBFABBexf0YeN9UAUYDfPWobiXvi7SlbXEciYY3GoDrEAkWJ4ZDxD3goGirRgJI2uFaNQH7dTwmTf3OxqFHaFjrSB%2Brv77OR4TVZpH6aHhhuMPfMhL6hSiM20gE%3D--HLAxGozMyFRemEZV--Mx3vcgc1cyafmJZmiQCK%2BQ%3D%3D",
 							"otherinfo": "\ncookie:_mon_suivi_justice_public_session"
 						}
 					],
-					"count": "8",
+					"count": "10",
 					"solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
 					"otherinfo": "<p></p><p>cookie:_mon_suivi_justice_public_session</p>",
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "8"
+					"sourceid": "7"
 				},
 				{
 					"pluginid": "10049",
@@ -1201,7 +1161,23 @@
 					"desc": "<p>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users.  If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
 					"instances":[ 
 						{
-							"uri": "https://mon-suivi-justice.beta.gouv.fr/packs/js/application-1f39d8f64b24c38cb048.js",
+							"uri": "https://mon-suivi-justice.beta.gouv.fr/packs/media/images/home_picto_investir-97240414.svg",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
+							"uri": "https://mon-suivi-justice.beta.gouv.fr/packs/media/images/home_picto_preparer-adb9663e.svg",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
+							"uri": "https://mon-suivi-justice.beta.gouv.fr/packs/media/images/logo_msj-a63af486.svg",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1217,13 +1193,13 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						}
 					],
-					"count": "2",
+					"count": "4",
 					"solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information.  If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request. </p>",
 					"otherinfo": "<p>In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.</p>",
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "27"
+					"sourceid": "178"
 				}
 			]
 		}

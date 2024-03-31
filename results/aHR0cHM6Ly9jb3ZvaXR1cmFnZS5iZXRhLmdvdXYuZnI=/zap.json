@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 24 Mar 2024 02:33:55",
+	"@generated": "Sun, 31 Mar 2024 02:45:45",
 	"site":[ 
 		{
 			"@name": "https://covoiturage.beta.gouv.fr",
@@ -50,7 +50,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "413"
+					"sourceid": "410"
 				},
 				{
 					"pluginid": "10038",
@@ -79,14 +79,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://covoiturage.beta.gouv.fr/abonnez-vous/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://covoiturage.beta.gouv.fr/favicons/browserconfig.xml",
 							"method": "GET",
 							"param": "",
@@ -103,7 +95,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://covoiturage.beta.gouv.fr/nous-contacter/",
+							"uri": "https://covoiturage.beta.gouv.fr/operateurs/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -111,7 +103,23 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://covoiturage.beta.gouv.fr/operateurs/",
+							"uri": "https://covoiturage.beta.gouv.fr/operateurs/mobigo/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://covoiturage.beta.gouv.fr/operateurs/moovance/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://covoiturage.beta.gouv.fr/operateurs/ynstant/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -136,14 +144,6 @@
 						},
 						{
 							"uri": "https://covoiturage.beta.gouv.fr/territoires/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://covoiturage.beta.gouv.fr/tiers-de-confiance/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -178,15 +178,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://covoiturage.beta.gouv.fr/abonnez-vous/",
-							"method": "GET",
-							"param": "x-frame-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://covoiturage.beta.gouv.fr/nous-contacter/",
+							"uri": "https://covoiturage.beta.gouv.fr/",
 							"method": "GET",
 							"param": "x-frame-options",
 							"attack": "",
@@ -202,7 +194,39 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://covoiturage.beta.gouv.fr/operateurs/citygo/",
+							"method": "GET",
+							"param": "x-frame-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://covoiturage.beta.gouv.fr/operateurs/ilevia/",
+							"method": "GET",
+							"param": "x-frame-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://covoiturage.beta.gouv.fr/operateurs/instant-system/",
+							"method": "GET",
+							"param": "x-frame-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://covoiturage.beta.gouv.fr/operateurs/mobigo/",
+							"method": "GET",
+							"param": "x-frame-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://covoiturage.beta.gouv.fr/operateurs/moovance/",
 							"method": "GET",
 							"param": "x-frame-options",
 							"attack": "",
@@ -226,6 +250,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://covoiturage.beta.gouv.fr/operateurs/ynstant/",
+							"method": "GET",
+							"param": "x-frame-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://covoiturage.beta.gouv.fr/qui-sommes-nous/",
 							"method": "GET",
 							"param": "x-frame-options",
@@ -240,23 +272,15 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
-						},
-						{
-							"uri": "https://covoiturage.beta.gouv.fr/tiers-de-confiance/",
-							"method": "GET",
-							"param": "x-frame-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
 						}
 					],
-					"count": "10",
+					"count": "13",
 					"solution": "<p>Modern Web browsers support the Content-Security-Policy and X-Frame-Options HTTP headers. Ensure one of them is set on all web pages returned by your site/app.</p><p>If you expect the page to be framed only by pages on your server (e.g. it's part of a FRAMESET) then you'll want to use SAMEORIGIN, otherwise if you never expect the page to be framed, you should use DENY. Alternatively consider implementing Content Security Policy's \"frame-ancestors\" directive.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options</p>",
 					"cweid": "1021",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90003",
@@ -315,7 +339,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity</p>",
 					"cweid": "345",
 					"wascid": "15",
-					"sourceid": "413"
+					"sourceid": "410"
 				},
 				{
 					"pluginid": "10003",
@@ -342,7 +366,7 @@
 					"reference": "<p>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3749</p><p>https://github.com/axios/axios/issues/6022</p><p>https://security.snyk.io/vuln/SNYK-JS-AXIOS-6032459</p><p>https://github.com/axios/axios/pull/6028</p><p>https://github.com/axios/axios/issues/6006</p><p>https://github.com/axios/axios/commit/96ee232bd3ee4de2e657333d4d2191cd389e14d0</p><p>https://nvd.nist.gov/vuln/detail/CVE-2023-45857</p><p>https://github.com/advisories/GHSA-wf5p-g6vw-rhxx</p><p>https://security.snyk.io/vuln/SNYK-JS-AXIOS-1579269</p><p>https://github.com/axios/axios/releases/tag/v1.6.0</p><p></p>",
 					"cweid": "829",
 					"wascid": "-1",
-					"sourceid": "222"
+					"sourceid": "407"
 				},
 				{
 					"pluginid": "10017",
@@ -385,7 +409,7 @@
 					"reference": "",
 					"cweid": "829",
 					"wascid": "15",
-					"sourceid": "413"
+					"sourceid": "410"
 				},
 				{
 					"pluginid": "10063",
@@ -407,14 +431,6 @@
 						},
 						{
 							"uri": "https://covoiturage.beta.gouv.fr/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://covoiturage.beta.gouv.fr/abonnez-vous/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -446,7 +462,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://covoiturage.beta.gouv.fr/nous-contacter/",
+							"uri": "https://covoiturage.beta.gouv.fr/operateurs/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -454,7 +470,15 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://covoiturage.beta.gouv.fr/operateurs/",
+							"uri": "https://covoiturage.beta.gouv.fr/operateurs/mobigo/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://covoiturage.beta.gouv.fr/operateurs/moovance/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -492,7 +516,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy</p><p>https://developer.chrome.com/blog/feature-policy/</p><p>https://scotthelme.co.uk/a-new-security-header-feature-policy/</p><p>https://w3c.github.io/webappsec-feature-policy/</p><p>https://www.smashingmagazine.com/2018/12/feature-policy/</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10021",
@@ -538,6 +562,14 @@
 						},
 						{
 							"uri": "https://covoiturage.beta.gouv.fr/favicons/site.webmanifest",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://covoiturage.beta.gouv.fr/images/logo-rpc.png",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -593,7 +625,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						}
 					],
-					"count": "11",
+					"count": "12",
 					"solution": "<p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p>",
 					"otherinfo": "<p>This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.</p><p>At \"High\" threshold this scan rule will not alert on client or server error responses.</p>",
 					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
@@ -628,14 +660,6 @@
 							"otherinfo": "r\uFFFD\uFFFDr\\x0016\uFFFD\uFFFD\uFFFDP/\uFFFD\uFFFD\uFFFD\u0110\uFFFDDm\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD[@"
 						},
 						{
-							"uri": "https://covoiturage.beta.gouv.fr/abonnez-vous/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "com/channel/UC-Dge-XxJCIRG22jcGM-VtA",
-							"otherinfo": "r\uFFFD\uFFFDr\\x0016\uFFFD\uFFFD\uFFFDP/\uFFFD\uFFFD\uFFFD\u0110\uFFFDDm\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD[@"
-						},
-						{
 							"uri": "https://covoiturage.beta.gouv.fr/css/dsfr.min.css",
 							"method": "GET",
 							"param": "",
@@ -660,7 +684,7 @@
 							"otherinfo": "r\uFFFD\uFFFDr\\x0016\uFFFD\uFFFD\uFFFDP/\uFFFD\uFFFD\uFFFD\u0110\uFFFDDm\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD[@"
 						},
 						{
-							"uri": "https://covoiturage.beta.gouv.fr/nous-contacter/",
+							"uri": "https://covoiturage.beta.gouv.fr/operateurs/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -668,7 +692,15 @@
 							"otherinfo": "r\uFFFD\uFFFDr\\x0016\uFFFD\uFFFD\uFFFDP/\uFFFD\uFFFD\uFFFD\u0110\uFFFDDm\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD[@"
 						},
 						{
-							"uri": "https://covoiturage.beta.gouv.fr/operateurs/",
+							"uri": "https://covoiturage.beta.gouv.fr/operateurs/mobigo/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "com/channel/UC-Dge-XxJCIRG22jcGM-VtA",
+							"otherinfo": "r\uFFFD\uFFFDr\\x0016\uFFFD\uFFFD\uFFFDP/\uFFFD\uFFFD\uFFFD\u0110\uFFFDDm\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD[@"
+						},
+						{
+							"uri": "https://covoiturage.beta.gouv.fr/operateurs/moovance/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -706,7 +738,7 @@
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10024",
@@ -733,7 +765,7 @@
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "311"
+					"sourceid": "414"
 				},
 				{
 					"pluginid": "10027",
@@ -784,7 +816,7 @@
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "222"
+					"sourceid": "407"
 				},
 				{
 					"pluginid": "10109",
@@ -813,14 +845,6 @@
 							"otherinfo": "Links have been found with a target of '_self' - this is often used by modern frameworks to force a full page reload."
 						},
 						{
-							"uri": "https://covoiturage.beta.gouv.fr/abonnez-vous/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<a class=\"rf-nav__link\" href=\"/territoires/\" target=\"_self\">Territoires</a>",
-							"otherinfo": "Links have been found with a target of '_self' - this is often used by modern frameworks to force a full page reload."
-						},
-						{
 							"uri": "https://covoiturage.beta.gouv.fr/favicons/browserconfig.xml",
 							"method": "GET",
 							"param": "",
@@ -837,7 +861,7 @@
 							"otherinfo": "Links have been found with a target of '_self' - this is often used by modern frameworks to force a full page reload."
 						},
 						{
-							"uri": "https://covoiturage.beta.gouv.fr/nous-contacter/",
+							"uri": "https://covoiturage.beta.gouv.fr/operateurs/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -845,7 +869,23 @@
 							"otherinfo": "Links have been found with a target of '_self' - this is often used by modern frameworks to force a full page reload."
 						},
 						{
-							"uri": "https://covoiturage.beta.gouv.fr/operateurs/",
+							"uri": "https://covoiturage.beta.gouv.fr/operateurs/mobigo/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a class=\"rf-nav__link\" href=\"/territoires/\" target=\"_self\">Territoires</a>",
+							"otherinfo": "Links have been found with a target of '_self' - this is often used by modern frameworks to force a full page reload."
+						},
+						{
+							"uri": "https://covoiturage.beta.gouv.fr/operateurs/moovance/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a class=\"rf-nav__link\" href=\"/territoires/\" target=\"_self\">Territoires</a>",
+							"otherinfo": "Links have been found with a target of '_self' - this is often used by modern frameworks to force a full page reload."
+						},
+						{
+							"uri": "https://covoiturage.beta.gouv.fr/operateurs/ynstant/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -870,14 +910,6 @@
 						},
 						{
 							"uri": "https://covoiturage.beta.gouv.fr/territoires/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<a class=\"rf-nav__link\" href=\"/territoires/\" target=\"_self\">Territoires</a>",
-							"otherinfo": "Links have been found with a target of '_self' - this is often used by modern frameworks to force a full page reload."
-						},
-						{
-							"uri": "https://covoiturage.beta.gouv.fr/tiers-de-confiance/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -950,7 +982,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "48"
+					"sourceid": "161"
 				},
 				{
 					"pluginid": "10015",
@@ -979,23 +1011,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://covoiturage.beta.gouv.fr/abonnez-vous/",
-							"method": "GET",
-							"param": "cache-control",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://covoiturage.beta.gouv.fr/favicons/site.webmanifest",
-							"method": "GET",
-							"param": "cache-control",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://covoiturage.beta.gouv.fr/nous-contacter/",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -1012,6 +1028,30 @@
 						},
 						{
 							"uri": "https://covoiturage.beta.gouv.fr/operateurs/mobigo/",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://covoiturage.beta.gouv.fr/operateurs/moovance/",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://covoiturage.beta.gouv.fr/operateurs/stopngocar/",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://covoiturage.beta.gouv.fr/operateurs/ynstant/",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -1041,14 +1081,6 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
-						},
-						{
-							"uri": "https://covoiturage.beta.gouv.fr/tiers-de-confiance/",
-							"method": "GET",
-							"param": "cache-control",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
 						}
 					],
 					"count": "11",
@@ -1070,7 +1102,7 @@
 					"desc": "<p>Specifies how and where the data would be used. For instance, if the value is audio, then the requested resource must be audio data and not any other type of resource.</p>",
 					"instances":[ 
 						{
-							"uri": "https://covoiturage.beta.gouv.fr/",
+							"uri": "https://covoiturage.beta.gouv.fr",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -1078,15 +1110,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://covoiturage.beta.gouv.fr/operateurs",
-							"method": "GET",
-							"param": "Sec-Fetch-Dest",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://covoiturage.beta.gouv.fr/tiers-de-confiance",
+							"uri": "https://covoiturage.beta.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -1094,13 +1118,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"solution": "<p>Ensure that Sec-Fetch-Dest header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "40"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -1113,7 +1137,7 @@
 					"desc": "<p>Allows to differentiate between requests for navigating between HTML pages and requests for loading resources like images, audio etc.</p>",
 					"instances":[ 
 						{
-							"uri": "https://covoiturage.beta.gouv.fr/",
+							"uri": "https://covoiturage.beta.gouv.fr",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -1121,15 +1145,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://covoiturage.beta.gouv.fr/operateurs",
-							"method": "GET",
-							"param": "Sec-Fetch-Mode",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://covoiturage.beta.gouv.fr/tiers-de-confiance",
+							"uri": "https://covoiturage.beta.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -1137,13 +1153,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"solution": "<p>Ensure that Sec-Fetch-Mode header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "40"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -1156,7 +1172,7 @@
 					"desc": "<p>Specifies the relationship between request initiator's origin and target's origin.</p>",
 					"instances":[ 
 						{
-							"uri": "https://covoiturage.beta.gouv.fr/",
+							"uri": "https://covoiturage.beta.gouv.fr",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -1164,15 +1180,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://covoiturage.beta.gouv.fr/operateurs",
-							"method": "GET",
-							"param": "Sec-Fetch-Site",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://covoiturage.beta.gouv.fr/tiers-de-confiance",
+							"uri": "https://covoiturage.beta.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -1180,13 +1188,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"solution": "<p>Ensure that Sec-Fetch-Site header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "40"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -1199,7 +1207,7 @@
 					"desc": "<p>Specifies if a navigation request was initiated by a user.</p>",
 					"instances":[ 
 						{
-							"uri": "https://covoiturage.beta.gouv.fr/",
+							"uri": "https://covoiturage.beta.gouv.fr",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -1207,15 +1215,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://covoiturage.beta.gouv.fr/operateurs",
-							"method": "GET",
-							"param": "Sec-Fetch-User",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://covoiturage.beta.gouv.fr/tiers-de-confiance",
+							"uri": "https://covoiturage.beta.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -1223,13 +1223,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"solution": "<p>Ensure that Sec-Fetch-User header is included in user initiated requests.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "40"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10049",
@@ -1258,7 +1258,7 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"uri": "https://covoiturage.beta.gouv.fr/favicons/favicon.ico",
+							"uri": "https://covoiturage.beta.gouv.fr/operateurs/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1266,7 +1266,7 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"uri": "https://covoiturage.beta.gouv.fr/favicons/site.webmanifest",
+							"uri": "https://covoiturage.beta.gouv.fr/qui-sommes-nous/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1296,7 +1296,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "6"
+					"sourceid": "1"
 				}
 			]
 		}

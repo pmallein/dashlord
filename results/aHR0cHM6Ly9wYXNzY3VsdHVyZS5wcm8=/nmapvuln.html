@@ -54,7 +54,7 @@
 <h1>Scan Report<br><small>Nmap 7.92</small>
 </h1>
 <pre style="white-space:pre-wrap; word-wrap:break-word;">nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln passculture.pro</pre>
-<p class="lead">Sun Mar 24 05:05:04 2024 – Sun Mar 24 05:05:22 2024<br>1 hosts scanned.
+<p class="lead">Sun Mar 31 05:20:46 2024 – Sun Mar 31 05:21:56 2024<br>1 hosts scanned.
               1 hosts up.
               0 hosts down.
             </p>
@@ -76,7 +76,7 @@
 </tr></thead>
 <tbody><tr>
 <td><span class="label label-success">up</span></td>
-<td>199.36.158.100</td>
+<td>34.107.224.170</td>
 <td>passculture.pro</td>
 <td>2</td>
 <td>0</td>
@@ -91,10 +91,13 @@
             });
           </script><h2 id="onlinehosts" class="target">Online Hosts</h2>
 <div class="panel panel-default">
-<div class="panel-heading clickable" data-toggle="collapse" data-target="#199-36-158-100"><h3 class="panel-title">199.36.158.100 - passculture.pro</h3></div>
-<div class="panel-body collapse in" id="199-36-158-100">
+<div class="panel-heading clickable" data-toggle="collapse" data-target="#34-107-224-170"><h3 class="panel-title">34.107.224.170 - passculture.pro</h3></div>
+<div class="panel-body collapse in" id="34-107-224-170">
 <h4>Hostnames</h4>
-<ul><li>passculture.pro (user)</li></ul>
+<ul>
+<li>passculture.pro (user)</li>
+<li>170.224.107.34.bc.googleusercontent.com (PTR)</li>
+</ul>
 <h4>Ports</h4>
 <div class="table-responsive"><table class="table table-bordered">
 <thead><tr>
@@ -112,78 +115,63 @@
 <td title="Protocol">tcp</td>
 <td title="State / Reason">open<br>syn-ack</td>
 <td title="Service">http</td>
-<td title="Product">Varnish</td>
+<td title="Product"></td>
 <td title="Version"></td>
 <td title="Extra Info"></td>
 </tr>
 <tr><td colspan="7">
-<a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version="></a><h5>http-server-header</h5>
-<pre style="white-space:pre-wrap; word-wrap:break-word;">Varnish</pre>
-<h5>fingerprint-strings</h5>
+<a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version="></a><h5>fingerprint-strings</h5>
 <pre style="white-space:pre-wrap; word-wrap:break-word;">
+  DNSStatusRequestTCP, DNSVersionBindReqTCP: 
+    HTTP/1.0 400 Bad Request
+    Content-Length: 54
+    Content-Type: text/html; charset=UTF-8
+    Date: Sun, 31 Mar 2024 05:21:11 GMT
+    &lt;html&gt;&lt;title&gt;Error 400 (Bad Request)!!1&lt;/title&gt;&lt;/html&gt;
   FourOhFourRequest: 
-    HTTP/1.1 301 Moved Permanently
-    Connection: close
+    HTTP/1.0 301 Moved Permanently
+    Cache-Control: private
+    Location: https://34.107.224.170:443/nice%20ports%2C/Trinity.txt.bak
     Content-Length: 0
-    Server: Varnish
-    Retry-After: 0
-    Location: https://*/nice%20ports%2C/Tri%6Eity.txt%2ebak
-    Accept-Ranges: bytes
-    Date: Sun, 24 Mar 2024 05:05:14 GMT
-    X-Served-By: cache-iad-kcgs7200063-IAD
-    X-Cache: HIT
-    X-Cache-Hits: 0
-    X-Timer: S1711256715.917204,VS0,VE0
-    alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
-  GetRequest: 
-    HTTP/1.1 301 Moved Permanently
-    Connection: close
+    Date: Sun, 31 Mar 2024 05:21:01 GMT
+    Content-Type: text/html; charset=UTF-8
+  GetRequest, HTTPOptions: 
+    HTTP/1.0 301 Moved Permanently
+    Cache-Control: private
+    Location: https://34.107.224.170:443/
     Content-Length: 0
-    Server: Varnish
-    Retry-After: 0
-    Location: https://*/
-    Accept-Ranges: bytes
-    Date: Sun, 24 Mar 2024 05:05:14 GMT
-    X-Served-By: cache-iad-kcgs7200138-IAD
-    X-Cache: HIT
-    X-Cache-Hits: 0
-    X-Timer: S1711256715.867836,VS0,VE0
-    alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
-  HTTPOptions: 
-    HTTP/1.1 301 Moved Permanently
-    Connection: close
-    Content-Length: 0
-    Server: Varnish
-    Retry-After: 0
-    Location: https://*/
-    Accept-Ranges: bytes
-    Date: Sun, 24 Mar 2024 05:05:14 GMT
-    X-Served-By: cache-iad-kcgs7200051-IAD
-    X-Cache: HIT
-    X-Cache-Hits: 0
-    X-Timer: S1711256715.880889,VS0,VE0
-    alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
-  RPCCheck: 
-    HTTP/1.1 400 Bad Request
-    Connection: close
-    Content-Length: 11
-    content-type: text/plain; charset=utf-8
-    x-served-by: cache-iad-kcgs7200091
-    Request
+    Date: Sun, 31 Mar 2024 05:20:56 GMT
+    Content-Type: text/html; charset=UTF-8
+  Help: 
+    HTTP/1.0 400 Bad Request
+    Content-Type: text/html; charset=UTF-8
+    Referrer-Policy: no-referrer
+    Content-Length: 273
+    Date: Sun, 31 Mar 2024 05:21:11 GMT
+    &lt;html&gt;&lt;head&gt;
+    &lt;meta http-equiv="content-type" content="text/html;charset=utf-8"&gt;
+    &lt;title&gt;400 Bad Request&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body text=#000000 bgcolor=#ffffff&gt;
+    &lt;h1&gt;Error: Bad Request&lt;/h1&gt;
+    &lt;h2&gt;Your client has issued a malformed or illegal request.&lt;/h2&gt;
+    &lt;h2&gt;&lt;/h2&gt;
+    &lt;/body&gt;&lt;/html&gt;
   RTSPRequest: 
-    HTTP/1.1 400 Bad Request
-    Connection: close
-    Content-Length: 11
-    content-type: text/plain; charset=utf-8
-    x-served-by: cache-iad-kcgs7200127
-    Request
-  X11Probe: 
-    HTTP/1.1 400 Bad Request
-    Connection: close
-    Content-Length: 11
-    content-type: text/plain; charset=utf-8
-    x-served-by: cache-iad-kcgs7200109
-    Request</pre>
+    HTTP/1.0 400 Bad Request
+    Content-Type: text/html; charset=UTF-8
+    Referrer-Policy: no-referrer
+    Content-Length: 273
+    Date: Sun, 31 Mar 2024 05:20:56 GMT
+    &lt;html&gt;&lt;head&gt;
+    &lt;meta http-equiv="content-type" content="text/html;charset=utf-8"&gt;
+    &lt;title&gt;400 Bad Request&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body text=#000000 bgcolor=#ffffff&gt;
+    &lt;h1&gt;Error: Bad Request&lt;/h1&gt;
+    &lt;h2&gt;Your client has issued a malformed or illegal request.&lt;/h2&gt;
+    &lt;h2&gt;&lt;/h2&gt;
+    &lt;/body&gt;&lt;/html&gt;</pre>
 </td></tr>
 <tr class="success">
 <td title="Port">443</td>
@@ -197,62 +185,55 @@
 <tr><td colspan="7">
 <a href="https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version="></a><h5>fingerprint-strings</h5>
 <pre style="white-space:pre-wrap; word-wrap:break-word;">
-  GetRequest: 
-    HTTP/1.1 404 Not Found
-    Connection: close
-    Content-Length: 10601
-    Cache-Control: max-age=0
-    Content-Type: text/html; charset=utf-8
-    Strict-Transport-Security: max-age=31556926
-    Accept-Ranges: bytes
-    Date: Sun, 24 Mar 2024 05:05:20 GMT
-    X-Served-By: cache-iad-kcgs7200058-IAD
-    X-Cache: HIT
-    X-Cache-Hits: 1
-    X-Timer: S1711256721.890712,VS0,VE1
-    Vary: x-fh-requested-host, accept-encoding
-    alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
-    &lt;!doctype html&gt;
+  FourOhFourRequest: 
+    HTTP/1.0 404 Not Found
+    Date: Sun, 31 Mar 2024 05:21:03 GMT
+    Content-Type: text/html
+    Content-Length: 146
+    Via: 1.1 google
+    Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
     &lt;html&gt;
-    &lt;head&gt;
-    &lt;title&gt;Site Not Found&lt;/title&gt;
-    &lt;link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
-    &lt;style&gt;
-    body {
-    margin: 0 auto;
-    margin-top: 48px;
-    max-width: 616px;
-    padding: 0 16px;
-    font-family: 'Roboto', 'Helvetica Neue', sans-serif;
-  HTTPOptions: 
-    HTTP/1.1 404 Not Found
-    Connection: close
-    Cache-Control: max-age=0
-    Content-Type: text/html; charset=utf-8
-    Strict-Transport-Security: max-age=31556926
-    Accept-Ranges: bytes
-    Date: Sun, 24 Mar 2024 05:05:20 GMT
-    X-Served-By: cache-iad-kcgs7200030-IAD
-    X-Cache: MISS
-    X-Cache-Hits: 0
-    X-Timer: S1711256721.923691,VS0,VE21
-    Vary: x-fh-requested-host, accept-encoding
-    alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
-    &lt;!doctype html&gt;
+    &lt;head&gt;&lt;title&gt;404 Not Found&lt;/title&gt;&lt;/head&gt;
+    &lt;body&gt;
+    &lt;center&gt;&lt;h1&gt;404 Not Found&lt;/h1&gt;&lt;/center&gt;
+    &lt;hr&gt;&lt;center&gt;nginx&lt;/center&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+  GetRequest, HTTPOptions: 
+    HTTP/1.0 404 Not Found
+    Date: Sun, 31 Mar 2024 05:21:02 GMT
+    Content-Type: text/html
+    Content-Length: 146
+    Via: 1.1 google
+    Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
     &lt;html&gt;
-    &lt;head&gt;
-    &lt;title&gt;Site Not Found&lt;/title&gt;
-    &lt;link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
-    &lt;style&gt;
-    body {
-    margin: 0 auto;
-    margin-top: 48px;
-    max-width: 616px;
-    padding: 0 16px;
-    font-family: 'Roboto', 'Helvetica Neue', sans-serif;
-    font-size: 16px;</pre>
+    &lt;head&gt;&lt;title&gt;404 Not Found&lt;/title&gt;&lt;/head&gt;
+    &lt;body&gt;
+    &lt;center&gt;&lt;h1&gt;404 Not Found&lt;/h1&gt;&lt;/center&gt;
+    &lt;hr&gt;&lt;center&gt;nginx&lt;/center&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+  RTSPRequest: 
+    HTTP/1.0 400 Bad Request
+    Content-Type: text/html; charset=UTF-8
+    Referrer-Policy: no-referrer
+    Content-Length: 273
+    Date: Sun, 31 Mar 2024 05:21:08 GMT
+    &lt;html&gt;&lt;head&gt;
+    &lt;meta http-equiv="content-type" content="text/html;charset=utf-8"&gt;
+    &lt;title&gt;400 Bad Request&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body text=#000000 bgcolor=#ffffff&gt;
+    &lt;h1&gt;Error: Bad Request&lt;/h1&gt;
+    &lt;h2&gt;Your client has issued a malformed or illegal request.&lt;/h2&gt;
+    &lt;h2&gt;&lt;/h2&gt;
+    &lt;/body&gt;&lt;/html&gt;
+  tor-versions: 
+    HTTP/1.0 400 Bad Request
+    Content-Length: 54
+    Content-Type: text/html; charset=UTF-8
+    Date: Sun, 31 Mar 2024 05:21:03 GMT
+    &lt;html&gt;&lt;title&gt;Error 400 (Bad Request)!!1&lt;/title&gt;&lt;/html&gt;</pre>
 </td></tr>
 </tbody>
 </table></div>
@@ -272,17 +253,17 @@
 </tr></thead>
 <tbody>
 <tr>
-<td>199.36.158.100 - passculture.pro</td>
+<td>34.107.224.170 - passculture.pro</td>
 <td>80</td>
 <td>tcp</td>
 <td>http</td>
-<td>Varnish</td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td>199.36.158.100 - passculture.pro</td>
+<td>34.107.224.170 - passculture.pro</td>
 <td>443</td>
 <td>tcp</td>
 <td>https</td>

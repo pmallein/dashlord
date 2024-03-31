@@ -1,206 +1,184 @@
-# Nmap 7.92 scan initiated Sun Mar 24 05:05:04 2024 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln passculture.pro
-Nmap scan report for passculture.pro (199.36.158.100)
-Host is up (0.0053s latency).
+# Nmap 7.92 scan initiated Sun Mar 31 05:20:46 2024 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln passculture.pro
+Nmap scan report for passculture.pro (34.107.224.170)
+Host is up (0.0020s latency).
+rDNS record for 34.107.224.170: 170.224.107.34.bc.googleusercontent.com
 Not shown: 998 filtered tcp ports (no-response)
 PORT    STATE SERVICE   VERSION
-80/tcp  open  http      Varnish
-|_http-server-header: Varnish
+80/tcp  open  http
 | fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP: 
+|     HTTP/1.0 400 Bad Request
+|     Content-Length: 54
+|     Content-Type: text/html; charset=UTF-8
+|     Date: Sun, 31 Mar 2024 05:21:11 GMT
+|     <html><title>Error 400 (Bad Request)!!1</title></html>
 |   FourOhFourRequest: 
-|     HTTP/1.1 301 Moved Permanently
-|     Connection: close
+|     HTTP/1.0 301 Moved Permanently
+|     Cache-Control: private
+|     Location: https://34.107.224.170:443/nice%20ports%2C/Trinity.txt.bak
 |     Content-Length: 0
-|     Server: Varnish
-|     Retry-After: 0
-|     Location: https://*/nice%20ports%2C/Tri%6Eity.txt%2ebak
-|     Accept-Ranges: bytes
-|     Date: Sun, 24 Mar 2024 05:05:14 GMT
-|     X-Served-By: cache-iad-kcgs7200063-IAD
-|     X-Cache: HIT
-|     X-Cache-Hits: 0
-|     X-Timer: S1711256715.917204,VS0,VE0
-|     alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
-|   GetRequest: 
-|     HTTP/1.1 301 Moved Permanently
-|     Connection: close
+|     Date: Sun, 31 Mar 2024 05:21:01 GMT
+|     Content-Type: text/html; charset=UTF-8
+|   GetRequest, HTTPOptions: 
+|     HTTP/1.0 301 Moved Permanently
+|     Cache-Control: private
+|     Location: https://34.107.224.170:443/
 |     Content-Length: 0
-|     Server: Varnish
-|     Retry-After: 0
-|     Location: https://*/
-|     Accept-Ranges: bytes
-|     Date: Sun, 24 Mar 2024 05:05:14 GMT
-|     X-Served-By: cache-iad-kcgs7200138-IAD
-|     X-Cache: HIT
-|     X-Cache-Hits: 0
-|     X-Timer: S1711256715.867836,VS0,VE0
-|     alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
-|   HTTPOptions: 
-|     HTTP/1.1 301 Moved Permanently
-|     Connection: close
-|     Content-Length: 0
-|     Server: Varnish
-|     Retry-After: 0
-|     Location: https://*/
-|     Accept-Ranges: bytes
-|     Date: Sun, 24 Mar 2024 05:05:14 GMT
-|     X-Served-By: cache-iad-kcgs7200051-IAD
-|     X-Cache: HIT
-|     X-Cache-Hits: 0
-|     X-Timer: S1711256715.880889,VS0,VE0
-|     alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
-|   RPCCheck: 
-|     HTTP/1.1 400 Bad Request
-|     Connection: close
-|     Content-Length: 11
-|     content-type: text/plain; charset=utf-8
-|     x-served-by: cache-iad-kcgs7200091
-|     Request
+|     Date: Sun, 31 Mar 2024 05:20:56 GMT
+|     Content-Type: text/html; charset=UTF-8
+|   Help: 
+|     HTTP/1.0 400 Bad Request
+|     Content-Type: text/html; charset=UTF-8
+|     Referrer-Policy: no-referrer
+|     Content-Length: 273
+|     Date: Sun, 31 Mar 2024 05:21:11 GMT
+|     <html><head>
+|     <meta http-equiv="content-type" content="text/html;charset=utf-8">
+|     <title>400 Bad Request</title>
+|     </head>
+|     <body text=#000000 bgcolor=#ffffff>
+|     <h1>Error: Bad Request</h1>
+|     <h2>Your client has issued a malformed or illegal request.</h2>
+|     <h2></h2>
+|     </body></html>
 |   RTSPRequest: 
-|     HTTP/1.1 400 Bad Request
-|     Connection: close
-|     Content-Length: 11
-|     content-type: text/plain; charset=utf-8
-|     x-served-by: cache-iad-kcgs7200127
-|     Request
-|   X11Probe: 
-|     HTTP/1.1 400 Bad Request
-|     Connection: close
-|     Content-Length: 11
-|     content-type: text/plain; charset=utf-8
-|     x-served-by: cache-iad-kcgs7200109
-|_    Request
+|     HTTP/1.0 400 Bad Request
+|     Content-Type: text/html; charset=UTF-8
+|     Referrer-Policy: no-referrer
+|     Content-Length: 273
+|     Date: Sun, 31 Mar 2024 05:20:56 GMT
+|     <html><head>
+|     <meta http-equiv="content-type" content="text/html;charset=utf-8">
+|     <title>400 Bad Request</title>
+|     </head>
+|     <body text=#000000 bgcolor=#ffffff>
+|     <h1>Error: Bad Request</h1>
+|     <h2>Your client has issued a malformed or illegal request.</h2>
+|     <h2></h2>
+|_    </body></html>
 443/tcp open  ssl/https
 | fingerprint-strings: 
-|   GetRequest: 
-|     HTTP/1.1 404 Not Found
-|     Connection: close
-|     Content-Length: 10601
-|     Cache-Control: max-age=0
-|     Content-Type: text/html; charset=utf-8
-|     Strict-Transport-Security: max-age=31556926
-|     Accept-Ranges: bytes
-|     Date: Sun, 24 Mar 2024 05:05:20 GMT
-|     X-Served-By: cache-iad-kcgs7200058-IAD
-|     X-Cache: HIT
-|     X-Cache-Hits: 1
-|     X-Timer: S1711256721.890712,VS0,VE1
-|     Vary: x-fh-requested-host, accept-encoding
-|     alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
-|     <!doctype html>
+|   FourOhFourRequest: 
+|     HTTP/1.0 404 Not Found
+|     Date: Sun, 31 Mar 2024 05:21:03 GMT
+|     Content-Type: text/html
+|     Content-Length: 146
+|     Via: 1.1 google
+|     Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
 |     <html>
-|     <head>
-|     <title>Site Not Found</title>
-|     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-|     <meta name="viewport" content="width=device-width, initial-scale=1">
-|     <style>
-|     body {
-|     margin: 0 auto;
-|     margin-top: 48px;
-|     max-width: 616px;
-|     padding: 0 16px;
-|     font-family: 'Roboto', 'Helvetica Neue', sans-serif;
-|   HTTPOptions: 
-|     HTTP/1.1 404 Not Found
-|     Connection: close
-|     Cache-Control: max-age=0
-|     Content-Type: text/html; charset=utf-8
-|     Strict-Transport-Security: max-age=31556926
-|     Accept-Ranges: bytes
-|     Date: Sun, 24 Mar 2024 05:05:20 GMT
-|     X-Served-By: cache-iad-kcgs7200030-IAD
-|     X-Cache: MISS
-|     X-Cache-Hits: 0
-|     X-Timer: S1711256721.923691,VS0,VE21
-|     Vary: x-fh-requested-host, accept-encoding
-|     alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
-|     <!doctype html>
+|     <head><title>404 Not Found</title></head>
+|     <body>
+|     <center><h1>404 Not Found</h1></center>
+|     <hr><center>nginx</center>
+|     </body>
+|     </html>
+|   GetRequest, HTTPOptions: 
+|     HTTP/1.0 404 Not Found
+|     Date: Sun, 31 Mar 2024 05:21:02 GMT
+|     Content-Type: text/html
+|     Content-Length: 146
+|     Via: 1.1 google
+|     Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
 |     <html>
-|     <head>
-|     <title>Site Not Found</title>
-|     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-|     <meta name="viewport" content="width=device-width, initial-scale=1">
-|     <style>
-|     body {
-|     margin: 0 auto;
-|     margin-top: 48px;
-|     max-width: 616px;
-|     padding: 0 16px;
-|     font-family: 'Roboto', 'Helvetica Neue', sans-serif;
-|_    font-size: 16px;
+|     <head><title>404 Not Found</title></head>
+|     <body>
+|     <center><h1>404 Not Found</h1></center>
+|     <hr><center>nginx</center>
+|     </body>
+|     </html>
+|   RTSPRequest: 
+|     HTTP/1.0 400 Bad Request
+|     Content-Type: text/html; charset=UTF-8
+|     Referrer-Policy: no-referrer
+|     Content-Length: 273
+|     Date: Sun, 31 Mar 2024 05:21:08 GMT
+|     <html><head>
+|     <meta http-equiv="content-type" content="text/html;charset=utf-8">
+|     <title>400 Bad Request</title>
+|     </head>
+|     <body text=#000000 bgcolor=#ffffff>
+|     <h1>Error: Bad Request</h1>
+|     <h2>Your client has issued a malformed or illegal request.</h2>
+|     <h2></h2>
+|     </body></html>
+|   tor-versions: 
+|     HTTP/1.0 400 Bad Request
+|     Content-Length: 54
+|     Content-Type: text/html; charset=UTF-8
+|     Date: Sun, 31 Mar 2024 05:21:03 GMT
+|_    <html><title>Error 400 (Bad Request)!!1</title></html>
 2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
 ==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
-SF-Port80-TCP:V=7.92%I=7%D=3/24%Time=65FFB48A%P=x86_64-alpine-linux-musl%r
-SF:(GetRequest,16F,"HTTP/1\.1\x20301\x20Moved\x20Permanently\r\nConnection
-SF::\x20close\r\nContent-Length:\x200\r\nServer:\x20Varnish\r\nRetry-After
-SF::\x200\r\nLocation:\x20https://\*/\r\nAccept-Ranges:\x20bytes\r\nDate:\
-SF:x20Sun,\x2024\x20Mar\x202024\x2005:05:14\x20GMT\r\nX-Served-By:\x20cach
-SF:e-iad-kcgs7200138-IAD\r\nX-Cache:\x20HIT\r\nX-Cache-Hits:\x200\r\nX-Tim
-SF:er:\x20S1711256715\.867836,VS0,VE0\r\nalt-svc:\x20h3=\":443\";ma=86400,
-SF:h3-29=\":443\";ma=86400,h3-27=\":443\";ma=86400\r\n\r\n")%r(HTTPOptions
-SF:,16F,"HTTP/1\.1\x20301\x20Moved\x20Permanently\r\nConnection:\x20close\
-SF:r\nContent-Length:\x200\r\nServer:\x20Varnish\r\nRetry-After:\x200\r\nL
-SF:ocation:\x20https://\*/\r\nAccept-Ranges:\x20bytes\r\nDate:\x20Sun,\x20
-SF:24\x20Mar\x202024\x2005:05:14\x20GMT\r\nX-Served-By:\x20cache-iad-kcgs7
-SF:200051-IAD\r\nX-Cache:\x20HIT\r\nX-Cache-Hits:\x200\r\nX-Timer:\x20S171
-SF:1256715\.880889,VS0,VE0\r\nalt-svc:\x20h3=\":443\";ma=86400,h3-29=\":44
-SF:3\";ma=86400,h3-27=\":443\";ma=86400\r\n\r\n")%r(RTSPRequest,9B,"HTTP/1
-SF:\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\nContent-Length:
-SF:\x2011\r\ncontent-type:\x20text/plain;\x20charset=utf-8\r\nx-served-by:
-SF:\x20cache-iad-kcgs7200127\r\n\r\nBad\x20Request")%r(X11Probe,9B,"HTTP/1
-SF:\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\nContent-Length:
-SF:\x2011\r\ncontent-type:\x20text/plain;\x20charset=utf-8\r\nx-served-by:
-SF:\x20cache-iad-kcgs7200109\r\n\r\nBad\x20Request")%r(FourOhFourRequest,1
-SF:92,"HTTP/1\.1\x20301\x20Moved\x20Permanently\r\nConnection:\x20close\r\
-SF:nContent-Length:\x200\r\nServer:\x20Varnish\r\nRetry-After:\x200\r\nLoc
-SF:ation:\x20https://\*/nice%20ports%2C/Tri%6Eity\.txt%2ebak\r\nAccept-Ran
-SF:ges:\x20bytes\r\nDate:\x20Sun,\x2024\x20Mar\x202024\x2005:05:14\x20GMT\
-SF:r\nX-Served-By:\x20cache-iad-kcgs7200063-IAD\r\nX-Cache:\x20HIT\r\nX-Ca
-SF:che-Hits:\x200\r\nX-Timer:\x20S1711256715\.917204,VS0,VE0\r\nalt-svc:\x
-SF:20h3=\":443\";ma=86400,h3-29=\":443\";ma=86400,h3-27=\":443\";ma=86400\
-SF:r\n\r\n")%r(RPCCheck,9B,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnecti
-SF:on:\x20close\r\nContent-Length:\x2011\r\ncontent-type:\x20text/plain;\x
-SF:20charset=utf-8\r\nx-served-by:\x20cache-iad-kcgs7200091\r\n\r\nBad\x20
-SF:Request");
+SF-Port80-TCP:V=7.92%I=7%D=3/31%Time=6608F2B8%P=x86_64-alpine-linux-musl%r
+SF:(GetRequest,C1,"HTTP/1\.0\x20301\x20Moved\x20Permanently\r\nCache-Contr
+SF:ol:\x20private\r\nLocation:\x20https://34\.107\.224\.170:443/\r\nConten
+SF:t-Length:\x200\r\nDate:\x20Sun,\x2031\x20Mar\x202024\x2005:20:56\x20GMT
+SF:\r\nContent-Type:\x20text/html;\x20charset=UTF-8\r\n\r\n")%r(HTTPOption
+SF:s,C1,"HTTP/1\.0\x20301\x20Moved\x20Permanently\r\nCache-Control:\x20pri
+SF:vate\r\nLocation:\x20https://34\.107\.224\.170:443/\r\nContent-Length:\
+SF:x200\r\nDate:\x20Sun,\x2031\x20Mar\x202024\x2005:20:56\x20GMT\r\nConten
+SF:t-Type:\x20text/html;\x20charset=UTF-8\r\n\r\n")%r(RTSPRequest,1AD,"HTT
+SF:P/1\.0\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/html;\x20chars
+SF:et=UTF-8\r\nReferrer-Policy:\x20no-referrer\r\nContent-Length:\x20273\r
+SF:\nDate:\x20Sun,\x2031\x20Mar\x202024\x2005:20:56\x20GMT\r\n\r\n\n<html>
+SF:<head>\n<meta\x20http-equiv=\"content-type\"\x20content=\"text/html;cha
+SF:rset=utf-8\">\n<title>400\x20Bad\x20Request</title>\n</head>\n<body\x20
+SF:text=#000000\x20bgcolor=#ffffff>\n<h1>Error:\x20Bad\x20Request</h1>\n<h
+SF:2>Your\x20client\x20has\x20issued\x20a\x20malformed\x20or\x20illegal\x2
+SF:0request\.</h2>\n<h2></h2>\n</body></html>\n")%r(FourOhFourRequest,E0,"
+SF:HTTP/1\.0\x20301\x20Moved\x20Permanently\r\nCache-Control:\x20private\r
+SF:\nLocation:\x20https://34\.107\.224\.170:443/nice%20ports%2C/Trinity\.t
+SF:xt\.bak\r\nContent-Length:\x200\r\nDate:\x20Sun,\x2031\x20Mar\x202024\x
+SF:2005:21:01\x20GMT\r\nContent-Type:\x20text/html;\x20charset=UTF-8\r\n\r
+SF:\n")%r(DNSVersionBindReqTCP,B3,"HTTP/1\.0\x20400\x20Bad\x20Request\r\nC
+SF:ontent-Length:\x2054\r\nContent-Type:\x20text/html;\x20charset=UTF-8\r\
+SF:nDate:\x20Sun,\x2031\x20Mar\x202024\x2005:21:11\x20GMT\r\n\r\n<html><ti
+SF:tle>Error\x20400\x20\(Bad\x20Request\)!!1</title></html>")%r(DNSStatusR
+SF:equestTCP,B3,"HTTP/1\.0\x20400\x20Bad\x20Request\r\nContent-Length:\x20
+SF:54\r\nContent-Type:\x20text/html;\x20charset=UTF-8\r\nDate:\x20Sun,\x20
+SF:31\x20Mar\x202024\x2005:21:11\x20GMT\r\n\r\n<html><title>Error\x20400\x
+SF:20\(Bad\x20Request\)!!1</title></html>")%r(Help,1AD,"HTTP/1\.0\x20400\x
+SF:20Bad\x20Request\r\nContent-Type:\x20text/html;\x20charset=UTF-8\r\nRef
+SF:errer-Policy:\x20no-referrer\r\nContent-Length:\x20273\r\nDate:\x20Sun,
+SF:\x2031\x20Mar\x202024\x2005:21:11\x20GMT\r\n\r\n\n<html><head>\n<meta\x
+SF:20http-equiv=\"content-type\"\x20content=\"text/html;charset=utf-8\">\n
+SF:<title>400\x20Bad\x20Request</title>\n</head>\n<body\x20text=#000000\x2
+SF:0bgcolor=#ffffff>\n<h1>Error:\x20Bad\x20Request</h1>\n<h2>Your\x20clien
+SF:t\x20has\x20issued\x20a\x20malformed\x20or\x20illegal\x20request\.</h2>
+SF:\n<h2></h2>\n</body></html>\n");
 ==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
-SF-Port443-TCP:V=7.92%T=SSL%I=7%D=3/24%Time=65FFB490%P=x86_64-alpine-linux
-SF:-musl%r(GetRequest,2B38,"HTTP/1\.1\x20404\x20Not\x20Found\r\nConnection
-SF::\x20close\r\nContent-Length:\x2010601\r\nCache-Control:\x20max-age=0\r
-SF:\nContent-Type:\x20text/html;\x20charset=utf-8\r\nStrict-Transport-Secu
-SF:rity:\x20max-age=31556926\r\nAccept-Ranges:\x20bytes\r\nDate:\x20Sun,\x
-SF:2024\x20Mar\x202024\x2005:05:20\x20GMT\r\nX-Served-By:\x20cache-iad-kcg
-SF:s7200058-IAD\r\nX-Cache:\x20HIT\r\nX-Cache-Hits:\x201\r\nX-Timer:\x20S1
-SF:711256721\.890712,VS0,VE1\r\nVary:\x20x-fh-requested-host,\x20accept-en
-SF:coding\r\nalt-svc:\x20h3=\":443\";ma=86400,h3-29=\":443\";ma=86400,h3-2
-SF:7=\":443\";ma=86400\r\n\r\n\n<!doctype\x20html>\n<html>\n\x20\x20<head>
-SF:\n\x20\x20\x20\x20<title>Site\x20Not\x20Found</title>\n\x20\x20\x20\x20
-SF:<link\x20href='https://fonts\.googleapis\.com/css\?family=Roboto'\x20re
-SF:l='stylesheet'\x20type='text/css'>\n\x20\x20\x20\x20<meta\x20name=\"vie
-SF:wport\"\x20content=\"width=device-width,\x20initial-scale=1\">\n\x20\x2
-SF:0\x20\x20<style>\n\n\x20\x20\x20\x20\x20\x20body\x20{\n\x20\x20\x20\x20
-SF:\x20\x20\x20\x20margin:\x200\x20auto;\n\x20\x20\x20\x20\x20\x20\x20\x20
-SF:margin-top:\x2048px;\n\x20\x20\x20\x20\x20\x20\x20\x20max-width:\x20616
-SF:px;\n\x20\x20\x20\x20\x20\x20\x20\x20padding:\x200\x2016px;\n\x20\x20\x
-SF:20\x20\x20\x20\x20\x20font-family:\x20'Roboto',\x20'Helvetica\x20Neue',
-SF:\x20sans-serif;\n\x20\x20\x20\x20\x20\x20\x20\x20fon")%r(HTTPOptions,11
-SF:D6,"HTTP/1\.1\x20404\x20Not\x20Found\r\nConnection:\x20close\r\nCache-C
-SF:ontrol:\x20max-age=0\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\
-SF:nStrict-Transport-Security:\x20max-age=31556926\r\nAccept-Ranges:\x20by
-SF:tes\r\nDate:\x20Sun,\x2024\x20Mar\x202024\x2005:05:20\x20GMT\r\nX-Serve
-SF:d-By:\x20cache-iad-kcgs7200030-IAD\r\nX-Cache:\x20MISS\r\nX-Cache-Hits:
-SF:\x200\r\nX-Timer:\x20S1711256721\.923691,VS0,VE21\r\nVary:\x20x-fh-requ
-SF:ested-host,\x20accept-encoding\r\nalt-svc:\x20h3=\":443\";ma=86400,h3-2
-SF:9=\":443\";ma=86400,h3-27=\":443\";ma=86400\r\n\r\n\n<!doctype\x20html>
-SF:\n<html>\n\x20\x20<head>\n\x20\x20\x20\x20<title>Site\x20Not\x20Found</
-SF:title>\n\x20\x20\x20\x20<link\x20href='https://fonts\.googleapis\.com/c
-SF:ss\?family=Roboto'\x20rel='stylesheet'\x20type='text/css'>\n\x20\x20\x2
-SF:0\x20<meta\x20name=\"viewport\"\x20content=\"width=device-width,\x20ini
-SF:tial-scale=1\">\n\x20\x20\x20\x20<style>\n\n\x20\x20\x20\x20\x20\x20bod
-SF:y\x20{\n\x20\x20\x20\x20\x20\x20\x20\x20margin:\x200\x20auto;\n\x20\x20
-SF:\x20\x20\x20\x20\x20\x20margin-top:\x2048px;\n\x20\x20\x20\x20\x20\x20\
-SF:x20\x20max-width:\x20616px;\n\x20\x20\x20\x20\x20\x20\x20\x20padding:\x
-SF:200\x2016px;\n\x20\x20\x20\x20\x20\x20\x20\x20font-family:\x20'Roboto',
-SF:\x20'Helvetica\x20Neue',\x20sans-serif;\n\x20\x20\x20\x20\x20\x20\x20\x
-SF:20font-size:\x2016px;\n\x20\x20\x20\x20\x20\x20\x20");
+SF-Port443-TCP:V=7.92%T=SSL%I=7%D=3/31%Time=6608F2BE%P=x86_64-alpine-linux
+SF:-musl%r(GetRequest,149,"HTTP/1\.0\x20404\x20Not\x20Found\r\nDate:\x20Su
+SF:n,\x2031\x20Mar\x202024\x2005:21:02\x20GMT\r\nContent-Type:\x20text/htm
+SF:l\r\nContent-Length:\x20146\r\nVia:\x201\.1\x20google\r\nAlt-Svc:\x20h3
+SF:=\":443\";\x20ma=2592000,h3-29=\":443\";\x20ma=2592000\r\n\r\n<html>\r\
+SF:n<head><title>404\x20Not\x20Found</title></head>\r\n<body>\r\n<center><
+SF:h1>404\x20Not\x20Found</h1></center>\r\n<hr><center>nginx</center>\r\n<
+SF:/body>\r\n</html>\r\n")%r(HTTPOptions,149,"HTTP/1\.0\x20404\x20Not\x20F
+SF:ound\r\nDate:\x20Sun,\x2031\x20Mar\x202024\x2005:21:02\x20GMT\r\nConten
+SF:t-Type:\x20text/html\r\nContent-Length:\x20146\r\nVia:\x201\.1\x20googl
+SF:e\r\nAlt-Svc:\x20h3=\":443\";\x20ma=2592000,h3-29=\":443\";\x20ma=25920
+SF:00\r\n\r\n<html>\r\n<head><title>404\x20Not\x20Found</title></head>\r\n
+SF:<body>\r\n<center><h1>404\x20Not\x20Found</h1></center>\r\n<hr><center>
+SF:nginx</center>\r\n</body>\r\n</html>\r\n")%r(FourOhFourRequest,149,"HTT
+SF:P/1\.0\x20404\x20Not\x20Found\r\nDate:\x20Sun,\x2031\x20Mar\x202024\x20
+SF:05:21:03\x20GMT\r\nContent-Type:\x20text/html\r\nContent-Length:\x20146
+SF:\r\nVia:\x201\.1\x20google\r\nAlt-Svc:\x20h3=\":443\";\x20ma=2592000,h3
+SF:-29=\":443\";\x20ma=2592000\r\n\r\n<html>\r\n<head><title>404\x20Not\x2
+SF:0Found</title></head>\r\n<body>\r\n<center><h1>404\x20Not\x20Found</h1>
+SF:</center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n")%r(t
+SF:or-versions,B3,"HTTP/1\.0\x20400\x20Bad\x20Request\r\nContent-Length:\x
+SF:2054\r\nContent-Type:\x20text/html;\x20charset=UTF-8\r\nDate:\x20Sun,\x
+SF:2031\x20Mar\x202024\x2005:21:03\x20GMT\r\n\r\n<html><title>Error\x20400
+SF:\x20\(Bad\x20Request\)!!1</title></html>")%r(RTSPRequest,1AD,"HTTP/1\.0
+SF:\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/html;\x20charset=UTF
+SF:-8\r\nReferrer-Policy:\x20no-referrer\r\nContent-Length:\x20273\r\nDate
+SF::\x20Sun,\x2031\x20Mar\x202024\x2005:21:08\x20GMT\r\n\r\n\n<html><head>
+SF:\n<meta\x20http-equiv=\"content-type\"\x20content=\"text/html;charset=u
+SF:tf-8\">\n<title>400\x20Bad\x20Request</title>\n</head>\n<body\x20text=#
+SF:000000\x20bgcolor=#ffffff>\n<h1>Error:\x20Bad\x20Request</h1>\n<h2>Your
+SF:\x20client\x20has\x20issued\x20a\x20malformed\x20or\x20illegal\x20reque
+SF:st\.</h2>\n<h2></h2>\n</body></html>\n");
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-# Nmap done at Sun Mar 24 05:05:22 2024 -- 1 IP address (1 host up) scanned in 17.84 seconds
+# Nmap done at Sun Mar 31 05:21:56 2024 -- 1 IP address (1 host up) scanned in 70.40 seconds

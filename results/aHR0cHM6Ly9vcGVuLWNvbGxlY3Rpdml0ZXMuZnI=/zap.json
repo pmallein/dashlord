@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 24 Mar 2024 08:48:34",
+	"@generated": "Sun, 31 Mar 2024 09:13:34",
 	"site":[ 
 		{
 			"@name": "https://open-collectivites.fr",
@@ -52,22 +52,6 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 2: \"after\" \"before\" ]."
 						},
 						{
-							"uri": "https://open-collectivites.fr/publications/?topic=15",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<form id=\"publications-header-form\" class=\"fr-grid-row fr-grid-row--gutters\">",
-							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"\" ]."
-						},
-						{
-							"uri": "https://open-collectivites.fr/publications/?topic=15",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<form id=\"publications-morefilters\">",
-							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 2: \"after\" \"before\" ]."
-						},
-						{
 							"uri": "https://open-collectivites.fr/publications/?topic=16",
 							"method": "GET",
 							"param": "",
@@ -116,7 +100,7 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 2: \"after\" \"before\" ]."
 						},
 						{
-							"uri": "https://open-collectivites.fr/publications/?topic=6",
+							"uri": "https://open-collectivites.fr/publications/?topic=5",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -124,7 +108,7 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"\" ]."
 						},
 						{
-							"uri": "https://open-collectivites.fr/publications/?topic=6",
+							"uri": "https://open-collectivites.fr/publications/?topic=5",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -132,13 +116,13 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 2: \"after\" \"before\" ]."
 						}
 					],
-					"count": "14",
+					"count": "12",
 					"solution": "<p>Phase: Architecture and Design</p><p>Use a vetted library or framework that does not allow this weakness to occur or provides constructs that make this weakness easier to avoid.</p><p>For example, use anti-CSRF packages such as the OWASP CSRFGuard.</p><p></p><p>Phase: Implementation</p><p>Ensure that your application is free of cross-site scripting issues, because most CSRF defenses can be bypassed using attacker-controlled script.</p><p></p><p>Phase: Architecture and Design</p><p>Generate a unique nonce for each form, place the nonce into the form, and verify the nonce upon receipt of the form. Be sure that the nonce is not predictable (CWE-330).</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Identify especially dangerous operations. When the user performs a dangerous operation, send a separate confirmation request to ensure that the user intended to perform that operation.</p><p>Note that this can be bypassed using XSS.</p><p></p><p>Use the ESAPI Session Management control.</p><p>This control includes a component for CSRF.</p><p></p><p>Do not use the GET method for any request that triggers a state change.</p><p></p><p>Phase: Implementation</p><p>Check the HTTP Referer header to see if the request originated from an expected page. This could break legitimate functionality, because users or proxies may have disabled sending the Referer for privacy reasons.</p>",
 					"otherinfo": "<p>No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"\" ].</p>",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "75"
+					"sourceid": "73"
 				},
 				{
 					"pluginid": "10038",
@@ -183,14 +167,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://open-collectivites.fr/publications/?topic=15",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://open-collectivites.fr/publications/?topic=16",
 							"method": "GET",
 							"param": "",
@@ -208,6 +184,14 @@
 						},
 						{
 							"uri": "https://open-collectivites.fr/publications/?topic=3",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://open-collectivites.fr/publications/?topic=5",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -272,7 +256,7 @@
 					"reference": "<p>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3749</p><p>https://github.com/axios/axios/issues/6022</p><p>https://security.snyk.io/vuln/SNYK-JS-AXIOS-6032459</p><p>https://github.com/axios/axios/pull/6028</p><p>https://github.com/axios/axios/issues/6006</p><p>https://github.com/axios/axios/commit/96ee232bd3ee4de2e657333d4d2191cd389e14d0</p><p>https://nvd.nist.gov/vuln/detail/CVE-2023-45857</p><p>https://github.com/advisories/GHSA-wf5p-g6vw-rhxx</p><p>https://security.snyk.io/vuln/SNYK-JS-AXIOS-1579269</p><p>https://github.com/axios/axios/releases/tag/v1.6.0</p><p></p>",
 					"cweid": "829",
 					"wascid": "-1",
-					"sourceid": "750"
+					"sourceid": "756"
 				},
 				{
 					"pluginid": "10063",
@@ -317,14 +301,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://open-collectivites.fr/publications/?topic=15",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://open-collectivites.fr/publications/?topic=16",
 							"method": "GET",
 							"param": "",
@@ -342,6 +318,14 @@
 						},
 						{
 							"uri": "https://open-collectivites.fr/publications/?topic=3",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://open-collectivites.fr/publications/?topic=5",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -456,7 +440,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://open-collectivites.fr/publications/?topic=6",
+							"uri": "https://open-collectivites.fr/publications/?topic=5",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -563,6 +547,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://open-collectivites.fr/publications/?topic=5",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://open-collectivites.fr/publications/?topic=6",
 							"method": "GET",
 							"param": "",
@@ -587,7 +579,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "11",
+					"count": "12",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to enforce Strict-Transport-Security.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>https://caniuse.com/stricttransportsecurity</p><p>https://datatracker.ietf.org/doc/html/rfc6797</p>",
@@ -623,6 +615,14 @@
 						},
 						{
 							"uri": "https://open-collectivites.fr/static/dsfr/dist/dsfr/dsfr.min.css",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://open-collectivites.fr/static/dsfr/dist/dsfr/dsfr.module.min.js",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -686,15 +686,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://open-collectivites.fr/static/js/utils.js",
-							"method": "GET",
-							"param": "x-content-type-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
-						},
-						{
-							"uri": "https://open-collectivites.fr/static/lib/axios.0.21.1/axios.min.js",
+							"uri": "https://open-collectivites.fr/static/lib/vue-multiselect-2.1.6/dist/vue-multiselect.min.js",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -708,7 +700,7 @@
 					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "743"
+					"sourceid": "523"
 				},
 				{
 					"pluginid": "10094",
@@ -751,6 +743,14 @@
 							"attack": "",
 							"evidence": "A9sentation-du-projet-open-collectivit",
 							"otherinfo": "\\x0003\uFFFD\\x001e\uFFFD\u05AD\uFFFD\uFFFD\uFFFDv\uFA6E\uFFFD\u07B7\uFFFD)z\uFFFD\uFFFDY^r\u062F\uFFFD"
+						},
+						{
+							"uri": "https://open-collectivites.fr/publications/?page=1&publication_page=5",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "fr/wd_documents/78/BIS_182_interco_2024_VF",
+							"otherinfo": "~\uFFFD\uFFFDw\uFFFDhr\u979E\uFFFD?\uFFFD\uFFFD\uFFFD!/\uFFFD\uFFFDo\uFFFD\u05EBr\uFFFD\uFFFD\uFFFDn?T"
 						},
 						{
 							"uri": "https://open-collectivites.fr/publications/?publication_page=5",
@@ -799,14 +799,6 @@
 							"attack": "",
 							"evidence": "com/Financial-Times/polyfill-service/issues/317",
 							"otherinfo": "r\uFFFD\uFFFD\\x0016)\u069D\u021A\uFFFD\uFFFD\uFFFD\uFFFD?\uFFFD\uFFFDr~)e\uFFFD\u01EB\uFFFD'\\x001e\uFFFD+,\uFFFD\uFFFD?\uFFFD^"
-						},
-						{
-							"uri": "https://open-collectivites.fr/wd_documents/49/BIS_177_Temps_non_complet.pdf",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "1/M/i/n/s/t/egrave/r/e/space/c/h/a/g/eacute/d/o",
-							"otherinfo": "\uFFFD\uFFFD?\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDz\n\u06BD\uFFFD\uFFFD\uFFFD\uFFFD\uC967\\x001e\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\u673A\u05FFw\uFFFD"
 						}
 					],
 					"count": "11",
@@ -882,7 +874,7 @@
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "753"
+					"sourceid": "750"
 				},
 				{
 					"pluginid": "10109",
@@ -959,7 +951,7 @@
 							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
 						},
 						{
-							"uri": "https://open-collectivites.fr/publications/?topic=6",
+							"uri": "https://open-collectivites.fr/publications/?topic=5",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -989,7 +981,7 @@
 					"reference": "",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10015",
@@ -1066,23 +1058,23 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://open-collectivites.fr/publications/?topic=4",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://open-collectivites.fr/publications/?topic=5",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://open-collectivites.fr/publications/?topic=6",
-							"method": "GET",
-							"param": "cache-control",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://open-collectivites.fr/publications/?topic=8",
-							"method": "GET",
-							"param": "cache-control",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://open-collectivites.fr/publications/?topic=9",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -1313,14 +1305,6 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"uri": "https://open-collectivites.fr/publications/?topic=15",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
-						},
-						{
 							"uri": "https://open-collectivites.fr/publications/?topic=16",
 							"method": "GET",
 							"param": "",
@@ -1338,6 +1322,14 @@
 						},
 						{
 							"uri": "https://open-collectivites.fr/publications/?topic=3",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
+							"uri": "https://open-collectivites.fr/publications/?topic=5",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1388,76 +1380,76 @@
 					"desc": "<p>This check looks at user-supplied input in query string parameters and POST data to identify where certain HTML attribute values might be controlled. This provides hot-spot detection for XSS (cross-site scripting) that will require further review by a security analyst to determine exploitability.</p>",
 					"instances":[ 
 						{
-							"uri": "https://open-collectivites.fr/publications/?after=2024-03-24&before=2024-03-24&departement=ain&region=auvergne-rhone-alpes&source_org=2&topic=2&year=2000",
+							"uri": "https://open-collectivites.fr/publications/?after=2024-03-31&before=2024-03-31&departement=ain&publication_page=5&region=auvergne-rhone-alpes&source_org=2&year=2000",
 							"method": "GET",
 							"param": "after",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://open-collectivites.fr/publications/?after=2024-03-24&before=2024-03-24&departement=ain&region=auvergne-rhone-alpes&source_org=2&topic=2&year=2000\n\nappears to include user input in: \n\na(n) [input] tag [min] attribute \n\nThe user input found was:\nafter=2024-03-24\n\nThe user-controlled value was:\n2024-03-24"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://open-collectivites.fr/publications/?after=2024-03-31&before=2024-03-31&departement=ain&publication_page=5&region=auvergne-rhone-alpes&source_org=2&year=2000\n\nappears to include user input in: \n\na(n) [input] tag [min] attribute \n\nThe user input found was:\nafter=2024-03-31\n\nThe user-controlled value was:\n2024-03-31"
 						},
 						{
-							"uri": "https://open-collectivites.fr/publications/?after=2024-03-24&before=2024-03-24&departement=ain&region=auvergne-rhone-alpes&source_org=2&topic=2&year=2000",
+							"uri": "https://open-collectivites.fr/publications/?after=2024-03-31&before=2024-03-31&departement=ain&publication_page=5&region=auvergne-rhone-alpes&source_org=2&year=2000",
 							"method": "GET",
 							"param": "after",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://open-collectivites.fr/publications/?after=2024-03-24&before=2024-03-24&departement=ain&region=auvergne-rhone-alpes&source_org=2&topic=2&year=2000\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nafter=2024-03-24\n\nThe user-controlled value was:\n2024-03-24"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://open-collectivites.fr/publications/?after=2024-03-31&before=2024-03-31&departement=ain&publication_page=5&region=auvergne-rhone-alpes&source_org=2&year=2000\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nafter=2024-03-31\n\nThe user-controlled value was:\n2024-03-31"
 						},
 						{
-							"uri": "https://open-collectivites.fr/publications/?after=2024-03-24&before=2024-03-24&departement=ain&region=auvergne-rhone-alpes&source_org=2&topic=2&year=2000",
+							"uri": "https://open-collectivites.fr/publications/?after=2024-03-31&before=2024-03-31&departement=ain&publication_page=5&region=auvergne-rhone-alpes&source_org=2&year=2000",
 							"method": "GET",
 							"param": "before",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://open-collectivites.fr/publications/?after=2024-03-24&before=2024-03-24&departement=ain&region=auvergne-rhone-alpes&source_org=2&topic=2&year=2000\n\nappears to include user input in: \n\na(n) [input] tag [min] attribute \n\nThe user input found was:\nbefore=2024-03-24\n\nThe user-controlled value was:\n2024-03-24"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://open-collectivites.fr/publications/?after=2024-03-31&before=2024-03-31&departement=ain&publication_page=5&region=auvergne-rhone-alpes&source_org=2&year=2000\n\nappears to include user input in: \n\na(n) [input] tag [min] attribute \n\nThe user input found was:\nbefore=2024-03-31\n\nThe user-controlled value was:\n2024-03-31"
 						},
 						{
-							"uri": "https://open-collectivites.fr/publications/?after=2024-03-24&before=2024-03-24&departement=ain&region=auvergne-rhone-alpes&source_org=2&topic=2&year=2000",
+							"uri": "https://open-collectivites.fr/publications/?after=2024-03-31&before=2024-03-31&departement=ain&publication_page=5&region=auvergne-rhone-alpes&source_org=2&year=2000",
 							"method": "GET",
 							"param": "before",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://open-collectivites.fr/publications/?after=2024-03-24&before=2024-03-24&departement=ain&region=auvergne-rhone-alpes&source_org=2&topic=2&year=2000\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nbefore=2024-03-24\n\nThe user-controlled value was:\n2024-03-24"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://open-collectivites.fr/publications/?after=2024-03-31&before=2024-03-31&departement=ain&publication_page=5&region=auvergne-rhone-alpes&source_org=2&year=2000\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nbefore=2024-03-31\n\nThe user-controlled value was:\n2024-03-31"
 						},
 						{
-							"uri": "https://open-collectivites.fr/publications/?after=2024-03-24&before=2024-03-24&departement=ain&region=auvergne-rhone-alpes&source_org=2&topic=2&year=2000",
+							"uri": "https://open-collectivites.fr/publications/?after=2024-03-31&before=2024-03-31&departement=ain&publication_page=5&region=auvergne-rhone-alpes&source_org=2&year=2000",
 							"method": "GET",
 							"param": "departement",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://open-collectivites.fr/publications/?after=2024-03-24&before=2024-03-24&departement=ain&region=auvergne-rhone-alpes&source_org=2&topic=2&year=2000\n\nappears to include user input in: \n\na(n) [option] tag [value] attribute \n\nThe user input found was:\ndepartement=ain\n\nThe user-controlled value was:\nain"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://open-collectivites.fr/publications/?after=2024-03-31&before=2024-03-31&departement=ain&publication_page=5&region=auvergne-rhone-alpes&source_org=2&year=2000\n\nappears to include user input in: \n\na(n) [option] tag [value] attribute \n\nThe user input found was:\ndepartement=ain\n\nThe user-controlled value was:\nain"
 						},
 						{
-							"uri": "https://open-collectivites.fr/publications/?after=2024-03-24&before=2024-03-24&departement=ain&region=auvergne-rhone-alpes&source_org=2&topic=2&year=2000",
+							"uri": "https://open-collectivites.fr/publications/?after=2024-03-31&before=2024-03-31&departement=ain&publication_page=5&region=auvergne-rhone-alpes&source_org=2&year=2000",
 							"method": "GET",
 							"param": "region",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://open-collectivites.fr/publications/?after=2024-03-24&before=2024-03-24&departement=ain&region=auvergne-rhone-alpes&source_org=2&topic=2&year=2000\n\nappears to include user input in: \n\na(n) [option] tag [value] attribute \n\nThe user input found was:\nregion=auvergne-rhone-alpes\n\nThe user-controlled value was:\nauvergne-rhone-alpes"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://open-collectivites.fr/publications/?after=2024-03-31&before=2024-03-31&departement=ain&publication_page=5&region=auvergne-rhone-alpes&source_org=2&year=2000\n\nappears to include user input in: \n\na(n) [option] tag [value] attribute \n\nThe user input found was:\nregion=auvergne-rhone-alpes\n\nThe user-controlled value was:\nauvergne-rhone-alpes"
 						},
 						{
-							"uri": "https://open-collectivites.fr/publications/?after=2024-03-24&before=2024-03-24&departement=ain&region=auvergne-rhone-alpes&source_org=2&topic=2&year=2000",
+							"uri": "https://open-collectivites.fr/publications/?after=2024-03-31&before=2024-03-31&departement=ain&publication_page=5&region=auvergne-rhone-alpes&source_org=2&year=2000",
 							"method": "GET",
 							"param": "year",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://open-collectivites.fr/publications/?after=2024-03-24&before=2024-03-24&departement=ain&region=auvergne-rhone-alpes&source_org=2&topic=2&year=2000\n\nappears to include user input in: \n\na(n) [option] tag [value] attribute \n\nThe user input found was:\nyear=2000\n\nThe user-controlled value was:\n2000"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://open-collectivites.fr/publications/?after=2024-03-31&before=2024-03-31&departement=ain&publication_page=5&region=auvergne-rhone-alpes&source_org=2&year=2000\n\nappears to include user input in: \n\na(n) [option] tag [value] attribute \n\nThe user input found was:\nyear=2000\n\nThe user-controlled value was:\n2000"
 						},
 						{
-							"uri": "https://open-collectivites.fr/publications/?document_type=2&scope=1&topic=2",
+							"uri": "https://open-collectivites.fr/publications/?document_type=2&scope=1&topic=3",
 							"method": "GET",
 							"param": "scope",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://open-collectivites.fr/publications/?document_type=2&scope=1&topic=2\n\nappears to include user input in: \n\na(n) [meta] tag [content] attribute \n\nThe user input found was:\nscope=1\n\nThe user-controlled value was:\nwidth=device-width, initial-scale=1, shrink-to-fit=no"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://open-collectivites.fr/publications/?document_type=2&scope=1&topic=3\n\nappears to include user input in: \n\na(n) [meta] tag [content] attribute \n\nThe user input found was:\nscope=1\n\nThe user-controlled value was:\nwidth=device-width, initial-scale=1, shrink-to-fit=no"
 						},
 						{
-							"uri": "https://open-collectivites.fr/publications/?page=1&topic=2",
+							"uri": "https://open-collectivites.fr/publications/?page=1&publication_page=5",
 							"method": "GET",
 							"param": "page",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://open-collectivites.fr/publications/?page=1&topic=2\n\nappears to include user input in: \n\na(n) [meta] tag [content] attribute \n\nThe user input found was:\npage=1\n\nThe user-controlled value was:\nwidth=device-width, initial-scale=1, shrink-to-fit=no"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://open-collectivites.fr/publications/?page=1&publication_page=5\n\nappears to include user input in: \n\na(n) [meta] tag [content] attribute \n\nThe user input found was:\npage=1\n\nThe user-controlled value was:\nwidth=device-width, initial-scale=1, shrink-to-fit=no"
 						},
 						{
 							"uri": "https://open-collectivites.fr/publications/?topic=11",
@@ -1494,11 +1486,11 @@
 					],
 					"count": "13",
 					"solution": "<p>Validate all input and sanitize output it before writing to any HTML attributes.</p>",
-					"otherinfo": "<p>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:</p><p></p><p>https://open-collectivites.fr/publications/?after=2024-03-24&before=2024-03-24&departement=ain&region=auvergne-rhone-alpes&source_org=2&topic=2&year=2000</p><p></p><p>appears to include user input in: </p><p></p><p>a(n) [input] tag [min] attribute </p><p></p><p>The user input found was:</p><p>after=2024-03-24</p><p></p><p>The user-controlled value was:</p><p>2024-03-24</p>",
+					"otherinfo": "<p>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:</p><p></p><p>https://open-collectivites.fr/publications/?after=2024-03-31&before=2024-03-31&departement=ain&publication_page=5&region=auvergne-rhone-alpes&source_org=2&year=2000</p><p></p><p>appears to include user input in: </p><p></p><p>a(n) [input] tag [min] attribute </p><p></p><p>The user input found was:</p><p>after=2024-03-31</p><p></p><p>The user-controlled value was:</p><p>2024-03-31</p>",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html</p>",
 					"cweid": "20",
 					"wascid": "20",
-					"sourceid": "815"
+					"sourceid": "818"
 				}
 			]
 		}

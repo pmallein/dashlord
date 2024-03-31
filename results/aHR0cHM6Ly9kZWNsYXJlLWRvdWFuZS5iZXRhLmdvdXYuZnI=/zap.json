@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 24 Mar 2024 12:20:01",
+	"@generated": "Sun, 31 Mar 2024 12:40:29",
 	"site":[ 
 		{
 			"@name": "https://declare-douane.beta.gouv.fr",
@@ -28,6 +28,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://declare-douane.beta.gouv.fr/robots.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://declare-douane.beta.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "",
@@ -36,13 +44,40 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>https://www.w3.org/TR/CSP/</p><p>https://w3c.github.io/webappsec-csp/</p><p>https://web.dev/articles/csp</p><p>https://caniuse.com/#feat=contentsecuritypolicy</p><p>https://content-security-policy.com/</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "8"
+				},
+				{
+					"pluginid": "10020",
+					"alertRef": "10020-1",
+					"alert": "Missing Anti-clickjacking Header",
+					"name": "Missing Anti-clickjacking Header",
+					"riskcode": "2",
+					"confidence": "2",
+					"riskdesc": "Medium (Medium)",
+					"desc": "<p>The response does not include either Content-Security-Policy with 'frame-ancestors' directive or X-Frame-Options to protect against 'ClickJacking' attacks.</p>",
+					"instances":[ 
+						{
+							"uri": "https://declare-douane.beta.gouv.fr",
+							"method": "GET",
+							"param": "x-frame-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						}
+					],
+					"count": "1",
+					"solution": "<p>Modern Web browsers support the Content-Security-Policy and X-Frame-Options HTTP headers. Ensure one of them is set on all web pages returned by your site/app.</p><p>If you expect the page to be framed only by pages on your server (e.g. it's part of a FRAMESET) then you'll want to use SAMEORIGIN, otherwise if you never expect the page to be framed, you should use DENY. Alternatively consider implementing Content Security Policy's \"frame-ancestors\" directive.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options</p>",
+					"cweid": "1021",
+					"wascid": "15",
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "90003",
@@ -69,7 +104,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity</p>",
 					"cweid": "345",
 					"wascid": "15",
-					"sourceid": "60"
+					"sourceid": "56"
 				},
 				{
 					"pluginid": "10063",
@@ -114,7 +149,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://declare-douane.beta.gouv.fr/_next/static/chunks/6543-f8633be6d815ed35.js",
+							"uri": "https://declare-douane.beta.gouv.fr/_next/static/chunks/7851-0ab76f1dc6992b12.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -122,7 +157,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://declare-douane.beta.gouv.fr/_next/static/chunks/7851-0ab76f1dc6992b12.js",
+							"uri": "https://declare-douane.beta.gouv.fr/_next/static/chunks/framework-9b80b781ed7dc150.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -205,14 +240,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://declare-douane.beta.gouv.fr/_next/static/css/cf4c0edebb8f5f47.css",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://declare-douane.beta.gouv.fr/fonts/Roboto/Roboto-Black.ttf",
 							"method": "GET",
 							"param": "",
@@ -221,7 +248,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://declare-douane.beta.gouv.fr/fonts/Roboto/Roboto-Bold.ttf",
+							"uri": "https://declare-douane.beta.gouv.fr/fonts/Roboto/Roboto-BlackItalic.ttf",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -237,6 +264,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://declare-douane.beta.gouv.fr/fonts/Roboto/Roboto-Italic.ttf",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://declare-douane.beta.gouv.fr/fonts/Roboto/Roboto-Light.ttf",
 							"method": "GET",
 							"param": "",
@@ -245,7 +280,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://declare-douane.beta.gouv.fr/fonts/Roboto/Roboto-Medium.ttf",
+							"uri": "https://declare-douane.beta.gouv.fr/fonts/Roboto/Roboto-MediumItalic.ttf",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -253,7 +288,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://declare-douane.beta.gouv.fr/fonts/Roboto/Roboto-MediumItalic.ttf",
+							"uri": "https://declare-douane.beta.gouv.fr/fonts/Roboto/Roboto-Regular.ttf",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -331,14 +366,6 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://declare-douane.beta.gouv.fr/_next/static/chunks/polyfills-78c92fac7aa8fdd8.js",
-							"method": "GET",
-							"param": "x-content-type-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
-						},
-						{
 							"uri": "https://declare-douane.beta.gouv.fr/_next/static/chunks/webpack-c30818cd23c8ba0d.js",
 							"method": "GET",
 							"param": "x-content-type-options",
@@ -363,7 +390,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://declare-douane.beta.gouv.fr/fonts/Roboto/Roboto-Bold.ttf",
+							"uri": "https://declare-douane.beta.gouv.fr/fonts/Roboto/Roboto-BlackItalic.ttf",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -409,6 +436,14 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://declare-douane.beta.gouv.fr/fonts/Roboto/Roboto-Regular.ttf",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						}
 					],
 					"count": "11",
@@ -417,7 +452,7 @@
 					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "10094",
@@ -645,7 +680,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control</p><p>https://grayduck.mn/2021/09/13/cache-control-recommendations/</p>",
 					"cweid": "525",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "90005",
@@ -889,7 +924,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://declare-douane.beta.gouv.fr/fonts/Roboto/Roboto-Bold.ttf",
+							"uri": "https://declare-douane.beta.gouv.fr/fonts/Roboto/Roboto-BlackItalic.ttf",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -921,7 +956,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://declare-douane.beta.gouv.fr/fonts/Roboto/Roboto-Medium.ttf",
+							"uri": "https://declare-douane.beta.gouv.fr/fonts/Roboto/Roboto-MediumItalic.ttf",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -929,7 +964,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://declare-douane.beta.gouv.fr/fonts/Roboto/Roboto-MediumItalic.ttf",
+							"uri": "https://declare-douane.beta.gouv.fr/fonts/Roboto/Roboto-Regular.ttf",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -943,7 +978,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "42"
+					"sourceid": "35"
 				}
 			]
 		}

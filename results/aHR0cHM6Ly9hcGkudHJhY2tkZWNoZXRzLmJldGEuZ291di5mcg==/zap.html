@@ -127,7 +127,7 @@ td {
 	</h2>
 
 	<h3>
-		Generated on Sun, 24 Mar 2024 12:25:21
+		Generated on Sun, 31 Mar 2024 12:42:55
 	</h3>
 
 	<h3>
@@ -135,9 +135,8 @@ td {
 	</h3>
 
 	<h4>
-		ZAP is supported by the <a
-			href="https://crashoverride.com/open-source">Crash Override Open
-			Source Fellowship</a>
+		ZAP is supported by the <a href="https://crashoverride.com/?zap=rep">Crash
+			Override Open Source Fellowship</a>
 	</h4>
 
 	
@@ -178,7 +177,7 @@ td {
 					<div>Informational</div>
 				</td>
 				<td align="center">
-					<div>6</div>
+					<div>9</div>
 				</td>
 			</tr>
 			<tr>
@@ -219,9 +218,24 @@ td {
 				<td align="center">2</td>
 			</tr>
 			<tr>
+				<td><a href="#10094">Base64 Disclosure</a></td>
+				<td align="center" class="risk-0">Informational</td>
+				<td align="center">1</td>
+			</tr>
+			<tr>
+				<td><a href="#50007">GraphQL Endpoint Supports Introspection</a></td>
+				<td align="center" class="risk-0">Informational</td>
+				<td align="center">1</td>
+			</tr>
+			<tr>
 				<td><a href="#10049">Non-Storable Content</a></td>
 				<td align="center" class="risk-0">Informational</td>
 				<td align="center">2</td>
+			</tr>
+			<tr>
+				<td><a href="#10015">Re-examine Cache-control Directives</a></td>
+				<td align="center" class="risk-0">Informational</td>
+				<td align="center">1</td>
 			</tr>
 			<tr>
 				<td><a href="#90005">Sec-Fetch-Dest Header is Missing</a></td>
@@ -645,6 +659,174 @@ This host name is unusual, and likely meant to be a keyword that is missing the 
 			<table class="results">
 				<tr height="24">
 					<th width="20%" class="risk-0"><a
+						id="10094"></a>
+						<div>Informational</div></th>
+					<th class="risk-0">Base64 Disclosure</th>
+				</tr>
+				<tr>
+					<td width="20%">Description</td>
+					<td width="80%">
+							<div>Base64 encoded data was disclosed by the application/web server. Note: in the interests of performance not all base64 strings in the response were analyzed individually, the entire response should be looked at by the analyst/security team/developer(s).</div>
+							
+						</td>
+				</tr>
+				<TR vAlign="top">
+					<TD colspan="2"></TD>
+				</TR>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://api.trackdechets.beta.gouv.fr">https://api.trackdechets.beta.gouv.fr</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">transporter2RecepisseIsExempted</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%">�����+���E��+,x��驵�</td>
+					</tr>
+				
+				<tr>
+					<td width="20%">Instances</td>
+					<td width="80%">1</td>
+				</tr>
+				<tr>
+					<td width="20%">Solution</td>
+					<td width="80%">
+							<div>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</div>
+							
+						</td>
+				</tr>
+				<tr>
+					<td width="20%">Reference</td>
+					<td width="80%">
+							<a href="https://projects.webappsec.org/w/page/13246936/Information%20Leakage">https://projects.webappsec.org/w/page/13246936/Information%20Leakage</a>
+							
+						</td>
+				</tr>
+				<tr>
+					<td width="20%">CWE Id</td>
+					<td width="80%"><a
+						href="https://cwe.mitre.org/data/definitions/200.html">200</a></td>
+				</tr>
+				<tr>
+					<td width="20%">WASC Id</td>
+					<td width="80%">13</td>
+				</tr>
+				<tr>
+					<td width="20%">Plugin Id</td>
+					<td width="80%"><a
+						href="https://www.zaproxy.org/docs/alerts/10094/">10094</a></td>
+				</tr>
+			</table>
+			<div class="spacer"></div>
+		
+			<table class="results">
+				<tr height="24">
+					<th width="20%" class="risk-0"><a
+						id="50007"></a>
+						<div>Informational</div></th>
+					<th class="risk-0">GraphQL Endpoint Supports Introspection</th>
+				</tr>
+				<tr>
+					<td width="20%">Description</td>
+					<td width="80%">
+							<div>The GraphQL endpoint has Introspection enabled. Introspection allows clients to query the schema and retrieve detailed information about the fields, types, inputs, etc. supported by the GraphQL endpoint. This may be valuable to an attacker, as it could enable them to craft more targeted queries.</div>
+							
+						</td>
+				</tr>
+				<TR vAlign="top">
+					<TD colspan="2"></TD>
+				</TR>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://api.trackdechets.beta.gouv.fr">https://api.trackdechets.beta.gouv.fr</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%"></td>
+					</tr>
+				
+				<tr>
+					<td width="20%">Instances</td>
+					<td width="80%">1</td>
+				</tr>
+				<tr>
+					<td width="20%">Solution</td>
+					<td width="80%">
+							<div>Disable Introspection on the GraphQL endpoint.</div>
+							
+						</td>
+				</tr>
+				<tr>
+					<td width="20%">Reference</td>
+					<td width="80%">
+							<a href="https://spec.graphql.org/October2021/#sec-Introspection">https://spec.graphql.org/October2021/#sec-Introspection</a>
+							
+						</td>
+				</tr>
+				<tr>
+					<td width="20%">CWE Id</td>
+					<td width="80%"><a
+						href="https://cwe.mitre.org/data/definitions/16.html">16</a></td>
+				</tr>
+				<tr>
+					<td width="20%">WASC Id</td>
+					<td width="80%">15</td>
+				</tr>
+				<tr>
+					<td width="20%">Plugin Id</td>
+					<td width="80%"><a
+						href="https://www.zaproxy.org/docs/alerts/50007/">50007</a></td>
+				</tr>
+			</table>
+			<div class="spacer"></div>
+		
+			<table class="results">
+				<tr height="24">
+					<th width="20%" class="risk-0"><a
 						id="10049"></a>
 						<div>Informational</div></th>
 					<th class="risk-0">Non-Storable Content</th>
@@ -714,7 +896,7 @@ This host name is unusual, and likely meant to be a keyword that is missing the 
 					<tr>
 						<td width="20%"
 							class="indent2">Evidence</td>
-						<td width="80%">502</td>
+						<td width="80%">no-store</td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -799,6 +981,96 @@ This host name is unusual, and likely meant to be a keyword that is missing the 
 			<table class="results">
 				<tr height="24">
 					<th width="20%" class="risk-0"><a
+						id="10015"></a>
+						<div>Informational</div></th>
+					<th class="risk-0">Re-examine Cache-control Directives</th>
+				</tr>
+				<tr>
+					<td width="20%">Description</td>
+					<td width="80%">
+							<div>The cache-control header has not been set properly or is missing, allowing the browser and proxies to cache content. For static assets like css, js, or image files this might be intended, however, the resources should be reviewed to ensure that no sensitive content will be cached.</div>
+							
+						</td>
+				</tr>
+				<TR vAlign="top">
+					<TD colspan="2"></TD>
+				</TR>
+				
+					<tr>
+						<td width="20%"
+							class="indent1">URL</td>
+						<td width="80%"><a href="https://api.trackdechets.beta.gouv.fr">https://api.trackdechets.beta.gouv.fr</a></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Method</td>
+						<td width="80%">POST</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Parameter</td>
+						<td width="80%">cache-control</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Attack</td>
+						<td width="80%"></td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Evidence</td>
+						<td width="80%">no-store</td>
+					</tr>
+					<tr>
+						<td width="20%"
+							class="indent2">Other Info</td>
+						<td width="80%"></td>
+					</tr>
+				
+				<tr>
+					<td width="20%">Instances</td>
+					<td width="80%">1</td>
+				</tr>
+				<tr>
+					<td width="20%">Solution</td>
+					<td width="80%">
+							<div>For secure content, ensure the cache-control HTTP header is set with &quot;no-cache, no-store, must-revalidate&quot;. If an asset should be cached consider setting the directives &quot;public, max-age, immutable&quot;.</div>
+							
+						</td>
+				</tr>
+				<tr>
+					<td width="20%">Reference</td>
+					<td width="80%">
+							<a href="https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching">https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</a>
+							<br />
+						
+							<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control</a>
+							<br />
+						
+							<a href="https://grayduck.mn/2021/09/13/cache-control-recommendations/">https://grayduck.mn/2021/09/13/cache-control-recommendations/</a>
+							
+						</td>
+				</tr>
+				<tr>
+					<td width="20%">CWE Id</td>
+					<td width="80%"><a
+						href="https://cwe.mitre.org/data/definitions/525.html">525</a></td>
+				</tr>
+				<tr>
+					<td width="20%">WASC Id</td>
+					<td width="80%">13</td>
+				</tr>
+				<tr>
+					<td width="20%">Plugin Id</td>
+					<td width="80%"><a
+						href="https://www.zaproxy.org/docs/alerts/10015/">10015</a></td>
+				</tr>
+			</table>
+			<div class="spacer"></div>
+		
+			<table class="results">
+				<tr height="24">
+					<th width="20%" class="risk-0"><a
 						id="90005"></a>
 						<div>Informational</div></th>
 					<th class="risk-0">Sec-Fetch-Dest Header is Missing</th>
@@ -848,7 +1120,7 @@ This host name is unusual, and likely meant to be a keyword that is missing the 
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://api.trackdechets.beta.gouv.fr/sitemap.xml">https://api.trackdechets.beta.gouv.fr/sitemap.xml</a></td>
+						<td width="80%"><a href="https://api.trackdechets.beta.gouv.fr/robots.txt">https://api.trackdechets.beta.gouv.fr/robots.txt</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -879,12 +1151,12 @@ This host name is unusual, and likely meant to be a keyword that is missing the 
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://api.trackdechets.beta.gouv.fr">https://api.trackdechets.beta.gouv.fr</a></td>
+						<td width="80%"><a href="https://api.trackdechets.beta.gouv.fr/sitemap.xml">https://api.trackdechets.beta.gouv.fr/sitemap.xml</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
 							class="indent2">Method</td>
-						<td width="80%">POST</td>
+						<td width="80%">GET</td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -994,7 +1266,7 @@ This host name is unusual, and likely meant to be a keyword that is missing the 
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://api.trackdechets.beta.gouv.fr/sitemap.xml">https://api.trackdechets.beta.gouv.fr/sitemap.xml</a></td>
+						<td width="80%"><a href="https://api.trackdechets.beta.gouv.fr/robots.txt">https://api.trackdechets.beta.gouv.fr/robots.txt</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1025,12 +1297,12 @@ This host name is unusual, and likely meant to be a keyword that is missing the 
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://api.trackdechets.beta.gouv.fr">https://api.trackdechets.beta.gouv.fr</a></td>
+						<td width="80%"><a href="https://api.trackdechets.beta.gouv.fr/sitemap.xml">https://api.trackdechets.beta.gouv.fr/sitemap.xml</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
 							class="indent2">Method</td>
-						<td width="80%">POST</td>
+						<td width="80%">GET</td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1140,7 +1412,7 @@ This host name is unusual, and likely meant to be a keyword that is missing the 
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://api.trackdechets.beta.gouv.fr/sitemap.xml">https://api.trackdechets.beta.gouv.fr/sitemap.xml</a></td>
+						<td width="80%"><a href="https://api.trackdechets.beta.gouv.fr/robots.txt">https://api.trackdechets.beta.gouv.fr/robots.txt</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1171,12 +1443,12 @@ This host name is unusual, and likely meant to be a keyword that is missing the 
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://api.trackdechets.beta.gouv.fr">https://api.trackdechets.beta.gouv.fr</a></td>
+						<td width="80%"><a href="https://api.trackdechets.beta.gouv.fr/sitemap.xml">https://api.trackdechets.beta.gouv.fr/sitemap.xml</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
 							class="indent2">Method</td>
-						<td width="80%">POST</td>
+						<td width="80%">GET</td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1286,7 +1558,7 @@ This host name is unusual, and likely meant to be a keyword that is missing the 
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://api.trackdechets.beta.gouv.fr/sitemap.xml">https://api.trackdechets.beta.gouv.fr/sitemap.xml</a></td>
+						<td width="80%"><a href="https://api.trackdechets.beta.gouv.fr/robots.txt">https://api.trackdechets.beta.gouv.fr/robots.txt</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
@@ -1317,12 +1589,12 @@ This host name is unusual, and likely meant to be a keyword that is missing the 
 					<tr>
 						<td width="20%"
 							class="indent1">URL</td>
-						<td width="80%"><a href="https://api.trackdechets.beta.gouv.fr">https://api.trackdechets.beta.gouv.fr</a></td>
+						<td width="80%"><a href="https://api.trackdechets.beta.gouv.fr/sitemap.xml">https://api.trackdechets.beta.gouv.fr/sitemap.xml</a></td>
 					</tr>
 					<tr>
 						<td width="20%"
 							class="indent2">Method</td>
-						<td width="80%">POST</td>
+						<td width="80%">GET</td>
 					</tr>
 					<tr>
 						<td width="20%"

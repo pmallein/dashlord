@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 24 Mar 2024 12:25:21",
+	"@generated": "Sun, 31 Mar 2024 12:42:55",
 	"site":[ 
 		{
 			"@name": "https://api.trackdechets.beta.gouv.fr",
@@ -42,7 +42,7 @@
 					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "10"
+					"sourceid": "7"
 				},
 				{
 					"pluginid": "10055",
@@ -77,7 +77,7 @@
 					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "10"
+					"sourceid": "7"
 				},
 				{
 					"pluginid": "10063",
@@ -112,7 +112,88 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy</p><p>https://developer.chrome.com/blog/feature-policy/</p><p>https://scotthelme.co.uk/a-new-security-header-feature-policy/</p><p>https://w3c.github.io/webappsec-feature-policy/</p><p>https://www.smashingmagazine.com/2018/12/feature-policy/</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "10"
+					"sourceid": "7"
+				},
+				{
+					"pluginid": "10094",
+					"alertRef": "10094-3",
+					"alert": "Base64 Disclosure",
+					"name": "Base64 Disclosure",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
+					"desc": "<p>Base64 encoded data was disclosed by the application/web server. Note: in the interests of performance not all base64 strings in the response were analyzed individually, the entire response should be looked at by the analyst/security team/developer(s).</p>",
+					"instances":[ 
+						{
+							"uri": "https://api.trackdechets.beta.gouv.fr",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "transporter2RecepisseIsExempted",
+							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD+\uFFFD\uFFFD\uFFFDE\uFFFD\\x001e\uFFFD+,x\uFFFD\\x0004\uFFFD\u9A75\uFFFD"
+						}
+					],
+					"count": "1",
+					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
+					"otherinfo": "<p>\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD+\uFFFD\uFFFD\uFFFDE\uFFFD\\x001e\uFFFD+,x\uFFFD\\x0004\uFFFD\u9A75\uFFFD</p>",
+					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
+					"cweid": "200",
+					"wascid": "13",
+					"sourceid": "9"
+				},
+				{
+					"pluginid": "50007",
+					"alertRef": "50007-1",
+					"alert": "GraphQL Endpoint Supports Introspection",
+					"name": "GraphQL Endpoint Supports Introspection",
+					"riskcode": "0",
+					"confidence": "3",
+					"riskdesc": "Informational (High)",
+					"desc": "<p>The GraphQL endpoint has Introspection enabled. Introspection allows clients to query the schema and retrieve detailed information about the fields, types, inputs, etc. supported by the GraphQL endpoint. This may be valuable to an attacker, as it could enable them to craft more targeted queries.</p>",
+					"instances":[ 
+						{
+							"uri": "https://api.trackdechets.beta.gouv.fr",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						}
+					],
+					"count": "1",
+					"solution": "<p>Disable Introspection on the GraphQL endpoint.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://spec.graphql.org/October2021/#sec-Introspection</p>",
+					"cweid": "16",
+					"wascid": "15",
+					"sourceid": "9"
+				},
+				{
+					"pluginid": "50007",
+					"alertRef": "50007-2",
+					"alert": "GraphQL Server Implementation Identified",
+					"name": "GraphQL Server Implementation Identified",
+					"riskcode": "0",
+					"confidence": "3",
+					"riskdesc": "Informational (High)",
+					"desc": "<p>The server is using \"Apollo\", which is a GraphQL implementation for JavaScript, Node.js, and TypeScript.</p>",
+					"instances":[ 
+						{
+							"uri": "https://api.trackdechets.beta.gouv.fr",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "Directive \"@skip\" argument \"if\" of type \"Boolean!\" is required, but it was not provided.",
+							"otherinfo": ""
+						}
+					],
+					"count": "1",
+					"solution": "",
+					"otherinfo": "",
+					"reference": "<p>https://github.com/apollographql/apollo-server</p>",
+					"cweid": "205",
+					"wascid": "45",
+					"sourceid": "11"
 				},
 				{
 					"pluginid": "10049",
@@ -137,7 +218,7 @@
 							"method": "POST",
 							"param": "",
 							"attack": "",
-							"evidence": "502",
+							"evidence": "no-store",
 							"otherinfo": ""
 						}
 					],
@@ -147,7 +228,34 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "6"
+					"sourceid": "1"
+				},
+				{
+					"pluginid": "10015",
+					"alertRef": "10015",
+					"alert": "Re-examine Cache-control Directives",
+					"name": "Re-examine Cache-control Directives",
+					"riskcode": "0",
+					"confidence": "1",
+					"riskdesc": "Informational (Low)",
+					"desc": "<p>The cache-control header has not been set properly or is missing, allowing the browser and proxies to cache content. For static assets like css, js, or image files this might be intended, however, the resources should be reviewed to ensure that no sensitive content will be cached.</p>",
+					"instances":[ 
+						{
+							"uri": "https://api.trackdechets.beta.gouv.fr",
+							"method": "POST",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "no-store",
+							"otherinfo": ""
+						}
+					],
+					"count": "1",
+					"solution": "<p>For secure content, ensure the cache-control HTTP header is set with \"no-cache, no-store, must-revalidate\". If an asset should be cached consider setting the directives \"public, max-age, immutable\".</p>",
+					"otherinfo": "",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control</p><p>https://grayduck.mn/2021/09/13/cache-control-recommendations/</p>",
+					"cweid": "525",
+					"wascid": "13",
+					"sourceid": "9"
 				},
 				{
 					"pluginid": "90005",
@@ -168,7 +276,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://api.trackdechets.beta.gouv.fr/sitemap.xml",
+							"uri": "https://api.trackdechets.beta.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -176,8 +284,8 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://api.trackdechets.beta.gouv.fr",
-							"method": "POST",
+							"uri": "https://api.trackdechets.beta.gouv.fr/sitemap.xml",
+							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
 							"evidence": "",
@@ -190,7 +298,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -211,7 +319,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://api.trackdechets.beta.gouv.fr/sitemap.xml",
+							"uri": "https://api.trackdechets.beta.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -219,8 +327,8 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://api.trackdechets.beta.gouv.fr",
-							"method": "POST",
+							"uri": "https://api.trackdechets.beta.gouv.fr/sitemap.xml",
+							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
 							"evidence": "",
@@ -233,7 +341,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -254,7 +362,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://api.trackdechets.beta.gouv.fr/sitemap.xml",
+							"uri": "https://api.trackdechets.beta.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -262,8 +370,8 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://api.trackdechets.beta.gouv.fr",
-							"method": "POST",
+							"uri": "https://api.trackdechets.beta.gouv.fr/sitemap.xml",
+							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
 							"evidence": "",
@@ -276,7 +384,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -297,7 +405,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://api.trackdechets.beta.gouv.fr/sitemap.xml",
+							"uri": "https://api.trackdechets.beta.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -305,8 +413,8 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://api.trackdechets.beta.gouv.fr",
-							"method": "POST",
+							"uri": "https://api.trackdechets.beta.gouv.fr/sitemap.xml",
+							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
 							"evidence": "",
@@ -319,7 +427,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10049",
@@ -354,7 +462,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "10"
+					"sourceid": "7"
 				}
 			]
 		}

@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 31 Mar 2024 13:18:38",
+	"@generated": "Sun, 7 Apr 2024 13:45:25",
 	"site":[ 
 		{
 			"@name": "https://refugies.info",
@@ -36,22 +36,6 @@
 							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"input-:R3aj4l6:\" ]."
 						},
 						{
-							"uri": "https://refugies.info/en/auth",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<form>",
-							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"input-:Rbit6:\" ]."
-						},
-						{
-							"uri": "https://refugies.info/en/publish",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<form>",
-							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"input-:R3aj4l6:\" ]."
-						},
-						{
 							"uri": "https://refugies.info/fa/auth",
 							"method": "GET",
 							"param": "",
@@ -77,6 +61,22 @@
 						},
 						{
 							"uri": "https://refugies.info/fr/publier",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form>",
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"input-:R3aj4l6:\" ]."
+						},
+						{
+							"uri": "https://refugies.info/ps/auth",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form>",
+							"otherinfo": "No known Anti-CSRF token [anticsrf, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token] was found in the following HTML form: [Form 1: \"input-:Rbit6:\" ]."
+						},
+						{
+							"uri": "https://refugies.info/ps/publish",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -122,7 +122,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "8455"
+					"sourceid": "10096"
 				},
 				{
 					"pluginid": "10038",
@@ -183,14 +183,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://refugies.info/fr/*/login",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://refugies.info/fr/404",
 							"method": "GET",
 							"param": "",
@@ -239,7 +231,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "13",
+					"count": "12",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>https://www.w3.org/TR/CSP/</p><p>https://w3c.github.io/webappsec-csp/</p><p>https://web.dev/articles/csp</p><p>https://caniuse.com/#feat=contentsecuritypolicy</p><p>https://content-security-policy.com/</p>",
@@ -298,23 +290,15 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://refugies.info/fr/demarche/5eb91481c2622f004e5fa686",
-							"method": "GET",
-							"param": "x-frame-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://refugies.info/fr/demarche/60e4649a5f46ee00146d570f",
-							"method": "GET",
-							"param": "x-frame-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://refugies.info/fr/demarche/60e5783614f07f0014fc12b8",
+							"method": "GET",
+							"param": "x-frame-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://refugies.info/fr/demarche/62503d59664c115fa5121c6a",
 							"method": "GET",
 							"param": "x-frame-options",
 							"attack": "",
@@ -331,6 +315,14 @@
 						},
 						{
 							"uri": "https://refugies.info/fr/demarche/63528e00976acb4f7bcd37ad",
+							"method": "GET",
+							"param": "x-frame-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://refugies.info/fr/politique-de-confidentialite",
 							"method": "GET",
 							"param": "x-frame-options",
 							"attack": "",
@@ -413,7 +405,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://refugies.info/fr/*/login",
+							"uri": "https://refugies.info/fr/*/directory-create",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -528,7 +520,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://refugies.info/fr/*/login",
+							"uri": "https://refugies.info/fr/*/directory-create",
 							"method": "GET",
 							"param": "https://plausible.io/js/script.tagged-events.js",
 							"attack": "",
@@ -604,14 +596,6 @@
 					"instances":[ 
 						{
 							"uri": "https://refugies.info",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://refugies.info/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -697,6 +681,14 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
+						},
+						{
+							"uri": "https://refugies.info/uk/404",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
 						}
 					],
 					"count": "12",
@@ -758,7 +750,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://refugies.info/fr/*/login",
+							"uri": "https://refugies.info/fr/*/directory-create",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -865,15 +857,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://refugies.info/en/404",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://refugies.info/favicon.ico",
+							"uri": "https://refugies.info/fa/404",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -890,6 +874,14 @@
 						},
 						{
 							"uri": "https://refugies.info/fr/404",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://refugies.info/ps/404",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -962,7 +954,7 @@
 					"reference": "<p>https://cwe.mitre.org/data/definitions/200.html</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "375"
+					"sourceid": "382"
 				},
 				{
 					"pluginid": "10021",
@@ -1138,14 +1130,6 @@
 							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uCD6Bbs\uFFFD\uFFFD\uFFFD\uFFFD.\uFFFD\uFFFDD\uFFFD\r\uFFFD\uFFFD\uFFFD_\\x0003\\x0015\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD'\u07B2"
 						},
 						{
-							"uri": "https://refugies.info/fr/*/login",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "/_next/static/ejsbEuwLZExw3S3dZfAxW/_buildManifest",
-							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uCD6Bbs\uFFFD\uFFFD\uFFFD\uFFFD.\uFFFD\uFFFDD\uFFFD\r\uFFFD\uFFFD\uFFFD_\\x0003\\x0015\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD'\u07B2"
-						},
-						{
 							"uri": "https://refugies.info/fr/404",
 							"method": "GET",
 							"param": "",
@@ -1194,7 +1178,7 @@
 							"otherinfo": "\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uCD6Bbs\uFFFD\uFFFD\uFFFD\uFFFD.\uFFFD\uFFFDD\uFFFD\r\uFFFD\uFFFD\uFFFD_\\x0003\\x0015\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD'\u07B2"
 						}
 					],
-					"count": "13",
+					"count": "12",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
 					"otherinfo": "<p>\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uCD6Bbs\uFFFD\uFFFD\uFFFD\uFFFD.\uFFFD\uFFFDD\uFFFD\r\uFFFD\uFFFD\uFFFD_\\x0003\\x0015\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD\\x001a\uFFFD'\u07B2</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
@@ -1368,7 +1352,7 @@
 							"otherinfo": "A noScript tag has been found, which is an indication that the application works differently with JavaScript enabled compared to when it is not."
 						},
 						{
-							"uri": "https://refugies.info/fr/*/login",
+							"uri": "https://refugies.info/fr/*/directory-create",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1507,6 +1491,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://refugies.info/advanced-search",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "308",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://refugies.info/auth",
 							"method": "GET",
 							"param": "",
@@ -1520,14 +1512,6 @@
 							"param": "",
 							"attack": "",
 							"evidence": "308",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://refugies.info/sitemap.xml",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "no-store",
 							"otherinfo": ""
 						}
 					],
@@ -1590,7 +1574,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://refugies.info/fr/mentions-legales",
+							"uri": "https://refugies.info/fr/plan-du-site",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -1598,7 +1582,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://refugies.info/fr/plan-du-site",
+							"uri": "https://refugies.info/fr/politique-de-confidentialite",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -1673,7 +1657,15 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://refugies.info/*/reset",
+							"uri": "https://refugies.info/*/login",
+							"method": "GET",
+							"param": "Sec-Fetch-Dest",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://refugies.info/*/register",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -1689,7 +1681,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"solution": "<p>Ensure that Sec-Fetch-Dest header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
@@ -1716,7 +1708,15 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://refugies.info/*/reset",
+							"uri": "https://refugies.info/*/login",
+							"method": "GET",
+							"param": "Sec-Fetch-Mode",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://refugies.info/*/register",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -1732,7 +1732,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"solution": "<p>Ensure that Sec-Fetch-Mode header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
@@ -1759,7 +1759,15 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://refugies.info/*/reset",
+							"uri": "https://refugies.info/*/login",
+							"method": "GET",
+							"param": "Sec-Fetch-Site",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://refugies.info/*/register",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -1775,7 +1783,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"solution": "<p>Ensure that Sec-Fetch-Site header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
@@ -1802,7 +1810,15 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://refugies.info/*/reset",
+							"uri": "https://refugies.info/*/login",
+							"method": "GET",
+							"param": "Sec-Fetch-User",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://refugies.info/*/register",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -1818,7 +1834,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"solution": "<p>Ensure that Sec-Fetch-User header is included in user initiated requests.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
@@ -1958,7 +1974,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html</p>",
 					"cweid": "20",
 					"wascid": "20",
-					"sourceid": "3557"
+					"sourceid": "3780"
 				}
 			]
 		}

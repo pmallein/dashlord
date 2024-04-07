@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 31 Mar 2024 10:54:04",
+	"@generated": "Sun, 7 Apr 2024 10:41:32",
 	"site":[ 
 		{
 			"@name": "https://mfc-web-dev.osc-secnum-fr1.scalingo.io",
@@ -28,6 +28,14 @@
 							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nimg-src"
 						},
 						{
+							"uri": "https://mfc-web-dev.osc-secnum-fr1.scalingo.io/robots.txt",
+							"method": "GET",
+							"param": "Content-Security-Policy",
+							"attack": "",
+							"evidence": "default-src 'self';script-src 'self' *.gouv.fr 'unsafe-eval' 'unsafe-inline';img-src * data:;style-src 'self' 'unsafe-inline';font-src 'self';object-src 'none';base-uri 'self';form-action 'self';frame-ancestors 'none';block-all-mixed-content;upgrade-insecure-requests;",
+							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nimg-src"
+						},
+						{
 							"uri": "https://mfc-web-dev.osc-secnum-fr1.scalingo.io/sitemap.xml",
 							"method": "GET",
 							"param": "Content-Security-Policy",
@@ -36,7 +44,7 @@
 							"otherinfo": "The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: \nimg-src"
 						}
 					],
-					"count": "2",
+					"count": "3",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is properly configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "<p>The following directives either allow wildcard sources (or ancestors), are not defined, or are overly broadly defined: </p><p>img-src</p>",
 					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://developers.google.com/web/fundamentals/security/csp#policy_applies_to_a_wide_variety_of_resources</p>",
@@ -198,7 +206,7 @@
 					"reference": "<p>https://owasp.org/www-community/HttpOnly</p>",
 					"cweid": "1004",
 					"wascid": "13",
-					"sourceid": "13"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10011",
@@ -225,7 +233,7 @@
 					"reference": "<p>https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes.html</p>",
 					"cweid": "614",
 					"wascid": "13",
-					"sourceid": "13"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10063",
@@ -262,22 +270,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://mfc-web-dev.osc-secnum-fr1.scalingo.io/_next/static/chunks/571-3cd378d03a9918ad.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://mfc-web-dev.osc-secnum-fr1.scalingo.io/_next/static/chunks/594-81fcaf8f393dbccf.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://mfc-web-dev.osc-secnum-fr1.scalingo.io/_next/static/chunks/72-295b970c101a4969.js",
 							"method": "GET",
 							"param": "",
@@ -294,7 +286,23 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://mfc-web-dev.osc-secnum-fr1.scalingo.io/_next/static/chunks/app/%5Blocale%5D/page-3938e705a8731ccc.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://mfc-web-dev.osc-secnum-fr1.scalingo.io/_next/static/chunks/main-app-003dbef5ea2a5259.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://mfc-web-dev.osc-secnum-fr1.scalingo.io/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -332,7 +340,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy</p><p>https://developer.chrome.com/blog/feature-policy/</p><p>https://scotthelme.co.uk/a-new-security-header-feature-policy/</p><p>https://w3c.github.io/webappsec-feature-policy/</p><p>https://www.smashingmagazine.com/2018/12/feature-policy/</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "13"
 				},
 				{
 					"pluginid": "10037",
@@ -383,7 +391,7 @@
 					"reference": "<p>https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/01-Information_Gathering/08-Fingerprint_Web_Application_Framework</p><p>https://www.troyhunt.com/2012/02/shhh-dont-let-your-response-headers.html</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "13"
 				},
 				{
 					"pluginid": "10035",
@@ -404,7 +412,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://mfc-web-dev.osc-secnum-fr1.scalingo.io/_next/static/chunks/16-1592281bcb81c7bd.js",
+							"uri": "https://mfc-web-dev.osc-secnum-fr1.scalingo.io/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -490,7 +498,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc6797#section-8.1</p>",
 					"cweid": "319",
 					"wascid": "15",
-					"sourceid": "13"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10096",
@@ -517,7 +525,7 @@
 					"reference": "<p>https://cwe.mitre.org/data/definitions/200.html</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "53"
+					"sourceid": "56"
 				},
 				{
 					"pluginid": "10021",
@@ -554,7 +562,7 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
-							"uri": "https://mfc-web-dev.osc-secnum-fr1.scalingo.io/_next/static/chunks/594-81fcaf8f393dbccf.js",
+							"uri": "https://mfc-web-dev.osc-secnum-fr1.scalingo.io/_next/static/chunks/72-295b970c101a4969.js",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -571,6 +579,14 @@
 						},
 						{
 							"uri": "https://mfc-web-dev.osc-secnum-fr1.scalingo.io/_next/static/chunks/main-app-003dbef5ea2a5259.js",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://mfc-web-dev.osc-secnum-fr1.scalingo.io/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -618,13 +634,13 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						}
 					],
-					"count": "11",
+					"count": "12",
 					"solution": "<p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p>",
 					"otherinfo": "<p>This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.</p><p>At \"High\" threshold this scan rule will not alert on client or server error responses.</p>",
 					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "13"
 				},
 				{
 					"pluginid": "10094",
@@ -766,7 +782,7 @@
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "46"
+					"sourceid": "48"
 				},
 				{
 					"pluginid": "10109",
@@ -817,7 +833,7 @@
 					"reference": "",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "13"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10049",
@@ -881,7 +897,15 @@
 					"desc": "<p>Specifies how and where the data would be used. For instance, if the value is audio, then the requested resource must be audio data and not any other type of resource.</p>",
 					"instances":[ 
 						{
-							"uri": "https://mfc-web-dev.osc-secnum-fr1.scalingo.io",
+							"uri": "https://mfc-web-dev.osc-secnum-fr1.scalingo.io/_next/static/chunks/main-app-003dbef5ea2a5259.js",
+							"method": "GET",
+							"param": "Sec-Fetch-Dest",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://mfc-web-dev.osc-secnum-fr1.scalingo.io/_next/static/chunks/webpack-0a649d25df20766b.js",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -905,13 +929,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"solution": "<p>Ensure that Sec-Fetch-Dest header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "38"
 				},
 				{
 					"pluginid": "90005",
@@ -924,7 +948,15 @@
 					"desc": "<p>Allows to differentiate between requests for navigating between HTML pages and requests for loading resources like images, audio etc.</p>",
 					"instances":[ 
 						{
-							"uri": "https://mfc-web-dev.osc-secnum-fr1.scalingo.io",
+							"uri": "https://mfc-web-dev.osc-secnum-fr1.scalingo.io/_next/static/chunks/main-app-003dbef5ea2a5259.js",
+							"method": "GET",
+							"param": "Sec-Fetch-Mode",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://mfc-web-dev.osc-secnum-fr1.scalingo.io/_next/static/chunks/webpack-0a649d25df20766b.js",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -948,13 +980,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"solution": "<p>Ensure that Sec-Fetch-Mode header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "38"
 				},
 				{
 					"pluginid": "90005",
@@ -967,7 +999,15 @@
 					"desc": "<p>Specifies the relationship between request initiator's origin and target's origin.</p>",
 					"instances":[ 
 						{
-							"uri": "https://mfc-web-dev.osc-secnum-fr1.scalingo.io",
+							"uri": "https://mfc-web-dev.osc-secnum-fr1.scalingo.io/_next/static/chunks/main-app-003dbef5ea2a5259.js",
+							"method": "GET",
+							"param": "Sec-Fetch-Site",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://mfc-web-dev.osc-secnum-fr1.scalingo.io/_next/static/chunks/webpack-0a649d25df20766b.js",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -991,13 +1031,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"solution": "<p>Ensure that Sec-Fetch-Site header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "38"
 				},
 				{
 					"pluginid": "90005",
@@ -1010,7 +1050,15 @@
 					"desc": "<p>Specifies if a navigation request was initiated by a user.</p>",
 					"instances":[ 
 						{
-							"uri": "https://mfc-web-dev.osc-secnum-fr1.scalingo.io",
+							"uri": "https://mfc-web-dev.osc-secnum-fr1.scalingo.io/_next/static/chunks/main-app-003dbef5ea2a5259.js",
+							"method": "GET",
+							"param": "Sec-Fetch-User",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://mfc-web-dev.osc-secnum-fr1.scalingo.io/_next/static/chunks/webpack-0a649d25df20766b.js",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -1034,13 +1082,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "4",
 					"solution": "<p>Ensure that Sec-Fetch-User header is included in user initiated requests.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "38"
 				},
 				{
 					"pluginid": "10049",
@@ -1115,7 +1163,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "48"
+					"sourceid": "46"
 				}
 			]
 		}

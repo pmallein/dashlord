@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 31 Mar 2024 08:47:12",
+	"@generated": "Sun, 7 Apr 2024 08:33:32",
 	"site":[ 
 		{
 			"@name": "https://inclusion.beta.gouv.fr",
@@ -52,7 +52,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://inclusion.beta.gouv.fr/nos-services/datainclusion/",
+							"uri": "https://inclusion.beta.gouv.fr/nos-services/gps/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -60,7 +60,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://inclusion.beta.gouv.fr/nos-services/gps/",
+							"uri": "https://inclusion.beta.gouv.fr/nos-services/mon-r%C3%A9cap/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -100,7 +100,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://inclusion.beta.gouv.fr/sitemap.xml",
+							"uri": "https://inclusion.beta.gouv.fr/tenons-ensemble-la-promesse-du-dites-le-nous-une-fois/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -159,7 +159,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://inclusion.beta.gouv.fr/nos-services/dora/",
+							"uri": "https://inclusion.beta.gouv.fr/nos-services/gps/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -167,7 +167,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://inclusion.beta.gouv.fr/nos-services/gps/",
+							"uri": "https://inclusion.beta.gouv.fr/nos-services/mon-r%C3%A9cap/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -207,7 +207,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://inclusion.beta.gouv.fr/sitemap.xml",
+							"uri": "https://inclusion.beta.gouv.fr/tenons-ensemble-la-promesse-du-dites-le-nous-une-fois/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -221,7 +221,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy</p><p>https://developer.chrome.com/blog/feature-policy/</p><p>https://scotthelme.co.uk/a-new-security-header-feature-policy/</p><p>https://w3c.github.io/webappsec-feature-policy/</p><p>https://www.smashingmagazine.com/2018/12/feature-policy/</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10096",
@@ -238,13 +238,21 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "1711878426",
-							"otherinfo": "1711878426, which evaluates to: 2024-03-31 09:47:06"
+							"evidence": "1712482403",
+							"otherinfo": "1712482403, which evaluates to: 2024-04-07 09:33:23"
+						},
+						{
+							"uri": "https://inclusion.beta.gouv.fr/robots.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1712482404",
+							"otherinfo": "1712482404, which evaluates to: 2024-04-07 09:33:24"
 						}
 					],
-					"count": "1",
+					"count": "2",
 					"solution": "<p>Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.</p>",
-					"otherinfo": "<p>1711878426, which evaluates to: 2024-03-31 09:47:06</p>",
+					"otherinfo": "<p>1712482403, which evaluates to: 2024-04-07 09:33:23</p>",
 					"reference": "<p>https://cwe.mitre.org/data/definitions/200.html</p>",
 					"cweid": "200",
 					"wascid": "13",
@@ -261,7 +269,79 @@
 					"desc": "<p>The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</p>",
 					"instances":[ 
 						{
+							"uri": "https://inclusion.beta.gouv.fr/static/css/style.css",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://inclusion.beta.gouv.fr/static/dsfr/dist/artwork/dark.svg",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://inclusion.beta.gouv.fr/static/dsfr/dist/artwork/light.svg",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://inclusion.beta.gouv.fr/static/dsfr/dist/dsfr/dsfr.min.css",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://inclusion.beta.gouv.fr/static/dsfr/dist/dsfr/dsfr.module.min.js",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
 							"uri": "https://inclusion.beta.gouv.fr/static/dsfr/dist/utility/icons/icons.min.css",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://inclusion.beta.gouv.fr/static/dsfr/dist/utility/utility.min.css",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://inclusion.beta.gouv.fr/static/images/favicon.ico",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://inclusion.beta.gouv.fr/static/images/favicon.png",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://inclusion.beta.gouv.fr/static/images/favicon.svg",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -275,15 +355,23 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://inclusion.beta.gouv.fr/static/images/service-missing-logo-20.png",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						}
 					],
-					"count": "2",
+					"count": "12",
 					"solution": "<p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p>",
 					"otherinfo": "<p>This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.</p><p>At \"High\" threshold this scan rule will not alert on client or server error responses.</p>",
 					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "99"
+					"sourceid": "109"
 				},
 				{
 					"pluginid": "10094",
@@ -304,6 +392,38 @@
 							"otherinfo": "\uFFFD\\x0016\uFFFD\uFFFD\uFFFD\uFFFD\u01B7\\x0015\u014B\\x0008=\uFFFDB\uFFFD\uFFFD7\\x0007\uFFFD\uFFFD\\x0010\uFFFDY\\x0014~\uFFFD\uFFFD$\\x0017\uFFFD\uFFFD\uFFFD\\x0000\uFFFDa\uFFFD\\x0002\uFFFD}\uFFFD\uFFFD\uFFFDy\uFFFD\"\uFFFDd\\x0010E\\x0018"
 						},
 						{
+							"uri": "https://inclusion.beta.gouv.fr/kits-de-communication/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "sha384-C/tHGtxXFiwg9vEKg7jcH+8kQhlkUfq22JBeptJ8AqGHcArh9k/LdedUi42QQRRi",
+							"otherinfo": "\uFFFD\\x0016\uFFFD\uFFFD\uFFFD\uFFFD\u01B7\\x0015\u014B\\x0008=\uFFFDB\uFFFD\uFFFD7\\x0007\uFFFD\uFFFD\\x0010\uFFFDY\\x0014~\uFFFD\uFFFD$\\x0017\uFFFD\uFFFD\uFFFD\\x0000\uFFFDa\uFFFD\\x0002\uFFFD}\uFFFD\uFFFD\uFFFDy\uFFFD\"\uFFFDd\\x0010E\\x0018"
+						},
+						{
+							"uri": "https://inclusion.beta.gouv.fr/nos-services/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "sha384-C/tHGtxXFiwg9vEKg7jcH+8kQhlkUfq22JBeptJ8AqGHcArh9k/LdedUi42QQRRi",
+							"otherinfo": "\uFFFD\\x0016\uFFFD\uFFFD\uFFFD\uFFFD\u01B7\\x0015\u014B\\x0008=\uFFFDB\uFFFD\uFFFD7\\x0007\uFFFD\uFFFD\\x0010\uFFFDY\\x0014~\uFFFD\uFFFD$\\x0017\uFFFD\uFFFD\uFFFD\\x0000\uFFFDa\uFFFD\\x0002\uFFFD}\uFFFD\uFFFD\uFFFDy\uFFFD\"\uFFFDd\\x0010E\\x0018"
+						},
+						{
+							"uri": "https://inclusion.beta.gouv.fr/nos-services/communaut%C3%A9-de-linclusion-itou/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "sha384-C/tHGtxXFiwg9vEKg7jcH+8kQhlkUfq22JBeptJ8AqGHcArh9k/LdedUi42QQRRi",
+							"otherinfo": "\uFFFD\\x0016\uFFFD\uFFFD\uFFFD\uFFFD\u01B7\\x0015\u014B\\x0008=\uFFFDB\uFFFD\uFFFD7\\x0007\uFFFD\uFFFD\\x0010\uFFFDY\\x0014~\uFFFD\uFFFD$\\x0017\uFFFD\uFFFD\uFFFD\\x0000\uFFFDa\uFFFD\\x0002\uFFFD}\uFFFD\uFFFD\uFFFDy\uFFFD\"\uFFFDd\\x0010E\\x0018"
+						},
+						{
+							"uri": "https://inclusion.beta.gouv.fr/nos-services/gps/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "sha384-C/tHGtxXFiwg9vEKg7jcH+8kQhlkUfq22JBeptJ8AqGHcArh9k/LdedUi42QQRRi",
+							"otherinfo": "\uFFFD\\x0016\uFFFD\uFFFD\uFFFD\uFFFD\u01B7\\x0015\u014B\\x0008=\uFFFDB\uFFFD\uFFFD7\\x0007\uFFFD\uFFFD\\x0010\uFFFDY\\x0014~\uFFFD\uFFFD$\\x0017\uFFFD\uFFFD\uFFFD\\x0000\uFFFDa\uFFFD\\x0002\uFFFD}\uFFFD\uFFFD\uFFFDy\uFFFD\"\uFFFDd\\x0010E\\x0018"
+						},
+						{
 							"uri": "https://inclusion.beta.gouv.fr/nos-services/mon-r%C3%A9cap/",
 							"method": "GET",
 							"param": "",
@@ -312,7 +432,31 @@
 							"otherinfo": "\uFFFD\\x0016\uFFFD\uFFFD\uFFFD\uFFFD\u01B7\\x0015\u014B\\x0008=\uFFFDB\uFFFD\uFFFD7\\x0007\uFFFD\uFFFD\\x0010\uFFFDY\\x0014~\uFFFD\uFFFD$\\x0017\uFFFD\uFFFD\uFFFD\\x0000\uFFFDa\uFFFD\\x0002\uFFFD}\uFFFD\uFFFD\uFFFDy\uFFFD\"\uFFFDd\\x0010E\\x0018"
 						},
 						{
-							"uri": "https://inclusion.beta.gouv.fr/politique-de-confidentialite/",
+							"uri": "https://inclusion.beta.gouv.fr/nos-services/pilotage-de-linclusion-itou/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "sha384-C/tHGtxXFiwg9vEKg7jcH+8kQhlkUfq22JBeptJ8AqGHcArh9k/LdedUi42QQRRi",
+							"otherinfo": "\uFFFD\\x0016\uFFFD\uFFFD\uFFFD\uFFFD\u01B7\\x0015\u014B\\x0008=\uFFFDB\uFFFD\uFFFD7\\x0007\uFFFD\uFFFD\\x0010\uFFFDY\\x0014~\uFFFD\uFFFD$\\x0017\uFFFD\uFFFD\uFFFD\\x0000\uFFFDa\uFFFD\\x0002\uFFFD}\uFFFD\uFFFD\uFFFDy\uFFFD\"\uFFFDd\\x0010E\\x0018"
+						},
+						{
+							"uri": "https://inclusion.beta.gouv.fr/presentation/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "sha384-C/tHGtxXFiwg9vEKg7jcH+8kQhlkUfq22JBeptJ8AqGHcArh9k/LdedUi42QQRRi",
+							"otherinfo": "\uFFFD\\x0016\uFFFD\uFFFD\uFFFD\uFFFD\u01B7\\x0015\u014B\\x0008=\uFFFDB\uFFFD\uFFFD7\\x0007\uFFFD\uFFFD\\x0010\uFFFDY\\x0014~\uFFFD\uFFFD$\\x0017\uFFFD\uFFFD\uFFFD\\x0000\uFFFDa\uFFFD\\x0002\uFFFD}\uFFFD\uFFFD\uFFFDy\uFFFD\"\uFFFDd\\x0010E\\x0018"
+						},
+						{
+							"uri": "https://inclusion.beta.gouv.fr/ressources-sur-linclusion/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "sha384-C/tHGtxXFiwg9vEKg7jcH+8kQhlkUfq22JBeptJ8AqGHcArh9k/LdedUi42QQRRi",
+							"otherinfo": "\uFFFD\\x0016\uFFFD\uFFFD\uFFFD\uFFFD\u01B7\\x0015\u014B\\x0008=\uFFFDB\uFFFD\uFFFD7\\x0007\uFFFD\uFFFD\\x0010\uFFFDY\\x0014~\uFFFD\uFFFD$\\x0017\uFFFD\uFFFD\uFFFD\\x0000\uFFFDa\uFFFD\\x0002\uFFFD}\uFFFD\uFFFD\uFFFDy\uFFFD\"\uFFFDd\\x0010E\\x0018"
+						},
+						{
+							"uri": "https://inclusion.beta.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -328,13 +472,13 @@
 							"otherinfo": "\uFFFD\\x0016\uFFFD\uFFFD\uFFFD\uFFFD\u01B7\\x0015\u014B\\x0008=\uFFFDB\uFFFD\uFFFD7\\x0007\uFFFD\uFFFD\\x0010\uFFFDY\\x0014~\uFFFD\uFFFD$\\x0017\uFFFD\uFFFD\uFFFD\\x0000\uFFFDa\uFFFD\\x0002\uFFFD}\uFFFD\uFFFD\uFFFDy\uFFFD\"\uFFFDd\\x0010E\\x0018"
 						}
 					],
-					"count": "4",
+					"count": "11",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
 					"otherinfo": "<p>\uFFFD\\x0016\uFFFD\uFFFD\uFFFD\uFFFD\u01B7\\x0015\u014B\\x0008=\uFFFDB\uFFFD\uFFFD7\\x0007\uFFFD\uFFFD\\x0010\uFFFDY\\x0014~\uFFFD\uFFFD$\\x0017\uFFFD\uFFFD\uFFFD\\x0000\uFFFDa\uFFFD\\x0002\uFFFD}\uFFFD\uFFFD\uFFFDy\uFFFD\"\uFFFDd\\x0010E\\x0018</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10027",
@@ -351,25 +495,25 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "from",
-							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"<!DOCTYPE html><html><head><meta charset='utf-8'><meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'><meta content='wi\", see evidence field for the suspicious comment/snippet."
+							"evidence": "DB",
+							"otherinfo": "The following pattern was used: \\bDB\\b and was detected in the element starting with: \"const e=new class{constructor(){this.modules={}}create(e){const t=new e;this.modules[t.type]=t}getModule(e){return this.modules[\", see evidence field for the suspicious comment/snippet."
 						},
 						{
 							"uri": "https://inclusion.beta.gouv.fr/static/dsfr/dist/dsfr/dsfr.nomodule.min.js",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "from",
-							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"<!DOCTYPE html><html><head><meta charset='utf-8'><meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'><meta content='wi\", see evidence field for the suspicious comment/snippet."
+							"evidence": "DB",
+							"otherinfo": "The following pattern was used: \\bDB\\b and was detected in the element starting with: \"!function(){\"use strict\";var t=function(){this.modules={}},e={isActive:{configurable:!0},isLegacy:{configurable:!0}};t.prototype\", see evidence field for the suspicious comment/snippet."
 						}
 					],
 					"count": "2",
 					"solution": "<p>Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</p>",
-					"otherinfo": "<p>The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"<!DOCTYPE html><html><head><meta charset='utf-8'><meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'><meta content='wi\", see evidence field for the suspicious comment/snippet.</p>",
+					"otherinfo": "<p>The following pattern was used: \\bDB\\b and was detected in the element starting with: \"const e=new class{constructor(){this.modules={}}create(e){const t=new e;this.modules[t.type]=t}getModule(e){return this.modules[\", see evidence field for the suspicious comment/snippet.</p>",
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "97"
+					"sourceid": "118"
 				},
 				{
 					"pluginid": "10109",
@@ -390,6 +534,38 @@
 							"otherinfo": "Links have been found with a target of '_self' - this is often used by modern frameworks to force a full page reload."
 						},
 						{
+							"uri": "https://inclusion.beta.gouv.fr/kits-de-communication/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a href=\"https://56430383.sibforms.com/serve/MUIFAN1xWBAV0bm1hJK8u_d40_GfA6LI78C-__iffFVvOM0A7WLtqCRdAZEirGfvxD_t2xEqpWxur5cT8Xp6VX9JaO2iVSPcbVhzdu0bdhhQ-QLOWyS9FGI6eolgrTecO09eXS6o3ghqMvKHEOcCeXVC4vfT4J-MmkzSfXPU65hhqv8YYOU5SDV3LbF6-zmawXS1KcgYovPYFdGB\"\n               class=\"fr-btn\"\n               \n               target=\"_self\">Infolettre</a>",
+							"otherinfo": "Links have been found with a target of '_self' - this is often used by modern frameworks to force a full page reload."
+						},
+						{
+							"uri": "https://inclusion.beta.gouv.fr/nos-services/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a href=\"https://56430383.sibforms.com/serve/MUIFAN1xWBAV0bm1hJK8u_d40_GfA6LI78C-__iffFVvOM0A7WLtqCRdAZEirGfvxD_t2xEqpWxur5cT8Xp6VX9JaO2iVSPcbVhzdu0bdhhQ-QLOWyS9FGI6eolgrTecO09eXS6o3ghqMvKHEOcCeXVC4vfT4J-MmkzSfXPU65hhqv8YYOU5SDV3LbF6-zmawXS1KcgYovPYFdGB\"\n               class=\"fr-btn\"\n               \n               target=\"_self\">Infolettre</a>",
+							"otherinfo": "Links have been found with a target of '_self' - this is often used by modern frameworks to force a full page reload."
+						},
+						{
+							"uri": "https://inclusion.beta.gouv.fr/nos-services/communaut%C3%A9-de-linclusion-itou/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a href=\"https://56430383.sibforms.com/serve/MUIFAN1xWBAV0bm1hJK8u_d40_GfA6LI78C-__iffFVvOM0A7WLtqCRdAZEirGfvxD_t2xEqpWxur5cT8Xp6VX9JaO2iVSPcbVhzdu0bdhhQ-QLOWyS9FGI6eolgrTecO09eXS6o3ghqMvKHEOcCeXVC4vfT4J-MmkzSfXPU65hhqv8YYOU5SDV3LbF6-zmawXS1KcgYovPYFdGB\"\n               class=\"fr-btn\"\n               \n               target=\"_self\">Infolettre</a>",
+							"otherinfo": "Links have been found with a target of '_self' - this is often used by modern frameworks to force a full page reload."
+						},
+						{
+							"uri": "https://inclusion.beta.gouv.fr/nos-services/gps/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a href=\"https://56430383.sibforms.com/serve/MUIFAN1xWBAV0bm1hJK8u_d40_GfA6LI78C-__iffFVvOM0A7WLtqCRdAZEirGfvxD_t2xEqpWxur5cT8Xp6VX9JaO2iVSPcbVhzdu0bdhhQ-QLOWyS9FGI6eolgrTecO09eXS6o3ghqMvKHEOcCeXVC4vfT4J-MmkzSfXPU65hhqv8YYOU5SDV3LbF6-zmawXS1KcgYovPYFdGB\"\n               class=\"fr-btn\"\n               \n               target=\"_self\">Infolettre</a>",
+							"otherinfo": "Links have been found with a target of '_self' - this is often used by modern frameworks to force a full page reload."
+						},
+						{
 							"uri": "https://inclusion.beta.gouv.fr/nos-services/mon-r%C3%A9cap/",
 							"method": "GET",
 							"param": "",
@@ -398,7 +574,31 @@
 							"otherinfo": "Links have been found with a target of '_self' - this is often used by modern frameworks to force a full page reload."
 						},
 						{
-							"uri": "https://inclusion.beta.gouv.fr/politique-de-confidentialite/",
+							"uri": "https://inclusion.beta.gouv.fr/nos-services/pilotage-de-linclusion-itou/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a href=\"https://56430383.sibforms.com/serve/MUIFAN1xWBAV0bm1hJK8u_d40_GfA6LI78C-__iffFVvOM0A7WLtqCRdAZEirGfvxD_t2xEqpWxur5cT8Xp6VX9JaO2iVSPcbVhzdu0bdhhQ-QLOWyS9FGI6eolgrTecO09eXS6o3ghqMvKHEOcCeXVC4vfT4J-MmkzSfXPU65hhqv8YYOU5SDV3LbF6-zmawXS1KcgYovPYFdGB\"\n               class=\"fr-btn\"\n               \n               target=\"_self\">Infolettre</a>",
+							"otherinfo": "Links have been found with a target of '_self' - this is often used by modern frameworks to force a full page reload."
+						},
+						{
+							"uri": "https://inclusion.beta.gouv.fr/presentation/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a href=\"https://56430383.sibforms.com/serve/MUIFAN1xWBAV0bm1hJK8u_d40_GfA6LI78C-__iffFVvOM0A7WLtqCRdAZEirGfvxD_t2xEqpWxur5cT8Xp6VX9JaO2iVSPcbVhzdu0bdhhQ-QLOWyS9FGI6eolgrTecO09eXS6o3ghqMvKHEOcCeXVC4vfT4J-MmkzSfXPU65hhqv8YYOU5SDV3LbF6-zmawXS1KcgYovPYFdGB\"\n               class=\"fr-btn\"\n               \n               target=\"_self\">Infolettre</a>",
+							"otherinfo": "Links have been found with a target of '_self' - this is often used by modern frameworks to force a full page reload."
+						},
+						{
+							"uri": "https://inclusion.beta.gouv.fr/ressources-sur-linclusion/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a href=\"https://56430383.sibforms.com/serve/MUIFAN1xWBAV0bm1hJK8u_d40_GfA6LI78C-__iffFVvOM0A7WLtqCRdAZEirGfvxD_t2xEqpWxur5cT8Xp6VX9JaO2iVSPcbVhzdu0bdhhQ-QLOWyS9FGI6eolgrTecO09eXS6o3ghqMvKHEOcCeXVC4vfT4J-MmkzSfXPU65hhqv8YYOU5SDV3LbF6-zmawXS1KcgYovPYFdGB\"\n               class=\"fr-btn\"\n               \n               target=\"_self\">Infolettre</a>",
+							"otherinfo": "Links have been found with a target of '_self' - this is often used by modern frameworks to force a full page reload."
+						},
+						{
+							"uri": "https://inclusion.beta.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -414,112 +614,13 @@
 							"otherinfo": "Links have been found with a target of '_self' - this is often used by modern frameworks to force a full page reload."
 						}
 					],
-					"count": "4",
+					"count": "11",
 					"solution": "<p>This is an informational alert and so no changes are required.</p>",
 					"otherinfo": "<p>Links have been found with a target of '_self' - this is often used by modern frameworks to force a full page reload.</p>",
 					"reference": "",
 					"cweid": "-1",
 					"wascid": "-1",
 					"sourceid": "1"
-				},
-				{
-					"pluginid": "10049",
-					"alertRef": "10049",
-					"alert": "Non-Storable Content",
-					"name": "Non-Storable Content",
-					"riskcode": "0",
-					"confidence": "2",
-					"riskdesc": "Informational (Medium)",
-					"desc": "<p>The response contents are not storable by caching components such as proxy servers. If the response does not contain sensitive, personal or user-specific information, it may benefit from being stored and cached, to improve performance.</p>",
-					"instances":[ 
-						{
-							"uri": "https://inclusion.beta.gouv.fr/kits-de-communication/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "502",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://inclusion.beta.gouv.fr/nos-services/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "502",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://inclusion.beta.gouv.fr/nos-services/communaut%C3%A9-de-linclusion-itou/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "502",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://inclusion.beta.gouv.fr/nos-services/dora/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "502",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://inclusion.beta.gouv.fr/nos-services/gps/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "502",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://inclusion.beta.gouv.fr/nos-services/pilotage-de-linclusion-itou/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "502",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://inclusion.beta.gouv.fr/presentation/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "502",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://inclusion.beta.gouv.fr/ressources-sur-linclusion/",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "502",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://inclusion.beta.gouv.fr/robots.txt",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "502",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://inclusion.beta.gouv.fr/sitemap.xml",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "502",
-							"otherinfo": ""
-						}
-					],
-					"count": "10",
-					"solution": "<p>The content may be marked as storable by ensuring that the following conditions are satisfied:</p><p>The request method must be understood by the cache and defined as being cacheable (\"GET\", \"HEAD\", and \"POST\" are currently defined as cacheable)</p><p>The response status code must be understood by the cache (one of the 1XX, 2XX, 3XX, 4XX, or 5XX response classes are generally understood)</p><p>The \"no-store\" cache directive must not appear in the request or response header fields</p><p>For caching by \"shared\" caches such as \"proxy\" caches, the \"private\" response directive must not appear in the response</p><p>For caching by \"shared\" caches such as \"proxy\" caches, the \"Authorization\" header field must not appear in the request, unless the response explicitly allows it (using one of the \"must-revalidate\", \"public\", or \"s-maxage\" Cache-Control response directives)</p><p>In addition to the conditions above, at least one of the following conditions must also be satisfied by the response:</p><p>It must contain an \"Expires\" header field</p><p>It must contain a \"max-age\" response directive</p><p>For \"shared\" caches such as \"proxy\" caches, it must contain a \"s-maxage\" response directive</p><p>It must contain a \"Cache Control Extension\" that allows it to be cached</p><p>It must have a status code that is defined as cacheable by default (200, 203, 204, 206, 300, 301, 404, 405, 410, 414, 501).   </p>",
-					"otherinfo": "",
-					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
-					"cweid": "524",
-					"wascid": "13",
-					"sourceid": "55"
 				},
 				{
 					"pluginid": "10015",
@@ -540,6 +641,38 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://inclusion.beta.gouv.fr/kits-de-communication/",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://inclusion.beta.gouv.fr/nos-services/",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://inclusion.beta.gouv.fr/nos-services/communaut%C3%A9-de-linclusion-itou/",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://inclusion.beta.gouv.fr/nos-services/gps/",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://inclusion.beta.gouv.fr/nos-services/mon-r%C3%A9cap/",
 							"method": "GET",
 							"param": "cache-control",
@@ -548,7 +681,31 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://inclusion.beta.gouv.fr/politique-de-confidentialite/",
+							"uri": "https://inclusion.beta.gouv.fr/nos-services/pilotage-de-linclusion-itou/",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://inclusion.beta.gouv.fr/presentation/",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://inclusion.beta.gouv.fr/ressources-sur-linclusion/",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://inclusion.beta.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -564,7 +721,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "4",
+					"count": "11",
 					"solution": "<p>For secure content, ensure the cache-control HTTP header is set with \"no-cache, no-store, must-revalidate\". If an asset should be cached consider setting the directives \"public, max-age, immutable\".</p>",
 					"otherinfo": "",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control</p><p>https://grayduck.mn/2021/09/13/cache-control-recommendations/</p>",
@@ -591,14 +748,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://inclusion.beta.gouv.fr/nos-services/gps/",
-							"method": "GET",
-							"param": "Sec-Fetch-Dest",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://inclusion.beta.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
@@ -615,13 +764,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "4",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-Dest header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -642,14 +791,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://inclusion.beta.gouv.fr/nos-services/gps/",
-							"method": "GET",
-							"param": "Sec-Fetch-Mode",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://inclusion.beta.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
@@ -666,13 +807,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "4",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-Mode header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -693,14 +834,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://inclusion.beta.gouv.fr/nos-services/gps/",
-							"method": "GET",
-							"param": "Sec-Fetch-Site",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://inclusion.beta.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
@@ -717,13 +850,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "4",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-Site header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -744,14 +877,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://inclusion.beta.gouv.fr/nos-services/gps/",
-							"method": "GET",
-							"param": "Sec-Fetch-User",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://inclusion.beta.gouv.fr/robots.txt",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
@@ -768,13 +893,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "4",
+					"count": "3",
 					"solution": "<p>Ensure that Sec-Fetch-User header is included in user initiated requests.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10049",
@@ -793,15 +918,95 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
+							"uri": "https://inclusion.beta.gouv.fr/nos-services/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
+							"uri": "https://inclusion.beta.gouv.fr/nos-services/communaut%C3%A9-de-linclusion-itou/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
+							"uri": "https://inclusion.beta.gouv.fr/nos-services/gps/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
+							"uri": "https://inclusion.beta.gouv.fr/nos-services/mon-r%C3%A9cap/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
+							"uri": "https://inclusion.beta.gouv.fr/nos-services/pilotage-de-linclusion-itou/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
+							"uri": "https://inclusion.beta.gouv.fr/presentation/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
+							"uri": "https://inclusion.beta.gouv.fr/ressources-sur-linclusion/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
+							"uri": "https://inclusion.beta.gouv.fr/robots.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
+							"uri": "https://inclusion.beta.gouv.fr/sitemap.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
+						},
+						{
+							"uri": "https://inclusion.beta.gouv.fr/tenons-ensemble-la-promesse-du-dites-le-nous-une-fois/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						}
 					],
-					"count": "1",
+					"count": "11",
 					"solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information.  If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request. </p>",
 					"otherinfo": "<p>In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234.</p>",
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "6"
 				}
 			]
 		}

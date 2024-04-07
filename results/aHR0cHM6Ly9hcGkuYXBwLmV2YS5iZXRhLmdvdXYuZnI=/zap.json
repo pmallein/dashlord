@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 31 Mar 2024 12:52:56",
+	"@generated": "Sun, 7 Apr 2024 13:19:18",
 	"site":[ 
 		{
 			"@name": "https://api.app.eva.beta.gouv.fr",
@@ -254,7 +254,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>https://caniuse.com/stricttransportsecurity</p><p>https://datatracker.ietf.org/doc/html/rfc6797</p>",
 					"cweid": "319",
 					"wascid": "15",
-					"sourceid": "6"
+					"sourceid": "8"
 				},
 				{
 					"pluginid": "10094",
@@ -271,13 +271,13 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2FvvPBuTXT1nDQxS66DSd6cpHyqlWDHPqz3qQ91nGZ1VBOBKdBv5DhB0cHXm9oXfLsJL4gYBHGurpu9UvL",
-							"otherinfo": "\uFFFD[\uFFFD<\\x001b\uFFFD]=g\r\\x000cR\uFFFD\uFFFDw\uFFFD)\\x001f*\uFFFDX1\u03EB=\uFFFDC\uFFFDg\\x0019\uFFFDU\\x0004\uFFFDJt\\x001b\uFFFD\\x000e\\x0010tpu\uFFFD\uFFFD\uFFFD\uFFFD.\uFFFDK\uFFFD\\x0006\\x0001\\x001ck\uFFFD\uFFFD\uFFFDT\uFFFD"
+							"evidence": "2BkzHwYM3Ul3D1bE8t6iekyGOiDYTcxz1DSU3xdc9NjhlK",
+							"otherinfo": "\uFFFD\\x00193\\x001f\\x0006\\x000c\uFFFDIw\\x000fV\uFFFD\uFFFD\u07A2zL\uFFFD: \uFFFDM\uFFFDs\uFFFD4\uFFFD\uFFFD\\x0017\\\uFFFD\uFFFD\uFFFD"
 						}
 					],
 					"count": "1",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>\uFFFD[\uFFFD<\\x001b\uFFFD]=g\r\\x000cR\uFFFD\uFFFDw\uFFFD)\\x001f*\uFFFDX1\u03EB=\uFFFDC\uFFFDg\\x0019\uFFFDU\\x0004\uFFFDJt\\x001b\uFFFD\\x000e\\x0010tpu\uFFFD\uFFFD\uFFFD\uFFFD.\uFFFDK\uFFFD\\x0006\\x0001\\x001ck\uFFFD\uFFFD\uFFFDT\uFFFD</p>",
+					"otherinfo": "<p>\uFFFD\\x00193\\x001f\\x0006\\x000c\uFFFDIw\\x000fV\uFFFD\uFFFD\u07A2zL\uFFFD: \uFFFDM\uFFFDs\uFFFD4\uFFFD\uFFFD\\x0017\\\uFFFD\uFFFD\uFFFD</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
@@ -410,14 +410,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://api.app.eva.beta.gouv.fr/robots.txt",
-							"method": "GET",
-							"param": "Sec-Fetch-Dest",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://api.app.eva.beta.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
@@ -426,13 +418,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"solution": "<p>Ensure that Sec-Fetch-Dest header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -453,14 +445,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://api.app.eva.beta.gouv.fr/robots.txt",
-							"method": "GET",
-							"param": "Sec-Fetch-Mode",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://api.app.eva.beta.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
@@ -469,13 +453,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"solution": "<p>Ensure that Sec-Fetch-Mode header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -496,14 +480,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://api.app.eva.beta.gouv.fr/robots.txt",
-							"method": "GET",
-							"param": "Sec-Fetch-Site",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://api.app.eva.beta.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
@@ -512,13 +488,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"solution": "<p>Ensure that Sec-Fetch-Site header is included in request headers.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -539,14 +515,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://api.app.eva.beta.gouv.fr/robots.txt",
-							"method": "GET",
-							"param": "Sec-Fetch-User",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://api.app.eva.beta.gouv.fr/sitemap.xml",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
@@ -555,13 +523,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"solution": "<p>Ensure that Sec-Fetch-User header is included in user initiated requests.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10112",
@@ -578,7 +546,7 @@
 							"method": "GET",
 							"param": "_session_id",
 							"attack": "",
-							"evidence": "LCewVdMTAu4GYueLAZau%2FvvPBuTXT1nDQxS66DSd6cpHyqlWDHPqz3qQ91nGZ1VBOBKdBv5DhB0cHXm9oXfLsJL4gYBHGurpu9UvL%2BONic3lT2PYn2w78gbAFFL8n3F8pPO3uH4ZG4LehLbJLFQ6aRCnq9KzwRor1Z6E01Gp0xuOheAAzwYIrX8hwhc%2FpoTlTbIpp1D9AnxNmVK22gMCJJRRlLOgHFdwkbiJFPqXIDNrzm7awiW4BqUmZ1TMGuAkQJ3W%2B7HP%2Fr0gOPmvX46ye3CmxQ%3D%3D--mGQr1eTJXPXBYeu2--Pdngx9me9%2FTVhXOwMyafdw%3D%3D",
+							"evidence": "hhRs0UlsuI%2F17C%2FtYCKTIqkIKJPvCxR6MU%2BkzHwYM3Ul3D1bE8t6iekyGOiDYTcxz1DSU3xdc9NjhlK%2BNgmofN2Z13r3kMDqqiOOxJDj25S9hKLE3maIKndMQmo5qEZwSfUyUhOXScfVkKW51rNF8AtSoIUc%2BwuVklM1dXsA%2BIs%2BmFum8veThd6NsAkzatqOv8o0hdQSSzjkV2fi9imNkdy3%2Fx7vMh0UxbroisiwLMeMl1Kpovhhd3f04cULg6cpZBSf5HoHyQLC1S8XObAsmmZQrA%3D%3D--zUb5azDP8m%2F4IUHS--5Zh7vURUxRtX5L4rSXOuUQ%3D%3D",
 							"otherinfo": "\ncookie:_session_id"
 						}
 					],
@@ -631,7 +599,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "6"
+					"sourceid": "8"
 				}
 			]
 		}

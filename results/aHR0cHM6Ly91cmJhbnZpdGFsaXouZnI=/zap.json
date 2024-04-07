@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 31 Mar 2024 12:27:34",
+	"@generated": "Sun, 7 Apr 2024 12:48:55",
 	"site":[ 
 		{
 			"@name": "https://urbanvitaliz.fr",
@@ -58,7 +58,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "68"
+					"sourceid": "78"
 				},
 				{
 					"pluginid": "10038",
@@ -264,23 +264,15 @@
 							"attack": "",
 							"evidence": "<script src=\"https://www.google.com/recaptcha/api.js?hl=fr\"></script>",
 							"otherinfo": ""
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/onboarding/",
-							"method": "POST",
-							"param": "",
-							"attack": "",
-							"evidence": "<script src=\"https://www.google.com/recaptcha/api.js?hl=fr\"></script>",
-							"otherinfo": ""
 						}
 					],
-					"count": "12",
+					"count": "11",
 					"solution": "<p>Provide a valid integrity attribute to the tag.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity</p>",
 					"cweid": "345",
 					"wascid": "15",
-					"sourceid": "227"
+					"sourceid": "217"
 				},
 				{
 					"pluginid": "10010",
@@ -302,6 +294,14 @@
 						},
 						{
 							"uri": "https://urbanvitaliz.fr/accounts/password/reset/",
+							"method": "GET",
+							"param": "csrftoken",
+							"attack": "",
+							"evidence": "set-cookie: csrftoken",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://urbanvitaliz.fr/accounts/signup/",
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
@@ -379,14 +379,6 @@
 							"attack": "",
 							"evidence": "set-cookie: cookie_consent",
 							"otherinfo": ""
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/cookies/decline/tracking_media/",
-							"method": "POST",
-							"param": "cookie_consent",
-							"attack": "",
-							"evidence": "set-cookie: cookie_consent",
-							"otherinfo": ""
 						}
 					],
 					"count": "12",
@@ -395,7 +387,7 @@
 					"reference": "<p>https://owasp.org/www-community/HttpOnly</p>",
 					"cweid": "1004",
 					"wascid": "13",
-					"sourceid": "79"
+					"sourceid": "69"
 				},
 				{
 					"pluginid": "10011",
@@ -462,7 +454,7 @@
 					"reference": "<p>https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes.html</p>",
 					"cweid": "614",
 					"wascid": "13",
-					"sourceid": "197"
+					"sourceid": "212"
 				},
 				{
 					"pluginid": "10054",
@@ -547,7 +539,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://urbanvitaliz.fr/accounts/login/",
+							"uri": "https://urbanvitaliz.fr/accounts/signup/",
 							"method": "POST",
 							"param": "csrftoken",
 							"attack": "",
@@ -563,7 +555,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://urbanvitaliz.fr/onboarding/",
+							"uri": "https://urbanvitaliz.fr/contact/?subject=Demande%20d%E2%80%99acc%C3%A8s%20%C3%A0%20UrbanVitaliz%20en%20tant%20que%20conseiller%C2%B7e",
 							"method": "POST",
 							"param": "csrftoken",
 							"attack": "",
@@ -577,7 +569,7 @@
 					"reference": "<p>https://tools.ietf.org/html/draft-ietf-httpbis-cookie-same-site</p>",
 					"cweid": "1275",
 					"wascid": "13",
-					"sourceid": "79"
+					"sourceid": "69"
 				},
 				{
 					"pluginid": "10017",
@@ -668,23 +660,15 @@
 							"attack": "",
 							"evidence": "<script src=\"https://www.google.com/recaptcha/api.js?hl=fr\"></script>",
 							"otherinfo": ""
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/onboarding/",
-							"method": "POST",
-							"param": "https://www.google.com/recaptcha/api.js?hl=fr",
-							"attack": "",
-							"evidence": "<script src=\"https://www.google.com/recaptcha/api.js?hl=fr\"></script>",
-							"otherinfo": ""
 						}
 					],
-					"count": "11",
+					"count": "10",
 					"solution": "<p>Ensure JavaScript source files are loaded from only trusted sources, and the sources can't be controlled by end users of the application.</p>",
 					"otherinfo": "",
 					"reference": "",
 					"cweid": "829",
 					"wascid": "15",
-					"sourceid": "227"
+					"sourceid": "217"
 				},
 				{
 					"pluginid": "10110",
@@ -818,7 +802,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy</p><p>https://developer.chrome.com/blog/feature-policy/</p><p>https://scotthelme.co.uk/a-new-security-header-feature-policy/</p><p>https://w3c.github.io/webappsec-feature-policy/</p><p>https://www.smashingmagazine.com/2018/12/feature-policy/</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10035",
@@ -919,14 +903,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://urbanvitaliz.fr/static/popper-effa1d03.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://urbanvitaliz.fr/static/user-4cfab65f.css",
 							"method": "GET",
 							"param": "",
@@ -935,7 +911,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "13",
+					"count": "12",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to enforce Strict-Transport-Security.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>https://caniuse.com/stricttransportsecurity</p><p>https://datatracker.ietf.org/doc/html/rfc6797</p>",
@@ -1246,15 +1222,23 @@
 							"attack": "",
 							"evidence": "password",
 							"otherinfo": "userParam=login\nuserValue=foo-bar@example.com\npasswordParam=password\nreferer=https://urbanvitaliz.fr/accounts/login/\ncsrfToken=csrfmiddlewaretoken"
+						},
+						{
+							"uri": "https://urbanvitaliz.fr/accounts/login/",
+							"method": "POST",
+							"param": "login",
+							"attack": "",
+							"evidence": "password",
+							"otherinfo": "userParam=login\nuserValue=foo-bar@example.com\npasswordParam=password\nreferer=https://urbanvitaliz.fr/accounts/login/?next=/ressource/64/bookmark/create/\ncsrfToken=csrfmiddlewaretoken"
 						}
 					],
-					"count": "1",
+					"count": "2",
 					"solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
 					"otherinfo": "<p>userParam=login</p><p>userValue=foo-bar@example.com</p><p>passwordParam=password</p><p>referer=https://urbanvitaliz.fr/accounts/login/</p><p>csrfToken=csrfmiddlewaretoken</p>",
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/auth-req-id/</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "251"
+					"sourceid": "208"
 				},
 				{
 					"pluginid": "10094",
@@ -1287,8 +1271,8 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "TAkBmmRlySFlLV2ANwEeYplkbMmtvnrI",
-							"otherinfo": "L\t\\x0001\uFFFDde\uFFFD!e-]\uFFFD7\\x0001\\x001eb\uFFFDdl\u026D\uFFFDz\uFFFD"
+							"evidence": "N4QyxHcaTwWPEZeZgmEbpxRxUaRYFhtO",
+							"otherinfo": "7\uFFFD2\uFFFDw\\x001aO\\x0005\uFFFD\\x0011\uFFFD\uFFFD\uFFFDa\\x001b\uFFFD\\x0014qQ\uFFFDX\\x0016\\x001bN"
 						},
 						{
 							"uri": "https://urbanvitaliz.fr/acteurs-locaux",
@@ -1311,16 +1295,16 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "TAkBmmRlySFlLV2ANwEeYplkbMmtvnrI",
-							"otherinfo": "L\t\\x0001\uFFFDde\uFFFD!e-]\uFFFD7\\x0001\\x001eb\uFFFDdl\u026D\uFFFDz\uFFFD"
+							"evidence": "uM8gDbjrg1JwtJotkPyC3xHVtEjRnRn3",
+							"otherinfo": "\uFFFD\uFFFD \r\uFFFD\uFFFDRp\uFFFD\uFFFD-\uFFFD\uFFFD\uFFFD\uFFFD\\x0011\u0574H\u045D\\x0019\uFFFD"
 						},
 						{
 							"uri": "https://urbanvitaliz.fr/cookies/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "TAkBmmRlySFlLV2ANwEeYplkbMmtvnrI",
-							"otherinfo": "L\t\\x0001\uFFFDde\uFFFD!e-]\uFFFD7\\x0001\\x001eb\uFFFDdl\u026D\uFFFDz\uFFFD"
+							"evidence": "uM8gDbjrg1JwtJotkPyC3xHVtEjRnRn3",
+							"otherinfo": "\uFFFD\uFFFD \r\uFFFD\uFFFDRp\uFFFD\uFFFD-\uFFFD\uFFFD\uFFFD\uFFFD\\x0011\u0574H\u045D\\x0019\uFFFD"
 						},
 						{
 							"uri": "https://urbanvitaliz.fr/methodologie",
@@ -1343,8 +1327,8 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "TAkBmmRlySFlLV2ANwEeYplkbMmtvnrI",
-							"otherinfo": "L\t\\x0001\uFFFDde\uFFFD!e-]\uFFFD7\\x0001\\x001eb\uFFFDdl\u026D\uFFFDz\uFFFD"
+							"evidence": "jeQciy13AUhuPUfqBmogsqjYAuQcEify",
+							"otherinfo": "\uFFFD\uFFFD\\x001c\uFFFD-w\\x0001Hn=G\uFFFD\\x0006j \uFFFD\uFFFD\uFFFD\\x0002\uFFFD\\x001c\\x0012'\uFFFD"
 						},
 						{
 							"uri": "https://urbanvitaliz.fr/qui-sommes-nous",
@@ -1361,7 +1345,7 @@
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10027",
@@ -1511,7 +1495,7 @@
 					"reference": "<p>https://tools.ietf.org/html/rfc6265#section-4.1</p><p>https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes.html</p><p>https://code.google.com/p/browsersec/wiki/Part2#Same-origin_policy_for_cookies</p>",
 					"cweid": "565",
 					"wascid": "15",
-					"sourceid": "199"
+					"sourceid": "215"
 				},
 				{
 					"pluginid": "10109",
@@ -1626,7 +1610,7 @@
 					"reference": "",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "1287"
+					"sourceid": "1277"
 				},
 				{
 					"pluginid": "10015",
@@ -1733,7 +1717,7 @@
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control</p><p>https://grayduck.mn/2021/09/13/cache-control-recommendations/</p>",
 					"cweid": "525",
 					"wascid": "13",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90005",
@@ -1746,7 +1730,7 @@
 					"desc": "<p>Specifies how and where the data would be used. For instance, if the value is audio, then the requested resource must be audio data and not any other type of resource.</p>",
 					"instances":[ 
 						{
-							"uri": "https://urbanvitaliz.fr",
+							"uri": "https://urbanvitaliz.fr/confidentialite",
 							"method": "GET",
 							"param": "Sec-Fetch-Dest",
 							"attack": "",
@@ -1776,7 +1760,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "66"
 				},
 				{
 					"pluginid": "90005",
@@ -1789,7 +1773,7 @@
 					"desc": "<p>Allows to differentiate between requests for navigating between HTML pages and requests for loading resources like images, audio etc.</p>",
 					"instances":[ 
 						{
-							"uri": "https://urbanvitaliz.fr",
+							"uri": "https://urbanvitaliz.fr/confidentialite",
 							"method": "GET",
 							"param": "Sec-Fetch-Mode",
 							"attack": "",
@@ -1819,7 +1803,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "66"
 				},
 				{
 					"pluginid": "90005",
@@ -1832,7 +1816,7 @@
 					"desc": "<p>Specifies the relationship between request initiator's origin and target's origin.</p>",
 					"instances":[ 
 						{
-							"uri": "https://urbanvitaliz.fr",
+							"uri": "https://urbanvitaliz.fr/confidentialite",
 							"method": "GET",
 							"param": "Sec-Fetch-Site",
 							"attack": "",
@@ -1862,7 +1846,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "66"
 				},
 				{
 					"pluginid": "90005",
@@ -1875,7 +1859,7 @@
 					"desc": "<p>Specifies if a navigation request was initiated by a user.</p>",
 					"instances":[ 
 						{
-							"uri": "https://urbanvitaliz.fr",
+							"uri": "https://urbanvitaliz.fr/confidentialite",
 							"method": "GET",
 							"param": "Sec-Fetch-User",
 							"attack": "",
@@ -1905,7 +1889,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "6"
+					"sourceid": "66"
 				},
 				{
 					"pluginid": "10112",
@@ -1922,7 +1906,7 @@
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "TAkBmmRlySFlLV2ANwEeYplkbMmtvnrI",
+							"evidence": "N4QyxHcaTwWPEZeZgmEbpxRxUaRYFhtO",
 							"otherinfo": "\ncookie:csrftoken"
 						},
 						{
@@ -1930,7 +1914,7 @@
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "TAkBmmRlySFlLV2ANwEeYplkbMmtvnrI",
+							"evidence": "uM8gDbjrg1JwtJotkPyC3xHVtEjRnRn3",
 							"otherinfo": "\ncookie:csrftoken"
 						},
 						{
@@ -1938,7 +1922,7 @@
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "TAkBmmRlySFlLV2ANwEeYplkbMmtvnrI",
+							"evidence": "uM8gDbjrg1JwtJotkPyC3xHVtEjRnRn3",
 							"otherinfo": "\ncookie:csrftoken"
 						},
 						{
@@ -1946,81 +1930,49 @@
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "TAkBmmRlySFlLV2ANwEeYplkbMmtvnrI",
+							"evidence": "jeQciy13AUhuPUfqBmogsqjYAuQcEify",
 							"otherinfo": "\ncookie:csrftoken"
 						},
 						{
-							"uri": "https://urbanvitaliz.fr/static/css/menu-top.css",
+							"uri": "https://urbanvitaliz.fr/static/home/img/actors/community.png",
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "TAkBmmRlySFlLV2ANwEeYplkbMmtvnrI",
+							"evidence": "uM8gDbjrg1JwtJotkPyC3xHVtEjRnRn3",
 							"otherinfo": "\ncookie:csrftoken"
 						},
 						{
-							"uri": "https://urbanvitaliz.fr/static/home-9e0b55e9.js",
+							"uri": "https://urbanvitaliz.fr/static/home/img/actors/progress.png",
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "TAkBmmRlySFlLV2ANwEeYplkbMmtvnrI",
+							"evidence": "uM8gDbjrg1JwtJotkPyC3xHVtEjRnRn3",
 							"otherinfo": "\ncookie:csrftoken"
 						},
 						{
-							"uri": "https://urbanvitaliz.fr/static/home/css/dsfr/dsfr.css",
+							"uri": "https://urbanvitaliz.fr/static/home/img/pdf",
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "TAkBmmRlySFlLV2ANwEeYplkbMmtvnrI",
+							"evidence": "uM8gDbjrg1JwtJotkPyC3xHVtEjRnRn3",
 							"otherinfo": "\ncookie:csrftoken"
 						},
 						{
-							"uri": "https://urbanvitaliz.fr/static/home/css/dsfr/marianne.css",
+							"uri": "https://urbanvitaliz.fr/stats",
 							"method": "GET",
 							"param": "csrftoken",
 							"attack": "",
-							"evidence": "TAkBmmRlySFlLV2ANwEeYplkbMmtvnrI",
-							"otherinfo": "\ncookie:csrftoken"
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/static/home/img/home",
-							"method": "GET",
-							"param": "csrftoken",
-							"attack": "",
-							"evidence": "TAkBmmRlySFlLV2ANwEeYplkbMmtvnrI",
-							"otherinfo": "\ncookie:csrftoken"
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/static/home/img/home/human_cooperation.png",
-							"method": "GET",
-							"param": "csrftoken",
-							"attack": "",
-							"evidence": "TAkBmmRlySFlLV2ANwEeYplkbMmtvnrI",
-							"otherinfo": "\ncookie:csrftoken"
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/static/home/img/home/progress.png",
-							"method": "GET",
-							"param": "csrftoken",
-							"attack": "",
-							"evidence": "TAkBmmRlySFlLV2ANwEeYplkbMmtvnrI",
-							"otherinfo": "\ncookie:csrftoken"
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/static/urbanvitaliz.fr/home/img/home/actu-webinaire.png",
-							"method": "GET",
-							"param": "csrftoken",
-							"attack": "",
-							"evidence": "TAkBmmRlySFlLV2ANwEeYplkbMmtvnrI",
+							"evidence": "jeQciy13AUhuPUfqBmogsqjYAuQcEify",
 							"otherinfo": "\ncookie:csrftoken"
 						}
 					],
-					"count": "12",
+					"count": "8",
 					"solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
 					"otherinfo": "<p></p><p>cookie:csrftoken</p>",
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "79"
+					"sourceid": "69"
 				},
 				{
 					"pluginid": "10049",
@@ -2127,7 +2079,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10031",
@@ -2156,12 +2108,140 @@
 							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/contact/?subject=Demande%20d%E2%80%99acc%C3%A8s%20%C3%A0%20UrbanVitaliz%20en%20tant%20que%20conseiller%C2%B7e\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nsubject=Demande d\u2019acc\u00E8s \u00E0 UrbanVitaliz en tant que conseiller\u00B7e\n\nThe user-controlled value was:\ndemande d\u2019acc\u00E8s \u00E0 urbanvitaliz en tant que conseiller\u00B7e"
 						},
 						{
-							"uri": "https://urbanvitaliz.fr/accounts/login/",
+							"uri": "https://urbanvitaliz.fr/accounts/signup/",
 							"method": "POST",
-							"param": "login",
+							"param": "email",
 							"attack": "",
 							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/accounts/login/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nlogin=foo-bar@example.com\n\nThe user-controlled value was:\nfoo-bar@example.com"
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/accounts/signup/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nemail=zaproxy@example.com\n\nThe user-controlled value was:\nzaproxy@example.com"
+						},
+						{
+							"uri": "https://urbanvitaliz.fr/accounts/signup/",
+							"method": "POST",
+							"param": "first_name",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/accounts/signup/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nfirst_name=ZAP\n\nThe user-controlled value was:\nzap"
+						},
+						{
+							"uri": "https://urbanvitaliz.fr/accounts/signup/",
+							"method": "POST",
+							"param": "first_name",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/accounts/signup/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nfirst_name=ZAP\n\nThe user-controlled value was:\nzaproxy@example.com"
+						},
+						{
+							"uri": "https://urbanvitaliz.fr/accounts/signup/",
+							"method": "POST",
+							"param": "last_name",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/accounts/signup/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nlast_name=ZAP\n\nThe user-controlled value was:\nzap"
+						},
+						{
+							"uri": "https://urbanvitaliz.fr/accounts/signup/",
+							"method": "POST",
+							"param": "last_name",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/accounts/signup/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nlast_name=ZAP\n\nThe user-controlled value was:\nzaproxy@example.com"
+						},
+						{
+							"uri": "https://urbanvitaliz.fr/accounts/signup/",
+							"method": "POST",
+							"param": "organization",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/accounts/signup/\n\nappears to include user input in: \n\na(n) [div] tag [x-data] attribute \n\nThe user input found was:\norganization=organization\n\nThe user-controlled value was:\norganizationsearch(\"organization\")"
+						},
+						{
+							"uri": "https://urbanvitaliz.fr/accounts/signup/",
+							"method": "POST",
+							"param": "organization",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/accounts/signup/\n\nappears to include user input in: \n\na(n) [input] tag [name] attribute \n\nThe user input found was:\norganization=organization\n\nThe user-controlled value was:\norganization"
+						},
+						{
+							"uri": "https://urbanvitaliz.fr/accounts/signup/",
+							"method": "POST",
+							"param": "organization",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/accounts/signup/\n\nappears to include user input in: \n\na(n) [input] tag [name] attribute \n\nThe user input found was:\norganization=organization\n\nThe user-controlled value was:\norganization_position"
+						},
+						{
+							"uri": "https://urbanvitaliz.fr/accounts/signup/",
+							"method": "POST",
+							"param": "organization",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/accounts/signup/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\norganization=organization\n\nThe user-controlled value was:\norganization"
+						},
+						{
+							"uri": "https://urbanvitaliz.fr/accounts/signup/",
+							"method": "POST",
+							"param": "organization",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/accounts/signup/\n\nappears to include user input in: \n\na(n) [input] tag [x-model] attribute \n\nThe user input found was:\norganization=organization\n\nThe user-controlled value was:\norganization"
+						},
+						{
+							"uri": "https://urbanvitaliz.fr/accounts/signup/",
+							"method": "POST",
+							"param": "organization_position",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/accounts/signup/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\norganization_position=ZAP\n\nThe user-controlled value was:\nzap"
+						},
+						{
+							"uri": "https://urbanvitaliz.fr/accounts/signup/",
+							"method": "POST",
+							"param": "organization_position",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/accounts/signup/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\norganization_position=ZAP\n\nThe user-controlled value was:\nzaproxy@example.com"
+						},
+						{
+							"uri": "https://urbanvitaliz.fr/accounts/signup/",
+							"method": "POST",
+							"param": "password1",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/accounts/signup/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\npassword1=ZAP\n\nThe user-controlled value was:\nzap"
+						},
+						{
+							"uri": "https://urbanvitaliz.fr/accounts/signup/",
+							"method": "POST",
+							"param": "password1",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/accounts/signup/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\npassword1=ZAP\n\nThe user-controlled value was:\nzaproxy@example.com"
+						},
+						{
+							"uri": "https://urbanvitaliz.fr/accounts/signup/",
+							"method": "POST",
+							"param": "password2",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/accounts/signup/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\npassword2=ZAP\n\nThe user-controlled value was:\nzap"
+						},
+						{
+							"uri": "https://urbanvitaliz.fr/accounts/signup/",
+							"method": "POST",
+							"param": "password2",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/accounts/signup/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\npassword2=ZAP\n\nThe user-controlled value was:\nzaproxy@example.com"
+						},
+						{
+							"uri": "https://urbanvitaliz.fr/accounts/signup/",
+							"method": "POST",
+							"param": "phone_no",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/accounts/signup/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nphone_no=9999999999\n\nThe user-controlled value was:\n9999999999"
 						},
 						{
 							"uri": "https://urbanvitaliz.fr/contact/",
@@ -2178,134 +2258,6 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/contact/\n\nappears to include user input in: \n\na(n) [textarea] tag [value] attribute \n\nThe user input found was:\nname=ZAP\n\nThe user-controlled value was:\nzaproxy alias impedit expedita quisquam pariatur exercitationem. nemo rerum eveniet dolores rem quia dignissimos."
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/onboarding/",
-							"method": "POST",
-							"param": "email",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/onboarding/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nemail=zaproxy@example.com\n\nThe user-controlled value was:\nzaproxy@example.com"
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/onboarding/",
-							"method": "POST",
-							"param": "first_name",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/onboarding/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nfirst_name=ZAP\n\nThe user-controlled value was:\nzap"
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/onboarding/",
-							"method": "POST",
-							"param": "first_name",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/onboarding/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nfirst_name=ZAP\n\nThe user-controlled value was:\nzaproxy@example.com"
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/onboarding/",
-							"method": "POST",
-							"param": "last_name",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/onboarding/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nlast_name=ZAP\n\nThe user-controlled value was:\nzap"
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/onboarding/",
-							"method": "POST",
-							"param": "last_name",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/onboarding/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nlast_name=ZAP\n\nThe user-controlled value was:\nzaproxy@example.com"
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/onboarding/",
-							"method": "POST",
-							"param": "location",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/onboarding/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nlocation=ZAP\n\nThe user-controlled value was:\nzap"
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/onboarding/",
-							"method": "POST",
-							"param": "location",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/onboarding/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nlocation=ZAP\n\nThe user-controlled value was:\nzaproxy@example.com"
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/onboarding/",
-							"method": "POST",
-							"param": "name",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/onboarding/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nname=ZAP\n\nThe user-controlled value was:\nzap"
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/onboarding/",
-							"method": "POST",
-							"param": "name",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/onboarding/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nname=ZAP\n\nThe user-controlled value was:\nzaproxy@example.com"
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/onboarding/",
-							"method": "POST",
-							"param": "org_name",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/onboarding/\n\nappears to include user input in: \n\na(n) [div] tag [x-data] attribute \n\nThe user input found was:\norg_name=organization\n\nThe user-controlled value was:\norganizationsearch(\"organization\")"
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/onboarding/",
-							"method": "POST",
-							"param": "org_name",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/onboarding/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\norg_name=organization\n\nThe user-controlled value was:\norganization"
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/onboarding/",
-							"method": "POST",
-							"param": "org_name",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/onboarding/\n\nappears to include user input in: \n\na(n) [input] tag [x-model] attribute \n\nThe user input found was:\norg_name=organization\n\nThe user-controlled value was:\norganization"
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/onboarding/",
-							"method": "POST",
-							"param": "phone",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/onboarding/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nphone=9999999999\n\nThe user-controlled value was:\n9999999999"
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/onboarding/",
-							"method": "POST",
-							"param": "postcode",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/onboarding/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\npostcode=ZAP\n\nThe user-controlled value was:\nzap"
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/onboarding/",
-							"method": "POST",
-							"param": "postcode",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/onboarding/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\npostcode=ZAP\n\nThe user-controlled value was:\nzaproxy@example.com"
-						},
-						{
-							"uri": "https://urbanvitaliz.fr/onboarding/",
-							"method": "POST",
-							"param": "response_2",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://urbanvitaliz.fr/onboarding/\n\nappears to include user input in: \n\na(n) [input] tag [value] attribute \n\nThe user input found was:\nresponse_2=cartofriches\n\nThe user-controlled value was:\ncartofriches"
 						}
 					],
 					"count": "21",

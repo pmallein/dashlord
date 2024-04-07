@@ -1,7 +1,7 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.14.0",
-	"@generated": "Sun, 31 Mar 2024 03:13:28",
+	"@generated": "Sun, 7 Apr 2024 03:12:23",
 	"site":[ 
 		{
 			"@name": "https://entreprise.api.gouv.fr",
@@ -44,7 +44,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://entreprise.api.gouv.fr/cas_usages/editeur",
+							"uri": "https://entreprise.api.gouv.fr/cas_usages/aides_publiques",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -52,7 +52,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://entreprise.api.gouv.fr/cas_usages/portail_gru_instruction",
+							"uri": "https://entreprise.api.gouv.fr/cas_usages/fraude",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -183,14 +183,6 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://entreprise.api.gouv.fr/cgu",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "<link href=\"https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css\" rel=\"stylesheet\">",
-							"otherinfo": ""
-						},
-						{
 							"uri": "https://entreprise.api.gouv.fr/compte/se-connecter",
 							"method": "GET",
 							"param": "",
@@ -215,7 +207,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "11",
+					"count": "10",
 					"solution": "<p>Provide a valid integrity attribute to the tag.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity</p>",
@@ -248,7 +240,7 @@
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "93"
+					"sourceid": "45"
 				},
 				{
 					"pluginid": "10017",
@@ -277,6 +269,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://entreprise.api.gouv.fr/catalogue/carif_oref/certifications_qualiopi_france_competences",
+							"method": "GET",
+							"param": "//embed.typeform.com/next/embed.js",
+							"attack": "",
+							"evidence": "<script src=\"//embed.typeform.com/next/embed.js\"></script>",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://entreprise.api.gouv.fr/catalogue/gip_mds/effectifs_annuels_unite_legale",
 							"method": "GET",
 							"param": "//embed.typeform.com/next/embed.js",
@@ -301,7 +301,7 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "5",
+					"count": "6",
 					"solution": "<p>Ensure JavaScript source files are loaded from only trusted sources, and the sources can't be controlled by end users of the application.</p>",
 					"otherinfo": "",
 					"reference": "",
@@ -334,7 +334,7 @@
 					"reference": "<p>https://angular.io/guide/security</p>",
 					"cweid": "749",
 					"wascid": "-1",
-					"sourceid": "120"
+					"sourceid": "137"
 				},
 				{
 					"pluginid": "10023",
@@ -361,7 +361,7 @@
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "93"
+					"sourceid": "45"
 				},
 				{
 					"pluginid": "10063",
@@ -414,6 +414,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://entreprise.api.gouv.fr/cas_usages/aides_publiques",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://entreprise.api.gouv.fr/cas_usages/subventions_associations",
 							"method": "GET",
 							"param": "",
@@ -423,14 +431,6 @@
 						},
 						{
 							"uri": "https://entreprise.api.gouv.fr/catalogue",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://entreprise.api.gouv.fr/cgu",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -497,7 +497,15 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://entreprise.api.gouv.fr/assets/api_entreprise/cas_usages/pictos/marches_publics-18433259aa52ff46cc7ef771e23d550fced83a9f4de013bc2c349686b332b6dd.svg",
+							"uri": "https://entreprise.api.gouv.fr/assets/api_entreprise/cas_usages/pictos/aides_publiques-28626e02a8f744221cdc4edb0d485451015f882379405cf47f505bc87b9f011d.svg",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"uri": "https://entreprise.api.gouv.fr/assets/api_entreprise/cas_usages/pictos/subventions_associations-11f9a415ff5bf17665ae6a5e1274829d59e0bf839e0fe96f5f9421ad727bf442.svg",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -577,13 +585,13 @@
 							"otherinfo": ""
 						}
 					],
-					"count": "12",
+					"count": "13",
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to enforce Strict-Transport-Security.</p>",
 					"otherinfo": "",
 					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>https://caniuse.com/stricttransportsecurity</p><p>https://datatracker.ietf.org/doc/html/rfc6797</p>",
 					"cweid": "319",
 					"wascid": "15",
-					"sourceid": "101"
+					"sourceid": "106"
 				},
 				{
 					"pluginid": "10096",
@@ -596,12 +604,12 @@
 					"desc": "<p>A timestamp was disclosed by the application/web server - Unix</p>",
 					"instances":[ 
 						{
-							"uri": "https://entreprise.api.gouv.fr/catalogue/insee/adresse_etablissements_diffusibles",
+							"uri": "https://entreprise.api.gouv.fr/catalogue/dgfip/attestations_fiscales",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "1618396818",
-							"otherinfo": "1618396818, which evaluates to: 2021-04-14 10:40:18"
+							"evidence": "1569139162",
+							"otherinfo": "1569139162, which evaluates to: 2019-09-22 07:59:22"
 						},
 						{
 							"uri": "https://entreprise.api.gouv.fr/catalogue/insee/etablissements",
@@ -652,37 +660,37 @@
 							"otherinfo": "1634133818, which evaluates to: 2021-10-13 14:03:38"
 						},
 						{
-							"uri": "https://entreprise.api.gouv.fr/catalogue/insee/unites_legales_diffusibles",
+							"uri": "https://entreprise.api.gouv.fr/catalogue/ministere_interieur/documents_associations",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "1618396818",
-							"otherinfo": "1618396818, which evaluates to: 2021-04-14 10:40:18"
+							"evidence": "1631182730",
+							"otherinfo": "1631182730, which evaluates to: 2021-09-09 10:18:50"
 						},
 						{
-							"uri": "https://entreprise.api.gouv.fr/catalogue/insee/unites_legales_diffusibles",
+							"uri": "https://entreprise.api.gouv.fr/catalogue/ministere_interieur/documents_associations",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "1634103818",
-							"otherinfo": "1634103818, which evaluates to: 2021-10-13 05:43:38"
+							"evidence": "1635505765",
+							"otherinfo": "1635505765, which evaluates to: 2021-10-29 11:09:25"
 						},
 						{
-							"uri": "https://entreprise.api.gouv.fr/catalogue/insee/unites_legales_diffusibles",
+							"uri": "https://entreprise.api.gouv.fr/catalogue/qualibat/certifications_batiment",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "1634133818",
-							"otherinfo": "1634133818, which evaluates to: 2021-10-13 14:03:38"
+							"evidence": "1635521735",
+							"otherinfo": "1635521735, which evaluates to: 2021-10-29 15:35:35"
 						}
 					],
 					"count": "10",
 					"solution": "<p>Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.</p>",
-					"otherinfo": "<p>1618396818, which evaluates to: 2021-04-14 10:40:18</p>",
+					"otherinfo": "<p>1569139162, which evaluates to: 2019-09-22 07:59:22</p>",
 					"reference": "<p>https://cwe.mitre.org/data/definitions/200.html</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "379"
+					"sourceid": "313"
 				},
 				{
 					"pluginid": "10021",
@@ -711,6 +719,22 @@
 							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
 						},
 						{
+							"uri": "https://entreprise.api.gouv.fr/assets/api_entreprise/cas_usages/pictos/aides_publiques-28626e02a8f744221cdc4edb0d485451015f882379405cf47f505bc87b9f011d.svg",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"uri": "https://entreprise.api.gouv.fr/assets/api_entreprise/cas_usages/pictos/subventions_associations-11f9a415ff5bf17665ae6a5e1274829d59e0bf839e0fe96f5f9421ad727bf442.svg",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
 							"uri": "https://entreprise.api.gouv.fr/assets/api_entreprise/home/pictos/donnees-certifiees-ba1c3b7cc1bef0b0e3b45f04d135c9ab749c7694e51c64957555278d71400924.svg",
 							"method": "GET",
 							"param": "x-content-type-options",
@@ -720,22 +744,6 @@
 						},
 						{
 							"uri": "https://entreprise.api.gouv.fr/assets/api_entreprise/home/pictos/fournisseur-donnees-abdc14adb51730ebd9ebce443e29c83eb743fb7bf2cc80b4ea234c0a476a6346.svg",
-							"method": "GET",
-							"param": "x-content-type-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
-						},
-						{
-							"uri": "https://entreprise.api.gouv.fr/assets/api_entreprise/home/pictos/interfacage-1bb480ebd0cad23d69dba302cf4db51173fc5f33f09666569d6ee122860bb78d.svg",
-							"method": "GET",
-							"param": "x-content-type-options",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
-						},
-						{
-							"uri": "https://entreprise.api.gouv.fr/assets/api_entreprise/home/pictos/un-seul-compte-922d4cf2db70469abcffdb468fe41ee366790fc7895acd66a3ab9d6123b1d0ef.svg",
 							"method": "GET",
 							"param": "x-content-type-options",
 							"attack": "",
@@ -797,7 +805,7 @@
 					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "101"
+					"sourceid": "106"
 				},
 				{
 					"pluginid": "10094",
@@ -814,24 +822,24 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2Bc1h8c7HsmXcSIUCr5WDpbhnyB0lNF4AiyTUpguyc6fyZqZVarTpAM7iGSGysfZVxs0PvYMCmgAUulePRl0LYDbJfibWc",
-							"otherinfo": "\uFFFD\\x00175\uFFFD\uFFFD;\\x001e\u0257q\"\\x0014\n\uFFFDV\\x000e\uFFFD\uFFFD t\uFFFD\uFFFDx\\x0002,\uFFFDR\uFFFD.\uFFFD\u039F\u025A\uFFFDU\uFFFD\u04E4\\x0003;\uFFFDd\uFFFD\uFFFD\uFFFD\uFFFDW\\x001b4>\uFFFD\\x000c\nh\\x0000R\uFFFD^=\\x0019t-\uFFFD\uFFFD%\uFFFD\uFFFDY"
+							"evidence": "2FB448Non0yGhJqXuVSFEHAeZci3nk862fI8vGHeilPRLwjfKSi9pf9u",
+							"otherinfo": "\uFFFDPx\uFFFD\uFFFDh\uFFFDL\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDT\uFFFD\\x0010p\\x001ee\u0237\uFFFDO:\uFFFD\uFFFD<\uFFFDa\u078AS\uFFFD/\\x0008\uFFFD)(\uFFFD\uFFFD\uFFFDn"
 						},
 						{
 							"uri": "https://entreprise.api.gouv.fr",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "lVV9q6rtdqu4NmPMs0E72Xj5LhfYGrpsZxizQMKQRxNn8QlbX6xg",
-							"otherinfo": "\uFFFDU}\uFFFD\uFFFD\uFFFDv\uFFFD\uFFFD6c\u0333A;\uFFFDx\uFFFD.\\x0017\uFFFD\\x001a\uFFFDlg\\x0018\uFFFD@\u0090G\\x0013g\uFFFD\t[_\uFFFD`"
+							"evidence": "2FKDK8vCNCgOtdtYp2VRyFgaUjufu1oFtysy1hfBL08j1zaW",
+							"otherinfo": "\uFFFDR\uFFFD+\uFFFD\uFFFD4(\\x000e\uFFFD\uFFFDX\uFFFDeQ\uFFFDX\\x001aR;\uFFFD\uFFFDZ\\x0005\uFFFD+2\uFFFD\\x0017\uFFFD/O#\uFFFD6\uFFFD"
 						},
 						{
 							"uri": "https://entreprise.api.gouv.fr/",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2FYPLPWj9C6YzbOeYgcJmC1D70LsnM0RdhoTI3GD2gxwokrPobFhzzWG2Zij3ZEoOq",
-							"otherinfo": "\uFFFDV\\x000f,\uFFFD\uFFFD\uFFFD.\uFFFD\u0373\uFFFDb\\x0007\t\uFFFD-C\uFFFDB\uFFFD\uFFFD\\x0011v\\x001a\\x0013#q\uFFFD\uFFFD\\x000cp\uFFFDJ\u03E1\uFFFDa\uFFFD5\uFFFD\u0658\uFFFD\u0751(:"
+							"evidence": "gqgA9moywhAUmbjvohRLLiy6vQYwBslLPbcLc90",
+							"otherinfo": "\uFFFD\uFFFD\\x0000\uFFFDj2\uFFFD\\x0010\\x0014\uFFFD\uFFFD\uFFFD\\x0014K.,\uFFFD\uFFFD\\x00060\\x0006\uFFFDK=\uFFFD\\x000bs\uFFFD"
 						},
 						{
 							"uri": "https://entreprise.api.gouv.fr/assets/api_entreprise-72bfb4c5539d636bef9dafeedcf2ba00801f94d948ce29b54666f3d1d0762ecf.css",
@@ -854,65 +862,65 @@
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2FYAPtZ0Z6ypT5vgsoHdeBeXHvBu0MQjlPdlFIYDZsKqOftgoW4AMHefBu",
-							"otherinfo": "\uFFFDV\\x0000>\uFFFDtg\uFFFD\uFFFDO\uFFFD\u0C81\uFFFDx\\x0017\uFFFD\\x001e\uFFFDn\uFFFD\uFFFD#\uFFFD\uFFFDe\\x0014\uFFFD\\x0003f\u00AA9\uFFFD`\uFFFDn\\x00000w\uFFFD\\x0006"
+							"evidence": "2F435fg3cy5rSjGq3YvDSkdrJNbB1ANrraVUOrw7tx4woanXPB1haVSJ6X",
+							"otherinfo": "\uFFFD^7\uFFFD\uFFFD7s.kJ1\uFFFD\u074B\uFFFDJGk$\uFFFD\uFFFD\uFFFD\\x0003k\uFFFD\uFFFDT:\uFFFD;\uFFFD\\x001e0\uFFFD\uFFFD\uFFFD<\\x001daiT\uFFFD\uFFFD"
+						},
+						{
+							"uri": "https://entreprise.api.gouv.fr/cas_usages/aides_publiques",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "2Fr2W77yGSIfzxOlCHlLr2wlcsFQ5uLE1Omb",
+							"otherinfo": "\uFFFDZ\uFFFD[\uFFFD\uFFFD\\x0019\"\\x001f\uFFFD\\x0013\uFFFD\\x0008yK\uFFFDl%r\uFFFDP\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD"
 						},
 						{
 							"uri": "https://entreprise.api.gouv.fr/cas_usages/subventions_associations",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2FPnP0cvgUSqgXHTJLAm2pdP4oXvnxJG9YdPbdkXFO9UDrdsHwB58mwuA6hFRVQMaN5v9mR8OYzBFsyMND0KDD1lzwEGHhHIV0eoehsdjcqBZxW4R1R506N6",
-							"otherinfo": "\uFFFDS\uFFFD?G/\uFFFDD\uFFFD\uFFFDq\uFFFD$\uFFFD&\u0697O\uFFFD\uFFFD\\x0012F\uFFFD\uFFFDOm\uFFFD\\x0017\\x0014\uFFFDT\\x000e\uFFFDl\\x001f\\x0000y\uFFFDl.\\x0003\uFFFDEET\\x000ch\uFFFDo\uFFFDd|9\uFFFD\uFFFD\\x0016\u030C4=\n\\x000c=e\uFFFD\\x0001\\x0006\\x001e\\x0011\uFFFDWG\uFFFDz\\x001b\\x001d\uFFFD\u0281g\\x0015\uFFFDGTy\u04E3z"
+							"evidence": "KhNCIkB6fusdWfxe8CYDYdS3Z2h6oQBzD0q888QnZz9l3MsxmRrBuIzzpg9waGi2srRurKApoCoTLDRyL6twXTyAH6fKsTlpZWJ0UPuZqHLixkybkBCo4be9i4OErsaX9wX8RqF1VsUBVNNyoX5YgT8EJNdaKyKj1Ap",
+							"otherinfo": "*\\x0013B\"@z~\uFFFD\\x001dY\uFFFD^\uFFFD&\\x0003a\u0537ghz\uFFFD\\x0000s\\x000fJ\uFFFD\uFFFD\uFFFD'g?e\uFFFD\uFFFD1\uFFFD\\x001a\uFFFD\uFFFD\uFFFD\uFFFD\\x000fphh\uFFFD\uFFFD\uFFFDn\uFFFD\uFFFD)\uFFFD*\\x0013,4r/\uFFFDp]<\uFFFD\\x001f\uFFFD\u02B19iebtP\uFFFD\uFFFD\uFFFDr\uFFFD\uFFFDL\uFFFD\uFFFD\\x0010\uFFFD\u1DFD\uFFFD\uFFFD\uFFFD\uFFFD\u0197\uFFFD\\x0005\uFFFDF\uFFFDuV\uFFFD\\x0001T\uFFFDr\uFFFD~X\uFFFD?\\x0004$\uFFFDZ+\"\uFFFD\uFFFD\n"
 						},
 						{
 							"uri": "https://entreprise.api.gouv.fr/catalogue",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2FKTYh4iH30EaDmTQzxrTg1qUVZz35rvQwR9NjXPedbNDxAKqMlcpDKzsuy0jjsQdeqlRmaNjjCxSU4rIa6elDCOhw4GvOlZ1M8dq8",
-							"otherinfo": "\uFFFDR\uFFFDb\\x001e\"\\x001f}\\x0004h9\uFFFDC<kN\rjQVs\u07DA\uFFFDC\\x0004}65\uFFFDy\uFFFD\uFFFD\\x000f\\x0010\n\uFFFD\uFFFD\\\uFFFD2\uFFFD\uFFFD\uCD0E;\\x0010u\uFFFDFf\uFFFD\uFFFD0\uFFFDIN+!\uFFFD\uFFFD\uFFFD0\uFFFD\uFFFD\\x000e\\x0006\uFFFD\uFFFDY\uFFFD\uFFFD\\x001d\uFFFD"
-						},
-						{
-							"uri": "https://entreprise.api.gouv.fr/cgu",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "2BmOCAkSQD2QdlIaoxB5UL1gtq7CJifhGd860cu",
-							"otherinfo": "\uFFFD\\x0019\uFFFD\\x0008\t\\x0012@=\uFFFDvR\\x001a\uFFFD\\x0010yP\uFFFD`\uFFFD\uFFFD\uFFFD&'\uFFFD\\x0019\uFFFD:\uFFFD\uFFFD"
+							"evidence": "2FZLk1XzjDAZkKN1OHyq6sfDi8UUvshbL0bRRwSigrTu4mC3SfQT",
+							"otherinfo": "\uFFFDVK\uFFFDU\uFFFD0\\x0019\uFFFD\uFFFDu8|\uFFFD\uFFFD\uFFFD\u00CB\uFFFD\\x0014\uFFFD\uFFFD[/F\uFFFDG\\x0004\uFFFD\uFFFD\uFFFD\uFFFD\uFFFD`\uFFFDI\uFFFD\\x0013"
 						},
 						{
 							"uri": "https://entreprise.api.gouv.fr/compte/se-connecter",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2FTYUTjBxhL6EQ8uwURgXpZ5RaA4aCJuqjdudXEWpWKym0P6d0FhpeNwvURkTauHrvb2Yrj7Reluss4j",
-							"otherinfo": "\uFFFDT\uFFFDQ8\uFFFD\uFFFD\\x0012\uFFFD\\x0011\\x000f.\uFFFDD`^\uFFFDyE\uFFFD8h\"n\uFFFD7nuq\\x0016\uFFFDb\uFFFD\uFFFDC\uFFFDwAa\uFFFD\uFFFDp\uFFFDDdM\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDb\uFFFD\uFFFDE\uFFFDn\uFFFD\uFFFD#"
+							"evidence": "2Bbo3xvlMFSRlKLfhwgmX2WU6NcHq53e4HZn0GWeKdQduY9jLvqMlAd",
+							"otherinfo": "\uFFFD\\x0016\uFFFD\uFFFD\\x001b\uFFFD0T\uFFFD\uFFFD\uFFFD\u07C7\\x0008&_e\uFFFD\uFFFD\uFFFD\\x0007\uFFFD\uFFFD\uFFFD\uFFFDvg\uFFFDe\uFFFD)\uFFFD\\x001d\uFFFD\uFFFDc.\uFFFD\uFFFD\uFFFD\\x0007"
 						},
 						{
 							"uri": "https://entreprise.api.gouv.fr/developpeurs",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2BrLryW3KuK2y5pla8rZVGv1bob0YM",
-							"otherinfo": "\uFFFD\\x001a\u02EF%\uFFFD*\uFFFD\u02DAek\uFFFD\uFFFDTk\uFFFDn\uFFFD\uFFFD`"
+							"evidence": "2BbiTfVtQHID5L6bGUTaXULhm0WjfNqa",
+							"otherinfo": "\uFFFD\\x0016\uFFFDM\uFFFDm@r\\x0003\u4F9B\\x0019D\uFFFD]B\uFFFDE\uFFFD|\u069A"
 						},
 						{
 							"uri": "https://entreprise.api.gouv.fr/faq",
 							"method": "GET",
 							"param": "",
 							"attack": "",
-							"evidence": "2Bjt5TOuQXwXkhpm3hOQxIfKr986KjduHGs",
-							"otherinfo": "\uFFFD\\x0018\uFFFD\uFFFD3\uFFFDA|\\x0017\uFFFD\\x001af\uFFFD\\x0013\uFFFD\u0107\u02AF\uFFFD:*7n\\x001ck"
+							"evidence": "2FRa6d4f8mD4IDhSbaIn0hUbycybX0lEEqcp74HJnwCwwirTj88",
+							"otherinfo": "\uFFFDTZ\uFFFD\uFFFD\\x001f\uFFFD`\uFFFD 8Rm\uFFFD'\uFFFD\\x0015\\x001b\uFFFD\u031B_ID\\x0012\uFFFD)\uFFFD\u025F\\x0000\uFFFD\uFFFD*\u04CF\uFFFD"
 						}
 					],
 					"count": "12",
 					"solution": "<p>Manually confirm that the Base64 data does not leak sensitive information, and that the data cannot be aggregated/used to exploit other vulnerabilities.</p>",
-					"otherinfo": "<p>\uFFFD\\x00175\uFFFD\uFFFD;\\x001e\u0257q\"\\x0014</p><p>\uFFFDV\\x000e\uFFFD\uFFFD t\uFFFD\uFFFDx\\x0002,\uFFFDR\uFFFD.\uFFFD\u039F\u025A\uFFFDU\uFFFD\u04E4\\x0003;\uFFFDd\uFFFD\uFFFD\uFFFD\uFFFDW\\x001b4>\uFFFD\\x000c</p><p>h\\x0000R\uFFFD^=\\x0019t-\uFFFD\uFFFD%\uFFFD\uFFFDY</p>",
+					"otherinfo": "<p>\uFFFDPx\uFFFD\uFFFDh\uFFFDL\uFFFD\uFFFD\uFFFD\uFFFD\uFFFDT\uFFFD\\x0010p\\x001ee\u0237\uFFFDO:\uFFFD\uFFFD<\uFFFDa\u078AS\uFFFD/\\x0008\uFFFD)(\uFFFD\uFFFD\uFFFDn</p>",
 					"reference": "<p>https://projects.webappsec.org/w/page/13246936/Information%20Leakage</p>",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10019",
@@ -947,7 +955,7 @@
 					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p>",
 					"cweid": "345",
 					"wascid": "12",
-					"sourceid": "94"
+					"sourceid": "34"
 				},
 				{
 					"pluginid": "10027",
@@ -1024,22 +1032,6 @@
 							"otherinfo": "The following pattern was used: \\bTODO\\b and was detected 2 times, the first in the element starting with: \"  // TODO : emit ascendant et descendant de changement ?\", see evidence field for the suspicious comment/snippet."
 						},
 						{
-							"uri": "https://entreprise.api.gouv.fr/assets/turbo-6f8f1796078d2d3f7cb9b6badcd2d5e76287a3c58d97baffaa59dd12bd4135f5.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "from",
-							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected 29 times, the first in the element starting with: \"  return Array.from({\", see evidence field for the suspicious comment/snippet."
-						},
-						{
-							"uri": "https://entreprise.api.gouv.fr/assets/turbo-6f8f1796078d2d3f7cb9b6badcd2d5e76287a3c58d97baffaa59dd12bd4135f5.js",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "select",
-							"otherinfo": "The following pattern was used: \\bSELECT\\b and was detected 2 times, the first in the element starting with: \"    const selectElements = this.element.querySelectorAll(\"select\");\", see evidence field for the suspicious comment/snippet."
-						},
-						{
 							"uri": "https://entreprise.api.gouv.fr/cas_usages",
 							"method": "GET",
 							"param": "",
@@ -1062,23 +1054,15 @@
 							"attack": "",
 							"evidence": "from",
 							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"<script type=\"module\">\n  import { Application, Controller } from \"https://unpkg.com/@hotwired/stimulus/dist/stimulus.js\"\n\n  wind\", see evidence field for the suspicious comment/snippet."
-						},
-						{
-							"uri": "https://entreprise.api.gouv.fr/developpeurs",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "from",
-							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"<script type=\"module\">\n  import { Application, Controller } from \"https://unpkg.com/@hotwired/stimulus/dist/stimulus.js\"\n\n  wind\", see evidence field for the suspicious comment/snippet."
 						}
 					],
-					"count": "14",
+					"count": "11",
 					"solution": "<p>Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</p>",
 					"otherinfo": "<p>The following pattern was used: \\bFROM\\b and was detected in the element starting with: \"<script type=\"module\"></p><p>  import { Application, Controller } from \"https://unpkg.com/@hotwired/stimulus/dist/stimulus.js\"</p><p></p><p>  wind\", see evidence field for the suspicious comment/snippet.</p>",
 					"reference": "",
 					"cweid": "200",
 					"wascid": "13",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10109",
@@ -1115,7 +1099,7 @@
 							"otherinfo": "Links have been found with a target of '_self' - this is often used by modern frameworks to force a full page reload."
 						},
 						{
-							"uri": "https://entreprise.api.gouv.fr/cas_usages/editeur",
+							"uri": "https://entreprise.api.gouv.fr/cas_usages/aides_publiques",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1123,7 +1107,7 @@
 							"otherinfo": "Links have been found with a target of '_self' - this is often used by modern frameworks to force a full page reload."
 						},
 						{
-							"uri": "https://entreprise.api.gouv.fr/cas_usages/portail_gru_instruction",
+							"uri": "https://entreprise.api.gouv.fr/cas_usages/fraude",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1185,7 +1169,7 @@
 					"reference": "",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10049",
@@ -1222,6 +1206,14 @@
 							"otherinfo": ""
 						},
 						{
+							"uri": "https://entreprise.api.gouv.fr/cas_usages/subventions_associations",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "private",
+							"otherinfo": ""
+						},
+						{
 							"uri": "https://entreprise.api.gouv.fr/catalogue",
 							"method": "GET",
 							"param": "",
@@ -1231,14 +1223,6 @@
 						},
 						{
 							"uri": "https://entreprise.api.gouv.fr/compte/se-connecter",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "private",
-							"otherinfo": ""
-						},
-						{
-							"uri": "https://entreprise.api.gouv.fr/developpeurs",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -1297,7 +1281,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://entreprise.api.gouv.fr/cas_usages/editeur",
+							"uri": "https://entreprise.api.gouv.fr/cas_usages/aides_publiques",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -1305,7 +1289,7 @@
 							"otherinfo": ""
 						},
 						{
-							"uri": "https://entreprise.api.gouv.fr/cas_usages/portail_gru_instruction",
+							"uri": "https://entreprise.api.gouv.fr/cas_usages/fraude",
 							"method": "GET",
 							"param": "cache-control",
 							"attack": "",
@@ -1410,7 +1394,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -1453,7 +1437,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -1496,7 +1480,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90005",
@@ -1539,7 +1523,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User</p>",
 					"cweid": "352",
 					"wascid": "9",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10112",
@@ -1556,7 +1540,15 @@
 							"method": "GET",
 							"param": "_admin_apientreprise_session",
 							"attack": "",
-							"evidence": "jXH3CR8Vk6AYGtys53pciq79asLu%2Bc1h8c7HsmXcSIUCr5WDpbhnyB0lNF4AiyTUpguyc6fyZqZVarTpAM7iGSGysfZVxs0PvYMCmgAUulePRl0LYDbJfibWc%2FeGsyjhT3za%2FusMKk%2Bzn51zfMIcBZLV23SdsIDnOPOxEhrHUUgdQRHy1Tj4YaWmDDiE%2FHBPEiSKnRrl%2F9S4sOmJ23BxuMGcQcsRBo46Fuj5m4O%2Frp%2BUAnMliNze82IAPRNjeHcZZGoMOnxeJNtK%2B0oc3VKdhETN6%2BjXJB9ruTE2Mtj39AYu0rl6--FhS8181PaduuP8th--bYwmhutLZRVrAHn4K7zZaA%3D%3D",
+							"evidence": "jB%2BJ99rBJEWAb%2FB448Non0yGhJqXuVSFEHAeZci3nk862fI8vGHeilPRLwjfKSi9pf9u%2FyXzz6nB9s6mcnUhPoBIMas13sH%2BRsVeX1dCInIJYOLwD0wTf0SKeXiSmvnvjekhu65qqd3RsAcAWGfJGN6eloK2ct%2F%2FA7mNio4tuZfP6RQldQtNX9OtyebbnwERAR1xW1qyEsGtcmOMnwVbOZqYNKpU%2BsHBwNeTiIVqtVvEN0U6OSzdGrRN7nRoS0T%2BfFwrI2Zqciub18%2BBeHuWrBCrlWyW7Oc%2FAIgqmfSTcSl9Mgz6--5QsS1nN9Gfifo6H8--mVF9T87kOaHEu5%2Bra632qQ%3D%3D",
+							"otherinfo": "\ncookie:_admin_apientreprise_session"
+						},
+						{
+							"uri": "https://entreprise.api.gouv.fr",
+							"method": "GET",
+							"param": "_admin_apientreprise_session",
+							"attack": "",
+							"evidence": "u8k9n9beVV6qKPWsiUQM92fGsQ%2FKDK8vCNCgOtdtYp2VRyFgaUjufu1oFtysy1hfBL08j1zaW%2B%2FbJlz8GW0mLo3rXG8Qn88Xby4wzoL1oFPO9xTfQ6dT%2B4Cilwntc6e481yh036biOc9DBHrp5bdW5Sw%2FOOT5O5HDm4EUx3klTBL2GXJ6Ty25cwWHSevgxxtFV12XG81ThmRmgecId7IF26n1FbSFnhjlVPdMeWbnDjzQE3fxbvot%2B9RManIGFqR47EZRERVfPWJaCYEQXDACCPLe%2FNOnhXSp7HRJLO6m%2FloXMCS--%2FQ2vBgF5M7NcaICz--Dg047jKu%2F5epE7R4uesGLg%3D%3D",
 							"otherinfo": "\ncookie:_admin_apientreprise_session"
 						},
 						{
@@ -1564,7 +1556,7 @@
 							"method": "GET",
 							"param": "_admin_apientreprise_session",
 							"attack": "",
-							"evidence": "An0xTzv%2FawtB5k%2BECc%2FYPLPWj9C6YzbOeYgcJmC1D70LsnM0RdhoTI3GD2gxwokrPobFhzzWG2Zij3ZEoOq%2F%2BQxkTiMdRHaBCN4XgVjVm%2BFmSj8raUz%2B6EP8%2FjWHcw3J8Yw8VY06YJPJlrj36XnSY07pRCyT8ep3svN%2BcSLMQAZereuO7UGCOXRoEHhNFM7pdoPCM0efkZ0R7AKBfLEfZndRGSBb%2Bi6Ok9XBMo6DIHgz0AGklg3JCBNgCWmqmqRpVE8qQUVQggGIGiVR8F3iCuepJg8%2BkYGWmuT49WFMhO8J6wjt--LDlp4m3dJhVbG3zi--bxFxTiw7qY%2Fu%2BB3qfZ%2BWnQ%3D%3D",
+							"evidence": "gqgA9moywhAUmbjvohRLLiy6vQYwBslLPbcLc90%2F7dX1BzKeBDz5VXvLBF8M2DhYoqT7F2jAAy6s1fROdiQE6PBfa5faDS3TpPNrpv9PvxhacydvS%2FvA3tvQfJsVBHfhC%2FmrepnRwD8LJOXwluydpIlwEgXvzHOhDRh%2FJzR1J6%2Bs0RRGv5kSRfu1VWUA4Ne0%2BKpD%2BDz%2Be%2BxYW%2B7HMDmRIWk%2FzTlWen0LVM0tXE54AMEGULJMyBX4byjxCSP5ChuC%2BHjeLIp8v1pGcAlr3tIcbrJ0ql0YgJxmsX68MFW4IyV2y%2Fyl--2bmA3jxyxH4o%2BmX4--O5r6lZNGhUno5i3Sc7bdNw%3D%3D",
 							"otherinfo": "\ncookie:_admin_apientreprise_session"
 						},
 						{
@@ -1572,7 +1564,7 @@
 							"method": "GET",
 							"param": "_admin_apientreprise_session",
 							"attack": "",
-							"evidence": "UC6v1t%2FNSeOVoY%2BE226iNx968Txgmbs%2FYAPtZ0Z6ypT5vgsoHdeBeXHvBu0MQjlPdlFIYDZsKqOftgoW4AMHefBu%2Ff%2Fvym2vFiS2ug7TCGRvcFPCLkOn4E495LbVZuWWcGTbybu1SOIvZBz4m%2FImacW16xzfKfcn32YyRFAoi4ouL7rEGnF9utHY%2F90cIQCemnhJCGj6LQvolAsa7BThiBWzALgvmddcdqrc0GRVQ7lB70UljpTUaCoKxtpVyim%2FwEf9lEXlq0cTdc4tGIyH40KIzQ3C6cGZJ32UibcIZriMKBS0--5jYDcmoiU5kdZrBg--rY%2BbVEVe9mXN%2BmsfA9egUQ%3D%3D",
+							"evidence": "pamtmU6hzZ7eIJdM5xNz%2BJbjVQYO%2FHqe9EhKkkbHwzzKp1ZysRNmM%2B%2F435fg3cy5rSjGq3YvDSkdrJNbB1ANrraVUOrw7tx4woanXPB1haVSJ6X%2FSiMtWqHwnYs2LRgGOQ026bFr1bvArsBI98%2FZhnIwWRitJwVoD3nvfmBF06fLo%2Fn%2Fpx0UaGLQQPk1XXczdF2MMnAzYErnLqKpXLIRhWRfBVte0vQU6z3JdTnDMASNAVK4NCRZvFlSGAnGKlK7%2BJIrko%2BDk304IjeuUhifBFTLE1uhxJs35PW8bAYB6vqms0By--DZ9NmfC1mMednPCZ--KUs4%2Fwn6yo8E5zBpLPn%2FEQ%3D%3D",
 							"otherinfo": "\ncookie:_admin_apientreprise_session"
 						},
 						{
@@ -1580,7 +1572,7 @@
 							"method": "GET",
 							"param": "_admin_apientreprise_session",
 							"attack": "",
-							"evidence": "NYkbd6X2izY8n8qhkKMIlG49CV2%2Fl9C%2BEeVuDbmyoX9nlNKjBmmBKfV%2Bv4pH2iuqj39Wc3rvqCcD2%2BiV9HKH%2BKYF7ajs%2FiVicvXftS0WeuUDoqxQ4YfLBNO69tyHNs6bhXEYtzp4EfhyAb2h%2FKTYh4iH30EaDmTQzxrTg1qUVZz35rvQwR9NjXPedbNDxAKqMlcpDKzsuy0jjsQdeqlRmaNjjCxSU4rIa6elDCOhw4GvOlZ1M8dq8%2FTcCYd0Rvr3u8bfUxj%2FQqqg0h%2BK7r%2BK9E0iIULJ2xKtGaCeHpzdu2MRf1NE--X5Ux3diA6jSetfGM--sisxRs8M%2BoXUD9xUhoUkBg%3D%3D",
+							"evidence": "Vst3NUvW3ijCvHM4TQIVtdFv5C3FTDMUmNxnxjVKvExoY%2FZLk1XzjDAZkKN1OHyq6sfDi8UUvshbL0bRRwSigrTu4mC3SfQT%2Bo%2FoA2NXQeRp0demz4W6wWxL6f4Z58TiSoH1tzxv2Mi8q8Y1rGLjvvEu3H7xnH%2Bq%2FzY%2BmRISsijfzvyPBG0YEOwdjYAyazl%2Fi8iifqLc6rz7D8WlOgyuqkfvyI2rhOGyO%2Fss33bjIC8ykIEgijkrx9WxQs11Jo4xJ9qWK%2BYjuRo2WnPVO9LsSTGABFvsVTueQV4KVXLZvLsCuql2--yOEjI8zY2gywv4x8--VIHTqOUGm3EQLX96LiZMIA%3D%3D",
 							"otherinfo": "\ncookie:_admin_apientreprise_session"
 						},
 						{
@@ -1588,41 +1580,41 @@
 							"method": "GET",
 							"param": "_admin_apientreprise_session",
 							"attack": "",
-							"evidence": "tuqdM3%2B51M79S27mfheYKkpwDFUeQfQAsqaaqtzuKS3GcEvyhltWaTHiTz%2FTYUTjBxhL6EQ8uwURgXpZ5RaA4aCJuqjdudXEWpWKym0P6d0FhpeNwvURkTauHrvb2Yrj7Reluss4j%2FjeyNhNMAO674CHl2IE7XarZyBTeRSMSPK9ELHDTaLGHbrkWUUTRaLTKVnlAQDYKEL6GyJNRTCp9I%2F8HFIOylOb7w8%2BoWCe5eFBIKxzWLIqDkZPlyk%2F%2BD1ecHaB%2F9JsE4TkwpwDFeQZJji7DnM7fEmsJWMYRIQ4CYa7bhhR--kuft3zHsL4%2BHX47P--gW57kDiyp1aAqWb2fYGQeA%3D%3D",
+							"evidence": "Xf3GAjbfSgyf0SFxQ5HvY%2FApeDcmsxeePoK0ZTTMf%2B2VEMAc%2BdFIqX7ERAquKogRWgtBhMf%2BQ0%2Bbo3xvlMFSRlKLfhwgmX2WU6NcHq53e4HZn0GWeKdQduY9jLvqMlAd%2FJSym66mL6SZ1aHZhL5xnenY7f08PoCIZQMfCuX%2Fmag%2FWNQ3EEdYtEOhb2pu3bZua3forpycqPUdhlJfg5MQ5FJleiUTg7XJm663j5U4BBRgXpGnriwO2fT34Pj8Uu4Hmn%2BmnFxcU7at33WBZeO%2FCFpcOJle7%2Bevpv9D53Ys3A9UNUh2--jneFHwFLOVLZqrkq--caXZQUHBCtL8%2BsxjvCcKMg%3D%3D",
 							"otherinfo": "\ncookie:_admin_apientreprise_session"
 						},
 						{
-							"uri": "https://entreprise.api.gouv.fr/developpeurs",
+							"uri": "https://entreprise.api.gouv.fr/faq",
 							"method": "GET",
 							"param": "_admin_apientreprise_session",
 							"attack": "",
-							"evidence": "2JFauUlAQX5Qym8KuNzyrUq3QuWwAoYmj5oshSaljK10Zz4ZiMzFza1UfBd3s8Po9iKeV%2BrLryW3KuK2y5pla8rZVGv1bob0YM%2BZAnxjgTOkv4xoUMhnqloctjOtBk2PgnKQqKJiuyiySg2fcZOWnilCyS8NOTeOW2UVl7mLtfJ6HatEf9gakWbDSqNovw3dGxWj8Sjq%2FO%2BA9mIzWOEooAyj6aBEF3p0drhagVgf2WOSnD0n0ywkEWgKvH9Ue5nVL4l%2BHbEHYJGzUCb6Yq%2BO9EHFMkjsaeNB3MgKpfbtwyvghMj%2F--zmZGgZQpHJjxBBD0--CU%2BthTruSDouYeI4RyO7ww%3D%3D",
+							"evidence": "U2hcfbGta0Mt2IacGCXDcey78OxBmzUfC%2FMTpyDIpgpg2jEQU8g6UkftYC%2FRa6d4f8mD4IDhSbaIn0hUbycybX0lEEqcp74HJnwCwwirTj88%2FmGSE9na4QfZ0Rrp%2B2nWCNAMJQ7jOW3%2Brev9zI%2FFK%2BH7D5z9dwZjhW2BN2Hc7uTgZdj6%2FxcmIlwVw2Jkuti4n%2Bc2v4u9Q5fLjaMs5sLfyr8f1Cy2%2FEzH0dcYjWbHS6yJ3UwO%2B4tP7D38mSRtzhI7rOVK1Lx3DHr7s6SwGQaKHduPVGVo41%2FpdJZnMHGFswXL0Cau--dnyHGO3I6fOXX6L5--AxQsyoUbuFm8LQ6w0WWsNQ%3D%3D",
 							"otherinfo": "\ncookie:_admin_apientreprise_session"
 						},
 						{
-							"uri": "https://entreprise.api.gouv.fr/assets/api_entreprise-f1c38127d41d397825b021039e616a7c5331491084c8184c198f432417f600b8.js",
+							"uri": "https://entreprise.api.gouv.fr/assets",
 							"method": "GET",
 							"param": "_admin_apientreprise_session",
 							"attack": "",
-							"evidence": "lVV9q6rtdqu4NmPMs0E72Xj5LhfYGrpsZxizQMKQRxNn8QlbX6xg%2B5TO160RSlc2v%2BSApo5pO2KSgOKAhMC5SmSbewbxS5HDeU5KFV7u1CbUkZqGPPxz5qCCEhEA7%2BwLJUr2%2FOL8kbjQstJHkMI3SRQ8hejCfBBnMT5ORPsMgBbC5gcDGs7WScCHLWz8%2B78TDeQuIPxHjm%2BKfDpn99Dda3K%2Fqsg%2FSytMjMmbiMftuMr%2B%2BiXbzeGeV0W3MOyPfyZwQU86Dc%2FSZhziGmj8CdonpcLSFMR0u13xB6U7yq%2FAWFaZsrvU--OCvrO8wF0GWaVHh3--3TrM0Kjdqc2Z7oyojTT7CA%3D%3D",
+							"evidence": "jB%2BJ99rBJEWAb%2FB448Non0yGhJqXuVSFEHAeZci3nk862fI8vGHeilPRLwjfKSi9pf9u%2FyXzz6nB9s6mcnUhPoBIMas13sH%2BRsVeX1dCInIJYOLwD0wTf0SKeXiSmvnvjekhu65qqd3RsAcAWGfJGN6eloK2ct%2F%2FA7mNio4tuZfP6RQldQtNX9OtyebbnwERAR1xW1qyEsGtcmOMnwVbOZqYNKpU%2BsHBwNeTiIVqtVvEN0U6OSzdGrRN7nRoS0T%2BfFwrI2Zqciub18%2BBeHuWrBCrlWyW7Oc%2FAIgqmfSTcSl9Mgz6--5QsS1nN9Gfifo6H8--mVF9T87kOaHEu5%2Bra632qQ%3D%3D",
 							"otherinfo": "\ncookie:_admin_apientreprise_session"
 						},
 						{
-							"uri": "https://entreprise.api.gouv.fr/compte/se-connecter",
+							"uri": "https://entreprise.api.gouv.fr/assets/turbo-6f8f1796078d2d3f7cb9b6badcd2d5e76287a3c58d97baffaa59dd12bd4135f5.js",
 							"method": "GET",
 							"param": "_admin_apientreprise_session",
 							"attack": "",
-							"evidence": "tuqdM3%2B51M79S27mfheYKkpwDFUeQfQAsqaaqtzuKS3GcEvyhltWaTHiTz%2FTYUTjBxhL6EQ8uwURgXpZ5RaA4aCJuqjdudXEWpWKym0P6d0FhpeNwvURkTauHrvb2Yrj7Reluss4j%2FjeyNhNMAO674CHl2IE7XarZyBTeRSMSPK9ELHDTaLGHbrkWUUTRaLTKVnlAQDYKEL6GyJNRTCp9I%2F8HFIOylOb7w8%2BoWCe5eFBIKxzWLIqDkZPlyk%2F%2BD1ecHaB%2F9JsE4TkwpwDFeQZJji7DnM7fEmsJWMYRIQ4CYa7bhhR--kuft3zHsL4%2BHX47P--gW57kDiyp1aAqWb2fYGQeA%3D%3D",
+							"evidence": "Xf3GAjbfSgyf0SFxQ5HvY%2FApeDcmsxeePoK0ZTTMf%2B2VEMAc%2BdFIqX7ERAquKogRWgtBhMf%2BQ0%2Bbo3xvlMFSRlKLfhwgmX2WU6NcHq53e4HZn0GWeKdQduY9jLvqMlAd%2FJSym66mL6SZ1aHZhL5xnenY7f08PoCIZQMfCuX%2Fmag%2FWNQ3EEdYtEOhb2pu3bZua3forpycqPUdhlJfg5MQ5FJleiUTg7XJm663j5U4BBRgXpGnriwO2fT34Pj8Uu4Hmn%2BmnFxcU7at33WBZeO%2FCFpcOJle7%2Bevpv9D53Ys3A9UNUh2--jneFHwFLOVLZqrkq--caXZQUHBCtL8%2BsxjvCcKMg%3D%3D",
 							"otherinfo": "\ncookie:_admin_apientreprise_session"
 						}
 					],
-					"count": "8",
+					"count": "9",
 					"solution": "<p>This is an informational alert rather than a vulnerability and so there is nothing to fix.</p>",
 					"otherinfo": "<p></p><p>cookie:_admin_apientreprise_session</p>",
 					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id</p>",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "10049",
@@ -1665,7 +1657,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "101"
+					"sourceid": "106"
 				},
 				{
 					"pluginid": "10049",
@@ -1692,7 +1684,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "94"
+					"sourceid": "34"
 				}
 			]
 		}

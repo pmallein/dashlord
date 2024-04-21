@@ -1,44 +1,44 @@
-# Nmap 7.92 scan initiated Sun Apr 14 04:33:12 2024 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln mon-entreprise.urssaf.fr
-Nmap scan report for mon-entreprise.urssaf.fr (54.161.234.33)
-Host is up (0.028s latency).
-Other addresses for mon-entreprise.urssaf.fr (not scanned): 44.217.161.11 2600:1f18:2489:8201::c8 2600:1f18:16e:df01::64
-rDNS record for 54.161.234.33: ec2-54-161-234-33.compute-1.amazonaws.com
+# Nmap 7.92 scan initiated Sun Apr 21 04:09:33 2024 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln mon-entreprise.urssaf.fr
+Nmap scan report for mon-entreprise.urssaf.fr (13.57.148.141)
+Host is up (0.0030s latency).
+Other addresses for mon-entreprise.urssaf.fr (not scanned): 50.18.215.94 2600:1f1c:471:9d00::c8 2600:1f1c:471:9d01::c8
+rDNS record for 13.57.148.141: ec2-13-57-148-141.us-west-1.compute.amazonaws.com
 Not shown: 998 filtered tcp ports (no-response)
 PORT    STATE SERVICE   VERSION
 80/tcp  open  http      Netlify
 |_http-server-header: Netlify
 | fingerprint-strings: 
-|   FourOhFourRequest: 
-|     HTTP/1.0 400 Bad Request
-|     Date: Sun, 14 Apr 2024 04:33:27 GMT
-|     Server: Netlify
-|     X-Nf-Request-Id: 01HVDE3BPEVHPNXXCNSSQ8NMJC
-|     Content-Length: 0
-|   GenericLines, Help, Kerberos, LDAPSearchReq, LPDString, RTSPRequest, SSLSessionReq, TLSSessionReq, TerminalServerCookie: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, GenericLines, Help, RPCCheck, RTSPRequest, SSLSessionReq, TLSSessionReq, TerminalServerCookie: 
 |     HTTP/1.1 400 Bad Request
 |     Content-Type: text/plain; charset=utf-8
 |     Connection: close
 |     Request
+|   FourOhFourRequest: 
+|     HTTP/1.0 400 Bad Request
+|     Date: Sun, 21 Apr 2024 04:09:48 GMT
+|     Server: Netlify
+|     X-Nf-Request-Id: 01HVZDH34MJC0PQ36G22QKY62P
+|     Content-Length: 0
 |   GetRequest: 
 |     HTTP/1.0 400 Bad Request
-|     Date: Sun, 14 Apr 2024 04:33:22 GMT
+|     Date: Sun, 21 Apr 2024 04:09:43 GMT
 |     Server: Netlify
-|     X-Nf-Request-Id: 01HVDE36KY3M3QQ95TS31TCCYD
+|     X-Nf-Request-Id: 01HVZDGY7JWGRSBJ0KARJGZ286
 |     Content-Length: 0
 |   HTTPOptions: 
 |     HTTP/1.0 400 Bad Request
-|     Date: Sun, 14 Apr 2024 04:33:22 GMT
+|     Date: Sun, 21 Apr 2024 04:09:43 GMT
 |     Server: Netlify
-|     X-Nf-Request-Id: 01HVDE36NN218QEEM7GRA8PSJG
+|     X-Nf-Request-Id: 01HVZDGY7TACHQRKP9QJPCJTS1
 |_    Content-Length: 0
 443/tcp open  ssl/https Netlify
 |_http-server-header: Netlify
 | fingerprint-strings: 
 |   FourOhFourRequest: 
 |     HTTP/1.0 400 Bad Request
-|     Date: Sun, 14 Apr 2024 04:33:27 GMT
+|     Date: Sun, 21 Apr 2024 04:09:48 GMT
 |     Server: Netlify
-|     X-Nf-Request-Id: 01HVDE3C1KNS2XJJV4FH5GQ722
+|     X-Nf-Request-Id: 01HVZDH39C4Z4ZZFT7TGGTG0HT
 |     Content-Length: 0
 |   GenericLines, Help, Kerberos, LDAPSearchReq, LPDString, RTSPRequest, SSLSessionReq, TLSSessionReq, TerminalServerCookie: 
 |     HTTP/1.1 400 Bad Request
@@ -47,60 +47,60 @@ PORT    STATE SERVICE   VERSION
 |     Request
 |   GetRequest: 
 |     HTTP/1.0 400 Bad Request
-|     Date: Sun, 14 Apr 2024 04:33:27 GMT
+|     Date: Sun, 21 Apr 2024 04:09:48 GMT
 |     Server: Netlify
-|     X-Nf-Request-Id: 01HVDE3BQGK3X03W5PSBVCP9M4
+|     X-Nf-Request-Id: 01HVZDH35V7VT7N00K10EC0KW0
 |     Content-Length: 0
 |   HTTPOptions: 
 |     HTTP/1.0 400 Bad Request
-|     Date: Sun, 14 Apr 2024 04:33:27 GMT
+|     Date: Sun, 21 Apr 2024 04:09:48 GMT
 |     Server: Netlify
-|     X-Nf-Request-Id: 01HVDE3BWNNRB84C9D3BAV98BR
+|     X-Nf-Request-Id: 01HVZDH37KVA42ZXR2W3KRTXBT
 |_    Content-Length: 0
 2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
 ==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
-SF-Port80-TCP:V=7.92%I=7%D=4/14%Time=661B5C92%P=x86_64-alpine-linux-musl%r
+SF-Port80-TCP:V=7.92%I=7%D=4/21%Time=66249187%P=x86_64-alpine-linux-musl%r
 SF:(GetRequest,92,"HTTP/1\.0\x20400\x20Bad\x20Request\r\nDate:\x20Sun,\x20
-SF:14\x20Apr\x202024\x2004:33:22\x20GMT\r\nServer:\x20Netlify\r\nX-Nf-Requ
-SF:est-Id:\x2001HVDE36KY3M3QQ95TS31TCCYD\r\nContent-Length:\x200\r\n\r\n")
+SF:21\x20Apr\x202024\x2004:09:43\x20GMT\r\nServer:\x20Netlify\r\nX-Nf-Requ
+SF:est-Id:\x2001HVZDGY7JWGRSBJ0KARJGZ286\r\nContent-Length:\x200\r\n\r\n")
 SF:%r(HTTPOptions,92,"HTTP/1\.0\x20400\x20Bad\x20Request\r\nDate:\x20Sun,\
-SF:x2014\x20Apr\x202024\x2004:33:22\x20GMT\r\nServer:\x20Netlify\r\nX-Nf-R
-SF:equest-Id:\x2001HVDE36NN218QEEM7GRA8PSJG\r\nContent-Length:\x200\r\n\r\
+SF:x2021\x20Apr\x202024\x2004:09:43\x20GMT\r\nServer:\x20Netlify\r\nX-Nf-R
+SF:equest-Id:\x2001HVZDGY7TACHQRKP9QJPCJTS1\r\nContent-Length:\x200\r\n\r\
 SF:n")%r(RTSPRequest,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Typ
 SF:e:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x
 SF:20Bad\x20Request")%r(FourOhFourRequest,92,"HTTP/1\.0\x20400\x20Bad\x20R
-SF:equest\r\nDate:\x20Sun,\x2014\x20Apr\x202024\x2004:33:27\x20GMT\r\nServ
-SF:er:\x20Netlify\r\nX-Nf-Request-Id:\x2001HVDE3BPEVHPNXXCNSSQ8NMJC\r\nCon
+SF:equest\r\nDate:\x20Sun,\x2021\x20Apr\x202024\x2004:09:48\x20GMT\r\nServ
+SF:er:\x20Netlify\r\nX-Nf-Request-Id:\x2001HVZDH34MJC0PQ36G22QKY62P\r\nCon
 SF:tent-Length:\x200\r\n\r\n")%r(GenericLines,67,"HTTP/1\.1\x20400\x20Bad\
 SF:x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnecti
-SF:on:\x20close\r\n\r\n400\x20Bad\x20Request")%r(Help,67,"HTTP/1\.1\x20400
-SF:\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\n
-SF:Connection:\x20close\r\n\r\n400\x20Bad\x20Request")%r(SSLSessionReq,67,
-SF:"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20
-SF:charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request")%r(
-SF:TerminalServerCookie,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-
-SF:Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n40
-SF:0\x20Bad\x20Request")%r(TLSSessionReq,67,"HTTP/1\.1\x20400\x20Bad\x20Re
-SF:quest\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x
-SF:20close\r\n\r\n400\x20Bad\x20Request")%r(Kerberos,67,"HTTP/1\.1\x20400\
-SF:x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nC
-SF:onnection:\x20close\r\n\r\n400\x20Bad\x20Request")%r(LPDString,67,"HTTP
-SF:/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20chars
-SF:et=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request")%r(LDAPS
-SF:earchReq,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20tex
+SF:on:\x20close\r\n\r\n400\x20Bad\x20Request")%r(RPCCheck,67,"HTTP/1\.1\x2
+SF:0400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8
+SF:\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request")%r(DNSVersionBin
+SF:dReqTCP,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text
+SF:/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20R
+SF:equest")%r(DNSStatusRequestTCP,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r
+SF:\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close
+SF:\r\n\r\n400\x20Bad\x20Request")%r(Help,67,"HTTP/1\.1\x20400\x20Bad\x20R
+SF:equest\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\
+SF:x20close\r\n\r\n400\x20Bad\x20Request")%r(SSLSessionReq,67,"HTTP/1\.1\x
+SF:20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-
+SF:8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request")%r(TerminalServ
+SF:erCookie,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20tex
 SF:t/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20
-SF:Request");
+SF:Request")%r(TLSSessionReq,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nCon
+SF:tent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\
+SF:r\n400\x20Bad\x20Request");
 ==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
-SF-Port443-TCP:V=7.92%T=SSL%I=7%D=4/14%Time=661B5C97%P=x86_64-alpine-linux
+SF-Port443-TCP:V=7.92%T=SSL%I=7%D=4/21%Time=6624918C%P=x86_64-alpine-linux
 SF:-musl%r(GetRequest,92,"HTTP/1\.0\x20400\x20Bad\x20Request\r\nDate:\x20S
-SF:un,\x2014\x20Apr\x202024\x2004:33:27\x20GMT\r\nServer:\x20Netlify\r\nX-
-SF:Nf-Request-Id:\x2001HVDE3BQGK3X03W5PSBVCP9M4\r\nContent-Length:\x200\r\
+SF:un,\x2021\x20Apr\x202024\x2004:09:48\x20GMT\r\nServer:\x20Netlify\r\nX-
+SF:Nf-Request-Id:\x2001HVZDH35V7VT7N00K10EC0KW0\r\nContent-Length:\x200\r\
 SF:n\r\n")%r(HTTPOptions,92,"HTTP/1\.0\x20400\x20Bad\x20Request\r\nDate:\x
-SF:20Sun,\x2014\x20Apr\x202024\x2004:33:27\x20GMT\r\nServer:\x20Netlify\r\
-SF:nX-Nf-Request-Id:\x2001HVDE3BWNNRB84C9D3BAV98BR\r\nContent-Length:\x200
+SF:20Sun,\x2021\x20Apr\x202024\x2004:09:48\x20GMT\r\nServer:\x20Netlify\r\
+SF:nX-Nf-Request-Id:\x2001HVZDH37KVA42ZXR2W3KRTXBT\r\nContent-Length:\x200
 SF:\r\n\r\n")%r(FourOhFourRequest,92,"HTTP/1\.0\x20400\x20Bad\x20Request\r
-SF:\nDate:\x20Sun,\x2014\x20Apr\x202024\x2004:33:27\x20GMT\r\nServer:\x20N
-SF:etlify\r\nX-Nf-Request-Id:\x2001HVDE3C1KNS2XJJV4FH5GQ722\r\nContent-Len
+SF:\nDate:\x20Sun,\x2021\x20Apr\x202024\x2004:09:48\x20GMT\r\nServer:\x20N
+SF:etlify\r\nX-Nf-Request-Id:\x2001HVZDH39C4Z4ZZFT7TGGTG0HT\r\nContent-Len
 SF:gth:\x200\r\n\r\n")%r(GenericLines,67,"HTTP/1\.1\x20400\x20Bad\x20Reque
 SF:st\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20c
 SF:lose\r\n\r\n400\x20Bad\x20Request")%r(RTSPRequest,67,"HTTP/1\.1\x20400\
@@ -124,4 +124,4 @@ SF:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20
 SF:Bad\x20Request");
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-# Nmap done at Sun Apr 14 04:34:56 2024 -- 1 IP address (1 host up) scanned in 104.66 seconds
+# Nmap done at Sun Apr 21 04:11:15 2024 -- 1 IP address (1 host up) scanned in 102.58 seconds

@@ -1,219 +1,148 @@
-# Nmap 7.92 scan initiated Sun May 12 11:17:27 2024 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln panoramax.fr
-Nmap scan report for panoramax.fr (185.199.108.153)
-Host is up (0.0083s latency).
-Other addresses for panoramax.fr (not scanned): 185.199.110.153 185.199.109.153 185.199.111.153 2606:50c0:8002::153 2606:50c0:8001::153 2606:50c0:8000::153 2606:50c0:8003::153
-rDNS record for 185.199.108.153: cdn-185-199-108-153.github.com
+# Nmap 7.92 scan initiated Wed May 22 07:25:22 2024 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln panoramax.fr
+Nmap scan report for panoramax.fr (35.185.44.232)
+Host is up (0.029s latency).
+Other addresses for panoramax.fr (not scanned): 2600:1901:0:7b8a::
+rDNS record for 35.185.44.232: 232.44.185.35.bc.googleusercontent.com
 Not shown: 998 filtered tcp ports (no-response)
 PORT    STATE SERVICE   VERSION
-80/tcp  open  http      GitHub.com
-| http-server-header: 
-|   GitHub.com
-|_  Varnish
+80/tcp  open  http
 | fingerprint-strings: 
 |   GetRequest: 
-|     HTTP/1.1 404 Not Found
-|     Connection: close
-|     Content-Length: 9115
-|     Server: GitHub.com
-|     Content-Type: text/html; charset=utf-8
-|     ETag: "663be566-239b"
-|     Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; img-src data:; connect-src 'self'
-|     X-GitHub-Request-Id: D0F6:3E3145:1CBFD4C:1DAAE6A:6640A4D8
-|     Accept-Ranges: bytes
-|     Age: 119
-|     Date: Sun, 12 May 2024 11:17:38 GMT
-|     Via: 1.1 varnish
-|     X-Served-By: cache-bur-kbur8200165-BUR
-|     X-Cache: HIT
-|     X-Cache-Hits: 0
-|     X-Timer: S1715512658.030285,VS0,VE1
-|     Vary: Accept-Encoding
-|     X-Fastly-Request-ID: 7835493be271ad79a3f86e23ac6bb5d092536572
-|     <!DOCTYPE html>
-|     <html>
-|     <head>
-|     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-|     <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; connect-src 'self'">
-|     <title>Site not found &middot; GitHub Pages</title>
+|     HTTP/1.0 302 Found
+|     content-type: text/html; charset=utf-8
+|     location: https://projects.gitlab.io/auth?domain=http://&state=8-zJBJvPWqFV8IKjF3efuQ==
+|     permissions-policy: interest-cohort=()
+|     set-cookie: gitlab-pages=MTcxNjM2MjczM3xZUUxOWXBVMk92RnVjUDJVczFzY1UwY18wSHNSbGhOWm9lb0JHRThxN1VrSXozRVZaVFdKTkt6VG1MTVU2TXFubU1Nc09sQVZjYkVHZC1HcTd4WXNSYTktdnk0RWpMN25PaDh6emo3RUJ6R2xNMVFBWTc5ZDZHSnlfOWU1cFN5NzdKRWVab2dPTEhjTHlHUkl1dnBTOHVaSDRXZnhpMzVGa3VhaW05Qk1yNGk0N3VRSUhiZDNFWnRpa081cTNJR3ZtWVloSHpXalVKZmh4QT09fDTJoHbhnjSrgFgkT4deoMWaeD7jpz-xTJ4SVcSC8vOf; Path=/auth; Expires=Wed, 22 May 2024 07:35:33 GMT; Max-Age=600; HttpOnly
+|     vary: Origin
+|     date: Wed, 22 May 2024 07:25:33 GMT
+|     content-length: 104
+|     gitlab-lb: haproxy-pages-03-lb-gprd
+|     gitlab-sv: pages-us-east1-b
+|     href="https://projects.gitlab.io/auth?domain=http://&amp;state=8-zJBJvPWqFV8IKjF3efuQ==">Found</a>.
 |   HTTPOptions: 
-|     HTTP/1.1 405 Method Not Allowed
-|     Connection: close
-|     Content-Length: 131
-|     Server: Varnish
-|     Retry-After: 0
-|     Accept-Ranges: bytes
-|     Date: Sun, 12 May 2024 11:17:38 GMT
-|     Via: 1.1 varnish
-|     X-Served-By: cache-bur-kbur8200167-BUR
-|     X-Cache: MISS
-|     X-Cache-Hits: 0
-|     X-Timer: S1715512658.056376,VS0,VE0
-|     X-Fastly-Request-ID: 8c871a50f36b39464f3f6280fa653687db021e99
-|     <html>
-|     <head><title>405 Not Allowed</title></head>
-|     <body bgcolor="white">
-|     <center><h1>405 Not Allowed</h1></center>
-|     </body>
-|     </html>
+|     HTTP/1.0 302 Found
+|     location: https://projects.gitlab.io/auth?domain=http://&state=zNB-57ZrxEg9pj-rk3dqhw==
+|     permissions-policy: interest-cohort=()
+|     set-cookie: gitlab-pages=MTcxNjM2MjczM3xFVldrTzNmR0ZNcE40MnZleW44ekVTbzNjTXBUOVd3aURfOHE1RDlkaDkxVW5JcHgtbHNZSHlHckZsRzNPVkVzaHpaN2NDaGtxNGdDSUJuS0s0RW1fQzE4MWYtQlc3N3FwenRlSkwyVzhzSzNqZ0FfeXlFZlNGVGhOZFBOVE1zekhaQ0lxT2tWck9ZbnJVYjlRLTRsOEhwSUhpSmh1ZFJsZ0RnaFdId1BfUFN6a2ZoUGZqQVRYcHVWdWxSdEJOV1RvLW5Xc0s0QzhxazJKQT09fN6DBMSe6_WSdFCmo7CjguDvUL70VUsUA327h8fAQWk5; Path=/auth; Expires=Wed, 22 May 2024 07:35:33 GMT; Max-Age=600; HttpOnly
+|     vary: Origin
+|     date: Wed, 22 May 2024 07:25:33 GMT
+|     content-length: 0
+|     gitlab-lb: haproxy-pages-04-lb-gprd
+|     gitlab-sv: pages-us-east1-c
 |   RTSPRequest: 
-|     HTTP/1.1 400 Bad Request
+|     HTTP/1.1 400 Bad request
+|     Content-length: 90
+|     Cache-Control: no-cache
 |     Connection: close
-|     Content-Length: 11
-|     content-type: text/plain; charset=utf-8
-|     x-served-by: cache-bur-kbur8200141
-|_    Request
-443/tcp open  ssl/https GitHub.com
-| http-server-header: 
-|   GitHub.com
-|_  Varnish
+|     Content-Type: text/html
+|     <html><body><h1>400 Bad request</h1>
+|     Your browser sent an invalid request.
+|_    </body></html>
+443/tcp open  ssl/https
 | fingerprint-strings: 
 |   FourOhFourRequest: 
-|     HTTP/1.1 404 Not Found
-|     Connection: close
-|     Content-Length: 9115
-|     Server: GitHub.com
+|     HTTP/1.0 302 Found
 |     Content-Type: text/html; charset=utf-8
-|     ETag: "663be566-239b"
-|     Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; img-src data:; connect-src 'self'
-|     X-GitHub-Request-Id: 4DF0:2E7278:2EC85C4:3037692:6640A557
-|     Accept-Ranges: bytes
-|     Age: 0
-|     Date: Sun, 12 May 2024 11:17:44 GMT
-|     Via: 1.1 varnish
-|     X-Served-By: cache-bur-kbur8200094-BUR
-|     X-Cache: MISS
-|     X-Cache-Hits: 0
-|     X-Timer: S1715512664.146772,VS0,VE107
-|     Vary: Accept-Encoding
-|     X-Fastly-Request-ID: 0a9e5507e654becb3e3633f006ec9f222776f3cd
-|     <!DOCTYPE html>
-|     <html>
-|     <head>
-|     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-|     <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; connect-src 'self'">
-|     <title>Site not found &middot; GitHub Pages</title>
+|     Location: https://projects.gitlab.io/auth?domain=https://&state=DZWklU5kghNvvNzCGKpxnA==
+|     Permissions-Policy: interest-cohort=()
+|     Set-Cookie: gitlab-pages=MTcxNjM2MjczNHxyeVBnMnRqRUllNXh6bXZhRnRTT0JYYXlSYVNTSjMzREVZS3dFMGpWZFN1clVuaV9RUEQyNG1wN1hzT2FEVzV5d01VZ2JRaTNwSTFsTjNteUgzcktnUFE4Um5iN2Z4UUVTejZJTEFoVG5xWGVpRFZScUFoamZTa0kyeFRPNXo5NHdLNnFNRmQzTVB2YzQ4bHZ5bTZjcV91bS0yMXpaTTd3VFlPQ2pGdk12cEZvS1FXTXJRMzhvOGhXYlY3RnFNT1NkRHRBYkE2X0Zacno4RVBYbnVpWFJ5U3pOaE9aTmpDODV0RXhZekpxWk14Y0FKUm9leWRnZC03c2xzMXBXMzA9fIZU6GhfSFTFOleiEKAk1lidyhNL6yS5jKkE6WORtH90; Path=/auth; Expires=Wed, 22 May 2024 07:35:34 GMT; Max-Age=600; HttpOnly; Secure
+|     Vary: Origin
+|     Date: Wed, 22 May 2024 07:25:34 GMT
+|     Content-Length: 105
+|     href="https://projects.gitlab.io/auth?domain=https://&amp;state=DZWklU5kghNvvNzCGKpxnA==">Found</a>.
 |   GetRequest: 
-|     HTTP/1.1 404 Not Found
-|     Connection: close
-|     Content-Length: 9115
-|     Server: GitHub.com
+|     HTTP/1.0 302 Found
 |     Content-Type: text/html; charset=utf-8
-|     ETag: "663be566-239b"
-|     Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; img-src data:; connect-src 'self'
-|     X-GitHub-Request-Id: 33FC:E748E:B4AD5D:BBC9F7:664099B8
-|     Accept-Ranges: bytes
-|     Age: 2974
-|     Date: Sun, 12 May 2024 11:17:44 GMT
-|     Via: 1.1 varnish
-|     X-Served-By: cache-bur-kbur8200127-BUR
-|     X-Cache: HIT
-|     X-Cache-Hits: 0
-|     X-Timer: S1715512664.065312,VS0,VE1
-|     Vary: Accept-Encoding
-|     X-Fastly-Request-ID: a146794ec4329df9b17805a1dd7d12408a1e9e6e
-|     <!DOCTYPE html>
-|     <html>
-|     <head>
-|     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-|     <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; connect-src 'self'">
-|     <title>Site not found &middot; GitHub Pages</title>
+|     Location: https://projects.gitlab.io/auth?domain=https://&state=GH7OZv59fM2YwdjJqmdNjQ==
+|     Permissions-Policy: interest-cohort=()
+|     Set-Cookie: gitlab-pages=MTcxNjM2MjczNHxENENQOUdDbkphSEoxZVQtZmJYaEFWRGFLeDU5Y09FTE5NN1paYk95TTAta2V2VXhlaWZFS0hFY1lVbXRkb3NLMzJfQU5zUXBQdS1HUko1OGd0RWhDWm03bEhiWW9tUHlsU2xhdlpMS0hpSjVUa2RWU0gwVHVjQ1Vub0xRcTltTm8wS1MtOUk0UURkeENJcWFtR1pPTVdTR2dXUUdHLS1YbVNpdEExN3loSEc3Yll0WHhRQ0JGWl8xaUFPZkNlSjJrNXd1OS02QlBqWUZ5SEU9fMDjdg8rkk5tj48WxAzs8OrfVSIEiuOqwUSMaSGMeAdk; Path=/auth; Expires=Wed, 22 May 2024 07:35:34 GMT; Max-Age=600; HttpOnly; Secure
+|     Vary: Origin
+|     Date: Wed, 22 May 2024 07:25:34 GMT
+|     Content-Length: 105
+|     href="https://projects.gitlab.io/auth?domain=https://&amp;state=GH7OZv59fM2YwdjJqmdNjQ==">Found</a>.
 |   HTTPOptions: 
-|     HTTP/1.1 405 Method Not Allowed
-|     Connection: close
-|     Content-Length: 131
-|     Server: Varnish
-|     Retry-After: 0
-|     Accept-Ranges: bytes
-|     Date: Sun, 12 May 2024 11:17:44 GMT
-|     Via: 1.1 varnish
-|     X-Served-By: cache-bur-kbur8200170-BUR
-|     X-Cache: MISS
-|     X-Cache-Hits: 0
-|     X-Timer: S1715512664.110070,VS0,VE0
-|     X-Fastly-Request-ID: 4e2425ea9c5c0823469e87a24eb5f54ac0bab144
-|     <html>
-|     <head><title>405 Not Allowed</title></head>
-|     <body bgcolor="white">
-|     <center><h1>405 Not Allowed</h1></center>
-|     </body>
-|_    </html>
+|     HTTP/1.0 302 Found
+|     Location: https://projects.gitlab.io/auth?domain=https://&state=J7Esin8RXmKpVUvalmpUHw==
+|     Permissions-Policy: interest-cohort=()
+|     Set-Cookie: gitlab-pages=MTcxNjM2MjczNHxtczNvbS16TGZiN3d5aGtIaHBYckNhNWViMm1nNzVLTFdMQXRxUVpySjY4X2hJZnlCSUpVRGh3REpjZGJOdjBDZXZwSEpKcW04X2pyQzNIS2FBTTFRQjVfZTNzVldPRTRFNXdrS21YbXNuNVh4ajhKZTRXZFlwM2RBejRmN0hlMjBUbS1oaXlJN2xzS25za0JwMTRQSExXUjJjN1pZX09fbklPemZfLTZFMmpGcXdRTHprdW5sUHpHd2N2SkkwSENoQ1hLOFFid1I1YzhZY0U9fGUQHXLlqoBip8S_320yT9lRSME3wjAJfBF6QSEbnMi2; Path=/auth; Expires=Wed, 22 May 2024 07:35:34 GMT; Max-Age=600; HttpOnly; Secure
+|     Vary: Origin
+|     Date: Wed, 22 May 2024 07:25:34 GMT
+|_    Content-Length: 0
 2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
 ==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
-SF-Port80-TCP:V=7.92%I=7%D=5/12%Time=6640A552%P=x86_64-alpine-linux-musl%r
-SF:(GetRequest,25F0,"HTTP/1\.1\x20404\x20Not\x20Found\r\nConnection:\x20cl
-SF:ose\r\nContent-Length:\x209115\r\nServer:\x20GitHub\.com\r\nContent-Typ
-SF:e:\x20text/html;\x20charset=utf-8\r\nETag:\x20\"663be566-239b\"\r\nCont
-SF:ent-Security-Policy:\x20default-src\x20'none';\x20style-src\x20'unsafe-
-SF:inline';\x20img-src\x20data:;\x20connect-src\x20'self'\r\nX-GitHub-Requ
-SF:est-Id:\x20D0F6:3E3145:1CBFD4C:1DAAE6A:6640A4D8\r\nAccept-Ranges:\x20by
-SF:tes\r\nAge:\x20119\r\nDate:\x20Sun,\x2012\x20May\x202024\x2011:17:38\x2
-SF:0GMT\r\nVia:\x201\.1\x20varnish\r\nX-Served-By:\x20cache-bur-kbur820016
-SF:5-BUR\r\nX-Cache:\x20HIT\r\nX-Cache-Hits:\x200\r\nX-Timer:\x20S17155126
-SF:58\.030285,VS0,VE1\r\nVary:\x20Accept-Encoding\r\nX-Fastly-Request-ID:\
-SF:x207835493be271ad79a3f86e23ac6bb5d092536572\r\n\r\n<!DOCTYPE\x20html>\n
-SF:<html>\n\x20\x20<head>\n\x20\x20\x20\x20<meta\x20http-equiv=\"Content-t
-SF:ype\"\x20content=\"text/html;\x20charset=utf-8\">\n\x20\x20\x20\x20<met
-SF:a\x20http-equiv=\"Content-Security-Policy\"\x20content=\"default-src\x2
-SF:0'none';\x20style-src\x20'unsafe-inline';\x20img-src\x20data:;\x20conne
-SF:ct-src\x20'self'\">\n\x20\x20\x20\x20<title>Site\x20not\x20found\x20&mi
-SF:ddot;\x20GitHub\x20Pages</title>\n\x20\x20\x20\x20")%r(HTTPOptions,1E8,
-SF:"HTTP/1\.1\x20405\x20Method\x20Not\x20Allowed\r\nConnection:\x20close\r
-SF:\nContent-Length:\x20131\r\nServer:\x20Varnish\r\nRetry-After:\x200\r\n
-SF:Accept-Ranges:\x20bytes\r\nDate:\x20Sun,\x2012\x20May\x202024\x2011:17:
-SF:38\x20GMT\r\nVia:\x201\.1\x20varnish\r\nX-Served-By:\x20cache-bur-kbur8
-SF:200167-BUR\r\nX-Cache:\x20MISS\r\nX-Cache-Hits:\x200\r\nX-Timer:\x20S17
-SF:15512658\.056376,VS0,VE0\r\nX-Fastly-Request-ID:\x208c871a50f36b39464f3
-SF:f6280fa653687db021e99\r\n\r\n<html>\n<head><title>405\x20Not\x20Allowed
-SF:</title></head>\n<body\x20bgcolor=\"white\">\n<center><h1>405\x20Not\x2
-SF:0Allowed</h1></center>\n</body>\n</html>")%r(RTSPRequest,9B,"HTTP/1\.1\
-SF:x20400\x20Bad\x20Request\r\nConnection:\x20close\r\nContent-Length:\x20
-SF:11\r\ncontent-type:\x20text/plain;\x20charset=utf-8\r\nx-served-by:\x20
-SF:cache-bur-kbur8200141\r\n\r\nBad\x20Request");
+SF-Port80-TCP:V=7.92%I=7%D=5/22%Time=664D9DED%P=x86_64-alpine-linux-musl%r
+SF:(GetRequest,366,"HTTP/1\.0\x20302\x20Found\r\ncontent-type:\x20text/htm
+SF:l;\x20charset=utf-8\r\nlocation:\x20https://projects\.gitlab\.io/auth\?
+SF:domain=http://&state=8-zJBJvPWqFV8IKjF3efuQ==\r\npermissions-policy:\x2
+SF:0interest-cohort=\(\)\r\nset-cookie:\x20gitlab-pages=MTcxNjM2MjczM3xZUU
+SF:xOWXBVMk92RnVjUDJVczFzY1UwY18wSHNSbGhOWm9lb0JHRThxN1VrSXozRVZaVFdKTkt6V
+SF:G1MTVU2TXFubU1Nc09sQVZjYkVHZC1HcTd4WXNSYTktdnk0RWpMN25PaDh6emo3RUJ6R2xN
+SF:MVFBWTc5ZDZHSnlfOWU1cFN5NzdKRWVab2dPTEhjTHlHUkl1dnBTOHVaSDRXZnhpMzVGa3V
+SF:haW05Qk1yNGk0N3VRSUhiZDNFWnRpa081cTNJR3ZtWVloSHpXalVKZmh4QT09fDTJoHbhnj
+SF:SrgFgkT4deoMWaeD7jpz-xTJ4SVcSC8vOf;\x20Path=/auth;\x20Expires=Wed,\x202
+SF:2\x20May\x202024\x2007:35:33\x20GMT;\x20Max-Age=600;\x20HttpOnly\r\nvar
+SF:y:\x20Origin\r\ndate:\x20Wed,\x2022\x20May\x202024\x2007:25:33\x20GMT\r
+SF:\ncontent-length:\x20104\r\ngitlab-lb:\x20haproxy-pages-03-lb-gprd\r\ng
+SF:itlab-sv:\x20pages-us-east1-b\r\n\r\n<a\x20href=\"https://projects\.git
+SF:lab\.io/auth\?domain=http://&amp;state=8-zJBJvPWqFV8IKjF3efuQ==\">Found
+SF:</a>\.\n\n")%r(HTTPOptions,2D4,"HTTP/1\.0\x20302\x20Found\r\nlocation:\
+SF:x20https://projects\.gitlab\.io/auth\?domain=http://&state=zNB-57ZrxEg9
+SF:pj-rk3dqhw==\r\npermissions-policy:\x20interest-cohort=\(\)\r\nset-cook
+SF:ie:\x20gitlab-pages=MTcxNjM2MjczM3xFVldrTzNmR0ZNcE40MnZleW44ekVTbzNjTXB
+SF:UOVd3aURfOHE1RDlkaDkxVW5JcHgtbHNZSHlHckZsRzNPVkVzaHpaN2NDaGtxNGdDSUJuS0
+SF:s0RW1fQzE4MWYtQlc3N3FwenRlSkwyVzhzSzNqZ0FfeXlFZlNGVGhOZFBOVE1zekhaQ0lxT
+SF:2tWck9ZbnJVYjlRLTRsOEhwSUhpSmh1ZFJsZ0RnaFdId1BfUFN6a2ZoUGZqQVRYcHVWdWxS
+SF:dEJOV1RvLW5Xc0s0QzhxazJKQT09fN6DBMSe6_WSdFCmo7CjguDvUL70VUsUA327h8fAQWk
+SF:5;\x20Path=/auth;\x20Expires=Wed,\x2022\x20May\x202024\x2007:35:33\x20G
+SF:MT;\x20Max-Age=600;\x20HttpOnly\r\nvary:\x20Origin\r\ndate:\x20Wed,\x20
+SF:22\x20May\x202024\x2007:25:33\x20GMT\r\ncontent-length:\x200\r\ngitlab-
+SF:lb:\x20haproxy-pages-04-lb-gprd\r\ngitlab-sv:\x20pages-us-east1-c\r\n\r
+SF:\n")%r(RTSPRequest,CF,"HTTP/1\.1\x20400\x20Bad\x20request\r\nContent-le
+SF:ngth:\x2090\r\nCache-Control:\x20no-cache\r\nConnection:\x20close\r\nCo
+SF:ntent-Type:\x20text/html\r\n\r\n<html><body><h1>400\x20Bad\x20request</
+SF:h1>\nYour\x20browser\x20sent\x20an\x20invalid\x20request\.\n</body></ht
+SF:ml>\n");
 ==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
-SF-Port443-TCP:V=7.92%T=SSL%I=7%D=5/12%Time=6640A558%P=x86_64-alpine-linux
-SF:-musl%r(GetRequest,229F,"HTTP/1\.1\x20404\x20Not\x20Found\r\nConnection
-SF::\x20close\r\nContent-Length:\x209115\r\nServer:\x20GitHub\.com\r\nCont
-SF:ent-Type:\x20text/html;\x20charset=utf-8\r\nETag:\x20\"663be566-239b\"\
-SF:r\nContent-Security-Policy:\x20default-src\x20'none';\x20style-src\x20'
-SF:unsafe-inline';\x20img-src\x20data:;\x20connect-src\x20'self'\r\nX-GitH
-SF:ub-Request-Id:\x2033FC:E748E:B4AD5D:BBC9F7:664099B8\r\nAccept-Ranges:\x
-SF:20bytes\r\nAge:\x202974\r\nDate:\x20Sun,\x2012\x20May\x202024\x2011:17:
-SF:44\x20GMT\r\nVia:\x201\.1\x20varnish\r\nX-Served-By:\x20cache-bur-kbur8
-SF:200127-BUR\r\nX-Cache:\x20HIT\r\nX-Cache-Hits:\x200\r\nX-Timer:\x20S171
-SF:5512664\.065312,VS0,VE1\r\nVary:\x20Accept-Encoding\r\nX-Fastly-Request
-SF:-ID:\x20a146794ec4329df9b17805a1dd7d12408a1e9e6e\r\n\r\n<!DOCTYPE\x20ht
-SF:ml>\n<html>\n\x20\x20<head>\n\x20\x20\x20\x20<meta\x20http-equiv=\"Cont
-SF:ent-type\"\x20content=\"text/html;\x20charset=utf-8\">\n\x20\x20\x20\x2
-SF:0<meta\x20http-equiv=\"Content-Security-Policy\"\x20content=\"default-s
-SF:rc\x20'none';\x20style-src\x20'unsafe-inline';\x20img-src\x20data:;\x20
-SF:connect-src\x20'self'\">\n\x20\x20\x20\x20<title>Site\x20not\x20found\x
-SF:20&middot;\x20GitHub\x20Pages</title>\n\x20\x20\x20\x20<s")%r(HTTPOptio
-SF:ns,1E8,"HTTP/1\.1\x20405\x20Method\x20Not\x20Allowed\r\nConnection:\x20
-SF:close\r\nContent-Length:\x20131\r\nServer:\x20Varnish\r\nRetry-After:\x
-SF:200\r\nAccept-Ranges:\x20bytes\r\nDate:\x20Sun,\x2012\x20May\x202024\x2
-SF:011:17:44\x20GMT\r\nVia:\x201\.1\x20varnish\r\nX-Served-By:\x20cache-bu
-SF:r-kbur8200170-BUR\r\nX-Cache:\x20MISS\r\nX-Cache-Hits:\x200\r\nX-Timer:
-SF:\x20S1715512664\.110070,VS0,VE0\r\nX-Fastly-Request-ID:\x204e2425ea9c5c
-SF:0823469e87a24eb5f54ac0bab144\r\n\r\n<html>\n<head><title>405\x20Not\x20
-SF:Allowed</title></head>\n<body\x20bgcolor=\"white\">\n<center><h1>405\x2
-SF:0Not\x20Allowed</h1></center>\n</body>\n</html>")%r(FourOhFourRequest,2
-SF:5F1,"HTTP/1\.1\x20404\x20Not\x20Found\r\nConnection:\x20close\r\nConten
-SF:t-Length:\x209115\r\nServer:\x20GitHub\.com\r\nContent-Type:\x20text/ht
-SF:ml;\x20charset=utf-8\r\nETag:\x20\"663be566-239b\"\r\nContent-Security-
-SF:Policy:\x20default-src\x20'none';\x20style-src\x20'unsafe-inline';\x20i
-SF:mg-src\x20data:;\x20connect-src\x20'self'\r\nX-GitHub-Request-Id:\x204D
-SF:F0:2E7278:2EC85C4:3037692:6640A557\r\nAccept-Ranges:\x20bytes\r\nAge:\x
-SF:200\r\nDate:\x20Sun,\x2012\x20May\x202024\x2011:17:44\x20GMT\r\nVia:\x2
-SF:01\.1\x20varnish\r\nX-Served-By:\x20cache-bur-kbur8200094-BUR\r\nX-Cach
-SF:e:\x20MISS\r\nX-Cache-Hits:\x200\r\nX-Timer:\x20S1715512664\.146772,VS0
-SF:,VE107\r\nVary:\x20Accept-Encoding\r\nX-Fastly-Request-ID:\x200a9e5507e
-SF:654becb3e3633f006ec9f222776f3cd\r\n\r\n<!DOCTYPE\x20html>\n<html>\n\x20
-SF:\x20<head>\n\x20\x20\x20\x20<meta\x20http-equiv=\"Content-type\"\x20con
-SF:tent=\"text/html;\x20charset=utf-8\">\n\x20\x20\x20\x20<meta\x20http-eq
-SF:uiv=\"Content-Security-Policy\"\x20content=\"default-src\x20'none';\x20
-SF:style-src\x20'unsafe-inline';\x20img-src\x20data:;\x20connect-src\x20's
-SF:elf'\">\n\x20\x20\x20\x20<title>Site\x20not\x20found\x20&middot;\x20Git
-SF:Hub\x20Pages</title>\n\x20\x20\x20");
+SF-Port443-TCP:V=7.92%T=SSL%I=7%D=5/22%Time=664D9DEE%P=x86_64-alpine-linux
+SF:-musl%r(GetRequest,32E,"HTTP/1\.0\x20302\x20Found\r\nContent-Type:\x20t
+SF:ext/html;\x20charset=utf-8\r\nLocation:\x20https://projects\.gitlab\.io
+SF:/auth\?domain=https://&state=GH7OZv59fM2YwdjJqmdNjQ==\r\nPermissions-Po
+SF:licy:\x20interest-cohort=\(\)\r\nSet-Cookie:\x20gitlab-pages=MTcxNjM2Mj
+SF:czNHxENENQOUdDbkphSEoxZVQtZmJYaEFWRGFLeDU5Y09FTE5NN1paYk95TTAta2V2VXhla
+SF:WZFS0hFY1lVbXRkb3NLMzJfQU5zUXBQdS1HUko1OGd0RWhDWm03bEhiWW9tUHlsU2xhdlpM
+SF:S0hpSjVUa2RWU0gwVHVjQ1Vub0xRcTltTm8wS1MtOUk0UURkeENJcWFtR1pPTVdTR2dXUUd
+SF:HLS1YbVNpdEExN3loSEc3Yll0WHhRQ0JGWl8xaUFPZkNlSjJrNXd1OS02QlBqWUZ5SEU9fM
+SF:Djdg8rkk5tj48WxAzs8OrfVSIEiuOqwUSMaSGMeAdk;\x20Path=/auth;\x20Expires=W
+SF:ed,\x2022\x20May\x202024\x2007:35:34\x20GMT;\x20Max-Age=600;\x20HttpOnl
+SF:y;\x20Secure\r\nVary:\x20Origin\r\nDate:\x20Wed,\x2022\x20May\x202024\x
+SF:2007:25:34\x20GMT\r\nContent-Length:\x20105\r\n\r\n<a\x20href=\"https:/
+SF:/projects\.gitlab\.io/auth\?domain=https://&amp;state=GH7OZv59fM2YwdjJq
+SF:mdNjQ==\">Found</a>\.\n\n")%r(HTTPOptions,29B,"HTTP/1\.0\x20302\x20Foun
+SF:d\r\nLocation:\x20https://projects\.gitlab\.io/auth\?domain=https://&st
+SF:ate=J7Esin8RXmKpVUvalmpUHw==\r\nPermissions-Policy:\x20interest-cohort=
+SF:\(\)\r\nSet-Cookie:\x20gitlab-pages=MTcxNjM2MjczNHxtczNvbS16TGZiN3d5aGt
+SF:IaHBYckNhNWViMm1nNzVLTFdMQXRxUVpySjY4X2hJZnlCSUpVRGh3REpjZGJOdjBDZXZwSE
+SF:pKcW04X2pyQzNIS2FBTTFRQjVfZTNzVldPRTRFNXdrS21YbXNuNVh4ajhKZTRXZFlwM2RBe
+SF:jRmN0hlMjBUbS1oaXlJN2xzS25za0JwMTRQSExXUjJjN1pZX09fbklPemZfLTZFMmpGcXdR
+SF:THprdW5sUHpHd2N2SkkwSENoQ1hLOFFid1I1YzhZY0U9fGUQHXLlqoBip8S_320yT9lRSME
+SF:3wjAJfBF6QSEbnMi2;\x20Path=/auth;\x20Expires=Wed,\x2022\x20May\x202024\
+SF:x2007:35:34\x20GMT;\x20Max-Age=600;\x20HttpOnly;\x20Secure\r\nVary:\x20
+SF:Origin\r\nDate:\x20Wed,\x2022\x20May\x202024\x2007:25:34\x20GMT\r\nCont
+SF:ent-Length:\x200\r\n\r\n")%r(FourOhFourRequest,36E,"HTTP/1\.0\x20302\x2
+SF:0Found\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nLocation:\x20
+SF:https://projects\.gitlab\.io/auth\?domain=https://&state=DZWklU5kghNvvN
+SF:zCGKpxnA==\r\nPermissions-Policy:\x20interest-cohort=\(\)\r\nSet-Cookie
+SF::\x20gitlab-pages=MTcxNjM2MjczNHxyeVBnMnRqRUllNXh6bXZhRnRTT0JYYXlSYVNTS
+SF:jMzREVZS3dFMGpWZFN1clVuaV9RUEQyNG1wN1hzT2FEVzV5d01VZ2JRaTNwSTFsTjNteUgz
+SF:cktnUFE4Um5iN2Z4UUVTejZJTEFoVG5xWGVpRFZScUFoamZTa0kyeFRPNXo5NHdLNnFNRmQ
+SF:zTVB2YzQ4bHZ5bTZjcV91bS0yMXpaTTd3VFlPQ2pGdk12cEZvS1FXTXJRMzhvOGhXYlY3Rn
+SF:FNT1NkRHRBYkE2X0Zacno4RVBYbnVpWFJ5U3pOaE9aTmpDODV0RXhZekpxWk14Y0FKUm9le
+SF:WRnZC03c2xzMXBXMzA9fIZU6GhfSFTFOleiEKAk1lidyhNL6yS5jKkE6WORtH90;\x20Pat
+SF:h=/auth;\x20Expires=Wed,\x2022\x20May\x202024\x2007:35:34\x20GMT;\x20Ma
+SF:x-Age=600;\x20HttpOnly;\x20Secure\r\nVary:\x20Origin\r\nDate:\x20Wed,\x
+SF:2022\x20May\x202024\x2007:25:34\x20GMT\r\nContent-Length:\x20105\r\n\r\
+SF:n<a\x20href=\"https://projects\.gitlab\.io/auth\?domain=https://&amp;st
+SF:ate=DZWklU5kghNvvNzCGKpxnA==\">Found</a>\.\n\n");
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-# Nmap done at Sun May 12 11:17:45 2024 -- 1 IP address (1 host up) scanned in 18.27 seconds
+# Nmap done at Wed May 22 07:25:56 2024 -- 1 IP address (1 host up) scanned in 33.57 seconds

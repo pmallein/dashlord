@@ -1,10 +1,13 @@
-# Nmap 7.92 scan initiated Sun May 12 11:07:24 2024 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln world.openfoodfacts.org
+# Nmap 7.92 scan initiated Wed May 22 07:29:55 2024 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln world.openfoodfacts.org
 Nmap scan report for world.openfoodfacts.org (213.36.253.214)
-Host is up (0.14s latency).
+Host is up (0.15s latency).
 rDNS record for 213.36.253.214: off2-2.free.org
 Not shown: 997 closed tcp ports (reset)
 PORT    STATE SERVICE  VERSION
 22/tcp  open  ssh      OpenSSH 8.4p1 Debian 5+deb11u2 (protocol 2.0)
+| vulners: 
+|   cpe:/a:openbsd:openssh:8.4p1: 
+|_    	CVE-2010-4816	5.0	https://vulners.com/cve/CVE-2010-4816
 80/tcp  open  http     nginx 1.18.0
 |_http-server-header: nginx/1.18.0
 443/tcp open  ssl/http nginx 1.18.0
@@ -12,4 +15,4 @@ PORT    STATE SERVICE  VERSION
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-# Nmap done at Sun May 12 11:08:38 2024 -- 1 IP address (1 host up) scanned in 74.23 seconds
+# Nmap done at Wed May 22 07:30:30 2024 -- 1 IP address (1 host up) scanned in 35.18 seconds

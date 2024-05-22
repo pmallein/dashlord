@@ -1,0 +1,181 @@
+# Nmap 7.92 scan initiated Wed May 22 05:41:15 2024 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln monservicesecurise.cyber.gouv.fr
+Nmap scan report for monservicesecurise.cyber.gouv.fr (185.231.164.99)
+Host is up (0.15s latency).
+Not shown: 998 filtered tcp ports (no-response)
+PORT    STATE SERVICE   VERSION
+80/tcp  open  http
+| fingerprint-strings: 
+|   FourOhFourRequest: 
+|     HTTP/1.1 301 Moved Permanently
+|     Date: Wed, 22 May 2024 05:41:34 GMT
+|     Content-Type: text/html
+|     Content-Length: 166
+|     Connection: close
+|     Location: https://www.monservicesecurise.ssi.gouv.fr/nice%20ports%2C/Tri%6Eity.txt%2ebak
+|     <html>
+|     <head><title>301 Moved Permanently</title></head>
+|     <body>
+|     <center><h1>301 Moved Permanently</h1></center>
+|     <hr><center>openresty</center>
+|     </body>
+|     </html>
+|   GetRequest: 
+|     HTTP/1.1 301 Moved Permanently
+|     Date: Wed, 22 May 2024 05:41:32 GMT
+|     Content-Type: text/html
+|     Content-Length: 166
+|     Connection: close
+|     Location: https://www.monservicesecurise.ssi.gouv.fr/
+|     <html>
+|     <head><title>301 Moved Permanently</title></head>
+|     <body>
+|     <center><h1>301 Moved Permanently</h1></center>
+|     <hr><center>openresty</center>
+|     </body>
+|     </html>
+|   HTTPOptions: 
+|     HTTP/1.1 301 Moved Permanently
+|     Date: Wed, 22 May 2024 05:41:33 GMT
+|     Content-Type: text/html
+|     Content-Length: 166
+|     Connection: close
+|     Location: https://www.monservicesecurise.ssi.gouv.fr/
+|     <html>
+|     <head><title>301 Moved Permanently</title></head>
+|     <body>
+|     <center><h1>301 Moved Permanently</h1></center>
+|     <hr><center>openresty</center>
+|     </body>
+|     </html>
+|   RTSPRequest, X11Probe: 
+|     HTTP/1.1 400 Bad Request
+|     Date: Wed, 22 May 2024 05:41:33 GMT
+|     Content-Type: text/html
+|     Content-Length: 154
+|     Connection: close
+|     <html>
+|     <head><title>400 Bad Request</title></head>
+|     <body>
+|     <center><h1>400 Bad Request</h1></center>
+|     <hr><center>openresty</center>
+|     </body>
+|_    </html>
+443/tcp open  ssl/https
+| fingerprint-strings: 
+|   GetRequest: 
+|     HTTP/1.1 200 OK
+|     Date: Wed, 22 May 2024 05:41:39 GMT
+|     Content-Type: text/html
+|     Content-Length: 3878
+|     Connection: close
+|     Referrer-Policy: no-referrer
+|     Cache-Control: no-cache
+|     Strict-Transport-Security: max-age=63072000
+|     X-Frame-Options: DENY
+|     X-Content-Type-Options: nosniff
+|     X-XSS-Protection: 1; mode=block
+|     <!doctypehtml><meta name="viewport"content="width=device-width"><meta charset="utf-8"><script></script><script>var __blnChallengeStore={"unregisterServiceWorker":false,"cookie":{"value":"C8JmRPUu2TdugKZNIKsLNV4HjptAcm4kdslFQLjUXHDEKAaaBqJ4GIA-GAg_sVAHc3-DUP9TZVRXVluAIQoPqQUFCD679WrBMfso8lrk7iA","path":"/","name":"bln_challengejs","maxAge":900},"checkChallengeParams":{"request_fate":"challengejs","bot_category":"unknown","tracking_id":"","rule_id":""},"domain":".ssi.gouv.fr"};(()=>{"use strict";const e=function*({domain:e,maxAge:n,name:o,path:a,secure:t,value:i}){yield`${o}=${i}`,vo
+|   HTTPOptions: 
+|     HTTP/1.1 404 Not Found
+|     Date: Wed, 22 May 2024 05:41:39 GMT
+|     Content-Type: text/html
+|     Content-Length: 15532
+|     Connection: close
+|     ETag: "662276d9-3cac"
+|     X-Varnish: 3159134
+|     Age: 0
+|     Via: 1.1 varnish (Varnish/6.0)
+|     Strict-Transport-Security: max-age=63072000
+|     X-Frame-Options: DENY
+|     X-Content-Type-Options: nosniff
+|     Referrer-Policy: origin-when-cross-origin
+|     X-XSS-Protection: 1; mode=block
+|     <!DOCTYPE html>
+|     <html>
+|     <head>
+|     <title>Baleen - Error Page</title>
+|     <meta content="width=device-width" name="viewport"/>
+|     <meta charset="utf-8"/>
+|     <link
+|     href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap"
+|     rel="stylesheet"
+|     <link href="/.well-known/baleen/error-pages-out/assets/style.css" rel="stylesheet"/>
+|     </head>
+|     <body>
+|     <div>
+|     class="error-title">Error 404</h1>
+|     <div class="error-message">Krill not found</div>
+|_    <div c
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port80-TCP:V=7.92%I=7%D=5/22%Time=664D858C%P=x86_64-alpine-linux-musl%r
+SF:(GetRequest,165,"HTTP/1\.1\x20301\x20Moved\x20Permanently\r\nDate:\x20W
+SF:ed,\x2022\x20May\x202024\x2005:41:32\x20GMT\r\nContent-Type:\x20text/ht
+SF:ml\r\nContent-Length:\x20166\r\nConnection:\x20close\r\nLocation:\x20ht
+SF:tps://www\.monservicesecurise\.ssi\.gouv\.fr/\r\n\r\n<html>\r\n<head><t
+SF:itle>301\x20Moved\x20Permanently</title></head>\r\n<body>\r\n<center><h
+SF:1>301\x20Moved\x20Permanently</h1></center>\r\n<hr><center>openresty</c
+SF:enter>\r\n</body>\r\n</html>\r\n")%r(HTTPOptions,165,"HTTP/1\.1\x20301\
+SF:x20Moved\x20Permanently\r\nDate:\x20Wed,\x2022\x20May\x202024\x2005:41:
+SF:33\x20GMT\r\nContent-Type:\x20text/html\r\nContent-Length:\x20166\r\nCo
+SF:nnection:\x20close\r\nLocation:\x20https://www\.monservicesecurise\.ssi
+SF:\.gouv\.fr/\r\n\r\n<html>\r\n<head><title>301\x20Moved\x20Permanently</
+SF:title></head>\r\n<body>\r\n<center><h1>301\x20Moved\x20Permanently</h1>
+SF:</center>\r\n<hr><center>openresty</center>\r\n</body>\r\n</html>\r\n")
+SF:%r(RTSPRequest,11C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nDate:\x20Wed,
+SF:\x2022\x20May\x202024\x2005:41:33\x20GMT\r\nContent-Type:\x20text/html\
+SF:r\nContent-Length:\x20154\r\nConnection:\x20close\r\n\r\n<html>\r\n<hea
+SF:d><title>400\x20Bad\x20Request</title></head>\r\n<body>\r\n<center><h1>
+SF:400\x20Bad\x20Request</h1></center>\r\n<hr><center>openresty</center>\r
+SF:\n</body>\r\n</html>\r\n")%r(X11Probe,11C,"HTTP/1\.1\x20400\x20Bad\x20R
+SF:equest\r\nDate:\x20Wed,\x2022\x20May\x202024\x2005:41:33\x20GMT\r\nCont
+SF:ent-Type:\x20text/html\r\nContent-Length:\x20154\r\nConnection:\x20clos
+SF:e\r\n\r\n<html>\r\n<head><title>400\x20Bad\x20Request</title></head>\r\
+SF:n<body>\r\n<center><h1>400\x20Bad\x20Request</h1></center>\r\n<hr><cent
+SF:er>openresty</center>\r\n</body>\r\n</html>\r\n")%r(FourOhFourRequest,1
+SF:88,"HTTP/1\.1\x20301\x20Moved\x20Permanently\r\nDate:\x20Wed,\x2022\x20
+SF:May\x202024\x2005:41:34\x20GMT\r\nContent-Type:\x20text/html\r\nContent
+SF:-Length:\x20166\r\nConnection:\x20close\r\nLocation:\x20https://www\.mo
+SF:nservicesecurise\.ssi\.gouv\.fr/nice%20ports%2C/Tri%6Eity\.txt%2ebak\r\
+SF:n\r\n<html>\r\n<head><title>301\x20Moved\x20Permanently</title></head>\
+SF:r\n<body>\r\n<center><h1>301\x20Moved\x20Permanently</h1></center>\r\n<
+SF:hr><center>openresty</center>\r\n</body>\r\n</html>\r\n");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port443-TCP:V=7.92%T=SSL%I=7%D=5/22%Time=664D8593%P=x86_64-alpine-linux
+SF:-musl%r(GetRequest,105D,"HTTP/1\.1\x20200\x20OK\r\nDate:\x20Wed,\x2022\
+SF:x20May\x202024\x2005:41:39\x20GMT\r\nContent-Type:\x20text/html\r\nCont
+SF:ent-Length:\x203878\r\nConnection:\x20close\r\nReferrer-Policy:\x20no-r
+SF:eferrer\r\nCache-Control:\x20no-cache\r\nStrict-Transport-Security:\x20
+SF:max-age=63072000\r\nX-Frame-Options:\x20DENY\r\nX-Content-Type-Options:
+SF:\x20nosniff\r\nX-XSS-Protection:\x201;\x20mode=block\r\n\r\n<!doctypeht
+SF:ml><meta\x20name=\"viewport\"content=\"width=device-width\"><meta\x20ch
+SF:arset=\"utf-8\"><script></script><script>var\x20__blnChallengeStore={\"
+SF:unregisterServiceWorker\":false,\"cookie\":{\"value\":\"C8JmRPUu2TdugKZ
+SF:NIKsLNV4HjptAcm4kdslFQLjUXHDEKAaaBqJ4GIA-GAg_sVAHc3-DUP9TZVRXVluAIQoPqQ
+SF:UFCD679WrBMfso8lrk7iA\",\"path\":\"\\/\",\"name\":\"bln_challengejs\",\
+SF:"maxAge\":900},\"checkChallengeParams\":{\"request_fate\":\"challengejs
+SF:\",\"bot_category\":\"unknown\",\"tracking_id\":\"\",\"rule_id\":\"\"},
+SF:\"domain\":\"\.ssi\.gouv\.fr\"};\(\(\)=>{\"use\x20strict\";const\x20e=f
+SF:unction\*\({domain:e,maxAge:n,name:o,path:a,secure:t,value:i}\){yield`\
+SF:${o}=\${i}`,vo")%r(HTTPOptions,3138,"HTTP/1\.1\x20404\x20Not\x20Found\r
+SF:\nDate:\x20Wed,\x2022\x20May\x202024\x2005:41:39\x20GMT\r\nContent-Type
+SF::\x20text/html\r\nContent-Length:\x2015532\r\nConnection:\x20close\r\nE
+SF:Tag:\x20\"662276d9-3cac\"\r\nX-Varnish:\x203159134\r\nAge:\x200\r\nVia:
+SF:\x201\.1\x20varnish\x20\(Varnish/6\.0\)\r\nStrict-Transport-Security:\x
+SF:20max-age=63072000\r\nX-Frame-Options:\x20DENY\r\nX-Content-Type-Option
+SF:s:\x20nosniff\r\nReferrer-Policy:\x20origin-when-cross-origin\r\nX-XSS-
+SF:Protection:\x201;\x20mode=block\r\n\r\n<!DOCTYPE\x20html>\n<html>\n<hea
+SF:d>\n\x20\x20\x20\x20<title>Baleen\x20-\x20Error\x20Page</title>\n\x20\x
+SF:20\x20\x20<meta\x20content=\"width=device-width\"\x20name=\"viewport\"/
+SF:>\n\x20\x20\x20\x20<meta\x20charset=\"utf-8\"/>\n\x20\x20\x20\x20<link\
+SF:n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20href=\"https://fonts\.
+SF:googleapis\.com/css2\?family=Roboto:wght@100;400&display=swap\"\n\x20\x
+SF:20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20rel=\"stylesheet\"\n\x20\x20\
+SF:x20\x20/>\n\x20\x20\x20\x20<link\x20href=\"/\.well-known/baleen/error-p
+SF:ages-out/assets/style\.css\"\x20rel=\"stylesheet\"/>\n</head>\n\n<body>
+SF:\n<div>\n\x20\x20\x20\x20<h1\x20class=\"error-title\">Error\x20404</h1>
+SF:\n\x20\x20\x20\x20<div\x20class=\"error-message\">Krill\x20not\x20found
+SF:</div>\n\x20\x20\x20\x20<div\x20c");
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed May 22 05:42:03 2024 -- 1 IP address (1 host up) scanned in 47.57 seconds

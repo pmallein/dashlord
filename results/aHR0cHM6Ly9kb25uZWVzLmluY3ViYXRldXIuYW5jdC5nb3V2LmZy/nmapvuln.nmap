@@ -1,6 +1,6 @@
-# Nmap 7.92 scan initiated Wed May 22 06:03:59 2024 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln donnees.incubateur.anct.gouv.fr
+# Nmap 7.92 scan initiated Sun May 26 09:32:36 2024 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln donnees.incubateur.anct.gouv.fr
 Nmap scan report for donnees.incubateur.anct.gouv.fr (51.159.153.132)
-Host is up (0.14s latency).
+Host is up (0.11s latency).
 rDNS record for 51.159.153.132: 132-153-159-51.instances.scw.cloud
 Not shown: 994 closed tcp ports (reset)
 PORT     STATE SERVICE    VERSION
@@ -20,6 +20,15 @@ PORT     STATE SERVICE    VERSION
 |_http-server-header: nginx/1.18.0 (Ubuntu)
 5050/tcp open  ssl/http   nginx
 5432/tcp open  postgresql PostgreSQL DB 9.6.0 or later
+| fingerprint-strings: 
+|   SMBProgNeg: 
+|     SFATAL
+|     VFATAL
+|     C0A000
+|     Munsupported frontend protocol 65363.19778: server supports 2.0 to 3.0
+|     Fpostmaster.c
+|     L2120
+|_    RProcessStartupPacket
 | vulners: 
 |   PostgreSQL DB 9.6.0 or later: 
 |     	CVE-2019-10164	9.0	https://vulners.com/cve/CVE-2019-10164
@@ -36,22 +45,13 @@ PORT     STATE SERVICE    VERSION
 |     	CVE-2023-2454	5.8	https://vulners.com/cve/CVE-2023-2454
 |     	CVE-2023-2455	5.5	https://vulners.com/cve/CVE-2023-2455
 |_    	CVE-2021-23214	5.1	https://vulners.com/cve/CVE-2021-23214
-| fingerprint-strings: 
-|   SMBProgNeg: 
-|     SFATAL
-|     VFATAL
-|     C0A000
-|     Munsupported frontend protocol 65363.19778: server supports 2.0 to 3.0
-|     Fpostmaster.c
-|     L2120
-|_    RProcessStartupPacket
 8000/tcp open  http       nginx
 1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
-SF-Port5432-TCP:V=7.92%I=7%D=5/22%Time=664D8AD8%P=x86_64-alpine-linux-musl
+SF-Port5432-TCP:V=7.92%I=7%D=5/26%Time=665301BD%P=x86_64-alpine-linux-musl
 SF:%r(SMBProgNeg,8C,"E\0\0\0\x8bSFATAL\0VFATAL\0C0A000\0Munsupported\x20fr
 SF:ontend\x20protocol\x2065363\.19778:\x20server\x20supports\x202\.0\x20to
 SF:\x203\.0\0Fpostmaster\.c\0L2120\0RProcessStartupPacket\0\0");
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-# Nmap done at Wed May 22 06:04:17 2024 -- 1 IP address (1 host up) scanned in 18.24 seconds
+# Nmap done at Sun May 26 09:32:53 2024 -- 1 IP address (1 host up) scanned in 17.47 seconds

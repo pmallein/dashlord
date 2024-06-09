@@ -1,13 +1,13 @@
-# Nmap 7.92 scan initiated Sun Jun  2 04:20:10 2024 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln mobilic.beta.gouv.fr
+# Nmap 7.92 scan initiated Sun Jun  9 04:08:21 2024 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln mobilic.beta.gouv.fr
 Nmap scan report for mobilic.beta.gouv.fr (185.231.164.121)
-Host is up (0.14s latency).
+Host is up (0.098s latency).
 Not shown: 998 filtered tcp ports (no-response)
 PORT    STATE SERVICE   VERSION
 80/tcp  open  http
 | fingerprint-strings: 
 |   FourOhFourRequest: 
 |     HTTP/1.1 301 Moved Permanently
-|     Date: Sun, 02 Jun 2024 04:20:29 GMT
+|     Date: Sun, 09 Jun 2024 04:08:36 GMT
 |     Content-Type: text/html
 |     Content-Length: 166
 |     Connection: close
@@ -19,9 +19,23 @@ PORT    STATE SERVICE   VERSION
 |     <hr><center>openresty</center>
 |     </body>
 |     </html>
-|   GetRequest, HTTPOptions: 
+|   GetRequest: 
 |     HTTP/1.1 301 Moved Permanently
-|     Date: Sun, 02 Jun 2024 04:20:28 GMT
+|     Date: Sun, 09 Jun 2024 04:08:35 GMT
+|     Content-Type: text/html
+|     Content-Length: 166
+|     Connection: close
+|     Location: https://mobilic.beta.gouv.fr/
+|     <html>
+|     <head><title>301 Moved Permanently</title></head>
+|     <body>
+|     <center><h1>301 Moved Permanently</h1></center>
+|     <hr><center>openresty</center>
+|     </body>
+|     </html>
+|   HTTPOptions: 
+|     HTTP/1.1 301 Moved Permanently
+|     Date: Sun, 09 Jun 2024 04:08:36 GMT
 |     Content-Type: text/html
 |     Content-Length: 166
 |     Connection: close
@@ -35,7 +49,7 @@ PORT    STATE SERVICE   VERSION
 |     </html>
 |   RTSPRequest, X11Probe: 
 |     HTTP/1.1 400 Bad Request
-|     Date: Sun, 02 Jun 2024 04:20:28 GMT
+|     Date: Sun, 09 Jun 2024 04:08:36 GMT
 |     Content-Type: text/html
 |     Content-Length: 154
 |     Connection: close
@@ -50,9 +64,9 @@ PORT    STATE SERVICE   VERSION
 | fingerprint-strings: 
 |   GetRequest: 
 |     HTTP/1.1 200 OK
-|     Date: Sun, 02 Jun 2024 04:20:34 GMT
+|     Date: Sun, 09 Jun 2024 04:08:42 GMT
 |     Content-Type: text/html
-|     Content-Length: 3878
+|     Content-Length: 3899
 |     Connection: close
 |     Referrer-Policy: no-referrer
 |     Cache-Control: no-cache
@@ -60,14 +74,14 @@ PORT    STATE SERVICE   VERSION
 |     X-Frame-Options: DENY
 |     X-Content-Type-Options: nosniff
 |     X-XSS-Protection: 1; mode=block
-|     <!doctypehtml><meta name="viewport"content="width=device-width"><meta charset="utf-8"><script></script><script>var __blnChallengeStore={"cookie":{"name":"bln_challengejs","value":"nfX0idsJ2QFMv05P4s4qZbIN-GTzMqhBFhS8Z-RcCth_EtQV3tC3IkZqNsfgKUgEKC4RzXeML3lg3ltAzv-nrci52t5Y4QKogTX4PwhhDkE","maxAge":900,"path":"/"},"checkChallengeParams":{"bot_category":"unknown","tracking_id":"","rule_id":"","request_fate":"challengejs"},"domain":".beta.gouv.fr","unregisterServiceWorker":true};(()=>{"use strict";const e=function*({domain:e,maxAge:n,name:o,path:a,secure:t,value:i}){yield`${o}=${i}`,vo
+|     <!doctypehtml><meta name="viewport"content="width=device-width"><meta charset="utf-8"><script></script><script>var __blnChallengeStore={"unregisterServiceWorker":true,"domain":".beta.gouv.fr","checkChallengeParams":{"tracking_id":"","request_fate":"challengejs","bot_category":"unknown","rule_id":""},"cookie":{"path":"/","value":"WuGU-J9P50tplolZ8x1LyPAZCxWrMyPI82rp09TOh5yabXDKhmn3HttkKLPwU3jKstGL3lipt0FTGWEAiFVfv5yLC3M6e5_FTGGKduaZr8ayYVw3dAYaXswVq6K-qLyk","name":"bln_challengejs","maxAge":900}};(()=>{"use strict";const e=function*({domain:e,maxAge:n,name:o,path:a,secure:t,value:i}
 |   HTTPOptions: 
 |     HTTP/1.1 404 Not Found
-|     Date: Sun, 02 Jun 2024 04:20:35 GMT
+|     Date: Sun, 09 Jun 2024 04:08:42 GMT
 |     Content-Type: text/html
 |     Connection: close
 |     Content-Encoding: identity
-|     X-Varnish: 102973187
+|     X-Varnish: 81819218
 |     Age: 0
 |     Via: 1.1 varnish (Varnish/6.0)
 |     Strict-Transport-Security: max-age=63072000
@@ -75,35 +89,35 @@ PORT    STATE SERVICE   VERSION
 |     X-Content-Type-Options: nosniff
 |     Referrer-Policy: origin-when-cross-origin
 |     X-XSS-Protection: 1; mode=block
-|_    <!DOCTYPE html><html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta charset="utf-8"><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>Application doesn't exist - Scalingo</title><style>html { height: 100%;}body { -webkit-transform-style: preserve-3d; transform-style: preserve-3d; text-align: center; height: 100%; margin: 0; padding: 0; background: -webkit-gradient(linear, left top, left bottom, from(#1
+|_    <!DOCTYPE html><html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta charset="utf-8"><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>Application doesn't exist - Scalingo</title><style>html { height: 100%;}body { -webkit-transform-style: preserve-3d; transform-style: preserve-3d; text-align: center; height: 100%; margin: 0; padding: 0; background: -webkit-gradient(linear, left top, left bottom, from(#18
 2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
 ==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
-SF-Port80-TCP:V=7.92%I=7%D=6/2%Time=665BF30C%P=x86_64-alpine-linux-musl%r(
+SF-Port80-TCP:V=7.92%I=7%D=6/9%Time=66652AC4%P=x86_64-alpine-linux-musl%r(
 SF:GetRequest,157,"HTTP/1\.1\x20301\x20Moved\x20Permanently\r\nDate:\x20Su
-SF:n,\x2002\x20Jun\x202024\x2004:20:28\x20GMT\r\nContent-Type:\x20text/htm
+SF:n,\x2009\x20Jun\x202024\x2004:08:35\x20GMT\r\nContent-Type:\x20text/htm
 SF:l\r\nContent-Length:\x20166\r\nConnection:\x20close\r\nLocation:\x20htt
 SF:ps://mobilic\.beta\.gouv\.fr/\r\n\r\n<html>\r\n<head><title>301\x20Move
 SF:d\x20Permanently</title></head>\r\n<body>\r\n<center><h1>301\x20Moved\x
 SF:20Permanently</h1></center>\r\n<hr><center>openresty</center>\r\n</body
 SF:>\r\n</html>\r\n")%r(HTTPOptions,157,"HTTP/1\.1\x20301\x20Moved\x20Perm
-SF:anently\r\nDate:\x20Sun,\x2002\x20Jun\x202024\x2004:20:28\x20GMT\r\nCon
+SF:anently\r\nDate:\x20Sun,\x2009\x20Jun\x202024\x2004:08:36\x20GMT\r\nCon
 SF:tent-Type:\x20text/html\r\nContent-Length:\x20166\r\nConnection:\x20clo
 SF:se\r\nLocation:\x20https://mobilic\.beta\.gouv\.fr/\r\n\r\n<html>\r\n<h
 SF:ead><title>301\x20Moved\x20Permanently</title></head>\r\n<body>\r\n<cen
 SF:ter><h1>301\x20Moved\x20Permanently</h1></center>\r\n<hr><center>openre
 SF:sty</center>\r\n</body>\r\n</html>\r\n")%r(RTSPRequest,11C,"HTTP/1\.1\x
-SF:20400\x20Bad\x20Request\r\nDate:\x20Sun,\x2002\x20Jun\x202024\x2004:20:
-SF:28\x20GMT\r\nContent-Type:\x20text/html\r\nContent-Length:\x20154\r\nCo
+SF:20400\x20Bad\x20Request\r\nDate:\x20Sun,\x2009\x20Jun\x202024\x2004:08:
+SF:36\x20GMT\r\nContent-Type:\x20text/html\r\nContent-Length:\x20154\r\nCo
 SF:nnection:\x20close\r\n\r\n<html>\r\n<head><title>400\x20Bad\x20Request<
 SF:/title></head>\r\n<body>\r\n<center><h1>400\x20Bad\x20Request</h1></cen
 SF:ter>\r\n<hr><center>openresty</center>\r\n</body>\r\n</html>\r\n")%r(X1
-SF:1Probe,11C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nDate:\x20Sun,\x2002\x
-SF:20Jun\x202024\x2004:20:28\x20GMT\r\nContent-Type:\x20text/html\r\nConte
+SF:1Probe,11C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nDate:\x20Sun,\x2009\x
+SF:20Jun\x202024\x2004:08:36\x20GMT\r\nContent-Type:\x20text/html\r\nConte
 SF:nt-Length:\x20154\r\nConnection:\x20close\r\n\r\n<html>\r\n<head><title
 SF:>400\x20Bad\x20Request</title></head>\r\n<body>\r\n<center><h1>400\x20B
 SF:ad\x20Request</h1></center>\r\n<hr><center>openresty</center>\r\n</body
 SF:>\r\n</html>\r\n")%r(FourOhFourRequest,17A,"HTTP/1\.1\x20301\x20Moved\x
-SF:20Permanently\r\nDate:\x20Sun,\x2002\x20Jun\x202024\x2004:20:29\x20GMT\
+SF:20Permanently\r\nDate:\x20Sun,\x2009\x20Jun\x202024\x2004:08:36\x20GMT\
 SF:r\nContent-Type:\x20text/html\r\nContent-Length:\x20166\r\nConnection:\
 SF:x20close\r\nLocation:\x20https://mobilic\.beta\.gouv\.fr/nice%20ports%2
 SF:C/Tri%6Eity\.txt%2ebak\r\n\r\n<html>\r\n<head><title>301\x20Moved\x20Pe
@@ -111,39 +125,39 @@ SF:rmanently</title></head>\r\n<body>\r\n<center><h1>301\x20Moved\x20Perma
 SF:nently</h1></center>\r\n<hr><center>openresty</center>\r\n</body>\r\n</
 SF:html>\r\n");
 ==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
-SF-Port443-TCP:V=7.92%T=SSL%I=7%D=6/2%Time=665BF312%P=x86_64-alpine-linux-
-SF:musl%r(GetRequest,105D,"HTTP/1\.1\x20200\x20OK\r\nDate:\x20Sun,\x2002\x
-SF:20Jun\x202024\x2004:20:34\x20GMT\r\nContent-Type:\x20text/html\r\nConte
-SF:nt-Length:\x203878\r\nConnection:\x20close\r\nReferrer-Policy:\x20no-re
+SF-Port443-TCP:V=7.92%T=SSL%I=7%D=6/9%Time=66652ACA%P=x86_64-alpine-linux-
+SF:musl%r(GetRequest,1072,"HTTP/1\.1\x20200\x20OK\r\nDate:\x20Sun,\x2009\x
+SF:20Jun\x202024\x2004:08:42\x20GMT\r\nContent-Type:\x20text/html\r\nConte
+SF:nt-Length:\x203899\r\nConnection:\x20close\r\nReferrer-Policy:\x20no-re
 SF:ferrer\r\nCache-Control:\x20no-cache\r\nStrict-Transport-Security:\x20m
 SF:ax-age=63072000\r\nX-Frame-Options:\x20DENY\r\nX-Content-Type-Options:\
 SF:x20nosniff\r\nX-XSS-Protection:\x201;\x20mode=block\r\n\r\n<!doctypehtm
 SF:l><meta\x20name=\"viewport\"content=\"width=device-width\"><meta\x20cha
-SF:rset=\"utf-8\"><script></script><script>var\x20__blnChallengeStore={\"c
-SF:ookie\":{\"name\":\"bln_challengejs\",\"value\":\"nfX0idsJ2QFMv05P4s4qZ
-SF:bIN-GTzMqhBFhS8Z-RcCth_EtQV3tC3IkZqNsfgKUgEKC4RzXeML3lg3ltAzv-nrci52t5Y
-SF:4QKogTX4PwhhDkE\",\"maxAge\":900,\"path\":\"\\/\"},\"checkChallengePara
-SF:ms\":{\"bot_category\":\"unknown\",\"tracking_id\":\"\",\"rule_id\":\"\
-SF:",\"request_fate\":\"challengejs\"},\"domain\":\"\.beta\.gouv\.fr\",\"u
-SF:nregisterServiceWorker\":true};\(\(\)=>{\"use\x20strict\";const\x20e=fu
-SF:nction\*\({domain:e,maxAge:n,name:o,path:a,secure:t,value:i}\){yield`\$
-SF:{o}=\${i}`,vo")%r(HTTPOptions,3138,"HTTP/1\.1\x20404\x20Not\x20Found\r\
-SF:nDate:\x20Sun,\x2002\x20Jun\x202024\x2004:20:35\x20GMT\r\nContent-Type:
-SF:\x20text/html\r\nConnection:\x20close\r\nContent-Encoding:\x20identity\
-SF:r\nX-Varnish:\x20102973187\r\nAge:\x200\r\nVia:\x201\.1\x20varnish\x20\
-SF:(Varnish/6\.0\)\r\nStrict-Transport-Security:\x20max-age=63072000\r\nX-
-SF:Frame-Options:\x20DENY\r\nX-Content-Type-Options:\x20nosniff\r\nReferre
-SF:r-Policy:\x20origin-when-cross-origin\r\nX-XSS-Protection:\x201;\x20mod
-SF:e=block\r\n\r\n<!DOCTYPE\x20html><html><head><meta\x20http-equiv=\"cont
-SF:ent-type\"\x20content=\"text/html;\x20charset=UTF-8\"><meta\x20charset=
-SF:\"utf-8\"><meta\x20content=\"IE=edge,chrome=1\"\x20http-equiv=\"X-UA-Co
-SF:mpatible\"><meta\x20content=\"width=device-width,\x20initial-scale=1\.0
-SF:\"\x20name=\"viewport\"><title>Application\x20doesn't\x20exist\x20-\x20
-SF:Scalingo</title><style>html\x20{\x20height:\x20100%;}body\x20{\x20-webk
-SF:it-transform-style:\x20preserve-3d;\x20transform-style:\x20preserve-3d;
-SF:\x20text-align:\x20center;\x20height:\x20100%;\x20margin:\x200;\x20padd
-SF:ing:\x200;\x20background:\x20-webkit-gradient\(linear,\x20left\x20top,\
-SF:x20left\x20bottom,\x20from\(#1");
+SF:rset=\"utf-8\"><script></script><script>var\x20__blnChallengeStore={\"u
+SF:nregisterServiceWorker\":true,\"domain\":\"\.beta\.gouv\.fr\",\"checkCh
+SF:allengeParams\":{\"tracking_id\":\"\",\"request_fate\":\"challengejs\",
+SF:\"bot_category\":\"unknown\",\"rule_id\":\"\"},\"cookie\":{\"path\":\"\
+SF:\/\",\"value\":\"WuGU-J9P50tplolZ8x1LyPAZCxWrMyPI82rp09TOh5yabXDKhmn3Ht
+SF:tkKLPwU3jKstGL3lipt0FTGWEAiFVfv5yLC3M6e5_FTGGKduaZr8ayYVw3dAYaXswVq6K-q
+SF:Lyk\",\"name\":\"bln_challengejs\",\"maxAge\":900}};\(\(\)=>{\"use\x20s
+SF:trict\";const\x20e=function\*\({domain:e,maxAge:n,name:o,path:a,secure:
+SF:t,value:i}")%r(HTTPOptions,36B0,"HTTP/1\.1\x20404\x20Not\x20Found\r\nDa
+SF:te:\x20Sun,\x2009\x20Jun\x202024\x2004:08:42\x20GMT\r\nContent-Type:\x2
+SF:0text/html\r\nConnection:\x20close\r\nContent-Encoding:\x20identity\r\n
+SF:X-Varnish:\x2081819218\r\nAge:\x200\r\nVia:\x201\.1\x20varnish\x20\(Var
+SF:nish/6\.0\)\r\nStrict-Transport-Security:\x20max-age=63072000\r\nX-Fram
+SF:e-Options:\x20DENY\r\nX-Content-Type-Options:\x20nosniff\r\nReferrer-Po
+SF:licy:\x20origin-when-cross-origin\r\nX-XSS-Protection:\x201;\x20mode=bl
+SF:ock\r\n\r\n<!DOCTYPE\x20html><html><head><meta\x20http-equiv=\"content-
+SF:type\"\x20content=\"text/html;\x20charset=UTF-8\"><meta\x20charset=\"ut
+SF:f-8\"><meta\x20content=\"IE=edge,chrome=1\"\x20http-equiv=\"X-UA-Compat
+SF:ible\"><meta\x20content=\"width=device-width,\x20initial-scale=1\.0\"\x
+SF:20name=\"viewport\"><title>Application\x20doesn't\x20exist\x20-\x20Scal
+SF:ingo</title><style>html\x20{\x20height:\x20100%;}body\x20{\x20-webkit-t
+SF:ransform-style:\x20preserve-3d;\x20transform-style:\x20preserve-3d;\x20
+SF:text-align:\x20center;\x20height:\x20100%;\x20margin:\x200;\x20padding:
+SF:\x200;\x20background:\x20-webkit-gradient\(linear,\x20left\x20top,\x20l
+SF:eft\x20bottom,\x20from\(#18");
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-# Nmap done at Sun Jun  2 04:20:57 2024 -- 1 IP address (1 host up) scanned in 47.06 seconds
+# Nmap done at Sun Jun  9 04:08:59 2024 -- 1 IP address (1 host up) scanned in 38.74 seconds

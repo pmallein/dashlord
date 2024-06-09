@@ -1,6 +1,6 @@
-# Nmap 7.92 scan initiated Sun Jun  2 10:33:06 2024 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln collectivite.fr
+# Nmap 7.92 scan initiated Sun Jun  9 09:51:30 2024 as: nmap -sV --script vulners --script-args mincvss=5.0 -oA /data/nmapvuln collectivite.fr
 Nmap scan report for collectivite.fr (51.159.10.161)
-Host is up (0.11s latency).
+Host is up (0.088s latency).
 rDNS record for 51.159.10.161: 51-159-10-161.lb.fr-par.scw.cloud
 Not shown: 998 closed tcp ports (reset)
 PORT    STATE SERVICE   VERSION
@@ -17,14 +17,21 @@ PORT    STATE SERVICE   VERSION
 |     </body></html>
 |   FourOhFourRequest: 
 |     HTTP/1.1 404 Not Found
-|     date: Sun, 02 Jun 2024 10:33:14 GMT
+|     date: Sun, 09 Jun 2024 09:51:38 GMT
 |     content-type: text/plain; charset=utf-8
 |     content-length: 9
 |     connection: close
 |     Found
-|   GetRequest, HTTPOptions: 
+|   GetRequest: 
 |     HTTP/1.1 404 Not Found
-|     date: Sun, 02 Jun 2024 10:33:13 GMT
+|     date: Sun, 09 Jun 2024 09:51:36 GMT
+|     content-type: text/plain; charset=utf-8
+|     content-length: 9
+|     connection: close
+|     Found
+|   HTTPOptions: 
+|     HTTP/1.1 404 Not Found
+|     date: Sun, 09 Jun 2024 09:51:37 GMT
 |     content-type: text/plain; charset=utf-8
 |     content-length: 9
 |     connection: close
@@ -49,16 +56,9 @@ PORT    STATE SERVICE   VERSION
 |     <html><body><h1>400 Bad request</h1>
 |     Your browser sent an invalid request.
 |     </body></html>
-|   FourOhFourRequest, HTTPOptions: 
+|   FourOhFourRequest, GetRequest, HTTPOptions: 
 |     HTTP/1.1 404 Not Found
-|     date: Sun, 02 Jun 2024 10:33:20 GMT
-|     content-type: text/plain; charset=utf-8
-|     content-length: 9
-|     connection: close
-|     Found
-|   GetRequest: 
-|     HTTP/1.1 404 Not Found
-|     date: Sun, 02 Jun 2024 10:33:19 GMT
+|     date: Sun, 09 Jun 2024 09:51:44 GMT
 |     content-type: text/plain; charset=utf-8
 |     content-length: 9
 |     connection: close
@@ -74,16 +74,16 @@ PORT    STATE SERVICE   VERSION
 |_    </body></html>
 2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
 ==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
-SF-Port80-TCP:V=7.92%I=7%D=6/2%Time=665C4A69%P=x86_64-alpine-linux-musl%r(
+SF-Port80-TCP:V=7.92%I=7%D=6/9%Time=66657B29%P=x86_64-alpine-linux-musl%r(
 SF:NULL,E9,"HTTP/1\.1\x20408\x20Request\x20Time-out\r\nContent-length:\x20
 SF:110\r\nCache-Control:\x20no-cache\r\nConnection:\x20close\r\nContent-Ty
 SF:pe:\x20text/html\r\n\r\n<html><body><h1>408\x20Request\x20Time-out</h1>
 SF:\nYour\x20browser\x20didn't\x20send\x20a\x20complete\x20request\x20in\x
 SF:20time\.\n</body></html>\n")%r(GetRequest,97,"HTTP/1\.1\x20404\x20Not\x
-SF:20Found\r\ndate:\x20Sun,\x2002\x20Jun\x202024\x2010:33:13\x20GMT\r\ncon
+SF:20Found\r\ndate:\x20Sun,\x2009\x20Jun\x202024\x2009:51:36\x20GMT\r\ncon
 SF:tent-type:\x20text/plain;\x20charset=utf-8\r\ncontent-length:\x209\r\nc
 SF:onnection:\x20close\r\n\r\nNot\x20Found")%r(HTTPOptions,97,"HTTP/1\.1\x
-SF:20404\x20Not\x20Found\r\ndate:\x20Sun,\x2002\x20Jun\x202024\x2010:33:13
+SF:20404\x20Not\x20Found\r\ndate:\x20Sun,\x2009\x20Jun\x202024\x2009:51:37
 SF:\x20GMT\r\ncontent-type:\x20text/plain;\x20charset=utf-8\r\ncontent-len
 SF:gth:\x209\r\nconnection:\x20close\r\n\r\nNot\x20Found")%r(RTSPRequest,C
 SF:F,"HTTP/1\.1\x20400\x20Bad\x20request\r\nContent-length:\x2090\r\nCache
@@ -94,8 +94,8 @@ SF:F,"HTTP/1\.1\x20400\x20Bad\x20request\r\nContent-length:\x2090\r\nCache
 SF:-Control:\x20no-cache\r\nConnection:\x20close\r\nContent-Type:\x20text/
 SF:html\r\n\r\n<html><body><h1>400\x20Bad\x20request</h1>\nYour\x20browser
 SF:\x20sent\x20an\x20invalid\x20request\.\n</body></html>\n")%r(FourOhFour
-SF:Request,97,"HTTP/1\.1\x20404\x20Not\x20Found\r\ndate:\x20Sun,\x2002\x20
-SF:Jun\x202024\x2010:33:14\x20GMT\r\ncontent-type:\x20text/plain;\x20chars
+SF:Request,97,"HTTP/1\.1\x20404\x20Not\x20Found\r\ndate:\x20Sun,\x2009\x20
+SF:Jun\x202024\x2009:51:38\x20GMT\r\ncontent-type:\x20text/plain;\x20chars
 SF:et=utf-8\r\ncontent-length:\x209\r\nconnection:\x20close\r\n\r\nNot\x20
 SF:Found")%r(RPCCheck,CF,"HTTP/1\.1\x20400\x20Bad\x20request\r\nContent-le
 SF:ngth:\x2090\r\nCache-Control:\x20no-cache\r\nConnection:\x20close\r\nCo
@@ -107,20 +107,20 @@ SF:0close\r\nContent-Type:\x20text/html\r\n\r\n<html><body><h1>400\x20Bad\
 SF:x20request</h1>\nYour\x20browser\x20sent\x20an\x20invalid\x20request\.\
 SF:n</body></html>\n");
 ==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
-SF-Port443-TCP:V=7.92%T=SSL%I=7%D=6/2%Time=665C4A70%P=x86_64-alpine-linux-
+SF-Port443-TCP:V=7.92%T=SSL%I=7%D=6/9%Time=66657B2F%P=x86_64-alpine-linux-
 SF:musl%r(NULL,E9,"HTTP/1\.1\x20408\x20Request\x20Time-out\r\nContent-leng
 SF:th:\x20110\r\nCache-Control:\x20no-cache\r\nConnection:\x20close\r\nCon
 SF:tent-Type:\x20text/html\r\n\r\n<html><body><h1>408\x20Request\x20Time-o
 SF:ut</h1>\nYour\x20browser\x20didn't\x20send\x20a\x20complete\x20request\
 SF:x20in\x20time\.\n</body></html>\n")%r(GetRequest,97,"HTTP/1\.1\x20404\x
-SF:20Not\x20Found\r\ndate:\x20Sun,\x2002\x20Jun\x202024\x2010:33:19\x20GMT
+SF:20Not\x20Found\r\ndate:\x20Sun,\x2009\x20Jun\x202024\x2009:51:44\x20GMT
 SF:\r\ncontent-type:\x20text/plain;\x20charset=utf-8\r\ncontent-length:\x2
 SF:09\r\nconnection:\x20close\r\n\r\nNot\x20Found")%r(HTTPOptions,97,"HTTP
-SF:/1\.1\x20404\x20Not\x20Found\r\ndate:\x20Sun,\x2002\x20Jun\x202024\x201
-SF:0:33:20\x20GMT\r\ncontent-type:\x20text/plain;\x20charset=utf-8\r\ncont
+SF:/1\.1\x20404\x20Not\x20Found\r\ndate:\x20Sun,\x2009\x20Jun\x202024\x200
+SF:9:51:44\x20GMT\r\ncontent-type:\x20text/plain;\x20charset=utf-8\r\ncont
 SF:ent-length:\x209\r\nconnection:\x20close\r\n\r\nNot\x20Found")%r(FourOh
-SF:FourRequest,97,"HTTP/1\.1\x20404\x20Not\x20Found\r\ndate:\x20Sun,\x2002
-SF:\x20Jun\x202024\x2010:33:20\x20GMT\r\ncontent-type:\x20text/plain;\x20c
+SF:FourRequest,97,"HTTP/1\.1\x20404\x20Not\x20Found\r\ndate:\x20Sun,\x2009
+SF:\x20Jun\x202024\x2009:51:44\x20GMT\r\ncontent-type:\x20text/plain;\x20c
 SF:harset=utf-8\r\ncontent-length:\x209\r\nconnection:\x20close\r\n\r\nNot
 SF:\x20Found")%r(tor-versions,CF,"HTTP/1\.1\x20400\x20Bad\x20request\r\nCo
 SF:ntent-length:\x2090\r\nCache-Control:\x20no-cache\r\nConnection:\x20clo
@@ -141,4 +141,4 @@ SF:400\x20Bad\x20request</h1>\nYour\x20browser\x20sent\x20an\x20invalid\x2
 SF:0request\.\n</body></html>\n");
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-# Nmap done at Sun Jun  2 10:33:40 2024 -- 1 IP address (1 host up) scanned in 33.97 seconds
+# Nmap done at Sun Jun  9 09:52:01 2024 -- 1 IP address (1 host up) scanned in 31.41 seconds
